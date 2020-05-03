@@ -2,7 +2,7 @@ let Index = () =>
     import(/* webpackChunkName: "home_routes" */ "./components/index.vue");
 let Home = () =>
     import(
-        /* webpackChunkName: "home_routes" */ "./components/user/homeComponent.vue"
+        /* webpackChunkName: "home_routes" */ "./components/pages/homeComponent.vue"
     );
 let Checkout = () =>
     import(
@@ -10,47 +10,45 @@ let Checkout = () =>
     );
 let Blog = () =>
     import(
-        /* webpackChunkName: "checkout_routes" */ "./components/user/blog.vue"
+        /* webpackChunkName: "checkout_routes" */ "./components/pages/blog.vue"
     );
-    let Contact = () =>
+let Contact = () =>
     import(
-        /* webpackChunkName: "checkout_routes" */ "./components/user/contact.vue"
+        /* webpackChunkName: "checkout_routes" */ "./components/pages/contact.vue"
     );
-    let About = () =>
+let About = () =>
     import(
-        /* webpackChunkName: "checkout_routes" */ "./components/user/about.vue"
+        /* webpackChunkName: "checkout_routes" */ "./components/pages/about.vue"
     );
-    let Organizations = () =>
+let Organizations = () =>
     import(
-        /* webpackChunkName: "checkout_routes" */ "./components/user/organizations.vue"
+        /* webpackChunkName: "checkout_routes" */ "./components/pages/organizations.vue"
     );
-    let Stakeholders = () =>
+let Stakeholders = () =>
     import(
-        /* webpackChunkName: "checkout_routes" */ "./components/user/stakeholders.vue"
+        /* webpackChunkName: "checkout_routes" */ "./components/pages/stakeholders.vue"
     );
-    let Initiatives = () =>
+let Initiatives = () =>
     import(
-        /* webpackChunkName: "checkout_routes" */ "./components/user/initiatives.vue"
+        /* webpackChunkName: "checkout_routes" */ "./components/pages/initiatives.vue"
     );
-    let Administratives = () =>
+let Administratives = () =>
     import(
-        /* webpackChunkName: "checkout_routes" */ "./components/user/administratives.vue"
+        /* webpackChunkName: "checkout_routes" */ "./components/pages/administratives.vue"
     );
 export const routes = [
     { path: "*", redirect: "/" },
     {
         path: "/",
-        component: Index,
-        children: [
-            { path: "", component: Home },
-            { path: "/checkout", component: Checkout },
-            {path:'/blog', component:Blog},
-            {path:'/about', component:About},
-            {path:'/contact', component:Contact},
-            {path:'/organizations', component:Organizations},
-            {path:'/stakeholders', component:Stakeholders},
-            {path:'/initiatives', component:Initiatives},
-            {path:'/administratives', component:Administratives}
-        ]
-    }
+        component: Home,
+        children: []
+    },
+    { path: "/checkout", component: Checkout },
+    {path:'/blog', component:Blog},
+    {path:'/about', component:About},
+    {path:'/contact', component:Contact},
+    {path:'/organizations', component:Organizations},
+    {path:'/stakeholders', component:Stakeholders},
+    {path:'/initiatives', component:Initiatives},
+    {path:'/administratives', component:Administratives}
 ];

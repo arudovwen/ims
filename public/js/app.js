@@ -127,7 +127,7 @@ var Index = function Index() {
 };
 
 var Home = function Home() {
-  return Promise.all(/*! import() | home_routes */[__webpack_require__.e("/js/vendor"), __webpack_require__.e("home_routes")]).then(__webpack_require__.bind(null, /*! ./components/user/homeComponent.vue */ "./resources/js/components/user/homeComponent.vue"));
+  return Promise.all(/*! import() | home_routes */[__webpack_require__.e("/js/vendor"), __webpack_require__.e("home_routes")]).then(__webpack_require__.bind(null, /*! ./components/pages/homeComponent.vue */ "./resources/js/components/pages/homeComponent.vue"));
 };
 
 var Checkout = function Checkout() {
@@ -135,31 +135,31 @@ var Checkout = function Checkout() {
 };
 
 var Blog = function Blog() {
-  return Promise.all(/*! import() | checkout_routes */[__webpack_require__.e("/js/vendor"), __webpack_require__.e("checkout_routes")]).then(__webpack_require__.bind(null, /*! ./components/user/blog.vue */ "./resources/js/components/user/blog.vue"));
+  return Promise.all(/*! import() | checkout_routes */[__webpack_require__.e("/js/vendor"), __webpack_require__.e("checkout_routes")]).then(__webpack_require__.bind(null, /*! ./components/pages/blog.vue */ "./resources/js/components/pages/blog.vue"));
 };
 
 var Contact = function Contact() {
-  return Promise.all(/*! import() | checkout_routes */[__webpack_require__.e("/js/vendor"), __webpack_require__.e("checkout_routes")]).then(__webpack_require__.bind(null, /*! ./components/user/contact.vue */ "./resources/js/components/user/contact.vue"));
+  return Promise.all(/*! import() | checkout_routes */[__webpack_require__.e("/js/vendor"), __webpack_require__.e("checkout_routes")]).then(__webpack_require__.bind(null, /*! ./components/pages/contact.vue */ "./resources/js/components/pages/contact.vue"));
 };
 
 var About = function About() {
-  return Promise.all(/*! import() | checkout_routes */[__webpack_require__.e("/js/vendor"), __webpack_require__.e("checkout_routes")]).then(__webpack_require__.bind(null, /*! ./components/user/about.vue */ "./resources/js/components/user/about.vue"));
+  return Promise.all(/*! import() | checkout_routes */[__webpack_require__.e("/js/vendor"), __webpack_require__.e("checkout_routes")]).then(__webpack_require__.bind(null, /*! ./components/pages/about.vue */ "./resources/js/components/pages/about.vue"));
 };
 
 var Organizations = function Organizations() {
-  return Promise.all(/*! import() | checkout_routes */[__webpack_require__.e("/js/vendor"), __webpack_require__.e("checkout_routes")]).then(__webpack_require__.bind(null, /*! ./components/user/organizations.vue */ "./resources/js/components/user/organizations.vue"));
+  return Promise.all(/*! import() | checkout_routes */[__webpack_require__.e("/js/vendor"), __webpack_require__.e("checkout_routes")]).then(__webpack_require__.bind(null, /*! ./components/pages/organizations.vue */ "./resources/js/components/pages/organizations.vue"));
 };
 
 var Stakeholders = function Stakeholders() {
-  return Promise.all(/*! import() | checkout_routes */[__webpack_require__.e("/js/vendor"), __webpack_require__.e("checkout_routes")]).then(__webpack_require__.bind(null, /*! ./components/user/stakeholders.vue */ "./resources/js/components/user/stakeholders.vue"));
+  return Promise.all(/*! import() | checkout_routes */[__webpack_require__.e("/js/vendor"), __webpack_require__.e("checkout_routes")]).then(__webpack_require__.bind(null, /*! ./components/pages/stakeholders.vue */ "./resources/js/components/pages/stakeholders.vue"));
 };
 
 var Initiatives = function Initiatives() {
-  return Promise.all(/*! import() | checkout_routes */[__webpack_require__.e("/js/vendor"), __webpack_require__.e("checkout_routes")]).then(__webpack_require__.bind(null, /*! ./components/user/initiatives.vue */ "./resources/js/components/user/initiatives.vue"));
+  return Promise.all(/*! import() | checkout_routes */[__webpack_require__.e("/js/vendor"), __webpack_require__.e("checkout_routes")]).then(__webpack_require__.bind(null, /*! ./components/pages/initiatives.vue */ "./resources/js/components/pages/initiatives.vue"));
 };
 
 var Administratives = function Administratives() {
-  return Promise.all(/*! import() | checkout_routes */[__webpack_require__.e("/js/vendor"), __webpack_require__.e("checkout_routes")]).then(__webpack_require__.bind(null, /*! ./components/user/administratives.vue */ "./resources/js/components/user/administratives.vue"));
+  return Promise.all(/*! import() | checkout_routes */[__webpack_require__.e("/js/vendor"), __webpack_require__.e("checkout_routes")]).then(__webpack_require__.bind(null, /*! ./components/pages/administratives.vue */ "./resources/js/components/pages/administratives.vue"));
 };
 
 var routes = [{
@@ -167,35 +167,32 @@ var routes = [{
   redirect: "/"
 }, {
   path: "/",
-  component: Index,
-  children: [{
-    path: "",
-    component: Home
-  }, {
-    path: "/checkout",
-    component: Checkout
-  }, {
-    path: '/blog',
-    component: Blog
-  }, {
-    path: '/about',
-    component: About
-  }, {
-    path: '/contact',
-    component: Contact
-  }, {
-    path: '/organizations',
-    component: Organizations
-  }, {
-    path: '/stakeholders',
-    component: Stakeholders
-  }, {
-    path: '/initiatives',
-    component: Initiatives
-  }, {
-    path: '/administratives',
-    component: Administratives
-  }]
+  component: Home,
+  children: []
+}, {
+  path: "/checkout",
+  component: Checkout
+}, {
+  path: '/blog',
+  component: Blog
+}, {
+  path: '/about',
+  component: About
+}, {
+  path: '/contact',
+  component: Contact
+}, {
+  path: '/organizations',
+  component: Organizations
+}, {
+  path: '/stakeholders',
+  component: Stakeholders
+}, {
+  path: '/initiatives',
+  component: Initiatives
+}, {
+  path: '/administratives',
+  component: Administratives
 }];
 
 /***/ }),
