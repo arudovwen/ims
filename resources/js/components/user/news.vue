@@ -208,8 +208,16 @@ export default {
   }#news{
     flex-direction: column;
   }
+  .right_box{
+    padding:10px;
+  }
+  .news_container{
+    width: 31.5%;
+  }
 }
 @media(max-width: 425px){
-  
+  .news_title{
+    font-size: 11.5px;
+  }
 }
 </style>

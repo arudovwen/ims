@@ -2,7 +2,7 @@
   <div id="commissioner">
     <div class="left_box">
       <div class="comm_header">
-        <h3 class="josefin mb-4">Commissioner of Education, Imo State</h3>
+        <h3 class="josefin mb-4 top_head">Commissioner of Education, Imo State</h3>
       </div>
       <div class="comm_body">
         <div class="comm_image">
@@ -179,6 +179,7 @@ export default {
   }
   .comm_about{
     width: 100%;
+    padding: 0 10px 15px;
   }
   .comm_image{
     margin: 0 auto 20px;
@@ -187,15 +188,24 @@ export default {
   #commissioner{
     flex-direction: column;
     height: auto;
+     padding-top:10px;
     padding-bottom: 45px;
      width: 100%;
   }
+ 
    .left_box,.right_box{
     width: 100%;
   }
-
+ .top_head{
+   margin: 0 !important;
+ }
+ .comm_image{
+   height: auto;
+ }
 }
 @media(max-width: 425px){
- 
+ .img_text p{
+   font-size: 12.5px;
+ }
 }
 </style>

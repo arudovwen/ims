@@ -56,7 +56,7 @@ export default {
   data() {
     return {
       swiperOptions: {
-        spaceBetween: 20,
+        spaceBetween: 15,
         slidesPerView: 3,
          breakpoints: {
           480: {
@@ -123,6 +123,9 @@ export default {
   }
 }
 @media (max-width: 425px) {
+  #projects{
+    padding:40px 15px;
+  }
   p {
     font-size: 11px;
   }
@@ -130,7 +133,7 @@ export default {
     height: 160px;
   }
   .img_contain{
-    height: 100px;
+    height: 80px;
   }
   .img_text{
     padding:10px 2px;
