@@ -1,0 +1,139 @@
+<template>
+  <div id="news">
+    <div class="left_box">
+      <div class="left_header">
+        <div class="fa-stack">
+          <i class="fa fa-circle fa-stack-2x" aria-hidden="true"></i>
+          <i class="fab fa-intercom fa-stack-1x text-white"></i>
+        </div>
+         <h3 class="josefin w-75">Current Topics</h3>
+      </div>
+     
+      <div>
+        <swiper class="news_update" ref="mySwiper" :options="swiperOptions">
+           <swiper-slide class="slide">Slide 1</swiper-slide>
+        <swiper-slide class="slide">Slide 2</swiper-slide>
+        <swiper-slide class="slide">Slide 3</swiper-slide>
+        <swiper-slide class="slide">Slide 4</swiper-slide>
+        <swiper-slide class="slide">Slide 5</swiper-slide>
+          <div class="swiper-pagination" slot="pagination"></div>
+        </swiper>
+      </div>
+    </div>
+    <div class="right_box">
+      <h3 class="josefin">Latest News</h3>
+      <p>
+        <router-link
+          to
+        ><span class="text-dark">{{new Date() | moment("dddd, MMMM D YYYY")}} :</span> Lorem ipsum dolor sit amet consectetur adipisicing elit. Error aperiam ab nesciunt consequuntur quidem facilis quis, quisquam aut!</router-link>
+      </p>
+      <p>
+        <router-link
+          to
+        ><span class="text-dark">{{new Date() | moment("dddd, MMMM D YYYY")}} :</span>  Lorem ipsum dolor sit amet consectetur adipisicing elit. Error aperiam ab nesciunt consequuntur quidem facilis quis, quisquam aut!</router-link>
+      </p>
+      <p>
+        <router-link
+          to
+        ><span class="text-dark">{{new Date() | moment("dddd, MMMM D YYYY")}} :</span>  Lorem ipsum dolor sit amet consectetur adipisicing elit. Error aperiam ab nesciunt consequuntur quidem facilis quis, quisquam aut!</router-link>
+      </p>
+
+      <small>
+        <router-link to class="d-flex align-items-center">
+          <span>
+            View all news
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+          </span>
+        </router-link>
+      </small>
+
+      <div class="d-flex justify-content-evenly">
+        <div class="news_container">
+          <div class="news_img">
+            <img src alt class="rounded" />
+          </div>
+          <div
+            class="news_title"
+          >Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eaque, enim?</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+<script>
+export default {
+  name: "news-component",
+  data() {
+    return {
+      swiperOptions: {
+        pagination: {
+          el: ".swiper-pagination"
+        },
+        autoplay: {
+          delay: 6000
+        }
+      }
+    };
+  }
+};
+</script>
+<style scoped>
+#news {
+  min-height: 300px;
+  background-image: url("/images/texture.png");
+  display: flex;
+  padding: 15px;
+  margin-bottom: 45px;
+}
+.left_box {
+  width: 50%;
+  height: 100%;
+  padding: 10px;
+}
+.right_box {
+  width: 50%;
+  height: 100%;
+  padding: 10px;
+  padding-right: 50px;
+}
+.right_box p a {
+  font-size: 14px;
+  color: #001e00;
+}
+.news_container {
+  width: 30%;
+  height: auto;
+  text-align: center;
+}
+.news_img {
+  width: 100px;
+  height: 100px;
+}
+.news_title {
+  font-size: 12px;
+  text-align: left;
+}
+.news_update {
+  height: 400px;
+}
+.left_header div,.left_header h3{
+  display: inline-block ;
+  vertical-align: baseline;
+}
+.slide{
+    background: #f7f8fa;
+}
+@media(max-width: 1024px){
+
+}
+@media(max-width: 768px){
+  .left_box,.right_box{
+    width:100%;
+  }#news{
+    flex-direction: column;
+  }
+}
+@media(max-width: 425px){
+  
+}
+</style>

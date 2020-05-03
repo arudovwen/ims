@@ -1,0 +1,520 @@
+/*-----------------------------------------------------------------------------
+[ISM] Screen Stylesheet
+
+version:   1.0
+date:      01/03/07
+author:    [Success Ahon]
+email:     [successahon@gmail.com]
+
+website:   [your domain]
+
+version history: [location of file]
+-----------------------------------------------------------------------------*/
+
+
+/* Import other stylesheets
+-----------------------------------------------------------------------------*/
+
+/* Remove margin, padding and border from everything
+-----------------------------------------------------------------------------*/
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+/* Styles for layout
+-----------------------------------------------------------------------------*/
+
+.clear {
+    clear: both;
+}
+
+
+
+.right {
+    float: right;
+}
+
+
+
+.left {
+    float: left;
+}
+
+/* Set up the document
+-----------------------------------------------------------------------------*/
+html {
+    scroll-behavior: smooth;
+    transition: all .6s;
+}
+
+body {
+    font: 62.5%/1.5 "Lucida Grande", "Lucida Sans", Tahoma, Verdana, sans-serif;
+    color: #000000;
+    text-align: center;
+    transition: all .5s;
+    overflow: scroll;
+
+    height: 100%;
+    min-height: 100%;
+}
+
+
+
+#wrapper {
+    width: 980px;
+    /* Set page width here - you can also use percentage */
+    text-align: left;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #FFFFFF;
+}
+
+
+/* Typography
+-----------------------------------------------------------------------------*/
+
+h1 {
+    font-size: 2.2em;
+    /* Equivalent to 22pt */
+}
+
+h2 {
+    font-size: 2.0em;
+    /* Equivalent to 20pt */
+}
+
+h3 {
+    font-size: 1.8em;
+    /* Equivalent to 18pt */
+}
+
+h4 {
+    font-size: 1.6em;
+    /* Equivalent to 18pt */
+}
+
+h5 {
+    font-size: 1.4em;
+    /* Equivalent to 14pt */
+}
+
+p,
+q,
+cite {
+    font-size: 1.2em;
+    /* Equivalent to 12pt */
+}
+
+ul,
+ol,
+dl {
+    list-style: none;
+    font-size: 1.2em;
+    /* Equivalent to 12pt */
+}
+
+li,
+dd,
+dt {
+    font-size: 1.2em;
+    /* Equivalent to 12pt */
+}
+
+.josefin {
+    font-family: 'Josefin Sans';
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* define colors here */
+
+.mc1 {
+    color: #006600;
+}
+
+.mc2 {
+    color: #338433;
+}
+
+.mc3 {
+    color: #99cc99;
+}
+
+.sc1 {
+    color: #335b84;
+}
+
+.sc2 {
+    color: #476b90;
+}
+
+.sc3 {
+    color: #99adc1;
+}
+
+.bg1-dark {
+    background-color: #006600;
+}
+
+.bg1-light {
+    background-color: #669f66;
+}
+
+.w-0 {
+    width: 0;
+}
+
+/* Header
+-----------------------------------------------------------------------------*/
+
+
+
+/* Navigation
+-----------------------------------------------------------------------------*/
+
+
+
+/* Footer
+-----------------------------------------------------------------------------*/
+
+
+
+/* Homepage
+-----------------------------------------------------------------------------*/
+
+
+
+/* Your template
+-----------------------------------------------------------------------------*/
+
+
+/* Forms
+-----------------------------------------------------------------------------*/
+
+
+
+input.text {
+    padding: 3px;
+    border: 1px solid #999999;
+}
+
+
+/* Tables 
+-----------------------------------------------------------------------------*/
+
+
+
+table {
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+
+td {
+    text-align: left;
+    font-weight: normal;
+}
+
+.abs_pos {
+    position: absolute !important;
+}
+
+.rel_pos {
+    position: relative !important;
+}
+
+.top-0 {
+    top: 0
+}
+
+.bottom-0 {
+    bottom: 0;
+}
+
+.right-0 {
+    right: 0;
+}
+
+.left-0 {
+    left: 0;
+}
+.header {
+    position: relative;
+  }
+  .header::after {
+    content: "";
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    width: 80%;
+    height: 20px;
+    position: absolute;
+    bottom: -6px;
+    left: 20%;
+  }
+@media(max-width:425px) {
+
+    h1 {
+        font-size: 2em !important;
+        /* Equivalent to 22pt */
+    }
+
+    h2 {
+        font-size: 1.7em !important;
+        /* Equivalent to 20pt */
+    }
+
+    h3 {
+        font-size: 1.5em !important;
+        /* Equivalent to 18pt */
+    }
+
+    h4 {
+        font-size: 1.2em !important;
+        /* Equivalent to 18pt */
+    }
+
+    h5 {
+        font-size: 1em !important;
+        /* Equivalent to 14pt */
+    }
+
+    .header {
+        position: relative;
+    }
+
+    .header::after {
+        content: "";
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+        width: 65%;
+        height: 20px;
+        position: absolute;
+        bottom: -6px;
+        left: 35%;
+    }
+}
+
+/*!
+ * Hamburgers
+ * @description Tasty CSS-animated hamburgers
+ * @author Jonathan Suh @jonsuh
+ * @site https://jonsuh.com/hamburgers
+ * @link https://github.com/jonsuh/hamburgers
+ */
+.hamburger {
+    padding: 15px 15px;
+    display: inline-block;
+    cursor: pointer;
+    transition-property: opacity, filter;
+    transition-duration: 0.15s;
+    transition-timing-function: linear;
+    font: inherit;
+    color: inherit;
+    text-transform: none;
+    background-color: transparent;
+    border: 0;
+    margin: 0;
+    overflow: visible;
+}
+
+.hamburger:hover {
+    opacity: 0.7;
+}
+
+.hamburger.is-active:hover {
+    opacity: 0.7;
+}
+
+.hamburger.is-active .hamburger-inner,
+.hamburger.is-active .hamburger-inner::before,
+.hamburger.is-active .hamburger-inner::after {
+    background-color: hsl(120, 100%, 95%);
+}
+
+.hamburger-box {
+    width: 25px;
+    height: 20px;
+    display: inline-block;
+    position: relative;
+}
+
+.hamburger-inner {
+    display: block;
+    top: 50%;
+    margin-top: -2px;
+}
+
+.hamburger-inner,
+.hamburger-inner::before,
+.hamburger-inner::after {
+    width: 25px;
+    height: 2px;
+    background-color: hsl(120, 100%, 95%);
+    border-radius: 4px;
+    position: absolute;
+    transition-property: transform;
+    transition-duration: 0.15s;
+    transition-timing-function: ease;
+}
+
+.hamburger-inner::before,
+.hamburger-inner::after {
+    content: "";
+    display: block;
+}
+
+.hamburger-inner::before {
+    top: -10px;
+}
+
+.hamburger-inner::after {
+    bottom: -10px;
+}
+
+
+/*
+     * Collapse
+     */
+.hamburger--collapse .hamburger-inner {
+    top: auto;
+    bottom: 0;
+    transition-duration: 0.13s;
+    transition-delay: 0.13s;
+    transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+
+.hamburger--collapse .hamburger-inner::after {
+    top: -20px;
+    transition: top 0.2s 0.2s cubic-bezier(0.33333, 0.66667, 0.66667, 1), opacity 0.1s linear;
+}
+
+.hamburger--collapse .hamburger-inner::before {
+    transition: top 0.12s 0.2s cubic-bezier(0.33333, 0.66667, 0.66667, 1), transform 0.13s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+
+.hamburger--collapse.is-active .hamburger-inner {
+    transform: translate3d(0, -10px, 0) rotate(-45deg);
+    transition-delay: 0.22s;
+    transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.hamburger--collapse.is-active .hamburger-inner::after {
+    top: 0;
+    opacity: 0;
+    transition: top 0.2s cubic-bezier(0.33333, 0, 0.66667, 0.33333), opacity 0.1s 0.22s linear;
+}
+
+.hamburger--collapse.is-active .hamburger-inner::before {
+    top: 0;
+    transform: rotate(-90deg);
+    transition: top 0.1s 0.16s cubic-bezier(0.33333, 0, 0.66667, 0.33333), transform 0.13s 0.25s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+/*
+     * Collapse Reverse
+     */
+.hamburger--collapse-r .hamburger-inner {
+    top: auto;
+    bottom: 0;
+    transition-duration: 0.13s;
+    transition-delay: 0.13s;
+    transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+
+.hamburger--collapse-r .hamburger-inner::after {
+    top: -20px;
+    transition: top 0.2s 0.2s cubic-bezier(0.33333, 0.66667, 0.66667, 1), opacity 0.1s linear;
+}
+
+.hamburger--collapse-r .hamburger-inner::before {
+    transition: top 0.12s 0.2s cubic-bezier(0.33333, 0.66667, 0.66667, 1), transform 0.13s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+
+.hamburger--collapse-r.is-active .hamburger-inner {
+    transform: translate3d(0, -10px, 0) rotate(45deg);
+    transition-delay: 0.22s;
+    transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.hamburger--collapse-r.is-active .hamburger-inner::after {
+    top: 0;
+    opacity: 0;
+    transition: top 0.2s cubic-bezier(0.33333, 0, 0.66667, 0.33333), opacity 0.1s 0.22s linear;
+}
+
+.hamburger--collapse-r.is-active .hamburger-inner::before {
+    top: 0;
+    transform: rotate(90deg);
+    transition: top 0.1s 0.16s cubic-bezier(0.33333, 0, 0.66667, 0.33333), transform 0.13s 0.25s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+/*
+     * Elastic
+     */
+.hamburger--elastic .hamburger-inner {
+    top: 2px;
+    transition-duration: 0.275s;
+    transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.hamburger--elastic .hamburger-inner::before {
+    top: 10px;
+    transition: opacity 0.125s 0.275s ease;
+}
+
+.hamburger--elastic .hamburger-inner::after {
+    top: 20px;
+    transition: transform 0.275s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.hamburger--elastic.is-active .hamburger-inner {
+    transform: translate3d(0, 10px, 0) rotate(135deg);
+    transition-delay: 0.075s;
+}
+
+.hamburger--elastic.is-active .hamburger-inner::before {
+    transition-delay: 0s;
+    opacity: 0;
+}
+
+.hamburger--elastic.is-active .hamburger-inner::after {
+    transform: translate3d(0, -20px, 0) rotate(-270deg);
+    transition-delay: 0.075s;
+}
+
+/*
+     * Elastic Reverse
+     */
+.hamburger--elastic-r .hamburger-inner {
+    top: 2px;
+    transition-duration: 0.275s;
+    transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.hamburger--elastic-r .hamburger-inner::before {
+    top: 10px;
+    transition: opacity 0.125s 0.275s ease;
+}
+
+.hamburger--elastic-r .hamburger-inner::after {
+    top: 20px;
+    transition: transform 0.275s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.hamburger--elastic-r.is-active .hamburger-inner {
+    transform: translate3d(0, 10px, 0) rotate(-135deg);
+    transition-delay: 0.075s;
+}
+
+.hamburger--elastic-r.is-active .hamburger-inner::before {
+    transition-delay: 0s;
+    opacity: 0;
+}
+
+.hamburger--elastic-r.is-active .hamburger-inner::after {
+    transform: translate3d(0, -20px, 0) rotate(270deg);
+    transition-delay: 0.075s;
+}
