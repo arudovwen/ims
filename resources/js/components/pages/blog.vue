@@ -1,5 +1,6 @@
 <template>
 <div>
+   <scrollTop/>
   <Navigation />
   <div id="main-content">
     <div class="container">
@@ -317,9 +318,11 @@
 
 <script>
 import Navigation from "../navigation/navigation.vue";
+import scrollTop from '../scrollTopComponent'
 export default {
   components: {
-    Navigation
+    Navigation,
+    scrollTop
   }
 };
 </script>

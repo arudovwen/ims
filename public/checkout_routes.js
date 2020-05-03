@@ -247,6 +247,8 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _navigation_navigation_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../navigation/navigation.vue */ "./resources/js/components/navigation/navigation.vue");
+/* harmony import */ var _scrollTopComponent__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../scrollTopComponent */ "./resources/js/components/scrollTopComponent.vue");
+//
 //
 //
 //
@@ -254,9 +256,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
-    Navigation: _navigation_navigation_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
+    Navigation: _navigation_navigation_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
+    scrollTop: _scrollTopComponent__WEBPACK_IMPORTED_MODULE_1__["default"]
   }
 });
 
@@ -272,6 +276,8 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _navigation_navigation_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../navigation/navigation.vue */ "./resources/js/components/navigation/navigation.vue");
+/* harmony import */ var _scrollTopComponent__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../scrollTopComponent */ "./resources/js/components/scrollTopComponent.vue");
+//
 //
 //
 //
@@ -279,9 +285,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
-    Navigation: _navigation_navigation_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
+    Navigation: _navigation_navigation_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
+    scrollTop: _scrollTopComponent__WEBPACK_IMPORTED_MODULE_1__["default"]
   }
 });
 
@@ -297,6 +305,8 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _navigation_navigation_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../navigation/navigation.vue */ "./resources/js/components/navigation/navigation.vue");
+/* harmony import */ var _scrollTopComponent__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../scrollTopComponent */ "./resources/js/components/scrollTopComponent.vue");
+//
 //
 //
 //
@@ -615,9 +625,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
-    Navigation: _navigation_navigation_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
+    Navigation: _navigation_navigation_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
+    scrollTop: _scrollTopComponent__WEBPACK_IMPORTED_MODULE_1__["default"]
   }
 });
 
@@ -633,6 +645,8 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _navigation_navigation_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../navigation/navigation.vue */ "./resources/js/components/navigation/navigation.vue");
+/* harmony import */ var _scrollTopComponent__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../scrollTopComponent */ "./resources/js/components/scrollTopComponent.vue");
+//
 //
 //
 //
@@ -680,9 +694,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
-    Navigation: _navigation_navigation_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
+    Navigation: _navigation_navigation_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
+    scrollTop: _scrollTopComponent__WEBPACK_IMPORTED_MODULE_1__["default"]
   }
 });
 
@@ -698,6 +714,8 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _navigation_navigation_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../navigation/navigation.vue */ "./resources/js/components/navigation/navigation.vue");
+/* harmony import */ var _scrollTopComponent__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../scrollTopComponent */ "./resources/js/components/scrollTopComponent.vue");
+//
 //
 //
 //
@@ -705,9 +723,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
-    Navigation: _navigation_navigation_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
+    Navigation: _navigation_navigation_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
+    scrollTop: _scrollTopComponent__WEBPACK_IMPORTED_MODULE_1__["default"]
   }
 });
 
@@ -723,6 +743,8 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _navigation_navigation_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../navigation/navigation.vue */ "./resources/js/components/navigation/navigation.vue");
+/* harmony import */ var _scrollTopComponent__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../scrollTopComponent */ "./resources/js/components/scrollTopComponent.vue");
+//
 //
 //
 //
@@ -730,9 +752,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
-    Navigation: _navigation_navigation_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
+    Navigation: _navigation_navigation_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
+    scrollTop: _scrollTopComponent__WEBPACK_IMPORTED_MODULE_1__["default"]
   }
 });
 
@@ -748,6 +772,8 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _navigation_navigation_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../navigation/navigation.vue */ "./resources/js/components/navigation/navigation.vue");
+/* harmony import */ var _scrollTopComponent__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../scrollTopComponent */ "./resources/js/components/scrollTopComponent.vue");
+//
 //
 //
 //
@@ -755,9 +781,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
-    Navigation: _navigation_navigation_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
+    Navigation: _navigation_navigation_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
+    scrollTop: _scrollTopComponent__WEBPACK_IMPORTED_MODULE_1__["default"]
   }
 });
 
@@ -1340,7 +1368,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [_c("Navigation")], 1)
+  return _c("div", [_c("scrollTop"), _vm._v(" "), _c("Navigation")], 1)
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -1364,7 +1392,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [_c("Navigation")], 1)
+  return _c("div", [_c("scrollTop"), _vm._v(" "), _c("Navigation")], 1)
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -1391,6 +1419,8 @@ var render = function() {
   return _c(
     "div",
     [
+      _c("scrollTop"),
+      _vm._v(" "),
       _c("Navigation"),
       _vm._v(" "),
       _c("div", { attrs: { id: "main-content" } }, [
@@ -2026,7 +2056,11 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [_c("Navigation"), _vm._v(" "), _vm._m(0)], 1)
+  return _c(
+    "div",
+    [_c("scrollTop"), _vm._v(" "), _c("Navigation"), _vm._v(" "), _vm._m(0)],
+    1
+  )
 }
 var staticRenderFns = [
   function() {
@@ -2159,7 +2193,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [_c("Navigation")], 1)
+  return _c("div", [_c("scrollTop"), _vm._v(" "), _c("Navigation")], 1)
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -2183,7 +2217,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [_c("Navigation")], 1)
+  return _c("div", [_c("scrollTop"), _vm._v(" "), _c("Navigation")], 1)
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -2207,7 +2241,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [_c("Navigation")], 1)
+  return _c("div", [_c("scrollTop"), _vm._v(" "), _c("Navigation")], 1)
 }
 var staticRenderFns = []
 render._withStripped = true

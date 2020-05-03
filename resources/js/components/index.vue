@@ -1,6 +1,6 @@
 <template>
     <div>
-          <scrollTop/>
+          <!-- <scrollTop/> -->
           <Navigation/>
           <!-- <router-view></router-view> -->
         
@@ -10,12 +10,12 @@
 </template>
 <script>
 import Navigation from './navigation/navigation'
-import scrollTop from './user/scrollTopComponent'
+// import scrollTop from '../user/scrollTopComponent'
 
 export default {
     components:{
         Navigation,
-        scrollTop
+        // scrollTop
     }
 }
 </script>

@@ -1,5 +1,6 @@
 <template>
  <div>
+    <scrollTop/>
     <Navigation />
     <div id="contact">
     <div class="right_box"></div>
@@ -46,9 +47,11 @@
 </template>
 <script>
 import Navigation from "../navigation/navigation.vue";
+import scrollTop from '../scrollTopComponent'
 export default {
    components:{
         Navigation,
+        scrollTop
     }
 };
 </script>

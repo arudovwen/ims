@@ -1,5 +1,6 @@
 <template>
   <div class="container">
+     <scrollTop/>
     <Navigation />
     <section>
       <Announcement />
@@ -23,6 +24,7 @@ import News from "../user/news";
 import Services from "../user/services";
 import Commissioner from "../user/commissioner";
 import Projects from "../user/projects";
+import scrollTop from '../scrollTopComponent'
 
 export default {
   components: {
@@ -33,7 +35,8 @@ export default {
     Commissioner,
     Projects,
     Navigation,
-    Footer
+    Footer,
+    scrollTop
   },
   mounted() {}
 };
