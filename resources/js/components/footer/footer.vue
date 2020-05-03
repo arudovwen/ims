@@ -17,7 +17,7 @@ export default {
 <style scoped>
 #footer {
   width: 100%;
-  background: #f7f8fa;
+  background: linear-gradient(rgba(186,184,157,0.8) 0%,rgba(186,184,157,0.0001) 100%);
   position: relative;
   bottom: 0;
 }

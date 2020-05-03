@@ -297,6 +297,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "main-nav-component",
   data: function data() {
@@ -309,9 +311,17 @@ __webpack_require__.r(__webpack_exports__);
       this.show_nav_bar = false;
     }
   },
+  watch: {
+    $route: "closeNav"
+  },
   methods: {
     showNav: function showNav() {
       this.show_nav_bar = !this.show_nav_bar;
+    },
+    closeNav: function closeNav() {
+      if (window.innerWidth < 768) {
+        this.show_nav_bar = false;
+      }
     }
   }
 });
@@ -384,6 +394,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "top-nav-component",
   data: function data() {
@@ -421,8 +432,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: 'announcement-component'
+  name: 'announcement-component',
+  data: function data() {
+    return {};
+  }
 });
 
 /***/ }),
@@ -661,6 +677,47 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "news-component",
   data: function data() {
@@ -688,6 +745,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
 //
 //
 //
@@ -767,22 +825,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -1002,6 +1044,142 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "services-component"
 });
@@ -1039,7 +1217,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n#footer[data-v-77ec68d4] {\n  width: 100%;\n  background: #f7f8fa;\n  position: relative;\n  bottom: 0;\n}\n", ""]);
+exports.push([module.i, "\n#footer[data-v-77ec68d4] {\n  width: 100%;\n  background: linear-gradient(rgba(186,184,157,0.8) 0%,rgba(186,184,157,0.0001) 100%);\n  position: relative;\n  bottom: 0;\n}\n", ""]);
 
 // exports
 
@@ -1058,7 +1236,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n#top_footer[data-v-47d0d427] {\n  width: 100%;\n  padding: 30px 15px;\n}\n.quick_links[data-v-47d0d427] {\n  width: 80%;\n  margin: 0 auto;\n  display: grid;\n  grid-template-columns: 30% 30% 40%;\n  grid-column-gap: 50px;\n  height: 300px;\n  background: #f7f8fa;\n}\n.links[data-v-47d0d427] {\n  text-align: left;\n}\n.links_header[data-v-47d0d427] {\n  padding: 10px;\n  border-bottom: 3px solid #006600;\n  color: #006600;\n}\n.links ul li a[data-v-47d0d427] {\n  color: #777777;\n  font-weight: 300;\n  font-size: 13px;\n  text-transform: uppercase;\n\n  padding-bottom: 5px;\n}\n.links ul li[data-v-47d0d427] {\n  border-bottom: 1px solid #ccc;\n}\np[data-v-47d0d427] {\n  font-size: 14px;\n}\n@media(max-width: 1024px){\n.quick_links[data-v-47d0d427]{\n    width: 100%;\n}\n}\n@media(max-width: 768px){\n.quick_links[data-v-47d0d427]{\n\n    grid-template-columns: auto;\n    grid-row-gap: 30px;\n      height: auto;\n}\n.links[data-v-47d0d427]{\n      text-align: center;\n}\n}\n@media(max-width: 425px){\n}\n", ""]);
+exports.push([module.i, "\n#top_footer[data-v-47d0d427] {\n  width: 100%;\n  padding: 30px 15px;\n}\n.quick_links[data-v-47d0d427] {\n  width: 80%;\n  margin: 0 auto;\n  display: grid;\n  grid-template-columns: 30% 30% 40%;\n  grid-column-gap: 50px;\n  height: 300px;\n}\n.links[data-v-47d0d427] {\n  text-align: left;\n}\n.links_header[data-v-47d0d427] {\n  padding: 10px;\n  border-bottom: 3px solid #006600;\n  color: #006600;\n}\n.links ul li a[data-v-47d0d427] {\n  color: #777777;\n  font-weight: 300;\n  font-size: 13px;\n  text-transform: uppercase;\n\n  padding-bottom: 5px;\n}\n.links ul li[data-v-47d0d427] {\n  border-bottom: 1px solid #ccc;\n}\np[data-v-47d0d427] {\n  font-size: 14px;\n}\n@media(max-width: 1024px){\n.quick_links[data-v-47d0d427]{\n    width: 100%;\n}\n}\n@media(max-width: 768px){\n.quick_links[data-v-47d0d427]{\n\n    grid-template-columns: auto;\n    grid-row-gap: 30px;\n      height: auto;\n}\n.links[data-v-47d0d427]{\n      text-align: center;\n}\n}\n@media(max-width: 425px){\n}\n", ""]);
 
 // exports
 
@@ -1077,7 +1255,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n#bottom_nav[data-v-4b0ea24d] {\n  width: 100%;\n  position: relative;\n  background-color: #006600;\n  border-top: 6px solid #669f66;\n}\n.mobile[data-v-4b0ea24d] {\n  display: none !important;\n}\nstrong[data-v-4b0ea24d]{\n  color: hsl(120, 100%, 95%);\n}\n.nav_bar[data-v-4b0ea24d] {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n\n  padding: 0 20px;\n  margin: 0;\n}\n.nav_bar li[data-v-4b0ea24d] {\n  text-align: center;\n  color: #fff;\n  font-weight: normal;\n  font-size: 15px;\n  border-bottom: 5px solid transparent;\n  padding: 10px;\n  position: relative;\n}\n.nav_bar li[data-v-4b0ea24d]:hover {\n  transition: border 0.6s;\n  border-color: #191975;\n}\n.nav_bar li a[data-v-4b0ea24d] {\n  color: white;\n  height: 4.2em;\n  text-decoration: none;\n  text-transform: uppercase;\n}\n.nav_bar li:hover a[data-v-4b0ea24d] {\n  color: #191975;\n}\n.nav_bar li a .nav_text[data-v-4b0ea24d] {\n  transition: all 0.6s;\n}\n.nav_bar li:hover a .nav_text[data-v-4b0ea24d] {\n  transform: translateY(10px);\n}\n.icon[data-v-4b0ea24d] {\n  margin-left: auto;\n  margin-right: auto;\n  display: block;\n  box-shadow: 0 0 0 20px transparent;\n  background: rgba(255, 255, 255, 0.1);\n  transform: translate3d(0, 0, 0);\n  transition: box-shadow 0.6s ease-in-out;\n  border-radius: 50%;\n}\n.nav_bar li a div[data-v-4b0ea24d] {\n  margin-top: 0.2em;\n}\n.icon .fa-circle[data-v-4b0ea24d] {\n  color: rgb(255, 255, 255, 0.1);\n}\n.nav_bar_icon[data-v-4b0ea24d]::before {\n  padding: 4px;\n  border-radius: 50%;\n  font-size: 1em;\n}\n.nav_bar li:hover a .icon[data-v-4b0ea24d] {\n  box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.2);\n  transition: box-shadow 0.4s ease-in-out;\n}\n.sub_nav[data-v-4b0ea24d] {\n  display: none;\n  background: #fff;\n  padding: 10px;\n  border-radius: 4px;\n  position: absolute;\n  box-shadow: 0 0 4px 1px #f7f8fa;\n  top: 83px;\n  width: 200px;\n}\n.sub_nav[data-v-4b0ea24d]::before {\n  content: \"\";\n  background: #fff;\n  border-top: 1px solid #fff;\n  border-right: 1px solid #fff;\n  transform: rotate(-45deg);\n  position: absolute;\n  top: -6px;\n  width: 20px;\n  height: 20px;\n}\n.sub_nav li[data-v-4b0ea24d] {\n  border-bottom: 1px solid #f7f8fa;\n  padding: 10px 5px;\n  color: #777777;\n}\n.nav_bar li:hover .sub_nav[data-v-4b0ea24d] {\n  transition: display ease-in-out;\n  display: block;\n}\n@media (max-width: 1024px) {\n}\n@media (max-width: 768px) {\n.nav_bar[data-v-4b0ea24d] {\n    flex-direction: column;\n}\n.mobile[data-v-4b0ea24d] {\n    display: block !important;\n}\n}\n@media (max-width: 425px) {\n}\n", ""]);
+exports.push([module.i, "\n#bottom_nav[data-v-4b0ea24d] {\n  width: 100%;\n  position: relative;\n  background-color: #006600;\n  border-top: 6px solid #669f66;\n  z-index: 99;\n}\n.mobile[data-v-4b0ea24d] {\n  display: none !important;\n}\nstrong[data-v-4b0ea24d] {\n  color: hsl(120, 100%, 95%);\n}\n.nav_bar[data-v-4b0ea24d] {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n\n  padding: 0 20px;\n  margin: 0;\n}\n.nav_bar li[data-v-4b0ea24d] {\n  text-align: center;\n  color: #fff;\n  font-weight: normal;\n  font-size: 15px;\n  border-bottom: 5px solid transparent;\n  padding: 10px;\n  position: relative;\n}\n.nav_bar li[data-v-4b0ea24d]:hover {\n  transition: border 0.6s;\n  border-color: #191975;\n}\n.nav_bar li a[data-v-4b0ea24d] {\n  color: white;\n  height: 4.2em;\n  text-decoration: none;\n  text-transform: uppercase;\n}\n.nav_bar li:hover a[data-v-4b0ea24d] {\n  color: #191975;\n}\n.nav_bar li a .nav_text[data-v-4b0ea24d] {\n  transition: all 0.6s;\n}\n.nav_bar li:hover a .nav_text[data-v-4b0ea24d] {\n  transform: translateY(10px);\n}\n.icon[data-v-4b0ea24d] {\n  margin-left: auto;\n  margin-right: auto;\n  display: block;\n  box-shadow: 0 0 0 20px transparent;\n  background: rgba(255, 255, 255, 0.1);\n  transform: translate3d(0, 0, 0);\n  transition: box-shadow 0.6s ease-in-out;\n  border-radius: 50%;\n}\n.nav_bar li a div[data-v-4b0ea24d] {\n  margin-top: 0.2em;\n}\n.icon .fa-circle[data-v-4b0ea24d] {\n  color: rgb(255, 255, 255, 0.1);\n}\n.nav_bar_icon[data-v-4b0ea24d]::before {\n  padding: 4px;\n  border-radius: 50%;\n  font-size: 1em;\n}\n.nav_bar li:hover a .icon[data-v-4b0ea24d] {\n  box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.2);\n  transition: box-shadow 0.4s ease-in-out;\n}\n.sub_nav[data-v-4b0ea24d] {\n  display: none;\n  background: #fff;\n  padding: 10px;\n  border-radius: 4px;\n  position: absolute;\n  box-shadow: 0 0 4px 1px #f7f8fa;\n  top: 83px;\n  width: 200px;\n}\n.sub_nav[data-v-4b0ea24d]::before {\n  content: \"\";\n  background: #fff;\n  border-top: 1px solid #fff;\n  border-right: 1px solid #fff;\n  transform: rotate(-45deg);\n  position: absolute;\n  top: -6px;\n  width: 20px;\n  height: 20px;\n}\n.sub_nav li[data-v-4b0ea24d] {\n  border-bottom: 1px solid #f7f8fa;\n  padding: 10px 5px;\n  color: #777777;\n}\n.nav_bar li:hover .sub_nav[data-v-4b0ea24d] {\n  transition: display ease-in-out;\n  display: block;\n}\n@media (max-width: 1024px) {\n}\n@media (max-width: 768px) {\n.nav_bar[data-v-4b0ea24d] {\n    flex-direction: column;\n}\n.mobile[data-v-4b0ea24d] {\n    display: block !important;\n}\n.nav_bar li[data-v-4b0ea24d] {\n    width: 100%;\n}\n.nav_bar li a[data-v-4b0ea24d] {\n    display: flex;\n    height: auto;\n    align-items: center;\n}\n.icon[data-v-4b0ea24d] {\n    margin: 0;\n    margin-right: 30px;\n}\n.sub_nav[data-v-4b0ea24d] {\n    display: none;\n}\n}\n@media (max-width: 425px) {\n}\n", ""]);
 
 // exports
 
@@ -1115,7 +1293,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n#top_nav[data-v-7a6da0d9] {\n  width: 100%;\n  display: flex;\n  padding: 10px 15px;\n  justify-content: space-between;\n  align-items: center;\n  background: #fff;\n}\n.logo[data-v-7a6da0d9] {\n  font-size: 32px;\n}\n.side_info[data-v-7a6da0d9] {\n  display: flex;\n  align-items: center;\n}\n.search_icon[data-v-7a6da0d9] {\n  font-size: 19px;\n  right: -14px;\n}\n.updates[data-v-7a6da0d9] {\n  background: #f7f8fa;\n  width: 400px;\n  height: 100%;\n}\na[data-v-7a6da0d9]{\n    text-decoration: none;\n}\n@media(max-width: 1024px){\n.logo[data-v-7a6da0d9]{\n   font-size: 24px;\n}\n.updates[data-v-7a6da0d9]{\n   width: 200px;\n   margin: 0 0 10px 0;\n}\n}\n@media(max-width: 768px){\n.logo[data-v-7a6da0d9]{\n   font-size: 18px;\n}\n.side_info[data-v-7a6da0d9]{\n   flex-direction: column-reverse;\n}\n}\n@media(max-width: 425px){\n.logo[data-v-7a6da0d9]{\n   font-size: 16px;\n}\n}\n", ""]);
+exports.push([module.i, "\n#top_nav[data-v-7a6da0d9] {\n  width: 100%;\n  display: flex;\n  padding: 10px 15px;\n  justify-content: space-between;\n  align-items: center;\n  background: #fff;\n}\n.logo[data-v-7a6da0d9] {\n  font-size: 32px;\n}\n.side_info[data-v-7a6da0d9] {\n  display: flex;\n  align-items: center;\n}\n.search_icon[data-v-7a6da0d9] {\n  font-size: 19px;\n  right: -14px;\n}\n.updates[data-v-7a6da0d9] {\n  width: 400px;\n  height: 100%;\n}\na[data-v-7a6da0d9]{\n    text-decoration: none;\n}\n.slide[data-v-7a6da0d9]{\n  text-align: right;\n  padding: 0 20px;\n  color: rgba(0, 0,0 ,.5);\n  font-size: 14px;\n  font-family: 'Josefin Sans';\n}\n@media(max-width: 1024px){\n.logo[data-v-7a6da0d9]{\n   font-size: 24px;\n}\n.updates[data-v-7a6da0d9]{\n   width: 200px;\n   margin: 0 0 10px 0;\n}\n}\n@media(max-width: 768px){\n.logo[data-v-7a6da0d9]{\n   font-size: 18px;\n}\n.side_info[data-v-7a6da0d9]{\n   flex-direction: column-reverse;\n}\n}\n@media(max-width: 425px){\n.logo[data-v-7a6da0d9]{\n   font-size: 16px;\n}\n}\n", ""]);
 
 // exports
 
@@ -1153,7 +1331,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n#commissioner[data-v-853a5c3e] {\n  display: flex;\n  padding:45px 15px 65px;\n  height: auto;\n}\n.left_box[data-v-853a5c3e] {\n  width: 70%;\n  padding: 10px;\n  height: 100%;\n}\n.right_box[data-v-853a5c3e] {\n  width: 30%;\n  height: 100%;\n  background: #006600;\n  padding: 10px;\n}\n.comm_body[data-v-853a5c3e] {\n  display: flex;\n  justify-content: space-between;\n  padding: 10px;\n  height: 100%;\n}\n.comm_header[data-v-853a5c3e] {\n  font-weight: 300;\n  text-align: center;\n}\n.comm_image[data-v-853a5c3e] {\n  width: 50%;\n  height: 300px;\n  background: chartreuse;\n  padding: 0 15px;\n}\n.comm_image img[data-v-853a5c3e] {\n  width: 100%;\n  height: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.comm_about[data-v-853a5c3e] {\n  width: 40%;\n  padding: 0 25px;\n  text-align: left;\n  border-left: 5px solid #f7f8fa;\n  height: 50%;\n}\n.latest_update[data-v-853a5c3e] {\n  width: 100%;\n  height: 400px;\n}\n.slide[data-v-853a5c3e] {\n  background: #f7f8fa;\n  display: flex;\n  align-items: center;\n}\n.img_contain[data-v-853a5c3e] {\n  width: 25%;\n}\n.img_text[data-v-853a5c3e] {\n  width: 75%;\n  padding: 10px;\n  text-align: left;\n  font-size: 13px;\n}\n.header[data-v-853a5c3e]{\n  color: hsl(120, 100%, 85%);\n}\n@media(max-width: 1024px){\n}\n@media(max-width: 768px){\n.comm_body[data-v-853a5c3e]{\n    flex-direction: column;\n}\n.comm_about[data-v-853a5c3e]{\n    width: 100%;\n}\n.comm_image[data-v-853a5c3e]{\n    margin: 0 auto 20px;\n    width: 70%;\n}\n#commissioner[data-v-853a5c3e]{\n    flex-direction: column;\n    height: auto;\n    padding-bottom: 45px;\n}\n.left_box[data-v-853a5c3e],.right_box[data-v-853a5c3e]{\n    width: 100%;\n}\n}\n@media(max-width: 425px){\n}\n", ""]);
+exports.push([module.i, "\n#commissioner[data-v-853a5c3e] {\n  display: flex;\n  padding:45px 15px 65px;\n  height: auto;\n  width: 100%;\n  margin:0 auto;\n}\n.left_box[data-v-853a5c3e] {\n  width: 60%;\n  padding: 10px;\n  height: 100%;\n}\n.right_box[data-v-853a5c3e] {\n  width: 40%;\n  height: 100%;\n  background: #006600;\n  padding: 10px;\n  border-radius:10px;\n}\n.comm_body[data-v-853a5c3e] {\n  display: flex;\n  justify-content: space-between;\n  padding: 10px;\n  height: 100%;\n}\n.comm_header[data-v-853a5c3e] {\n  font-weight: 300;\n  text-align: center;\n}\n.comm_image[data-v-853a5c3e] {\n  width: 50%;\n  height: 400px;\n  padding: 0 15px;\n}\n.comm_image img[data-v-853a5c3e] {\n  width: 100%;\n  height: 100%;\n  -o-object-fit: contain;\n     object-fit: contain;\n}\n.comm_about[data-v-853a5c3e] {\n  width: 50%;\n  padding: 0 25px;\n  text-align: left;\n  border-left: 5px solid #f7f8fa;\n  height: 50%;\n}\n.latest_update[data-v-853a5c3e] {\n  width: 100%;\n  height: 400px;\n}\n.slide[data-v-853a5c3e] {\n  background: #f7f8fa;\n  display: flex;\n  align-items: center;\n  padding: 10px;\n}\n.img_contain[data-v-853a5c3e] {\n  width: 30%;\n  height: 100%;\n}\n.img_contain img[data-v-853a5c3e]{\n  width: 100%;\n  height: 100%;\n}\n.img_text[data-v-853a5c3e] {\n  width: 70%;\n  padding: 10px;\n  text-align: left;\n  font-size: 13px;\n}\n.top_header[data-v-853a5c3e]{\n  color: hsl(120, 100%, 90%);\n}\n@media(max-width: 1024px){\n}\n@media(max-width: 768px){\n.comm_body[data-v-853a5c3e]{\n    flex-direction: column;\n}\n.comm_about[data-v-853a5c3e]{\n    width: 100%;\n}\n.comm_image[data-v-853a5c3e]{\n    margin: 0 auto 20px;\n    width: 70%;\n}\n#commissioner[data-v-853a5c3e]{\n    flex-direction: column;\n    height: auto;\n    padding-bottom: 45px;\n     width: 100%;\n}\n.left_box[data-v-853a5c3e],.right_box[data-v-853a5c3e]{\n    width: 100%;\n}\n}\n@media(max-width: 425px){\n}\n", ""]);
 
 // exports
 
@@ -1191,7 +1369,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n#news[data-v-f1242548] {\n  min-height: 300px;\n  background-image: url(\"/images/texture.png\");\n  display: flex;\n  padding: 15px;\n  margin-bottom: 45px;\n}\n.left_box[data-v-f1242548] {\n  width: 50%;\n  height: 100%;\n  padding: 10px;\n}\n.right_box[data-v-f1242548] {\n  width: 50%;\n  height: 100%;\n  padding: 10px;\n  padding-right: 50px;\n}\n.right_box p a[data-v-f1242548] {\n  font-size: 14px;\n  color: #001e00;\n}\n.news_container[data-v-f1242548] {\n  width: 30%;\n  height: auto;\n  text-align: center;\n}\n.news_img[data-v-f1242548] {\n  width: 100px;\n  height: 100px;\n}\n.news_title[data-v-f1242548] {\n  font-size: 12px;\n  text-align: left;\n}\n.news_update[data-v-f1242548] {\n  height: 400px;\n}\n.left_header div[data-v-f1242548],.left_header h3[data-v-f1242548]{\n  display: inline-block ;\n  vertical-align: baseline;\n}\n.slide[data-v-f1242548]{\n    background: #f7f8fa;\n}\n@media(max-width: 1024px){\n}\n@media(max-width: 768px){\n.left_box[data-v-f1242548],.right_box[data-v-f1242548]{\n    width:100%;\n}#news[data-v-f1242548]{\n    flex-direction: column;\n}\n}\n@media(max-width: 425px){\n}\n", ""]);
+exports.push([module.i, "\n#news[data-v-f1242548] {\n  min-height: 300px;\n  background-image: url(\"/images/texture.png\");\n  display: flex;\n  padding: 15px;\n  margin-bottom: 45px;\n}\n.left_box[data-v-f1242548] {\n  width: 50%;\n  height: 100%;\n  padding: 10px;\n}\n.right_box[data-v-f1242548] {\n  width: 50%;\n  height: 100%;\n  padding: 10px;\n  padding-right: 50px;\n}\n.right_box p a[data-v-f1242548] {\n  font-size: 14px;\n  color: #001e00;\n}\n.news_container[data-v-f1242548] {\n  width: 150px;\n  height: auto;\n  text-align: center;\n}\n.news_img[data-v-f1242548] {\n  width: 100%;\n  height: 100px;\n}\n.news_img img[data-v-f1242548]{\n  width:100%;\n  height: 100%;\n}\n.news_title[data-v-f1242548] {\n  font-size: 12px;\n  text-align: left;\n}\n.news_update[data-v-f1242548] {\n  height: 400px;\n}\n.sub_news[data-v-f1242548]{\n  margin-top: 40px;\n  display: flex;\n  justify-content: space-between;\n}\n.left_header div[data-v-f1242548],.left_header h3[data-v-f1242548]{\n  display: inline-block ;\n  vertical-align: baseline;\n}\n.slide[data-v-f1242548]{\n    background: #f7f8fa;\n}\n.img_container[data-v-f1242548]{\n  position: relative;\n  width:100%;\n  height: 100%;\n}\n.img_text1[data-v-f1242548]{\n  position: absolute;\n  bottom: 125px;\n  background: rgba(0, 0, 0,0.5);\n  color:white;\n  z-index: 2;\n  width: auto;\n  padding: 10px;\n  text-align: center;\n}\n.img_text2[data-v-f1242548]{\n  position: absolute;\n  bottom: 50px;\n  background: rgba(0, 0, 0,0.5);\n  color:white;\n  z-index: 2;\n  width: 100%;\n  padding: 10px;\n  text-align: center;\n  text-align: left;\n}\n@media(max-width: 1024px){\n}\n@media(max-width: 768px){\n.left_box[data-v-f1242548],.right_box[data-v-f1242548]{\n    width:100%;\n}#news[data-v-f1242548]{\n    flex-direction: column;\n}\n}\n@media(max-width: 425px){\n}\n", ""]);
 
 // exports
 
@@ -1210,7 +1388,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n#polls[data-v-4f7985db] {\n  padding:10px 15px 65px;\n  height: auto;\n}\n.my-poll[data-v-4f7985db] {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n}\n.tab[data-v-4f7985db] {\n  background: #f7f8fa;\nheight: 400px;\n  width: 32%;\n  padding: 15px;\n}\n.newsletter[data-v-4f7985db]{\n     display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-direction: column;\n}\np[data-v-4f7985db] {\n  font-size: 14px;\n}\n.my_affiliates[data-v-4f7985db] {\n  height: 300px;\n}\n.slide[data-v-4f7985db] {\n  background: white;\n}\n.op_poll[data-v-4f7985db]{\n  height: 60%;\n}\n.payment[data-v-4f7985db]{\n  height: 40%;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n@media(max-width: 1024px){\n}\n@media(max-width: 768px){\n.my-poll[data-v-4f7985db]{\n    flex-direction: column-reverse;\n}\n.tab[data-v-4f7985db]{\n    height: auto;\n    width: 100%;\n    margin-bottom: 30px;\n}\n}\n@media(max-width: 425px){\n}\n", ""]);
+exports.push([module.i, "\n#polls[data-v-4f7985db] {\n  padding:30px 15px 65px;\n  height: auto;\n  background: #cbe0cc;\n  border-bottom: 6px solid #006600;\n}\n.my-poll[data-v-4f7985db] {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n}\n.tab[data-v-4f7985db] {\n  background: #f7f8fa;\nheight: 400px;\n  width: 32%;\n  padding: 15px;\n  border-radius: 10px;\n}\n.newsletter[data-v-4f7985db]{\n     display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-direction: column;\n}\np[data-v-4f7985db] {\n  font-size: 14px;\n}\n.my_affiliates[data-v-4f7985db] {\n  height: 300px;\n}\n.slide[data-v-4f7985db] {\n  background: white;\n}\n.op_poll[data-v-4f7985db]{\n  height: 60%;\n}\n.payment[data-v-4f7985db]{\n  height: 40%;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.news_img[data-v-4f7985db]{\n  width: 80px;\n  height: auto;\n}\n@media(max-width: 1024px){\n}\n@media(max-width: 768px){\n.my-poll[data-v-4f7985db]{\n    flex-direction: column-reverse;\n}\n.tab[data-v-4f7985db]{\n    height: auto;\n    width: 100%;\n    margin-bottom: 30px;\n}\n}\n@media(max-width: 425px){\n}\n", ""]);
 
 // exports
 
@@ -1229,7 +1407,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n#projects[data-v-437e2f03] {\n  padding: 40px 20px;\n  height: auto;\n}\n.my-projects[data-v-437e2f03] {\n  height: 350px;\n}\n.slide[data-v-437e2f03] {\n  background: #f7f8fa;\n}\n.img_contain[data-v-437e2f03] {\n  width: 100%;\n  height: 80%;\n}\n.img_text[data-v-437e2f03] {\n  width: 100%;\n  padding: 10px;\n  text-align: left;\n  font-size: 15px;\n  height: 20%;\n  text-align: center;\n}\n@media (max-width: 1024px) {\n}\n@media (max-width: 768px) {\np[data-v-437e2f03] {\n    font-size: 13.5px;\n}\n.img_text[data-v-437e2f03] {\n    height: auto;\n}\n.my-projects[data-v-437e2f03] {\n    height: 250px;\n}\n.img_contain[data-v-437e2f03] {\n    height: auto;\n}\n}\n@media (max-width: 425px) {\np[data-v-437e2f03] {\n    font-size: 11px;\n}\n.my-projects[data-v-437e2f03] {\n    height: 150px;\n}\n}\n", ""]);
+exports.push([module.i, "\n#projects[data-v-437e2f03] {\n  padding: 40px 20px;\n  height: auto;\n}\n.my-projects[data-v-437e2f03] {\n  height: 350px;\n}\n.slide[data-v-437e2f03] {\n  background: #f7f8fa;\n}\n.img_contain[data-v-437e2f03] {\n  width: 100%;\n  height: 80%;\n}\n.img_contain img[data-v-437e2f03]{\n  width: 100%;\n  height: 100%;\n}\n.img_text[data-v-437e2f03] {\n  width: 100%;\n  padding: 10px;\n  text-align: left;\n  font-size: 15px;\n  height: 20%;\n  text-align: center;\n  background: #006600;\n  color: hsl(120, 100%, 90%);\n}\n@media (max-width: 1024px) {\n}\n@media (max-width: 768px) {\np[data-v-437e2f03] {\n    font-size: 13.5px;\n}\n.img_text[data-v-437e2f03] {\n    height: auto;\n}\n.my-projects[data-v-437e2f03] {\n    height: 250px;\n}\n.img_contain[data-v-437e2f03] {\n    height: auto;\n}\n}\n@media (max-width: 425px) {\np[data-v-437e2f03] {\n    font-size: 11px;\n}\n.my-projects[data-v-437e2f03] {\n    height: 160px;\n}\n.img_contain[data-v-437e2f03]{\n    height: 100px;\n}\n.img_text[data-v-437e2f03]{\n    padding:10px 2px;\n}\n}\n", ""]);
 
 // exports
 
@@ -1267,7 +1445,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n#services[data-v-20f394e7] {\n  padding: 15px;\n}\n.services[data-v-20f394e7] {\n  width: 80%;\n  margin: 0 auto;\n  display: grid;\n  grid-template-columns: auto auto auto auto;\n  grid-column-gap: 15px;\n  grid-row-gap: 30px;\n  justify-content: center;\n  align-items: center;\n}\n.service[data-v-20f394e7] {\n  width: 300px;\n  height: 300px;\n}\n.service_img[data-v-20f394e7] {\n  width: 100%;\n  height: 150px;\n  background: #f7f8fa;\n}\n.service_title[data-v-20f394e7] {\n  background: #b7dc57;\n  text-align: center;\n  font-size: 18px;\n  padding: 15px;\n  font-weight: 300;\n}\n@media(max-width: 1024px){\n.service[data-v-20f394e7]{\n   width: auto;\n   height: auto;\n}\n.services[data-v-20f394e7]{\n   width: 100%;\n}\n}\n@media(max-width: 768px){\n.service_title[data-v-20f394e7]{\n    font-size: 13px;\n    padding: 10px;\n}\n.service_img[data-v-20f394e7]{\n    height: 100px;\n}\n}\n@media(max-width: 425px){\n.service_title[data-v-20f394e7]{\n    font-size: 11px;\n    padding: 10px;\n}\n}\n", ""]);
+exports.push([module.i, "\n#services[data-v-20f394e7] {\n  padding:35px 15px;\n  background: #e5efe5;\n}\n.services[data-v-20f394e7] {\n  width: 80%;\n  margin: 0 auto;\n  display: grid;\n  grid-template-columns: auto auto auto auto;\n  grid-column-gap: 15px;\n  grid-row-gap: 30px;\n  justify-content: center;\n  align-items: center;\n}\n.service[data-v-20f394e7] {\n  width: 300px;\n  height: auto;\n}\n.service_img[data-v-20f394e7] {\n  width: 100%;\n  height: 150px;\n  background: #f7f8fa;\n}\n.service_img img[data-v-20f394e7]{\n  width:100%;\n  height: 100%;\n}\n.service_title[data-v-20f394e7] {\n  background: #b7dc57;\n  text-align: center;\n  font-size: 18px;\n  padding: 15px;\n  font-weight: 300;\n}\n.service_about[data-v-20f394e7]{\n   color: hsl(120, 100%, 15%);\n   padding:15px 20px;\n}\nul[data-v-20f394e7], li[data-v-20f394e7] {\n  list-style: disc;\n  font-size: 14px;\n  line-height: 1.5;\n}\n@media(max-width: 1024px){\n.service[data-v-20f394e7]{\n   width: auto;\n   height: auto;\n}\n.services[data-v-20f394e7]{\n   width: 100%;\n}\n}\n@media(max-width: 768px){\n.service_title[data-v-20f394e7]{\n    font-size: 13px;\n    padding: 10px;\n}\n.service_img[data-v-20f394e7]{\n    height: 100px;\n}\n.services[data-v-20f394e7] {\n  width: 100%;\n  grid-template-columns: auto auto auto ;\n}\n}\n@media(max-width: 425px){\n.service_title[data-v-20f394e7]{\n    font-size: 11px;\n    padding: 10px;\n}\n.services[data-v-20f394e7] {\n  width: 100%;\n  grid-template-columns: auto auto ;\n}\nul[data-v-20f394e7], li[data-v-20f394e7] {\n  list-style: disc;\n  font-size: 12px;\n  line-height: 1.5;\n}\n}\n", ""]);
 
 // exports
 
@@ -1984,7 +2162,10 @@ var render = function() {
   return _c("div", { attrs: { id: "bottom_nav" } }, [
     _c(
       "span",
-      { staticClass: "d-flex justify-content-start align-items-center mobile" },
+      {
+        staticClass: "d-flex justify-content-start align-items-center mobile",
+        on: { click: _vm.showNav }
+      },
       [
         _c(
           "button",
@@ -1997,8 +2178,7 @@ var render = function() {
               role: "button",
               "aria-controls": "navigation",
               type: "button"
-            },
-            on: { click: _vm.showNav }
+            }
           },
           [_vm._m(0)]
         ),
@@ -2008,7 +2188,7 @@ var render = function() {
     ),
     _vm._v(" "),
     _vm.show_nav_bar
-      ? _c("ul", { staticClass: "nav_bar" }, [
+      ? _c("ul", { staticClass: "nav_bar animated slideInDown" }, [
           _c("li", [
             _c(
               "div",
@@ -2347,9 +2527,17 @@ var render = function() {
               attrs: { options: _vm.swiperOptions }
             },
             [
-              _c("swiper-slide", { staticClass: "slide" }, [_vm._v("Slide 1")]),
+              _c("swiper-slide", { staticClass: "slide" }, [
+                _vm._v("Total no of pupils : 23,400")
+              ]),
               _vm._v(" "),
-              _c("swiper-slide", { staticClass: "slide" }, [_vm._v("Slide 2")])
+              _c("swiper-slide", { staticClass: "slide" }, [
+                _vm._v("Total no of Secondary schools : 1,450")
+              ]),
+              _vm._v(" "),
+              _c("swiper-slide", { staticClass: "slide" }, [
+                _vm._v("Total no of Primary schools : 2,450")
+              ])
             ],
             1
           )
@@ -2414,13 +2602,7 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { attrs: { id: "announcement" } }, [
-    _c("h2", [_vm._v("ANNOUNCEMENT !!!")]),
-    _vm._v(" "),
-    _c("p", [
-      _vm._v(
-        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Itaque nesciunt atque amet ullam hic tenetur omnis adipisci ab, vel, et doloribus magnam quia saepe tempora mollitia, delectus voluptatem similique perferendis."
-      )
-    ]),
+    _vm._m(0),
     _vm._v(" "),
     _c(
       "div",
@@ -2440,7 +2622,22 @@ var render = function() {
     )
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "animated flash delay-5s" }, [
+      _c("h2", [_vm._v("ANNOUNCEMENT !!!")]),
+      _vm._v(" "),
+      _c("p", [
+        _vm._v(
+          "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Itaque nesciunt atque amet ullam hic tenetur omnis adipisci ab, vel, et doloribus magnam quia saepe tempora mollitia, delectus voluptatem similique perferendis."
+        )
+      ])
+    ])
+  }
+]
 render._withStripped = true
 
 
@@ -2471,7 +2668,7 @@ var render = function() {
         _vm._v(" "),
         _c("div", { staticClass: "comm_about" }, [
           _vm._v(
-            "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusamus accusantium eaque iure quasi ullam corporis modi! Enim voluptas voluptates vel atque nulla temporibus accusamus hic incidunt, reprehenderit iure provident nisi.\n     "
+            "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae possimus veritatis quae et hic ad eos nam voluptas est molestiae! Accusamus accusantium eaque iure quasi ullam corporis modi! Enim voluptas voluptates vel atque nulla temporibus accusamus hic incidunt, reprehenderit iure provident nisi.\n     "
           ),
           _c(
             "small",
@@ -2492,7 +2689,9 @@ var render = function() {
     _vm._v(" "),
     _c("div", { staticClass: "right_box" }, [
       _c("div", { staticClass: "latest_post text-center" }, [
-        _c("h4", { staticClass: "josefin header" }, [_vm._v("Latest post")]),
+        _c("h4", { staticClass: "josefin top_header py-3" }, [
+          _vm._v("Latest post")
+        ]),
         _vm._v(" "),
         _c(
           "div",
@@ -2507,7 +2706,7 @@ var render = function() {
               [
                 _c("swiper-slide", { staticClass: "slide" }, [
                   _c("div", { staticClass: "img_contain" }, [
-                    _c("img", { attrs: { src: "", alt: "" } })
+                    _c("img", { attrs: { src: "/images/imo4.jpeg", alt: "" } })
                   ]),
                   _vm._v(" "),
                   _c("div", { staticClass: "img_text" }, [
@@ -2521,7 +2720,7 @@ var render = function() {
                 _vm._v(" "),
                 _c("swiper-slide", { staticClass: "slide" }, [
                   _c("div", { staticClass: "img_contain" }, [
-                    _c("img", { attrs: { src: "", alt: "" } })
+                    _c("img", { attrs: { src: "/images/imo2.jpg", alt: "" } })
                   ]),
                   _vm._v(" "),
                   _c("div", { staticClass: "img_text" }, [
@@ -2535,7 +2734,7 @@ var render = function() {
                 _vm._v(" "),
                 _c("swiper-slide", { staticClass: "slide" }, [
                   _c("div", { staticClass: "img_contain" }, [
-                    _c("img", { attrs: { src: "", alt: "" } })
+                    _c("img", { attrs: { src: "/images/imo1.jpg", alt: "" } })
                   ]),
                   _vm._v(" "),
                   _c("div", { staticClass: "img_text" }, [
@@ -2549,7 +2748,7 @@ var render = function() {
                 _vm._v(" "),
                 _c("swiper-slide", { staticClass: "slide" }, [
                   _c("div", { staticClass: "img_contain" }, [
-                    _c("img", { attrs: { src: "", alt: "" } })
+                    _c("img", { attrs: { src: "/images/imo2.jpg", alt: "" } })
                   ]),
                   _vm._v(" "),
                   _c("div", { staticClass: "img_text" }, [
@@ -2563,7 +2762,7 @@ var render = function() {
                 _vm._v(" "),
                 _c("swiper-slide", { staticClass: "slide" }, [
                   _c("div", { staticClass: "img_contain" }, [
-                    _c("img", { attrs: { src: "", alt: "" } })
+                    _c("img", { attrs: { src: "/images/imo2.jpg", alt: "" } })
                   ]),
                   _vm._v(" "),
                   _c("div", { staticClass: "img_text" }, [
@@ -2577,7 +2776,7 @@ var render = function() {
                 _vm._v(" "),
                 _c("swiper-slide", { staticClass: "slide" }, [
                   _c("div", { staticClass: "img_contain" }, [
-                    _c("img", { attrs: { src: "", alt: "" } })
+                    _c("img", { attrs: { src: "/images/imo4.jpeg", alt: "" } })
                   ]),
                   _vm._v(" "),
                   _c("div", { staticClass: "img_text" }, [
@@ -2610,7 +2809,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "comm_header" }, [
-      _c("h4", { staticClass: "josefin" }, [
+      _c("h3", { staticClass: "josefin mb-4" }, [
         _vm._v("Commissioner of Education, Imo State")
       ])
     ])
@@ -2620,7 +2819,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "comm_image" }, [
-      _c("img", { attrs: { src: "", alt: "" } })
+      _c("img", { attrs: { src: "/images/comm.webp", alt: "" } })
     ])
   }
 ]
@@ -2709,15 +2908,69 @@ var render = function() {
               attrs: { options: _vm.swiperOptions }
             },
             [
-              _c("swiper-slide", { staticClass: "slide" }, [_vm._v("Slide 1")]),
+              _c("swiper-slide", { staticClass: "slide" }, [
+                _c("div", { staticClass: "img_container" }, [
+                  _c("img", { attrs: { src: "/images/imo6.jpg", alt: "" } }),
+                  _vm._v(" "),
+                  _c("h4", { staticClass: "img_text1" }, [
+                    _vm._v("Lorem, ipsum.")
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "img_text2" }, [
+                    _vm._v(
+                      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae dolor fugiat sint dignissimos est impedit?"
+                    )
+                  ])
+                ])
+              ]),
               _vm._v(" "),
-              _c("swiper-slide", { staticClass: "slide" }, [_vm._v("Slide 2")]),
+              _c("swiper-slide", { staticClass: "slide" }, [
+                _c("div", { staticClass: "img_container" }, [
+                  _c("img", { attrs: { src: "/images/imo2.jpg", alt: "" } }),
+                  _vm._v(" "),
+                  _c("h4", { staticClass: "img_text1" }, [
+                    _vm._v("Lorem, ipsum.")
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "img_text2" }, [
+                    _vm._v(
+                      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae dolor fugiat sint dignissimos est impedit?"
+                    )
+                  ])
+                ])
+              ]),
               _vm._v(" "),
-              _c("swiper-slide", { staticClass: "slide" }, [_vm._v("Slide 3")]),
+              _c("swiper-slide", { staticClass: "slide" }, [
+                _c("div", { staticClass: "img_container" }, [
+                  _c("img", { attrs: { src: "/images/imo3.png", alt: "" } }),
+                  _vm._v(" "),
+                  _c("h4", { staticClass: "img_text1" }, [
+                    _vm._v("Lorem, ipsum.")
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "img_text2" }, [
+                    _vm._v(
+                      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae dolor fugiat sint dignissimos est impedit?"
+                    )
+                  ])
+                ])
+              ]),
               _vm._v(" "),
-              _c("swiper-slide", { staticClass: "slide" }, [_vm._v("Slide 4")]),
-              _vm._v(" "),
-              _c("swiper-slide", { staticClass: "slide" }, [_vm._v("Slide 5")]),
+              _c("swiper-slide", { staticClass: "slide" }, [
+                _c("div", { staticClass: "img_container" }, [
+                  _c("img", { attrs: { src: "/images/imo4.jpg", alt: "" } }),
+                  _vm._v(" "),
+                  _c("h4", { staticClass: "img_text1" }, [
+                    _vm._v("Lorem, ipsum.")
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "img_text2" }, [
+                    _vm._v(
+                      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae dolor fugiat sint dignissimos est impedit?"
+                    )
+                  ])
+                ])
+              ]),
               _vm._v(" "),
               _c("div", {
                 staticClass: "swiper-pagination",
@@ -2832,10 +3085,43 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "d-flex justify-content-evenly" }, [
+    return _c("div", { staticClass: "sub_news" }, [
       _c("div", { staticClass: "news_container" }, [
         _c("div", { staticClass: "news_img" }, [
-          _c("img", { staticClass: "rounded", attrs: { src: "", alt: "" } })
+          _c("img", {
+            staticClass: "rounded",
+            attrs: { src: "/images/imo2.jpg", alt: "" }
+          })
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "news_title" }, [
+          _vm._v(
+            "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eaque, enim?"
+          )
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "news_container" }, [
+        _c("div", { staticClass: "news_img" }, [
+          _c("img", {
+            staticClass: "rounded",
+            attrs: { src: "/images/imo4.jpeg", alt: "" }
+          })
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "news_title" }, [
+          _vm._v(
+            "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eaque, enim?"
+          )
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "news_container" }, [
+        _c("div", { staticClass: "news_img" }, [
+          _c("img", {
+            staticClass: "rounded",
+            attrs: { src: "/images/imo4.jpeg", alt: "" }
+          })
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "news_title" }, [
@@ -2874,7 +3160,7 @@ var render = function() {
     _c("div", { staticClass: "my-poll" }, [
       _vm._m(1),
       _vm._v(" "),
-      _c("div", { staticClass: "affiliates tab" }, [
+      _c("div", { staticClass: "affiliates shadow-sm tab" }, [
         _c("h4", { staticClass: "josefin" }, [_vm._v("Affiliates")]),
         _vm._v(" "),
         _c(
@@ -2938,13 +3224,18 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "newsletter tab" }, [
+    return _c("div", { staticClass: "newsletter shadow-sm tab" }, [
       _c("h4", { staticClass: "josefin" }, [_vm._v("Newsletter")]),
+      _vm._v(" "),
+      _c("img", {
+        staticClass: "news_img",
+        attrs: { src: "/images/contact.png", alt: "" }
+      }),
       _vm._v(" "),
       _c(
         "form",
         {
-          staticClass: "text-center border border-light p-5",
+          staticClass: "text-center border border-light p-3 py-2",
           attrs: { action: "#!" }
         },
         [
@@ -2979,7 +3270,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "opinions tab" }, [
+    return _c("div", { staticClass: "opinions shadow-sm tab" }, [
       _c("div", { staticClass: "op_poll" }, [
         _c("h4", { staticClass: "josefin" }, [_vm._v("Opinion polls")])
       ]),
@@ -3034,7 +3325,7 @@ var render = function() {
           [
             _c("swiper-slide", { staticClass: "slide" }, [
               _c("div", { staticClass: "img_contain" }, [
-                _c("img", { attrs: { src: "", alt: "" } })
+                _c("img", { attrs: { src: "/images/imo4.jpeg", alt: "" } })
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "img_text" }, [
@@ -3046,7 +3337,7 @@ var render = function() {
             _vm._v(" "),
             _c("swiper-slide", { staticClass: "slide" }, [
               _c("div", { staticClass: "img_contain" }, [
-                _c("img", { attrs: { src: "", alt: "" } })
+                _c("img", { attrs: { src: "/images/imo2.jpg", alt: "" } })
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "img_text" }, [
@@ -3058,7 +3349,7 @@ var render = function() {
             _vm._v(" "),
             _c("swiper-slide", { staticClass: "slide" }, [
               _c("div", { staticClass: "img_contain" }, [
-                _c("img", { attrs: { src: "", alt: "" } })
+                _c("img", { attrs: { src: "/images/imo1.jpg", alt: "" } })
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "img_text" }, [
@@ -3070,31 +3361,7 @@ var render = function() {
             _vm._v(" "),
             _c("swiper-slide", { staticClass: "slide" }, [
               _c("div", { staticClass: "img_contain" }, [
-                _c("img", { attrs: { src: "", alt: "" } })
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "img_text" }, [
-                _c("p", [
-                  _vm._v("Lorem ipsum dolor sit amet consectetur adipisicing")
-                ])
-              ])
-            ]),
-            _vm._v(" "),
-            _c("swiper-slide", { staticClass: "slide" }, [
-              _c("div", { staticClass: "img_contain" }, [
-                _c("img", { attrs: { src: "", alt: "" } })
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "img_text" }, [
-                _c("p", [
-                  _vm._v("Lorem ipsum dolor sit amet consectetur adipisicing")
-                ])
-              ])
-            ]),
-            _vm._v(" "),
-            _c("swiper-slide", { staticClass: "slide" }, [
-              _c("div", { staticClass: "img_contain" }, [
-                _c("img", { attrs: { src: "", alt: "" } })
+                _c("img", { attrs: { src: "/images/imo4.jpeg", alt: "" } })
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "img_text" }, [
@@ -3216,98 +3483,325 @@ var staticRenderFns = [
       _c("div", { staticClass: "services" }, [
         _c("div", { staticClass: "service" }, [
           _c("div", { staticClass: "service_img" }, [
-            _c("img", { attrs: { src: "", alt: "" } })
+            _c("img", { attrs: { src: "/images/1.jpg", alt: "" } })
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "service_title" }, [
             _vm._v("Lorem, ipsum dolor.")
           ]),
           _vm._v(" "),
-          _c("div", { staticClass: "service_about" })
+          _c("div", { staticClass: "service_about" }, [
+            _c("ul", [
+              _c("li", [
+                _vm._v(
+                  "\n            Lorem, ipsum ipesloh. orem, ipsum ip\n          "
+                )
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                _vm._v(
+                  "\n            Lorem, ipsum ipesloh. orem, ipsum ip\n          "
+                )
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                _vm._v(
+                  "\n            Lorem, ipsum ipesloh. orem, ipsum ip\n          "
+                )
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                _vm._v(
+                  "\n            Lorem, ipsum ipesloh. orem, ipsum ip\n          "
+                )
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                _vm._v(
+                  "\n            Lorem, ipsum ipesloh. orem, ipsum ip\n          "
+                )
+              ])
+            ])
+          ])
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "service" }, [
           _c("div", { staticClass: "service_img" }, [
-            _c("img", { attrs: { src: "", alt: "" } })
+            _c("img", { attrs: { src: "/images/2.jpeg", alt: "" } })
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "service_title" }, [
             _vm._v("Lorem, ipsum dolor.")
           ]),
           _vm._v(" "),
-          _c("div", { staticClass: "service_about" })
+          _c("div", { staticClass: "service_about" }, [
+            _c("ul", [
+              _c("li", [
+                _vm._v(
+                  "\n            Lorem, ipsum ipesloh. orem, ipsum ip\n          "
+                )
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                _vm._v(
+                  "\n            Lorem, ipsum ipesloh. orem, ipsum ip\n          "
+                )
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                _vm._v(
+                  "\n            Lorem, ipsum ipesloh. orem, ipsum ip\n          "
+                )
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                _vm._v(
+                  "\n            Lorem, ipsum ipesloh. orem, ipsum ip\n          "
+                )
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                _vm._v(
+                  "\n            Lorem, ipsum ipesloh. orem, ipsum ip\n          "
+                )
+              ])
+            ])
+          ])
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "service" }, [
           _c("div", { staticClass: "service_img" }, [
-            _c("img", { attrs: { src: "", alt: "" } })
+            _c("img", { attrs: { src: "/images/3.jpg", alt: "" } })
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "service_title" }, [
             _vm._v("Lorem, ipsum dolor.")
           ]),
           _vm._v(" "),
-          _c("div", { staticClass: "service_about" })
+          _c("div", { staticClass: "service_about" }, [
+            _c("ul", [
+              _c("li", [
+                _vm._v(
+                  "\n            Lorem, ipsum ipesloh. orem, ipsum ip\n          "
+                )
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                _vm._v(
+                  "\n            Lorem, ipsum ipesloh. orem, ipsum ip\n          "
+                )
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                _vm._v(
+                  "\n            Lorem, ipsum ipesloh. orem, ipsum ip\n          "
+                )
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                _vm._v(
+                  "\n            Lorem, ipsum ipesloh. orem, ipsum ip\n          "
+                )
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                _vm._v(
+                  "\n            Lorem, ipsum ipesloh. orem, ipsum ip\n          "
+                )
+              ])
+            ])
+          ])
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "service" }, [
           _c("div", { staticClass: "service_img" }, [
-            _c("img", { attrs: { src: "", alt: "" } })
+            _c("img", { attrs: { src: "/images/4.jpg", alt: "" } })
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "service_title" }, [
             _vm._v("Lorem, ipsum dolor.")
           ]),
           _vm._v(" "),
-          _c("div", { staticClass: "service_about" })
+          _c("div", { staticClass: "service_about" }, [
+            _c("ul", [
+              _c("li", [
+                _vm._v(
+                  "\n            Lorem, ipsum ipesloh. orem, ipsum ip\n          "
+                )
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                _vm._v(
+                  "\n            Lorem, ipsum ipesloh. orem, ipsum ip\n          "
+                )
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                _vm._v(
+                  "\n            Lorem, ipsum ipesloh. orem, ipsum ip\n          "
+                )
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                _vm._v(
+                  "\n            Lorem, ipsum ipesloh. orem, ipsum ip\n          "
+                )
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                _vm._v(
+                  "\n            Lorem, ipsum ipesloh. orem, ipsum ip\n          "
+                )
+              ])
+            ])
+          ])
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "service" }, [
           _c("div", { staticClass: "service_img" }, [
-            _c("img", { attrs: { src: "", alt: "" } })
+            _c("img", { attrs: { src: "/images/5.png", alt: "" } })
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "service_title" }, [
             _vm._v("Lorem, ipsum dolor.")
           ]),
           _vm._v(" "),
-          _c("div", { staticClass: "service_about" })
+          _c("div", { staticClass: "service_about" }, [
+            _c("ul", [
+              _c("li", [
+                _vm._v(
+                  "\n            Lorem, ipsum ipesloh. orem, ipsum ip\n          "
+                )
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                _vm._v(
+                  "\n            Lorem, ipsum ipesloh. orem, ipsum ip\n          "
+                )
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                _vm._v(
+                  "\n            Lorem, ipsum ipesloh. orem, ipsum ip\n          "
+                )
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                _vm._v(
+                  "\n            Lorem, ipsum ipesloh. orem, ipsum ip\n          "
+                )
+              ])
+            ])
+          ])
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "service" }, [
           _c("div", { staticClass: "service_img" }, [
-            _c("img", { attrs: { src: "", alt: "" } })
+            _c("img", { attrs: { src: "/images/6.jpeg", alt: "" } })
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "service_title" }, [
             _vm._v("Lorem, ipsum dolor.")
           ]),
           _vm._v(" "),
-          _c("div", { staticClass: "service_about" })
+          _c("div", { staticClass: "service_about" }, [
+            _c("ul", [
+              _c("li", [
+                _vm._v(
+                  "\n            Lorem, ipsum ipesloh. orem, ipsum ip\n          "
+                )
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                _vm._v(
+                  "\n            Lorem, ipsum ipesloh. orem, ipsum ip\n          "
+                )
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                _vm._v(
+                  "\n            Lorem, ipsum ipesloh. orem, ipsum ip\n          "
+                )
+              ]),
+              _vm._v("\n           ipsum ipesloh. orem, ipsum ip\n          ")
+            ])
+          ])
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "service" }, [
           _c("div", { staticClass: "service_img" }, [
-            _c("img", { attrs: { src: "", alt: "" } })
+            _c("img", { attrs: { src: "/images/7.jpg", alt: "" } })
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "service_title" }, [
             _vm._v("Lorem, ipsum dolor.")
           ]),
           _vm._v(" "),
-          _c("div", { staticClass: "service_about" })
+          _c("div", { staticClass: "service_about" }, [
+            _c("ul", [
+              _c("li", [
+                _vm._v(
+                  "\n            Lorem, ipsum ipesloh. orem, ipsum ip\n          "
+                )
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                _vm._v(
+                  "\n            Lorem, ipsum ipesloh. orem, ipsum ip\n          "
+                )
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                _vm._v(
+                  "\n            Lorem, ipsum ipesloh. orem, ipsum ip\n          "
+                )
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                _vm._v(
+                  "\n            Lorem, ipsum ipesloh. orem, ipsum ip\n          "
+                )
+              ])
+            ])
+          ])
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "service" }, [
           _c("div", { staticClass: "service_img" }, [
-            _c("img", { attrs: { src: "", alt: "" } })
+            _c("img", { attrs: { src: "/images/8.jpg", alt: "" } })
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "service_title" }, [
             _vm._v("Lorem, ipsum dolor.")
           ]),
           _vm._v(" "),
-          _c("div", { staticClass: "service_about" })
+          _c("div", { staticClass: "service_about" }, [
+            _c("ul", [
+              _c("li", [
+                _vm._v(
+                  "\n            Lorem, ipsum ipesloh. orem, ipsum ip\n          "
+                )
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                _vm._v(
+                  "\n            Lorem, ipsum ipesloh. orem, ipsum ip\n          "
+                )
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                _vm._v(
+                  "\n            Lorem, ipsum ipesloh. orem, ipsum ip\n          "
+                )
+              ]),
+              _vm._v(" "),
+              _c("li", [
+                _vm._v(
+                  "\n            Lorem, ipsum ipesloh. orem, ipsum ip\n          "
+                )
+              ])
+            ])
+          ])
         ])
       ])
     ])

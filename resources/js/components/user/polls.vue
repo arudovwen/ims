@@ -4,10 +4,11 @@
       <h3 class="josefin mb-4 header">Featured</h3>
     </div>
     <div class="my-poll">
-      <div class="newsletter tab">
+      <div class="newsletter shadow-sm tab">
         <h4 class="josefin">Newsletter</h4>
         <!-- Default form subscription -->
-        <form class="text-center border border-light p-5" action="#!">
+        <img src="/images/contact.png" class="news_img" alt="">
+        <form class="text-center border border-light p-3 py-2" action="#!">
           <p>Join our mailing list. We write rarely, but only the best content.</p>
 
     
@@ -24,7 +25,7 @@
         </form>
         <!-- Default form subscription -->
       </div>
-      <div class="affiliates tab">
+      <div class="affiliates shadow-sm tab">
         <h4 class="josefin">Affiliates</h4>
         <div>
           <swiper class="my_affiliates" ref="mySwiper" :options="swiperOptions">
@@ -37,7 +38,7 @@
           </swiper>
         </div>
       </div>
-      <div class="opinions tab">
+      <div class="opinions shadow-sm tab">
         <div class="op_poll">
            <h4 class="josefin">Opinion polls</h4>
         </div>
@@ -71,8 +72,10 @@ export default {
 
 <style scoped>
 #polls {
-  padding:10px 15px 65px;
+  padding:30px 15px 65px;
   height: auto;
+  background: #cbe0cc;
+  border-bottom: 6px solid #006600;
 }
 .my-poll {
   display: flex;
@@ -85,6 +88,7 @@ export default {
 height: 400px;
   width: 32%;
   padding: 15px;
+  border-radius: 10px;
  
 }
 .newsletter{
@@ -111,6 +115,10 @@ p {
   justify-content: center;
   align-items: center;
   
+}
+.news_img{
+  width: 80px;
+  height: auto;
 }
 
 @media(max-width: 1024px){

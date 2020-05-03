@@ -2,27 +2,27 @@
   <div id="commissioner">
     <div class="left_box">
       <div class="comm_header">
-        <h4 class="josefin">Commissioner of Education, Imo State</h4>
+        <h3 class="josefin mb-4">Commissioner of Education, Imo State</h3>
       </div>
       <div class="comm_body">
         <div class="comm_image">
-          <img src alt />
+          <img src="/images/comm.webp" alt />
         </div>
         <div
           class="comm_about"
-        >Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusamus accusantium eaque iure quasi ullam corporis modi! Enim voluptas voluptates vel atque nulla temporibus accusamus hic incidunt, reprehenderit iure provident nisi.
+        >Lorem ipsum dolor, sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae possimus veritatis quae et hic ad eos nam voluptas est molestiae! Accusamus accusantium eaque iure quasi ullam corporis modi! Enim voluptas voluptates vel atque nulla temporibus accusamus hic incidunt, reprehenderit iure provident nisi.
        <small><router-link to="">Read more <i class="fa fa-angle-right" aria-hidden="true"></i></router-link></small>
        </div>
       </div>
     </div>
     <div class="right_box">
       <div class="latest_post text-center">
-        <h4 class="josefin header">Latest post</h4>
+        <h4 class="josefin top_header py-3">Latest post</h4>
         <div>
           <swiper class="latest_update" ref="mySwiper" :options="swiperOptions">
             <swiper-slide class="slide">
               <div class="img_contain">
-                <img src alt />
+                <img src="/images/imo4.jpeg" alt />
               </div>
               <div class="img_text">
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus omnis blanditiis illum ipsa?</p>
@@ -30,7 +30,7 @@
             </swiper-slide>
             <swiper-slide class="slide">
               <div class="img_contain">
-                <img src alt />
+                <img src="/images/imo2.jpg" alt />
               </div>
               <div class="img_text">
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus omnis blanditiis illum ipsa?</p>
@@ -38,7 +38,7 @@
             </swiper-slide>
             <swiper-slide class="slide">
               <div class="img_contain">
-                <img src alt />
+                <img src="/images/imo1.jpg" alt />
               </div>
               <div class="img_text">
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus omnis blanditiis illum ipsa?</p>
@@ -46,7 +46,7 @@
             </swiper-slide>
             <swiper-slide class="slide">
               <div class="img_contain">
-                <img src alt />
+                <img src="/images/imo2.jpg" alt />
               </div>
               <div class="img_text">
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus omnis blanditiis illum ipsa?</p>
@@ -54,7 +54,7 @@
             </swiper-slide>
             <swiper-slide class="slide">
               <div class="img_contain">
-                <img src alt />
+                <img src="/images/imo2.jpg" alt />
               </div>
               <div class="img_text">
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus omnis blanditiis illum ipsa?</p>
@@ -62,7 +62,7 @@
             </swiper-slide>
             <swiper-slide class="slide">
               <div class="img_contain">
-                <img src alt />
+                <img src="/images/imo4.jpeg" alt />
               </div>
               <div class="img_text">
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus omnis blanditiis illum ipsa?</p>
@@ -100,18 +100,21 @@ export default {
   display: flex;
   padding:45px 15px 65px;
   height: auto;
+  width: 100%;
+  margin:0 auto;
 }
 .left_box {
-  width: 70%;
+  width: 60%;
   padding: 10px;
   height: 100%;
 }
 
 .right_box {
-  width: 30%;
+  width: 40%;
   height: 100%;
   background: #006600;
   padding: 10px;
+  border-radius:10px;
 }
 .comm_body {
   display: flex;
@@ -125,17 +128,16 @@ export default {
 }
 .comm_image {
   width: 50%;
-  height: 300px;
-  background: chartreuse;
+  height: 400px;
   padding: 0 15px;
 }
 .comm_image img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
 .comm_about {
-  width: 40%;
+  width: 50%;
   padding: 0 25px;
   text-align: left;
   border-left: 5px solid #f7f8fa;
@@ -149,18 +151,24 @@ export default {
   background: #f7f8fa;
   display: flex;
   align-items: center;
+  padding: 10px;
 }
 .img_contain {
-  width: 25%;
+  width: 30%;
+  height: 100%;
+}
+.img_contain img{
+  width: 100%;
+  height: 100%;
 }
 .img_text {
-  width: 75%;
+  width: 70%;
   padding: 10px;
   text-align: left;
   font-size: 13px;
 }
-.header{
-  color: hsl(120, 100%, 85%);
+.top_header{
+  color: hsl(120, 100%, 90%);
 }
 @media(max-width: 1024px){
 
@@ -180,6 +188,7 @@ export default {
     flex-direction: column;
     height: auto;
     padding-bottom: 45px;
+     width: 100%;
   }
    .left_box,.right_box{
     width: 100%;

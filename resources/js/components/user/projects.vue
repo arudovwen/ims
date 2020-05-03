@@ -7,7 +7,7 @@
       <swiper class="my-projects" ref="mySwiper" :options="swiperOptions">
         <swiper-slide class="slide">
           <div class="img_contain">
-            <img src alt />
+            <img src="/images/imo4.jpeg" alt />
           </div>
           <div class="img_text">
             <p>Lorem ipsum dolor sit amet consectetur adipisicing</p>
@@ -15,7 +15,7 @@
         </swiper-slide>
         <swiper-slide class="slide">
           <div class="img_contain">
-            <img src alt />
+              <img src="/images/imo2.jpg" alt />
           </div>
           <div class="img_text">
             <p>Lorem ipsum dolor sit amet consectetur adipisicing</p>
@@ -23,7 +23,7 @@
         </swiper-slide>
         <swiper-slide class="slide">
           <div class="img_contain">
-            <img src alt />
+              <img src="/images/imo1.jpg" alt />
           </div>
           <div class="img_text">
             <p>Lorem ipsum dolor sit amet consectetur adipisicing</p>
@@ -31,28 +31,12 @@
         </swiper-slide>
         <swiper-slide class="slide">
           <div class="img_contain">
-            <img src alt />
+               <img src="/images/imo4.jpeg" alt />
           </div>
           <div class="img_text">
             <p>Lorem ipsum dolor sit amet consectetur adipisicing</p>
           </div>
-        </swiper-slide>
-        <swiper-slide class="slide">
-          <div class="img_contain">
-            <img src alt />
-          </div>
-          <div class="img_text">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing</p>
-          </div>
-        </swiper-slide>
-        <swiper-slide class="slide">
-          <div class="img_contain">
-            <img src alt />
-          </div>
-          <div class="img_text">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing</p>
-          </div>
-        </swiper-slide>
+       </swiper-slide>
         <div class="swiper-pagination" slot="pagination"></div>
       </swiper>
     </div>
@@ -107,6 +91,10 @@ export default {
   width: 100%;
   height: 80%;
 }
+.img_contain img{
+  width: 100%;
+  height: 100%;
+}
 .img_text {
   width: 100%;
   padding: 10px;
@@ -114,6 +102,8 @@ export default {
   font-size: 15px;
   height: 20%;
   text-align: center;
+  background: #006600;
+  color: hsl(120, 100%, 90%);
 }
 
 @media (max-width: 1024px) {
@@ -137,7 +127,13 @@ export default {
     font-size: 11px;
   }
   .my-projects {
-    height: 150px;
+    height: 160px;
+  }
+  .img_contain{
+    height: 100px;
+  }
+  .img_text{
+    padding:10px 2px;
   }
 }
 </style>

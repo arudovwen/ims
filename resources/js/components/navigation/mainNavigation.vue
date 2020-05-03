@@ -1,20 +1,22 @@
 <template>
   <div id="bottom_nav">
-  <span class="d-flex justify-content-start align-items-center mobile">  <button
-      class="hamburger hamburger--collapse"
-      tabindex="0"
-      aria-label="Menu"
-      role="button"
-      aria-controls="navigation"
-      :class="{'is-active':show_nav_bar}"
-      type="button"
-      @click="showNav"
-    >
-      <span class="hamburger-box">
-        <span class="hamburger-inner"></span>
-      </span>
-    </button> <strong>Menu</strong></span>
-    <ul class="nav_bar" v-if="show_nav_bar">
+    <span class="d-flex justify-content-start align-items-center mobile" @click="showNav">
+      <button
+        class="hamburger hamburger--collapse"
+        tabindex="0"
+        aria-label="Menu"
+        role="button"
+        aria-controls="navigation"
+        :class="{'is-active':show_nav_bar}"
+        type="button"
+      >
+        <span class="hamburger-box">
+          <span class="hamburger-inner"></span>
+        </span>
+      </button>
+      <strong>Menu</strong>
+    </span>
+    <ul class="nav_bar animated slideInDown" v-if="show_nav_bar">
       <li>
         <div>
           <router-link to="/">
@@ -143,9 +145,17 @@ export default {
       this.show_nav_bar = false;
     }
   },
+  watch: {
+    $route: "closeNav"
+  },
   methods: {
     showNav() {
       this.show_nav_bar = !this.show_nav_bar;
+    },
+    closeNav() {
+      if (window.innerWidth < 768) {
+        this.show_nav_bar = false;
+      }
     }
   }
 };
@@ -156,11 +166,12 @@ export default {
   position: relative;
   background-color: #006600;
   border-top: 6px solid #669f66;
+  z-index: 99;
 }
 .mobile {
   display: none !important;
 }
-strong{
+strong {
   color: hsl(120, 100%, 95%);
 }
 .nav_bar {
@@ -275,6 +286,21 @@ strong{
   }
   .mobile {
     display: block !important;
+  }
+  .nav_bar li {
+    width: 100%;
+  }
+  .nav_bar li a {
+    display: flex;
+    height: auto;
+    align-items: center;
+  }
+  .icon {
+    margin: 0;
+    margin-right: 30px;
+  }
+  .sub_nav {
+    display: none;
   }
 }
 @media (max-width: 425px) {

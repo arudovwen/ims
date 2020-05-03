@@ -4,8 +4,9 @@
     <div class="side_info ml-auto">
       <div class="info">
         <swiper class="updates" ref="mySwiper" :options="swiperOptions">
-          <swiper-slide class="slide">Slide 1</swiper-slide>
-          <swiper-slide class="slide">Slide 2</swiper-slide>
+          <swiper-slide class="slide">Total no of pupils : 23,400</swiper-slide>
+          <swiper-slide class="slide">Total no of Secondary schools : 1,450</swiper-slide>
+          <swiper-slide class="slide">Total no of Primary schools : 2,450</swiper-slide>
         </swiper>
       </div>
       <div class="form-group rel_pos ml-auto search_bar">
@@ -67,12 +68,18 @@ export default {
   right: -14px;
 }
 .updates {
-  background: #f7f8fa;
   width: 400px;
   height: 100%;
 }
 a{
     text-decoration: none;
+}
+.slide{
+  text-align: right;
+  padding: 0 20px;
+  color: rgba(0, 0,0 ,.5);
+  font-size: 14px;
+  font-family: 'Josefin Sans';
 }
 @media(max-width: 1024px){
  .logo{

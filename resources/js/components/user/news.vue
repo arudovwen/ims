@@ -11,11 +11,36 @@
      
       <div>
         <swiper class="news_update" ref="mySwiper" :options="swiperOptions">
-           <swiper-slide class="slide">Slide 1</swiper-slide>
-        <swiper-slide class="slide">Slide 2</swiper-slide>
-        <swiper-slide class="slide">Slide 3</swiper-slide>
-        <swiper-slide class="slide">Slide 4</swiper-slide>
-        <swiper-slide class="slide">Slide 5</swiper-slide>
+           <swiper-slide class="slide">
+             <div class="img_container">
+               <img src="/images/imo6.jpg" alt="">
+            <h4 class="img_text1">Lorem, ipsum.</h4>
+                   <div class="img_text2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae dolor fugiat sint dignissimos est impedit?</div>
+             </div>
+
+           </swiper-slide>
+        <swiper-slide class="slide">
+              <div class="img_container">
+               <img src="/images/imo2.jpg" alt="">
+               <h4 class="img_text1">Lorem, ipsum.</h4>
+                  <div class="img_text2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae dolor fugiat sint dignissimos est impedit?</div>
+             </div>
+        </swiper-slide>
+
+        <swiper-slide class="slide">
+                <div class="img_container">
+               <img src="/images/imo3.png" alt="">
+                 <h4 class="img_text1">Lorem, ipsum.</h4>
+                  <div class="img_text2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae dolor fugiat sint dignissimos est impedit?</div>
+             </div>
+        </swiper-slide>
+        <swiper-slide class="slide">
+                <div class="img_container">
+               <img src="/images/imo4.jpg" alt="">
+                 <h4 class="img_text1">Lorem, ipsum.</h4>
+                  <div class="img_text2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae dolor fugiat sint dignissimos est impedit?</div>
+             </div>
+        </swiper-slide>
           <div class="swiper-pagination" slot="pagination"></div>
         </swiper>
       </div>
@@ -47,10 +72,26 @@
         </router-link>
       </small>
 
-      <div class="d-flex justify-content-evenly">
+      <div class="sub_news">
         <div class="news_container">
           <div class="news_img">
-            <img src alt class="rounded" />
+            <img src="/images/imo2.jpg" alt class="rounded" />
+          </div>
+          <div
+            class="news_title"
+          >Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eaque, enim?</div>
+        </div>
+          <div class="news_container">
+          <div class="news_img">
+            <img src="/images/imo4.jpeg" alt class="rounded" />
+          </div>
+          <div
+            class="news_title"
+          >Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eaque, enim?</div>
+        </div>
+          <div class="news_container">
+          <div class="news_img">
+            <img src="/images/imo4.jpeg" alt class="rounded" />
           </div>
           <div
             class="news_title"
@@ -101,13 +142,17 @@ export default {
   color: #001e00;
 }
 .news_container {
-  width: 30%;
+  width: 150px;
   height: auto;
   text-align: center;
 }
 .news_img {
-  width: 100px;
+  width: 100%;
   height: 100px;
+}
+.news_img img{
+  width:100%;
+  height: 100%;
 }
 .news_title {
   font-size: 12px;
@@ -116,12 +161,43 @@ export default {
 .news_update {
   height: 400px;
 }
+.sub_news{
+  margin-top: 40px;
+  display: flex;
+  justify-content: space-between;
+}
 .left_header div,.left_header h3{
   display: inline-block ;
   vertical-align: baseline;
 }
 .slide{
     background: #f7f8fa;
+}
+.img_container{
+  position: relative;
+  width:100%;
+  height: 100%;
+}
+.img_text1{
+  position: absolute;
+  bottom: 125px;
+  background: rgba(0, 0, 0,0.5);
+  color:white;
+  z-index: 2;
+  width: auto;
+  padding: 10px;
+  text-align: center;
+}
+.img_text2{
+  position: absolute;
+  bottom: 50px;
+  background: rgba(0, 0, 0,0.5);
+  color:white;
+  z-index: 2;
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+  text-align: left;
 }
 @media(max-width: 1024px){
 

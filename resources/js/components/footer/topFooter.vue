@@ -74,8 +74,7 @@ export default {};
   display: grid;
   grid-template-columns: 30% 30% 40%;
   grid-column-gap: 50px;
-  height: 300px;
-  background: #f7f8fa;
+  height: 300px; 
 }
 .links {
   text-align: left;

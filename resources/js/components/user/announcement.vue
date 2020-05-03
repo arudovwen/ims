@@ -1,13 +1,21 @@
 <template>
-  <div id="announcement">
-    <h2>ANNOUNCEMENT !!!</h2>
+  <div id="announcement" >
+   <div class="animated flash delay-5s">
+         <h2>ANNOUNCEMENT !!!</h2>
     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Itaque nesciunt atque amet ullam hic tenetur omnis adipisci ab, vel, et doloribus magnam quia saepe tempora mollitia, delectus voluptatem similique perferendis.</p>
+   </div>
     <div> <router-link to="/checkout"><button type="button" class="btn btn-success w-auto text-white">Make payment</button></router-link></div>
   </div>
 </template>
 <script>
 export default {
-     name:'announcement-component'
+     name:'announcement-component',
+     data() {
+       return {
+        
+       }
+     },
+  
 };
 </script>
 <style scoped>
