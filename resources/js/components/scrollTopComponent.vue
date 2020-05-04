@@ -64,7 +64,7 @@ export default {
   padding: 8px;
   background-color: rgba(0, 0, 0, 0.74);
   opacity: 0.5;
-  right: 40px;
+  right: 15px;
   z-index: 99;
   bottom: 15px;
   color: white;
