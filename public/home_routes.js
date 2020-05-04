@@ -304,6 +304,22 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "commisioner-component",
   data: function data() {
@@ -800,7 +816,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n#commissioner[data-v-853a5c3e] {\n  padding: 65px 15px 65px;\n  height: auto;\n  width: 100%;\n  background: white;\n}\n.commiss[data-v-853a5c3e]{\n display: flex;\n  width: 100%;\n  margin: 0 auto;\n  justify-content: space-evenly;\n}\n.box[data-v-853a5c3e] {\n  width: 30%;\n  height: 400px;\n  background: #f7f8fa;\n  border-radius: 8px;\n  position: relative;\n  overflow: hidden;\n}\n.box img[data-v-853a5c3e] {\n  width: 100%;\n  height: 100%;\n}\n.top_header[data-v-853a5c3e] {\n  text-align: center;\n  position: absolute;\n  bottom: 0;\n  padding: 15px 0;\n  background:  rgba(0, 0, 0, .7);\n  color: #fff;\n  width: 100%;\n  margin: 0;\n}\n.img img[data-v-853a5c3e]{\n  width:100%;\n  height: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n@media (max-width: 1024px) {\n}\n@media (max-width: 768px) {\n#commissioner[data-v-853a5c3e] {\n  padding: 30px 15px 30px;\n}\n.commiss[data-v-853a5c3e] {\n    flex-direction: column;\n    height: auto;\n    padding:15px 25px;\n    width: 100%;\n}\n.left_box[data-v-853a5c3e],\n  .right_box[data-v-853a5c3e] {\n    width: 100%;\n}\n.top_head[data-v-853a5c3e] {\n    margin: 0 !important;\n}\n.comm_image[data-v-853a5c3e] {\n    height: auto;\n}\n.box[data-v-853a5c3e]{\n    width: 70%;\n    margin: 30px auto;\n}\n}\n@media (max-width: 425px) {\n.img_text p[data-v-853a5c3e] {\n    font-size: 12.5px;\n}\n.box[data-v-853a5c3e]{\n    width: 100%;\n}\n}\n", ""]);
+exports.push([module.i, "\n#commissioner[data-v-853a5c3e] {\n  padding: 65px 15px 65px;\n  height: auto;\n  width: 100%;\n  background: white;\n}\n.commiss[data-v-853a5c3e] {\n  display: flex;\n  width: 100%;\n  margin: 0 auto;\n  justify-content: space-evenly;\n}\n.box[data-v-853a5c3e] {\n  width: 30%;\n  height: 500px;\n  background: #f7f8fa;\n  border-radius: 8px;\n  position: relative;\n  overflow: hidden;\n}\n.mc3[data-v-853a5c3e]{\n  cursor:pointer;\n  text-decoration: underline;\n}\n.box img[data-v-853a5c3e] {\n  width: 100%;\n  height: 100%;\n}\np[data-v-853a5c3e]{\n  margin: 0;\n  font-size: 15px;\n}\n.top_header[data-v-853a5c3e] {\n  text-align: center;\n  position: absolute;\n  bottom: 0;\n  padding: 15px 0;\n  background: rgba(0, 0, 0, 0.7);\n  color: #fff;\n  width: 100%;\n  margin: 0;\n}\n.img img[data-v-853a5c3e] {\n  width: 100%;\n  height: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n@media (max-width: 1024px) {\n}\n@media (max-width: 768px) {\n#commissioner[data-v-853a5c3e] {\n    padding: 30px 15px 30px;\n}\n.commiss[data-v-853a5c3e] {\n    flex-direction: column;\n    height: auto;\n    padding: 15px 25px;\n    width: 100%;\n}\n.left_box[data-v-853a5c3e],\n  .right_box[data-v-853a5c3e] {\n    width: 100%;\n}\n.top_head[data-v-853a5c3e] {\n    margin: 0 !important;\n}\n.comm_image[data-v-853a5c3e] {\n    height: auto;\n}\n.box[data-v-853a5c3e] {\n    width: 70%;\n    margin: 30px auto;\n    height:400px\n}\n}\n@media (max-width: 425px) {\n.img_text p[data-v-853a5c3e] {\n    font-size: 12.5px;\n}\n.box[data-v-853a5c3e] {\n    width: 100%;\n}\n}\n", ""]);
 
 // exports
 
@@ -1569,24 +1585,18 @@ var staticRenderFns = [
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "commiss" }, [
-        _c("div", { staticClass: "commissioner box shadow-sm" }, [
-          _c("h5", { staticClass: "josefin top_header" }, [
-            _vm._v("Commissioner of Education, Imo state")
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "img" }, [
-            _c("img", {
-              attrs: {
-                src: "/images/comm.webp",
-                alt: "Commissioner of Education, Imo state"
-              }
-            })
-          ])
-        ]),
-        _vm._v(" "),
         _c("div", { staticClass: "governor box shadow-sm" }, [
-          _c("h5", { staticClass: "josefin top_header" }, [
-            _vm._v("Governor, Imo state")
+          _c("div", { staticClass: "top_header" }, [
+            _c("h4", { staticClass: "josefin " }, [
+              _vm._v("Governor, Imo state")
+            ]),
+            _vm._v(" "),
+            _c("p", [
+              _vm._v(
+                "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit nostrum odio quidem dolorem sequi itaque... "
+              ),
+              _c("span", { staticClass: "mc3" }, [_vm._v("read more")])
+            ])
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "img" }, [
@@ -1596,12 +1606,52 @@ var staticRenderFns = [
           ])
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "perm_sec box shadow-sm" }, [
-          _c("h5", { staticClass: "josefin top_header" }, [
-            _vm._v("Permanent Secretary, Imo state")
+        _c("div", { staticClass: "commissioner box shadow-sm" }, [
+          _c("div", { staticClass: "top_header" }, [
+            _c("h4", { staticClass: "josefin " }, [
+              _vm._v("Commissioner of Education, Imo state")
+            ]),
+            _vm._v(" "),
+            _c("p", [
+              _vm._v(
+                "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit nostrum odio quidem dolorem sequi itaque... "
+              ),
+              _c("span", { staticClass: "mc3" }, [_vm._v("read more")])
+            ])
           ]),
           _vm._v(" "),
-          _c("div", { staticClass: "img" })
+          _c("div", { staticClass: "img" }, [
+            _c("img", {
+              attrs: {
+                src: "/images/profile.png",
+                alt: "Commissioner of Education, Imo state"
+              }
+            })
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "perm_sec box shadow-sm" }, [
+          _c("div", { staticClass: "top_header" }, [
+            _c("h4", { staticClass: "josefin " }, [
+              _vm._v("Permanent Secretary, Imo state")
+            ]),
+            _vm._v(" "),
+            _c("p", [
+              _vm._v(
+                "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit nostrum odio quidem dolorem sequi itaque... "
+              ),
+              _c("span", { staticClass: "mc3" }, [_vm._v("read more")])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "img" }, [
+            _c("img", {
+              attrs: {
+                src: "/images/profile.png",
+                alt: "Permanent Secretary, Imo state"
+              }
+            })
+          ])
         ])
       ])
     ])

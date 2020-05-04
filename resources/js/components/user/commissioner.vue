@@ -1,24 +1,40 @@
 <template>
   <div id="commissioner">
     <h3 class="josefin mb-4 main_header">Stakeholders</h3>
-   <div class="commiss">
+    <div class="commiss">
+      <div class="governor box shadow-sm">
+        <div class="top_header">
+            <h4 class="josefin ">Governor, Imo state</h4>
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit nostrum odio quidem dolorem sequi itaque... <span class="mc3">read more</span></p>
+        </div>
+      
+        <div class="img">
+          <img src="/images/govt.png" alt="Governor, imo state" />
+        </div>
+      </div>
       <div class="commissioner box shadow-sm">
-      <h5 class="josefin top_header">Commissioner of Education, Imo state</h5>
-      <div class="img">
-        <img src="/images/comm.webp" alt="Commissioner of Education, Imo state">
+         <div class="top_header">
+            <h4 class="josefin ">Commissioner of Education, Imo state</h4>
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit nostrum odio quidem dolorem sequi itaque... <span class="mc3">read more</span></p>
+        </div>
+       
+        <div class="img">
+          <img src="/images/profile.png" alt="Commissioner of Education, Imo state" />
+        </div>
+       
+      </div>
+
+      <div class="perm_sec box shadow-sm">
+         <div class="top_header">
+             <h4 class="josefin ">Permanent Secretary, Imo state</h4>
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit nostrum odio quidem dolorem sequi itaque... <span class="mc3">read more</span></p>
+        </div>
+      
+        <div class="img">
+          <img src="/images/profile.png" alt="Permanent Secretary, Imo state" />
+        </div>
       </div>
     </div>
-    <div class="governor box shadow-sm">
-      <h5 class="josefin top_header">Governor, Imo state</h5>
-      <div class="img">
-        <img src="/images/govt.png" alt="Governor, imo state">
-      </div>
-    </div>
-    <div class="perm_sec box shadow-sm">
-      <h5 class="josefin top_header">Permanent Secretary, Imo state</h5>
-      <div class="img"></div>
-    </div>
-   </div>
   </div>
 </template>
 <script>
@@ -35,38 +51,45 @@ export default {
   height: auto;
   width: 100%;
   background: white;
-
 }
-.commiss{
- display: flex;
+.commiss {
+  display: flex;
   width: 100%;
   margin: 0 auto;
   justify-content: space-evenly;
 }
 .box {
   width: 30%;
-  height: 400px;
+  height: 500px;
   background: #f7f8fa;
   border-radius: 8px;
   position: relative;
   overflow: hidden;
 }
+.mc3{
+  cursor:pointer;
+  text-decoration: underline;
+}
 .box img {
   width: 100%;
   height: 100%;
+}
+p{
+  margin: 0;
+  font-size: 15px;
 }
 .top_header {
   text-align: center;
   position: absolute;
   bottom: 0;
   padding: 15px 0;
-  background:  rgba(0, 0, 0, .7);
+  background: rgba(0, 0, 0, 0.7);
   color: #fff;
   width: 100%;
   margin: 0;
 }
-.img img{
-  width:100%;
+.img img {
+  width: 100%;
   height: 100%;
   object-fit: cover;
 }
@@ -74,12 +97,12 @@ export default {
 }
 @media (max-width: 768px) {
   #commissioner {
-  padding: 30px 15px 30px;
+    padding: 30px 15px 30px;
   }
   .commiss {
     flex-direction: column;
     height: auto;
-    padding:15px 25px;
+    padding: 15px 25px;
     width: 100%;
   }
 
@@ -93,16 +116,17 @@ export default {
   .comm_image {
     height: auto;
   }
-  .box{
+  .box {
     width: 70%;
     margin: 30px auto;
+    height:400px
   }
 }
 @media (max-width: 425px) {
   .img_text p {
     font-size: 12.5px;
   }
-  .box{
+  .box {
     width: 100%;
   }
 }
