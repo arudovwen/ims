@@ -34,7 +34,7 @@
             <br />
             <span class="face josefin">Face</span>
             <div class="enroll">
-               <p>www.imolearncentre.org</p>
+               <input type="text" readonly class="form-control mb-2" placeholder="www.imolearncentre.org">
                <router-link to="/checkout" class="mt-4 "> <button type="button" class="btn bg-white text-blue border-0">Enroll Now  <i class="fa fa-long-arrow-right text-blue" aria-hidden="true"></i></button></router-link>
             </div>
           </span>
@@ -86,6 +86,10 @@ export default {
 }
 .text-blue{
   color: #000066;
+}
+.form-control{
+  width: 50%;
+  margin-left: auto;
 }
 .banner_1 {
   position: relative;
@@ -290,6 +294,10 @@ export default {
   }
 }
 @media (max-width: 768px) {
+  .form-control{
+  width: 90%;
+  margin-left: auto;
+}
   .square_1 {
     border: 7px solid yellow;
     padding: 5px;
@@ -389,6 +397,10 @@ export default {
   }
 }
 @media (max-width: 425px) {
+  .form-control{
+  width: 100%;
+  margin-left: auto;
+}
   .square_1 {
     border: 5px solid yellow;
     padding: 3px;

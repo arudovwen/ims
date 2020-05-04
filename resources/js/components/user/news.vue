@@ -47,13 +47,13 @@
       </div>
     </div>
     <div class="right_box">
-      <div class="left_header">
+      <!-- <div class="left_header">
         <div class="fa-stack">
           <i class="fa fa-circle fa-stack-2x" aria-hidden="true"></i>
           <i class="fab fa-intercom fa-stack-1x text-white"></i>
         </div>
         <h3 class="josefin">Latest News</h3>
-      </div>
+      </div> -->
 
       <p>
         <router-link to>
