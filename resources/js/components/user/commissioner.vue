@@ -4,7 +4,7 @@
     <div class="commiss">
       <div class="governor box shadow-sm">
         <div class="top_header">
-          <h6>His Excellency</h6>
+          <small>His Excellency</small>
           <h4 class="josefin">SEN. HOPE UZODIMMA</h4>
             <h5 class="josefin ">Governor, Imo state</h5>
           <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit nostrum odio quidem dolorem sequi itaque... <span class="mc3">read more</span></p>

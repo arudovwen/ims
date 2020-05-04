@@ -1717,7 +1717,7 @@ var staticRenderFns = [
       _c("div", { staticClass: "commiss" }, [
         _c("div", { staticClass: "governor box shadow-sm" }, [
           _c("div", { staticClass: "top_header" }, [
-            _c("h6", [_vm._v("His Excellency")]),
+            _c("small", [_vm._v("His Excellency")]),
             _vm._v(" "),
             _c("h4", { staticClass: "josefin" }, [
               _vm._v("SEN. HOPE UZODIMMA")
