@@ -1,53 +1,232 @@
 <template>
-  <div id="announcement" >
-   <div class="animated flash delay-5s">
-         <h2>ANNOUNCEMENT !!!</h2>
-    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Itaque nesciunt atque amet ullam hic tenetur omnis adipisci ab, vel, et doloribus magnam quia saepe tempora mollitia, delectus voluptatem similique perferendis.</p>
-   </div>
-    <div> <router-link to="/checkout"><button type="button" class="btn btn-success w-auto text-white">Make payment</button></router-link></div>
+  <div class="main">
+    <div id="announcement">
+    <div class="left_box">
+  
+      <div class="comm_body">
+       <div class="w-100 text-center mb-3"> <img src="/images/pin.png" class="pin" alt="pin"></div>
+         <h3 class="josefin mb-3 top_head text-center mc1">ANNOUNCEMENT !!</h3>
+        <div class="comm_image">
+          <img src="/images/imo4.jpeg" alt="announcement">
+        </div>
+       <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempora sapiente alias rem reprehenderit fuga ipsum fugiat. Rem laudantium odio deserunt ullam blanditiis ut cumque at?</p>
+        <p>Lorem ipsumdicta dolorem vitae nisi?</p>
+     </div>
+    </div>
+    <div class="right_box">
+      <div class="latest_post text-center">
+        <h4 class="josefin top_header py-3">Latest updates</h4>
+        <div>
+          <swiper class="latest_update" ref="mySwiper" :options="swiperOptions">
+            <swiper-slide class="slide">
+              <div class="img_contain">
+                <img src="/images/imo4.jpeg" alt />
+              </div>
+              <div class="img_text">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus omnis blanditiis illum ipsa?</p>
+              </div>
+            </swiper-slide>
+            <swiper-slide class="slide">
+              <div class="img_contain">
+                <img src="/images/imo2.jpg" alt />
+              </div>
+              <div class="img_text">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus omnis blanditiis illum ipsa?</p>
+              </div>
+            </swiper-slide>
+            <swiper-slide class="slide">
+              <div class="img_contain">
+                <img src="/images/imo1.jpg" alt />
+              </div>
+              <div class="img_text">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus omnis blanditiis illum ipsa?</p>
+              </div>
+            </swiper-slide>
+            <swiper-slide class="slide">
+              <div class="img_contain">
+                <img src="/images/imo2.jpg" alt />
+              </div>
+              <div class="img_text">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus omnis blanditiis illum ipsa?</p>
+              </div>
+            </swiper-slide>
+            <swiper-slide class="slide">
+              <div class="img_contain">
+                <img src="/images/imo2.jpg" alt />
+              </div>
+              <div class="img_text">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus omnis blanditiis illum ipsa?</p>
+              </div>
+            </swiper-slide>
+            <swiper-slide class="slide">
+              <div class="img_contain">
+                <img src="/images/imo4.jpeg" alt />
+              </div>
+              <div class="img_text">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus omnis blanditiis illum ipsa?</p>
+              </div>
+            </swiper-slide>
+            <div class="swiper-pagination" slot="pagination"></div>
+          </swiper>
+        </div>
+      </div>
+    </div>
+  </div>
   </div>
 </template>
 <script>
 export default {
-     name:'announcement-component',
-     data() {
-       return {
-        
-       }
-     },
-  
+  name: "announcement-component",
+  data() {
+    return {
+      swiperOptions: {
+        pagination: {
+          el: ".swiper-pagination"
+        },
+        spaceBetween: 30,
+        slidesPerView: 3,
+        direction: "vertical",
+        autoplay: {
+          delay: 5000
+        }
+      }
+    };
+  }
 };
 </script>
 <style scoped>
+.main{
+ background-image: url("/images/texture.png");
+}
 #announcement {
-  min-height: 150px;
+  display: flex;
+  justify-content: space-evenly;
+  padding:45px 15px 65px;
   height: auto;
+  width: 100%;
   margin:0 auto;
+
+}
+.pin{
+  width:50px
+}
+.left_box {
+  width: 50%;
+  height: 500px;
+  overflow: hidden;
+  border-radius: 10px;
+
+}
+
+.right_box {
+  width: 30%;
+  height: 500px;
+  background:linear-gradient(90deg, #093028 0%,#237a57 100% );
   padding: 10px;
-  border-bottom: 6px solid #7f0000;
-  border-top: 6px solid #7f0000;
+  border-radius:10px;
+}
+.comm_body {
+  height: 100%;
+  width: 100%;
+    margin: 0 auto;
+    background: white;
+    padding: 20px;
+      box-shadow:  inset 0 0 6px 1px #ccc;
+}
+.comm_body p{
+  color: rgba(0, 0, 0, .64);
+}
+.comm_header {
+  font-weight: 300;
   text-align: center;
 }
-#announcement p{
-    padding: 0px 50px ;
+.comm_image {
+  width: 100%;
+  height: 200px;
+  margin-bottom: 20px;
+
+}
+.comm_image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.comm_about {
+  width: 50%;
+  padding: 0 25px;
+  text-align: left;
+  border-left: 5px solid #f7f8fa;
+  height: 50%;
+}
+.latest_update {
+  width: 100%;
+  height: 400px;
+}
+.slide {
+  background: #f7f8fa;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+.img_contain {
+  width: 30%;
+  height: 100%;
+}
+.img_contain img{
+  width: 100%;
+  height: 100%;
+}
+.img_text {
+  width: 70%;
+  padding: 10px;
+  text-align: left;
+  font-size: 13px;
+}
+.top_header{
+  color: hsl(120, 100%, 90%);
 }
 @media(max-width: 1024px){
 
 }
 @media(max-width: 768px){
-  #announcement p{
-    padding: 0px 15px ;
-}
-h2{
-  font-size: 24px;
-}
+  .left_box{
+    height: auto;
+    margin-bottom: 30px;
+  }
+  .comm_body{
+    flex-direction: column;
+  }
+  .comm_about{
+    width: 100%;
+    padding: 0 10px 15px;
+  }
+  .comm_image{
+    margin: 0 auto 20px;
+    width: 70%;
+  }
+  #announcement{
+    flex-direction: column;
+    height: auto;
+     padding-top:10px;
+    padding-bottom: 45px;
+     width: 100%;
+  }
+ 
+   .left_box,.right_box{
+    width: 100%;
+  }
+ .top_head{
+   margin: 0 !important;
+ }
+ .comm_image{
+   height: auto;
+   display: none;
+ }
+ 
 }
 @media(max-width: 425px){
-  h2{
-  font-size: 18px;
-}
-p{
-  font-size: 15px;
-}
+ .img_text p{
+   font-size: 12.5px;
+ }
 }
 </style>

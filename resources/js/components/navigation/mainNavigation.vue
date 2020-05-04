@@ -28,23 +28,19 @@
           </router-link>
         </div>
       </li>
-      <li>
+         <li>
         <div>
-          <router-link to="/administratives">
+          <router-link to="/about">
             <div class="fa-stack icon">
               <i class="fa fa-circle fa-stack-2x" aria-hidden="true"></i>
-              <i class="fas fa-user-tie nav fa-stack-1x"></i>
+              <i class="fa fa-info-circle nav fa-stack-1x" aria-hidden="true"></i>
             </div>
-            <div class="nav_text">Administrative</div>
+            <div class="nav_text">About us</div>
           </router-link>
         </div>
-        <ul class="sub_nav">
-          <li>Applications</li>
-          <li>Directories</li>
-          <li>Data</li>
-        </ul>
+      
       </li>
-      <li>
+       <li>
         <div>
           <router-link to="/stakeholders">
             <div class="fa-stack icon">
@@ -54,12 +50,9 @@
             <div class="nav_text">Stakeholders</div>
           </router-link>
         </div>
-        <ul class="sub_nav">
-          <li>Governor</li>
-          <li>Commissioner</li>
-          <li>Permanent Secretary</li>
-        </ul>
+      
       </li>
+     
 
       <li>
         <div>
@@ -74,8 +67,6 @@
         <ul class="sub_nav">
           <li>Programs</li>
           <li>Projects</li>
-          <li>Data</li>
-          <li>Payments</li>
         </ul>
       </li>
       <li>
@@ -91,22 +82,21 @@
       </li>
       <li>
         <div>
-          <router-link to="/about">
+          <router-link to="/administratives">
             <div class="fa-stack icon">
               <i class="fa fa-circle fa-stack-2x" aria-hidden="true"></i>
-              <i class="fa fa-info-circle nav fa-stack-1x" aria-hidden="true"></i>
+              <i class="fas fa-user-tie nav fa-stack-1x"></i>
             </div>
-            <div class="nav_text">About us</div>
+            <div class="nav_text">Administrative</div>
           </router-link>
         </div>
         <ul class="sub_nav">
-          <li>Mission</li>
-          <li>Vision</li>
-          <li>Purpose</li>
-          <li>Values</li>
-          <li>Organogram</li>
+          <li>Applications</li>
+          <li>Directory</li>
+         
         </ul>
       </li>
+     
       <li>
         <div>
           <router-link to="/blog">
@@ -114,7 +104,7 @@
               <i class="fa fa-circle fa-stack-2x" aria-hidden="true"></i>
               <i class="fas fa-blog nav fa-stack-1x"></i>
             </div>
-            <div class="nav_text">Blog</div>
+            <div class="nav_text">News</div>
           </router-link>
         </div>
       </li>
@@ -193,7 +183,7 @@ strong {
 }
 .nav_bar li:hover {
   transition: border 0.6s;
-  border-color: #191975;
+  border-color: yellow;
 }
 .nav_bar li a {
   color: white;
@@ -202,7 +192,7 @@ strong {
   text-transform: uppercase;
 }
 .nav_bar li:hover a {
-  color: #191975;
+  color: yellow;
 }
 .nav_bar li a .nav_text {
   transition: all 0.6s;

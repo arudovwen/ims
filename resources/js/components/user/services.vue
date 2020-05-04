@@ -1,289 +1,170 @@
 <template>
-  <div id="services">
-    <h3 class="josefin mb-4 header">Programs</h3>
-    <div class="services">
-      <div class="service">
-        <div class="service_img">
-          <img src="/images/1.jpg" alt />
+  <div id="programs">
+    <div>
+      <h4 class="josefin mb-4 header">Programs</h4>
+    </div>
+    <div>
+      <div class="my-programs">
+        <div class="slide shadow-sm">
+          <div class="img_contain">
+            <img src="/images/imo4.jpeg" alt />
+          </div>
+          <div class="img_text">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing</p>
+          </div>
         </div>
-        <div class="service_title">Lorem, ipsum dolor.</div>
-      
-        <div class="service_about">
-            <ul>
-            <li>
-              Lorem, ipsum ipesloh. orem, ipsum ip
-            </li>
-             <li>
-              Lorem, ipsum ipesloh. orem, ipsum ip
-            </li>
-             <li>
-              Lorem, ipsum ipesloh. orem, ipsum ip
-            </li>
-             <li>
-              Lorem, ipsum ipesloh. orem, ipsum ip
-            </li>
-             <li>
-              Lorem, ipsum ipesloh. orem, ipsum ip
-            </li>
-          </ul>
+        <div class="slide shadow-sm">
+          <div class="img_contain">
+            <img src="/images/imo2.jpg" alt />
+          </div>
+          <div class="img_text">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing</p>
+          </div>
         </div>
-      </div>
-      <div class="service">
-        <div class="service_img">
-            <img src="/images/2.jpeg" alt />
+        <div class="slide shadow-sm">
+          <div class="img_contain">
+            <img src="/images/banner1.jpg" alt />
+          </div>
+          <div class="img_text">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing</p>
+          </div>
         </div>
-        <div class="service_title">Lorem, ipsum dolor.</div>
-        <div class="service_about">
-            <ul>
-            <li>
-              Lorem, ipsum ipesloh. orem, ipsum ip
-            </li>
-             <li>
-              Lorem, ipsum ipesloh. orem, ipsum ip
-            </li>
-             <li>
-              Lorem, ipsum ipesloh. orem, ipsum ip
-            </li>
-             <li>
-              Lorem, ipsum ipesloh. orem, ipsum ip
-            </li>
-             <li>
-              Lorem, ipsum ipesloh. orem, ipsum ip
-            </li>
-          </ul>
+        <div class="slide shadow-sm">
+          <div class="img_contain">
+            <img src="/images/imo4.jpeg" alt />
+          </div>
+          <div class="img_text">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing</p>
+          </div>
         </div>
-      </div>
-      <div class="service">
-        <div class="service_img">
-            <img src="/images/3.jpg" alt />
+         <div class="slide shadow-sm">
+          <div class="img_contain">
+            <img src="/images/banner2.jpg" alt />
+          </div>
+          <div class="img_text">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing</p>
+          </div>
         </div>
-        <div class="service_title">Lorem, ipsum dolor.</div>
-        <div class="service_about">
-            <ul>
-            <li>
-              Lorem, ipsum ipesloh. orem, ipsum ip
-            </li>
-             <li>
-              Lorem, ipsum ipesloh. orem, ipsum ip
-            </li>
-             <li>
-              Lorem, ipsum ipesloh. orem, ipsum ip
-            </li>
-             <li>
-              Lorem, ipsum ipesloh. orem, ipsum ip
-            </li>
-             <li>
-              Lorem, ipsum ipesloh. orem, ipsum ip
-            </li>
-          
-          </ul>
+         <div class="slide shadow-sm">
+          <div class="img_contain">
+            <img src="/images/imo4.jpeg" alt />
+          </div>
+          <div class="img_text">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing</p>
+          </div>
         </div>
       </div>
-      <div class="service">
-        <div class="service_img">
-            <img src="/images/4.jpg" alt />
-        </div>
-        <div class="service_title">Lorem, ipsum dolor.</div>
-        <div class="service_about">
-            <ul>
-            <li>
-              Lorem, ipsum ipesloh. orem, ipsum ip
-            </li>
-             <li>
-              Lorem, ipsum ipesloh. orem, ipsum ip
-            </li>
-             <li>
-              Lorem, ipsum ipesloh. orem, ipsum ip
-            </li>
-             <li>
-              Lorem, ipsum ipesloh. orem, ipsum ip
-            </li>
-             <li>
-              Lorem, ipsum ipesloh. orem, ipsum ip
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div class="service">
-        <div class="service_img">
-            <img src="/images/5.png" alt />
-        </div>
-        <div class="service_title">Lorem, ipsum dolor.</div>
-        <div class="service_about">
-            <ul>
-            <li>
-              Lorem, ipsum ipesloh. orem, ipsum ip
-            </li>
-             <li>
-              Lorem, ipsum ipesloh. orem, ipsum ip
-            </li>
-             <li>
-              Lorem, ipsum ipesloh. orem, ipsum ip
-            </li>
-             <li>
-              Lorem, ipsum ipesloh. orem, ipsum ip
-            </li>
-           
-          </ul>
-        </div>
-      </div>
-      <div class="service">
-        <div class="service_img">
-            <img src="/images/6.jpeg" alt />
-        </div>
-        <div class="service_title">Lorem, ipsum dolor.</div>
-        <div class="service_about">
-            <ul>
-            <li>
-              Lorem, ipsum ipesloh. orem, ipsum ip
-            </li>
-             <li>
-              Lorem, ipsum ipesloh. orem, ipsum ip
-            </li>
-             <li>
-              Lorem, ipsum ipesloh. orem, ipsum ip
-            </li>
-            <li>
-             ipsum ipesloh. orem, ipsum ip
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div class="service">
-        <div class="service_img">
-            <img src="/images/7.jpg" alt />
-        </div>
-        <div class="service_title">Lorem, ipsum dolor.</div>
-        <div class="service_about">
-            <ul>
-            <li>
-              Lorem, ipsum ipesloh. orem, ipsum ip
-            </li>
-             <li>
-              Lorem, ipsum ipesloh. orem, ipsum ip
-            </li>
-             <li>
-              Lorem, ipsum ipesloh. orem, ipsum ip
-            </li>
-             <li>
-              Lorem, ipsum ipesloh. orem, ipsum ip
-            </li>
-           
-          </ul>
-        </div>
-      </div>
-      <div class="service">
-        <div class="service_img">
-            <img src="/images/8.jpg" alt />
-        </div>
-        <div class="service_title">Lorem, ipsum dolor.</div>
-        <div class="service_about">
-            <ul>
-            <li>
-              Lorem, ipsum ipesloh. orem, ipsum ip
-            </li>
-             <li>
-              Lorem, ipsum ipesloh. orem, ipsum ip
-            </li>
-             <li>
-              Lorem, ipsum ipesloh. orem, ipsum ip
-            </li>
-             <li>
-              Lorem, ipsum ipesloh. orem, ipsum ip
-            </li>
-           
-          </ul>
-        </div>
-      </div>
+    </div>
+    <div class="view py-2 text-right">
+      <small>
+        <router-link to class="ml-auto">
+          View all
+          <i class="fa fa-angle-double-right w-0" aria-hidden="true"></i>
+        </router-link>
+      </small>
     </div>
   </div>
 </template>
 <script>
 export default {
-  name: "services-component"
+  name: "programs-component",
+  data() {
+    return {
+      swiperOptions: {
+        spaceBetween: 15,
+        slidesPerView: 3,
+        breakpoints: {
+          480: {
+            slidesPerView: 3,
+            spaceBetween: 10
+          }
+        },
+        pagination: {
+          el: ".swiper-pagination"
+        },
+        autoplay: {
+          delay: 10000
+        }
+      }
+    };
+  }
 };
 </script>
 <style scoped>
-#services {
-  padding:35px 15px;
-  background: #e5efe5;
-}
-.services {
+#programs {
+  padding: 40px 0px;
+  height: auto;
   width: 80%;
   margin: 0 auto;
+}
+.my-programs {
   display: grid;
-  grid-template-columns: auto auto auto auto;
-  grid-column-gap: 15px;
+  grid-template-columns: auto auto auto;
   grid-row-gap: 30px;
-  justify-content: center;
-  align-items: center;
+  grid-column-gap: 15px;
 }
-.service {
-  width: 300px;
-  height: auto;
-}
-.service_img {
-  width: 100%;
-  height: 150px;
+.slide {
   background: #f7f8fa;
+  border-radius: 5px;
+  overflow: hidden;
 }
-.service_img img{
-  width:100%;
+.img_contain {
+  width: 100%;
+  height: 80%;
+}
+.img_contain img {
+  width: 100%;
   height: 100%;
 }
-.service_title {
-  background: #b7dc57;
+.img_text {
+  width: 100%;
+  padding: 10px;
+  text-align: left;
+  font-size: 15px;
+  height: 20%;
   text-align: center;
-  font-size: 18px;
-  padding: 15px;
-  font-weight: 300;
+   background:  rgba(0, 0, 0, .7);;
+  color: hsl(210, 44%, 92%);
 }
-.service_about{
-   color: hsl(120, 100%, 15%);
-   padding:15px 20px;
+p{
+  margin: 0;
 }
-ul, li {
-  list-style: disc;
-  font-size: 14px;
-  line-height: 1.5;
+
+@media (max-width: 1024px) {
 }
-@media(max-width: 1024px){
- .service{
-   width: auto;
-   height: auto;
- }
- .services{
-   width: 100%;
- }
-}
-@media(max-width: 768px){
-  .service_title{
-    font-size: 13px;
-    padding: 10px;
+@media (max-width: 768px) {
+  #programs{
+    width: 100%;
+    padding: 10px 25px;
   }
-  .service_img{
-    height: 100px;
+  .my-programs{
+    grid-template-columns: auto auto;
+    height: auto;
   }
-  .services {
-  width: 100%;
-  grid-template-columns: auto auto auto ;
+  p {
+    font-size: 13.5px;
+  }
+  .img_text {
+    height: auto;
+  }
  
+  .img_contain {
+    height: 180px;
+  }
 }
-}
-@media(max-width: 425px){
-   .service_title{
+@media (max-width: 425px) {
+  #programs {
+    padding: 40px 15px;
+  }
+  p {
     font-size: 11px;
-    padding: 10px;
+    
   }
-    .services {
-  width: 100%;
-  grid-template-columns: auto auto ;
- 
-}
-ul, li {
-  list-style: disc;
-  font-size: 12px;
-  line-height: 1.5;
-}
+   .img_contain {
+    height: 120px;
+  }
+  .img_text {
+    padding: 10px 2px;
+  }
 }
 </style>

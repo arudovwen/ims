@@ -1,11 +1,11 @@
 <template>
   <div id="projects">
     <div>
-      <h3 class="josefin mb-4 header">Projects</h3>
+      <h4 class="josefin mb-4 header">Projects</h4>
     </div>
     <div>
-      <swiper class="my-projects" ref="mySwiper" :options="swiperOptions">
-        <swiper-slide class="slide">
+      <swiper class="my-projects" :options="swiperOptions">
+        <swiper-slide class="slide shadow-sm">
           <div class="img_contain">
             <img src="/images/imo4.jpeg" alt />
           </div>
@@ -13,7 +13,7 @@
             <p>Lorem ipsum dolor sit amet consectetur adipisicing</p>
           </div>
         </swiper-slide>
-        <swiper-slide class="slide">
+        <swiper-slide class="slide shadow-sm">
           <div class="img_contain">
               <img src="/images/imo2.jpg" alt />
           </div>
@@ -21,7 +21,7 @@
             <p>Lorem ipsum dolor sit amet consectetur adipisicing</p>
           </div>
         </swiper-slide>
-        <swiper-slide class="slide">
+        <swiper-slide class="slide shadow-sm">
           <div class="img_contain">
               <img src="/images/imo1.jpg" alt />
           </div>
@@ -29,7 +29,7 @@
             <p>Lorem ipsum dolor sit amet consectetur adipisicing</p>
           </div>
         </swiper-slide>
-        <swiper-slide class="slide">
+        <swiper-slide class="slide shadow-sm">
           <div class="img_contain">
                <img src="/images/imo4.jpeg" alt />
           </div>
@@ -59,9 +59,17 @@ export default {
         spaceBetween: 15,
         slidesPerView: 3,
          breakpoints: {
-          480: {
-            slidesPerView: 3,
+          425: {
+            slidesPerView: 2,
             spaceBetween: 10
+          },
+          768: {
+            slidesPerView: 3,
+            spaceBetween: 15
+          },
+           1024: {
+            slidesPerView: 3,
+            spaceBetween: 30
           }
         },
         pagination: {
@@ -78,14 +86,19 @@ export default {
 </script>
 <style scoped>
 #projects {
-  padding: 40px 20px;
+  padding: 40px 0px;
   height: auto;
+  width: 80%;
+  margin: 0 auto;
 }
 .my-projects {
   height: 350px;
+  
 }
 .slide {
   background: #f7f8fa;
+  border-radius: 5px;
+  overflow: hidden;
 }
 .img_contain {
   width: 100%;
@@ -102,13 +115,24 @@ export default {
   font-size: 15px;
   height: 20%;
   text-align: center;
-  background: #006600;
-  color: hsl(120, 100%, 90%);
+  background:   rgba(0, 0, 0, .7);;
+  color: hsl(120, 100%, 95%);
 }
-
+.swiper-pagination-fraction, .swiper-pagination-custom, .swiper-container-horizontal > .swiper-pagination-bullets {
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+}
+p{
+  margin: 0;
+}
 @media (max-width: 1024px) {
 }
 @media (max-width: 768px) {
+  #projects{
+    width: 100%;
+    padding: 10px 25px;
+  }
   p {
     font-size: 13.5px;
   }
@@ -116,10 +140,10 @@ export default {
     height: auto;
   }
   .my-projects {
-    height: 250px;
+    height: 280px;
   }
   .img_contain {
-    height: auto;
+    height: 180px;
   }
 }
 @media (max-width: 425px) {
@@ -130,10 +154,10 @@ export default {
     font-size: 11px;
   }
   .my-projects {
-    height: 160px;
+    height: 200px;
   }
   .img_contain{
-    height: 80px;
+    height: 120px;
   }
   .img_text{
     padding:10px 2px;

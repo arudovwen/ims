@@ -1,28 +1,43 @@
 <template>
-  <div id="top_nav">
-    <div class="logo mr-auto josefin"><router-link to="/" class="text-dark">IMO STATE MINISTRY OF EDUCATION</router-link></div>
-    <div class="side_info ml-auto">
-      <div class="info">
-        <swiper class="updates" ref="mySwiper" :options="swiperOptions">
-          <swiper-slide class="slide">Total no of pupils : 23,400</swiper-slide>
-          <swiper-slide class="slide">Total no of Secondary schools : 1,450</swiper-slide>
-          <swiper-slide class="slide">Total no of Primary schools : 2,450</swiper-slide>
-        </swiper>
+  <div>
+    <div class="info">
+      <marquee-text>
+        <span class="px-4 text-white marq">Total no of pupils : 23,400</span>
+        <span class="px-4 text-white marq">Total no of Secondary schools : 1,450</span>
+        <span class="px-4 text-white marq">Total no of Primary schools : 2,450</span>
+      </marquee-text>
+    </div>
+    <div id="top_nav">
+      <div class="logo mr-auto josefin">
+        <router-link to="/" class="text-dark">
+          <div class="img_container">
+            <img src="/images/logo.jpg" alt />
+          </div>
+          <div class="text">
+            <span class="imo">IMO STATE</span>
+            <br />
+            <span class="ministry">MINISTRY OF EDUCATION</span>
+          </div>
+        </router-link>
       </div>
-      <div class="form-group rel_pos ml-auto search_bar">
-        <input
-          type="text"
-          class="form-control rounded-pill"
-          name
-          id
-          aria-describedby="helpId"
-          placeholder="Search"
-        />
-
-        <span class="fa-stack search_icon abs_pos top-0">
+      <div class="side_info ml-auto">
+        <div class="form-group rel_pos ml-auto search_bar">
+          <input
+            type="text"
+            class="form-control rounded-pill"
+            name
+            id
+            aria-describedby="helpId"
+            placeholder="Search"
+          />
+          <button class="search_icon abs_pos top-0 rounded-pill">
+            <i class="fa fa-search fa-1x text-white" aria-hidden="true"></i>
+          </button>
+          <!-- <span class="fa-stack search_icon abs_pos top-0">
           <i class="fa fa-circle mc1 fa-stack-2x" aria-hidden="true"></i>
           <i class="fa fa-search fa-stack-1x text-white" aria-hidden="true"></i>
-        </span>
+          </span>-->
+        </div>
       </div>
     </div>
   </div>
@@ -51,13 +66,37 @@ export default {
 #top_nav {
   width: 100%;
   display: flex;
-  padding: 10px 15px;
+  padding: 10px 100px;
   justify-content: space-between;
   align-items: center;
   background: #fff;
 }
 .logo {
+  margin-left: 30px;
+}
+.text {
+  padding: 15px;
+}
+.logo a {
+  display: flex;
+  align-items: flex-end;
+}
+.imo {
   font-size: 32px;
+}
+.ministry {
+  font-size: 22px;
+}
+.img_container {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  overflow: hidden;
+  border-radius: 50%;
+}
+.img_container img {
+  width: 100%;
+  height: 100%;
 }
 .side_info {
   display: flex;
@@ -65,42 +104,83 @@ export default {
 }
 .search_icon {
   font-size: 19px;
-  right: -14px;
+  right: -4px;
+  height: 38px;
+  width: 70px;
+  background: #006600;
 }
 .updates {
   width: 400px;
   height: 100%;
 }
-a{
-    text-decoration: none;
+a {
+  text-decoration: none;
 }
-.slide{
+.slide {
   text-align: right;
   padding: 0 20px;
-  color: rgba(0, 0,0 ,.5);
+  color: rgba(0, 0, 0, 0.5);
   font-size: 14px;
-  font-family: 'Josefin Sans';
+  font-family: "Josefin Sans";
 }
-@media(max-width: 1024px){
- .logo{
-   font-size: 24px;
- }
- .updates{
-   width: 200px;
-   margin: 0 0 10px 0;
- }
+.info {
+  background: #333333;
+  font-size: 14px;
+  padding: 5px 10px;
 }
-@media(max-width: 768px){
-   .logo{
-   font-size: 18px;
- }
- .side_info{
-   flex-direction: column-reverse;
- }
+.marq {
+  border-right: 1px solid white;
 }
-@media(max-width: 425px){
-   .logo{
-   font-size: 16px;
- }
+@media (max-width: 1024px) {
+  .logo {
+    font-size: 24px;
+  }
+  .updates {
+    width: 200px;
+    margin: 0 0 10px 0;
+  }
+}
+@media (max-width: 768px) {
+  .logo {
+    font-size: 18px;
+    margin: 0 !important;
+  }
+  .side_info {
+    flex-direction: column-reverse;
+  }
+  #top_nav {
+    padding: 10px;
+  }
+  .img_container {
+    width: 100px;
+    height: 100px;
+  }
+  .imo {
+    font-size: 18px;
+  }
+  .ministry {
+    font-size: 14px;
+  }
+  .text {
+    padding: 0 0 0 10px;
+  }
+}
+@media (max-width: 425px) {
+  .logo {
+    font-size: 16px;
+  }
+  .img_container {
+    width: 60px;
+    height: 60px;
+  }
+  .imo {
+    font-size: 18px;
+  }
+  .ministry {
+    font-size: 13px;
+  }
+  .text {
+    padding: 0 0 0 10px;
+  }
 }
 </style>

@@ -70,7 +70,9 @@ export default {
   color: white;
   font-size: 14px;
 }
-
+.up{
+  transform: rotate(-90deg);
+}
 .scrollUp:hover {
   opacity: 1;
 }

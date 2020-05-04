@@ -121,10 +121,10 @@ export default {
 <style scoped>
 #news {
   min-height: 300px;
-  background-image: url("/images/texture.png");
   display: flex;
   padding: 15px;
-  margin-bottom: 45px;
+  padding-bottom: 45px;
+    border-bottom: 6px solid #006600;
 }
 .left_box {
   width: 50%;
@@ -203,6 +203,9 @@ export default {
 
 }
 @media(max-width: 768px){
+  .news_update{
+    height: 300px;
+  }
   .left_box,.right_box{
     width:100%;
   }#news{

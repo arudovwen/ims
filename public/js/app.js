@@ -21,6 +21,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var bootstrap_vue_dist_bootstrap_vue_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! bootstrap-vue/dist/bootstrap-vue.css */ "./node_modules/bootstrap-vue/dist/bootstrap-vue.css");
 /* harmony import */ var bootstrap_vue_dist_bootstrap_vue_css__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(bootstrap_vue_dist_bootstrap_vue_css__WEBPACK_IMPORTED_MODULE_6__);
 /* harmony import */ var _growthbunker_vuesocial__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @growthbunker/vuesocial */ "./node_modules/@growthbunker/vuesocial/dist/vuesocial.esm.js");
+/* harmony import */ var vue_marquee_text_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! vue-marquee-text-component */ "./node_modules/vue-marquee-text-component/dist/MarqueeText.common.js");
+/* harmony import */ var vue_marquee_text_component__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(vue_marquee_text_component__WEBPACK_IMPORTED_MODULE_8__);
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
@@ -37,8 +39,10 @@ window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.
 
 
 
+
+Vue.component("marquee-text", vue_marquee_text_component__WEBPACK_IMPORTED_MODULE_8___default.a);
 Vue.use(_growthbunker_vuesocial__WEBPACK_IMPORTED_MODULE_7__["default"], {
-  iconPath: '/images/icons'
+  iconPath: "/images/icons"
 });
 Vue.use(vue_router__WEBPACK_IMPORTED_MODULE_0__["default"]);
 Vue.use(bootstrap_vue__WEBPACK_IMPORTED_MODULE_2__["BootstrapVue"]);
@@ -53,7 +57,7 @@ Vue.use(__webpack_require__(/*! vue-moment */ "./node_modules/vue-moment/dist/vu
  */
 
 var router = new vue_router__WEBPACK_IMPORTED_MODULE_0__["default"]({
-  mode: 'history',
+  mode: "history",
   routes: _routes__WEBPACK_IMPORTED_MODULE_1__["routes"],
   scrollBehavior: function scrollBehavior(to, from, savedPosition) {
     document.getElementById("app").scrollIntoView();
@@ -61,7 +65,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_0__["default"]({
   }
 });
 var app = new Vue({
-  el: '#app',
+  el: "#app",
   router: router
 });
 

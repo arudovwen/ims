@@ -1,211 +1,109 @@
 <template>
   <div id="commissioner">
-    <div class="left_box">
-      <div class="comm_header">
-        <h3 class="josefin mb-4 top_head">Commissioner of Education, Imo State</h3>
-      </div>
-      <div class="comm_body">
-        <div class="comm_image">
-          <img src="/images/comm.webp" alt />
-        </div>
-        <div
-          class="comm_about"
-        >Lorem ipsum dolor, sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae possimus veritatis quae et hic ad eos nam voluptas est molestiae! Accusamus accusantium eaque iure quasi ullam corporis modi! Enim voluptas voluptates vel atque nulla temporibus accusamus hic incidunt, reprehenderit iure provident nisi.
-       <small><router-link to="">Read more <i class="fa fa-angle-right" aria-hidden="true"></i></router-link></small>
-       </div>
+    <h3 class="josefin mb-4 main_header">Stakeholders</h3>
+   <div class="commiss">
+      <div class="commissioner box shadow-sm">
+      <h5 class="josefin top_header">Commissioner of Education, Imo state</h5>
+      <div class="img">
+        <img src="/images/comm.webp" alt="Commissioner of Education, Imo state">
       </div>
     </div>
-    <div class="right_box">
-      <div class="latest_post text-center">
-        <h4 class="josefin top_header py-3">Latest post</h4>
-        <div>
-          <swiper class="latest_update" ref="mySwiper" :options="swiperOptions">
-            <swiper-slide class="slide">
-              <div class="img_contain">
-                <img src="/images/imo4.jpeg" alt />
-              </div>
-              <div class="img_text">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus omnis blanditiis illum ipsa?</p>
-              </div>
-            </swiper-slide>
-            <swiper-slide class="slide">
-              <div class="img_contain">
-                <img src="/images/imo2.jpg" alt />
-              </div>
-              <div class="img_text">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus omnis blanditiis illum ipsa?</p>
-              </div>
-            </swiper-slide>
-            <swiper-slide class="slide">
-              <div class="img_contain">
-                <img src="/images/imo1.jpg" alt />
-              </div>
-              <div class="img_text">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus omnis blanditiis illum ipsa?</p>
-              </div>
-            </swiper-slide>
-            <swiper-slide class="slide">
-              <div class="img_contain">
-                <img src="/images/imo2.jpg" alt />
-              </div>
-              <div class="img_text">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus omnis blanditiis illum ipsa?</p>
-              </div>
-            </swiper-slide>
-            <swiper-slide class="slide">
-              <div class="img_contain">
-                <img src="/images/imo2.jpg" alt />
-              </div>
-              <div class="img_text">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus omnis blanditiis illum ipsa?</p>
-              </div>
-            </swiper-slide>
-            <swiper-slide class="slide">
-              <div class="img_contain">
-                <img src="/images/imo4.jpeg" alt />
-              </div>
-              <div class="img_text">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus omnis blanditiis illum ipsa?</p>
-              </div>
-            </swiper-slide>
-            <div class="swiper-pagination" slot="pagination"></div>
-          </swiper>
-        </div>
+    <div class="governor box shadow-sm">
+      <h5 class="josefin top_header">Governor, Imo state</h5>
+      <div class="img">
+        <img src="/images/govt.png" alt="Governor, imo state">
       </div>
     </div>
+    <div class="perm_sec box shadow-sm">
+      <h5 class="josefin top_header">Permanent Secretary, Imo state</h5>
+      <div class="img"></div>
+    </div>
+   </div>
   </div>
 </template>
 <script>
 export default {
   name: "commisioner-component",
   data() {
-    return {
-      swiperOptions: {
-        pagination: {
-          el: ".swiper-pagination"
-        },
-        spaceBetween: 30,
-        slidesPerView: 3,
-        direction: "vertical",
-        autoplay: {
-          delay: 5000
-        }
-      }
-    };
+    return {};
   }
 };
 </script>
 <style scoped>
 #commissioner {
-  display: flex;
-  padding:45px 15px 65px;
+  padding: 65px 15px 65px;
   height: auto;
   width: 100%;
-  margin:0 auto;
-}
-.left_box {
-  width: 60%;
-  padding: 10px;
-  height: 100%;
-}
+  background: white;
 
-.right_box {
-  width: 40%;
-  height: 100%;
-  background: #006600;
-  padding: 10px;
-  border-radius:10px;
 }
-.comm_body {
-  display: flex;
-  justify-content: space-between;
-  padding: 10px;
-  height: 100%;
-}
-.comm_header {
-  font-weight: 300;
-  text-align: center;
-}
-.comm_image {
-  width: 50%;
-  height: 400px;
-  padding: 0 15px;
-}
-.comm_image img {
+.commiss{
+ display: flex;
   width: 100%;
-  height: 100%;
-  object-fit: contain;
+  margin: 0 auto;
+  justify-content: space-evenly;
 }
-.comm_about {
-  width: 50%;
-  padding: 0 25px;
-  text-align: left;
-  border-left: 5px solid #f7f8fa;
-  height: 50%;
-}
-.latest_update {
-  width: 100%;
-  height: 400px;
-}
-.slide {
-  background: #f7f8fa;
-  display: flex;
-  align-items: center;
-  padding: 10px;
-}
-.img_contain {
+.box {
   width: 30%;
-  height: 100%;
+  height: 400px;
+  background: #f7f8fa;
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
 }
-.img_contain img{
+.box img {
   width: 100%;
   height: 100%;
 }
-.img_text {
-  width: 70%;
-  padding: 10px;
-  text-align: left;
-  font-size: 13px;
+.top_header {
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  padding: 15px 0;
+  background:  rgba(0, 0, 0, .7);
+  color: #fff;
+  width: 100%;
+  margin: 0;
 }
-.top_header{
-  color: hsl(120, 100%, 90%);
+.img img{
+  width:100%;
+  height: 100%;
+  object-fit: cover;
 }
-@media(max-width: 1024px){
-
+@media (max-width: 1024px) {
 }
-@media(max-width: 768px){
-  .comm_body{
-    flex-direction: column;
+@media (max-width: 768px) {
+  #commissioner {
+  padding: 30px 15px 30px;
   }
-  .comm_about{
-    width: 100%;
-    padding: 0 10px 15px;
-  }
-  .comm_image{
-    margin: 0 auto 20px;
-    width: 70%;
-  }
-  #commissioner{
+  .commiss {
     flex-direction: column;
     height: auto;
-     padding-top:10px;
-    padding-bottom: 45px;
-     width: 100%;
-  }
- 
-   .left_box,.right_box{
+    padding:15px 25px;
     width: 100%;
   }
- .top_head{
-   margin: 0 !important;
- }
- .comm_image{
-   height: auto;
- }
+
+  .left_box,
+  .right_box {
+    width: 100%;
+  }
+  .top_head {
+    margin: 0 !important;
+  }
+  .comm_image {
+    height: auto;
+  }
+  .box{
+    width: 70%;
+    margin: 30px auto;
+  }
 }
-@media(max-width: 425px){
- .img_text p{
-   font-size: 12.5px;
- }
+@media (max-width: 425px) {
+  .img_text p {
+    font-size: 12.5px;
+  }
+  .box{
+    width: 100%;
+  }
 }
 </style>
