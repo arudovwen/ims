@@ -176,6 +176,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "announcement-component",
   data: function data() {
@@ -206,6 +208,10 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
 //
 //
 //
@@ -320,6 +326,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "commisioner-component",
   data: function data() {
@@ -338,6 +346,16 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -699,28 +717,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "programs-component",
   data: function data() {
@@ -778,7 +774,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n.main[data-v-bdcf5660]{\n background-image: url(\"/images/texture.png\");\n}\n#announcement[data-v-bdcf5660] {\n  display: flex;\n  justify-content: space-evenly;\n  padding:45px 15px 65px;\n  height: auto;\n  width: 100%;\n  margin:0 auto;\n}\n.pin[data-v-bdcf5660]{\n  width:50px\n}\n.left_box[data-v-bdcf5660] {\n  width: 50%;\n  height: 500px;\n  overflow: hidden;\n  border-radius: 10px;\n}\n.right_box[data-v-bdcf5660] {\n  width: 30%;\n  height: 500px;\n  background:linear-gradient(90deg, #093028 0%,#237a57 100% );\n  padding: 10px;\n  border-radius:10px;\n}\n.comm_body[data-v-bdcf5660] {\n  height: 100%;\n  width: 100%;\n    margin: 0 auto;\n    background: white;\n    padding: 20px;\n      box-shadow:  inset 0 0 6px 1px #ccc;\n}\n.comm_body p[data-v-bdcf5660]{\n  color: rgba(0, 0, 0, .64);\n}\n.comm_header[data-v-bdcf5660] {\n  font-weight: 300;\n  text-align: center;\n}\n.comm_image[data-v-bdcf5660] {\n  width: 100%;\n  height: 200px;\n  margin-bottom: 20px;\n}\n.comm_image img[data-v-bdcf5660] {\n  width: 100%;\n  height: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.comm_about[data-v-bdcf5660] {\n  width: 50%;\n  padding: 0 25px;\n  text-align: left;\n  border-left: 5px solid #f7f8fa;\n  height: 50%;\n}\n.latest_update[data-v-bdcf5660] {\n  width: 100%;\n  height: 400px;\n}\n.slide[data-v-bdcf5660] {\n  background: #f7f8fa;\n  display: flex;\n  align-items: center;\n  padding: 10px;\n}\n.img_contain[data-v-bdcf5660] {\n  width: 30%;\n  height: 100%;\n}\n.img_contain img[data-v-bdcf5660]{\n  width: 100%;\n  height: 100%;\n}\n.img_text[data-v-bdcf5660] {\n  width: 70%;\n  padding: 10px;\n  text-align: left;\n  font-size: 13px;\n}\n.top_header[data-v-bdcf5660]{\n  color: hsl(120, 100%, 90%);\n}\n@media(max-width: 1024px){\n}\n@media(max-width: 768px){\n.left_box[data-v-bdcf5660]{\n    height: auto;\n    margin-bottom: 30px;\n}\n.comm_body[data-v-bdcf5660]{\n    flex-direction: column;\n}\n.comm_about[data-v-bdcf5660]{\n    width: 100%;\n    padding: 0 10px 15px;\n}\n.comm_image[data-v-bdcf5660]{\n    margin: 0 auto 20px;\n    width: 70%;\n}\n#announcement[data-v-bdcf5660]{\n    flex-direction: column;\n    height: auto;\n     padding-top:10px;\n    padding-bottom: 45px;\n     width: 100%;\n}\n.left_box[data-v-bdcf5660],.right_box[data-v-bdcf5660]{\n    width: 100%;\n}\n.top_head[data-v-bdcf5660]{\n   margin: 0 !important;\n}\n.comm_image[data-v-bdcf5660]{\n   height: auto;\n   display: none;\n}\n}\n@media(max-width: 425px){\n.img_text p[data-v-bdcf5660]{\n   font-size: 12.5px;\n}\n}\n", ""]);
+exports.push([module.i, "\n.main[data-v-bdcf5660]{\n background-image: url(\"/images/texture.png\");\n padding: 45px 15px 0;\n}\n#announcement[data-v-bdcf5660] {\n  display: flex;\n  justify-content: space-evenly;\n  padding:45px 15px 65px;\n  height: auto;\n  width: 100%;\n  margin:0 auto;\n}\n.pin[data-v-bdcf5660]{\n  width:50px\n}\n.left_box[data-v-bdcf5660] {\n  width: 50%;\n  height: 500px;\n  overflow: hidden;\n  border-radius: 10px;\n}\n.right_box[data-v-bdcf5660] {\n  width: 30%;\n  height: 500px;\n  background:linear-gradient(90deg, #093028 0%,#237a57 100% );\n  padding: 10px;\n  border-radius:10px;\n}\n.comm_body[data-v-bdcf5660] {\n  height: 100%;\n  width: 100%;\n    margin: 0 auto;\n    background: white;\n    padding: 20px;\n      box-shadow:  inset 0 0 6px 1px #ccc;\n}\n.comm_body p[data-v-bdcf5660]{\n  color: rgba(0, 0, 0, .64);\n}\n.comm_header[data-v-bdcf5660] {\n  font-weight: 300;\n  text-align: center;\n}\n.comm_image[data-v-bdcf5660] {\n  width: 100%;\n  height: 200px;\n  margin-bottom: 20px;\n}\n.comm_image img[data-v-bdcf5660] {\n  width: 100%;\n  height: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.comm_about[data-v-bdcf5660] {\n  width: 50%;\n  padding: 0 25px;\n  text-align: left;\n  border-left: 5px solid #f7f8fa;\n  height: 50%;\n}\n.latest_update[data-v-bdcf5660] {\n  width: 100%;\n  height: 400px;\n}\n.slide[data-v-bdcf5660] {\n  background: #f7f8fa;\n  display: flex;\n  align-items: center;\n  padding: 10px;\n}\n.img_contain[data-v-bdcf5660] {\n  width: 30%;\n  height: 100%;\n}\n.img_contain img[data-v-bdcf5660]{\n  width: 100%;\n  height: 100%;\n}\n.img_text[data-v-bdcf5660] {\n  width: 70%;\n  padding: 10px;\n  text-align: left;\n  font-size: 13px;\n}\n.top_header[data-v-bdcf5660]{\n  color: hsl(120, 100%, 90%);\n}\n@media(max-width: 1024px){\n}\n@media(max-width: 768px){\n.left_box[data-v-bdcf5660]{\n    height: auto;\n    margin-bottom: 30px;\n}\n.comm_body[data-v-bdcf5660]{\n    flex-direction: column;\n}\n.comm_about[data-v-bdcf5660]{\n    width: 100%;\n    padding: 0 10px 15px;\n}\n.comm_image[data-v-bdcf5660]{\n    margin: 0 auto 20px;\n    width: 70%;\n}\n#announcement[data-v-bdcf5660]{\n    flex-direction: column;\n    height: auto;\n     padding-top:10px;\n    padding-bottom: 45px;\n     width: 100%;\n}\n.left_box[data-v-bdcf5660],.right_box[data-v-bdcf5660]{\n    width: 100%;\n}\n.top_head[data-v-bdcf5660]{\n   margin: 0 !important;\n}\n.comm_image[data-v-bdcf5660]{\n   height: auto;\n   display: none;\n}\n}\n@media(max-width: 425px){\n.img_text p[data-v-bdcf5660]{\n   font-size: 12.5px;\n}\n}\n", ""]);
 
 // exports
 
@@ -797,7 +793,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n#banner[data-v-4d3d74f5] {\n  width: 100%;\n  height: 500px;\n  overflow: hidden;\n  background: url(\"/images/imobanner.jpg\");\n  background-repeat: no-repeat;\n  background-size: cover;\n}\n.banner_1[data-v-4d3d74f5] {\n  position: relative;\n  width: 100%;\n  height: 100%;\n  overflow: hidden;\n}\n.banner_2[data-v-4d3d74f5] {\n  position: relative;\n  width: 100%;\n  height: 100%;\n  display: flex;\n  background: url(\"/images/imobanner.jpg\");\n  background-repeat: no-repeat;\n  background-size: cover;\n  overflow: hidden;\n}\n.banner_overlay[data-v-4d3d74f5] {\n  position: absolute;\n  width: 100%;\n  height: 100%;\n  background: repeating-linear-gradient(\n    to right,\n    rgb(15, 122, 138, 0.7) 0%,\n    rgb(15, 122, 138, 0.7) 100%\n  );\n}\n.circle_1[data-v-4d3d74f5] {\n  width: 600px;\n  height: 600px;\n  background: #f7f8fa;\n  position: absolute;\n  bottom: -47%;\n  left: 15px;\n  border-radius: 50%;\n  z-index: 3;\n  overflow: hidden;\n}\n.circle_1 img[data-v-4d3d74f5] {\n  width: 100%;\n  height: 100%;\n  -o-object-fit: contain;\n     object-fit: contain;\n  -o-object-position: top;\n     object-position: top;\n}\n.text[data-v-4d3d74f5] {\n  position: absolute;\n  bottom: 28%;\n  right: 9%;\n}\n.new[data-v-4d3d74f5] {\n  color: #fff;\n  font-size: 52px;\n  font-weight: bold;\n}\n.education[data-v-4d3d74f5] {\n  color: #fff;\n  font-size: 52px;\n  font-weight: bold;\n}\n.face[data-v-4d3d74f5] {\n  color: #fff;\n  font-size: 52px;\n  font-weight: bold;\n}\n.circle_3[data-v-4d3d74f5] {\n  width: 600px;\n  height: 600px;\n  background: #f7f8fa;\n  position: absolute;\n  right: -55px;\n  bottom: -40%;\n  border-radius: 50%;\n  z-index: 1;\n  overflow: hidden;\n}\n.circle_3 img[data-v-4d3d74f5] {\n  width: 100%;\n  height: 100%;\n  -o-object-fit: contain;\n     object-fit: contain;\n  -o-object-position: top;\n     object-position: top;\n}\n.circle_2[data-v-4d3d74f5] {\n  width: 600px;\n  height: 600px;\n  background: linear-gradient(90deg, #000428 0%, #004e92 100%);\n  position: absolute;\n  right: 50%;\n  bottom: 40%;\n  margin-right: -300px;\n  margin-bottom: -150px;\n  border-radius: 50%;\n  z-index: 2;\n  overflow: hidden;\n}\n.square_1[data-v-4d3d74f5] {\n  border: 15px solid yellow;\n  padding: 10px;\n  position: absolute;\n  bottom: 50%;\n  margin-bottom: -80px;\n  height: 160px;\n  width: 160px;\n  left: -80px;\n  transform: rotate(45deg);\n}\n.square_2[data-v-4d3d74f5] {\n  border: 15px solid white;\n  padding: 15px;\n  width: 100%;\n  height: 100%;\n}\n.square_3[data-v-4d3d74f5] {\n  background: yellow;\n  padding: 10px;\n  width: 100%;\n  height: 100%;\n}\n.square_4[data-v-4d3d74f5] {\n  border: 15px solid yellow;\n  padding: 10px;\n  position: absolute;\n  bottom: 50%;\n  margin-bottom: -80px;\n  height: 160px;\n  width: 160px;\n  right: -80px;\n  transform: rotate(45deg);\n}\n.square_5[data-v-4d3d74f5] {\n  border: 15px solid white;\n  padding: 15px;\n  width: 100%;\n  height: 100%;\n}\n.square_6[data-v-4d3d74f5] {\n  background: yellow;\n  padding: 10px;\n  width: 100%;\n  height: 100%;\n}\n.banner_2_text[data-v-4d3d74f5] {\n  width: 70%;\n  margin: auto;\n  height: 200px;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  z-index: 2;\n}\n.banner_2_imo[data-v-4d3d74f5] {\n  font-size: 52px;\n  font-weight: bold;\n  border-bottom: 5px solid yellow;\n  margin-bottom: 16px;\n  color: yellow;\n}\n.banner_2_lor[data-v-4d3d74f5] {\n  font-size: 24px;\n  color: white;\n}\n@media (max-width: 1024px) {\n.circle_1[data-v-4d3d74f5] {\n    width: 500px;\n    height: 500px;\n\n    bottom: -47%;\n    left: 15px;\n}\n.text[data-v-4d3d74f5] {\n    bottom: 28%;\n    right: 9%;\n}\n.new[data-v-4d3d74f5] {\n    font-size: 52px;\n}\n.education[data-v-4d3d74f5] {\n    font-size: 52px;\n}\n.face[data-v-4d3d74f5] {\n    color: #fff;\n    font-size: 52px;\n    font-weight: bold;\n}\n.circle_3[data-v-4d3d74f5] {\n    width: 500px;\n    height: 500px;\n\n    right: -125px;\n    bottom: -40%;\n}\n.circle_2[data-v-4d3d74f5] {\n    width: 500px;\n    height: 500px;\n    right: 45%;\n    bottom: 45%;\n    margin-right: -250px;\n    margin-bottom: -125px;\n}\n}\n@media (max-width: 768px) {\n.square_1[data-v-4d3d74f5] {\n    border: 7px solid yellow;\n    padding: 5px;\n    position: absolute;\n    bottom: 50%;\n    margin-bottom: -30px;\n    height: 60px;\n    width: 60px;\n    left: -30px;\n    transform: rotate(45deg);\n}\n.square_2[data-v-4d3d74f5] {\n    border: 7px solid white;\n    padding: 7px;\n    width: 100%;\n    height: 100%;\n}\n.square_3[data-v-4d3d74f5] {\n    background: yellow;\n    padding: 5px;\n    width: 100%;\n    height: 100%;\n}\n.square_4[data-v-4d3d74f5] {\n    border: 7px solid yellow;\n    padding: 5px;\n    position: absolute;\n    bottom: 50%;\n    margin-bottom: -30px;\n    height: 60px;\n    width: 60px;\n    right: -30px;\n    transform: rotate(45deg);\n}\n.square_5[data-v-4d3d74f5] {\n    border: 7px solid white;\n    padding: 7px;\n    width: 100%;\n    height: 100%;\n}\n.square_6[data-v-4d3d74f5] {\n    background: yellow;\n    padding: 5px;\n    width: 100%;\n    height: 100%;\n}\n.banner_2[data-v-4d3d74f5] {\n    width: 78%;\n}\n.banner_2_imo[data-v-4d3d74f5] {\n    font-size: 32px;\n}\n.banner_2_lor[data-v-4d3d74f5] {\n    font-size: 16px;\n}\n.circle_1[data-v-4d3d74f5] {\n    width: 400px;\n    height: 400px;\n\n    bottom: -32%;\n    left: 15px;\n}\n.text[data-v-4d3d74f5] {\n    bottom: 28%;\n    right: 9%;\n}\n.new[data-v-4d3d74f5] {\n    font-size: 40px;\n}\n.education[data-v-4d3d74f5] {\n    font-size: 40px;\n}\n.face[data-v-4d3d74f5] {\n    color: #fff;\n    font-size: 40px;\n    font-weight: bold;\n}\n.circle_3[data-v-4d3d74f5] {\n    width: 400px;\n    height: 400px;\n\n    right: -88px;\n    bottom: -27%;\n}\n.circle_2[data-v-4d3d74f5] {\n    width: 400px;\n    height: 400px;\n    right: 50%;\n    bottom: 46%;\n    margin-right: -200px;\n    margin-bottom: -100px;\n}\n.text[data-v-4d3d74f5]{\n}\n}\n@media (max-width: 425px) {\n.square_1[data-v-4d3d74f5] {\n    border: 5px solid yellow;\n    padding: 3px;\n    position: absolute;\n    bottom: 50%;\n    margin-bottom: -20px;\n    height: 40px;\n    width: 40px;\n    left: -20px;\n    transform: rotate(45deg);\n}\n.square_2[data-v-4d3d74f5] {\n    border: 5px solid white;\n    padding: 5px;\n    width: 100%;\n    height: 100%;\n}\n.square_3[data-v-4d3d74f5] {\n    background: yellow;\n    padding: 2.5px;\n    width: 100%;\n    height: 100%;\n}\n.square_4[data-v-4d3d74f5] {\n    border: 5px solid yellow;\n    padding: 4px;\n    position: absolute;\n    bottom: 50%;\n    margin-bottom: -20px;\n    height: 40px;\n    width: 40px;\n    right: -20px;\n    transform: rotate(45deg);\n}\n.square_5[data-v-4d3d74f5] {\n    border: 5px solid white;\n    padding: 5px;\n    width: 100%;\n    height: 100%;\n}\n.square_6[data-v-4d3d74f5] {\n    background: yellow;\n    padding: 2.3px;\n    width: 100%;\n    height: 100%;\n}\n.banner_2[data-v-4d3d74f5] {\n    width: 78%;\n}\n.banner_2_imo[data-v-4d3d74f5] {\n    font-size: 24px;\n}\n.banner_2_lor[data-v-4d3d74f5] {\n    font-size: 16px;\n}\n.circle_1[data-v-4d3d74f5] {\n   width: 400px;\n    height: 400px;\n    bottom: -32%;\n    left: -69px;\n}\n.text[data-v-4d3d74f5] {\n    bottom: 28%;\n    right: 9%;\n}\n.new[data-v-4d3d74f5] {\n    font-size: 32px;\n}\n.education[data-v-4d3d74f5] {\n    font-size: 32px;\n}\n.face[data-v-4d3d74f5] {\n    color: #fff;\n    font-size: 32px;\n    font-weight: bold;\n}\n.circle_3[data-v-4d3d74f5] {\n      width: 200px;\n    height: 200px;\n    right: -89px;\n    bottom: -50%;\n    bottom: 18%;\n}\n.circle_3 img[data-v-4d3d74f5]{\n    -o-object-position: bottom;\n       object-position: bottom;\n}\n.circle_2[data-v-4d3d74f5] {\n  width: 350px;\n    height: 350px;\n    position: absolute;\n    right: 30%;\n    bottom: 49%;\n    margin-right: -150px;\n    margin-bottom: -75px;\n}\n.text[data-v-4d3d74f5]{\n    right:13%;\n}\n}\n", ""]);
+exports.push([module.i, "\n#banner[data-v-4d3d74f5] {\n  width: 100%;\n  height: 500px;\n  overflow: hidden;\n  background: url(\"/images/imobanner.jpg\");\n  background-repeat: no-repeat;\n  background-size: cover;\n}\n.enroll[data-v-4d3d74f5]{\n  text-align: end;\n}\n.enroll p[data-v-4d3d74f5]{\n  color: white;\n  font-size: 16px;\n  text-decoration: none;\n}\n.text-blue[data-v-4d3d74f5]{\n  color: #000066;\n}\n.banner_1[data-v-4d3d74f5] {\n  position: relative;\n  width: 100%;\n  height: 100%;\n  overflow: hidden;\n}\n.banner_2[data-v-4d3d74f5] {\n  position: relative;\n  width: 100%;\n  height: 100%;\n  display: flex;\n  background: url(\"/images/imobanner.jpg\");\n  background-repeat: no-repeat;\n  background-size: cover;\n  overflow: hidden;\n}\n.banner_overlay[data-v-4d3d74f5] {\n  position: absolute;\n  width: 100%;\n  height: 100%;\n  background: repeating-linear-gradient(\n    to right,\n    rgb(15, 122, 138, 0.7) 0%,\n    rgb(15, 122, 138, 0.7) 100%\n  );\n}\n.circle_1[data-v-4d3d74f5] {\n  width: 600px;\n  height: 600px;\n  background: #f7f8fa;\n  position: absolute;\n  bottom: -47%;\n  left: 15px;\n  border-radius: 50%;\n  z-index: 3;\n  overflow: hidden;\n}\n.circle_1 img[data-v-4d3d74f5] {\n  width: 100%;\n  height: 100%;\n  -o-object-fit: contain;\n     object-fit: contain;\n  -o-object-position: top;\n     object-position: top;\n}\n.text[data-v-4d3d74f5] {\n  position: absolute;\n  bottom: 22%;\n  right: 14%;\n}\n.new[data-v-4d3d74f5] {\n  color: #fff;\n  font-size: 52px;\n  font-weight: bold;\n}\n.education[data-v-4d3d74f5] {\n  color: #fff;\n  font-size: 52px;\n  font-weight: bold;\n}\n.face[data-v-4d3d74f5] {\n  color: #fff;\n  font-size: 52px;\n  font-weight: bold;\n}\n.circle_3[data-v-4d3d74f5] {\n  width: 600px;\n  height: 600px;\n  background: #f7f8fa;\n  position: absolute;\n  right: -55px;\n  bottom: -40%;\n  border-radius: 50%;\n  z-index: 1;\n  overflow: hidden;\n}\n.circle_3 img[data-v-4d3d74f5] {\n  width: 100%;\n  height: 100%;\n  -o-object-fit: contain;\n     object-fit: contain;\n  -o-object-position: top;\n     object-position: top;\n}\n.circle_2[data-v-4d3d74f5] {\n  width: 600px;\n  height: 600px;\n  background: linear-gradient(90deg, #000428 0%, #004e92 100%);\n  position: absolute;\n  right: 50%;\n  bottom: 40%;\n  margin-right: -300px;\n  margin-bottom: -150px;\n  border-radius: 50%;\n  z-index: 2;\n  overflow: hidden;\n}\n.square_1[data-v-4d3d74f5] {\n  border: 15px solid yellow;\n  padding: 10px;\n  position: absolute;\n  bottom: 50%;\n  margin-bottom: -80px;\n  height: 160px;\n  width: 160px;\n  left: -80px;\n  transform: rotate(45deg);\n}\n.square_2[data-v-4d3d74f5] {\n  border: 15px solid white;\n  padding: 15px;\n  width: 100%;\n  height: 100%;\n}\n.square_3[data-v-4d3d74f5] {\n  background: yellow;\n  padding: 10px;\n  width: 100%;\n  height: 100%;\n}\n.square_4[data-v-4d3d74f5] {\n  border: 15px solid yellow;\n  padding: 10px;\n  position: absolute;\n  bottom: 50%;\n  margin-bottom: -80px;\n  height: 160px;\n  width: 160px;\n  right: -80px;\n  transform: rotate(45deg);\n}\n.square_5[data-v-4d3d74f5] {\n  border: 15px solid white;\n  padding: 15px;\n  width: 100%;\n  height: 100%;\n}\n.square_6[data-v-4d3d74f5] {\n  background: yellow;\n  padding: 10px;\n  width: 100%;\n  height: 100%;\n}\n.banner_2_text[data-v-4d3d74f5] {\n  width: 70%;\n  margin: auto;\n  height: 200px;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  z-index: 2;\n}\n.banner_2_imo[data-v-4d3d74f5] {\n  font-size: 52px;\n  font-weight: bold;\n  border-bottom: 5px solid yellow;\n  margin-bottom: 16px;\n  color: yellow;\n}\n.banner_2_lor[data-v-4d3d74f5] {\n  font-size: 24px;\n  color: white;\n}\n@media (max-width: 1024px) {\n.circle_1[data-v-4d3d74f5] {\n    width: 500px;\n    height: 500px;\n\n    bottom: -47%;\n    left: 15px;\n}\n.text[data-v-4d3d74f5] {\n    bottom: 22%;\n    right: 14%;\n}\n.new[data-v-4d3d74f5] {\n    font-size: 42px;\n}\n.education[data-v-4d3d74f5] {\n    font-size: 42px;\n}\n.face[data-v-4d3d74f5] {\n    color: #fff;\n    font-size: 42px;\n    font-weight: bold;\n}\n.circle_3[data-v-4d3d74f5] {\n    width: 500px;\n    height: 500px;\n\n    right: -125px;\n    bottom: -40%;\n}\n.circle_2[data-v-4d3d74f5] {\n    width: 500px;\n    height: 500px;\n    right: 45%;\n    bottom: 45%;\n    margin-right: -250px;\n    margin-bottom: -125px;\n}\n}\n@media (max-width: 768px) {\n.square_1[data-v-4d3d74f5] {\n    border: 7px solid yellow;\n    padding: 5px;\n    position: absolute;\n    bottom: 50%;\n    margin-bottom: -30px;\n    height: 60px;\n    width: 60px;\n    left: -30px;\n    transform: rotate(45deg);\n}\n.square_2[data-v-4d3d74f5] {\n    border: 7px solid white;\n    padding: 7px;\n    width: 100%;\n    height: 100%;\n}\n.square_3[data-v-4d3d74f5] {\n    background: yellow;\n    padding: 5px;\n    width: 100%;\n    height: 100%;\n}\n.square_4[data-v-4d3d74f5] {\n    border: 7px solid yellow;\n    padding: 5px;\n    position: absolute;\n    bottom: 50%;\n    margin-bottom: -30px;\n    height: 60px;\n    width: 60px;\n    right: -30px;\n    transform: rotate(45deg);\n}\n.square_5[data-v-4d3d74f5] {\n    border: 7px solid white;\n    padding: 7px;\n    width: 100%;\n    height: 100%;\n}\n.square_6[data-v-4d3d74f5] {\n    background: yellow;\n    padding: 5px;\n    width: 100%;\n    height: 100%;\n}\n.banner_2[data-v-4d3d74f5] {\n    width: 78%;\n}\n.banner_2_imo[data-v-4d3d74f5] {\n    font-size: 32px;\n}\n.banner_2_lor[data-v-4d3d74f5] {\n    font-size: 16px;\n}\n.circle_1[data-v-4d3d74f5] {\n    width: 400px;\n    height: 400px;\n\n    bottom: -32%;\n    left: 15px;\n}\n.text[data-v-4d3d74f5] {\n    bottom: 24%;\n    right: 18%;\n}\n.new[data-v-4d3d74f5] {\n    font-size: 32px;\n}\n.education[data-v-4d3d74f5] {\n    font-size: 32px;\n}\n.face[data-v-4d3d74f5] {\n    color: #fff;\n    font-size: 32px;\n    font-weight: bold;\n}\n.circle_3[data-v-4d3d74f5] {\n    width: 400px;\n    height: 400px;\n\n    right: -88px;\n    bottom: -27%;\n}\n.circle_2[data-v-4d3d74f5] {\n    width: 400px;\n    height: 400px;\n    right: 50%;\n    bottom: 46%;\n    margin-right: -200px;\n    margin-bottom: -100px;\n}\n.text[data-v-4d3d74f5]{\n}\n}\n@media (max-width: 425px) {\n.square_1[data-v-4d3d74f5] {\n    border: 5px solid yellow;\n    padding: 3px;\n    position: absolute;\n    bottom: 50%;\n    margin-bottom: -20px;\n    height: 40px;\n    width: 40px;\n    left: -20px;\n    transform: rotate(45deg);\n}\n.square_2[data-v-4d3d74f5] {\n    border: 5px solid white;\n    padding: 5px;\n    width: 100%;\n    height: 100%;\n}\n.square_3[data-v-4d3d74f5] {\n    background: yellow;\n    padding: 2.5px;\n    width: 100%;\n    height: 100%;\n}\n.square_4[data-v-4d3d74f5] {\n    border: 5px solid yellow;\n    padding: 4px;\n    position: absolute;\n    bottom: 50%;\n    margin-bottom: -20px;\n    height: 40px;\n    width: 40px;\n    right: -20px;\n    transform: rotate(45deg);\n}\n.square_5[data-v-4d3d74f5] {\n    border: 5px solid white;\n    padding: 5px;\n    width: 100%;\n    height: 100%;\n}\n.square_6[data-v-4d3d74f5] {\n    background: yellow;\n    padding: 2.3px;\n    width: 100%;\n    height: 100%;\n}\n.banner_2[data-v-4d3d74f5] {\n    width: 78%;\n}\n.banner_2_imo[data-v-4d3d74f5] {\n    font-size: 24px;\n}\n.banner_2_lor[data-v-4d3d74f5] {\n    font-size: 16px;\n}\n.circle_1[data-v-4d3d74f5] {\n   width: 400px;\n    height: 400px;\n    bottom: -32%;\n    left: -69px;\n}\n.text[data-v-4d3d74f5] {\n    bottom: 28%;\n    right: 9%;\n}\n.new[data-v-4d3d74f5] {\n    font-size: 28px;\n}\n.education[data-v-4d3d74f5] {\n    font-size: 28px;\n}\n.face[data-v-4d3d74f5] {\n    color: #fff;\n    font-size: 28px;\n    font-weight: bold;\n}\n.circle_3[data-v-4d3d74f5] {\n      width: 200px;\n    height: 200px;\n    right: -89px;\n    bottom: -50%;\n    bottom: 18%;\n}\n.circle_3 img[data-v-4d3d74f5]{\n    -o-object-position: bottom;\n       object-position: bottom;\n}\n.circle_2[data-v-4d3d74f5] {\n  width: 350px;\n    height: 350px;\n    position: absolute;\n    right: 30%;\n    bottom: 49%;\n    margin-right: -150px;\n    margin-bottom: -75px;\n}\n.text[data-v-4d3d74f5]{\n    right:18%;\n    bottom: 24%;\n}\n}\n", ""]);
 
 // exports
 
@@ -835,7 +831,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n#news[data-v-f1242548] {\n  min-height: 300px;\n  display: flex;\n  padding: 15px;\n  padding-bottom: 45px;\n    border-bottom: 6px solid #006600;\n}\n.left_box[data-v-f1242548] {\n  width: 50%;\n  height: 100%;\n  padding: 10px;\n}\n.right_box[data-v-f1242548] {\n  width: 50%;\n  height: 100%;\n  padding: 10px;\n  padding-right: 50px;\n}\n.right_box p a[data-v-f1242548] {\n  font-size: 14px;\n  color: #001e00;\n}\n.news_container[data-v-f1242548] {\n  width: 150px;\n  height: auto;\n  text-align: center;\n}\n.news_img[data-v-f1242548] {\n  width: 100%;\n  height: 100px;\n}\n.news_img img[data-v-f1242548]{\n  width:100%;\n  height: 100%;\n}\n.news_title[data-v-f1242548] {\n  font-size: 12px;\n  text-align: left;\n}\n.news_update[data-v-f1242548] {\n  height: 400px;\n}\n.sub_news[data-v-f1242548]{\n  margin-top: 40px;\n  display: flex;\n  justify-content: space-between;\n}\n.left_header div[data-v-f1242548],.left_header h3[data-v-f1242548]{\n  display: inline-block ;\n  vertical-align: baseline;\n}\n.slide[data-v-f1242548]{\n    background: #f7f8fa;\n}\n.img_container[data-v-f1242548]{\n  position: relative;\n  width:100%;\n  height: 100%;\n}\n.img_text1[data-v-f1242548]{\n  position: absolute;\n  bottom: 125px;\n  background: rgba(0, 0, 0,0.5);\n  color:white;\n  z-index: 2;\n  width: auto;\n  padding: 10px;\n  text-align: center;\n}\n.img_text2[data-v-f1242548]{\n  position: absolute;\n  bottom: 50px;\n  background: rgba(0, 0, 0,0.5);\n  color:white;\n  z-index: 2;\n  width: 100%;\n  padding: 10px;\n  text-align: center;\n  text-align: left;\n}\n@media(max-width: 1024px){\n}\n@media(max-width: 768px){\n.news_update[data-v-f1242548]{\n    height: 300px;\n}\n.left_box[data-v-f1242548],.right_box[data-v-f1242548]{\n    width:100%;\n}#news[data-v-f1242548]{\n    flex-direction: column;\n}\n.right_box[data-v-f1242548]{\n    padding:10px;\n}\n.news_container[data-v-f1242548]{\n    width: 31.5%;\n}\n}\n@media(max-width: 425px){\n.news_title[data-v-f1242548]{\n    font-size: 11.5px;\n}\n}\n", ""]);
+exports.push([module.i, "\n#news[data-v-f1242548]{\n  padding:25px 15px;\n    border-bottom: 6px solid #006600;\n}\n.news[data-v-f1242548] {\n  min-height: 300px;\n  display: flex;\n\n  padding-bottom: 45px;\n}\n.left_box[data-v-f1242548] {\n  width: 50%;\n  height: 100%;\n  padding: 10px;\n}\n.right_box[data-v-f1242548] {\n  width: 50%;\n  height: 100%;\n  padding: 10px;\n  padding-right: 50px;\n}\n.right_box p a[data-v-f1242548] {\n  font-size: 14px;\n  color: #001e00;\n}\n.news_container[data-v-f1242548] {\n  width: 150px;\n  height: auto;\n  text-align: center;\n}\n.news_img[data-v-f1242548] {\n  width: 100%;\n  height: 100px;\n}\n.news_img img[data-v-f1242548] {\n  width: 100%;\n  height: 100%;\n}\n.news_title[data-v-f1242548] {\n  font-size: 12px;\n  text-align: left;\n}\n.news_update[data-v-f1242548] {\n  height: 400px;\n}\n.sub_news[data-v-f1242548] {\n  margin-top: 40px;\n  display: flex;\n  justify-content: space-between;\n}\n.left_header div[data-v-f1242548],\n.left_header h3[data-v-f1242548] {\n  display: inline-block;\n  vertical-align: baseline;\n}\n.slide[data-v-f1242548] {\n  background: #f7f8fa;\n}\n.img_container[data-v-f1242548] {\n  position: relative;\n  width: 100%;\n  height: 100%;\n}\n.img_text1[data-v-f1242548] {\n  position: absolute;\n  bottom: 125px;\n  background: rgba(0, 0, 0, 0.5);\n  color: white;\n  z-index: 2;\n  width: auto;\n  padding: 10px;\n  text-align: center;\n}\n.img_text2[data-v-f1242548] {\n  position: absolute;\n  bottom: 50px;\n  background: rgba(0, 0, 0, 0.5);\n  color: white;\n  z-index: 2;\n  width: 100%;\n  padding: 10px;\n  text-align: center;\n  text-align: left;\n}\n@media (max-width: 1024px) {\n}\n@media (max-width: 768px) {\n.news_update[data-v-f1242548] {\n    height: 300px;\n}\n.left_box[data-v-f1242548],\n  .right_box[data-v-f1242548] {\n    width: 100%;\n}\n.news[data-v-f1242548] {\n    flex-direction: column;\n}\n.right_box[data-v-f1242548] {\n    padding: 10px;\n}\n.news_container[data-v-f1242548] {\n    width: 31.5%;\n}\n}\n@media (max-width: 425px) {\n.news_title[data-v-f1242548] {\n    font-size: 11.5px;\n}\n}\n", ""]);
 
 // exports
 
@@ -892,7 +888,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n#projects[data-v-437e2f03] {\n  padding: 40px 0px;\n  height: auto;\n  width: 80%;\n  margin: 0 auto;\n}\n.my-projects[data-v-437e2f03] {\n  height: 350px;\n}\n.slide[data-v-437e2f03] {\n  background: #f7f8fa;\n  border-radius: 5px;\n  overflow: hidden;\n}\n.img_contain[data-v-437e2f03] {\n  width: 100%;\n  height: 80%;\n}\n.img_contain img[data-v-437e2f03]{\n  width: 100%;\n  height: 100%;\n}\n.img_text[data-v-437e2f03] {\n  width: 100%;\n  padding: 10px;\n  text-align: left;\n  font-size: 15px;\n  height: 20%;\n  text-align: center;\n  background:   rgba(0, 0, 0, .7);;\n  color: hsl(120, 100%, 95%);\n}\n.swiper-pagination-fraction[data-v-437e2f03], .swiper-pagination-custom[data-v-437e2f03], .swiper-container-horizontal > .swiper-pagination-bullets[data-v-437e2f03] {\n    bottom: -5px;\n    left: 0;\n    width: 100%;\n}\np[data-v-437e2f03]{\n  margin: 0;\n}\n@media (max-width: 1024px) {\n}\n@media (max-width: 768px) {\n#projects[data-v-437e2f03]{\n    width: 100%;\n    padding: 10px 25px;\n}\np[data-v-437e2f03] {\n    font-size: 13.5px;\n}\n.img_text[data-v-437e2f03] {\n    height: auto;\n}\n.my-projects[data-v-437e2f03] {\n    height: 280px;\n}\n.img_contain[data-v-437e2f03] {\n    height: 180px;\n}\n}\n@media (max-width: 425px) {\n#projects[data-v-437e2f03]{\n    padding:40px 15px;\n}\np[data-v-437e2f03] {\n    font-size: 11px;\n}\n.my-projects[data-v-437e2f03] {\n    height: 200px;\n}\n.img_contain[data-v-437e2f03]{\n    height: 120px;\n}\n.img_text[data-v-437e2f03]{\n    padding:10px 2px;\n}\n}\n", ""]);
+exports.push([module.i, "\n#projects[data-v-437e2f03] {\n  padding: 40px 0px;\n  height: auto;\n  width: 80%;\n  margin: 0 auto;\n}\n.my-projects[data-v-437e2f03] {\n  height: 350px;\n}\n.slide[data-v-437e2f03] {\n  background: #f7f8fa;\n  border-radius: 5px;\n  overflow: hidden;\n}\n.img_contain[data-v-437e2f03] {\n  width: 100%;\n  height: 80%;\n}\n.img_contain img[data-v-437e2f03]{\n  width: 100%;\n  height: 100%;\n}\n.img_text[data-v-437e2f03] {\n  width: 100%;\n  padding: 10px;\n  text-align: left;\n  font-size: 15px;\n  height: 20%;\n  text-align: center;\n  background:   rgba(0, 0, 0, .7);;\n  color: white;\n}\n.swiper-pagination-fraction[data-v-437e2f03], .swiper-pagination-custom[data-v-437e2f03], .swiper-container-horizontal > .swiper-pagination-bullets[data-v-437e2f03] {\n    bottom: -5px;\n    left: 0;\n    width: 100%;\n}\np[data-v-437e2f03]{\n  margin: 0;\n}\n@media (max-width: 1024px) {\n}\n@media (max-width: 768px) {\n#projects[data-v-437e2f03]{\n    width: 100%;\n    padding: 10px 25px;\n}\np[data-v-437e2f03] {\n    font-size: 13.5px;\n}\n.img_text[data-v-437e2f03] {\n    height: auto;\n}\n.my-projects[data-v-437e2f03] {\n    height: 280px;\n}\n.img_contain[data-v-437e2f03] {\n    height: 180px;\n}\n}\n@media (max-width: 425px) {\n#projects[data-v-437e2f03]{\n    padding:40px 15px;\n}\np[data-v-437e2f03] {\n    font-size: 11px;\n}\n.my-projects[data-v-437e2f03] {\n    height: 200px;\n}\n.img_contain[data-v-437e2f03]{\n    height: 120px;\n}\n.img_text[data-v-437e2f03]{\n    padding:10px 2px;\n}\n}\n", ""]);
 
 // exports
 
@@ -1282,8 +1278,48 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "main" }, [
+    _c("h3", { staticClass: "josefin  main_header mb-4" }, [
+      _vm._v("Announcement Board")
+    ]),
+    _vm._v(" "),
     _c("div", { attrs: { id: "announcement" } }, [
-      _vm._m(0),
+      _c("div", { staticClass: "left_box" }, [
+        _c(
+          "div",
+          { staticClass: "comm_body" },
+          [
+            _vm._m(0),
+            _vm._v(" "),
+            _vm._m(1),
+            _vm._v(" "),
+            _c("p", [
+              _vm._v(
+                "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempora sapiente alias rem reprehenderit fuga ipsum fugiat. Rem laudantium odio deserunt ullam blanditiis ut cumque at?"
+              )
+            ]),
+            _vm._v(" "),
+            _c("p", [_vm._v("Lorem ipsumdicta dolorem vitae nisi?")]),
+            _vm._v(" "),
+            _c("router-link", { attrs: { to: "/checkout" } }, [
+              _c(
+                "button",
+                {
+                  staticClass: "btn bg1-dark text-white mx-auto",
+                  attrs: { type: "button" }
+                },
+                [
+                  _vm._v("Pay now   "),
+                  _c("i", {
+                    staticClass: "fa fa-long-arrow-right text-white",
+                    attrs: { "aria-hidden": "true" }
+                  })
+                ]
+              )
+            ])
+          ],
+          1
+        )
+      ]),
       _vm._v(" "),
       _c("div", { staticClass: "right_box" }, [
         _c("div", { staticClass: "latest_post text-center" }, [
@@ -1411,33 +1447,19 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "left_box" }, [
-      _c("div", { staticClass: "comm_body" }, [
-        _c("div", { staticClass: "w-100 text-center mb-3" }, [
-          _c("img", {
-            staticClass: "pin",
-            attrs: { src: "/images/pin.png", alt: "pin" }
-          })
-        ]),
-        _vm._v(" "),
-        _c("h3", { staticClass: "josefin mb-3 top_head text-center mc1" }, [
-          _vm._v("ANNOUNCEMENT !!")
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "comm_image" }, [
-          _c("img", {
-            attrs: { src: "/images/imo4.jpeg", alt: "announcement" }
-          })
-        ]),
-        _vm._v(" "),
-        _c("p", [
-          _vm._v(
-            "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempora sapiente alias rem reprehenderit fuga ipsum fugiat. Rem laudantium odio deserunt ullam blanditiis ut cumque at?"
-          )
-        ]),
-        _vm._v(" "),
-        _c("p", [_vm._v("Lorem ipsumdicta dolorem vitae nisi?")])
-      ])
+    return _c("div", { staticClass: "w-100 text-center mb-3" }, [
+      _c("img", {
+        staticClass: "pin",
+        attrs: { src: "/images/pin.png", alt: "pin" }
+      })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "comm_image" }, [
+      _c("img", { attrs: { src: "/images/imo4.jpeg", alt: "announcement" } })
     ])
   }
 ]
@@ -1527,7 +1549,37 @@ var render = function() {
                 _vm._v(" "),
                 _c("br"),
                 _vm._v(" "),
-                _c("span", { staticClass: "face josefin" }, [_vm._v("Face")])
+                _c("span", { staticClass: "face josefin" }, [_vm._v("Face")]),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  { staticClass: "enroll" },
+                  [
+                    _c("p", [_vm._v("www.imolearncentre.org")]),
+                    _vm._v(" "),
+                    _c(
+                      "router-link",
+                      { staticClass: "mt-4 ", attrs: { to: "/checkout" } },
+                      [
+                        _c(
+                          "button",
+                          {
+                            staticClass: "btn bg-white text-blue border-0",
+                            attrs: { type: "button" }
+                          },
+                          [
+                            _vm._v("Enroll Now  "),
+                            _c("i", {
+                              staticClass: "fa fa-long-arrow-right text-blue",
+                              attrs: { "aria-hidden": "true" }
+                            })
+                          ]
+                        )
+                      ]
+                    )
+                  ],
+                  1
+                )
               ])
             ]),
             _vm._v(" "),
@@ -1587,7 +1639,13 @@ var staticRenderFns = [
       _c("div", { staticClass: "commiss" }, [
         _c("div", { staticClass: "governor box shadow-sm" }, [
           _c("div", { staticClass: "top_header" }, [
-            _c("h4", { staticClass: "josefin " }, [
+            _c("h6", [_vm._v("His Excellency")]),
+            _vm._v(" "),
+            _c("h4", { staticClass: "josefin" }, [
+              _vm._v("SEN. HOPE UZODIMMA")
+            ]),
+            _vm._v(" "),
+            _c("h5", { staticClass: "josefin " }, [
               _vm._v("Governor, Imo state")
             ]),
             _vm._v(" "),
@@ -1601,7 +1659,7 @@ var staticRenderFns = [
           _vm._v(" "),
           _c("div", { staticClass: "img" }, [
             _c("img", {
-              attrs: { src: "/images/govt.png", alt: "Governor, imo state" }
+              attrs: { src: "/images/govt.jpeg", alt: "Governor, imo state" }
             })
           ])
         ]),
@@ -1633,7 +1691,7 @@ var staticRenderFns = [
         _c("div", { staticClass: "perm_sec box shadow-sm" }, [
           _c("div", { staticClass: "top_header" }, [
             _c("h4", { staticClass: "josefin " }, [
-              _vm._v("Permanent Secretary, Imo state")
+              _vm._v("Permanent Secretary, Imo state Ministry of Education")
             ]),
             _vm._v(" "),
             _c("p", [
@@ -1679,172 +1737,177 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { attrs: { id: "news" } }, [
-    _c("div", { staticClass: "left_box" }, [
-      _vm._m(0),
-      _vm._v(" "),
-      _c(
-        "div",
-        [
-          _c(
-            "swiper",
-            {
-              ref: "mySwiper",
-              staticClass: "news_update",
-              attrs: { options: _vm.swiperOptions }
-            },
-            [
-              _c("swiper-slide", { staticClass: "slide" }, [
-                _c("div", { staticClass: "img_container" }, [
-                  _c("img", { attrs: { src: "/images/imo6.jpg", alt: "" } }),
-                  _vm._v(" "),
-                  _c("h4", { staticClass: "img_text1" }, [
-                    _vm._v("Lorem, ipsum.")
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "img_text2" }, [
-                    _vm._v(
-                      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae dolor fugiat sint dignissimos est impedit?"
-                    )
-                  ])
-                ])
-              ]),
-              _vm._v(" "),
-              _c("swiper-slide", { staticClass: "slide" }, [
-                _c("div", { staticClass: "img_container" }, [
-                  _c("img", { attrs: { src: "/images/imo2.jpg", alt: "" } }),
-                  _vm._v(" "),
-                  _c("h4", { staticClass: "img_text1" }, [
-                    _vm._v("Lorem, ipsum.")
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "img_text2" }, [
-                    _vm._v(
-                      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae dolor fugiat sint dignissimos est impedit?"
-                    )
-                  ])
-                ])
-              ]),
-              _vm._v(" "),
-              _c("swiper-slide", { staticClass: "slide" }, [
-                _c("div", { staticClass: "img_container" }, [
-                  _c("img", { attrs: { src: "/images/imo3.png", alt: "" } }),
-                  _vm._v(" "),
-                  _c("h4", { staticClass: "img_text1" }, [
-                    _vm._v("Lorem, ipsum.")
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "img_text2" }, [
-                    _vm._v(
-                      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae dolor fugiat sint dignissimos est impedit?"
-                    )
-                  ])
-                ])
-              ]),
-              _vm._v(" "),
-              _c("swiper-slide", { staticClass: "slide" }, [
-                _c("div", { staticClass: "img_container" }, [
-                  _c("img", { attrs: { src: "/images/imo4.jpg", alt: "" } }),
-                  _vm._v(" "),
-                  _c("h4", { staticClass: "img_text1" }, [
-                    _vm._v("Lorem, ipsum.")
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "img_text2" }, [
-                    _vm._v(
-                      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae dolor fugiat sint dignissimos est impedit?"
-                    )
-                  ])
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", {
-                staticClass: "swiper-pagination",
-                attrs: { slot: "pagination" },
-                slot: "pagination"
-              })
-            ],
-            1
-          )
-        ],
-        1
-      )
-    ]),
+    _c("h3", { staticClass: "josefin main_header mb-4" }, [_vm._v("News")]),
     _vm._v(" "),
-    _c("div", { staticClass: "right_box" }, [
-      _c("h3", { staticClass: "josefin" }, [_vm._v("Latest News")]),
-      _vm._v(" "),
-      _c(
-        "p",
-        [
-          _c("router-link", { attrs: { to: "" } }, [
-            _c("span", { staticClass: "text-dark" }, [
-              _vm._v(
-                _vm._s(_vm._f("moment")(new Date(), "dddd, MMMM D YYYY")) + " :"
-              )
-            ]),
-            _vm._v(
-              " Lorem ipsum dolor sit amet consectetur adipisicing elit. Error aperiam ab nesciunt consequuntur quidem facilis quis, quisquam aut!"
-            )
-          ])
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c(
-        "p",
-        [
-          _c("router-link", { attrs: { to: "" } }, [
-            _c("span", { staticClass: "text-dark" }, [
-              _vm._v(
-                _vm._s(_vm._f("moment")(new Date(), "dddd, MMMM D YYYY")) + " :"
-              )
-            ]),
-            _vm._v(
-              "  Lorem ipsum dolor sit amet consectetur adipisicing elit. Error aperiam ab nesciunt consequuntur quidem facilis quis, quisquam aut!"
-            )
-          ])
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c(
-        "p",
-        [
-          _c("router-link", { attrs: { to: "" } }, [
-            _c("span", { staticClass: "text-dark" }, [
-              _vm._v(
-                _vm._s(_vm._f("moment")(new Date(), "dddd, MMMM D YYYY")) + " :"
-              )
-            ]),
-            _vm._v(
-              "  Lorem ipsum dolor sit amet consectetur adipisicing elit. Error aperiam ab nesciunt consequuntur quidem facilis quis, quisquam aut!"
-            )
-          ])
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c(
-        "small",
-        [
-          _c(
-            "router-link",
-            { staticClass: "d-flex align-items-center", attrs: { to: "" } },
-            [
-              _c("span", [
-                _vm._v("\n          View all news\n          "),
-                _c("i", {
-                  staticClass: "fa fa-angle-double-right",
-                  attrs: { "aria-hidden": "true" }
+    _c("div", { staticClass: "news" }, [
+      _c("div", { staticClass: "left_box" }, [
+        _c(
+          "div",
+          [
+            _c(
+              "swiper",
+              {
+                ref: "mySwiper",
+                staticClass: "news_update",
+                attrs: { options: _vm.swiperOptions }
+              },
+              [
+                _c("swiper-slide", { staticClass: "slide" }, [
+                  _c("div", { staticClass: "img_container" }, [
+                    _c("img", { attrs: { src: "/images/imo6.jpg", alt: "" } }),
+                    _vm._v(" "),
+                    _c("h4", { staticClass: "img_text1" }, [
+                      _vm._v("Lorem, ipsum.")
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "img_text2" }, [
+                      _vm._v(
+                        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae dolor fugiat sint dignissimos est impedit?"
+                      )
+                    ])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("swiper-slide", { staticClass: "slide" }, [
+                  _c("div", { staticClass: "img_container" }, [
+                    _c("img", { attrs: { src: "/images/imo2.jpg", alt: "" } }),
+                    _vm._v(" "),
+                    _c("h4", { staticClass: "img_text1" }, [
+                      _vm._v("Lorem, ipsum.")
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "img_text2" }, [
+                      _vm._v(
+                        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae dolor fugiat sint dignissimos est impedit?"
+                      )
+                    ])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("swiper-slide", { staticClass: "slide" }, [
+                  _c("div", { staticClass: "img_container" }, [
+                    _c("img", { attrs: { src: "/images/imo3.png", alt: "" } }),
+                    _vm._v(" "),
+                    _c("h4", { staticClass: "img_text1" }, [
+                      _vm._v("Lorem, ipsum.")
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "img_text2" }, [
+                      _vm._v(
+                        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae dolor fugiat sint dignissimos est impedit?"
+                      )
+                    ])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("swiper-slide", { staticClass: "slide" }, [
+                  _c("div", { staticClass: "img_container" }, [
+                    _c("img", { attrs: { src: "/images/imo4.jpg", alt: "" } }),
+                    _vm._v(" "),
+                    _c("h4", { staticClass: "img_text1" }, [
+                      _vm._v("Lorem, ipsum.")
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "img_text2" }, [
+                      _vm._v(
+                        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae dolor fugiat sint dignissimos est impedit?"
+                      )
+                    ])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", {
+                  staticClass: "swiper-pagination",
+                  attrs: { slot: "pagination" },
+                  slot: "pagination"
                 })
-              ])
-            ]
-          )
-        ],
-        1
-      ),
+              ],
+              1
+            )
+          ],
+          1
+        )
+      ]),
       _vm._v(" "),
-      _vm._m(1)
+      _c("div", { staticClass: "right_box" }, [
+        _vm._m(0),
+        _vm._v(" "),
+        _c(
+          "p",
+          [
+            _c("router-link", { attrs: { to: "" } }, [
+              _c("span", { staticClass: "text-dark" }, [
+                _vm._v(
+                  _vm._s(_vm._f("moment")(new Date(), "dddd, MMMM D YYYY")) +
+                    " :"
+                )
+              ]),
+              _vm._v(
+                " Lorem ipsum dolor sit amet consectetur adipisicing elit. Error aperiam ab nesciunt consequuntur quidem facilis quis, quisquam aut!\n      "
+              )
+            ])
+          ],
+          1
+        ),
+        _vm._v(" "),
+        _c(
+          "p",
+          [
+            _c("router-link", { attrs: { to: "" } }, [
+              _c("span", { staticClass: "text-dark" }, [
+                _vm._v(
+                  _vm._s(_vm._f("moment")(new Date(), "dddd, MMMM D YYYY")) +
+                    " :"
+                )
+              ]),
+              _vm._v(
+                " Lorem ipsum dolor sit amet consectetur adipisicing elit. Error aperiam ab nesciunt consequuntur quidem facilis quis, quisquam aut!\n      "
+              )
+            ])
+          ],
+          1
+        ),
+        _vm._v(" "),
+        _c(
+          "p",
+          [
+            _c("router-link", { attrs: { to: "" } }, [
+              _c("span", { staticClass: "text-dark" }, [
+                _vm._v(
+                  _vm._s(_vm._f("moment")(new Date(), "dddd, MMMM D YYYY")) +
+                    " :"
+                )
+              ]),
+              _vm._v(
+                " Lorem ipsum dolor sit amet consectetur adipisicing elit. Error aperiam ab nesciunt consequuntur quidem facilis quis, quisquam aut!\n      "
+              )
+            ])
+          ],
+          1
+        ),
+        _vm._v(" "),
+        _c(
+          "small",
+          [
+            _c(
+              "router-link",
+              { staticClass: "d-flex align-items-center", attrs: { to: "" } },
+              [
+                _c("span", [
+                  _vm._v("\n          View all news\n          "),
+                  _c("i", {
+                    staticClass: "fa fa-angle-double-right",
+                    attrs: { "aria-hidden": "true" }
+                  })
+                ])
+              ]
+            )
+          ],
+          1
+        ),
+        _vm._v(" "),
+        _vm._m(1)
+      ])
     ])
   ])
 }
@@ -1863,7 +1926,7 @@ var staticRenderFns = [
         _c("i", { staticClass: "fab fa-intercom fa-stack-1x text-white" })
       ]),
       _vm._v(" "),
-      _c("h3", { staticClass: "josefin w-75" }, [_vm._v("Current Topics")])
+      _c("h3", { staticClass: "josefin" }, [_vm._v("Latest News")])
     ])
   },
   function() {
@@ -2119,13 +2182,7 @@ var render = function() {
                   _vm._v("Lorem ipsum dolor sit amet consectetur adipisicing")
                 ])
               ])
-            ]),
-            _vm._v(" "),
-            _c("div", {
-              staticClass: "swiper-pagination",
-              attrs: { slot: "pagination" },
-              slot: "pagination"
-            })
+            ])
           ],
           1
         )
@@ -2220,43 +2277,7 @@ var staticRenderFns = [
       _c("div", { staticClass: "my-programs" }, [
         _c("div", { staticClass: "slide shadow-sm" }, [
           _c("div", { staticClass: "img_contain" }, [
-            _c("img", { attrs: { src: "/images/imo4.jpeg", alt: "" } })
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "img_text" }, [
-            _c("p", [
-              _vm._v("Lorem ipsum dolor sit amet consectetur adipisicing")
-            ])
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "slide shadow-sm" }, [
-          _c("div", { staticClass: "img_contain" }, [
-            _c("img", { attrs: { src: "/images/imo2.jpg", alt: "" } })
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "img_text" }, [
-            _c("p", [
-              _vm._v("Lorem ipsum dolor sit amet consectetur adipisicing")
-            ])
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "slide shadow-sm" }, [
-          _c("div", { staticClass: "img_contain" }, [
             _c("img", { attrs: { src: "/images/banner1.jpg", alt: "" } })
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "img_text" }, [
-            _c("p", [
-              _vm._v("Lorem ipsum dolor sit amet consectetur adipisicing")
-            ])
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "slide shadow-sm" }, [
-          _c("div", { staticClass: "img_contain" }, [
-            _c("img", { attrs: { src: "/images/imo4.jpeg", alt: "" } })
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "img_text" }, [

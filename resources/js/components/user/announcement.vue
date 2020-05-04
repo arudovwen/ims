@@ -1,16 +1,18 @@
 <template>
   <div class="main">
+     <h3 class="josefin  main_header mb-4">Announcement Board</h3>
     <div id="announcement">
     <div class="left_box">
   
       <div class="comm_body">
        <div class="w-100 text-center mb-3"> <img src="/images/pin.png" class="pin" alt="pin"></div>
-         <h3 class="josefin mb-3 top_head text-center mc1">ANNOUNCEMENT !!</h3>
+         <!-- <h3 class="josefin mb-3 top_head text-center mc1">ANNOUNCEMENT !!</h3> -->
         <div class="comm_image">
           <img src="/images/imo4.jpeg" alt="announcement">
         </div>
        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempora sapiente alias rem reprehenderit fuga ipsum fugiat. Rem laudantium odio deserunt ullam blanditiis ut cumque at?</p>
         <p>Lorem ipsumdicta dolorem vitae nisi?</p>
+        <router-link to="/checkout"> <button type="button" class="btn bg1-dark text-white mx-auto">Pay now   <i class="fa fa-long-arrow-right text-white" aria-hidden="true"></i></button></router-link>
      </div>
     </div>
     <div class="right_box">
@@ -97,6 +99,7 @@ export default {
 <style scoped>
 .main{
  background-image: url("/images/texture.png");
+ padding: 45px 15px 0;
 }
 #announcement {
   display: flex;

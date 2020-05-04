@@ -33,9 +33,13 @@ export default {};
    flex-direction: column;
    justify-content: center;
    align-items: center;
+   font-size: 14px;
  }
 }
 @media(max-width: 425px){
-  
+  .bottom_footer{
+ 
+   font-size: 13px;
+ }
 }
 </style>

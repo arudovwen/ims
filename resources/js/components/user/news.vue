@@ -1,66 +1,74 @@
 <template>
   <div id="news">
-    <div class="left_box">
-      <div class="left_header">
-        <div class="fa-stack">
-          <i class="fa fa-circle fa-stack-2x" aria-hidden="true"></i>
-          <i class="fab fa-intercom fa-stack-1x text-white"></i>
-        </div>
-         <h3 class="josefin w-75">Current Topics</h3>
-      </div>
-     
+    <h3 class="josefin main_header mb-4">News</h3>
+    <div class="news">
+   <div class="left_box">
       <div>
         <swiper class="news_update" ref="mySwiper" :options="swiperOptions">
-           <swiper-slide class="slide">
-             <div class="img_container">
-               <img src="/images/imo6.jpg" alt="">
-            <h4 class="img_text1">Lorem, ipsum.</h4>
-                   <div class="img_text2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae dolor fugiat sint dignissimos est impedit?</div>
-             </div>
+          <swiper-slide class="slide">
+            <div class="img_container">
+              <img src="/images/imo6.jpg" alt />
+              <h4 class="img_text1">Lorem, ipsum.</h4>
+              <div
+                class="img_text2"
+              >Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae dolor fugiat sint dignissimos est impedit?</div>
+            </div>
+          </swiper-slide>
+          <swiper-slide class="slide">
+            <div class="img_container">
+              <img src="/images/imo2.jpg" alt />
+              <h4 class="img_text1">Lorem, ipsum.</h4>
+              <div
+                class="img_text2"
+              >Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae dolor fugiat sint dignissimos est impedit?</div>
+            </div>
+          </swiper-slide>
 
-           </swiper-slide>
-        <swiper-slide class="slide">
-              <div class="img_container">
-               <img src="/images/imo2.jpg" alt="">
-               <h4 class="img_text1">Lorem, ipsum.</h4>
-                  <div class="img_text2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae dolor fugiat sint dignissimos est impedit?</div>
-             </div>
-        </swiper-slide>
-
-        <swiper-slide class="slide">
-                <div class="img_container">
-               <img src="/images/imo3.png" alt="">
-                 <h4 class="img_text1">Lorem, ipsum.</h4>
-                  <div class="img_text2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae dolor fugiat sint dignissimos est impedit?</div>
-             </div>
-        </swiper-slide>
-        <swiper-slide class="slide">
-                <div class="img_container">
-               <img src="/images/imo4.jpg" alt="">
-                 <h4 class="img_text1">Lorem, ipsum.</h4>
-                  <div class="img_text2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae dolor fugiat sint dignissimos est impedit?</div>
-             </div>
-        </swiper-slide>
+          <swiper-slide class="slide">
+            <div class="img_container">
+              <img src="/images/imo3.png" alt />
+              <h4 class="img_text1">Lorem, ipsum.</h4>
+              <div
+                class="img_text2"
+              >Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae dolor fugiat sint dignissimos est impedit?</div>
+            </div>
+          </swiper-slide>
+          <swiper-slide class="slide">
+            <div class="img_container">
+              <img src="/images/imo4.jpg" alt />
+              <h4 class="img_text1">Lorem, ipsum.</h4>
+              <div
+                class="img_text2"
+              >Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae dolor fugiat sint dignissimos est impedit?</div>
+            </div>
+          </swiper-slide>
           <div class="swiper-pagination" slot="pagination"></div>
         </swiper>
       </div>
     </div>
     <div class="right_box">
-      <h3 class="josefin">Latest News</h3>
+      <div class="left_header">
+        <div class="fa-stack">
+          <i class="fa fa-circle fa-stack-2x" aria-hidden="true"></i>
+          <i class="fab fa-intercom fa-stack-1x text-white"></i>
+        </div>
+        <h3 class="josefin">Latest News</h3>
+      </div>
+
       <p>
-        <router-link
-          to
-        ><span class="text-dark">{{new Date() | moment("dddd, MMMM D YYYY")}} :</span> Lorem ipsum dolor sit amet consectetur adipisicing elit. Error aperiam ab nesciunt consequuntur quidem facilis quis, quisquam aut!</router-link>
+        <router-link to>
+          <span class="text-dark">{{new Date() | moment("dddd, MMMM D YYYY")}} :</span> Lorem ipsum dolor sit amet consectetur adipisicing elit. Error aperiam ab nesciunt consequuntur quidem facilis quis, quisquam aut!
+        </router-link>
       </p>
       <p>
-        <router-link
-          to
-        ><span class="text-dark">{{new Date() | moment("dddd, MMMM D YYYY")}} :</span>  Lorem ipsum dolor sit amet consectetur adipisicing elit. Error aperiam ab nesciunt consequuntur quidem facilis quis, quisquam aut!</router-link>
+        <router-link to>
+          <span class="text-dark">{{new Date() | moment("dddd, MMMM D YYYY")}} :</span> Lorem ipsum dolor sit amet consectetur adipisicing elit. Error aperiam ab nesciunt consequuntur quidem facilis quis, quisquam aut!
+        </router-link>
       </p>
       <p>
-        <router-link
-          to
-        ><span class="text-dark">{{new Date() | moment("dddd, MMMM D YYYY")}} :</span>  Lorem ipsum dolor sit amet consectetur adipisicing elit. Error aperiam ab nesciunt consequuntur quidem facilis quis, quisquam aut!</router-link>
+        <router-link to>
+          <span class="text-dark">{{new Date() | moment("dddd, MMMM D YYYY")}} :</span> Lorem ipsum dolor sit amet consectetur adipisicing elit. Error aperiam ab nesciunt consequuntur quidem facilis quis, quisquam aut!
+        </router-link>
       </p>
 
       <small>
@@ -81,7 +89,7 @@
             class="news_title"
           >Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eaque, enim?</div>
         </div>
-          <div class="news_container">
+        <div class="news_container">
           <div class="news_img">
             <img src="/images/imo4.jpeg" alt class="rounded" />
           </div>
@@ -89,7 +97,7 @@
             class="news_title"
           >Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eaque, enim?</div>
         </div>
-          <div class="news_container">
+        <div class="news_container">
           <div class="news_img">
             <img src="/images/imo4.jpeg" alt class="rounded" />
           </div>
@@ -99,6 +107,8 @@
         </div>
       </div>
     </div>
+    </div>
+   
   </div>
 </template>
 <script>
@@ -119,12 +129,16 @@ export default {
 };
 </script>
 <style scoped>
-#news {
+#news{
+  padding:25px 15px;
+    border-bottom: 6px solid #006600;
+}
+.news {
   min-height: 300px;
   display: flex;
-  padding: 15px;
+
   padding-bottom: 45px;
-    border-bottom: 6px solid #006600;
+
 }
 .left_box {
   width: 50%;
@@ -150,8 +164,8 @@ export default {
   width: 100%;
   height: 100px;
 }
-.news_img img{
-  width:100%;
+.news_img img {
+  width: 100%;
   height: 100%;
 }
 .news_title {
@@ -161,65 +175,67 @@ export default {
 .news_update {
   height: 400px;
 }
-.sub_news{
+.sub_news {
   margin-top: 40px;
   display: flex;
   justify-content: space-between;
 }
-.left_header div,.left_header h3{
-  display: inline-block ;
+.left_header div,
+.left_header h3 {
+  display: inline-block;
   vertical-align: baseline;
 }
-.slide{
-    background: #f7f8fa;
+.slide {
+  background: #f7f8fa;
 }
-.img_container{
+.img_container {
   position: relative;
-  width:100%;
+  width: 100%;
   height: 100%;
 }
-.img_text1{
+.img_text1 {
   position: absolute;
   bottom: 125px;
-  background: rgba(0, 0, 0,0.5);
-  color:white;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
   z-index: 2;
   width: auto;
   padding: 10px;
   text-align: center;
 }
-.img_text2{
+.img_text2 {
   position: absolute;
   bottom: 50px;
-  background: rgba(0, 0, 0,0.5);
-  color:white;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
   z-index: 2;
   width: 100%;
   padding: 10px;
   text-align: center;
   text-align: left;
 }
-@media(max-width: 1024px){
-
+@media (max-width: 1024px) {
 }
-@media(max-width: 768px){
-  .news_update{
+@media (max-width: 768px) {
+  .news_update {
     height: 300px;
   }
-  .left_box,.right_box{
-    width:100%;
-  }#news{
+  .left_box,
+  .right_box {
+    width: 100%;
+  }
+  .news {
     flex-direction: column;
   }
-  .right_box{
-    padding:10px;
+  .right_box {
+    padding: 10px;
   }
-  .news_container{
+  .news_container {
     width: 31.5%;
   }
 }
-@media(max-width: 425px){
-  .news_title{
+@media (max-width: 425px) {
+  .news_title {
     font-size: 11.5px;
   }
 }

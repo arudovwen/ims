@@ -4,12 +4,14 @@
     <div class="commiss">
       <div class="governor box shadow-sm">
         <div class="top_header">
-            <h4 class="josefin ">Governor, Imo state</h4>
+          <h6>His Excellency</h6>
+          <h4 class="josefin">SEN. HOPE UZODIMMA</h4>
+            <h5 class="josefin ">Governor, Imo state</h5>
           <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit nostrum odio quidem dolorem sequi itaque... <span class="mc3">read more</span></p>
         </div>
       
         <div class="img">
-          <img src="/images/govt.png" alt="Governor, imo state" />
+          <img src="/images/govt.jpeg" alt="Governor, imo state" />
         </div>
       </div>
       <div class="commissioner box shadow-sm">
@@ -26,7 +28,7 @@
 
       <div class="perm_sec box shadow-sm">
          <div class="top_header">
-             <h4 class="josefin ">Permanent Secretary, Imo state</h4>
+             <h4 class="josefin ">Permanent Secretary, Imo state Ministry of Education</h4>
           <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit nostrum odio quidem dolorem sequi itaque... <span class="mc3">read more</span></p>
         </div>
       

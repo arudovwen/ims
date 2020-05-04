@@ -159,7 +159,10 @@ a {
 }
 
 .bg1-dark {
-    background-color: #b6d4b6;
+    background-color: #006600 !important;
+}
+.bg1-dark:hover {
+    background-color: #669f66 !important;
 }
 
 .bg1-light {

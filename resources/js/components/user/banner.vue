@@ -33,6 +33,10 @@
             <span class="new josefin">has a New</span>
             <br />
             <span class="face josefin">Face</span>
+            <div class="enroll">
+               <p>www.imolearncentre.org</p>
+               <router-link to="/checkout" class="mt-4 "> <button type="button" class="btn bg-white text-blue border-0">Enroll Now  <i class="fa fa-long-arrow-right text-blue" aria-hidden="true"></i></button></router-link>
+            </div>
           </span>
         </div>
         <div class="circle_3 animated slideInRight slow">
@@ -72,7 +76,17 @@ export default {
   background-repeat: no-repeat;
   background-size: cover;
 }
-
+.enroll{
+  text-align: end;
+}
+.enroll p{
+  color: white;
+  font-size: 16px;
+  text-decoration: none;
+}
+.text-blue{
+  color: #000066;
+}
 .banner_1 {
   position: relative;
   width: 100%;
@@ -118,8 +132,8 @@ export default {
 }
 .text {
   position: absolute;
-  bottom: 28%;
-  right: 9%;
+  bottom: 22%;
+  right: 14%;
 }
 .new {
   color: #fff;
@@ -244,18 +258,18 @@ export default {
   }
 
   .text {
-    bottom: 28%;
-    right: 9%;
+    bottom: 22%;
+    right: 14%;
   }
   .new {
-    font-size: 52px;
+    font-size: 42px;
   }
   .education {
-    font-size: 52px;
+    font-size: 42px;
   }
   .face {
     color: #fff;
-    font-size: 52px;
+    font-size: 42px;
     font-weight: bold;
   }
   .circle_3 {
@@ -340,18 +354,18 @@ export default {
   }
 
   .text {
-    bottom: 28%;
-    right: 9%;
+    bottom: 24%;
+    right: 18%;
   }
   .new {
-    font-size: 40px;
+    font-size: 32px;
   }
   .education {
-    font-size: 40px;
+    font-size: 32px;
   }
   .face {
     color: #fff;
-    font-size: 40px;
+    font-size: 32px;
     font-weight: bold;
   }
   .circle_3 {
@@ -442,14 +456,14 @@ export default {
     right: 9%;
   }
   .new {
-    font-size: 32px;
+    font-size: 28px;
   }
   .education {
-    font-size: 32px;
+    font-size: 28px;
   }
   .face {
     color: #fff;
-    font-size: 32px;
+    font-size: 28px;
     font-weight: bold;
   }
   .circle_3 {
@@ -473,7 +487,8 @@ export default {
     margin-bottom: -75px;
   }
   .text{
-    right:13%;
+    right:18%;
+    bottom: 24%;
   }
 }
 </style>

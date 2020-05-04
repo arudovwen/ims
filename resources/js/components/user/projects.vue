@@ -37,7 +37,7 @@
             <p>Lorem ipsum dolor sit amet consectetur adipisicing</p>
           </div>
        </swiper-slide>
-        <div class="swiper-pagination" slot="pagination"></div>
+        <!-- <div class="swiper-pagination" slot="pagination"></div> -->
       </swiper>
     </div>
     <div class="view py-2 text-right">
@@ -116,7 +116,7 @@ export default {
   height: 20%;
   text-align: center;
   background:   rgba(0, 0, 0, .7);;
-  color: hsl(120, 100%, 95%);
+  color: white;
 }
 .swiper-pagination-fraction, .swiper-pagination-custom, .swiper-container-horizontal > .swiper-pagination-bullets {
     bottom: -5px;

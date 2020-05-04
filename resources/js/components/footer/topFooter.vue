@@ -42,6 +42,17 @@
           </li>
         </ul>
       </div>
+      <div class="contact links">
+        <h5 class="links_header josefin">Contact</h5>
+        <div class="mb-2">
+          <p class="text-muted">E-mail: postmottak@kd.dep.no</p>
+        </div>
+        <p  class="text-muted">Phone: +234 8202588399</p>
+        <p  class="text-muted">Address: Postboks 8119 Dep, 0032 Imo State.</p>
+        <div class="mb-2">
+          <router-link to="/contact"><gb-social-button network="" size="small" theme="light">Contact us</gb-social-button></router-link>
+        </div>
+      </div>
       <div class="links">
         <h5 class="links_header josefin">Social connects</h5>
         <p
@@ -69,15 +80,14 @@ export default {};
   padding: 30px 15px;
 }
 .quick_links {
-  width: 80%;
-  margin: 0 auto;
+  width: 100%;
   display: grid;
-  grid-template-columns: 30% 30% 40%;
-  grid-column-gap: 50px;
-  height: 300px; 
+  grid-template-columns: 25% 25% 25% 25%;
+  height: 300px;
 }
 .links {
   text-align: left;
+  padding: 0 20px;
 }
 .links_header {
   padding: 10px;
@@ -98,23 +108,21 @@ export default {};
 p {
   font-size: 14px;
 }
-@media(max-width: 1024px){
-.quick_links{
+@media (max-width: 1024px) {
+  .quick_links {
     width: 100%;
+  }
 }
-}
-@media(max-width: 768px){
-  .quick_links{
-
+@media (max-width: 768px) {
+  .quick_links {
     grid-template-columns: auto;
     grid-row-gap: 30px;
-      height: auto;
+    height: auto;
   }
-  .links{
-      text-align: center;
+  .links {
+    text-align: center;
   }
 }
-@media(max-width: 425px){
-  
+@media (max-width: 425px) {
 }
 </style>

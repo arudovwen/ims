@@ -5,22 +5,7 @@
     </div>
     <div>
       <div class="my-programs">
-        <div class="slide shadow-sm">
-          <div class="img_contain">
-            <img src="/images/imo4.jpeg" alt />
-          </div>
-          <div class="img_text">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing</p>
-          </div>
-        </div>
-        <div class="slide shadow-sm">
-          <div class="img_contain">
-            <img src="/images/imo2.jpg" alt />
-          </div>
-          <div class="img_text">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing</p>
-          </div>
-        </div>
+   
         <div class="slide shadow-sm">
           <div class="img_contain">
             <img src="/images/banner1.jpg" alt />
@@ -29,14 +14,7 @@
             <p>Lorem ipsum dolor sit amet consectetur adipisicing</p>
           </div>
         </div>
-        <div class="slide shadow-sm">
-          <div class="img_contain">
-            <img src="/images/imo4.jpeg" alt />
-          </div>
-          <div class="img_text">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing</p>
-          </div>
-        </div>
+    
          <div class="slide shadow-sm">
           <div class="img_contain">
             <img src="/images/banner2.jpg" alt />
