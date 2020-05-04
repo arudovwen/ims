@@ -12,7 +12,7 @@
         </div>
        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempora sapiente alias rem reprehenderit fuga ipsum fugiat. Rem laudantium odio deserunt ullam blanditiis ut cumque at?</p>
         <p>Lorem ipsumdicta dolorem vitae nisi?</p>
-        <router-link to="/checkout"> <button type="button" class="btn bg1-dark text-white mx-auto">Pay now   <i class="fa fa-long-arrow-right text-white" aria-hidden="true"></i></button></router-link>
+        <router-link to="/checkout"> <button type="button" class="btn bg1-dark text-white mx-auto button">Pay now   <i class="fa fa-long-arrow-right text-white" aria-hidden="true"></i></button></router-link>
      </div>
     </div>
     <div class="right_box">
@@ -109,6 +109,9 @@ export default {
   width: 100%;
   margin:0 auto;
 
+}
+.button{
+  width:40%
 }
 .pin{
   width:50px
@@ -231,5 +234,8 @@ export default {
  .img_text p{
    font-size: 12.5px;
  }
+ .button{
+  width:100%
+}
 }
 </style>

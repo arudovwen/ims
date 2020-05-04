@@ -7,6 +7,7 @@
     <section class="my_body">
       <Commissioner />
       <ourInitiatives />
+       <ourOrganizations />
       <Polls />
       <News />
     </section>
@@ -23,6 +24,7 @@ import Announcement from "../user/announcement";
 import News from "../user/news";
 import Commissioner from "../user/commissioner";
 import ourInitiatives from "../user/ourInitiatives";
+import ourOrganizations from "../user/ourOrganizations";
 import scrollTop from "../scrollTopComponent";
 
 export default {
@@ -31,6 +33,7 @@ export default {
     Announcement,
     News,
     ourInitiatives,
+    ourOrganizations,
     Commissioner,
     Navigation,
     Footer,

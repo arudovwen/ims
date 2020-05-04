@@ -15,7 +15,7 @@
         </swiper-slide>
         <swiper-slide class="slide shadow-sm">
           <div class="img_contain">
-              <img src="/images/imo2.jpg" alt />
+            <img src="/images/imo2.jpg" alt />
           </div>
           <div class="img_text">
             <p>Lorem ipsum dolor sit amet consectetur adipisicing</p>
@@ -23,7 +23,7 @@
         </swiper-slide>
         <swiper-slide class="slide shadow-sm">
           <div class="img_contain">
-              <img src="/images/imo1.jpg" alt />
+            <img src="/images/imo1.jpg" alt />
           </div>
           <div class="img_text">
             <p>Lorem ipsum dolor sit amet consectetur adipisicing</p>
@@ -31,12 +31,12 @@
         </swiper-slide>
         <swiper-slide class="slide shadow-sm">
           <div class="img_contain">
-               <img src="/images/imo4.jpeg" alt />
+            <img src="/images/imo4.jpeg" alt />
           </div>
           <div class="img_text">
             <p>Lorem ipsum dolor sit amet consectetur adipisicing</p>
           </div>
-       </swiper-slide>
+        </swiper-slide>
         <!-- <div class="swiper-pagination" slot="pagination"></div> -->
       </swiper>
     </div>
@@ -58,7 +58,11 @@ export default {
       swiperOptions: {
         spaceBetween: 15,
         slidesPerView: 3,
-         breakpoints: {
+        breakpoints: {
+          320: {
+            slidesPerView: 2,
+            spaceBetween: 10
+          },
           425: {
             slidesPerView: 2,
             spaceBetween: 10
@@ -67,7 +71,7 @@ export default {
             slidesPerView: 3,
             spaceBetween: 15
           },
-           1024: {
+          1024: {
             slidesPerView: 3,
             spaceBetween: 30
           }
@@ -77,8 +81,7 @@ export default {
         },
         autoplay: {
           delay: 10000
-        },
-       
+        }
       }
     };
   }
@@ -93,7 +96,6 @@ export default {
 }
 .my-projects {
   height: 350px;
-  
 }
 .slide {
   background: #f7f8fa;
@@ -104,7 +106,7 @@ export default {
   width: 100%;
   height: 80%;
 }
-.img_contain img{
+.img_contain img {
   width: 100%;
   height: 100%;
 }
@@ -115,21 +117,23 @@ export default {
   font-size: 15px;
   height: 20%;
   text-align: center;
-  background:   rgba(0, 0, 0, .7);;
+  background: rgba(0, 0, 0, 0.7);
   color: white;
 }
-.swiper-pagination-fraction, .swiper-pagination-custom, .swiper-container-horizontal > .swiper-pagination-bullets {
-    bottom: -5px;
-    left: 0;
-    width: 100%;
+.swiper-pagination-fraction,
+.swiper-pagination-custom,
+.swiper-container-horizontal > .swiper-pagination-bullets {
+  bottom: -5px;
+  left: 0;
+  width: 100%;
 }
-p{
+p {
   margin: 0;
 }
 @media (max-width: 1024px) {
 }
 @media (max-width: 768px) {
-  #projects{
+  #projects {
     width: 100%;
     padding: 10px 25px;
   }
@@ -147,8 +151,8 @@ p{
   }
 }
 @media (max-width: 425px) {
-  #projects{
-    padding:40px 15px;
+  #projects {
+    padding: 40px 15px;
   }
   p {
     font-size: 11px;
@@ -156,11 +160,11 @@ p{
   .my-projects {
     height: 200px;
   }
-  .img_contain{
+  .img_contain {
     height: 120px;
   }
-  .img_text{
-    padding:10px 2px;
+  .img_text {
+    padding: 10px 2px;
   }
 }
 </style>

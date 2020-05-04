@@ -269,7 +269,7 @@ td {
   .main_header::after{
     content: '';
     border-bottom: 4px solid #006600;
-    width: 30px;
+    width: 50px;
     height: 5px;
     position: absolute;
     bottom: -5px;

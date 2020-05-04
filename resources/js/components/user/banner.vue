@@ -452,14 +452,14 @@ export default {
   }
 
   .text {
-    bottom: 28%;
+    bottom: 26%;
     right: 9%;
   }
   .new {
-    font-size: 28px;
+    font-size: 26px;
   }
   .education {
-    font-size: 28px;
+    font-size: 26px;
   }
   .face {
     color: #fff;

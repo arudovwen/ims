@@ -4,34 +4,41 @@
       <h4 class="josefin mb-4 header">Programs</h4>
     </div>
     <div>
-      <div class="my-programs">
-   
-        <div class="slide shadow-sm">
+      <swiper class="my-programs" :options="swiperOptions">
+        <swiper-slide class="slide shadow-sm">
           <div class="img_contain">
             <img src="/images/banner1.jpg" alt />
           </div>
           <div class="img_text">
             <p>Lorem ipsum dolor sit amet consectetur adipisicing</p>
           </div>
-        </div>
-    
-         <div class="slide shadow-sm">
+        </swiper-slide>
+        <swiper-slide class="slide shadow-sm">
           <div class="img_contain">
-            <img src="/images/banner2.jpg" alt />
+              <img src="/images/imo2.jpg" alt />
           </div>
           <div class="img_text">
             <p>Lorem ipsum dolor sit amet consectetur adipisicing</p>
           </div>
-        </div>
-         <div class="slide shadow-sm">
+        </swiper-slide>
+        <swiper-slide class="slide shadow-sm">
           <div class="img_contain">
-            <img src="/images/imo4.jpeg" alt />
+              <img src="/images/banner2.jpg" alt />
           </div>
           <div class="img_text">
             <p>Lorem ipsum dolor sit amet consectetur adipisicing</p>
           </div>
-        </div>
-      </div>
+        </swiper-slide>
+        <swiper-slide class="slide shadow-sm">
+          <div class="img_contain">
+               <img src="/images/imo4.jpeg" alt />
+          </div>
+          <div class="img_text">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing</p>
+          </div>
+       </swiper-slide>
+        <!-- <div class="swiper-pagination" slot="pagination"></div> -->
+      </swiper>
     </div>
     <div class="view py-2 text-right">
       <small>
@@ -51,10 +58,22 @@ export default {
       swiperOptions: {
         spaceBetween: 15,
         slidesPerView: 3,
-        breakpoints: {
-          480: {
-            slidesPerView: 3,
+         breakpoints: {
+            320: {
+            slidesPerView: 2,
             spaceBetween: 10
+          },
+          425: {
+            slidesPerView: 2,
+            spaceBetween: 10
+          },
+          768: {
+            slidesPerView: 3,
+            spaceBetween: 15
+          },
+           1024: {
+            slidesPerView: 3,
+            spaceBetween: 30
           }
         },
         pagination: {
@@ -62,7 +81,8 @@ export default {
         },
         autoplay: {
           delay: 10000
-        }
+        },
+       
       }
     };
   }
@@ -76,10 +96,8 @@ export default {
   margin: 0 auto;
 }
 .my-programs {
-  display: grid;
-  grid-template-columns: auto auto auto;
-  grid-row-gap: 30px;
-  grid-column-gap: 15px;
+  height: 350px;
+  
 }
 .slide {
   background: #f7f8fa;
@@ -90,7 +108,7 @@ export default {
   width: 100%;
   height: 80%;
 }
-.img_contain img {
+.img_contain img{
   width: 100%;
   height: 100%;
 }
@@ -101,13 +119,17 @@ export default {
   font-size: 15px;
   height: 20%;
   text-align: center;
-   background:  rgba(0, 0, 0, .7);;
-  color: hsl(210, 44%, 92%);
+  background:   rgba(0, 0, 0, .7);;
+  color: white;
+}
+.swiper-pagination-fraction, .swiper-pagination-custom, .swiper-container-horizontal > .swiper-pagination-bullets {
+    bottom: -5px;
+    left: 0;
+    width: 100%;
 }
 p{
   margin: 0;
 }
-
 @media (max-width: 1024px) {
 }
 @media (max-width: 768px) {
@@ -115,34 +137,34 @@ p{
     width: 100%;
     padding: 10px 25px;
   }
-  .my-programs{
-    grid-template-columns: auto auto;
-    height: auto;
-  }
   p {
     font-size: 13.5px;
   }
   .img_text {
     height: auto;
   }
- 
+  .my-programs {
+    height: 280px;
+  }
   .img_contain {
     height: 180px;
   }
 }
 @media (max-width: 425px) {
-  #programs {
-    padding: 40px 15px;
+  #programs{
+    padding:40px 15px;
   }
   p {
     font-size: 11px;
-    
   }
-   .img_contain {
+  .my-programs {
+    height: 200px;
+  }
+  .img_contain{
     height: 120px;
   }
-  .img_text {
-    padding: 10px 2px;
+  .img_text{
+    padding:10px 2px;
   }
 }
 </style>
