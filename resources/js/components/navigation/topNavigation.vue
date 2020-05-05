@@ -182,16 +182,20 @@ a {
   .text {
     padding: 0 0 0 10px;
   }
+  .search_bar{
+    width: 80%;
+  }
   .form-control {
     height: calc(1em + 0.75rem + 2px);
     padding: 0.375rem 0.75rem;
     font-size: .8rem;
+    margin-left: auto;
     }
-    .search_icon[data-v-7a6da0d9] {
-    font-size: 16px;
-    right: -4px;
+    .search_icon {
+    font-size: 12px;
+    right: -1px;
     height: 26px;
-    width: 60px;
+    width: 50px;
 
 }
 }
