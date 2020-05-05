@@ -50,7 +50,7 @@
         <p  class="text-muted">Phone: +234 8202588399</p>
         <p  class="text-muted">Address: Postboks 8119 Dep, 0032 Imo State.</p>
         <div class="mb-2">
-          <router-link to="/contact"><gb-social-button network="" size="small" theme="light">Contact us</gb-social-button></router-link>
+          <router-link to="/contact"><button type="button" class="btn btn-default">Contact us</button></router-link>
         </div>
       </div>
       <div class="links">
@@ -108,6 +108,15 @@ export default {};
 p {
   font-size: 14px;
 }
+
+.btn-default{
+    border-color: #c5d9e8;
+     background: #f7f8fa;
+    border-width: 1px;
+    border-style: solid;
+    transition: all linear 250ms;
+     border-radius: 7px;
+}
 @media (max-width: 1024px) {
   .quick_links {
     width: 100%;
@@ -124,5 +133,11 @@ p {
   }
 }
 @media (max-width: 425px) {
+  
+.links_header {
+
+  border-bottom: 2px solid #006600;
+
+}
 }
 </style>
