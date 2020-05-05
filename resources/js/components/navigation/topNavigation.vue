@@ -14,9 +14,9 @@
             <img src="/images/logo.jpg" alt />
           </div>
           <div class="text">
-            <span class="imo">IMO STATE</span>
+            <span class="imo josefin_bold">IMO STATE</span>
             <br />
-            <span class="ministry">MINISTRY OF EDUCATION</span>
+            <span class="ministry">Ministry Of Education</span>
           </div>
         </router-link>
       </div>
@@ -85,7 +85,7 @@ export default {
   font-size: 32px;
 }
 .ministry {
-  font-size: 22px;
+  font-size: 20px;
 }
 .img_container {
   width: 100px;
@@ -182,5 +182,17 @@ a {
   .text {
     padding: 0 0 0 10px;
   }
+  .form-control {
+    height: calc(1em + 0.75rem + 2px);
+    padding: 0.375rem 0.75rem;
+    font-size: .8rem;
+    }
+    .search_icon[data-v-7a6da0d9] {
+    font-size: 16px;
+    right: -4px;
+    height: 26px;
+    width: 60px;
+
+}
 }
 </style>

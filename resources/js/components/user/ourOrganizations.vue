@@ -6,6 +6,9 @@
        <div class="org2">
             <div class="org1">
           <img src="/images/imsu.jpg" alt />
+          <div class="info">
+            <p>IMSUBEB</p>
+          </div>
         </div>
        </div>
       </marquee-text>
@@ -18,7 +21,10 @@
 }
 .organizations {
     width: 100%;
-  padding: 15px;
+  padding: 30px;
+}
+.info p{
+  text-align: center;
 }
 .org2{
     width: 25vw;

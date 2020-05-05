@@ -152,7 +152,7 @@ p {
 }
 @media (max-width: 425px) {
   #projects {
-    padding: 40px 15px;
+    padding: 40px 15px 0;
   }
   p {
     font-size: 11px;

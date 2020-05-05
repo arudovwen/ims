@@ -125,6 +125,11 @@ dt {
 
 .josefin {
     font-family: 'Josefin Sans';
+    font-weight:300;
+}
+.josefin_bold {
+    font-family: 'Josefin Sans';
+    font-weight:400;
 }
 
 a {
@@ -263,7 +268,7 @@ td {
   .main_header{
   color: #006600;
   font-size: 2em;
-  font-weight: bold;
+  font-weight: 300;
   position: relative;
   }
   .main_header::after{

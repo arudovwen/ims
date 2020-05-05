@@ -155,7 +155,7 @@ export default {
   width: 100%;
   position: relative;
   background-color: #006600;
-  border-top: 6px solid #669f66;
+  border-top: 6px solid #ffff75;
   z-index: 99;
 }
 .mobile {

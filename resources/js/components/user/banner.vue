@@ -34,7 +34,7 @@
             <br />
             <span class="face josefin">Face</span>
             <div class="enroll">
-               <input type="text" readonly class="form-control mb-2" placeholder="www.imolearncentre.org">
+               <p class="site rounded-pill">www.imolearncentre.org</p>
                <router-link to="/checkout" class="mt-4 "> <button type="button" class="btn bg-white text-blue border-0">Enroll Now  <i class="fa fa-long-arrow-right text-blue" aria-hidden="true"></i></button></router-link>
             </div>
           </span>
@@ -87,6 +87,12 @@ export default {
 .text-blue{
   color: #000066;
 }
+.site{
+  padding: 8px 15px;
+ border:1px solid white;
+     width: fit-content;
+    margin-left: auto;
+}
 .form-control{
   width: 50%;
   margin-left: auto;
@@ -123,7 +129,7 @@ export default {
   background: #f7f8fa;
   position: absolute;
   bottom: -47%;
-  left: 15px;
+  left: 1px;
   border-radius: 50%;
   z-index: 3;
   overflow: hidden;
@@ -136,8 +142,8 @@ export default {
 }
 .text {
   position: absolute;
-  bottom: 22%;
-  right: 14%;
+  bottom: 18%;
+  right: 18%;
 }
 .new {
   color: #fff;
@@ -176,7 +182,7 @@ export default {
   height: 600px;
   background: linear-gradient(90deg, #000428 0%, #004e92 100%);
   position: absolute;
-  right: 50%;
+  right: 49%;
   bottom: 40%;
   margin-right: -300px;
   margin-bottom: -150px;
@@ -249,7 +255,7 @@ export default {
   color: yellow;
 }
 .banner_2_lor {
-  font-size: 24px;
+  font-size: 22px;
   color: white;
 }
 @media (max-width: 1024px) {
@@ -262,8 +268,8 @@ export default {
   }
 
   .text {
-    bottom: 22%;
-    right: 14%;
+    bottom: 18%;
+    right: 18%;
   }
   .new {
     font-size: 42px;
@@ -351,7 +357,7 @@ export default {
     font-size: 32px;
   }
   .banner_2_lor {
-    font-size: 16px;
+    font-size: 15px;
   }
   .circle_1 {
     width: 400px;
@@ -362,7 +368,7 @@ export default {
   }
 
   .text {
-    bottom: 24%;
+    bottom:18%;
     right: 18%;
   }
   .new {
@@ -451,10 +457,10 @@ export default {
     width: 78%;
   }
   .banner_2_imo {
-    font-size: 24px;
+    font-size: 20px;
   }
   .banner_2_lor {
-    font-size: 16px;
+    font-size: 15px;
   }
   .circle_1 {
    width: 400px;
@@ -464,8 +470,8 @@ export default {
   }
 
   .text {
-    bottom: 26%;
-    right: 9%;
+    bottom: 18%;
+    right: 18%;
   }
   .new {
     font-size: 26px;
@@ -498,9 +504,6 @@ export default {
     margin-right: -150px;
     margin-bottom: -75px;
   }
-  .text{
-    right:18%;
-    bottom: 24%;
-  }
+ 
 }
 </style>

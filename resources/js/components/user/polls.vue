@@ -7,14 +7,14 @@
       <div class="newsletter shadow-sm tab">
         <div class="fa-stack icon">
           <i class="fa fa-circle fa-stack-2x text-white " aria-hidden="true"></i>
-          <i class="fa fa-list fa-stack-1x mc1" aria-hidden="true"></i>
+          <i class="fas fa-list-alt fa-stack-1x mc1" aria-hidden="true"></i>
         </div>
         <h4 class="josefin mc1">Applications</h4>
       </div>
       <div class="affiliates shadow-sm tab">
         <div class="fa-stack icon">
           <i class="fa fa-circle fa-stack-2x text-white" aria-hidden="true"></i>
-          <i class="fa fa-folder-open-o fa-stack-1x mc1" aria-hidden="true"></i>
+          <i class="fas fa-folder-open fa-stack-1x mc1" aria-hidden="true"></i>
         </div>
 
         <h4 class="josefin mc1">Directory</h4>
@@ -22,7 +22,7 @@
       <div class="opinions shadow-sm tab">
         <div class="fa-stack icon">
           <i class="fa fa-circle fa-stack-2x text-white" aria-hidden="true"></i>
-          <i class="fa fa-credit-card fa-stack-1x mc1" aria-hidden="true"></i>
+          <i class="fas fa-credit-card fa-stack-1x mc1" aria-hidden="true"></i>
         </div>
 
         <h4 class="josefin mc1">Payments</h4>
