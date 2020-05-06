@@ -1,6 +1,6 @@
 <template>
   <div class="main">
-     <h3 class="josefin  main_header mb-4">Announcement Board</h3>
+     <h3 class="josefin  center_header mb-4 w-100 text-center bold">Announcement Board</h3>
     <div id="announcement">
     <div class="left_box">
   

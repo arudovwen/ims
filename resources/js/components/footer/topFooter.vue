@@ -43,16 +43,16 @@
         </ul>
       </div>
       <div class="contact links">
-        <h5 class="links_header josefin">Contact</h5>
+        <h5 class="links_header josefin ">Contact</h5>
         <address>
-           <div class="mb-2">
-          <span class="text-muted">Ministry of Education</span> <br>
+           <div class="mb-2 mini">
+          <h5 class="text-muted">Ministry of Education</h5>
           <span class="text-muted">Address : Block 3, Imo State Secretariat Complex.</span><br>
           <span class="text-muted">P. M. B 1309, Owerri</span><br>
           <span class="text-muted">E-mail: info@imostatemoe.gov.ng</span>
         </div>
-          <div class="mb-2">
-          <span class="text-muted">Honourable Commisioner for Education: Professor Bernard Thompson O. Ikegwuoha</span><br>
+          <div class="mb-2 mini">
+          <h5 class="text-muted">Hon. Commisioner for Education: Professor Bernard Thompson O. Ikegwuoha</h5>
           <span class="text-muted">Tel: 0809.547.6304</span><br>
           <span class="text-muted">P. M. B 1309, Owerri</span><br>
           <span class="text-muted">E-mail: hcmoe@imostatemoe@gov.ng</span>
@@ -60,7 +60,7 @@
         </address>
 
         <div class="mb-2">
-          <router-link to="/contact"><button type="button" class="btn btn-default">Contact us</button></router-link>
+          <router-link to="/contact"><button type="button" class="btn btn-default con">Contact us</button></router-link>
         </div>
       </div>
       <div class="links">
@@ -115,10 +115,22 @@ export default {};
 .links ul li {
   border-bottom: 1px solid #ccc;
 }
+.con{
+  font-size: 14px;
+}
+.mini{
+  line-height: 1;
+}
 p {
   font-size: 14px;
 }
-
+h5{
+  font-size: 13px;
+}
+span{
+  font-size: 13px;
+  color: rgb(0, 0, 0,.54);
+}
 .btn-default{
     border-color: #c5d9e8;
      background: #f7f8fa;

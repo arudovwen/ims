@@ -70,7 +70,7 @@ export default {
 <style scoped>
 #banner {
   width: 100%;
-  height: 550px;
+  height: 560px;
   overflow: hidden;
   background: url("/images/imobanner.jpg");
   background-repeat: no-repeat;

@@ -74,9 +74,9 @@ export default {
 .logo {
   margin-left: 30px;
 }
-.text {
-  padding: 15px;
-}
+ .text {
+    padding: 0 0 0 10px;
+  }
 .logo a {
   display: flex;
   align-items: flex-end;
@@ -88,8 +88,8 @@ export default {
   font-size: 20px;
 }
 .img_container {
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
   object-fit: cover;
   overflow: hidden;
   border-radius: 50%;
@@ -124,7 +124,8 @@ a {
   font-family: "Josefin Sans";
 }
 .info {
-  background: #333333;
+  background-color: #006600;
+  border-bottom: 3px solid #ffff75;
   font-size: 14px;
   padding: 5px 10px;
 }
