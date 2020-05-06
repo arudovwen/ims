@@ -131,7 +131,8 @@ export default {
 <style scoped>
 #news{
   padding:25px 15px;
-    border-bottom: 6px solid #006600;
+  background-color: #dfece0;
+    border-bottom: 4px solid #006600;
 }
 .news {
   min-height: 300px;

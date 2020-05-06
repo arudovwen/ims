@@ -131,6 +131,9 @@ a {
 .marq {
   border-right: 1px solid white;
 }
+.rel_pos{
+  width:350px;
+}
 @media (max-width: 1024px) {
   .logo {
     font-size: 24px;
@@ -139,8 +142,14 @@ a {
     width: 200px;
     margin: 0 0 10px 0;
   }
+  .rel_pos{
+  width:300px;
+}
 }
 @media (max-width: 768px) {
+  .rel_pos{
+  width:auto;
+}
   .logo {
     font-size: 18px;
     margin: 0 !important;

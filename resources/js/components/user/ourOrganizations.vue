@@ -2,7 +2,7 @@
   <div id="organizations">
     <h3 class="josefin ini_head main_header mb-4">Our Organizations</h3>
     <div>
-      <marquee-text  :repeat="4" class="organizations">
+      <marquee-text  :repeat="3" class="organizations">
        <div class="org2">
             <div class="org1">
           <img src="/images/imsu.jpg" alt />
@@ -25,9 +25,10 @@
 }
 .info p{
   text-align: center;
+  font-size: 15px;
 }
 .org2{
-    width: 25vw;
+    width: 33.3vw;
 }
 .org1 {
   width: 150px;
@@ -43,6 +44,9 @@
   width: 70px;
   height: 70px;
   margin: 0 auto;
+}
+.info p{
+  font-size: 13px;
 }
 }
 </style>

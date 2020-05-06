@@ -15,6 +15,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200;300;400&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
         <link  href="{{asset('css/app.css')}}" type="text/css" rel="stylesheet">
+        <link rel="shortcut icon" href="/images/logo.jpg" type="image/x-icon">
         
 
         <!-- Styles -->

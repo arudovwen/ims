@@ -44,11 +44,21 @@
       </div>
       <div class="contact links">
         <h5 class="links_header josefin">Contact</h5>
-        <div class="mb-2">
-          <p class="text-muted">E-mail: postmottak@kd.dep.no</p>
+        <address>
+           <div class="mb-2">
+          <span class="text-muted">Ministry of Education</span> <br>
+          <span class="text-muted">Address : Block 3, Imo State Secretariat Complex.</span><br>
+          <span class="text-muted">P. M. B 1309, Owerri</span><br>
+          <span class="text-muted">E-mail: info@imostatemoe.gov.ng</span>
         </div>
-        <p  class="text-muted">Phone: +234 8202588399</p>
-        <p  class="text-muted">Address: Postboks 8119 Dep, 0032 Imo State.</p>
+          <div class="mb-2">
+          <span class="text-muted">Honourable Commisioner for Education: Professor Bernard Thompson O. Ikegwuoha</span><br>
+          <span class="text-muted">Tel: 0809.547.6304</span><br>
+          <span class="text-muted">P. M. B 1309, Owerri</span><br>
+          <span class="text-muted">E-mail: hcmoe@imostatemoe@gov.ng</span>
+        </div>
+        </address>
+
         <div class="mb-2">
           <router-link to="/contact"><button type="button" class="btn btn-default">Contact us</button></router-link>
         </div>
@@ -83,7 +93,7 @@ export default {};
   width: 100%;
   display: grid;
   grid-template-columns: 25% 25% 25% 25%;
-  height: 300px;
+  min-height: 300px;
 }
 .links {
   text-align: left;

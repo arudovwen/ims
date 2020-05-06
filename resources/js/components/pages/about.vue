@@ -4,8 +4,8 @@
     <Navigation />
 
     <section class="about">
-      <div class="who_we_are">
-        <h2>Who We Are</h2>
+      <div class=" who_we_are">
+        <h2 class="josefin main_header">Who We Are</h2>
         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Porro dolores quibusdam enim cupiditate nobis aliquam molestiae mollitia? Iure nihil iusto nostrum aspernatur ipsa repellendus expedita veniam quasi omnis suscipit voluptatibus, consequatur sint a asperiores magni architecto culpa ducimus optio mollitia?</p>
       </div>
     </section>
@@ -15,12 +15,12 @@
           <div class="d1-header">
             <div>
               <span class="fa-stack fa-2x mr-4">
-                <i class="fa fa-circle fa-stack-2x text-dark" aria-hidden="true"></i>
-                <i class="fa fa-bullhorn fa-stack-1x text-white" aria-hidden="true"></i>
+                <i class="fa fa-circle fa-stack-2x mc1" aria-hidden="true"></i>
+                <i class="fa fa-bullhorn fa-stack-1x text-yellow" aria-hidden="true"></i>
               </span>
             </div>
             <div>
-              <p class="d1_sub">Our Mission</p>
+              <p class="d1_sub josefin main_header">Our Mission</p>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores necessitatibus similique fuga magnam illo est iste atque sed iure sequi?</p>
             </div>
           </div>
@@ -28,12 +28,12 @@
           <div class="d1-header">
             <div>
               <span class="fa-stack fa-2x mr-4">
-                <i class="fa fa-circle fa-stack-2x text-dark" aria-hidden="true"></i>
-                <i class="fa fa-eye fa-stack-1x text-white" aria-hidden="true"></i>
+                <i class="fa fa-circle fa-stack-2x mc1" aria-hidden="true"></i>
+                <i class="fa fa-eye fa-stack-1x text-yellow" aria-hidden="true"></i>
               </span>
             </div>
             <div>
-              <p class="d1_sub">Our Vision</p>
+              <p class="d1_sub josefin main_header">Our Vision</p>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores necessitatibus similique fuga magnam illo est iste atque sed iure sequi?</p>
             </div>
           </div>
@@ -42,16 +42,16 @@
           <div class="d2_1 mb-4">
             <div class="text-center">
               <span class="fa-stack fa-2x">
-                <i class="fa fa-circle fa-stack-2x text-dark" aria-hidden="true"></i>
-                <i class="fa fa-thumbs-o-up fa-stack-1x text-white" aria-hidden="true"></i>
+                <i class="fa fa-circle fa-stack-2x mc1" aria-hidden="true"></i>
+                <i class="fa fa-thumbs-o-up fa-stack-1x text-yellow" aria-hidden="true"></i>
               </span>
               <h4>Experience</h4>
             </div>
 
             <div class="text-center">
               <span class="fa-stack fa-2x">
-                <i class="fa fa-circle fa-stack-2x text-dark" aria-hidden="true"></i>
-                <i class="fas fa-tools fa-stack-1x text-white"></i>
+                <i class="fa fa-circle fa-stack-2x mc1" aria-hidden="true"></i>
+                <i class="fas fa-tools fa-stack-1x text-yellow"></i>
               </span>
               <h4>Capabilities</h4>
             </div>
@@ -59,23 +59,23 @@
           <div class="d2_2">
             <div class="text-center">
               <span class="fa-stack fa-2x">
-                <i class="fa fa-circle fa-stack-2x text-dark" aria-hidden="true"></i>
-                <i class="fa fas fa-satellite-dish fa-stack-1x text-white" aria-hidden="true"></i>
+                <i class="fa fa-circle fa-stack-2x mc1" aria-hidden="true"></i>
+                <i class="fa fas fa-satellite-dish fa-stack-1x text-yellow" aria-hidden="true"></i>
               </span>
               <h4>Technology</h4>
             </div>
 
             <div class="text-center">
               <span class="fa-stack fa-2x">
-                <i class="fa fa-circle fa-stack-2x text-dark" aria-hidden="true"></i>
-                <i class="fa fa-handshake-o fa-stack-1x text-white" aria-hidden="true"></i>
+                <i class="fa fa-circle fa-stack-2x mc1" aria-hidden="true"></i>
+                <i class="fa fa-handshake-o fa-stack-1x text-yellow" aria-hidden="true"></i>
               </span>
               <h4>Partnerships</h4>
             </div>
             <div>
               <span class="fa-stack fa-2x">
-                <i class="fa fa-circle fa-stack-2x text-dark" aria-hidden="true"></i>
-                <i class="fa fa-lightbulb-o text-white fa-stack-1x" aria-hidden="true"></i>
+                <i class="fa fa-circle fa-stack-2x mc1 " aria-hidden="true"></i>
+                <i class="fa fa-lightbulb-o text-yellow fa-stack-1x" aria-hidden="true"></i>
               </span>
               <h4>Innovation</h4>
             </div>
@@ -84,7 +84,7 @@
       </div>
     </section>
     <section class="text-center core">
-      <h3 class="mb-4">Our Core Values</h3>
+      <h3 class="mb-4 josefin center_header">Our Core Values</h3>
       <div class="d3">
         <div>
           <img src="/images/integrity.png" class="mb-3" alt />

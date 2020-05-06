@@ -16,12 +16,12 @@
       </button>
       <strong>Menu</strong>
     </span>
-    <ul class="nav_bar animated slideInDown" v-if="show_nav_bar">
+    <ul class="nav_bar animated slideInRight" v-if="show_nav_bar">
       <li>
         <div>
           <router-link to="/">
             <div class="fa-stack icon">
-              <i class="fa fa-circle fa-stack-2x" aria-hidden="true"></i>
+              <i class="fa fa-circl fa-stack-2x" aria-hidden="true"></i>
               <i class="fa fa-home nav fa-stack-1x icon" aria-hidden="true"></i>
             </div>
             <div class="nav_text">Home</div>
@@ -32,7 +32,7 @@
         <div>
           <router-link to="/about">
             <div class="fa-stack icon">
-              <i class="fa fa-circle fa-stack-2x" aria-hidden="true"></i>
+              <i class="fa fa-circl fa-stack-2x" aria-hidden="true"></i>
               <i class="fa fa-info-circle nav fa-stack-1x" aria-hidden="true"></i>
             </div>
             <div class="nav_text">About us</div>
@@ -44,7 +44,7 @@
         <div>
           <router-link to="/stakeholders">
             <div class="fa-stack icon">
-              <i class="fa fa-circle fa-stack-2x" aria-hidden="true"></i>
+              <i class="fa fa-circl fa-stack-2x" aria-hidden="true"></i>
               <i class="fa fa-users nav fa-stack-1x" aria-hidden="true"></i>
             </div>
             <div class="nav_text">Stakeholders</div>
@@ -58,7 +58,7 @@
         <div>
           <router-link to="initiatives">
             <div class="fa-stack icon">
-              <i class="fa fa-circle fa-stack-2x" aria-hidden="true"></i>
+              <i class="fa fa-circl fa-stack-2x" aria-hidden="true"></i>
               <i class="fas fa-lightbulb nav fa-stack-1x"></i>
             </div>
             <div class="nav_text">Our Initiatives</div>
@@ -73,7 +73,7 @@
         <div>
           <router-link to="/organizations">
             <div class="fa-stack icon">
-              <i class="fa fa-circle fa-stack-2x" aria-hidden="true"></i>
+              <i class="fa fa-circl fa-stack-2x" aria-hidden="true"></i>
               <i class="fa fa-building-o nav fa-stack-1x icon" aria-hidden="true"></i>
             </div>
             <div class="nav_text">Our Organizations</div>
@@ -84,7 +84,7 @@
         <div>
           <router-link to="/administratives">
             <div class="fa-stack icon">
-              <i class="fa fa-circle fa-stack-2x" aria-hidden="true"></i>
+              <i class="fa fa-circl fa-stack-2x" aria-hidden="true"></i>
               <i class="fas fa-user-tie nav fa-stack-1x"></i>
             </div>
             <div class="nav_text">Administrative</div>
@@ -101,7 +101,7 @@
         <div>
           <router-link to="/blog">
             <div class="fa-stack icon">
-              <i class="fa fa-circle fa-stack-2x" aria-hidden="true"></i>
+              <i class="fa fa-circl fa-stack-2x" aria-hidden="true"></i>
               <i class="fas fa-blog nav fa-stack-1x"></i>
             </div>
             <div class="nav_text">News</div>
@@ -112,7 +112,7 @@
         <div>
           <router-link to="/contact">
             <div class="fa-stack icon">
-              <i class="fa fa-circle fa-stack-2x" aria-hidden="true"></i>
+              <i class="fa fa-circl fa-stack-2x" aria-hidden="true"></i>
               <i class="fas fa-mail-bulk nav fa-stack-1x"></i>
             </div>
             <div class="nav_text">Contact</div>
@@ -161,6 +161,10 @@ export default {
 .mobile {
   display: none !important;
 }
+.slideInRight {
+    -webkit-animation-name: none;
+    animation-name: none;
+}
 strong {
   color: hsl(120, 100%, 95%);
 }
@@ -187,7 +191,7 @@ strong {
 }
 .nav_bar li a {
   color: white;
-  height: 4.2em;
+  height: 5.2em;
   text-decoration: none;
   text-transform: uppercase;
 }
@@ -221,7 +225,7 @@ strong {
 .nav_bar li a div {
   margin-top: 0.2em;
 }
-.icon .fa-circle {
+.icon .fa-circl {
   color: rgb(255, 255, 255, 0.1);
 }
 .nav_bar_icon::before {
@@ -292,6 +296,10 @@ strong {
   .sub_nav {
     display: none;
   }
+  .slideInRight {
+    -webkit-animation-name: slideInRight;
+    animation-name: slideInRight;
+}
 }
 @media (max-width: 425px) {
 }

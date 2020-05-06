@@ -2,6 +2,18 @@
   <div id="commissioner">
     <h3 class="josefin mb-4 main_header">Stakeholders</h3>
     <div class="commiss">
+         <div class="commissioner box shadow-sm">
+         <div class="top_header">
+            <h4 class="josefin ">PROF.B.T.O . IKEGWUOHA</h4>
+             <h5 class="josefin ">Honorable Commissioner For Education, Imo state</h5>
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit nostrum odio quidem dolorem sequi itaque... <span class="mc3">read more</span></p>
+        </div>
+       
+        <div class="img">
+          <img src="/images/comm.jpeg" alt="Commissioner of Education, Imo state" />
+        </div>
+       
+      </div>
       <div class="governor box shadow-sm">
         <div class="top_header">
           <small>His Excellency</small>
@@ -14,17 +26,7 @@
           <img src="/images/govt.jpeg" alt="Governor, imo state" />
         </div>
       </div>
-      <div class="commissioner box shadow-sm">
-         <div class="top_header">
-            <h4 class="josefin ">Commissioner of Education, Imo state</h4>
-          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit nostrum odio quidem dolorem sequi itaque... <span class="mc3">read more</span></p>
-        </div>
-       
-        <div class="img">
-          <img src="/images/profile.png" alt="Commissioner of Education, Imo state" />
-        </div>
-       
-      </div>
+   
 
       <div class="perm_sec box shadow-sm">
          <div class="top_header">

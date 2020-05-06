@@ -1546,8 +1546,10 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("section", { staticClass: "about" }, [
-      _c("div", { staticClass: "who_we_are" }, [
-        _c("h2", [_vm._v("Who We Are")]),
+      _c("div", { staticClass: " who_we_are" }, [
+        _c("h2", { staticClass: "josefin main_header" }, [
+          _vm._v("Who We Are")
+        ]),
         _vm._v(" "),
         _c("p", [
           _vm._v(
@@ -1568,19 +1570,21 @@ var staticRenderFns = [
             _c("div", [
               _c("span", { staticClass: "fa-stack fa-2x mr-4" }, [
                 _c("i", {
-                  staticClass: "fa fa-circle fa-stack-2x text-dark",
+                  staticClass: "fa fa-circle fa-stack-2x mc1",
                   attrs: { "aria-hidden": "true" }
                 }),
                 _vm._v(" "),
                 _c("i", {
-                  staticClass: "fa fa-bullhorn fa-stack-1x text-white",
+                  staticClass: "fa fa-bullhorn fa-stack-1x text-yellow",
                   attrs: { "aria-hidden": "true" }
                 })
               ])
             ]),
             _vm._v(" "),
             _c("div", [
-              _c("p", { staticClass: "d1_sub" }, [_vm._v("Our Mission")]),
+              _c("p", { staticClass: "d1_sub josefin main_header" }, [
+                _vm._v("Our Mission")
+              ]),
               _vm._v(" "),
               _c("p", [
                 _vm._v(
@@ -1594,19 +1598,21 @@ var staticRenderFns = [
             _c("div", [
               _c("span", { staticClass: "fa-stack fa-2x mr-4" }, [
                 _c("i", {
-                  staticClass: "fa fa-circle fa-stack-2x text-dark",
+                  staticClass: "fa fa-circle fa-stack-2x mc1",
                   attrs: { "aria-hidden": "true" }
                 }),
                 _vm._v(" "),
                 _c("i", {
-                  staticClass: "fa fa-eye fa-stack-1x text-white",
+                  staticClass: "fa fa-eye fa-stack-1x text-yellow",
                   attrs: { "aria-hidden": "true" }
                 })
               ])
             ]),
             _vm._v(" "),
             _c("div", [
-              _c("p", { staticClass: "d1_sub" }, [_vm._v("Our Vision")]),
+              _c("p", { staticClass: "d1_sub josefin main_header" }, [
+                _vm._v("Our Vision")
+              ]),
               _vm._v(" "),
               _c("p", [
                 _vm._v(
@@ -1622,12 +1628,12 @@ var staticRenderFns = [
             _c("div", { staticClass: "text-center" }, [
               _c("span", { staticClass: "fa-stack fa-2x" }, [
                 _c("i", {
-                  staticClass: "fa fa-circle fa-stack-2x text-dark",
+                  staticClass: "fa fa-circle fa-stack-2x mc1",
                   attrs: { "aria-hidden": "true" }
                 }),
                 _vm._v(" "),
                 _c("i", {
-                  staticClass: "fa fa-thumbs-o-up fa-stack-1x text-white",
+                  staticClass: "fa fa-thumbs-o-up fa-stack-1x text-yellow",
                   attrs: { "aria-hidden": "true" }
                 })
               ]),
@@ -1638,11 +1644,11 @@ var staticRenderFns = [
             _c("div", { staticClass: "text-center" }, [
               _c("span", { staticClass: "fa-stack fa-2x" }, [
                 _c("i", {
-                  staticClass: "fa fa-circle fa-stack-2x text-dark",
+                  staticClass: "fa fa-circle fa-stack-2x mc1",
                   attrs: { "aria-hidden": "true" }
                 }),
                 _vm._v(" "),
-                _c("i", { staticClass: "fas fa-tools fa-stack-1x text-white" })
+                _c("i", { staticClass: "fas fa-tools fa-stack-1x text-yellow" })
               ]),
               _vm._v(" "),
               _c("h4", [_vm._v("Capabilities")])
@@ -1653,13 +1659,13 @@ var staticRenderFns = [
             _c("div", { staticClass: "text-center" }, [
               _c("span", { staticClass: "fa-stack fa-2x" }, [
                 _c("i", {
-                  staticClass: "fa fa-circle fa-stack-2x text-dark",
+                  staticClass: "fa fa-circle fa-stack-2x mc1",
                   attrs: { "aria-hidden": "true" }
                 }),
                 _vm._v(" "),
                 _c("i", {
                   staticClass:
-                    "fa fas fa-satellite-dish fa-stack-1x text-white",
+                    "fa fas fa-satellite-dish fa-stack-1x text-yellow",
                   attrs: { "aria-hidden": "true" }
                 })
               ]),
@@ -1670,12 +1676,12 @@ var staticRenderFns = [
             _c("div", { staticClass: "text-center" }, [
               _c("span", { staticClass: "fa-stack fa-2x" }, [
                 _c("i", {
-                  staticClass: "fa fa-circle fa-stack-2x text-dark",
+                  staticClass: "fa fa-circle fa-stack-2x mc1",
                   attrs: { "aria-hidden": "true" }
                 }),
                 _vm._v(" "),
                 _c("i", {
-                  staticClass: "fa fa-handshake-o fa-stack-1x text-white",
+                  staticClass: "fa fa-handshake-o fa-stack-1x text-yellow",
                   attrs: { "aria-hidden": "true" }
                 })
               ]),
@@ -1686,12 +1692,12 @@ var staticRenderFns = [
             _c("div", [
               _c("span", { staticClass: "fa-stack fa-2x" }, [
                 _c("i", {
-                  staticClass: "fa fa-circle fa-stack-2x text-dark",
+                  staticClass: "fa fa-circle fa-stack-2x mc1 ",
                   attrs: { "aria-hidden": "true" }
                 }),
                 _vm._v(" "),
                 _c("i", {
-                  staticClass: "fa fa-lightbulb-o text-white fa-stack-1x",
+                  staticClass: "fa fa-lightbulb-o text-yellow fa-stack-1x",
                   attrs: { "aria-hidden": "true" }
                 })
               ]),
@@ -1708,7 +1714,9 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("section", { staticClass: "text-center core" }, [
-      _c("h3", { staticClass: "mb-4" }, [_vm._v("Our Core Values")]),
+      _c("h3", { staticClass: "mb-4 josefin center_header" }, [
+        _vm._v("Our Core Values")
+      ]),
       _vm._v(" "),
       _c("div", { staticClass: "d3" }, [
         _c("div", [
