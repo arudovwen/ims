@@ -1,8 +1,8 @@
 {
-    "/js/app.js": "/js/app.js",
-    "/css/app.css": "/css/app.css",
-    "/js/manifest.js": "/js/manifest.js",
-    "/js/vendor.js": "/js/vendor.js",
-    "/checkout_routes.js": "/checkout_routes.js",
-    "/home_routes.js": "/home_routes.js"
+    "/js/vendor.js": "/js/vendor.js?id=313e5c68b165229aa431",
+    "/js/app.js": "/js/app.js?id=f2f631413841da95378e",
+    "/css/app.css": "/css/app.css?id=5684bc977cf8f11eee34",
+    "/js/manifest.js": "/js/manifest.js?id=fc13c394ab242d66f319",
+    "/checkout_routes.js": "/checkout_routes.js?id=f8377d4240a33cc96d37",
+    "/home_routes.js": "/home_routes.js?id=36a986d86f67a2b0f807"
 }
