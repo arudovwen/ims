@@ -65,8 +65,8 @@
           </router-link>
         </div>
         <ul class="sub_nav">
-          <li>Programs</li>
-          <li>Projects</li>
+          <li  class="mini_nav_text">Programs</li>
+          <li  class="mini_nav_text">Projects</li>
         </ul>
       </li>
       <li>
@@ -91,8 +91,11 @@
           </router-link>
         </div>
         <ul class="sub_nav">
-          <li>Applications</li>
-          <li>Directory</li>
+          <li  class="mini_nav_text">Applications</li>
+          <router-link to="/directory">
+            <li class="mini_nav_text">Directory</li>
+          </router-link>
+        
          
         </ul>
       </li>
@@ -160,6 +163,10 @@ export default {
 }
 .mobile {
   display: none !important;
+}
+.mini_nav_text{
+  font-size: 12px !important;
+  text-transform: uppercase;
 }
 .slideInRight {
     -webkit-animation-name: none;
@@ -249,8 +256,8 @@ strong {
   border-radius: 4px;
   position: absolute;
   box-shadow: 0 0 4px 1px #f7f8fa;
-  top: 83px;
-  width: 200px;
+  top: 85px;
+  width: 140px;
 }
 .sub_nav::before {
   content: "";

@@ -2,16 +2,20 @@
     <div>
          <scrollTop/>
         <Navigation />
+     
+        <router-view></router-view>
         
     </div>
 </template>
 <script>
 import Navigation from "../navigation/navigation.vue";
-import scrollTop from '../scrollTopComponent'
+import scrollTop from '../scrollTopComponent';
+
 export default {
      components:{
         Navigation,
-        scrollTop
+        scrollTop,
+       
     }
 }
 </script>

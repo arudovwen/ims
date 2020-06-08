@@ -20,3 +20,9 @@ if (App::environment('production')) {
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+Route::post('create','DirectoryController@create');
+Route::put('update','DirectoryController@update');
+Route::get('get-schools','DirectoryController@getSchools');
+Route::get('get-school/{id}','DirectoryController@getSchool');
+Route::delete('delete-school','DirectoryController@singleDelete');
+Route::post('mass-delete','DirectoryController@massDelete');

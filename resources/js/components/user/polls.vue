@@ -12,12 +12,16 @@
         <h4 class="josefin mc1">Applications</h4>
       </div>
       <div class="affiliates shadow-sm tab">
+       <router-link to="/directory">
         <div class="fa-stack icon">
           <i class="fa fa-circle fa-stack-2x text-white" aria-hidden="true"></i>
           <i class="fas fa-folder-open fa-stack-1x mc-dark" aria-hidden="true"></i>
         </div>
-
+          </router-link>
+      <router-link to="/directory">
         <h4 class="josefin mc1">Directory</h4>
+         </router-link>
+      
       </div>
       <div class="opinions shadow-sm tab">
         <div class="fa-stack icon">

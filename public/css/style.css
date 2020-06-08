@@ -225,11 +225,13 @@ input.text {
 table {
     border-spacing: 0;
     border-collapse: collapse;
+    font-size: 14px;
 }
 
 td {
     text-align: left;
     font-weight: normal;
+    font-size: 14px;
 }
 
 .abs_pos {
@@ -300,6 +302,9 @@ td {
       left: 50%;
       margin-left: -25px;
     }
+    .absolute{
+        position: absolute !important;
+    }
 @media(max-width:425px) {
 
     h1 {
@@ -340,4 +345,7 @@ td {
         bottom: -6px;
         left: 35%;
     }
+    .mobile-none{
+        display:none;
+      }
 }
