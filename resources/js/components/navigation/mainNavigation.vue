@@ -82,7 +82,7 @@
       </li>
       <li>
         <div>
-          <router-link to="/administratives">
+          <router-link to="">
             <div class="fa-stack icon">
               <i class="fa fa-circl fa-stack-2x" aria-hidden="true"></i>
               <i class="fas fa-user-tie nav fa-stack-1x"></i>
@@ -309,5 +309,16 @@ strong {
 }
 }
 @media (max-width: 425px) {
+  .sub_nav{
+    width: 100%;
+    z-index: 2;
+    top: 11px;
+    box-shadow: none;
+    position: relative;
+  }
+  .sub_nav::before {
+  display: none;
+  }
+  
 }
 </style>

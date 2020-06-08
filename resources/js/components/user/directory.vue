@@ -10,7 +10,7 @@
            <input type="text" class="form-control" :value="filter_item.toUpperCase()" readonly /> <br>
               <button type="button" class="btn btn-primary btn-sm ml-auto" @click="handleFilter">Apply</button>
           </div>
-          <ul v-if="filter">
+          <ul v-if="!filterOpen">
             <h6>Category</h6>
             <li>
               <p @click="handleClick('all')">All</p>
@@ -80,7 +80,7 @@
           </div>
         </div>
         <div class="">
-          <table class="table table-hover table-responsive" v-if="sortedSchools.length">
+          <table class="table table-hover table-responsive-sm" v-if="sortedSchools.length">
             <thead class="thead-inverse">
               <tr>
                 <th>#</th>
@@ -147,10 +147,15 @@ export default {
       total_schools: 0,
       admin:false,
       filter:false,
+      filterOpen:false
+
     };
   },
   mounted() {
     this.retrieveSchools();
+    if (window.innerWidth < 768) {
+      this.filterOpen = true
+    }
   },
   watch: {
     search: "handleSearch",
@@ -160,6 +165,7 @@ export default {
   methods: {
     handleFilter(){
       this.filter = !this.filter
+      this.filterOpen = !this.filterOpen
     },
     firstPage() {
       axios.get(this.first_page).then(res => {
