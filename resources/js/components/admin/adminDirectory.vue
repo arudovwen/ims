@@ -105,10 +105,11 @@
             <tbody>
               <tr v-for="(school,idx) in sortedSchools" :key="idx">
                 <td scope="row">{{school.id}}</td>
-                <td>{{school.name}}</td>
-                <td>{{school.address}}</td>
-                <td>{{school.phone_no}}</td>
-                <td>{{school.email}}</td>
+                <td scope="row">{{school.id}}</td>
+                <td>{{school.name!='null'?school.name: '-'}}</td>
+                <td>{{ school.address!='null'?school.address: '-'}}</td>
+                <td>{{school.phone_no!='null'?school.phone_no: '-'}}</td>
+                <td>{{school.email!='null'?school.email: '-'}}</td>
 
                 <td class="action">
                   <tr class="border-0">

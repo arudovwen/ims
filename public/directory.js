@@ -869,13 +869,37 @@ var render = function() {
                           _vm._v(_vm._s(school.id))
                         ]),
                         _vm._v(" "),
-                        _c("td", [_vm._v(_vm._s(school.name))]),
+                        school.name != "null"
+                          ? _c("td", [
+                              _vm._v(
+                                _vm._s(
+                                  school.name != "null" ? school.name : "-"
+                                )
+                              )
+                            ])
+                          : _vm._e(),
                         _vm._v(" "),
-                        _c("td", [_vm._v(_vm._s(school.address))]),
+                        _c("td", [
+                          _vm._v(
+                            _vm._s(
+                              school.address != "null" ? school.address : "-"
+                            )
+                          )
+                        ]),
                         _vm._v(" "),
-                        _c("td", [_vm._v(_vm._s(school.phone_no))]),
+                        _c("td", [
+                          _vm._v(
+                            _vm._s(
+                              school.phone_no != "null" ? school.phone_no : "-"
+                            )
+                          )
+                        ]),
                         _vm._v(" "),
-                        _c("td", [_vm._v(_vm._s(school.email))]),
+                        _c("td", [
+                          _vm._v(
+                            _vm._s(school.email != "null" ? school.email : "-")
+                          )
+                        ]),
                         _vm._v(" "),
                         _c("td", {}, [
                           _c(

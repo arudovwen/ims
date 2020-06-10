@@ -99,10 +99,10 @@
             <tbody>
               <tr v-for="(school,idx) in sortedSchools" :key="idx">
                 <td scope="row">{{school.id}}</td>
-                <td>{{school.name}}</td>
-                <td>{{school.address}}</td>
-                <td>{{school.phone_no}}</td>
-                <td>{{school.email}}</td>
+                <td v-if="school.name !='null'">{{school.name!='null'?school.name: '-'}}</td>
+                <td>{{ school.address!='null'?school.address: '-'}}</td>
+                <td>{{school.phone_no!='null'?school.phone_no: '-'}}</td>
+                <td>{{school.email!='null'?school.email: '-'}}</td>
 
                  <td class="">
                    <span @click="viewSchool(school.id)" class="action">   <i class="fa fa-eye" ></i> <span class="mobile-none">View</span></span>
