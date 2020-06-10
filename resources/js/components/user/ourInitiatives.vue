@@ -21,7 +21,7 @@ export default {
 <style scoped>
 .initiatives{
       background: #fff;
-      padding: 20px 0;
+      padding: 40px 0;
 }
 .ini_head{
     margin-left: 15px;

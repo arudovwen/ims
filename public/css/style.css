@@ -363,6 +363,14 @@ td {
         bottom: -6px;
         left: 35%;
     }
+    .main_header{
+        text-align: center;
+        margin-bottom: 24px;
+    }
+    .main_header::after{
+        left: 50%;
+        margin-left: -25px;
+    }
     .mobile-none{
         display:none;
       }

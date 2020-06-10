@@ -213,6 +213,7 @@ export default {
   display: flex;
   align-items: center;
   padding: 10px;
+  border-radius:4px;
 }
 .img_contain {
   width: 30%;
@@ -230,7 +231,7 @@ export default {
   font-size: 13px;
 }
 .top_header{
-
+color:yellow;
 }
 @media(max-width: 1024px){
 

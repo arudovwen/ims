@@ -117,6 +117,12 @@ h4{
   height: 100%;
   object-fit: cover;
 }
+.main_header::after{
+  border:2px solid yellow;
+}
+.main_header{
+  color:yellow;
+}
 .square_1 {
   border: 15px solid yellow;
   padding: 10px;
