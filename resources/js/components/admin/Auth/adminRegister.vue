@@ -60,13 +60,12 @@ export default {
                 if (res.status == 201) {
                     this.active == false
                  
-                  this.$toasted.info('Registeration successful')
-                   this.$toasted.info('Redirecting to dashboard..')
-                  setTimeout(()=>{
-                      
-                       this.$router.push('/admin/dashboard')
-                  }, 2000)
-              
+                   if (this.$route.query.redirect) {
+                    this.$router.push(this.$route.query.redirect)
+                }else{
+                     this.$toasted.info("Redirecting to dashboard..");
+                     this.$router.push("/admin/dashboard");
+                }
                 }
             }).catch(err=>{
                  this.active = false

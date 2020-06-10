@@ -69,13 +69,13 @@ __webpack_require__.r(__webpack_exports__);
         if (res.status == 201) {
           _this.active == false;
 
-          _this.$toasted.info('Registeration successful');
+          if (_this.$route.query.redirect) {
+            _this.$router.push(_this.$route.query.redirect);
+          } else {
+            _this.$toasted.info("Redirecting to dashboard..");
 
-          _this.$toasted.info('Redirecting to dashboard..');
-
-          setTimeout(function () {
-            _this.$router.push('/admin/dashboard');
-          }, 2000);
+            _this.$router.push("/admin/dashboard");
+          }
         }
       })["catch"](function (err) {
         _this.active = false;

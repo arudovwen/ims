@@ -68,7 +68,7 @@ export default {
   
 }
 hr {
-  border-top: 1px solid hsl(120, 100%, 80%);
+  border-top: 2px solid hsl(60, 100%, 30%);
 }
 h4 {
   color: hsl(120, 100%, 97%);
