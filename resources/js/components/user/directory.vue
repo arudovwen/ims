@@ -367,7 +367,9 @@ th {
   color: #006600;
   font-size: 13px;
 }
-
+h6{
+  color: #006600;
+}
 .navigation {
   display: flex;
   width: 20%;

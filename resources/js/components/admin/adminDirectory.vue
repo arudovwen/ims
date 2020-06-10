@@ -36,14 +36,14 @@
                   <option value="selected">Select one</option>
                   <option :value="lga.name.toLowerCase()" v-for="(lga,index) in lgas" :key="index" class="lga_name">{{lga.name}}</option>
                 </select>
-                 <button class="button-blue" @click="lgaShow" v-if="!showlga">Add new</button>
+                 <button class="button-green" @click="lgaShow" v-if="!showlga">Add new</button>
               </div>
               <div class="form-group px-2 text-center" v-if="showlga">
              
                 <input type="text"
                   class="form-control mb-2"  v-model="lga_name" aria-describedby="helpId" placeholder="Enter lga name">
               
-                 <button class="button-blue" @click="addLga">Add </button>
+                 <button class="button-green" @click="addLga">Add </button>
               </div>
             </li>
           </ul>
@@ -53,7 +53,7 @@
        <div class="d-flex justify-content-between align-items-center mb-4">
           <h4 class="filter_item mb-3">{{filter_item}} Schools</h4>
         <div>
-         <router-link to="/admin/school/add"> <button class="button-blue mr-3">Add school</button></router-link>
+         <router-link to="/admin/school/add"> <button class="button-green mr-3">Add school</button></router-link>
            <small @click="reset" class="reset">Reset filter</small>
         </div>
         </div>
@@ -433,7 +433,9 @@ th {
   border-radius: 5px;
   font-size: 12px;
 }
-
+h6{
+  color: #006600;
+}
 .fa-minus-circle:before {
   content: "\f056";
   color: #dc3545;
