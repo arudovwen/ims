@@ -20,9 +20,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var bootstrap_dist_css_bootstrap_css__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(bootstrap_dist_css_bootstrap_css__WEBPACK_IMPORTED_MODULE_5__);
 /* harmony import */ var bootstrap_vue_dist_bootstrap_vue_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! bootstrap-vue/dist/bootstrap-vue.css */ "./node_modules/bootstrap-vue/dist/bootstrap-vue.css");
 /* harmony import */ var bootstrap_vue_dist_bootstrap_vue_css__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(bootstrap_vue_dist_bootstrap_vue_css__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var _growthbunker_vuesocial__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @growthbunker/vuesocial */ "./node_modules/@growthbunker/vuesocial/dist/vuesocial.esm.js");
-/* harmony import */ var vue_marquee_text_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! vue-marquee-text-component */ "./node_modules/vue-marquee-text-component/dist/MarqueeText.common.js");
-/* harmony import */ var vue_marquee_text_component__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(vue_marquee_text_component__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var vue_toasted__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! vue-toasted */ "./node_modules/vue-toasted/dist/vue-toasted.min.js");
+/* harmony import */ var vue_toasted__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(vue_toasted__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _growthbunker_vuesocial__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @growthbunker/vuesocial */ "./node_modules/@growthbunker/vuesocial/dist/vuesocial.esm.js");
+/* harmony import */ var vue_marquee_text_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! vue-marquee-text-component */ "./node_modules/vue-marquee-text-component/dist/MarqueeText.common.js");
+/* harmony import */ var vue_marquee_text_component__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(vue_marquee_text_component__WEBPACK_IMPORTED_MODULE_9__);
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
@@ -40,8 +42,9 @@ window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.
 
 
 
-Vue.component("marquee-text", vue_marquee_text_component__WEBPACK_IMPORTED_MODULE_8___default.a);
-Vue.use(_growthbunker_vuesocial__WEBPACK_IMPORTED_MODULE_7__["default"], {
+
+Vue.component("marquee-text", vue_marquee_text_component__WEBPACK_IMPORTED_MODULE_9___default.a);
+Vue.use(_growthbunker_vuesocial__WEBPACK_IMPORTED_MODULE_8__["default"], {
   iconPath: "/images/icons"
 });
 Vue.use(vue_router__WEBPACK_IMPORTED_MODULE_0__["default"]);
@@ -50,6 +53,11 @@ Vue.use(vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_3___default.a
 /* { default options with global component } */
 );
 Vue.use(__webpack_require__(/*! vue-moment */ "./node_modules/vue-moment/dist/vue-moment.js"));
+Vue.use(vue_toasted__WEBPACK_IMPORTED_MODULE_7___default.a, {
+  duration: 2500,
+  icon: null // after: true
+
+});
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -62,6 +70,28 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_0__["default"]({
   scrollBehavior: function scrollBehavior(to, from, savedPosition) {
     document.getElementById("app").scrollIntoView();
     return null;
+  }
+});
+router.beforeEach(function (to, from, next) {
+  if (to.matched.some(function (record) {
+    return record.meta.requiresAuth;
+  })) {
+    // this route requires auth, check if logged in
+    // if not, redirect to login page.
+    var admin = localStorage.getItem("adminUser");
+
+    if (admin == null) {
+      next({
+        path: '/admin/auth/login',
+        query: {
+          redirect: to.fullPath
+        }
+      });
+    } else {
+      next();
+    }
+  } else {
+    next(); // make sure to always call next()!
   }
 });
 var app = new Vue({
@@ -182,8 +212,40 @@ var AdminDirectory = function AdminDirectory() {
   return Promise.all(/*! import() | AdminDirectory */[__webpack_require__.e("/js/vendor"), __webpack_require__.e("AdminDirectory")]).then(__webpack_require__.bind(null, /*! ./components/admin/adminDirectory.vue */ "./resources/js/components/admin/adminDirectory.vue"));
 };
 
+var AdminDashboard = function AdminDashboard() {
+  return Promise.all(/*! import() | AdminDashboard */[__webpack_require__.e("/js/vendor"), __webpack_require__.e("AdminDashboard")]).then(__webpack_require__.bind(null, /*! ./components/admin/adminDashboard.vue */ "./resources/js/components/admin/adminDashboard.vue"));
+};
+
+var AdminAuth = function AdminAuth() {
+  return Promise.all(/*! import() | admin_home */[__webpack_require__.e("/js/vendor"), __webpack_require__.e("admin_home")]).then(__webpack_require__.bind(null, /*! ./components/admin/Auth/adminAuth.vue */ "./resources/js/components/admin/Auth/adminAuth.vue"));
+};
+
 var AdminSchool = function AdminSchool() {
   return Promise.all(/*! import() | admin_home */[__webpack_require__.e("/js/vendor"), __webpack_require__.e("admin_home")]).then(__webpack_require__.bind(null, /*! ./components/admin/schools/adminSchool.vue */ "./resources/js/components/admin/schools/adminSchool.vue"));
+};
+
+var NewsDashboard = function NewsDashboard() {
+  return Promise.all(/*! import() | admin_home */[__webpack_require__.e("/js/vendor"), __webpack_require__.e("admin_home")]).then(__webpack_require__.bind(null, /*! ./components/admin/News/newsDashboard.vue */ "./resources/js/components/admin/News/newsDashboard.vue"));
+};
+
+var ProgramsDashboard = function ProgramsDashboard() {
+  return Promise.all(/*! import() | admin_home */[__webpack_require__.e("/js/vendor"), __webpack_require__.e("admin_home")]).then(__webpack_require__.bind(null, /*! ./components/admin/Programs/dashboard.vue */ "./resources/js/components/admin/Programs/dashboard.vue"));
+};
+
+var ProjectsDashboard = function ProjectsDashboard() {
+  return Promise.all(/*! import() | admin_home */[__webpack_require__.e("/js/vendor"), __webpack_require__.e("admin_home")]).then(__webpack_require__.bind(null, /*! ./components/admin/Projects/dashboard.vue */ "./resources/js/components/admin/Projects/dashboard.vue"));
+};
+
+var PaymentDashboard = function PaymentDashboard() {
+  return Promise.all(/*! import() | admin_home */[__webpack_require__.e("/js/vendor"), __webpack_require__.e("admin_home")]).then(__webpack_require__.bind(null, /*! ./components/admin/Payments/dashboard.vue */ "./resources/js/components/admin/Payments/dashboard.vue"));
+};
+
+var ApplicationDashboard = function ApplicationDashboard() {
+  return Promise.all(/*! import() | admin_home */[__webpack_require__.e("/js/vendor"), __webpack_require__.e("admin_home")]).then(__webpack_require__.bind(null, /*! ./components/admin/Applications/dashboard.vue */ "./resources/js/components/admin/Applications/dashboard.vue"));
+};
+
+var Lga = function Lga() {
+  return Promise.all(/*! import() | admin_home */[__webpack_require__.e("/js/vendor"), __webpack_require__.e("admin_home")]).then(__webpack_require__.bind(null, /*! ./components/admin/lga/lga.vue */ "./resources/js/components/admin/lga/lga.vue"));
 };
 
 var routes = [{
@@ -233,12 +295,82 @@ var routes = [{
   children: [{
     path: "/admin/directory",
     component: AdminDirectory,
-    name: "AdminDirectory"
+    name: "AdminDirectory",
+    meta: {
+      requiresAuth: true
+    }
   }, {
     path: "/admin/school/:action",
     component: AdminSchool,
-    name: "AdminSchool"
+    name: "AdminSchool",
+    meta: {
+      requiresAuth: true
+    }
+  }, {
+    path: "/admin/dashboard",
+    component: AdminDashboard,
+    name: "AdminDashboard",
+    meta: {
+      requiresAuth: true
+    }
+  }, {
+    path: "/admin/news",
+    component: NewsDashboard,
+    name: "NewsDashboard",
+    meta: {
+      requiresAuth: true
+    }
+  }, {
+    path: "/admin/payments",
+    component: PaymentDashboard,
+    name: "PaymentDashboard",
+    meta: {
+      requiresAuth: true
+    }
+  }, {
+    path: "/admin/programs",
+    component: ProgramsDashboard,
+    name: "ProgramsDashboard",
+    meta: {
+      requiresAuth: true
+    }
+  }, {
+    path: "/admin/projects",
+    component: ProjectsDashboard,
+    name: "ProjectsDashboard",
+    meta: {
+      requiresAuth: true
+    }
+  }, {
+    path: "/admin/applications",
+    component: ApplicationDashboard,
+    name: "ApplicationDashboard",
+    meta: {
+      requiresAuth: true
+    }
+  }, {
+    path: "/admin/lga",
+    component: Lga,
+    name: "Lga",
+    meta: {
+      requiresAuth: true
+    }
   }]
+}, {
+  path: "/admin/auth/:auth",
+  component: AdminAuth,
+  name: "AdminAuth",
+  beforeEnter: function beforeEnter(to, from, next) {
+    var admin = localStorage.getItem("adminUser");
+
+    if (admin == null) {
+      next();
+    } else {
+      next({
+        name: 'AdminDashboard'
+      });
+    }
+  }
 }];
 
 /***/ }),

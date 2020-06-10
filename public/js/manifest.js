@@ -64,7 +64,7 @@
 /******/
 /******/ 	// script path function
 /******/ 	function jsonpScriptSrc(chunkId) {
-/******/ 		return __webpack_require__.p + "" + ({"AdminDirectory":"AdminDirectory","SchoolDirectory":"SchoolDirectory","about_routes":"about_routes","admin_home":"admin_home","administrative":"administrative","blog_routes":"blog_routes","checkout_routes":"checkout_routes","contact_routes":"contact_routes","directory":"directory","home_routes":"home_routes","initiatives":"initiatives","organizations":"organizations","stakeholders":"stakeholders"}[chunkId]||chunkId) + ".js"
+/******/ 		return __webpack_require__.p + "" + ({"AdminDashboard":"AdminDashboard","AdminDirectory":"AdminDirectory","SchoolDirectory":"SchoolDirectory","about_routes":"about_routes","admin_home":"admin_home","administrative":"administrative","blog_routes":"blog_routes","checkout_routes":"checkout_routes","contact_routes":"contact_routes","directory":"directory","home_routes":"home_routes","initiatives":"initiatives","organizations":"organizations","stakeholders":"stakeholders"}[chunkId]||chunkId) + ".js"
 /******/ 	}
 /******/
 /******/ 	// The require function

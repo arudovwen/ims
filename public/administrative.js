@@ -20,6 +20,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -53,7 +55,7 @@ var render = function() {
       _vm._v(" "),
       _c("Navigation"),
       _vm._v(" "),
-      _c("router-view")
+      _c("transition", { attrs: { name: "fade" } }, [_c("router-view")], 1)
     ],
     1
   )

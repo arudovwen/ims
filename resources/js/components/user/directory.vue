@@ -3,11 +3,11 @@
     <div class="main-content">
       <div class="left_side" :class="{absolute:filter}">
         <div class="side_bar">
-          <div class="mobile-filter">
-          <span @click="handleFilter">  Filters <i class="fa fa-long-arrow-up" aria-hidden="true"></i></span>
+          <div class="mobile-filter" @click="handleFilter">
+          <span >  Filters <i class="fa fa-long-arrow-up" aria-hidden="true"></i></span>
           </div>
-          <div class="mobile-filter-option" v-if="filter">
-           <input type="text" class="form-control" :value="filter_item.toUpperCase()" readonly /> <br>
+          <div class="mobile-filter-option text-right" v-if="filter">
+           <input type="text" class="form-control " style="text-transform:capitalize" :value="filter_item" readonly /> <br>
               <button type="button" class="btn btn-primary btn-sm ml-auto" @click="handleFilter">Apply</button>
           </div>
           <ul v-if="!filterOpen">
@@ -38,9 +38,10 @@
             </li>
             <h6>LGAs</h6>
             <li>
-              <div class="form-group">
+              <div class="form-group px-2">
                 <select class="custom-select" v-model="lga">
-                  <option value="selected">Select one</option>
+                  <option value="selected" disabled>Select one</option>
+                    <option :value="lga.name" v-for="(lga,idx) in lgas" :key="idx">{{lga.name}}</option>
                 </select>
               </div>
             </li>
@@ -48,7 +49,10 @@
         </div>
       </div>
       <div class="right_side">
-        <h4 class="filter_item mb-3">{{filter_item}} Schools</h4>
+        <div class="d-flex justify-content-between align-items-center">
+          <h4 class="filter_item mb-3">{{filter_item}} Schools</h4>
+        <small @click="reset"  class="reset">Reset filter</small>
+        </div>
         <div class="top_bar">
           <div class="bar border-right">
             <i class="fa fa-angle-double-left pr-2" @click="firstPage" aria-hidden="true" v-if="first_page"></i>
@@ -73,7 +77,7 @@
                 class="form-control search_input rounded-pill"
                 v-model="search"
                 aria-describedby="helpId"
-                placeholder="Search"
+                placeholder="Search row"
               />
               <i class="fa fa-search" aria-hidden="true"></i>
             </div>
@@ -86,7 +90,7 @@
                 <th>#</th>
                 <th>Name</th>
                 <th>Address</th>
-                <th>Phone No</th>
+                <th>Phone</th>
                 <th>Email</th>
                 <th>Action</th>
               
@@ -94,7 +98,7 @@
             </thead>
             <tbody>
               <tr v-for="(school,idx) in sortedSchools" :key="idx">
-                <td scope="row">{{idx+1}}</td>
+                <td scope="row">{{school.id}}</td>
                 <td>{{school.name}}</td>
                 <td>{{school.address}}</td>
                 <td>{{school.phone_no}}</td>
@@ -147,12 +151,14 @@ export default {
       total_schools: 0,
       admin:false,
       filter:false,
-      filterOpen:false
+      filterOpen:false,
+      lgas:[]
 
     };
   },
   mounted() {
     this.retrieveSchools();
+    this.getLgas()
     if (window.innerWidth < 768) {
       this.filterOpen = true
     }
@@ -163,6 +169,19 @@ export default {
     item: "selectAll"
   },
   methods: {
+      getLgas(){
+      axios.get('/api/show-lgas').then(res=>{
+        if (res.status == 200) {
+          this.lgas = res.data
+          
+        }
+      }).catch(err=>{
+
+      })
+    },
+    reset(){
+      this.filter_item = ''
+    },
     handleFilter(){
       this.filter = !this.filter
       this.filterOpen = !this.filterOpen
@@ -282,32 +301,32 @@ export default {
       sortedSchools(){
           if (this.filter_item == 'nursery'||this.filter_item == 'primary' || this.filter_item == 'secondary'|| this.filter_item == 'tertiary') {
               return this.schools.filter(item=>{
-                  return item.level == this.filter_item
+                  return item.level.toLowerCase() == this.filter_item.toLowerCase()
               })
           }
           if (this.filter_item == 'boarding'||this.filter_item == 'day') {
               return this.schools.filter(item=>{
-                  return item.type == this.filter_item
+                  return item.type.toLowerCase() == this.filter_item.toLowerCase()
               })
           }
           if (this.filter_item == 'private'||this.filter_item == 'public' ) {
               return this.schools.filter(item=>{
-                  return item.sector == this.filter_item
+                  return item.sector.toLowerCase() == this.filter_item.toLowerCase()
               })
           }
            if (this.filter_item == 'individual'||this.filter_item == 'faith' ) {
               return this.schools.filter(item=>{
-                  return item.ownership == this.filter_item
+                  return item.ownership.toLowerCase() == this.filter_item.toLowerCase()
               })
           }
            if (this.filter_item == 'accredited'||this.filter_item == 'non-accredited' ) {
               return this.schools.filter(item=>{
-                  return item.accreditation == this.filter_item
+                  return item.accreditation.toLowerCase() == this.filter_item.toLowerCase()
               })
           }
            if (this.lga !== 'selected') {
               return this.schools.filter(item=>{
-                  return item.lga == this.filter_item
+                  return item.lga.toLowerCase() == this.filter_item.toLowerCase()
               })
           }
           if (this.search !== '') {
@@ -346,6 +365,7 @@ export default {
 }
 th {
   color: #006600;
+  font-size: 13px;
 }
 
 .navigation {
@@ -408,6 +428,9 @@ th {
     }
   }
 }
+.reset{
+  cursor: pointer;
+}
 .top_bar {
   padding: 5px;
   background: #f7fafa;
@@ -437,7 +460,7 @@ button:focus {
 }
 .side_bar {
   background: white;
-  border-radius: 20px;
+  border-radius: 5px;
   min-height: 400px;
   width: 90%;
   padding: 20px 0;
@@ -534,6 +557,7 @@ li {
     position:absolute;
     right: 10px;
     top: 70px;
+    width:50%;
   
   }
   .top_bar{
@@ -543,6 +567,8 @@ li {
     margin-bottom: 10px;
     border:none !important;
   }
-  
+  li p{
+    font-size: 14px;
+  }
 }
 </style>

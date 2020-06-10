@@ -31,17 +31,32 @@
             </li>
             <h6>LGAs</h6>
             <li>
-              <div class="form-group">
-                <select class="custom-select" v-model="lga">
+              <div class="form-group px-2 text-center">
+                <select class="custom-select mb-2" v-model="lga">
                   <option value="selected">Select one</option>
+                  <option :value="lga.name.toLowerCase()" v-for="(lga,index) in lgas" :key="index" class="lga_name">{{lga.name}}</option>
                 </select>
+                 <button class="button-blue" @click="lgaShow" v-if="!showlga">Add new</button>
+              </div>
+              <div class="form-group px-2 text-center" v-if="showlga">
+             
+                <input type="text"
+                  class="form-control mb-2"  v-model="lga_name" aria-describedby="helpId" placeholder="Enter lga name">
+              
+                 <button class="button-blue" @click="addLga">Add </button>
               </div>
             </li>
           </ul>
         </div>
       </div>
       <div class="right_side">
-        <h4 class="filter_item mb-3">{{filter_item}} Schools</h4>
+       <div class="d-flex justify-content-between align-items-center mb-4">
+          <h4 class="filter_item mb-3">{{filter_item}} Schools</h4>
+        <div>
+         <router-link to="/admin/school/add"> <button class="button-blue mr-3">Add school</button></router-link>
+           <small @click="reset" class="reset">Reset filter</small>
+        </div>
+        </div>
         <div class="top_bar">
            <div class="bar border-right">
             <i class="fa fa-angle-double-left pr-2" @click="firstPage" aria-hidden="true" v-if="first_page"></i>
@@ -66,7 +81,7 @@
                 class="form-control search_input rounded-pill"
                 v-model="search"
                 aria-describedby="helpId"
-                placeholder="Search"
+                placeholder="Search row"
               />
               <i class="fa fa-search" aria-hidden="true"></i>
             </div>
@@ -79,7 +94,7 @@
                 <th>#</th>
                 <th>Name</th>
                 <th>Address</th>
-                <th>Phone No</th>
+                <th>Phone</th>
                 <th>Email</th>
                 <th>Action</th>
                 <th v-if="admin">
@@ -89,7 +104,7 @@
             </thead>
             <tbody>
               <tr v-for="(school,idx) in sortedSchools" :key="idx">
-                <td scope="row">{{idx+1}}</td>
+                <td scope="row">{{school.id}}</td>
                 <td>{{school.name}}</td>
                 <td>{{school.address}}</td>
                 <td>{{school.phone_no}}</td>
@@ -143,6 +158,7 @@ export default {
       search: "",
       filter_item: "",
       lga: "selected",
+      lgas:[],
       items: [],
       item: false,
       row_number: 1,
@@ -153,11 +169,14 @@ export default {
       prev_page: "",
       current_page: 1,
       total_schools: 0,
-      admin:true
+      admin:true,
+      showlga:false,
+      lga_name:''
     };
   },
   mounted() {
     this.retrieveSchools();
+    this.getLgas()
   },
   watch: {
     search: "handleSearch",
@@ -165,6 +184,36 @@ export default {
     item: "selectAll"
   },
   methods: {
+     reset(){
+      this.filter_item = ''
+    },
+    getLgas(){
+      axios.get('/api/show-lgas').then(res=>{
+        if (res.status == 200) {
+          this.lgas = res.data
+          
+        }
+      }).catch(err=>{
+
+      })
+    },
+    lgaShow(){
+      this.showlga = !this.showlga
+    },
+    addLga(){
+      let data = {
+        lga : this.lga_name
+      }
+       if (this.lga_name.length !== '') {
+          axios.post('/api/create-lga', data).then(res=>{
+        if (res.status == 201) {
+          this.getLgas()
+          this.$toasted.info('Successful')
+          this.showlga = false
+        }
+      })
+       }
+    },
     firstPage() {
       axios.get(this.first_page).then(res => {
         this.next_page = res.data.next_page_url;
@@ -248,6 +297,7 @@ export default {
         .get(`/api/get-school/${id}`)
         .then(res => {
           if (res.status == 200) {
+               this.$router.push(`/admin/school/edit?id=${id}`)
           }
         })
         .catch(err => {
@@ -259,6 +309,7 @@ export default {
         .get(`/api/get-school/${id}`)
         .then(res => {
           if (res.status == 200) {
+            this.$router.push(`/admin/school/view?id=${id}`)
           }
         })
         .catch(err => {
@@ -295,35 +346,35 @@ export default {
     }
   },
   computed: {
-      sortedSchools(){
+       sortedSchools(){
           if (this.filter_item == 'nursery'||this.filter_item == 'primary' || this.filter_item == 'secondary'|| this.filter_item == 'tertiary') {
               return this.schools.filter(item=>{
-                  return item.level == this.filter_item
+                  return item.level.toLowerCase() == this.filter_item.toLowerCase()
               })
           }
           if (this.filter_item == 'boarding'||this.filter_item == 'day') {
               return this.schools.filter(item=>{
-                  return item.type == this.filter_item
+                  return item.type.toLowerCase() == this.filter_item.toLowerCase()
               })
           }
           if (this.filter_item == 'private'||this.filter_item == 'public' ) {
               return this.schools.filter(item=>{
-                  return item.sector == this.filter_item
+                  return item.sector.toLowerCase() == this.filter_item.toLowerCase()
               })
           }
            if (this.filter_item == 'individual'||this.filter_item == 'faith' ) {
               return this.schools.filter(item=>{
-                  return item.ownership == this.filter_item
+                  return item.ownership.toLowerCase() == this.filter_item.toLowerCase()
               })
           }
            if (this.filter_item == 'accredited'||this.filter_item == 'non-accredited' ) {
               return this.schools.filter(item=>{
-                  return item.accreditation == this.filter_item
+                  return item.accreditation.toLowerCase() == this.filter_item.toLowerCase()
               })
           }
            if (this.lga !== 'selected') {
               return this.schools.filter(item=>{
-                  return item.lga == this.filter_item
+                  return item.lga.toLowerCase() == this.filter_item.toLowerCase()
               })
           }
           if (this.search !== '') {
@@ -346,10 +397,11 @@ export default {
 .main-content {
   width: 100%;
   margin: 0 auto;
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
-  padding: 20px 10px;
+  padding: 15px 0px;
 }
+
 .filter_item {
   text-transform: capitalize;
 }
@@ -424,7 +476,7 @@ th {
   }
 }
 .top_bar {
-  padding: 5px;
+  padding: 5px 10px;
   background: #f7fafa;
   margin-bottom: 15px;
   display: flex;
@@ -438,23 +490,24 @@ th {
 .row_numb::placeholder {
   text-align: center;
 }
+.reset{
+  cursor: pointer;
+}
 .bar {
   position: relative;
   padding-right: 15px;
 }
 
-button:focus {
-  outline: none;
-}
+
 .left_side {
-  width: 25%;
+  width: 20%;
   height: 100vh;
 }
 .side_bar {
   background: white;
-  border-radius: 20px;
-  min-height: 400px;
-  width: 90%;
+  border-radius: 5px;
+  height: 100vh;
+  width: 93%;
   padding: 20px 0;
 }
 .search_bar {
@@ -495,10 +548,11 @@ li {
   border-bottom: 1px solid #f7f8fa;
 }
 .right_side {
-  width: 75%;
-  min-height: 100vh;
+  width: 80%;
+  height: 100vh;
   background: white;
   padding: 15px;
   border-radius: 5px;
+  overflow: scroll;
 }
 </style>

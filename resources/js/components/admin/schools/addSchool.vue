@@ -1,136 +1,180 @@
 <template>
-    <div class="container">
-     <form  @submit.prevent="create" id="form">
-         <legend class="mb-5">Add new school </legend>
-
-         <div class="form-group">
-           <label for="">School name</label>
-           <input required type="text"
-             class="form-control" v-model="school.name" aria-describedby="helpId" placeholder="school name">
-         
-         </div>
-          <div class="form-group">
-           <label for="">School email</label>
-           <input required type="email"
-             class="form-control" v-model="school.email"  aria-describedby="helpId" placeholder="example@email.com">
-         
-         </div>
-          <div class="form-group">
-           <label for="">School address </label>
-           <input required type="text"
-             class="form-control" v-model="school.address"  aria-describedby="helpId" placeholder="Address">
-         
-         </div>
-         <div class="form-group">
-           <label for="">Phone number</label>
-           <input required type="text"
-             class="form-control" v-model="school.phone_no"  aria-describedby="helpId" placeholder="08xxxxxxxxx">
-         
-         </div>
-
-         <div class="form-group">
-             <label for="">School Level</label>
-             <select required class="custom-select" v-model="school.level" >
-                 <option value='selected'>Select one</option>
-                 <option >Nursery</option>
-                 <option>Primary</option>
-                 <option >Secondary</option>
-                 <option >Tertiary</option>
-             </select>
-         </div>
-
-        
-         <div class="form-group">
-             <label for="">Type</label>
-             <select required class="custom-select"  v-model="school.type">
-                 <option value='selected'>Select one</option>
-                 <option >Boarding</option>
-                 <option>Day</option>
-                
-             </select>
-         </div>
-         <div class="form-group">
-             <label for="">Accreditation</label>
-             <select required class="custom-select"  v-model="school.accreditation">
-                 <option value='selected'>Select one</option>
-                 <option >Accredited</option>
-                 <option>Non-accredited</option>
-                
-             </select>
-         </div>
-
-
-         <div class="form-group">
-             <label for="">LGA</label>
-             <select required class="custom-select"  v-model="school.lga">
-                 <option value='selected'>Select one</option>
-               
-             </select>
-         </div>
-
-
-         <div class="form-group">
-             <label for="">School Type</label>
-             <select required class="custom-select"  v-model="school.sector">
-                 <option value='selected'>Select one</option>
-                 <option >Private</option>
-                 <option>Public</option>
-                
-             </select>
-         </div>
-          
-         <div class="form-group">
-             <label for="">Ownership</label>
-             <select required class="custom-select"  v-model="school.ownership">
-                 <option value='selected'>Select one</option>
-                 <option >Individual </option>
-                 <option>Faith Based</option>
-                 
-             </select>
-         </div>
+  <div class="container">
+    <form @submit.prevent="create" id="form">
+      <legend class="mb-5">Add new school</legend>
 
       <div class="form-group">
-           <button type="" class="button">Create</button>
+        <label for>School name</label>
+        <input
+          required
+          type="text"
+          class="form-control"
+          v-model="school.name"
+          aria-describedby="helpId"
+          placeholder="school name"
+        />
       </div>
-     </form>
-    </div>
+      <div class="form-group">
+        <label for>School email</label>
+        <input
+          required
+          type="email"
+          class="form-control"
+          v-model="school.email"
+          aria-describedby="helpId"
+          placeholder="example@email.com"
+        />
+      </div>
+      <div class="form-group">
+        <label for>School address</label>
+        <input
+          required
+          type="text"
+          class="form-control"
+          v-model="school.address"
+          aria-describedby="helpId"
+          placeholder="Address"
+        />
+      </div>
+      <div class="form-group">
+        <label for>Phone number</label>
+        <input
+          required
+          type="text"
+          class="form-control"
+          v-model="school.phone_no"
+          aria-describedby="helpId"
+          placeholder="08xxxxxxxxx"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for>School Level</label>
+        <select required class="custom-select" v-model="school.level">
+          <option value="selected" disabled>Select one</option>
+          <option>Primary/Nursery</option>
+          <option>Secondary</option>
+          <option>Tertiary</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for>Type</label>
+        <select required class="custom-select" v-model="school.type">
+          <option value="selected" disabled>Select one</option>
+          <option>Boarding</option>
+          <option>Day</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for>Accreditation</label>
+        <select required class="custom-select" v-model="school.accreditation">
+          <option value="selected" disabled>Select one</option>
+          <option>Accredited</option>
+          <option>Non-accredited</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for>LGA</label>
+        <select required class="custom-select" v-model="school.lga">
+          <option value="selected" disabled>Select one</option>
+          <option :value="lga.name" v-for="(lga,idx) in lgas" :key="idx">{{lga.name}}</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for>School Type</label>
+        <select required class="custom-select" v-model="school.sector">
+          <option value="selected" disabled>Select one</option>
+          <option>Private</option>
+          <option>Public</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for>Ownership</label>
+        <select required class="custom-select" v-model="school.ownership">
+          <option value="selected" disabled>Select one</option>
+          <option>Individual</option>
+          <option>Faith Based</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <button type class="button">Create</button>
+      </div>
+    </form>
+  </div>
 </template>
 <script>
-
 export default {
-    data() {
-        return {
-            school:{
-
-            }
-        }
+  data() {
+    return {
+      school: {
+        name: "",
+        email: "",
+        addesss: "",
+        phone_no: "",
+        level: "selected",
+        sector: "selected",
+        ownership: "selected",
+        type: "selected",
+        accreditation: "selected",
+        lga: "selected"
+      },
+      lgas: []
+    };
+  },
+  components: {},
+  mounted() {
+    this.getLgas();
+  },
+  methods: {
+    getLgas() {
+      axios
+        .get("/api/show-lgas")
+        .then(res => {
+          if (res.status == 200) {
+            this.lgas = res.data;
+          }
+        })
+        .catch(err => {});
     },
-   components:{
-     
-   } ,
-   methods: {
-       create(){
-           axios.post('/api/create',this.school).then(res=>{
-               if (res.status == 200) {
-                   
-               }
-           }).catch(err=>{
-
-           })
-       }
-   },
-}
+    create() {
+      axios
+        .post("/api/create", this.school)
+        .then(res => {
+          if (res.status == 201) {
+            this.school.push({
+              name: "",
+              email: "",
+              addesss: "",
+              phone_no: "",
+              level: "selected",
+              sector: "selected",
+              ownership: "selected",
+              type: "selected",
+              accreditation: "selected",
+              lga: "selected"
+            });
+          }
+        })
+        .catch(err => {});
+    }
+  }
+};
 </script>
 <style scoped lang="scss">
-.container{
-    background: #f7f8fa;
-    min-height: 100vh;
-    padding:30px 15px;
+.container {
+  background: #f7f8fa;
+  min-height: 100vh;
+  padding: 30px 15px;
 }
-#form{
-    width: 80%;
-    margin: 0 auto ;
-    font-size: 15px;
+#form {
+  width: 80%;
+  margin: 0 auto;
+  font-size: 15px;
 }
 .button {
   padding: 8px 32px;
@@ -169,5 +213,4 @@ export default {
     }
   }
 }
-
 </style>

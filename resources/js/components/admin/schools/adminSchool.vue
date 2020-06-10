@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div id="school">
         <addSchool  v-if="action=='add'"/>
         <editSchool v-if ="action=='edit'"/>
         <viewSchool v-if="action=='view'"/>
@@ -27,5 +27,8 @@ export default {
 }
 </script>
 <style scoped>
-
+#school{
+    height:100vh;
+    overflow: auto;
+}
 </style>

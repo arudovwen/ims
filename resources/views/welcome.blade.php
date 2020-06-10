@@ -70,13 +70,26 @@
             .m-b-md {
                 margin-bottom: 30px;
             }
+
+            .fade-enter-active, .fade-leave-active {
+                transition-property: opacity;
+                transition-duration: .25s;
+            }
+            
+            .fade-enter-active {
+                transition-delay: .25s;
+            }
+            
+            .fade-enter, .fade-leave-active {
+                opacity: 0
+            }
         </style>
     </head>
     <body>
         
             <div id="app">
                 
-                <router-view></router-view>
+                <router-view transition="fade"></router-view>
            
         </div>
 

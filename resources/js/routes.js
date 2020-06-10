@@ -1,3 +1,4 @@
+
 let Index = () =>
     import(/* webpackChunkName: "home_routes" */ "./components/index.vue");
 let Home = () =>
@@ -52,9 +53,41 @@ let AdminDirectory = () =>
     import(
         /* webpackChunkName: "AdminDirectory" */ "./components/admin/adminDirectory.vue"
     );
+let AdminDashboard = () =>
+    import(
+        /* webpackChunkName: "AdminDashboard" */ "./components/admin/adminDashboard.vue"
+    );
+let AdminAuth = () =>
+    import(
+        /* webpackChunkName: "admin_home" */ "./components/admin/Auth/adminAuth.vue"
+    );
 let AdminSchool = () =>
     import(
         /* webpackChunkName: "admin_home" */ "./components/admin/schools/adminSchool.vue"
+    );
+    let NewsDashboard = () =>
+    import(
+        /* webpackChunkName: "admin_home" */ "./components/admin/News/newsDashboard.vue"
+    );
+    let ProgramsDashboard = () =>
+    import(
+        /* webpackChunkName: "admin_home" */ "./components/admin/Programs/dashboard.vue"
+    );
+    let ProjectsDashboard = () =>
+    import(
+        /* webpackChunkName: "admin_home" */ "./components/admin/Projects/dashboard.vue"
+    );
+    let PaymentDashboard = () =>
+    import(
+        /* webpackChunkName: "admin_home" */ "./components/admin/Payments/dashboard.vue"
+    );
+    let ApplicationDashboard = () =>
+    import(
+        /* webpackChunkName: "admin_home" */ "./components/admin/Applications/dashboard.vue"
+    );
+    let Lga = () =>
+    import(
+        /* webpackChunkName: "admin_home" */ "./components/admin/lga/lga.vue"
     );
 
 export const routes = [
@@ -88,17 +121,93 @@ export const routes = [
         component: AdminHome,
         name: "AdminHome",
         children: [
-            
             {
                 path: "/admin/directory",
                 component: AdminDirectory,
-                name: "AdminDirectory"
+                name: "AdminDirectory",
+                meta:{
+                    requiresAuth:true
+                }
             },
             {
                 path: "/admin/school/:action",
                 component: AdminSchool,
-                name: "AdminSchool"
+                name: "AdminSchool",
+                meta:{
+                    requiresAuth:true
+                }
+            },
+            {
+                path: "/admin/dashboard",
+                component: AdminDashboard,
+                name: "AdminDashboard",
+                meta:{
+                    requiresAuth:true
+                }
+            },
+            {
+                path: "/admin/news",
+                component: NewsDashboard,
+                name: "NewsDashboard",
+                meta:{
+                    requiresAuth:true
+                }
+            },
+            {
+                path: "/admin/payments",
+                component: PaymentDashboard,
+                name: "PaymentDashboard",
+                meta:{
+                    requiresAuth:true
+                }
+            },
+            {
+                path: "/admin/programs",
+                component: ProgramsDashboard,
+                name: "ProgramsDashboard",
+                meta:{
+                    requiresAuth:true
+                }
+            },
+            {
+                path: "/admin/projects",
+                component: ProjectsDashboard,
+                name: "ProjectsDashboard",
+                meta:{
+                    requiresAuth:true
+                }
+            },
+            {
+                path: "/admin/applications",
+                component: ApplicationDashboard,
+                name: "ApplicationDashboard",
+                meta:{
+                    requiresAuth:true
+                }
+            },
+            {
+                path: "/admin/lga",
+                component: Lga,
+                name: "Lga",
+                meta:{
+                    requiresAuth:true
+                }
             }
+
         ]
+    },
+    {
+        path: "/admin/auth/:auth",
+        component: AdminAuth,
+        name: "AdminAuth",
+        beforeEnter: (to, from, next) => {
+            var admin = localStorage.getItem("adminUser");
+            if(admin == null){
+                next()
+            }else{
+                next({name:'AdminDashboard'})
+            }
+        }
+       
     }
 ];

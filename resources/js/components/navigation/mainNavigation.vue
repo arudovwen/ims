@@ -166,7 +166,7 @@ export default {
 }
 .mini_nav_text{
   font-size: 12px !important;
-  text-transform: uppercase;
+  text-transform: capitalize;
 }
 .slideInRight {
     -webkit-animation-name: none;
@@ -251,7 +251,7 @@ strong {
 
 .sub_nav {
   display: none;
-  background: #fff;
+  background: #f7f8fa;
   padding: 10px;
   border-radius: 4px;
   position: absolute;
@@ -261,9 +261,9 @@ strong {
 }
 .sub_nav::before {
   content: "";
-  background: #fff;
-  border-top: 1px solid #fff;
-  border-right: 1px solid #fff;
+  background: #f7f8fa;
+  border-top: 1px solid #f7f8fa;
+  border-right: 1px solid #f7f8fa;
   transform: rotate(-45deg);
   position: absolute;
   top: -6px;

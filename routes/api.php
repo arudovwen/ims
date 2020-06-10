@@ -17,12 +17,24 @@ if (App::environment('production')) {
     URL::forceScheme('https');
 }
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
+Route::middleware('auth:admin')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::post('register', 'Auth\RegisterController@reg');
+
 Route::post('create','DirectoryController@create');
-Route::put('update','DirectoryController@update');
+Route::put('update/{id}','DirectoryController@update');
 Route::get('get-schools','DirectoryController@getSchools');
 Route::get('get-school/{id}','DirectoryController@getSchool');
 Route::delete('delete-school','DirectoryController@singleDelete');
 Route::post('mass-delete','DirectoryController@massDelete');
+
+
+Route::post('create-lga','LgaController@create');
+Route::put('update-lga/{id}','LgaController@update');
+Route::get('show-lgas','LgaController@show');
+Route::get('edit-lga/{id}','LgaController@edit');
+Route::delete('delete-lga','DirectoryController@delete');
+
+

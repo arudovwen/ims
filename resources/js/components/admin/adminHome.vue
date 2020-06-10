@@ -1,11 +1,13 @@
 <template>
     <div class="d-flex">
       
-        <div class="side_bar">
+        <div class="admin_side_bar">
               <Header />
         </div>
-        <div class="main_page">
-              <router-view></router-view> 
+        <div class="main_admin_page">
+              <transition name="fade">
+                    <router-view></router-view>
+            </transition>
         </div>
      
     </div>
@@ -18,16 +20,205 @@ export default {
    } 
 }
 </script>
-<style scoped>
-.side_bar{
-    width:20%;
+<style lang='scss'>
+.admin_side_bar{
+    width:17%;
     min-height: 100vh;
     overflow-y: scroll;
 }
-.main_page{
-    width:80%;
+.main_admin_page{
+    width:83%;
      min-height: 100vh;
      background: #f7f8fa;
     overflow-y: scroll;
 }
+.button-red {
+    padding: 8px 32px;
+    box-shadow: 0px 0px 12px -2px rgba(0, 0, 0, 0.5);
+    line-height: 1.25;
+    background: #dc3545;
+    text-decoration: none;
+    color: white;
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    text-transform: initial;
+    position: relative;
+    transition: background-color 0.6s ease;
+    overflow: hidden;
+    &:after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 0;
+      top: 50%;
+      left: 50%;
+      transform-style: flat;
+      transform: translate3d(-50%, -50%, 0);
+      background: rgba(white, 0.1);
+      border-radius: 100%;
+      transition: width 0.3s ease, height 0.3s ease;
+    }
+    &:focus,
+    &:hover {
+      background: darken(#dc3545, 7%);
+    }
+    &:active {
+      &:after {
+        width: 200px;
+        height: 200px;
+      }
+    }
+  }
+
+  .button-green {
+    padding: 8px 32px;
+    box-shadow: 0px 0px 12px -2px rgba(0, 0, 0, 0.5);
+    line-height: 1.25;
+    background: #006600;
+    text-decoration: none;
+    color: white;
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    text-transform: initial;
+    position: relative;
+    transition: background-color 0.6s ease;
+    overflow: hidden;
+    &:after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 0;
+      top: 50%;
+      left: 50%;
+      transform-style: flat;
+      transform: translate3d(-50%, -50%, 0);
+      background: rgba(white, 0.1);
+      border-radius: 100%;
+      transition: width 0.3s ease, height 0.3s ease;
+    }
+    &:focus,
+    &:hover {
+      background: darken(#006600, 7%);
+    }
+    &:active {
+      &:after {
+        width: 200px;
+        height: 200px;
+      }
+    }
+  }
+
+  .button-blue {
+    padding: 8px 32px;
+    box-shadow: 0px 0px 12px -2px rgba(0, 0, 0, 0.5);
+    line-height: 1.25;
+    background: #000072;
+    text-decoration: none;
+    color: white;
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    text-transform: initial;
+    position: relative;
+    transition: background-color 0.6s ease;
+    overflow: hidden;
+    &:after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 0;
+      top: 50%;
+      left: 50%;
+      transform-style: flat;
+      transform: translate3d(-50%, -50%, 0);
+      background: rgba(white, 0.1);
+      border-radius: 100%;
+      transition: width 0.3s ease, height 0.3s ease;
+    }
+    &:focus,
+    &:hover {
+      background: darken(#000072, 7%);
+    }
+    &:active {
+      &:after {
+        width: 200px;
+        height: 200px;
+      }
+    }
+  }
+
+  .button-dark {
+    padding: 8px 32px;
+    box-shadow: 0px 0px 12px -2px rgba(0, 0, 0, 0.5);
+    line-height: 1.25;
+    background: #333333;
+    text-decoration: none;
+    color: white;
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    text-transform: initial;
+    position: relative;
+    transition: background-color 0.6s ease;
+    overflow: hidden;
+    &:after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 0;
+      top: 50%;
+      left: 50%;
+      transform-style: flat;
+      transform: translate3d(-50%, -50%, 0);
+      background: rgba(white, 0.1);
+      border-radius: 100%;
+      transition: width 0.3s ease, height 0.3s ease;
+    }
+    &:focus,
+    &:hover {
+      background: darken(#333333, 7%);
+    }
+    &:active {
+      &:after {
+        width: 200px;
+        height: 200px;
+      }
+    }
+  }
+
+  .button-yellow {
+    padding: 8px 32px;
+    box-shadow: 0px 0px 12px -2px rgba(0, 0, 0, 0.5);
+    line-height: 1.25;
+    background: yellow;
+    text-decoration: none;
+    color: white;
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    text-transform: initial;
+    position: relative;
+    transition: background-color 0.6s ease;
+    overflow: hidden;
+    &:after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 0;
+      top: 50%;
+      left: 50%;
+      transform-style: flat;
+      transform: translate3d(-50%, -50%, 0);
+      background: rgba(white, 0.1);
+      border-radius: 100%;
+      transition: width 0.3s ease, height 0.3s ease;
+    }
+    &:focus,
+    &:hover {
+      background: darken(yellow, 7%);
+    }
+    &:active {
+      &:after {
+        width: 200px;
+        height: 200px;
+      }
+    }
+  }
 </style>

@@ -9,19 +9,44 @@ class DirectoryController extends Controller
 {
     public function create(Request $request)
     {
-        dd($request->all());
-        return Directory::create([
-                'name' => $request->name,
-                'address'  => $request->address,
-                'phone_no'  => $request->phone_no,
-                'email'  => $request->email,
-                'level'  => $request->level,
-                'lga'  => $request->lga,
-                'accreditation'  => $request->accreditation,
-                'ownership'  => $request->ownership,
-                'type'  => $request->type,
-                'sector'  => $request->sector
-                ]);
+        $arr=[
+           'Commercial Secondary SchoolAmaokpara',
+           'Comprehensive Secondary School Eziama Obaire',
+           "Girls' Model Secondary School Eziama Obaire",
+           'Owerre-Nkwoji Secondary School',
+           'Model Secondary School Ishiala Umudi',
+      ];
+
+      
+           foreach($arr as $ar){
+            Directory::create([
+                        'name' => $ar,
+                        'address'  => 'null',
+                        'phone_no'  => 'null',
+                        'email'  => 'null',
+                        'level'  => $request->level,
+                        'lga'  => $request->lga,
+                        'accreditation'  => $request->accreditation,
+                        'ownership'  => $request->ownership,
+                        'type'  => $request->type,
+                        'sector'  => $request->sector
+                        ]);
+            
+           }
+           
+
+        // return Directory::create([
+        //         'name' => $request->name,
+        //         'address'  => $request->address,
+        //         'phone_no'  => $request->phone_no,
+        //         'email'  => $request->email,
+        //         'level'  => $request->level,
+        //         'lga'  => $request->lga,
+        //         'accreditation'  => $request->accreditation,
+        //         'ownership'  => $request->ownership,
+        //         'type'  => $request->type,
+        //         'sector'  => $request->sector
+        //         ]);
     }
     public function update(Request $request, $id)
     {
@@ -37,7 +62,9 @@ class DirectoryController extends Controller
         $school->type = $request->type;
         $school->sector  = $request->sector;
         $school->save();
-        return response();
+        return response()->json([
+            'status'=>'Updated'
+        ]);
     }
     public function getSchools()
     {
@@ -51,7 +78,9 @@ class DirectoryController extends Controller
     {
         $find = Directory::find($id);
         $find->delete();
-        return response();
+        return response()->json([
+            'status'=>'Deleted'
+        ]);
     }
     public function massDelete(Request $request)
     {
@@ -60,6 +89,8 @@ class DirectoryController extends Controller
             $find->delete();
         }
      
-        return response();
+        return response()->json([
+            'status'=>'Deleted'
+        ]);
     }
 }

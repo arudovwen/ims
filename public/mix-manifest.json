@@ -3,6 +3,9 @@
     "/css/app.css": "/css/app.css",
     "/js/manifest.js": "/js/manifest.js",
     "/js/vendor.js": "/js/vendor.js",
+    "/AdminDashboard.js": "/AdminDashboard.js",
+    "/AdminDirectory.js": "/AdminDirectory.js",
+    "/SchoolDirectory.js": "/SchoolDirectory.js",
     "/about_routes.js": "/about_routes.js",
     "/admin_home.js": "/admin_home.js",
     "/administrative.js": "/administrative.js",
@@ -13,7 +16,5 @@
     "/home_routes.js": "/home_routes.js",
     "/initiatives.js": "/initiatives.js",
     "/organizations.js": "/organizations.js",
-    "/stakeholders.js": "/stakeholders.js",
-    "/SchoolDirectory.js": "/SchoolDirectory.js",
-    "/AdminDirectory.js": "/AdminDirectory.js"
+    "/stakeholders.js": "/stakeholders.js"
 }

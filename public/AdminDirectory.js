@@ -147,12 +147,28 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
       search: "",
       filter_item: "",
       lga: "selected",
+      lgas: [],
       items: [],
       item: false,
       row_number: 1,
@@ -163,11 +179,14 @@ __webpack_require__.r(__webpack_exports__);
       prev_page: "",
       current_page: 1,
       total_schools: 0,
-      admin: true
+      admin: true,
+      showlga: false,
+      lga_name: ''
     };
   },
   mounted: function mounted() {
     this.retrieveSchools();
+    this.getLgas();
   },
   watch: {
     search: "handleSearch",
@@ -175,57 +194,91 @@ __webpack_require__.r(__webpack_exports__);
     item: "selectAll"
   },
   methods: {
-    firstPage: function firstPage() {
+    reset: function reset() {
+      this.filter_item = '';
+    },
+    getLgas: function getLgas() {
       var _this = this;
 
+      axios.get('/api/show-lgas').then(function (res) {
+        if (res.status == 200) {
+          _this.lgas = res.data;
+        }
+      })["catch"](function (err) {});
+    },
+    lgaShow: function lgaShow() {
+      this.showlga = !this.showlga;
+    },
+    addLga: function addLga() {
+      var _this2 = this;
+
+      var data = {
+        lga: this.lga_name
+      };
+
+      if (this.lga_name.length !== '') {
+        axios.post('/api/create-lga', data).then(function (res) {
+          if (res.status == 201) {
+            _this2.getLgas();
+
+            _this2.$toasted.info('Successful');
+
+            _this2.showlga = false;
+          }
+        });
+      }
+    },
+    firstPage: function firstPage() {
+      var _this3 = this;
+
       axios.get(this.first_page).then(function (res) {
-        _this.next_page = res.data.next_page_url;
-        _this.prev_page = res.data.prev_page_url;
-        _this.current_page = res.data.current_page;
-        _this.schools = res.data.data;
+        _this3.next_page = res.data.next_page_url;
+        _this3.prev_page = res.data.prev_page_url;
+        _this3.current_page = res.data.current_page;
+        _this3.schools = res.data.data;
       });
     },
     lastPage: function lastPage() {
-      var _this2 = this;
+      var _this4 = this;
 
       axios.get(this.last_page).then(function (res) {
-        _this2.next_page = res.data.next_page_url;
-        _this2.prev_page = res.data.prev_page_url;
-        _this2.current_page = res.data.current_page;
-        _this2.schools = res.data.data;
+        _this4.next_page = res.data.next_page_url;
+        _this4.prev_page = res.data.prev_page_url;
+        _this4.current_page = res.data.current_page;
+        _this4.schools = res.data.data;
       });
     },
     next: function next() {
-      var _this3 = this;
+      var _this5 = this;
 
       if (this.next_page) {
         axios.get(this.next_page).then(function (res) {
-          _this3.next_page = res.data.next_page_url;
-          _this3.prev_page = res.data.prev_page_url;
-          _this3.current_page = res.data.current_page;
-          _this3.schools = res.data.data;
+          _this5.next_page = res.data.next_page_url;
+          _this5.prev_page = res.data.prev_page_url;
+          _this5.current_page = res.data.current_page;
+          _this5.schools = res.data.data;
         });
       }
     },
     prev: function prev() {
-      var _this4 = this;
+      var _this6 = this;
 
       if (this.prev_page) {
         axios.get(this.prev_page).then(function (res) {
-          _this4.next_page = res.data.next_page_url;
-          _this4.prev_page = res.data.prev_page_url;
-          _this4.current_page = res.data.current_page;
-          _this4.schools = res.data.data;
+          _this6.next_page = res.data.next_page_url;
+          _this6.prev_page = res.data.prev_page_url;
+          _this6.current_page = res.data.current_page;
+          _this6.schools = res.data.data;
         });
       }
     },
     selectAll: function selectAll() {
-      var _this5 = this;
+      var _this7 = this;
 
       if (this.item) {
         this.items = [];
         this.schools.forEach(function (it) {
-          _this5.items.push(it.id);
+          _this7.items.push(it.id);
         });
       } else {
         this.items = [];
@@ -245,33 +298,41 @@ __webpack_require__.r(__webpack_exports__);
       this.search = "";
     },
     retrieveSchools: function retrieveSchools() {
-      var _this6 = this;
+      var _this8 = this;
 
       axios.get("/api/get-schools").then(function (res) {
         if (res.status == 200) {
-          _this6.schools = res.data.data;
-          _this6.total_schools = res.data.total;
-          _this6.row_number = res.data.per_page;
-          _this6.last_page = res.data.last_page_url;
-          _this6.first_page = res.data.first_page_url;
-          _this6.next_page = res.data.next_page_url;
-          _this6.prev_page = res.data.prev_page_url;
-          _this6.current_page = res.data.current_page;
+          _this8.schools = res.data.data;
+          _this8.total_schools = res.data.total;
+          _this8.row_number = res.data.per_page;
+          _this8.last_page = res.data.last_page_url;
+          _this8.first_page = res.data.first_page_url;
+          _this8.next_page = res.data.next_page_url;
+          _this8.prev_page = res.data.prev_page_url;
+          _this8.current_page = res.data.current_page;
         }
       })["catch"](function (err) {
         console.log("retrieveSchools -> err", err);
       });
     },
     editSchool: function editSchool(id) {
+      var _this9 = this;
+
       axios.get("/api/get-school/".concat(id)).then(function (res) {
-        if (res.status == 200) {}
+        if (res.status == 200) {
+          _this9.$router.push("/admin/school/edit?id=".concat(id));
+        }
       })["catch"](function (err) {
         console.log("edit -> err", err);
       });
     },
     viewSchool: function viewSchool(id) {
+      var _this10 = this;
+
       axios.get("/api/get-school/".concat(id)).then(function (res) {
-        if (res.status == 200) {}
+        if (res.status == 200) {
+          _this10.$router.push("/admin/school/view?id=".concat(id));
+        }
       })["catch"](function (err) {
         console.log("edit -> err", err);
       });
@@ -301,47 +362,47 @@ __webpack_require__.r(__webpack_exports__);
   },
   computed: {
     sortedSchools: function sortedSchools() {
-      var _this7 = this;
+      var _this11 = this;
 
       if (this.filter_item == 'nursery' || this.filter_item == 'primary' || this.filter_item == 'secondary' || this.filter_item == 'tertiary') {
         return this.schools.filter(function (item) {
-          return item.level == _this7.filter_item;
+          return item.level.toLowerCase() == _this11.filter_item.toLowerCase();
         });
       }
 
       if (this.filter_item == 'boarding' || this.filter_item == 'day') {
         return this.schools.filter(function (item) {
-          return item.type == _this7.filter_item;
+          return item.type.toLowerCase() == _this11.filter_item.toLowerCase();
         });
       }
 
       if (this.filter_item == 'private' || this.filter_item == 'public') {
         return this.schools.filter(function (item) {
-          return item.sector == _this7.filter_item;
+          return item.sector.toLowerCase() == _this11.filter_item.toLowerCase();
         });
       }
 
       if (this.filter_item == 'individual' || this.filter_item == 'faith') {
         return this.schools.filter(function (item) {
-          return item.ownership == _this7.filter_item;
+          return item.ownership.toLowerCase() == _this11.filter_item.toLowerCase();
         });
       }
 
       if (this.filter_item == 'accredited' || this.filter_item == 'non-accredited') {
         return this.schools.filter(function (item) {
-          return item.accreditation == _this7.filter_item;
+          return item.accreditation.toLowerCase() == _this11.filter_item.toLowerCase();
         });
       }
 
       if (this.lga !== 'selected') {
         return this.schools.filter(function (item) {
-          return item.lga == _this7.filter_item;
+          return item.lga.toLowerCase() == _this11.filter_item.toLowerCase();
         });
       }
 
       if (this.search !== '') {
         return this.schools.filter(function (item) {
-          return item.name.toLowerCase().includes(_this7.search.toLowerCase());
+          return item.name.toLowerCase().includes(_this11.search.toLowerCase());
         });
       }
 
@@ -364,7 +425,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "@charset \"UTF-8\";\n.container-fluid[data-v-7082e869] {\n  background: #f7f8fa;\n}\n.main-content[data-v-7082e869] {\n  width: 100%;\n  margin: 0 auto;\n  min-height: 100vh;\n  display: flex;\n  padding: 20px 10px;\n}\n.filter_item[data-v-7082e869] {\n  text-transform: capitalize;\n}\n.action[data-v-7082e869] {\n  width: 1%;\n}\n.action_icon[data-v-7082e869] {\n  font-size: 13px;\n}\nth[data-v-7082e869] {\n  color: #006600;\n}\n.navigation[data-v-7082e869] {\n  display: flex;\n  width: 20%;\n  margin: 0 auto;\n  justify-content: space-between;\n  margin-top: 30px;\n}\n.prev[data-v-7082e869],\n.next[data-v-7082e869] {\n  font-size: 14px;\n}\n.prev_button[data-v-7082e869],\n.next_button[data-v-7082e869] {\n  padding: 5px 10px;\n  border: none;\n  border-radius: 5px;\n  font-size: 12px;\n}\n.fa-minus-circle[data-v-7082e869]:before {\n  content: \"\\F056\";\n  color: #dc3545;\n}\n.button[data-v-7082e869] {\n  padding: 8px 32px;\n  box-shadow: 0px 0px 12px -2px rgba(0, 0, 0, 0.5);\n  line-height: 1.25;\n  background: #dc3545;\n  text-decoration: none;\n  color: white;\n  font-size: 13px;\n  letter-spacing: 0.08em;\n  text-transform: initial;\n  position: relative;\n  transition: background-color 0.6s ease;\n  overflow: hidden;\n}\n.button[data-v-7082e869]:after {\n  content: \"\";\n  position: absolute;\n  width: 0;\n  height: 0;\n  top: 50%;\n  left: 50%;\n  transform-style: flat;\n  transform: translate3d(-50%, -50%, 0);\n  background: rgba(255, 255, 255, 0.1);\n  border-radius: 100%;\n  transition: width 0.3s ease, height 0.3s ease;\n}\n.button[data-v-7082e869]:focus, .button[data-v-7082e869]:hover {\n  background: #ca2333;\n}\n.button[data-v-7082e869]:active:after {\n  width: 200px;\n  height: 200px;\n}\n.top_bar[data-v-7082e869] {\n  padding: 5px;\n  background: #f7fafa;\n  margin-bottom: 15px;\n  display: flex;\n  justify-content: space-between;\n  font-size: 13px;\n  align-items: center;\n}\n.row_numb[data-v-7082e869] {\n  width: 30px;\n}\n.row_numb[data-v-7082e869]::-webkit-input-placeholder {\n  text-align: center;\n}\n.row_numb[data-v-7082e869]::-moz-placeholder {\n  text-align: center;\n}\n.row_numb[data-v-7082e869]:-ms-input-placeholder {\n  text-align: center;\n}\n.row_numb[data-v-7082e869]::-ms-input-placeholder {\n  text-align: center;\n}\n.row_numb[data-v-7082e869]::placeholder {\n  text-align: center;\n}\n.bar[data-v-7082e869] {\n  position: relative;\n  padding-right: 15px;\n}\nbutton[data-v-7082e869]:focus {\n  outline: none;\n}\n.left_side[data-v-7082e869] {\n  width: 25%;\n  height: 100vh;\n}\n.side_bar[data-v-7082e869] {\n  background: white;\n  border-radius: 20px;\n  min-height: 400px;\n  width: 90%;\n  padding: 20px 0;\n}\n.search_bar[data-v-7082e869] {\n  position: relative;\n  margin-bottom: 0;\n}\n.search_input[data-v-7082e869] {\n  border-color: #f7f8fa;\n  height: 25px;\n  font-size: 13px;\n}\n.form-control[data-v-7082e869]::-webkit-input-placeholder {\n  font-size: 13px;\n}\n.form-control[data-v-7082e869]::-moz-placeholder {\n  font-size: 13px;\n}\n.form-control[data-v-7082e869]:-ms-input-placeholder {\n  font-size: 13px;\n}\n.form-control[data-v-7082e869]::-ms-input-placeholder {\n  font-size: 13px;\n}\n.form-control[data-v-7082e869]::placeholder {\n  font-size: 13px;\n}\n.fa-search[data-v-7082e869] {\n  position: absolute;\n  font-size: 12px;\n  right: 14px;\n  top: 50%;\n  margin-top: -6px;\n  color: rgba(0, 0, 0, 0.44);\n}\nul h6[data-v-7082e869] {\n  padding: 10px 15px;\n}\nli p[data-v-7082e869] {\n  font-size: 15px;\n  font-weight: 200;\n  padding: 6px 40px;\n  margin: 0;\n}\nli p[data-v-7082e869]:hover {\n  background: #f7f8fa;\n  cursor: pointer;\n}\nli[data-v-7082e869] {\n  border-bottom: 1px solid #f7f8fa;\n}\n.right_side[data-v-7082e869] {\n  width: 75%;\n  min-height: 100vh;\n  background: white;\n  padding: 15px;\n  border-radius: 5px;\n}", ""]);
+exports.push([module.i, "@charset \"UTF-8\";\n.container-fluid[data-v-7082e869] {\n  background: #f7f8fa;\n}\n.main-content[data-v-7082e869] {\n  width: 100%;\n  margin: 0 auto;\n  height: 100vh;\n  display: flex;\n  padding: 15px 0px;\n}\n.filter_item[data-v-7082e869] {\n  text-transform: capitalize;\n}\n.action[data-v-7082e869] {\n  width: 1%;\n}\n.action_icon[data-v-7082e869] {\n  font-size: 13px;\n}\nth[data-v-7082e869] {\n  color: #006600;\n}\n.navigation[data-v-7082e869] {\n  display: flex;\n  width: 20%;\n  margin: 0 auto;\n  justify-content: space-between;\n  margin-top: 30px;\n}\n.prev[data-v-7082e869],\n.next[data-v-7082e869] {\n  font-size: 14px;\n}\n.prev_button[data-v-7082e869],\n.next_button[data-v-7082e869] {\n  padding: 5px 10px;\n  border: none;\n  border-radius: 5px;\n  font-size: 12px;\n}\n.fa-minus-circle[data-v-7082e869]:before {\n  content: \"\\F056\";\n  color: #dc3545;\n}\n.button[data-v-7082e869] {\n  padding: 8px 32px;\n  box-shadow: 0px 0px 12px -2px rgba(0, 0, 0, 0.5);\n  line-height: 1.25;\n  background: #dc3545;\n  text-decoration: none;\n  color: white;\n  font-size: 13px;\n  letter-spacing: 0.08em;\n  text-transform: initial;\n  position: relative;\n  transition: background-color 0.6s ease;\n  overflow: hidden;\n}\n.button[data-v-7082e869]:after {\n  content: \"\";\n  position: absolute;\n  width: 0;\n  height: 0;\n  top: 50%;\n  left: 50%;\n  transform-style: flat;\n  transform: translate3d(-50%, -50%, 0);\n  background: rgba(255, 255, 255, 0.1);\n  border-radius: 100%;\n  transition: width 0.3s ease, height 0.3s ease;\n}\n.button[data-v-7082e869]:focus, .button[data-v-7082e869]:hover {\n  background: #ca2333;\n}\n.button[data-v-7082e869]:active:after {\n  width: 200px;\n  height: 200px;\n}\n.top_bar[data-v-7082e869] {\n  padding: 5px 10px;\n  background: #f7fafa;\n  margin-bottom: 15px;\n  display: flex;\n  justify-content: space-between;\n  font-size: 13px;\n  align-items: center;\n}\n.row_numb[data-v-7082e869] {\n  width: 30px;\n}\n.row_numb[data-v-7082e869]::-webkit-input-placeholder {\n  text-align: center;\n}\n.row_numb[data-v-7082e869]::-moz-placeholder {\n  text-align: center;\n}\n.row_numb[data-v-7082e869]:-ms-input-placeholder {\n  text-align: center;\n}\n.row_numb[data-v-7082e869]::-ms-input-placeholder {\n  text-align: center;\n}\n.row_numb[data-v-7082e869]::placeholder {\n  text-align: center;\n}\n.reset[data-v-7082e869] {\n  cursor: pointer;\n}\n.bar[data-v-7082e869] {\n  position: relative;\n  padding-right: 15px;\n}\n.left_side[data-v-7082e869] {\n  width: 20%;\n  height: 100vh;\n}\n.side_bar[data-v-7082e869] {\n  background: white;\n  border-radius: 5px;\n  height: 100vh;\n  width: 93%;\n  padding: 20px 0;\n}\n.search_bar[data-v-7082e869] {\n  position: relative;\n  margin-bottom: 0;\n}\n.search_input[data-v-7082e869] {\n  border-color: #f7f8fa;\n  height: 25px;\n  font-size: 13px;\n}\n.form-control[data-v-7082e869]::-webkit-input-placeholder {\n  font-size: 13px;\n}\n.form-control[data-v-7082e869]::-moz-placeholder {\n  font-size: 13px;\n}\n.form-control[data-v-7082e869]:-ms-input-placeholder {\n  font-size: 13px;\n}\n.form-control[data-v-7082e869]::-ms-input-placeholder {\n  font-size: 13px;\n}\n.form-control[data-v-7082e869]::placeholder {\n  font-size: 13px;\n}\n.fa-search[data-v-7082e869] {\n  position: absolute;\n  font-size: 12px;\n  right: 14px;\n  top: 50%;\n  margin-top: -6px;\n  color: rgba(0, 0, 0, 0.44);\n}\nul h6[data-v-7082e869] {\n  padding: 10px 15px;\n}\nli p[data-v-7082e869] {\n  font-size: 15px;\n  font-weight: 200;\n  padding: 6px 40px;\n  margin: 0;\n}\nli p[data-v-7082e869]:hover {\n  background: #f7f8fa;\n  cursor: pointer;\n}\nli[data-v-7082e869] {\n  border-bottom: 1px solid #f7f8fa;\n}\n.right_side[data-v-7082e869] {\n  width: 80%;\n  height: 100vh;\n  background: white;\n  padding: 15px;\n  border-radius: 5px;\n  overflow: scroll;\n}", ""]);
 
 // exports
 
@@ -594,7 +655,7 @@ var render = function() {
             _c("h6", [_vm._v("LGAs")]),
             _vm._v(" "),
             _c("li", [
-              _c("div", { staticClass: "form-group" }, [
+              _c("div", { staticClass: "form-group px-2 text-center" }, [
                 _c(
                   "select",
                   {
@@ -606,7 +667,7 @@ var render = function() {
                         expression: "lga"
                       }
                     ],
-                    staticClass: "custom-select",
+                    staticClass: "custom-select mb-2",
                     on: {
                       change: function($event) {
                         var $$selectedVal = Array.prototype.filter
@@ -626,19 +687,106 @@ var render = function() {
                   [
                     _c("option", { attrs: { value: "selected" } }, [
                       _vm._v("Select one")
-                    ])
-                  ]
-                )
-              ])
+                    ]),
+                    _vm._v(" "),
+                    _vm._l(_vm.lgas, function(lga, index) {
+                      return _c(
+                        "option",
+                        {
+                          key: index,
+                          staticClass: "lga_name",
+                          domProps: { value: lga.name.toLowerCase() }
+                        },
+                        [_vm._v(_vm._s(lga.name))]
+                      )
+                    })
+                  ],
+                  2
+                ),
+                _vm._v(" "),
+                !_vm.showlga
+                  ? _c(
+                      "button",
+                      {
+                        staticClass: "button-blue",
+                        on: { click: _vm.lgaShow }
+                      },
+                      [_vm._v("Add new")]
+                    )
+                  : _vm._e()
+              ]),
+              _vm._v(" "),
+              _vm.showlga
+                ? _c("div", { staticClass: "form-group px-2 text-center" }, [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.lga_name,
+                          expression: "lga_name"
+                        }
+                      ],
+                      staticClass: "form-control mb-2",
+                      attrs: {
+                        type: "text",
+                        "aria-describedby": "helpId",
+                        placeholder: "Enter lga name"
+                      },
+                      domProps: { value: _vm.lga_name },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.lga_name = $event.target.value
+                        }
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c(
+                      "button",
+                      { staticClass: "button-blue", on: { click: _vm.addLga } },
+                      [_vm._v("Add ")]
+                    )
+                  ])
+                : _vm._e()
             ])
           ])
         ])
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "right_side" }, [
-        _c("h4", { staticClass: "filter_item mb-3" }, [
-          _vm._v(_vm._s(_vm.filter_item) + " Schools")
-        ]),
+        _c(
+          "div",
+          {
+            staticClass:
+              "d-flex justify-content-between align-items-center mb-4"
+          },
+          [
+            _c("h4", { staticClass: "filter_item mb-3" }, [
+              _vm._v(_vm._s(_vm.filter_item) + " Schools")
+            ]),
+            _vm._v(" "),
+            _c(
+              "div",
+              [
+                _c("router-link", { attrs: { to: "/admin/school/add" } }, [
+                  _c("button", { staticClass: "button-blue mr-3" }, [
+                    _vm._v("Add school")
+                  ])
+                ]),
+                _vm._v(" "),
+                _c(
+                  "small",
+                  { staticClass: "reset", on: { click: _vm.reset } },
+                  [_vm._v("Reset filter")]
+                )
+              ],
+              1
+            )
+          ]
+        ),
         _vm._v(" "),
         _c("div", { staticClass: "top_bar" }, [
           _c("div", { staticClass: "bar border-right" }, [
@@ -771,7 +919,7 @@ var render = function() {
                 attrs: {
                   type: "text",
                   "aria-describedby": "helpId",
-                  placeholder: "Search"
+                  placeholder: "Search row"
                 },
                 domProps: { value: _vm.search },
                 on: {
@@ -802,7 +950,7 @@ var render = function() {
                 _vm._v(" "),
                 _c("th", [_vm._v("Address")]),
                 _vm._v(" "),
-                _c("th", [_vm._v("Phone No")]),
+                _c("th", [_vm._v("Phone")]),
                 _vm._v(" "),
                 _c("th", [_vm._v("Email")]),
                 _vm._v(" "),
@@ -857,7 +1005,7 @@ var render = function() {
               _vm._l(_vm.sortedSchools, function(school, idx) {
                 return _c("tr", { key: idx }, [
                   _c("td", { attrs: { scope: "row" } }, [
-                    _vm._v(_vm._s(idx + 1))
+                    _vm._v(_vm._s(school.id))
                   ]),
                   _vm._v(" "),
                   _c("td", [_vm._v(_vm._s(school.name))]),

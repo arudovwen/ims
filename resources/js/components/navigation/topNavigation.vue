@@ -16,7 +16,7 @@
           <div class="text">
             <span class="imo josefin_bold">IMO STATE</span>
             <br />
-            <span class="ministry">Ministry Of Education</span>
+            <span class="ministry">Ministry of Education</span>
           </div>
         </router-link>
       </div>

@@ -41,6 +41,7 @@
         "vue-marquee-text-component": "^1.1.1",
         "vue-moment": "^4.1.0",
         "vue-router": "^3.1.6",
+        "vue-toasted": "^1.1.28",
         "vuetify": "^2.2.26"
     }
 }
