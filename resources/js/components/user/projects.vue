@@ -91,20 +91,24 @@ export default {
 #projects {
   padding: 40px 0px;
   height: auto;
-  width: 80%;
+  width: 75%;
   margin: 0 auto;
 }
 .my-projects {
-  height: 350px;
+  height: 250px;
 }
 .slide {
-  background: #f7f8fa;
+  background: #fff;
   border-radius: 5px;
   overflow: hidden;
 }
+a{
+  color:#0F7A8A;
+  
+}
 .img_contain {
   width: 100%;
-  height: 80%;
+  height: 75%;
 }
 .img_contain img {
   width: 100%;
@@ -115,9 +119,13 @@ export default {
   padding: 10px;
   text-align: left;
   font-size: 15px;
-  height: 20%;
+  height: 25%;
   text-align: center;
-  background: rgba(0, 0, 0, 0.7);
+  background: repeating-linear-gradient(
+    to right,
+    rgb(15, 122, 138, 0.7) 0%,
+    rgb(15, 122, 138, 0.85) 100%
+  );
   color: white;
 }
 .swiper-pagination-fraction,
@@ -143,9 +151,9 @@ p {
   .img_text {
     height: auto;
   }
-  .my-projects {
+  /* .my-projects {
     height: 280px;
-  }
+  } */
   .img_contain {
     height: 180px;
   }
@@ -158,7 +166,7 @@ p {
     font-size: 11px;
   }
   .my-projects {
-    height: 200px;
+    height: auto;
   }
   .img_contain {
     height: 120px;

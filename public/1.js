@@ -69,16 +69,56 @@ __webpack_require__.r(__webpack_exports__);
         if (res.status == 201) {
           _this.active == false;
 
-          if (_this.$route.query.redirect) {
-            _this.$router.push(_this.$route.query.redirect);
-          } else {
-            _this.$toasted.info("Redirecting to dashboard..");
-
-            _this.$router.push("/admin/dashboard");
-          }
+          _this.login(_this.data.email, _this.data.password);
         }
       })["catch"](function (err) {
+        _this.$toasted.error("Something is not right");
+
         _this.active = false;
+      });
+    },
+    login: function login(email, password) {
+      var _this2 = this;
+
+      this.active = true;
+      var data = {
+        grant_type: "password",
+        client_id: 3,
+        client_secret: "TZzHgC3COmkcVpKE61u1kqvigREtcRonE7iK0uFW",
+        username: email,
+        password: password
+      };
+      var adminUser = {};
+      axios.post("/oauth/token", data).then(function (res) {
+        adminUser.access_token = res.data.access_token;
+        axios.get("/api/user", {
+          headers: {
+            Authorization: "Bearer ".concat(res.data.access_token)
+          }
+        }).then(function (res) {
+          if (res.status === 200) {
+            _this2.active = false;
+            adminUser.name = res.data.name;
+            adminUser.email = res.data.email;
+            localStorage.setItem("adminUser", JSON.stringify(adminUser));
+
+            if (_this2.$route.query.redirect) {
+              _this2.$router.push(_this2.$route.query.redirect);
+            } else {
+              _this2.$toasted.info("Redirecting to dashboard..");
+
+              _this2.$router.push("/admin/dashboard");
+            }
+          }
+        })["catch"](function (error) {
+          _this2.$toasted.error("Something is not right");
+
+          _this2.active = false;
+        });
+      })["catch"](function (err) {
+        _this2.$toasted.error("Something is not right");
+
+        _this2.active = false;
       });
     }
   }

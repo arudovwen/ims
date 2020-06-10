@@ -1,5 +1,6 @@
 <template>
-  <div id="bottom_nav">
+  <div id="bottom_nav" :class="{'overlay-bg':show_nav_bar}">
+    <div class="overlay" v-if="show_nav_bar"></div>
     <span class="d-flex justify-content-start align-items-center mobile" @click="showNav">
       <button
         class="hamburger hamburger--collapse"
@@ -16,7 +17,7 @@
       </button>
       <strong>Menu</strong>
     </span>
-    <ul class="nav_bar animated slideInRight" v-if="show_nav_bar">
+    <ul class="nav_bar animated slideInUp" v-if="show_nav_bar">
       <li>
         <div>
           <router-link to="/">
@@ -28,7 +29,7 @@
           </router-link>
         </div>
       </li>
-         <li>
+      <li>
         <div>
           <router-link to="/about">
             <div class="fa-stack icon">
@@ -38,9 +39,8 @@
             <div class="nav_text">About us</div>
           </router-link>
         </div>
-      
       </li>
-       <li>
+      <li>
         <div>
           <router-link to="/stakeholders">
             <div class="fa-stack icon">
@@ -50,9 +50,7 @@
             <div class="nav_text">Stakeholders</div>
           </router-link>
         </div>
-      
       </li>
-     
 
       <li>
         <div>
@@ -65,8 +63,8 @@
           </router-link>
         </div>
         <ul class="sub_nav">
-          <li  class="mini_nav_text">Programs</li>
-          <li  class="mini_nav_text">Projects</li>
+          <li class="mini_nav_text">Programs</li>
+          <li class="mini_nav_text">Projects</li>
         </ul>
       </li>
       <li>
@@ -82,7 +80,7 @@
       </li>
       <li>
         <div>
-          <router-link to="">
+          <router-link to>
             <div class="fa-stack icon">
               <i class="fa fa-circl fa-stack-2x" aria-hidden="true"></i>
               <i class="fas fa-user-tie nav fa-stack-1x"></i>
@@ -91,15 +89,13 @@
           </router-link>
         </div>
         <ul class="sub_nav">
-          <li  class="mini_nav_text">Applications</li>
+          <li class="mini_nav_text">Applications</li>
           <router-link to="/directory">
             <li class="mini_nav_text">Directory</li>
           </router-link>
-        
-         
         </ul>
       </li>
-     
+
       <li>
         <div>
           <router-link to="/blog">
@@ -157,20 +153,21 @@ export default {
 #bottom_nav {
   width: 100%;
   position: relative;
-  background-color: #006600;
+  background-color: #0F7A8A;
   border-top: 3px solid #ffff75;
   z-index: 99;
+  transition: all 0.4s;
 }
 .mobile {
   display: none !important;
 }
-.mini_nav_text{
-  font-size: 12px !important;
+.mini_nav_text {
+  font-size: 15px;
   text-transform: capitalize;
 }
 .slideInRight {
-    -webkit-animation-name: none;
-    animation-name: none;
+  -webkit-animation-name: none;
+  animation-name: none;
 }
 strong {
   color: hsl(120, 100%, 95%);
@@ -187,14 +184,14 @@ strong {
   text-align: center;
   color: #fff;
   font-weight: normal;
-  font-size: 15px;
+  font-size: 14px;
   border-bottom: 5px solid transparent;
   padding: 10px;
   position: relative;
 }
 .nav_bar li:hover {
   transition: border 0.6s;
-  border-color: yellow;
+  border-color: rgb(15, 122, 138, 0.85);
 }
 .nav_bar li a {
   color: white;
@@ -207,6 +204,7 @@ strong {
 }
 .nav_bar li a .nav_text {
   transition: all 0.6s;
+  font-size: 15px;
 }
 .nav_bar li:hover a .nav_text {
   transform: translateY(10px);
@@ -306,10 +304,15 @@ strong {
   .slideInRight {
     -webkit-animation-name: slideInRight;
     animation-name: slideInRight;
+  }
+  .nav_bar li {
+ 
+    font-size: 16px;
+ 
 }
 }
 @media (max-width: 425px) {
-  .sub_nav{
+  .sub_nav {
     width: 100%;
     z-index: 2;
     top: 11px;
@@ -317,8 +320,32 @@ strong {
     position: relative;
   }
   .sub_nav::before {
-  display: none;
+    display: none;
   }
-  
+
+  .overlay-bg{
+  background: url("/images/imobanner.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  }
+  .overlay {
+  background: repeating-linear-gradient(
+    to right,
+    rgb(15, 122, 138, 0.7) 0%,
+    rgb(15, 122, 138, 0.7) 100%
+  );
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+  height: 100%;
+}
+.mobile{
+  position:relative;
+  z-index: 3;
+}
+.nav_bar{
+  position: relative;
+  z-index: 3;
+}
 }
 </style>

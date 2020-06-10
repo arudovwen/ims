@@ -60,17 +60,59 @@ export default {
                 if (res.status == 201) {
                     this.active == false
                  
-                   if (this.$route.query.redirect) {
+                  this.login(this.data.email,this.data.password)
+                }
+            }).catch(err=>{
+                this.$toasted.error("Something is not right");
+                this.active = false;
+            })
+        },
+        login(email,password) {
+      this.active = true;
+      let data = {
+        grant_type: "password",
+        client_id: 3,
+        client_secret: "TZzHgC3COmkcVpKE61u1kqvigREtcRonE7iK0uFW",
+        username: email,
+        password: password
+      };
+      const adminUser = {};
+
+      axios
+        .post("/oauth/token", data)
+        .then(res => {
+          adminUser.access_token = res.data.access_token;
+          axios
+            .get(`/api/user`, {
+              headers: { Authorization: `Bearer ${res.data.access_token}` }
+            })
+            .then(res => {
+              if (res.status === 200) {
+                this.active = false;
+                adminUser.name = res.data.name;
+                adminUser.email = res.data.email;
+                localStorage.setItem("adminUser", JSON.stringify(adminUser));
+
+               
+                if (this.$route.query.redirect) {
                     this.$router.push(this.$route.query.redirect)
                 }else{
                      this.$toasted.info("Redirecting to dashboard..");
                      this.$router.push("/admin/dashboard");
                 }
-                }
-            }).catch(err=>{
-                 this.active = false
+               
+              }
             })
-        },
+            .catch(error => {
+              this.$toasted.error("Something is not right");
+              this.active = false;
+            });
+        })
+        .catch(err => {
+          this.$toasted.error("Something is not right");
+          this.active = false;
+        });
+    }
 
    },
 };

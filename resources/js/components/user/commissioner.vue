@@ -1,12 +1,22 @@
 <template>
   <div id="commissioner">
+     <div class="square_1">
+          <div class="square_2">
+            <div class="square_3"></div>
+          </div>
+        </div>
+        <div class="square_4">
+          <div class="square_5">
+            <div class="square_6"></div>
+          </div>
+        </div>
     <h3 class="josefin mb-4 main_header">Stakeholders</h3>
     <div class="commiss">
          <div class="commissioner box shadow-sm">
          <div class="top_header">
             <h4 class="josefin ">PROF.B.T.O . IKEGWUOHA</h4>
              <h5 class="josefin ">Honorable Commissioner For Education, Imo state</h5>
-          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit nostrum odio quidem dolorem sequi itaque... <span class="mc3">read more</span></p>
+         <p>Lorem ipsum dolor, sit amet  itaque... <span class="mc1">read more</span></p>
         </div>
        
         <div class="img">
@@ -19,7 +29,7 @@
           <small>His Excellency</small>
           <h4 class="josefin">SEN. HOPE UZODIMMA</h4>
             <h5 class="josefin ">Governor, Imo state</h5>
-          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit nostrum odio quidem dolorem sequi itaque... <span class="mc3">read more</span></p>
+          <p>Lorem ipsum dolor, sit amet  itaque... <span class="mc1">read more</span></p>
         </div>
       
         <div class="img">
@@ -31,7 +41,7 @@
       <div class="perm_sec box shadow-sm">
          <div class="top_header">
              <h4 class="josefin ">Permanent Secretary, Imo state Ministry of Education</h4>
-          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit nostrum odio quidem dolorem sequi itaque... <span class="mc3">read more</span></p>
+         <p>Lorem ipsum dolor, sit amet  itaque... <span class="mc1">read more</span></p>
         </div>
       
         <div class="img">
@@ -51,26 +61,33 @@ export default {
 </script>
 <style scoped>
 #commissioner {
+  position: relative;
   padding: 65px 15px 65px;
   height: auto;
   width: 100%;
-  background: white;
+  background: repeating-linear-gradient(
+    to right,
+    rgb(15, 122, 138, 0.7) 0%,
+    rgb(15, 122, 138, 0.85) 100%
+  );
+  overflow: hidden;
 }
+
 .commiss {
   display: flex;
-  width: 100%;
+  width: 80%;
   margin: 0 auto;
   justify-content: space-evenly;
 }
 .box {
-  width: 30%;
-  height: 500px;
+  width: 25%;
+  height: 400px;
   background: #f7f8fa;
   border-radius: 8px;
   position: relative;
   overflow: hidden;
 }
-.mc3{
+.mc1{
   cursor:pointer;
   text-decoration: underline;
 }
@@ -82,13 +99,16 @@ p{
   margin: 0;
   font-size: 15px;
 }
+h4{
+  font-size:1.25rem
+}
 .top_header {
   text-align: center;
   position: absolute;
   bottom: 0;
   padding: 15px 0;
-  background: rgba(0, 0, 0, 0.7);
-  color: #fff;
+  background: rgba(255, 255, 255, 0.95);
+  color: #333;
   width: 100%;
   margin: 0;
 }
@@ -97,7 +117,99 @@ p{
   height: 100%;
   object-fit: cover;
 }
+.square_1 {
+  border: 15px solid yellow;
+  padding: 10px;
+  position: absolute;
+  bottom: 50%;
+  margin-bottom: -80px;
+  height: 160px;
+  width: 160px;
+  left: -80px;
+  transform: rotate(45deg);
+}
+.square_2 {
+  border: 15px solid white;
+  padding: 15px;
+  width: 100%;
+  height: 100%;
+}
+.square_3 {
+  background: yellow;
+  padding: 10px;
+  width: 100%;
+  height: 100%;
+}
+.square_4 {
+  border: 15px solid yellow;
+  padding: 10px;
+  position: absolute;
+  bottom: 50%;
+  margin-bottom: -80px;
+  height: 160px;
+  width: 160px;
+  right: -80px;
+  transform: rotate(45deg);
+}
+.square_5 {
+  border: 15px solid white;
+  padding: 15px;
+  width: 100%;
+  height: 100%;
+}
+.square_6 {
+  background: yellow;
+  padding: 10px;
+  width: 100%;
+  height: 100%;
+}
 @media (max-width: 1024px) {
+  .square_1 {
+    border: 7px solid yellow;
+    padding: 5px;
+    position: absolute;
+    bottom: 50%;
+    margin-bottom: -30px;
+    height: 60px;
+    width: 60px;
+    left: -30px;
+    transform: rotate(45deg);
+  }
+  .square_2 {
+    border: 7px solid white;
+    padding: 7px;
+    width: 100%;
+    height: 100%;
+  }
+  .square_3 {
+    background: yellow;
+    padding: 5px;
+    width: 100%;
+    height: 100%;
+  }
+  .square_4 {
+    border: 7px solid yellow;
+    padding: 5px;
+    position: absolute;
+    bottom: 50%;
+    margin-bottom: -30px;
+    height: 60px;
+    width: 60px;
+    right: -30px;
+    transform: rotate(45deg);
+  }
+  .square_5 {
+    border: 7px solid white;
+    padding: 7px;
+    width: 100%;
+    height: 100%;
+  }
+  .square_6 {
+    background: yellow;
+    padding: 5px;
+    width: 100%;
+    height: 100%;
+  }
 }
 @media (max-width: 768px) {
   #commissioner {
@@ -107,9 +219,54 @@ p{
     flex-direction: column;
     height: auto;
     padding: 15px 25px;
-    width: 100%;
+    width: 80%;
   }
-
+ .square_1 {
+    border: 5px solid yellow;
+    padding: 3px;
+    position: absolute;
+    bottom: 50%;
+    margin-bottom: -20px;
+    height: 40px;
+    width: 40px;
+    left: -20px;
+    transform: rotate(45deg);
+  }
+  .square_2 {
+    border: 5px solid white;
+    padding: 5px;
+    width: 100%;
+    height: 100%;
+  }
+  .square_3 {
+    background: yellow;
+    padding: 2.5px;
+    width: 100%;
+    height: 100%;
+  }
+  .square_4 {
+    border: 5px solid yellow;
+    padding: 4px;
+    position: absolute;
+    bottom: 50%;
+    margin-bottom: -20px;
+    height: 40px;
+    width: 40px;
+    right: -20px;
+    transform: rotate(45deg);
+  }
+  .square_5 {
+    border: 5px solid white;
+    padding: 5px;
+    width: 100%;
+    height: 100%;
+  }
+  .square_6 {
+    background: yellow;
+    padding: 2.3px;
+    width: 100%;
+    height: 100%;
+  }
   .left_box,
   .right_box {
     width: 100%;
@@ -123,7 +280,7 @@ p{
   .box {
     width: 70%;
     margin: 30px auto;
-    height:400px
+    height:350px
   }
 }
 @media (max-width: 425px) {
@@ -132,6 +289,12 @@ p{
   }
   .box {
     width: 100%;
+  }
+  h4{
+    font-size: 16px !important;
+  }
+  h5{
+    font-size: 15px !important;
   }
 }
 </style>

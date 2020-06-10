@@ -140,7 +140,7 @@ a {
 /* define colors here */
 
 .mc1 {
-    color: #006600;
+    color: #0F7A8A;
 }
 
 .mc2 {
@@ -168,7 +168,7 @@ a {
     color: yellow;
 }
 .bg1-dark {
-    background-color: #006600 !important;
+    background-color: #0F7A8A !important;
 }
 .bg1-dark:hover {
     background-color: #669f66 !important;
@@ -297,7 +297,7 @@ td {
   }
   .main_header::after{
     content: '';
-    border-bottom: 2px solid #006600;
+    border-bottom: 2px solid #0F7A8A;
     width: 50px;
     height: 5px;
     position: absolute;
@@ -312,7 +312,7 @@ td {
     }
     .center_header::after{
       content: '';
-      border-bottom: 3px solid #006600;
+      border-bottom: 3px solid #0F7A8A;
       width: 50px;
       height: 5px;
       position: absolute;

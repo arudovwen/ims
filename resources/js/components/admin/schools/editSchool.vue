@@ -141,7 +141,7 @@ export default {
 .container{
     background: #f7f8fa;
     min-height: 100vh;
-    padding:30px 15px;
+    padding:60px 15px;
 }
 #form{
     width: 80%;
@@ -152,7 +152,7 @@ export default {
   padding: 8px 32px;
   box-shadow: 0px 0px 12px -2px rgba(0, 0, 0, 0.5);
   line-height: 1.25;
-  background: #006600;
+  background: #0F7A8A;
   text-decoration: none;
   color: white;
   font-size: 13px;
@@ -176,7 +176,7 @@ export default {
   }
   &:focus,
   &:hover {
-    background: darken(#006600, 7%);
+    background: darken(#0F7A8A, 7%);
   }
   &:active {
     &:after {

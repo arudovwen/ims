@@ -1,7 +1,9 @@
 <template>
   <div id="main-body">
     <div class="box box_1">
-      <div class="mini_box shadow-sm"></div>
+      <div class="mini_box shadow-sm">
+
+      </div>
       <div class="mini_box shadow-sm"></div>
       <div class="mini_box shadow-sm"></div>
       <div class="mini_box shadow-sm"></div>
@@ -32,6 +34,7 @@ export default {};
   grid-template-rows: 1fr 3fr;
   grid-row-gap: 15px;
 }
+
 .box {
   width: 100%;
 }
@@ -43,6 +46,7 @@ export default {};
 .mini_box {
   height: 100%;
   background: white;
+  position: relative;
 }
 .box_2 {
   display: grid;

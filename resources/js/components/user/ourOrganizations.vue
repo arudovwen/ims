@@ -21,7 +21,7 @@
 }
 .organizations {
     width: 100%;
-  padding: 30px;
+  padding:0 30px;
 }
 .info p{
   text-align: center;

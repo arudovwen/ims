@@ -43,24 +43,32 @@
         </ul>
       </div>
       <div class="contact links">
-        <h5 class="links_header josefin ">Contact</h5>
+        <h5 class="links_header josefin">Contact</h5>
         <address>
-           <div class="mb-2 mini">
-          <h5 class="text-muted">Ministry of Education</h5>
-          <span class="text-muted">Address : Block 3, Imo State Secretariat Complex.</span><br>
-          <span class="text-muted">P. M. B 1309, Owerri</span><br>
-          <span class="text-muted">E-mail: info@imostatemoe.gov.ng</span>
-        </div>
           <div class="mb-2 mini">
-          <h5 class="text-muted">Hon. Commisioner for Education: Professor Bernard Thompson O. Ikegwuoha</h5>
-          <span class="text-muted">Tel: 0809.547.6304</span><br>
-          <span class="text-muted">P. M. B 1309, Owerri</span><br>
-          <span class="text-muted">E-mail: hcmoe@imostatemoe@gov.ng</span>
-        </div>
+            <h5 class="text-muted">Ministry of Education</h5>
+            <span class="text-muted">Address : Block 3, Imo State Secretariat Complex.</span>
+            <br />
+            <span class="text-muted">P. M. B 1309, Owerri</span>
+            <br />
+            <span class="text-muted">E-mail: info@imostatemoe.gov.ng</span>
+          </div>
+          <div class="mb-2 mini">
+            <h5
+              class="text-muted"
+            >Hon. Commisioner for Education: Professor Bernard Thompson O. Ikegwuoha</h5>
+            <span class="text-muted">Tel: 0809.547.6304</span>
+            <br />
+            <span class="text-muted">P. M. B 1309, Owerri</span>
+            <br />
+            <span class="text-muted">E-mail: hcmoe@imostatemoe@gov.ng</span>
+          </div>
         </address>
 
         <div class="mb-2">
-          <router-link to="/contact"><button type="button" class="btn btn-default con">Contact us</button></router-link>
+          <router-link to="/contact">
+            <button type="button" class="btn btn-default con">Contact us</button>
+          </router-link>
         </div>
       </div>
       <div class="links">
@@ -100,9 +108,9 @@ export default {};
   padding: 0 20px;
 }
 .links_header {
-  padding: 10px;
-  border-bottom: 3px solid #006600;
-  color: #006600;
+  padding: 10px 0;
+  border-bottom: 2px solid rgb(15, 122, 138, 0.85);
+  color: rgb(15, 122, 138, 0.85);
 }
 .links ul li a {
   color: #777777;
@@ -115,29 +123,29 @@ export default {};
 .links ul li {
   border-bottom: 1px solid #ccc;
 }
-.con{
+.con {
   font-size: 14px;
 }
-.mini{
+.mini {
   line-height: 1;
 }
 p {
   font-size: 14px;
 }
-h5{
+h5 {
   font-size: 13px;
 }
-span{
+span {
   font-size: 13px;
-  color: rgb(0, 0, 0,.54);
+  color: rgb(0, 0, 0, 0.54);
 }
-.btn-default{
-    border-color: #c5d9e8;
-     background: #f7f8fa;
-    border-width: 1px;
-    border-style: solid;
-    transition: all linear 250ms;
-     border-radius: 7px;
+.btn-default {
+  border-color: #c5d9e8;
+  background: #f7f8fa;
+  border-width: 1px;
+  border-style: solid;
+  transition: all linear 250ms;
+  border-radius: 7px;
 }
 @media (max-width: 1024px) {
   .quick_links {
@@ -155,11 +163,8 @@ span{
   }
 }
 @media (max-width: 425px) {
-  
-.links_header {
-
-  border-bottom: 2px solid #006600;
-
-}
+  .links_header {
+    border-bottom: 2px solid rgb(15, 122, 138, 0.85);
+  }
 }
 </style>

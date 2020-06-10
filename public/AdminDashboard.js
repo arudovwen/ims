@@ -50,6 +50,69 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
 /***/ }),
@@ -66,7 +129,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n#main-body[data-v-234d4910] {\n  padding:15px;\n  height: 100vh;\n  overflow: auto;\n  display: grid;\n  grid-template-rows: 1fr 3fr;\n  grid-row-gap: 15px;\n}\n.box[data-v-234d4910] {\n  width: 100%;\n}\n.box_1[data-v-234d4910] {\n  display: grid;\n  grid-template-columns: 1fr 1fr 1fr 1fr;\n  grid-column-gap: 15px;\n}\n.text_header[data-v-234d4910]{\n  font-size: 18px;\n  font-weight: 500;\n  text-align: left;\n  color:#000060;\n}\n.actions li a[data-v-234d4910] {\n  font-weight: 300;\n  color: rgba(0, 0, 0,.54);\n  cursor: pointer;\n}\n.actions li:hover a[data-v-234d4910]{\n   color: rgba(0, 0, 0,.84);\n}\na[data-v-234d4910]{\n    text-decoration: none;\n}\n.mini_box[data-v-234d4910] {\n  height: 100%;\n  background: white;\n  display: grid;\n  align-items: center;\n}\n.box_content_1[data-v-234d4910]{\n display: grid;\n  grid-template-columns: 1fr 1fr;\n  grid-column-gap: 15px;\n  justify-content: space-between;\n  align-items: center;\n}\n.mini_box:hover .icon[data-v-234d4910]{\n  transform: scale(1.06);\n}\n.box_2[data-v-234d4910] {\n  display: grid;\n  grid-template-columns: 1fr 1fr;\n  grid-column-gap: 15px;\n}\n.mini_box2[data-v-234d4910] {\n  height: 100%;\n  width: 100%;\n}\n.mini_first[data-v-234d4910] {\n  display: grid;\n  grid-template-rows: 1fr 2fr;\n  grid-row-gap: 15px;\n}\n.mini_bb[data-v-234d4910] {\n  display: grid;\n  grid-template-columns: 1fr 1fr;\n  grid-column-gap: 15px;\n}\n.mini_c[data-v-234d4910] {\n  background: white;\n}\n", ""]);
+exports.push([module.i, "\n#main-body[data-v-234d4910] {\n  padding: 15px;\n  height: 100vh;\n  overflow: auto;\n  display: grid;\n  grid-template-rows: 1fr 3fr;\n  grid-row-gap: 15px;\n}\n.box[data-v-234d4910] {\n  width: 100%;\n}\n.box_1[data-v-234d4910] {\n  display: grid;\n  grid-template-columns: 1fr 1fr 1fr 1fr;\n  grid-column-gap: 15px;\n}\n.circle-box[data-v-234d4910] {\n  height: 100%;\n  width: 100%;\n  position: absolute;\n  background: #0F7A8A;\n  border-radius: 50%;\n  right: -60%;\n}\n.content[data-v-234d4910]{\n  padding-left: 15px;\n}\n.text_header[data-v-234d4910] {\n  font-size: 18px;\n  font-weight: 500;\n  text-align: left;\n  color: #0F7A8A;\n}\n.actions li a[data-v-234d4910] {\n  font-weight: 400;\n  font-size: 14px;\n  color: rgba(0, 0, 0, 0.54);\n  cursor: pointer;\n}\n.actions li:hover a[data-v-234d4910] {\n  color: rgba(0, 0, 0, 0.84);\n}\na[data-v-234d4910] {\n  text-decoration: none;\n}\n.mini_box[data-v-234d4910] {\n  height: 100%;\n  background: white;\n  display: grid;\n  align-items: center;\n  position: relative;\n  overflow: hidden;\n}\n.box_content_1[data-v-234d4910] {\n  display: grid;\n  grid-template-columns: 1fr 1fr;\n  grid-column-gap: 15px;\n  justify-content: space-between;\n  align-items: center;\n}\n.mini_box:hover .icon[data-v-234d4910] {\n  transform: scale(1.06);\n}\n.fa-stack[data-v-234d4910]{\n  color: transparent;\n}\n.icon[data-v-234d4910] {\n    position: absolute;\n    bottom: 50%;\n    margin-bottom: -24px;\n    left: 15%;\n    color: hsl(120, 100%, 98%);\n}\n.box_2[data-v-234d4910] {\n  display: grid;\n  grid-template-columns: 1fr 1fr;\n  grid-column-gap: 15px;\n}\n.mini_box2[data-v-234d4910] {\n  height: 100%;\n  width: 100%;\n}\n.mini_first[data-v-234d4910] {\n  display: grid;\n  grid-template-rows: 1fr 2fr;\n  grid-row-gap: 15px;\n}\n.mini_bb[data-v-234d4910] {\n  display: grid;\n  grid-template-columns: 1fr 1fr;\n  grid-column-gap: 15px;\n}\n.mini_c[data-v-234d4910] {\n  background: white;\n}\n", ""]);
 
 // exports
 
@@ -121,47 +184,111 @@ var render = function() {
   return _c("div", { attrs: { id: "main-body" } }, [
     _c("div", { staticClass: "box box_1" }, [
       _c("div", { staticClass: "mini_box shadow-sm p-2 py-4" }, [
-        _c("div", { staticClass: "box_content_1" }, [
-          _vm._m(0),
-          _vm._v(" "),
-          _c("div", { staticClass: "content" }, [
-            _c("div", { staticClass: "text_header" }, [_vm._v("Directory")]),
-            _vm._v(" "),
-            _c("ul", { staticClass: "actions text-left" }, [
-              _c(
-                "li",
-                [
-                  _c("router-link", { attrs: { to: "/admin/lga" } }, [
-                    _vm._v(" LGAs")
-                  ])
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "li",
-                [
-                  _c("router-link", { attrs: { to: "/admin/directory" } }, [
-                    _vm._v(" Schools")
-                  ])
-                ],
-                1
-              )
-            ])
-          ])
-        ]),
+        _vm._m(0),
         _vm._v(" "),
-        _c("hr")
+        _c("div", { staticClass: "content" }, [
+          _c("div", { staticClass: "text_header" }, [_vm._v("Directory")]),
+          _vm._v(" "),
+          _c("ul", { staticClass: "actions text-left" }, [
+            _c(
+              "li",
+              [
+                _c("router-link", { attrs: { to: "/admin/lga" } }, [
+                  _vm._v("LGAs")
+                ])
+              ],
+              1
+            ),
+            _vm._v(" "),
+            _c(
+              "li",
+              [
+                _c("router-link", { attrs: { to: "/admin/directory" } }, [
+                  _vm._v("Schools")
+                ])
+              ],
+              1
+            )
+          ])
+        ])
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "mini_box shadow-sm" }),
+      _c("div", { staticClass: "mini_box shadow-sm p-2 py-4" }, [
+        _vm._m(1),
+        _vm._v(" "),
+        _c("div", { staticClass: "content" }, [
+          _c("div", { staticClass: "text_header" }, [_vm._v("Payments")]),
+          _vm._v(" "),
+          _c("ul", { staticClass: "actions text-left" }, [
+            _c(
+              "li",
+              [_c("router-link", { attrs: { to: "" } }, [_vm._v("View")])],
+              1
+            ),
+            _vm._v(" "),
+            _c(
+              "li",
+              [_c("router-link", { attrs: { to: "" } }, [_vm._v("Verify")])],
+              1
+            )
+          ])
+        ])
+      ]),
       _vm._v(" "),
-      _c("div", { staticClass: "mini_box shadow-sm" }),
+      _c("div", { staticClass: "mini_box shadow-sm p-2 py-4" }, [
+        _vm._m(2),
+        _vm._v(" "),
+        _c("div", { staticClass: "content" }, [
+          _c("div", { staticClass: "text_header" }, [_vm._v("Applications")]),
+          _vm._v(" "),
+          _c("ul", { staticClass: "actions text-left" }, [
+            _c(
+              "li",
+              [_c("router-link", { attrs: { to: "" } }, [_vm._v("Check")])],
+              1
+            ),
+            _vm._v(" "),
+            _c(
+              "li",
+              [_c("router-link", { attrs: { to: "" } }, [_vm._v("Update")])],
+              1
+            )
+          ])
+        ])
+      ]),
       _vm._v(" "),
-      _c("div", { staticClass: "mini_box shadow-sm" })
+      _c("div", { staticClass: "mini_box shadow-sm p-2 py-4" }, [
+        _vm._m(3),
+        _vm._v(" "),
+        _c("div", { staticClass: "content" }, [
+          _c("div", { staticClass: "text_header" }, [_vm._v("News")]),
+          _vm._v(" "),
+          _c("ul", { staticClass: "actions text-left" }, [
+            _c(
+              "li",
+              [
+                _c("router-link", { attrs: { to: "" } }, [
+                  _vm._v("Announcement")
+                ])
+              ],
+              1
+            ),
+            _vm._v(" "),
+            _c(
+              "li",
+              [
+                _c("router-link", { attrs: { to: "" } }, [
+                  _vm._v("News Update")
+                ])
+              ],
+              1
+            )
+          ])
+        ])
+      ])
     ]),
     _vm._v(" "),
-    _vm._m(1)
+    _vm._m(4)
   ])
 }
 var staticRenderFns = [
@@ -169,16 +296,41 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "fa-stack fa-2x icon" }, [
+    return _c("div", { staticClass: "circle-box" }, [
       _c("i", {
-        staticClass: "fa fa-circle fa-stack-2x",
-        attrs: { "aria-hidden": "true" }
-      }),
-      _vm._v(" "),
-      _c("i", {
-        staticClass: "fas fa-folder fa-stack-1x text-white",
+        staticClass: "fas fa-folder-open  fa-3x icon",
         attrs: { "aria-hidden": "true" }
       })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "circle-box" }, [
+      _c("i", {
+        staticClass: "fas fa-credit-card  fa-3x icon",
+        attrs: { "aria-hidden": "true" }
+      })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "circle-box" }, [
+      _c("i", {
+        staticClass: "fa fa-list-alt   fa-3x icon ",
+        attrs: { "aria-hidden": "true" }
+      })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "circle-box" }, [
+      _c("i", { staticClass: "fas fa-newspaper  fa-3x icon " })
     ])
   },
   function() {

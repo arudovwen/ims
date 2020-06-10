@@ -12,7 +12,7 @@
         </div>
        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempora sapiente alias rem reprehenderit fuga ipsum fugiat. Rem laudantium odio deserunt ullam blanditiis ut cumque at?</p>
         <p>Lorem ipsumdicta dolorem vitae nisi?</p>
-        <router-link to="/checkout"> <button type="button" class="btn bg1-dark text-white mx-auto button">Pay now   <i class="fa fa-long-arrow-right text-white" aria-hidden="true"></i></button></router-link>
+        <router-link to="/checkout"> <button type="button" class="button-green"> <i class="fa fa-long-arrow-right text-white pr-2" aria-hidden="true"></i> Pay now  </button></router-link>
      </div>
     </div>
     <div class="right_box">
@@ -96,7 +96,7 @@ export default {
   }
 };
 </script>
-<style scoped>
+<style scoped lang="scss">
 .main{
  background-image: url("/images/texture.png");
  padding: 45px 15px 0;
@@ -110,9 +110,45 @@ export default {
   margin:0 auto;
 
 }
-.button{
-  width:40%
-}
+.button-green {
+    padding: 8px 32px;
+    box-shadow: 0px 0px 12px -2px rgba(0, 0, 0, 0.5);
+    line-height: 1.25;
+    border-radius: 3px;
+    background: #0F7A8A;
+    text-decoration: none;
+    color: white;
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    text-transform: initial;
+    position: relative;
+    transition: background-color 0.6s ease;
+    overflow: hidden;
+    &:after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 0;
+      top: 50%;
+      left: 50%;
+      transform-style: flat;
+      transform: translate3d(-50%, -50%, 0);
+      background: rgba(white, 0.1);
+      border-radius: 100%;
+      transition: width 0.3s ease, height 0.3s ease;
+    }
+    &:focus,
+    &:hover {
+      background: darken(#0F7A8A, 7%);
+    }
+    &:active {
+      &:after {
+        width: 200px;
+        height: 200px;
+      }
+    }
+  }
+
 .pin{
   width:50px
 }
@@ -127,7 +163,11 @@ export default {
 .right_box {
   width: 30%;
   height: 500px;
-  background:linear-gradient(90deg, #093028 0%,#237a57 100% );
+  background:repeating-linear-gradient(
+    to right,
+    rgb(15, 122, 138, 0.7) 0%,
+    rgb(15, 122, 138, 0.75) 100%
+  );
   padding: 10px;
   border-radius:10px;
 }
@@ -190,7 +230,7 @@ export default {
   font-size: 13px;
 }
 .top_header{
-  color: hsl(120, 100%, 90%);
+
 }
 @media(max-width: 1024px){
 

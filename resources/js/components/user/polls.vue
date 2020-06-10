@@ -6,30 +6,30 @@
     <div class="my-poll">
       <div class="newsletter shadow-sm tab">
         <div class="fa-stack icon">
-          <i class="fa fa-circle fa-stack-2x text-white " aria-hidden="true"></i>
-          <i class="fas fa-list-alt fa-stack-1x  mc-dark" aria-hidden="true"></i>
+          <i class="fa fa-circle fa-stack-2x mc1 " aria-hidden="true"></i>
+          <i class="fas fa-list-alt fa-stack-1x  text-white" aria-hidden="true"></i>
         </div>
-        <h4 class="josefin mc1">Applications</h4>
+        <h4 class="josefin text-white">Applications</h4>
       </div>
       <div class="affiliates shadow-sm tab">
        <router-link to="/directory">
         <div class="fa-stack icon">
-          <i class="fa fa-circle fa-stack-2x text-white" aria-hidden="true"></i>
-          <i class="fas fa-folder-open fa-stack-1x mc-dark" aria-hidden="true"></i>
+          <i class="fa fa-circle fa-stack-2x mc1" aria-hidden="true"></i>
+          <i class="fas fa-folder-open fa-stack-1x text-white" aria-hidden="true"></i>
         </div>
           </router-link>
       <router-link to="/directory">
-        <h4 class="josefin mc1">Directory</h4>
+        <h4 class="josefin text-white">Directory</h4>
          </router-link>
       
       </div>
       <div class="opinions shadow-sm tab">
         <div class="fa-stack icon">
-          <i class="fa fa-circle fa-stack-2x text-white" aria-hidden="true"></i>
-          <i class="fas fa-credit-card fa-stack-1x  mc-dark" aria-hidden="true"></i>
+          <i class="fa fa-circle fa-stack-2x mc1" aria-hidden="true"></i>
+          <i class="fas fa-credit-card fa-stack-1x  text-white" aria-hidden="true"></i>
         </div>
 
-        <h4 class="josefin mc1">Payments</h4>
+        <h4 class="josefin text-white">Payments</h4>
       </div>
     </div>
   </div>
@@ -66,7 +66,11 @@ export default {
   align-items: center;
 }
 .tab {
-  background: #f7f8fa;
+  background: repeating-linear-gradient(
+    to right,
+    rgb(15, 122, 138, 0.7) 0%,
+    rgb(15, 122, 138, 0.85) 100%
+  );
   height: auto;
   width: 32%;
   padding: 15px;
@@ -80,6 +84,9 @@ export default {
 .tab:hover .icon {
   transform: scale(1.04);
   transition: all 0.4s;
+}
+.mc1{
+  color:transparent;
 }
 .icon {
   font-size: 65px;

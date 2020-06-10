@@ -66,14 +66,12 @@ export default {
 #top_nav {
   width: 100%;
   display: flex;
-  padding: 10px 100px;
+  padding: 10px 70px;
   justify-content: space-between;
   align-items: center;
   background: #fff;
 }
-.logo {
-  margin-left: 30px;
-}
+
  .text {
     padding: 0 0 0 10px;
   }
@@ -107,7 +105,7 @@ export default {
   right: -4px;
   height: 38px;
   width: 70px;
-  background: #006600;
+  background: #0F7A8A;
 }
 .updates {
   width: 400px;
@@ -124,7 +122,7 @@ a {
   font-family: "Josefin Sans";
 }
 .info {
-  background-color: #006600;
+  background-color: #0F7A8A;
   border-bottom: 3px solid #ffff75;
   font-size: 14px;
   padding: 5px 10px;

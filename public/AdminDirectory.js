@@ -163,6 +163,43 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -182,12 +219,18 @@ __webpack_require__.r(__webpack_exports__);
       total_schools: 0,
       admin: true,
       showlga: false,
-      lga_name: ''
+      filter: false,
+      filterOpen: false,
+      lga_name: ""
     };
   },
   mounted: function mounted() {
     this.retrieveSchools();
     this.getLgas();
+
+    if (window.innerWidth < 768) {
+      this.filterOpen = true;
+    }
   },
   watch: {
     search: "handleSearch",
@@ -196,12 +239,12 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     reset: function reset() {
-      this.filter_item = '';
+      this.filter_item = "";
     },
     getLgas: function getLgas() {
       var _this = this;
 
-      axios.get('/api/show-lgas').then(function (res) {
+      axios.get("/api/show-lgas").then(function (res) {
         if (res.status == 200) {
           _this.lgas = res.data;
         }
@@ -217,17 +260,21 @@ __webpack_require__.r(__webpack_exports__);
         lga: this.lga_name
       };
 
-      if (this.lga_name.length !== '') {
-        axios.post('/api/create-lga', data).then(function (res) {
+      if (this.lga_name.length !== "") {
+        axios.post("/api/create-lga", data).then(function (res) {
           if (res.status == 201) {
             _this2.getLgas();
 
-            _this2.$toasted.info('Successful');
+            _this2.$toasted.info("Successful");
 
             _this2.showlga = false;
           }
         });
       }
+    },
+    handleFilter: function handleFilter() {
+      this.filter = !this.filter;
+      this.filterOpen = !this.filterOpen;
     },
     firstPage: function firstPage() {
       var _this3 = this;
@@ -365,43 +412,43 @@ __webpack_require__.r(__webpack_exports__);
     sortedSchools: function sortedSchools() {
       var _this11 = this;
 
-      if (this.filter_item == 'nursery' || this.filter_item == 'primary' || this.filter_item == 'secondary' || this.filter_item == 'tertiary') {
+      if (this.filter_item == "nursery" || this.filter_item == "primary" || this.filter_item == "secondary" || this.filter_item == "tertiary") {
         return this.schools.filter(function (item) {
           return item.level.toLowerCase() == _this11.filter_item.toLowerCase();
         });
       }
 
-      if (this.filter_item == 'boarding' || this.filter_item == 'day') {
+      if (this.filter_item == "boarding" || this.filter_item == "day") {
         return this.schools.filter(function (item) {
           return item.type.toLowerCase() == _this11.filter_item.toLowerCase();
         });
       }
 
-      if (this.filter_item == 'private' || this.filter_item == 'public') {
+      if (this.filter_item == "private" || this.filter_item == "public") {
         return this.schools.filter(function (item) {
           return item.sector.toLowerCase() == _this11.filter_item.toLowerCase();
         });
       }
 
-      if (this.filter_item == 'individual' || this.filter_item == 'faith') {
+      if (this.filter_item == "individual" || this.filter_item == "faith") {
         return this.schools.filter(function (item) {
           return item.ownership.toLowerCase() == _this11.filter_item.toLowerCase();
         });
       }
 
-      if (this.filter_item == 'accredited' || this.filter_item == 'non-accredited') {
+      if (this.filter_item == "accredited" || this.filter_item == "non-accredited") {
         return this.schools.filter(function (item) {
           return item.accreditation.toLowerCase() == _this11.filter_item.toLowerCase();
         });
       }
 
-      if (this.lga !== 'selected') {
+      if (this.lga !== "selected") {
         return this.schools.filter(function (item) {
           return item.lga.toLowerCase() == _this11.filter_item.toLowerCase();
         });
       }
 
-      if (this.search !== '') {
+      if (this.search !== "") {
         return this.schools.filter(function (item) {
           return item.name.toLowerCase().includes(_this11.search.toLowerCase());
         });
@@ -426,7 +473,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "@charset \"UTF-8\";\n.container-fluid[data-v-7082e869] {\n  background: #f7f8fa;\n}\n.main-content[data-v-7082e869] {\n  width: 100%;\n  margin: 0 auto;\n  height: 100vh;\n  display: flex;\n  padding: 15px 0px;\n}\n.filter_item[data-v-7082e869] {\n  text-transform: capitalize;\n}\n.action[data-v-7082e869] {\n  width: 1%;\n}\n.action_icon[data-v-7082e869] {\n  font-size: 13px;\n}\nth[data-v-7082e869] {\n  color: #006600;\n}\n.navigation[data-v-7082e869] {\n  display: flex;\n  width: 20%;\n  margin: 0 auto;\n  justify-content: space-between;\n  margin-top: 30px;\n}\n.prev[data-v-7082e869],\n.next[data-v-7082e869] {\n  font-size: 14px;\n}\n.prev_button[data-v-7082e869],\n.next_button[data-v-7082e869] {\n  padding: 5px 10px;\n  border: none;\n  border-radius: 5px;\n  font-size: 12px;\n}\nh6[data-v-7082e869] {\n  color: #006600;\n}\n.fa-minus-circle[data-v-7082e869]:before {\n  content: \"\\F056\";\n  color: #dc3545;\n}\n.button[data-v-7082e869] {\n  padding: 8px 32px;\n  box-shadow: 0px 0px 12px -2px rgba(0, 0, 0, 0.5);\n  line-height: 1.25;\n  background: #dc3545;\n  text-decoration: none;\n  color: white;\n  font-size: 13px;\n  letter-spacing: 0.08em;\n  text-transform: initial;\n  position: relative;\n  transition: background-color 0.6s ease;\n  overflow: hidden;\n}\n.button[data-v-7082e869]:after {\n  content: \"\";\n  position: absolute;\n  width: 0;\n  height: 0;\n  top: 50%;\n  left: 50%;\n  transform-style: flat;\n  transform: translate3d(-50%, -50%, 0);\n  background: rgba(255, 255, 255, 0.1);\n  border-radius: 100%;\n  transition: width 0.3s ease, height 0.3s ease;\n}\n.button[data-v-7082e869]:focus, .button[data-v-7082e869]:hover {\n  background: #ca2333;\n}\n.button[data-v-7082e869]:active:after {\n  width: 200px;\n  height: 200px;\n}\n.top_bar[data-v-7082e869] {\n  padding: 5px 10px;\n  background: #f7fafa;\n  margin-bottom: 15px;\n  display: flex;\n  justify-content: space-between;\n  font-size: 13px;\n  align-items: center;\n}\n.row_numb[data-v-7082e869] {\n  width: 30px;\n}\n.row_numb[data-v-7082e869]::-webkit-input-placeholder {\n  text-align: center;\n}\n.row_numb[data-v-7082e869]::-moz-placeholder {\n  text-align: center;\n}\n.row_numb[data-v-7082e869]:-ms-input-placeholder {\n  text-align: center;\n}\n.row_numb[data-v-7082e869]::-ms-input-placeholder {\n  text-align: center;\n}\n.row_numb[data-v-7082e869]::placeholder {\n  text-align: center;\n}\n.reset[data-v-7082e869] {\n  cursor: pointer;\n}\n.bar[data-v-7082e869] {\n  position: relative;\n  padding-right: 15px;\n}\n.left_side[data-v-7082e869] {\n  width: 20%;\n  height: 100vh;\n}\n.side_bar[data-v-7082e869] {\n  background: white;\n  border-radius: 5px;\n  height: 100vh;\n  width: 93%;\n  padding: 20px 0;\n}\n.search_bar[data-v-7082e869] {\n  position: relative;\n  margin-bottom: 0;\n}\n.search_input[data-v-7082e869] {\n  border-color: #f7f8fa;\n  height: 25px;\n  font-size: 13px;\n}\n.form-control[data-v-7082e869]::-webkit-input-placeholder {\n  font-size: 13px;\n}\n.form-control[data-v-7082e869]::-moz-placeholder {\n  font-size: 13px;\n}\n.form-control[data-v-7082e869]:-ms-input-placeholder {\n  font-size: 13px;\n}\n.form-control[data-v-7082e869]::-ms-input-placeholder {\n  font-size: 13px;\n}\n.form-control[data-v-7082e869]::placeholder {\n  font-size: 13px;\n}\n.fa-search[data-v-7082e869] {\n  position: absolute;\n  font-size: 12px;\n  right: 14px;\n  top: 50%;\n  margin-top: -6px;\n  color: rgba(0, 0, 0, 0.44);\n}\nul h6[data-v-7082e869] {\n  padding: 10px 15px;\n}\nli p[data-v-7082e869] {\n  font-size: 15px;\n  font-weight: 200;\n  padding: 6px 40px;\n  margin: 0;\n}\nli p[data-v-7082e869]:hover {\n  background: #f7f8fa;\n  cursor: pointer;\n}\nli[data-v-7082e869] {\n  border-bottom: 1px solid #f7f8fa;\n}\n.right_side[data-v-7082e869] {\n  width: 80%;\n  height: 100vh;\n  background: white;\n  padding: 15px;\n  border-radius: 5px;\n  overflow: scroll;\n}", ""]);
+exports.push([module.i, "@charset \"UTF-8\";\n.container-fluid[data-v-7082e869] {\n  background: #f7f8fa;\n}\n.main-content[data-v-7082e869] {\n  width: 100%;\n  margin: 0 auto;\n  height: 100vh;\n  display: flex;\n  padding: 15px 0px;\n}\n.mobile-filter[data-v-7082e869] {\n  display: none;\n}\n.filter_item[data-v-7082e869] {\n  text-transform: capitalize;\n}\n.action[data-v-7082e869] {\n  width: 1%;\n}\n.action_icon[data-v-7082e869] {\n  font-size: 13px;\n}\nth[data-v-7082e869] {\n  color: #0F7A8A;\n}\n.navigation[data-v-7082e869] {\n  display: flex;\n  width: 20%;\n  margin: 0 auto;\n  justify-content: space-between;\n  margin-top: 30px;\n}\n.prev[data-v-7082e869],\n.next[data-v-7082e869] {\n  font-size: 14px;\n}\n.prev_button[data-v-7082e869],\n.next_button[data-v-7082e869] {\n  padding: 5px 10px;\n  border: none;\n  border-radius: 5px;\n  font-size: 12px;\n}\nh6[data-v-7082e869] {\n  color: #0F7A8A;\n}\n.fa-minus-circle[data-v-7082e869]:before {\n  content: \"\\F056\";\n  color: #dc3545;\n}\n.button[data-v-7082e869] {\n  padding: 8px 32px;\n  box-shadow: 0px 0px 12px -2px rgba(0, 0, 0, 0.5);\n  line-height: 1.25;\n  background: #dc3545;\n  text-decoration: none;\n  color: white;\n  font-size: 13px;\n  letter-spacing: 0.08em;\n  text-transform: initial;\n  position: relative;\n  transition: background-color 0.6s ease;\n  overflow: hidden;\n}\n.button[data-v-7082e869]:after {\n  content: \"\";\n  position: absolute;\n  width: 0;\n  height: 0;\n  top: 50%;\n  left: 50%;\n  transform-style: flat;\n  transform: translate3d(-50%, -50%, 0);\n  background: rgba(255, 255, 255, 0.1);\n  border-radius: 100%;\n  transition: width 0.3s ease, height 0.3s ease;\n}\n.button[data-v-7082e869]:focus, .button[data-v-7082e869]:hover {\n  background: #ca2333;\n}\n.button[data-v-7082e869]:active:after {\n  width: 200px;\n  height: 200px;\n}\n.top_bar[data-v-7082e869] {\n  padding: 5px 10px;\n  background: #f7fafa;\n  margin-bottom: 15px;\n  display: flex;\n  justify-content: space-between;\n  font-size: 13px;\n  align-items: center;\n}\n.row_numb[data-v-7082e869] {\n  width: 30px;\n}\n.row_numb[data-v-7082e869]::-webkit-input-placeholder {\n  text-align: center;\n}\n.row_numb[data-v-7082e869]::-moz-placeholder {\n  text-align: center;\n}\n.row_numb[data-v-7082e869]:-ms-input-placeholder {\n  text-align: center;\n}\n.row_numb[data-v-7082e869]::-ms-input-placeholder {\n  text-align: center;\n}\n.row_numb[data-v-7082e869]::placeholder {\n  text-align: center;\n}\n.reset[data-v-7082e869] {\n  cursor: pointer;\n}\n.bar[data-v-7082e869] {\n  position: relative;\n  padding-right: 15px;\n}\n.left_side[data-v-7082e869] {\n  width: 20%;\n  height: 100vh;\n}\n.side_bar[data-v-7082e869] {\n  background: white;\n  border-radius: 5px;\n  height: 100vh;\n  width: 93%;\n  padding: 20px 0;\n}\n.search_bar[data-v-7082e869] {\n  position: relative;\n  margin-bottom: 0;\n}\n.search_input[data-v-7082e869] {\n  border-color: #f7f8fa;\n  height: 25px;\n  font-size: 13px;\n}\n.form-control[data-v-7082e869]::-webkit-input-placeholder {\n  font-size: 13px;\n}\n.form-control[data-v-7082e869]::-moz-placeholder {\n  font-size: 13px;\n}\n.form-control[data-v-7082e869]:-ms-input-placeholder {\n  font-size: 13px;\n}\n.form-control[data-v-7082e869]::-ms-input-placeholder {\n  font-size: 13px;\n}\n.form-control[data-v-7082e869]::placeholder {\n  font-size: 13px;\n}\n.fa-search[data-v-7082e869] {\n  position: absolute;\n  font-size: 12px;\n  right: 14px;\n  top: 50%;\n  margin-top: -6px;\n  color: rgba(0, 0, 0, 0.44);\n}\nul h6[data-v-7082e869] {\n  padding: 10px 15px;\n}\nli p[data-v-7082e869] {\n  font-size: 15px;\n  font-weight: 200;\n  padding: 6px 40px;\n  margin: 0;\n}\nli p[data-v-7082e869]:hover {\n  background: #f7f8fa;\n  cursor: pointer;\n}\nli[data-v-7082e869] {\n  border-bottom: 1px solid #f7f8fa;\n}\n.right_side[data-v-7082e869] {\n  width: 80%;\n  height: 100vh;\n  background: white;\n  padding: 15px;\n  border-radius: 5px;\n  overflow: scroll;\n}\n@media (max-width: 768px) {\n.side_bar[data-v-7082e869] {\n    height: auto;\n    overflow: hidden;\n    min-height: auto;\n    padding: 15px 10px;\n    width: 100%;\n    background: #f7f8fa;\n    position: relative;\n}\n.left_side[data-v-7082e869] {\n    width: 100%;\n    position: fixed;\n    height: auto;\n    z-index: 99;\n    bottom: 0;\n}\n.right_side[data-v-7082e869] {\n    width: 100%;\n    z-index: 1;\n}\n.mobile-filter[data-v-7082e869] {\n    display: block;\n    text-align: center;\n}\n.container-fluid[data-v-7082e869] {\n    padding: 0;\n}\n.main-content[data-v-7082e869] {\n    padding-top: 0;\n}\n.mobile-filter-option[data-v-7082e869] {\n    position: absolute;\n    right: 80px;\n    top: 70px;\n    width: 40%;\n}\n.top_bar[data-v-7082e869] {\n    flex-direction: column;\n}\n.bar[data-v-7082e869] {\n    margin-bottom: 10px;\n    border: none !important;\n}\nli p[data-v-7082e869] {\n    font-size: 14px;\n}\nul[data-v-7082e869] {\n    width: 50%;\n}\n}", ""]);
 
 // exports
 
@@ -482,281 +529,316 @@ var render = function() {
     _c("div", { staticClass: "main-content" }, [
       _c("div", { staticClass: "left_side" }, [
         _c("div", { staticClass: "side_bar" }, [
-          _c("ul", [
-            _c("h6", [_vm._v("Category")]),
-            _vm._v(" "),
-            _c("li", [
-              _c(
-                "p",
-                {
-                  on: {
-                    click: function($event) {
-                      return _vm.handleClick("")
-                    }
-                  }
-                },
-                [_vm._v("All")]
-              ),
-              _vm._v(" "),
-              _c(
-                "p",
-                {
-                  on: {
-                    click: function($event) {
-                      return _vm.handleClick("nursery")
-                    }
-                  }
-                },
-                [_vm._v("Nursery")]
-              ),
-              _vm._v(" "),
-              _c(
-                "p",
-                {
-                  on: {
-                    click: function($event) {
-                      return _vm.handleClick("primary")
-                    }
-                  }
-                },
-                [_vm._v("Primary")]
-              ),
-              _vm._v(" "),
-              _c(
-                "p",
-                {
-                  on: {
-                    click: function($event) {
-                      return _vm.handleClick("secondary")
-                    }
-                  }
-                },
-                [_vm._v("Secondary")]
-              ),
-              _vm._v(" "),
-              _c(
-                "p",
-                {
-                  on: {
-                    click: function($event) {
-                      return _vm.handleClick("tertiary")
-                    }
-                  }
-                },
-                [_vm._v("Tertiary")]
-              )
-            ]),
-            _vm._v(" "),
-            _c("h6", [_vm._v("Filter")]),
-            _vm._v(" "),
-            _c("li", [
-              _c(
-                "p",
-                {
-                  on: {
-                    click: function($event) {
-                      return _vm.handleClick("boarding")
-                    }
-                  }
-                },
-                [_vm._v("Boarding")]
-              ),
-              _vm._v(" "),
-              _c(
-                "p",
-                {
-                  on: {
-                    click: function($event) {
-                      return _vm.handleClick("day")
-                    }
-                  }
-                },
-                [_vm._v("Day")]
-              )
-            ]),
-            _vm._v(" "),
-            _c("li", [
-              _c(
-                "p",
-                {
-                  on: {
-                    click: function($event) {
-                      return _vm.handleClick("private")
-                    }
-                  }
-                },
-                [_vm._v("Private")]
-              ),
-              _vm._v(" "),
-              _c(
-                "p",
-                {
-                  on: {
-                    click: function($event) {
-                      return _vm.handleClick("public")
-                    }
-                  }
-                },
-                [_vm._v("Public")]
-              )
-            ]),
-            _vm._v(" "),
-            _c("li", [
-              _c(
-                "p",
-                {
-                  on: {
-                    click: function($event) {
-                      return _vm.handleClick("individual")
-                    }
-                  }
-                },
-                [_vm._v("Individually Owned")]
-              ),
-              _vm._v(" "),
-              _c(
-                "p",
-                {
-                  on: {
-                    click: function($event) {
-                      return _vm.handleClick("faith")
-                    }
-                  }
-                },
-                [_vm._v("Faith Based")]
-              )
-            ]),
-            _vm._v(" "),
-            _c("li", [
-              _c(
-                "p",
-                {
-                  on: {
-                    click: function($event) {
-                      return _vm.handleClick("accredited")
-                    }
-                  }
-                },
-                [_vm._v("Accredited")]
-              ),
-              _vm._v(" "),
-              _c(
-                "p",
-                {
-                  on: {
-                    click: function($event) {
-                      return _vm.handleClick("non-accredited")
-                    }
-                  }
-                },
-                [_vm._v("Non-accredited")]
-              )
-            ]),
-            _vm._v(" "),
-            _c("h6", [_vm._v("LGAs")]),
-            _vm._v(" "),
-            _c("li", [
-              _c("div", { staticClass: "form-group px-2 text-center" }, [
-                _c(
-                  "select",
-                  {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.lga,
-                        expression: "lga"
-                      }
-                    ],
-                    staticClass: "custom-select mb-2",
-                    on: {
-                      change: function($event) {
-                        var $$selectedVal = Array.prototype.filter
-                          .call($event.target.options, function(o) {
-                            return o.selected
-                          })
-                          .map(function(o) {
-                            var val = "_value" in o ? o._value : o.value
-                            return val
-                          })
-                        _vm.lga = $event.target.multiple
-                          ? $$selectedVal
-                          : $$selectedVal[0]
-                      }
-                    }
-                  },
-                  [
-                    _c("option", { attrs: { value: "selected" } }, [
-                      _vm._v("Select one")
-                    ]),
-                    _vm._v(" "),
-                    _vm._l(_vm.lgas, function(lga, index) {
-                      return _c(
-                        "option",
-                        {
-                          key: index,
-                          staticClass: "lga_name",
-                          domProps: { value: lga.name.toLowerCase() }
-                        },
-                        [_vm._v(_vm._s(lga.name))]
-                      )
-                    })
-                  ],
-                  2
-                ),
+          _c(
+            "div",
+            { staticClass: "mobile-filter", on: { click: _vm.handleFilter } },
+            [_vm._m(0)]
+          ),
+          _vm._v(" "),
+          _vm.filter
+            ? _c("div", { staticClass: "mobile-filter-option text-right" }, [
+                _c("input", {
+                  staticClass: "form-control",
+                  staticStyle: { "text-transform": "capitalize" },
+                  attrs: { type: "text", readonly: "" },
+                  domProps: { value: _vm.filter_item }
+                }),
                 _vm._v(" "),
-                !_vm.showlga
-                  ? _c(
-                      "button",
-                      {
-                        staticClass: "button-green",
-                        on: { click: _vm.lgaShow }
-                      },
-                      [_vm._v("Add new")]
-                    )
-                  : _vm._e()
-              ]),
-              _vm._v(" "),
-              _vm.showlga
-                ? _c("div", { staticClass: "form-group px-2 text-center" }, [
-                    _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.lga_name,
-                          expression: "lga_name"
-                        }
-                      ],
-                      staticClass: "form-control mb-2",
-                      attrs: {
-                        type: "text",
-                        "aria-describedby": "helpId",
-                        placeholder: "Enter lga name"
-                      },
-                      domProps: { value: _vm.lga_name },
+                _c("br"),
+                _vm._v(" "),
+                _c(
+                  "button",
+                  {
+                    staticClass: "button-green ml-auto",
+                    attrs: { type: "button" },
+                    on: { click: _vm.handleFilter }
+                  },
+                  [_vm._v("Apply")]
+                )
+              ])
+            : _vm._e(),
+          _vm._v(" "),
+          !_vm.filterOpen
+            ? _c("ul", [
+                _c("h6", [_vm._v("Category")]),
+                _vm._v(" "),
+                _c("li", [
+                  _c(
+                    "p",
+                    {
                       on: {
-                        input: function($event) {
-                          if ($event.target.composing) {
-                            return
-                          }
-                          _vm.lga_name = $event.target.value
+                        click: function($event) {
+                          return _vm.handleClick("")
                         }
                       }
-                    }),
-                    _vm._v(" "),
+                    },
+                    [_vm._v("All")]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "p",
+                    {
+                      on: {
+                        click: function($event) {
+                          return _vm.handleClick("nursery")
+                        }
+                      }
+                    },
+                    [_vm._v("Nursery")]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "p",
+                    {
+                      on: {
+                        click: function($event) {
+                          return _vm.handleClick("primary")
+                        }
+                      }
+                    },
+                    [_vm._v("Primary")]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "p",
+                    {
+                      on: {
+                        click: function($event) {
+                          return _vm.handleClick("secondary")
+                        }
+                      }
+                    },
+                    [_vm._v("Secondary")]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "p",
+                    {
+                      on: {
+                        click: function($event) {
+                          return _vm.handleClick("tertiary")
+                        }
+                      }
+                    },
+                    [_vm._v("Tertiary")]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("h6", [_vm._v("Filter")]),
+                _vm._v(" "),
+                _c("li", [
+                  _c(
+                    "p",
+                    {
+                      on: {
+                        click: function($event) {
+                          return _vm.handleClick("boarding")
+                        }
+                      }
+                    },
+                    [_vm._v("Boarding")]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "p",
+                    {
+                      on: {
+                        click: function($event) {
+                          return _vm.handleClick("day")
+                        }
+                      }
+                    },
+                    [_vm._v("Day")]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("li", [
+                  _c(
+                    "p",
+                    {
+                      on: {
+                        click: function($event) {
+                          return _vm.handleClick("private")
+                        }
+                      }
+                    },
+                    [_vm._v("Private")]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "p",
+                    {
+                      on: {
+                        click: function($event) {
+                          return _vm.handleClick("public")
+                        }
+                      }
+                    },
+                    [_vm._v("Public")]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("li", [
+                  _c(
+                    "p",
+                    {
+                      on: {
+                        click: function($event) {
+                          return _vm.handleClick("individual")
+                        }
+                      }
+                    },
+                    [_vm._v("Individually Owned")]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "p",
+                    {
+                      on: {
+                        click: function($event) {
+                          return _vm.handleClick("faith")
+                        }
+                      }
+                    },
+                    [_vm._v("Faith Based")]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("li", [
+                  _c(
+                    "p",
+                    {
+                      on: {
+                        click: function($event) {
+                          return _vm.handleClick("accredited")
+                        }
+                      }
+                    },
+                    [_vm._v("Accredited")]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "p",
+                    {
+                      on: {
+                        click: function($event) {
+                          return _vm.handleClick("non-accredited")
+                        }
+                      }
+                    },
+                    [_vm._v("Non-accredited")]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("h6", [_vm._v("LGAs")]),
+                _vm._v(" "),
+                _c("li", [
+                  _c("div", { staticClass: "form-group px-2 text-center" }, [
                     _c(
-                      "button",
+                      "select",
                       {
-                        staticClass: "button-green",
-                        on: { click: _vm.addLga }
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.lga,
+                            expression: "lga"
+                          }
+                        ],
+                        staticClass: "custom-select mb-2",
+                        on: {
+                          change: function($event) {
+                            var $$selectedVal = Array.prototype.filter
+                              .call($event.target.options, function(o) {
+                                return o.selected
+                              })
+                              .map(function(o) {
+                                var val = "_value" in o ? o._value : o.value
+                                return val
+                              })
+                            _vm.lga = $event.target.multiple
+                              ? $$selectedVal
+                              : $$selectedVal[0]
+                          }
+                        }
                       },
-                      [_vm._v("Add ")]
-                    )
-                  ])
-                : _vm._e()
-            ])
-          ])
+                      [
+                        _c("option", { attrs: { value: "selected" } }, [
+                          _vm._v("Select one")
+                        ]),
+                        _vm._v(" "),
+                        _vm._l(_vm.lgas, function(lga, index) {
+                          return _c(
+                            "option",
+                            {
+                              key: index,
+                              staticClass: "lga_name",
+                              domProps: { value: lga.name.toLowerCase() }
+                            },
+                            [_vm._v(_vm._s(lga.name))]
+                          )
+                        })
+                      ],
+                      2
+                    ),
+                    _vm._v(" "),
+                    !_vm.showlga
+                      ? _c(
+                          "button",
+                          {
+                            staticClass: "button-green",
+                            on: { click: _vm.lgaShow }
+                          },
+                          [_vm._v("Add new")]
+                        )
+                      : _vm._e()
+                  ]),
+                  _vm._v(" "),
+                  _vm.showlga
+                    ? _c(
+                        "div",
+                        { staticClass: "form-group px-2 text-center" },
+                        [
+                          _c("input", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.lga_name,
+                                expression: "lga_name"
+                              }
+                            ],
+                            staticClass: "form-control mb-2",
+                            attrs: {
+                              type: "text",
+                              "aria-describedby": "helpId",
+                              placeholder: "Enter lga name"
+                            },
+                            domProps: { value: _vm.lga_name },
+                            on: {
+                              input: function($event) {
+                                if ($event.target.composing) {
+                                  return
+                                }
+                                _vm.lga_name = $event.target.value
+                              }
+                            }
+                          }),
+                          _vm._v(" "),
+                          _c(
+                            "button",
+                            {
+                              staticClass: "button-green",
+                              on: { click: _vm.addLga }
+                            },
+                            [_vm._v("Add")]
+                          )
+                        ]
+                      )
+                    : _vm._e()
+                ])
+              ])
+            : _vm._e()
         ])
       ]),
       _vm._v(" "),
@@ -1012,10 +1094,6 @@ var render = function() {
                     _vm._v(_vm._s(school.id))
                   ]),
                   _vm._v(" "),
-                  _c("td", { attrs: { scope: "row" } }, [
-                    _vm._v(_vm._s(school.id))
-                  ]),
-                  _vm._v(" "),
                   _c("td", [
                     _vm._v(_vm._s(school.name != "null" ? school.name : "-"))
                   ]),
@@ -1182,7 +1260,20 @@ var render = function() {
     ])
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("span", [
+      _vm._v("\n            Filters\n            "),
+      _c("i", {
+        staticClass: "fa fa-long-arrow-up",
+        attrs: { "aria-hidden": "true" }
+      })
+    ])
+  }
+]
 render._withStripped = true
 
 

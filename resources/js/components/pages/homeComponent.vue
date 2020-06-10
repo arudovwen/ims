@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <scrollTop />
+    <scrollTop  class="scroll"/>
     <Navigation />
     <Banner />
     <Announcement />
@@ -53,4 +53,5 @@ export default {
 .my_body {
 
 }
+
 </style>

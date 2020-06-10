@@ -2,9 +2,23 @@
   <div class="main_side_bar">
     <div class="overlay"></div>
     <div class="sides">
+        <button
+        class="hamburger hamburger--collapse"
+        tabindex="0"
+        aria-label="Menu"
+        role="button"
+        aria-controls="navigation"
+        :class="{'is-active':showHeader}"
+        @click="handleHeader"
+        type="button"
+      >
+        <span class="hamburger-box">
+          <span class="hamburger-inner"></span>
+        </span>
+      </button>
       <div class="side_header">
         <h4>ISM Dashboard</h4>
-        <p>Welcome</p>
+        <p>Welcome {{name}}</p>
       </div>
       <hr />
       <ul class="side_nav_items">
@@ -36,19 +50,33 @@
 </template>
 <script>
 export default {
+  props:['showHeader'],
+  data() {
+    return {
+      name:''
+    }
+  },
   components: {},
+  mounted() {
+    let admin = JSON.parse(localStorage.getItem('adminUser'))
+    this.name = admin.name
+  },
   methods: {
     logout() {
       localStorage.removeItem("adminUser");
       this.$router.push("/admin/auth/login");
+    },
+    handleHeader(){
+      this.$emit('handleHeader')
     }
+
   }
 };
 </script>
 <style scoped lang='scss'>
 .main_side_bar {
   position: relative;
-  height: 100%;
+  height: 100vh;
   background: url("/images/imobanner.jpg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -61,17 +89,22 @@ export default {
 .side_nav_items,
 .side_header {
   padding: 20px 0;
-  color: hsl(120, 100%, 90%);
+  color: hsl(120, 100%, 95%);
+}
+.side_header p{
+  text-transform: capitalize;
+ 
 }
 .side_header {
   padding: 20px 15px;
+  
   
 }
 hr {
   border-top: 2px solid hsl(60, 100%, 30%);
 }
 h4 {
-  color: hsl(120, 100%, 97%);
+  color:yellow;
 }
 .single_nav_item {
   text-decoration: none;
@@ -89,7 +122,11 @@ a{
   text-decoration: none;
 }
 .overlay {
-  background: rgb(0, 102, 0, 0.85);
+  background: repeating-linear-gradient(
+    to right,
+    rgb(15, 122, 138, 0.85) 0%,
+    rgba(32, 46, 48, 0.85) 100%
+  );
   position: absolute;
   width: 100%;
   z-index: 1;

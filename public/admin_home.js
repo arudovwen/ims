@@ -138,6 +138,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
 /***/ }),
@@ -255,12 +257,39 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
+  props: ['showHeader'],
+  data: function data() {
+    return {
+      name: ''
+    };
+  },
   components: {},
+  mounted: function mounted() {
+    var admin = JSON.parse(localStorage.getItem('adminUser'));
+    this.name = admin.name;
+  },
   methods: {
     logout: function logout() {
       localStorage.removeItem("adminUser");
       this.$router.push("/admin/auth/login");
+    },
+    handleHeader: function handleHeader() {
+      this.$emit('handleHeader');
     }
   }
 });
@@ -291,10 +320,41 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      showHeader: true
+    };
+  },
   components: {
     Header: _adminHeader__WEBPACK_IMPORTED_MODULE_0__["default"]
+  },
+  methods: {
+    handleHeader: function handleHeader() {
+      this.showHeader = !this.showHeader;
+    }
+  },
+  mounted: function mounted() {
+    if (window.innerWidth < 768) {
+      this.showHeader = false;
+    }
   }
 });
 
@@ -547,7 +607,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".main_side_bar[data-v-414e497e] {\n  position: relative;\n  height: 100%;\n  background: url(\"/images/imobanner.jpg\");\n  background-repeat: no-repeat;\n  background-size: cover;\n}\n.sides[data-v-414e497e] {\n  z-index: 2;\n  position: absolute;\n  width: 100%;\n}\n.side_nav_items[data-v-414e497e],\n.side_header[data-v-414e497e] {\n  padding: 20px 0;\n  color: #ccffcc;\n}\n.side_header[data-v-414e497e] {\n  padding: 20px 15px;\n}\nhr[data-v-414e497e] {\n  border-top: 2px solid #999900;\n}\nh4[data-v-414e497e] {\n  color: honeydew;\n}\n.single_nav_item[data-v-414e497e] {\n  text-decoration: none;\n  list-style: none;\n  color: #ebffeb;\n  font-size: 16px;\n  padding: 10px 15px;\n}\nli[data-v-414e497e] {\n  border-left: 3px solid transparent;\n  border-right: 3px solid transparent;\n}\na[data-v-414e497e] {\n  text-decoration: none;\n}\n.overlay[data-v-414e497e] {\n  background: rgba(0, 102, 0, 0.85);\n  position: absolute;\n  width: 100%;\n  z-index: 1;\n  height: 100%;\n}\nli[data-v-414e497e]:hover {\n  background: #006600;\n  border-left-color: #cccc00;\n  border-right-color: #cccc00;\n}\n.router-link-exact-active li[data-v-414e497e] {\n  background: #006600;\n  border-top: 1px solid #999900;\n  border-bottom: 1px solid #999900;\n  border-left-color: #cccc00;\n  border-right-color: #cccc00;\n}", ""]);
+exports.push([module.i, ".main_side_bar[data-v-414e497e] {\n  position: relative;\n  height: 100vh;\n  background: url(\"/images/imobanner.jpg\");\n  background-repeat: no-repeat;\n  background-size: cover;\n}\n.sides[data-v-414e497e] {\n  z-index: 2;\n  position: absolute;\n  width: 100%;\n}\n.side_nav_items[data-v-414e497e],\n.side_header[data-v-414e497e] {\n  padding: 20px 0;\n  color: #e6ffe6;\n}\n.side_header p[data-v-414e497e] {\n  text-transform: capitalize;\n}\n.side_header[data-v-414e497e] {\n  padding: 20px 15px;\n}\nhr[data-v-414e497e] {\n  border-top: 2px solid #999900;\n}\nh4[data-v-414e497e] {\n  color: yellow;\n}\n.single_nav_item[data-v-414e497e] {\n  text-decoration: none;\n  list-style: none;\n  color: #ebffeb;\n  font-size: 16px;\n  padding: 10px 15px;\n}\nli[data-v-414e497e] {\n  border-left: 3px solid transparent;\n  border-right: 3px solid transparent;\n}\na[data-v-414e497e] {\n  text-decoration: none;\n}\n.overlay[data-v-414e497e] {\n  background: repeating-linear-gradient(to right, rgba(15, 122, 138, 0.85) 0%, rgba(32, 46, 48, 0.85) 100%);\n  position: absolute;\n  width: 100%;\n  z-index: 1;\n  height: 100%;\n}\nli[data-v-414e497e]:hover {\n  background: #006600;\n  border-left-color: #cccc00;\n  border-right-color: #cccc00;\n}\n.router-link-exact-active li[data-v-414e497e] {\n  background: #006600;\n  border-top: 1px solid #999900;\n  border-bottom: 1px solid #999900;\n  border-left-color: #cccc00;\n  border-right-color: #cccc00;\n}", ""]);
 
 // exports
 
@@ -566,7 +626,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".admin_side_bar {\n  width: 17%;\n  min-height: 100vh;\n  overflow-y: scroll;\n}\n.main_admin_page {\n  width: 83%;\n  min-height: 100vh;\n  background: #f7f8fa;\n  overflow-y: scroll;\n}\n.button-red {\n  padding: 8px 32px;\n  box-shadow: 0px 0px 12px -2px rgba(0, 0, 0, 0.5);\n  line-height: 1.25;\n  background: #dc3545;\n  text-decoration: none;\n  color: white;\n  font-size: 13px;\n  letter-spacing: 0.08em;\n  text-transform: initial;\n  position: relative;\n  transition: background-color 0.6s ease;\n  overflow: hidden;\n}\n.button-red:after {\n  content: \"\";\n  position: absolute;\n  width: 0;\n  height: 0;\n  top: 50%;\n  left: 50%;\n  transform-style: flat;\n  transform: translate3d(-50%, -50%, 0);\n  background: rgba(255, 255, 255, 0.1);\n  border-radius: 100%;\n  transition: width 0.3s ease, height 0.3s ease;\n}\n.button-red:focus, .button-red:hover {\n  background: #ca2333;\n}\n.button-red:active:after {\n  width: 200px;\n  height: 200px;\n}\n.button-green {\n  padding: 8px 32px;\n  box-shadow: 0px 0px 12px -2px rgba(0, 0, 0, 0.5);\n  line-height: 1.25;\n  background: #006600;\n  text-decoration: none;\n  color: white;\n  font-size: 13px;\n  letter-spacing: 0.08em;\n  text-transform: initial;\n  position: relative;\n  transition: background-color 0.6s ease;\n  overflow: hidden;\n}\n.button-green:after {\n  content: \"\";\n  position: absolute;\n  width: 0;\n  height: 0;\n  top: 50%;\n  left: 50%;\n  transform-style: flat;\n  transform: translate3d(-50%, -50%, 0);\n  background: rgba(255, 255, 255, 0.1);\n  border-radius: 100%;\n  transition: width 0.3s ease, height 0.3s ease;\n}\n.button-green:focus, .button-green:hover {\n  background: #004200;\n}\n.button-green:active:after {\n  width: 200px;\n  height: 200px;\n}\n.button-blue {\n  padding: 8px 32px;\n  box-shadow: 0px 0px 12px -2px rgba(0, 0, 0, 0.5);\n  line-height: 1.25;\n  background: #000072;\n  text-decoration: none;\n  color: white;\n  font-size: 13px;\n  letter-spacing: 0.08em;\n  text-transform: initial;\n  position: relative;\n  transition: background-color 0.6s ease;\n  overflow: hidden;\n}\n.button-blue:after {\n  content: \"\";\n  position: absolute;\n  width: 0;\n  height: 0;\n  top: 50%;\n  left: 50%;\n  transform-style: flat;\n  transform: translate3d(-50%, -50%, 0);\n  background: rgba(255, 255, 255, 0.1);\n  border-radius: 100%;\n  transition: width 0.3s ease, height 0.3s ease;\n}\n.button-blue:focus, .button-blue:hover {\n  background: #00004e;\n}\n.button-blue:active:after {\n  width: 200px;\n  height: 200px;\n}\n.button-dark {\n  padding: 8px 32px;\n  box-shadow: 0px 0px 12px -2px rgba(0, 0, 0, 0.5);\n  line-height: 1.25;\n  background: #333333;\n  text-decoration: none;\n  color: white;\n  font-size: 13px;\n  letter-spacing: 0.08em;\n  text-transform: initial;\n  position: relative;\n  transition: background-color 0.6s ease;\n  overflow: hidden;\n}\n.button-dark:after {\n  content: \"\";\n  position: absolute;\n  width: 0;\n  height: 0;\n  top: 50%;\n  left: 50%;\n  transform-style: flat;\n  transform: translate3d(-50%, -50%, 0);\n  background: rgba(255, 255, 255, 0.1);\n  border-radius: 100%;\n  transition: width 0.3s ease, height 0.3s ease;\n}\n.button-dark:focus, .button-dark:hover {\n  background: #212121;\n}\n.button-dark:active:after {\n  width: 200px;\n  height: 200px;\n}\n.button-yellow {\n  padding: 8px 32px;\n  box-shadow: 0px 0px 12px -2px rgba(0, 0, 0, 0.5);\n  line-height: 1.25;\n  background: yellow;\n  text-decoration: none;\n  color: white;\n  font-size: 13px;\n  letter-spacing: 0.08em;\n  text-transform: initial;\n  position: relative;\n  transition: background-color 0.6s ease;\n  overflow: hidden;\n}\n.button-yellow:after {\n  content: \"\";\n  position: absolute;\n  width: 0;\n  height: 0;\n  top: 50%;\n  left: 50%;\n  transform-style: flat;\n  transform: translate3d(-50%, -50%, 0);\n  background: rgba(255, 255, 255, 0.1);\n  border-radius: 100%;\n  transition: width 0.3s ease, height 0.3s ease;\n}\n.button-yellow:focus, .button-yellow:hover {\n  background: #dbdb00;\n}\n.button-yellow:active:after {\n  width: 200px;\n  height: 200px;\n}", ""]);
+exports.push([module.i, ".home {\n  height: 100vh;\n  overflow: hidden;\n}\n.cancel {\n  display: none;\n}\n.admin_side_bar {\n  width: 17%;\n  min-height: 100vh;\n  overflow-y: scroll;\n}\n.main_admin_page {\n  width: 83%;\n  height: 100vh;\n  background: #f7f8fa;\n  overflow-y: scroll;\n}\n.mobile_head {\n  background: #0F7A8A;\n}\n.button-red {\n  padding: 8px 32px;\n  box-shadow: 0px 0px 12px -2px rgba(0, 0, 0, 0.5);\n  line-height: 1.25;\n  background: #dc3545;\n  text-decoration: none;\n  color: white;\n  font-size: 13px;\n  letter-spacing: 0.08em;\n  text-transform: initial;\n  position: relative;\n  transition: background-color 0.6s ease;\n  overflow: hidden;\n}\n.button-red:after {\n  content: \"\";\n  position: absolute;\n  width: 0;\n  height: 0;\n  top: 50%;\n  left: 50%;\n  transform-style: flat;\n  transform: translate3d(-50%, -50%, 0);\n  background: rgba(255, 255, 255, 0.1);\n  border-radius: 100%;\n  transition: width 0.3s ease, height 0.3s ease;\n}\n.button-red:focus, .button-red:hover {\n  background: #ca2333;\n}\n.button-red:active:after {\n  width: 200px;\n  height: 200px;\n}\n.button-green {\n  padding: 8px 32px;\n  box-shadow: 0px 0px 12px -2px rgba(0, 0, 0, 0.5);\n  line-height: 1.25;\n  background: #0F7A8A;\n  text-decoration: none;\n  border-radius: 3px;\n  color: white;\n  font-size: 13px;\n  letter-spacing: 0.08em;\n  text-transform: initial;\n  position: relative;\n  transition: background-color 0.6s ease;\n  overflow: hidden;\n}\n.button-green:after {\n  content: \"\";\n  position: absolute;\n  width: 0;\n  height: 0;\n  top: 50%;\n  left: 50%;\n  transform-style: flat;\n  transform: translate3d(-50%, -50%, 0);\n  background: rgba(255, 255, 255, 0.1);\n  border-radius: 100%;\n  transition: width 0.3s ease, height 0.3s ease;\n}\n.button-green:focus, .button-green:hover {\n  background: #0c5e6a;\n}\n.button-green:active:after {\n  width: 200px;\n  height: 200px;\n}\n.button-blue {\n  padding: 8px 32px;\n  box-shadow: 0px 0px 12px -2px rgba(0, 0, 0, 0.5);\n  line-height: 1.25;\n  background: #000072;\n  text-decoration: none;\n  color: white;\n  font-size: 13px;\n  letter-spacing: 0.08em;\n  border-radius: 3px;\n  text-transform: initial;\n  position: relative;\n  transition: background-color 0.6s ease;\n  overflow: hidden;\n}\n.button-blue:after {\n  content: \"\";\n  position: absolute;\n  width: 0;\n  height: 0;\n  top: 50%;\n  left: 50%;\n  transform-style: flat;\n  transform: translate3d(-50%, -50%, 0);\n  background: rgba(255, 255, 255, 0.1);\n  border-radius: 100%;\n  transition: width 0.3s ease, height 0.3s ease;\n}\n.button-blue:focus, .button-blue:hover {\n  background: #00004e;\n}\n.button-blue:active:after {\n  width: 200px;\n  height: 200px;\n}\n.button-dark {\n  padding: 8px 32px;\n  box-shadow: 0px 0px 12px -2px rgba(0, 0, 0, 0.5);\n  line-height: 1.25;\n  background: #333333;\n  border-radius: 3px;\n  text-decoration: none;\n  color: white;\n  font-size: 13px;\n  letter-spacing: 0.08em;\n  text-transform: initial;\n  position: relative;\n  transition: background-color 0.6s ease;\n  overflow: hidden;\n}\n.button-dark:after {\n  content: \"\";\n  position: absolute;\n  width: 0;\n  height: 0;\n  top: 50%;\n  left: 50%;\n  transform-style: flat;\n  transform: translate3d(-50%, -50%, 0);\n  background: rgba(255, 255, 255, 0.1);\n  border-radius: 100%;\n  transition: width 0.3s ease, height 0.3s ease;\n}\n.button-dark:focus, .button-dark:hover {\n  background: #212121;\n}\n.button-dark:active:after {\n  width: 200px;\n  height: 200px;\n}\n.button-yellow {\n  padding: 8px 32px;\n  box-shadow: 0px 0px 12px -2px rgba(0, 0, 0, 0.5);\n  line-height: 1.25;\n  background: yellow;\n  text-decoration: none;\n  color: white;\n  border-radius: 3px;\n  font-size: 13px;\n  letter-spacing: 0.08em;\n  text-transform: initial;\n  position: relative;\n  transition: background-color 0.6s ease;\n  overflow: hidden;\n}\n.button-yellow:after {\n  content: \"\";\n  position: absolute;\n  width: 0;\n  height: 0;\n  top: 50%;\n  left: 50%;\n  transform-style: flat;\n  transform: translate3d(-50%, -50%, 0);\n  background: rgba(255, 255, 255, 0.1);\n  border-radius: 100%;\n  transition: width 0.3s ease, height 0.3s ease;\n}\n.button-yellow:focus, .button-yellow:hover {\n  background: #dbdb00;\n}\n.button-yellow:active:after {\n  width: 200px;\n  height: 200px;\n}\n@media (max-width: 768px) {\n.main_admin_page {\n    width: 100%;\n}\n.admin_side_bar {\n    width: 60%;\n}\n.mainmenu {\n    width: 35%;\n}\n.cancel {\n    position: absolute;\n    right: 15px;\n    top: 15px;\n}\n}", ""]);
 
 // exports
 
@@ -623,7 +683,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/c
 
 
 // module
-exports.push([module.i, "\n#main-body[data-v-8f570146] {\n  padding:15px;\n  height: 100vh;\n  overflow: auto;\n  display: grid;\n  grid-template-rows: 1fr 3fr;\n  grid-row-gap: 15px;\n}\n.box[data-v-8f570146] {\n  width: 100%;\n}\n.box_1[data-v-8f570146] {\n  display: grid;\n  grid-template-columns: 1fr 1fr 1fr 1fr;\n  grid-column-gap: 15px;\n}\n.mini_box[data-v-8f570146] {\n  height: 100%;\n  background: white;\n}\n.box_2[data-v-8f570146] {\n  display: grid;\n  grid-template-columns: 1fr 1fr;\n  grid-column-gap: 15px;\n}\n.mini_box2[data-v-8f570146] {\n  height: 100%;\n  width: 100%;\n}\n.mini_first[data-v-8f570146] {\n  display: grid;\n  grid-template-rows: 1fr 2fr;\n  grid-row-gap: 15px;\n}\n.mini_bb[data-v-8f570146] {\n  display: grid;\n  grid-template-columns: 1fr 1fr;\n  grid-column-gap: 15px;\n}\n.mini_c[data-v-8f570146] {\n  background: white;\n}\n", ""]);
+exports.push([module.i, "\n#main-body[data-v-8f570146] {\n  padding:15px;\n  height: 100vh;\n  overflow: auto;\n  display: grid;\n  grid-template-rows: 1fr 3fr;\n  grid-row-gap: 15px;\n}\n.box[data-v-8f570146] {\n  width: 100%;\n}\n.box_1[data-v-8f570146] {\n  display: grid;\n  grid-template-columns: 1fr 1fr 1fr 1fr;\n  grid-column-gap: 15px;\n}\n.mini_box[data-v-8f570146] {\n  height: 100%;\n  background: white;\n  position: relative;\n}\n.box_2[data-v-8f570146] {\n  display: grid;\n  grid-template-columns: 1fr 1fr;\n  grid-column-gap: 15px;\n}\n.mini_box2[data-v-8f570146] {\n  height: 100%;\n  width: 100%;\n}\n.mini_first[data-v-8f570146] {\n  display: grid;\n  grid-template-rows: 1fr 2fr;\n  grid-row-gap: 15px;\n}\n.mini_bb[data-v-8f570146] {\n  display: grid;\n  grid-template-columns: 1fr 1fr;\n  grid-column-gap: 15px;\n}\n.mini_c[data-v-8f570146] {\n  background: white;\n}\n", ""]);
 
 // exports
 
@@ -1302,7 +1362,28 @@ var render = function() {
     _c("div", { staticClass: "overlay" }),
     _vm._v(" "),
     _c("div", { staticClass: "sides" }, [
-      _vm._m(0),
+      _c(
+        "button",
+        {
+          staticClass: "hamburger hamburger--collapse",
+          class: { "is-active": _vm.showHeader },
+          attrs: {
+            tabindex: "0",
+            "aria-label": "Menu",
+            role: "button",
+            "aria-controls": "navigation",
+            type: "button"
+          },
+          on: { click: _vm.handleHeader }
+        },
+        [_vm._m(0)]
+      ),
+      _vm._v(" "),
+      _c("div", { staticClass: "side_header" }, [
+        _c("h4", [_vm._v("ISM Dashboard")]),
+        _vm._v(" "),
+        _c("p", [_vm._v("Welcome " + _vm._s(_vm.name))])
+      ]),
       _vm._v(" "),
       _c("hr"),
       _vm._v(" "),
@@ -1356,10 +1437,8 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "side_header" }, [
-      _c("h4", [_vm._v("ISM Dashboard")]),
-      _vm._v(" "),
-      _c("p", [_vm._v("Welcome")])
+    return _c("span", { staticClass: "hamburger-box" }, [
+      _c("span", { staticClass: "hamburger-inner" })
     ])
   }
 ]
@@ -1384,18 +1463,82 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "d-flex" }, [
-    _c("div", { staticClass: "admin_side_bar" }, [_c("Header")], 1),
-    _vm._v(" "),
+  return _c("div", { staticClass: "home" }, [
     _c(
       "div",
-      { staticClass: "main_admin_page" },
-      [_c("transition", { attrs: { name: "fade" } }, [_c("router-view")], 1)],
-      1
-    )
+      {
+        directives: [
+          {
+            name: "show",
+            rawName: "v-show",
+            value: !_vm.showHeader,
+            expression: "!showHeader"
+          }
+        ],
+        staticClass: "w-100 mobile_head"
+      },
+      [
+        _c(
+          "button",
+          {
+            staticClass: "hamburger hamburger--collapse",
+            class: { "is-active": _vm.showHeader },
+            attrs: {
+              tabindex: "0",
+              "aria-label": "Menu",
+              role: "button",
+              "aria-controls": "navigation",
+              type: "button"
+            },
+            on: { click: _vm.handleHeader }
+          },
+          [_vm._m(0)]
+        )
+      ]
+    ),
+    _vm._v(" "),
+    _c("div", { staticClass: "d-flex" }, [
+      _c(
+        "div",
+        {
+          directives: [
+            {
+              name: "show",
+              rawName: "v-show",
+              value: _vm.showHeader,
+              expression: "showHeader"
+            }
+          ],
+          staticClass: "admin_side_bar"
+        },
+        [
+          _c("Header", {
+            attrs: { showHeader: _vm.showHeader },
+            on: { handleHeader: _vm.handleHeader }
+          })
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "main_admin_page", class: { mainmenu: _vm.showHeader } },
+        [_c("transition", { attrs: { name: "fade" } }, [_c("router-view")], 1)],
+        1
+      )
+    ])
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("span", { staticClass: "hamburger-box" }, [
+      _c("span", { staticClass: "hamburger-inner" })
+    ])
+  }
+]
 render._withStripped = true
 
 

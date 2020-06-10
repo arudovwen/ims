@@ -35,7 +35,7 @@
             <span class="face josefin">Face</span>
             <div class="enroll">
                <p class="site rounded-pill">www.imolearncentre.org</p>
-               <router-link to="/checkout" class="mt-4 "> <button type="button" class="btn bg-white text-blue border-0">Enroll Now  <i class="fa fa-long-arrow-right text-blue" aria-hidden="true"></i></button></router-link>
+               <router-link to="/checkout" class="mt-4 "> <button type="button" class="btn bg-white text-blue border-0"><i class="fa fa-long-arrow-right text-blue pr-2" aria-hidden="true"></i> Enroll Now  </button></router-link>
             </div>
           </span>
         </div>
@@ -59,9 +59,9 @@ export default {
         pagination: {
           el: ".swiper-pagination"
         },
-        autoplay: {
-          delay: 6000
-        }
+        // autoplay: {
+        //   delay: 6000
+        // }
       }
     };
   }
@@ -457,7 +457,7 @@ export default {
     width: 78%;
   }
   .banner_2_imo {
-    font-size: 20px;
+    font-size: 18px;
   }
   .banner_2_lor {
     font-size: 15px;
@@ -466,30 +466,34 @@ export default {
    width: 400px;
     height: 400px;
     bottom: -32%;
-    left: -69px;
+    left: -90px;
   }
 
   .text {
     bottom: 18%;
-    right: 18%;
+    right: 25%;
   }
+  .enroll p{
+    color: white;
+    font-size: 14px;
+    text-decoration: none;
+}
   .new {
-    font-size: 26px;
+    font-size: 22px;
   }
   .education {
-    font-size: 26px;
+    font-size: 22px;
   }
   .face {
     color: #fff;
-    font-size: 28px;
+    font-size: 24px;
     font-weight: bold;
   }
   .circle_3 {
-      width: 200px;
-    height: 200px;
+      width: 300px;
+    height: 300px;
     right: -89px;
-    bottom: -50%;
-    bottom: 18%;
+    bottom: 13%;
   }
   .circle_3 img{
     object-position: bottom;
@@ -499,10 +503,13 @@ export default {
   width: 350px;
     height: 350px;
     position: absolute;
-    right: 30%;
-    bottom: 49%;
+       right: 23%;
+    bottom: 60%;
     margin-right: -150px;
     margin-bottom: -75px;
+  }
+  #banner{
+    height: 530px;
   }
  
 }

@@ -79,4 +79,9 @@ export default {
 .fa-1x {
   font-size: 0.5em;
 }
+@media(max-width:425px){
+  .scrollUp{
+    display:none !important;
+  }
+}
 </style>

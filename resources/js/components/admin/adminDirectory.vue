@@ -3,7 +3,24 @@
     <div class="main-content">
       <div class="left_side">
         <div class="side_bar">
-          <ul>
+          <div class="mobile-filter" @click="handleFilter">
+            <span>
+              Filters
+              <i class="fa fa-long-arrow-up" aria-hidden="true"></i>
+            </span>
+          </div>
+          <div class="mobile-filter-option text-right" v-if="filter">
+            <input
+              type="text"
+              class="form-control"
+              style="text-transform:capitalize"
+              :value="filter_item"
+              readonly
+            />
+            <br />
+            <button type="button" class="button-green ml-auto" @click="handleFilter">Apply</button>
+          </div>
+          <ul v-if="!filterOpen">
             <h6>Category</h6>
             <li>
               <p @click="handleClick('')">All</p>
@@ -34,36 +51,57 @@
               <div class="form-group px-2 text-center">
                 <select class="custom-select mb-2" v-model="lga">
                   <option value="selected">Select one</option>
-                  <option :value="lga.name.toLowerCase()" v-for="(lga,index) in lgas" :key="index" class="lga_name">{{lga.name}}</option>
+                  <option
+                    :value="lga.name.toLowerCase()"
+                    v-for="(lga,index) in lgas"
+                    :key="index"
+                    class="lga_name"
+                  >{{lga.name}}</option>
                 </select>
-                 <button class="button-green" @click="lgaShow" v-if="!showlga">Add new</button>
+                <button class="button-green" @click="lgaShow" v-if="!showlga">Add new</button>
               </div>
               <div class="form-group px-2 text-center" v-if="showlga">
-             
-                <input type="text"
-                  class="form-control mb-2"  v-model="lga_name" aria-describedby="helpId" placeholder="Enter lga name">
-              
-                 <button class="button-green" @click="addLga">Add </button>
+                <input
+                  type="text"
+                  class="form-control mb-2"
+                  v-model="lga_name"
+                  aria-describedby="helpId"
+                  placeholder="Enter lga name"
+                />
+
+                <button class="button-green" @click="addLga">Add</button>
               </div>
             </li>
           </ul>
         </div>
       </div>
       <div class="right_side">
-       <div class="d-flex justify-content-between align-items-center mb-4">
+        <div class="d-flex justify-content-between align-items-center mb-4">
           <h4 class="filter_item mb-3">{{filter_item}} Schools</h4>
-        <div>
-         <router-link to="/admin/school/add"> <button class="button-green mr-3">Add school</button></router-link>
-           <small @click="reset" class="reset">Reset filter</small>
-        </div>
+          <div>
+            <router-link to="/admin/school/add">
+              <button class="button-green mr-3">Add school</button>
+            </router-link>
+            <small @click="reset" class="reset">Reset filter</small>
+          </div>
         </div>
         <div class="top_bar">
-           <div class="bar border-right">
-            <i class="fa fa-angle-double-left pr-2" @click="firstPage" aria-hidden="true" v-if="first_page"></i>
+          <div class="bar border-right">
+            <i
+              class="fa fa-angle-double-left pr-2"
+              @click="firstPage"
+              aria-hidden="true"
+              v-if="first_page"
+            ></i>
             <i class="fas fa-angle-left pr-2" @click="prev" v-if="prev_page"></i>
             <input type="number" class="row_numb pl-2" v-model="current_page" />
             <i class="fas fa-angle-right pl-2" @click="next" aria-hidden="true" v-if="next_page"></i>
-            <i class="fa fa-angle-double-right pl-2" @click="lastPage" aria-hidden="true" v-if="last_page"></i>
+            <i
+              class="fa fa-angle-double-right pl-2"
+              @click="lastPage"
+              aria-hidden="true"
+              v-if="last_page"
+            ></i>
           </div>
           <div class="bar border-right">Number of rows {{row_number}}</div>
           <div class="bar border-right">Total Schools {{total_schools}}</div>
@@ -105,7 +143,6 @@
             <tbody>
               <tr v-for="(school,idx) in sortedSchools" :key="idx">
                 <td scope="row">{{school.id}}</td>
-                <td scope="row">{{school.id}}</td>
                 <td>{{school.name!='null'?school.name: '-'}}</td>
                 <td>{{ school.address!='null'?school.address: '-'}}</td>
                 <td>{{school.phone_no!='null'?school.phone_no: '-'}}</td>
@@ -137,7 +174,7 @@
           <div class="text-right mt-2" v-if="items.length">
             <button class="button">Remove all</button>
           </div>
-           <div class="navigation">
+          <div class="navigation">
             <button type="button" class="prev_button" @click="prev" v-if="prev_page">
               <i class="fa fa-arrow-circle-left mc1 prev" aria-hidden="true"></i> Prev
             </button>
@@ -159,7 +196,7 @@ export default {
       search: "",
       filter_item: "",
       lga: "selected",
-      lgas:[],
+      lgas: [],
       items: [],
       item: false,
       row_number: 1,
@@ -170,14 +207,19 @@ export default {
       prev_page: "",
       current_page: 1,
       total_schools: 0,
-      admin:true,
-      showlga:false,
-      lga_name:''
+      admin: true,
+      showlga: false,
+      filter: false,
+      filterOpen: false,
+      lga_name: ""
     };
   },
   mounted() {
     this.retrieveSchools();
-    this.getLgas()
+    this.getLgas();
+     if (window.innerWidth < 768) {
+      this.filterOpen = true
+    }
   },
   watch: {
     search: "handleSearch",
@@ -185,35 +227,39 @@ export default {
     item: "selectAll"
   },
   methods: {
-     reset(){
-      this.filter_item = ''
+    reset() {
+      this.filter_item = "";
     },
-    getLgas(){
-      axios.get('/api/show-lgas').then(res=>{
-        if (res.status == 200) {
-          this.lgas = res.data
-          
-        }
-      }).catch(err=>{
-
-      })
+    getLgas() {
+      axios
+        .get("/api/show-lgas")
+        .then(res => {
+          if (res.status == 200) {
+            this.lgas = res.data;
+          }
+        })
+        .catch(err => {});
     },
-    lgaShow(){
-      this.showlga = !this.showlga
+    lgaShow() {
+      this.showlga = !this.showlga;
     },
-    addLga(){
+    addLga() {
       let data = {
-        lga : this.lga_name
+        lga: this.lga_name
+      };
+      if (this.lga_name.length !== "") {
+        axios.post("/api/create-lga", data).then(res => {
+          if (res.status == 201) {
+            this.getLgas();
+            this.$toasted.info("Successful");
+            this.showlga = false;
+          }
+        });
       }
-       if (this.lga_name.length !== '') {
-          axios.post('/api/create-lga', data).then(res=>{
-        if (res.status == 201) {
-          this.getLgas()
-          this.$toasted.info('Successful')
-          this.showlga = false
-        }
-      })
-       }
+    },
+    handleFilter() {
+      this.filter = !this.filter;
+      this.filterOpen = !this.filterOpen;
     },
     firstPage() {
       axios.get(this.first_page).then(res => {
@@ -298,7 +344,7 @@ export default {
         .get(`/api/get-school/${id}`)
         .then(res => {
           if (res.status == 200) {
-               this.$router.push(`/admin/school/edit?id=${id}`)
+            this.$router.push(`/admin/school/edit?id=${id}`);
           }
         })
         .catch(err => {
@@ -310,7 +356,7 @@ export default {
         .get(`/api/get-school/${id}`)
         .then(res => {
           if (res.status == 200) {
-            this.$router.push(`/admin/school/view?id=${id}`)
+            this.$router.push(`/admin/school/view?id=${id}`);
           }
         })
         .catch(err => {
@@ -347,46 +393,55 @@ export default {
     }
   },
   computed: {
-       sortedSchools(){
-          if (this.filter_item == 'nursery'||this.filter_item == 'primary' || this.filter_item == 'secondary'|| this.filter_item == 'tertiary') {
-              return this.schools.filter(item=>{
-                  return item.level.toLowerCase() == this.filter_item.toLowerCase()
-              })
-          }
-          if (this.filter_item == 'boarding'||this.filter_item == 'day') {
-              return this.schools.filter(item=>{
-                  return item.type.toLowerCase() == this.filter_item.toLowerCase()
-              })
-          }
-          if (this.filter_item == 'private'||this.filter_item == 'public' ) {
-              return this.schools.filter(item=>{
-                  return item.sector.toLowerCase() == this.filter_item.toLowerCase()
-              })
-          }
-           if (this.filter_item == 'individual'||this.filter_item == 'faith' ) {
-              return this.schools.filter(item=>{
-                  return item.ownership.toLowerCase() == this.filter_item.toLowerCase()
-              })
-          }
-           if (this.filter_item == 'accredited'||this.filter_item == 'non-accredited' ) {
-              return this.schools.filter(item=>{
-                  return item.accreditation.toLowerCase() == this.filter_item.toLowerCase()
-              })
-          }
-           if (this.lga !== 'selected') {
-              return this.schools.filter(item=>{
-                  return item.lga.toLowerCase() == this.filter_item.toLowerCase()
-              })
-          }
-          if (this.search !== '') {
-              return this.schools.filter(item=>{
-                return  item.name.toLowerCase().includes(this.search.toLowerCase())
-              })
-          }
-         
-              return this.schools
-     
+    sortedSchools() {
+      if (
+        this.filter_item == "nursery" ||
+        this.filter_item == "primary" ||
+        this.filter_item == "secondary" ||
+        this.filter_item == "tertiary"
+      ) {
+        return this.schools.filter(item => {
+          return item.level.toLowerCase() == this.filter_item.toLowerCase();
+        });
       }
+      if (this.filter_item == "boarding" || this.filter_item == "day") {
+        return this.schools.filter(item => {
+          return item.type.toLowerCase() == this.filter_item.toLowerCase();
+        });
+      }
+      if (this.filter_item == "private" || this.filter_item == "public") {
+        return this.schools.filter(item => {
+          return item.sector.toLowerCase() == this.filter_item.toLowerCase();
+        });
+      }
+      if (this.filter_item == "individual" || this.filter_item == "faith") {
+        return this.schools.filter(item => {
+          return item.ownership.toLowerCase() == this.filter_item.toLowerCase();
+        });
+      }
+      if (
+        this.filter_item == "accredited" ||
+        this.filter_item == "non-accredited"
+      ) {
+        return this.schools.filter(item => {
+          return (
+            item.accreditation.toLowerCase() == this.filter_item.toLowerCase()
+          );
+        });
+      }
+      if (this.lga !== "selected") {
+        return this.schools.filter(item => {
+          return item.lga.toLowerCase() == this.filter_item.toLowerCase();
+        });
+      }
+      if (this.search !== "") {
+        return this.schools.filter(item => {
+          return item.name.toLowerCase().includes(this.search.toLowerCase());
+        });
+      }
+
+      return this.schools;
+    }
   }
 };
 </script>
@@ -402,7 +457,9 @@ export default {
   display: flex;
   padding: 15px 0px;
 }
-
+.mobile-filter{
+  display: none;
+}
 .filter_item {
   text-transform: capitalize;
 }
@@ -413,7 +470,7 @@ export default {
   font-size: 13px;
 }
 th {
-  color: #006600;
+  color: #0F7A8A;
 }
 
 .navigation {
@@ -434,8 +491,8 @@ th {
   border-radius: 5px;
   font-size: 12px;
 }
-h6{
-  color: #006600;
+h6 {
+  color: #0F7A8A;
 }
 .fa-minus-circle:before {
   content: "\f056";
@@ -493,14 +550,13 @@ h6{
 .row_numb::placeholder {
   text-align: center;
 }
-.reset{
+.reset {
   cursor: pointer;
 }
 .bar {
   position: relative;
   padding-right: 15px;
 }
-
 
 .left_side {
   width: 20%;
@@ -557,5 +613,56 @@ li {
   padding: 15px;
   border-radius: 5px;
   overflow: scroll;
+}
+@media (max-width: 768px) {
+  .side_bar {
+    height: auto;
+    overflow: hidden;
+    min-height: auto;
+    padding: 15px 10px;
+    width: 100%;
+    background: #f7f8fa;
+    position: relative;
+  }
+  .left_side {
+    width: 100%;
+    position: fixed;
+    height: auto;
+    z-index: 99;
+    bottom: 0;
+  }
+  .right_side {
+    width: 100%;
+    z-index: 1;
+  }
+  .mobile-filter {
+    display: block;
+    text-align: center;
+  }
+  .container-fluid {
+    padding: 0;
+  }
+  .main-content {
+    padding-top: 0;
+  }
+  .mobile-filter-option {
+    position: absolute;
+    right: 80px;
+    top: 70px;
+    width: 40%;
+  }
+  .top_bar {
+    flex-direction: column;
+  }
+  .bar {
+    margin-bottom: 10px;
+    border: none !important;
+  }
+  li p {
+    font-size: 14px;
+  }
+  ul{
+    width:50%;
+  }
 }
 </style>

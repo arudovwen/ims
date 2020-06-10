@@ -1,7 +1,7 @@
 <template>
   <div class="container-fluid">
     <div class="main-content">
-      <div class="left_side" :class="{absolute:filter}">
+      <div class="left_side">
         <div class="side_bar">
           <div class="mobile-filter" @click="handleFilter">
           <span >  Filters <i class="fa fa-long-arrow-up" aria-hidden="true"></i></span>
@@ -364,11 +364,11 @@ export default {
   font-size: 13px;
 }
 th {
-  color: #006600;
+  color: #0F7A8A;
   font-size: 13px;
 }
 h6{
-  color: #006600;
+  color: #0F7A8A;
 }
 .navigation {
   display: flex;
@@ -459,6 +459,7 @@ button:focus {
 .left_side {
   width: 25%;
   height: 100vh;
+  z-index: 99;
 }
 .side_bar {
   background: white;
@@ -536,7 +537,7 @@ li {
     width: 100%;
     position: fixed;
     height: auto;
-    z-index: 2;
+    z-index: 99;
     bottom: 0;
    
 
