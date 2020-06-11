@@ -18,6 +18,7 @@
 <style scoped>
 #organizations {
   padding: 30px 15px;
+  background:rgb(255, 255, 255);
 }
 .organizations {
     width: 100%;

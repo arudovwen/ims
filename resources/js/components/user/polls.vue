@@ -1,9 +1,10 @@
 <template>
   <div id="polls">
-    <div>
+
+    <div class="z">
       <h3 class="josefin mb-4 main_header">Administrative</h3>
     </div>
-    <div class="my-poll">
+    <div class="my-poll z">
       <div class="newsletter shadow-sm tab">
         <div class="fa-stack icon">
           <i class="fa fa-circle fa-stack-2x mc1 " aria-hidden="true"></i>
@@ -58,7 +59,12 @@ export default {
 #polls {
   padding: 30px 15px 65px;
   height: auto;
- 
+   background:rgba(255, 255, 255, .98);
+  position: relative;
+}
+.z{
+  position:relative;
+  z-index: 2;
 }
 .my-poll {
   display: flex;

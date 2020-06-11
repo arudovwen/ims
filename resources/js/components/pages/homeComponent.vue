@@ -1,14 +1,15 @@
 <template>
-  <div class="container">
+  <div class="container my_body">
     <scrollTop  class="scroll"/>
     <Navigation />
     <Banner />
     <Announcement />
-    <section class="my_body">
+    <section class="">
       <Commissioner />
       <ourInitiatives />
+        <Polls />
        <ourOrganizations />
-      <Polls />
+    
       <News />
     </section>
     <Footer />
@@ -51,7 +52,8 @@ export default {
   min-height: 100vh;
 }
 .my_body {
-
+ background-image: url('/images/curve.jpg');
+ background-size:cover;
 }
 
 </style>

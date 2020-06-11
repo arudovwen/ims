@@ -15,7 +15,7 @@
         </div>
 
         <div class="banner_2_text text-center animated fadeIn slow">
-          <div class="banner_2_imo josefin">IMO STATE MINISTRY OF EDUCATION</div>
+          <div class="banner_2_imo josefin">IMO STATE Ministry of Education</div>
           <div
             class="banner_2_lor"
           >Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, rem.</div>
@@ -354,10 +354,12 @@ export default {
     width: 78%;
   }
   .banner_2_imo {
-    font-size: 32px;
+    font-size: 44px;
+    text-align: left;
   }
   .banner_2_lor {
-    font-size: 15px;
+    font-size: 20px;
+    text-align: left;
   }
   .circle_1 {
     width: 400px;
@@ -401,6 +403,21 @@ export default {
   .text{
 
   }
+  #banner {
+
+  background: url("/images/curve3.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.banner_2{
+    background: url("/images/curve3.jpg");
+}
+.banner_overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background:  rgb(15, 122, 138, 0.65);
+}
 }
 @media (max-width: 425px) {
   .form-control{
@@ -457,10 +474,10 @@ export default {
     width: 78%;
   }
   .banner_2_imo {
-    font-size: 18px;
+    font-size: 40px;
   }
   .banner_2_lor {
-    font-size: 15px;
+    font-size: 20px;
   }
   .circle_1 {
    width: 400px;
@@ -510,6 +527,7 @@ export default {
   }
   #banner{
     height: 530px;
+    
   }
  
 }

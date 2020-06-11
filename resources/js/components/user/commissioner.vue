@@ -67,8 +67,8 @@ export default {
   width: 100%;
   background: repeating-linear-gradient(
     to right,
-    rgb(15, 122, 138, 0.7) 0%,
-    rgb(15, 122, 138, 0.85) 100%
+    rgb(15, 122, 138, 0.65) 0%,
+    rgb(15, 122, 138, 0.65) 100%
   );
   overflow: hidden;
 }

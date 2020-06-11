@@ -157,6 +157,9 @@ a {
 .rel_pos {
   width: 350px;
 }
+.mobile{
+  display:none !important;
+}
 @media (max-width: 1024px) {
   .logo {
     font-size: 24px;
@@ -195,6 +198,9 @@ a {
   }
   .text {
     padding: 0 0 0 10px;
+  }
+  .mobile{
+    display:block !important;
   }
 }
 @media (max-width: 425px) {
