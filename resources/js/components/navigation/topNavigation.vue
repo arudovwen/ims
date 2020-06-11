@@ -21,22 +21,35 @@
         </router-link>
       </div>
       <div class="side_info ml-auto">
-        <div class="form-group rel_pos ml-auto search_bar">
+        <div class="form-group rel_pos ml-auto search_bar mb-0">
           <input
+          v-if="show_nav_bar"
             type="text"
-            class="form-control rounded-pill"
-            name
-            id
+            class="form-control rounded-pill desktop"
+           
             aria-describedby="helpId"
             placeholder="Search"
           />
-          <button class="search_icon abs_pos top-0 rounded-pill">
+          <button class="search_icon abs_pos top-0 rounded-pill"   v-if="show_nav_bar">
             <i class="fa fa-search fa-1x text-white" aria-hidden="true"></i>
           </button>
-          <!-- <span class="fa-stack search_icon abs_pos top-0">
-          <i class="fa fa-circle mc1 fa-stack-2x" aria-hidden="true"></i>
-          <i class="fa fa-search fa-stack-1x text-white" aria-hidden="true"></i>
-          </span>-->
+
+          <span class="d-flex justify-content-start align-items-center " v-if="!show_nav_bar" @click="showNav">
+            <button
+              class="hamburger hamburger--collapse"
+              tabindex="0"
+              aria-label="Menu"
+              role="button"
+              aria-controls="navigation"
+              :class="{'is-active':show_nav_bar}"
+              type="button"
+            >
+              <span class="hamburger-box">
+                <span class="hamburger-inner"></span>
+              </span>
+            </button>
+            <!-- <strong>Menu</strong> -->
+          </span>
         </div>
       </div>
     </div>
@@ -44,6 +57,7 @@
 </template>
 <script>
 export default {
+  props:['show_nav_bar'],
   name: "top-nav-component",
   data() {
     return {
@@ -56,9 +70,19 @@ export default {
         },
         autoplay: {
           delay: 8000
-        }
-      }
+        },
+        
+      },
+     
     };
+  },
+  methods: {
+    showNav() {
+      this.$emit("showNav");
+    },
+    closeNav() {
+      this.$emit("closeNav");
+    }
   }
 };
 </script>
@@ -72,9 +96,9 @@ export default {
   background: #fff;
 }
 
- .text {
-    padding: 0 0 0 10px;
-  }
+.text {
+  padding: 0 0 0 10px;
+}
 .logo a {
   display: flex;
   align-items: flex-end;
@@ -105,7 +129,7 @@ export default {
   right: -4px;
   height: 38px;
   width: 70px;
-  background: #0F7A8A;
+  background: #0f7a8a;
 }
 .updates {
   width: 400px;
@@ -122,7 +146,7 @@ a {
   font-family: "Josefin Sans";
 }
 .info {
-  background-color: #0F7A8A;
+  background-color: #0f7a8a;
   border-bottom: 3px solid #ffff75;
   font-size: 14px;
   padding: 5px 10px;
@@ -130,8 +154,8 @@ a {
 .marq {
   border-right: 1px solid white;
 }
-.rel_pos{
-  width:350px;
+.rel_pos {
+  width: 350px;
 }
 @media (max-width: 1024px) {
   .logo {
@@ -141,14 +165,14 @@ a {
     width: 200px;
     margin: 0 0 10px 0;
   }
-  .rel_pos{
-  width:300px;
-}
+  .rel_pos {
+    width: 300px;
+  }
 }
 @media (max-width: 768px) {
-  .rel_pos{
-  width:auto;
-}
+  .rel_pos {
+    width: auto;
+  }
   .logo {
     font-size: 18px;
     margin: 0 !important;
@@ -190,21 +214,21 @@ a {
   .text {
     padding: 0 0 0 10px;
   }
-  .search_bar{
+  .search_bar {
     width: 80%;
+    margin: 0;
   }
   .form-control {
     height: calc(1em + 0.75rem + 2px);
     padding: 0.375rem 0.75rem;
-    font-size: .8rem;
+    font-size: 0.8rem;
     margin-left: auto;
-    }
-    .search_icon {
+  }
+  .search_icon {
     font-size: 12px;
     right: -1px;
     height: 26px;
     width: 50px;
-
-}
+  }
 }
 </style>

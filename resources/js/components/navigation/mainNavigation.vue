@@ -1,22 +1,7 @@
 <template>
   <div id="bottom_nav" :class="{'overlay-bg':show_nav_bar}">
     <div class="overlay" v-if="show_nav_bar"></div>
-    <span class="d-flex justify-content-start align-items-center mobile" @click="showNav">
-      <button
-        class="hamburger hamburger--collapse"
-        tabindex="0"
-        aria-label="Menu"
-        role="button"
-        aria-controls="navigation"
-        :class="{'is-active':show_nav_bar}"
-        type="button"
-      >
-        <span class="hamburger-box">
-          <span class="hamburger-inner"></span>
-        </span>
-      </button>
-      <strong>Menu</strong>
-    </span>
+   
     <ul class="nav_bar animated slideInUp" v-if="show_nav_bar">
       <li>
         <div>
@@ -123,10 +108,11 @@
 </template>
 <script>
 export default {
+  props:['show_nav_bar'],
   name: "main-nav-component",
   data() {
     return {
-      show_nav_bar: true
+    
     };
   },
   created() {

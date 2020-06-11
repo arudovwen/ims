@@ -306,7 +306,7 @@ h4{
     padding: 15px 0;
   }
   .top_header{
-    pad: 5px 10px;
+    padding: 5px 10px;
   }
   .comm_body{
     margin-bottom: 30px;

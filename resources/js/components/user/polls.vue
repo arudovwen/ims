@@ -106,5 +106,8 @@ export default {
   }
 }
 @media (max-width: 425px) {
+  .icon{
+    font-size: 55px;
+  }
 }
 </style>

@@ -2,20 +2,7 @@
   <div class="main_side_bar">
     <div class="overlay"></div>
     <div class="sides">
-        <button
-        class="hamburger hamburger--collapse"
-        tabindex="0"
-        aria-label="Menu"
-        role="button"
-        aria-controls="navigation"
-        :class="{'is-active':showHeader}"
-        @click="handleHeader"
-        type="button"
-      >
-        <span class="hamburger-box">
-          <span class="hamburger-inner"></span>
-        </span>
-      </button>
+    
       <div class="side_header">
         <h4>ISM Dashboard</h4>
         <p>Welcome {{name}}</p>
@@ -50,26 +37,25 @@
 </template>
 <script>
 export default {
-  props:['showHeader'],
+  props: ["showHeader"],
   data() {
     return {
-      name:''
-    }
+      name: ""
+    };
   },
   components: {},
   mounted() {
-    let admin = JSON.parse(localStorage.getItem('adminUser'))
-    this.name = admin.name
+    let admin = JSON.parse(localStorage.getItem("adminUser"));
+    this.name = admin.name;
   },
   methods: {
     logout() {
       localStorage.removeItem("adminUser");
       this.$router.push("/admin/auth/login");
     },
-    handleHeader(){
-      this.$emit('handleHeader')
+    handleHeader() {
+      this.$emit("handleHeader");
     }
-
   }
 };
 </script>
@@ -91,20 +77,17 @@ export default {
   padding: 20px 0;
   color: hsl(120, 100%, 95%);
 }
-.side_header p{
+.side_header p {
   text-transform: capitalize;
- 
 }
 .side_header {
   padding: 20px 15px;
-  
-  
 }
 hr {
   border-top: 2px solid hsl(60, 100%, 30%);
 }
 h4 {
-  color:yellow;
+  color: yellow;
 }
 .single_nav_item {
   text-decoration: none;
@@ -112,13 +95,12 @@ h4 {
   color: hsl(120, 100%, 96%);
   font-size: 16px;
   padding: 10px 15px;
-
 }
-li{
-   border-left: 3px solid transparent;
-      border-right: 3px solid transparent;
+li {
+  border-left: 3px solid transparent;
+  border-right: 3px solid transparent;
 }
-a{
+a {
   text-decoration: none;
 }
 .overlay {
@@ -132,20 +114,18 @@ a{
   z-index: 1;
   height: 100%;
 }
-li:hover{
-  background:hsl(120, 100%, 20%);
-  border-left-color:  hsl(60, 100%, 40%);
-      border-right-color: hsl(60, 100%, 40%);   
-
+li:hover {
+  background: hsl(120, 100%, 20%);
+  border-left-color: hsl(60, 100%, 40%);
+  border-right-color: hsl(60, 100%, 40%);
 }
 .router-link-exact-active {
- 
-  & li{
-    background: hsl(120, 100%, 20%);;
-    border-top:1px solid hsl(60, 100%, 30%);
+  & li {
+    background: hsl(120, 100%, 20%);
+    border-top: 1px solid hsl(60, 100%, 30%);
     border-bottom: 1px solid hsl(60, 100%, 30%);
-     border-left-color:  hsl(60, 100%, 40%);
-      border-right-color: hsl(60, 100%, 40%);
+    border-left-color: hsl(60, 100%, 40%);
+    border-right-color: hsl(60, 100%, 40%);
   }
 }
 </style>

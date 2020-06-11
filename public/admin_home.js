@@ -258,29 +258,16 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ['showHeader'],
+  props: ["showHeader"],
   data: function data() {
     return {
-      name: ''
+      name: ""
     };
   },
   components: {},
   mounted: function mounted() {
-    var admin = JSON.parse(localStorage.getItem('adminUser'));
+    var admin = JSON.parse(localStorage.getItem("adminUser"));
     this.name = admin.name;
   },
   methods: {
@@ -289,7 +276,7 @@ __webpack_require__.r(__webpack_exports__);
       this.$router.push("/admin/auth/login");
     },
     handleHeader: function handleHeader() {
-      this.$emit('handleHeader');
+      this.$emit("handleHeader");
     }
   }
 });
@@ -1362,23 +1349,6 @@ var render = function() {
     _c("div", { staticClass: "overlay" }),
     _vm._v(" "),
     _c("div", { staticClass: "sides" }, [
-      _c(
-        "button",
-        {
-          staticClass: "hamburger hamburger--collapse",
-          class: { "is-active": _vm.showHeader },
-          attrs: {
-            tabindex: "0",
-            "aria-label": "Menu",
-            role: "button",
-            "aria-controls": "navigation",
-            type: "button"
-          },
-          on: { click: _vm.handleHeader }
-        },
-        [_vm._m(0)]
-      ),
-      _vm._v(" "),
       _c("div", { staticClass: "side_header" }, [
         _c("h4", [_vm._v("ISM Dashboard")]),
         _vm._v(" "),
@@ -1432,16 +1402,7 @@ var render = function() {
     ])
   ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("span", { staticClass: "hamburger-box" }, [
-      _c("span", { staticClass: "hamburger-inner" })
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 

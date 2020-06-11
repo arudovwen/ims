@@ -323,8 +323,16 @@ td {
     .absolute{
         position: absolute !important;
     }
+    .mobile{
+        display: none !important;
+    }
 @media(max-width:425px) {
-
+   .mobile{
+       display: block !important;
+   }
+   .desktop{
+       display: none !important;
+   }
     h1 {
         font-size: 2em !important;
         /* Equivalent to 22pt */

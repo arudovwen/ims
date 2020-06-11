@@ -323,8 +323,16 @@ td {
     .absolute{
         position: absolute !important;
     }
+    .mobile{
+        display: none !important;
+    }
 @media(max-width:425px) {
-
+   .mobile{
+       display: block !important;
+   }
+   .desktop{
+       display: none !important;
+   }
     h1 {
         font-size: 2em !important;
         /* Equivalent to 22pt */
@@ -410,7 +418,7 @@ td {
 .hamburger.is-active .hamburger-inner,
 .hamburger.is-active .hamburger-inner::before,
 .hamburger.is-active .hamburger-inner::after {
-    background-color: hsl(120, 100%, 95%);
+    background-color: #0f7a8a;
 }
 
 .hamburger-box {
@@ -431,7 +439,7 @@ td {
 .hamburger-inner::after {
     width: 25px;
     height: 2px;
-    background-color: hsl(120, 100%, 95%);
+    background-color: #0f7a8a;
     border-radius: 4px;
     position: absolute;
     transition-property: transform;
