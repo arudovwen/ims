@@ -170,7 +170,7 @@ export default {
   animation-name: none;
 }
 strong {
-  color: hsl(120, 100%, 95%);
+  color: #e6f1f3;
 }
 .nav_bar {
   display: flex;
@@ -301,10 +301,7 @@ strong {
   .sub_nav {
     display: none;
   }
-  .slideInRight {
-    -webkit-animation-name: slideInRight;
-    animation-name: slideInRight;
-  }
+  
   .nav_bar li {
  
     font-size: 16px;
@@ -331,8 +328,8 @@ strong {
   .overlay {
   background: repeating-linear-gradient(
     to right,
-    rgb(15, 122, 138, 0.7) 0%,
-    rgb(15, 122, 138, 0.7) 100%
+    rgb(15, 122, 138, 0.85) 0%,
+    rgb(15, 122, 138, 0.85) 100%
   );
   position: absolute;
   width: 100%;

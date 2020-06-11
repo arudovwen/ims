@@ -16,7 +16,7 @@
          <div class="top_header">
             <h4 class="josefin ">PROF.B.T.O . IKEGWUOHA</h4>
              <h5 class="josefin ">Honorable Commissioner For Education, Imo state</h5>
-         <p>Lorem ipsum dolor, sit amet  itaque... <span class="mc1">read more</span></p>
+         <!-- <p>Lorem ipsum dolor, sit amet  itaque... <span class="mc1">read more</span></p> -->
         </div>
        
         <div class="img">
@@ -29,7 +29,7 @@
           <small>His Excellency</small>
           <h4 class="josefin">SEN. HOPE UZODIMMA</h4>
             <h5 class="josefin ">Governor, Imo state</h5>
-          <p>Lorem ipsum dolor, sit amet  itaque... <span class="mc1">read more</span></p>
+          <!-- <p>Lorem ipsum dolor, sit amet  itaque... <span class="mc1">read more</span></p> -->
         </div>
       
         <div class="img">
@@ -41,7 +41,7 @@
       <div class="perm_sec box shadow-sm">
          <div class="top_header">
              <h4 class="josefin ">Permanent Secretary, Imo state Ministry of Education</h4>
-         <p>Lorem ipsum dolor, sit amet  itaque... <span class="mc1">read more</span></p>
+         <!-- <p>Lorem ipsum dolor, sit amet  itaque... <span class="mc1">read more</span></p> -->
         </div>
       
         <div class="img">
@@ -106,7 +106,7 @@ h4{
   text-align: center;
   position: absolute;
   bottom: 0;
-  padding: 15px 0;
+  padding: 15px 10px;
   background: rgba(255, 255, 255, 0.95);
   color: #333;
   width: 100%;
@@ -118,10 +118,10 @@ h4{
   object-fit: cover;
 }
 .main_header::after{
-  border:2px solid yellow;
+  border-bottom:2px solid #e6f1f3;
 }
 .main_header{
-  color:yellow;
+  color:#e6f1f3;
 }
 .square_1 {
   border: 15px solid yellow;
@@ -286,7 +286,7 @@ h4{
   .box {
     width: 70%;
     margin: 30px auto;
-    height:350px
+    height:300px
   }
 }
 @media (max-width: 425px) {
@@ -301,6 +301,15 @@ h4{
   }
   h5{
     font-size: 15px !important;
+  }
+  .commiss{
+    padding: 15px 0;
+  }
+  .top_header{
+    pad: 5px 10px;
+  }
+  .comm_body{
+    margin-bottom: 30px;
   }
 }
 </style>

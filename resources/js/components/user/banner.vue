@@ -119,8 +119,8 @@ export default {
   height: 100%;
   background: repeating-linear-gradient(
     to right,
-    rgb(15, 122, 138, 0.7) 0%,
-    rgb(15, 122, 138, 0.7) 100%
+    rgb(15, 122, 138, 0.8) 0%,
+    rgb(15, 122, 138, 0.8) 100%
   );
 }
 .circle_1 {

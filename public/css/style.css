@@ -292,7 +292,7 @@ td {
   .main_header{
   color: rgba(0, 0, 0, 0.64);
   font-size: 2em;
-  font-weight: 300;
+  font-weight: 400;
   position: relative;
   }
   .main_header::after{

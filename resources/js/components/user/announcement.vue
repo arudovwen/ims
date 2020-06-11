@@ -231,7 +231,8 @@ export default {
   font-size: 13px;
 }
 .top_header{
-color:yellow;
+color:#e6f1f3;
+font-weight: bold;
 }
 @media(max-width: 1024px){
 
