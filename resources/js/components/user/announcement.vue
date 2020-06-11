@@ -105,7 +105,7 @@ export default {
   display: flex;
   justify-content: space-evenly;
   padding:45px 15px 65px;
-  height: auto;
+  height: 90%;
   width: 100%;
   margin:0 auto;
 

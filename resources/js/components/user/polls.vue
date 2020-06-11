@@ -59,7 +59,7 @@ export default {
 #polls {
   padding: 30px 15px 65px;
   height: auto;
-   background:rgba(255, 255, 255, .98);
+   background:rgba(255, 255, 255, .95);
   position: relative;
 }
 .z{

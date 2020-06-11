@@ -20,7 +20,7 @@ export default {
 
 <style scoped>
 .initiatives{
-      background: rgb(255, 255, 255,.98);
+      background: rgb(255, 255, 255,.95);
       padding: 40px 0;
 }
 .ini_head{
