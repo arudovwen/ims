@@ -21,20 +21,20 @@
         </router-link>
       </div>
       <div class="side_info ml-auto">
-        <div class="form-group rel_pos ml-auto search_bar mb-0">
+        <div class="form-group rel_pos ml-auto search_bar mb-0 ">
           <input
-          v-if="show_nav_bar"
+       
             type="text"
             class="form-control rounded-pill desktop"
            
             aria-describedby="helpId"
             placeholder="Search"
           />
-          <button class="search_icon abs_pos top-0 rounded-pill"   v-if="show_nav_bar">
+          <button class="search_icon abs_pos top-0 rounded-pill desktop"  >
             <i class="fa fa-search fa-1x text-white" aria-hidden="true"></i>
           </button>
 
-          <span class="d-flex justify-content-start align-items-center " v-if="!show_nav_bar" @click="showNav">
+          <span class="d-flex justify-content-start align-items-center mobile " @click="showNav">
             <button
               class="hamburger hamburger--collapse"
               tabindex="0"
