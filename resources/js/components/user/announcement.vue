@@ -103,10 +103,9 @@ export default {
 }
 #announcement {
   display: flex;
-  justify-content: space-evenly;
-  padding:45px 15px 65px;
+  justify-content: space-between;
   height: 90%;
-  width: 100%;
+  width: 80%;
   margin:0 auto;
 
 }

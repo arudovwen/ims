@@ -345,6 +345,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "commisioner-component",
   data: function data() {
@@ -799,7 +801,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".main[data-v-bdcf5660] {\n  background-image: url(\"/images/texture.png\");\n  padding: 45px 15px 75px;\n}\n#announcement[data-v-bdcf5660] {\n  display: flex;\n  justify-content: space-evenly;\n  padding: 45px 15px 65px;\n  height: auto;\n  width: 100%;\n  margin: 0 auto;\n}\n.button-green[data-v-bdcf5660] {\n  padding: 8px 32px;\n  box-shadow: 0px 0px 12px -2px rgba(0, 0, 0, 0.5);\n  line-height: 1.25;\n  border-radius: 3px;\n  background: #0F7A8A;\n  text-decoration: none;\n  color: white;\n  font-size: 13px;\n  letter-spacing: 0.08em;\n  text-transform: initial;\n  position: relative;\n  transition: background-color 0.6s ease;\n  overflow: hidden;\n}\n.button-green[data-v-bdcf5660]:after {\n  content: \"\";\n  position: absolute;\n  width: 0;\n  height: 0;\n  top: 50%;\n  left: 50%;\n  transform-style: flat;\n  transform: translate3d(-50%, -50%, 0);\n  background: rgba(255, 255, 255, 0.1);\n  border-radius: 100%;\n  transition: width 0.3s ease, height 0.3s ease;\n}\n.button-green[data-v-bdcf5660]:focus, .button-green[data-v-bdcf5660]:hover {\n  background: #0c5e6a;\n}\n.button-green[data-v-bdcf5660]:active:after {\n  width: 200px;\n  height: 200px;\n}\n.pin[data-v-bdcf5660] {\n  width: 50px;\n}\n.left_box[data-v-bdcf5660] {\n  width: 50%;\n  height: 500px;\n  overflow: hidden;\n  border-radius: 10px;\n}\n.right_box[data-v-bdcf5660] {\n  width: 30%;\n  height: 500px;\n  background: repeating-linear-gradient(to right, rgba(15, 122, 138, 0.7) 0%, rgba(15, 122, 138, 0.75) 100%);\n  padding: 10px;\n  border-radius: 10px;\n}\n.comm_body[data-v-bdcf5660] {\n  height: 100%;\n  width: 100%;\n  margin: 0 auto;\n  background: white;\n  padding: 20px;\n  box-shadow: inset 0 0 6px 1px #ccc;\n}\n.comm_body p[data-v-bdcf5660] {\n  color: rgba(0, 0, 0, 0.64);\n}\n.comm_header[data-v-bdcf5660] {\n  font-weight: 300;\n  text-align: center;\n}\n.comm_image[data-v-bdcf5660] {\n  width: 100%;\n  height: 200px;\n  margin-bottom: 20px;\n}\n.comm_image img[data-v-bdcf5660] {\n  width: 100%;\n  height: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.comm_about[data-v-bdcf5660] {\n  width: 50%;\n  padding: 0 25px;\n  text-align: left;\n  border-left: 5px solid #f7f8fa;\n  height: 50%;\n}\n.latest_update[data-v-bdcf5660] {\n  width: 100%;\n  height: 400px;\n}\n.slide[data-v-bdcf5660] {\n  background: #f7f8fa;\n  display: flex;\n  align-items: center;\n  padding: 10px;\n  border-radius: 4px;\n}\n.img_contain[data-v-bdcf5660] {\n  width: 30%;\n  height: 100%;\n}\n.img_contain img[data-v-bdcf5660] {\n  width: 100%;\n  height: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.img_text[data-v-bdcf5660] {\n  width: 70%;\n  padding: 10px;\n  text-align: left;\n  font-size: 13px;\n}\n.top_header[data-v-bdcf5660] {\n  color: #e6f1f3;\n  font-weight: bold;\n}\n@media (max-width: 768px) {\n.left_box[data-v-bdcf5660] {\n    height: auto;\n    margin-bottom: 30px;\n}\n.comm_body[data-v-bdcf5660] {\n    flex-direction: column;\n}\n.comm_about[data-v-bdcf5660] {\n    width: 100%;\n    padding: 0 10px 15px;\n}\n.comm_image[data-v-bdcf5660] {\n    margin: 0 auto 20px;\n    width: 70%;\n}\n#announcement[data-v-bdcf5660] {\n    flex-direction: column;\n    height: auto;\n    padding-top: 10px;\n    padding-bottom: 45px;\n    width: 100%;\n}\n.left_box[data-v-bdcf5660], .right_box[data-v-bdcf5660] {\n    width: 100%;\n}\n.top_head[data-v-bdcf5660] {\n    margin: 0 !important;\n}\n.comm_image[data-v-bdcf5660] {\n    height: auto;\n    display: none;\n}\n}\n@media (max-width: 425px) {\n.img_text p[data-v-bdcf5660] {\n    font-size: 12.5px;\n}\n.button[data-v-bdcf5660] {\n    width: 100%;\n}\n}", ""]);
+exports.push([module.i, ".main[data-v-bdcf5660] {\n  background-image: url(\"/images/texture.png\");\n  padding: 45px 15px 75px;\n}\n#announcement[data-v-bdcf5660] {\n  display: flex;\n  justify-content: space-between;\n  height: 90%;\n  width: 80%;\n  margin: 0 auto;\n}\n.button-green[data-v-bdcf5660] {\n  padding: 8px 32px;\n  box-shadow: 0px 0px 12px -2px rgba(0, 0, 0, 0.5);\n  line-height: 1.25;\n  border-radius: 3px;\n  background: #0F7A8A;\n  text-decoration: none;\n  color: white;\n  font-size: 13px;\n  letter-spacing: 0.08em;\n  text-transform: initial;\n  position: relative;\n  transition: background-color 0.6s ease;\n  overflow: hidden;\n}\n.button-green[data-v-bdcf5660]:after {\n  content: \"\";\n  position: absolute;\n  width: 0;\n  height: 0;\n  top: 50%;\n  left: 50%;\n  transform-style: flat;\n  transform: translate3d(-50%, -50%, 0);\n  background: rgba(255, 255, 255, 0.1);\n  border-radius: 100%;\n  transition: width 0.3s ease, height 0.3s ease;\n}\n.button-green[data-v-bdcf5660]:focus, .button-green[data-v-bdcf5660]:hover {\n  background: #0c5e6a;\n}\n.button-green[data-v-bdcf5660]:active:after {\n  width: 200px;\n  height: 200px;\n}\n.pin[data-v-bdcf5660] {\n  width: 50px;\n}\n.left_box[data-v-bdcf5660] {\n  width: 50%;\n  height: 500px;\n  overflow: hidden;\n  border-radius: 10px;\n}\n.right_box[data-v-bdcf5660] {\n  width: 30%;\n  height: 500px;\n  background: repeating-linear-gradient(to right, rgba(15, 122, 138, 0.7) 0%, rgba(15, 122, 138, 0.75) 100%);\n  padding: 10px;\n  border-radius: 10px;\n}\n.comm_body[data-v-bdcf5660] {\n  height: 100%;\n  width: 100%;\n  margin: 0 auto;\n  background: white;\n  padding: 20px;\n  box-shadow: inset 0 0 6px 1px #ccc;\n}\n.comm_body p[data-v-bdcf5660] {\n  color: rgba(0, 0, 0, 0.64);\n}\n.comm_header[data-v-bdcf5660] {\n  font-weight: 300;\n  text-align: center;\n}\n.comm_image[data-v-bdcf5660] {\n  width: 100%;\n  height: 200px;\n  margin-bottom: 20px;\n}\n.comm_image img[data-v-bdcf5660] {\n  width: 100%;\n  height: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.comm_about[data-v-bdcf5660] {\n  width: 50%;\n  padding: 0 25px;\n  text-align: left;\n  border-left: 5px solid #f7f8fa;\n  height: 50%;\n}\n.latest_update[data-v-bdcf5660] {\n  width: 100%;\n  height: 400px;\n}\n.slide[data-v-bdcf5660] {\n  background: #f7f8fa;\n  display: flex;\n  align-items: center;\n  padding: 10px;\n  border-radius: 4px;\n}\n.img_contain[data-v-bdcf5660] {\n  width: 30%;\n  height: 100%;\n}\n.img_contain img[data-v-bdcf5660] {\n  width: 100%;\n  height: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.img_text[data-v-bdcf5660] {\n  width: 70%;\n  padding: 10px;\n  text-align: left;\n  font-size: 13px;\n}\n.top_header[data-v-bdcf5660] {\n  color: #e6f1f3;\n  font-weight: bold;\n}\n@media (max-width: 768px) {\n.left_box[data-v-bdcf5660] {\n    height: auto;\n    margin-bottom: 30px;\n}\n.comm_body[data-v-bdcf5660] {\n    flex-direction: column;\n}\n.comm_about[data-v-bdcf5660] {\n    width: 100%;\n    padding: 0 10px 15px;\n}\n.comm_image[data-v-bdcf5660] {\n    margin: 0 auto 20px;\n    width: 70%;\n}\n#announcement[data-v-bdcf5660] {\n    flex-direction: column;\n    height: auto;\n    padding-top: 10px;\n    padding-bottom: 45px;\n    width: 100%;\n}\n.left_box[data-v-bdcf5660], .right_box[data-v-bdcf5660] {\n    width: 100%;\n}\n.top_head[data-v-bdcf5660] {\n    margin: 0 !important;\n}\n.comm_image[data-v-bdcf5660] {\n    height: auto;\n    display: none;\n}\n}\n@media (max-width: 425px) {\n.img_text p[data-v-bdcf5660] {\n    font-size: 12.5px;\n}\n.button[data-v-bdcf5660] {\n    width: 100%;\n}\n}", ""]);
 
 // exports
 
@@ -856,7 +858,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n#commissioner[data-v-853a5c3e] {\n  position: relative;\n  padding: 65px 15px 65px;\n  height: auto;\n  width: 100%;\n  background: repeating-linear-gradient(\n    to right,\n    rgb(15, 122, 138, 0.65) 0%,\n    rgb(15, 122, 138, 0.65) 100%\n  );\n  overflow: hidden;\n}\n.commiss[data-v-853a5c3e] {\n  display: flex;\n  width: 80%;\n  margin: 0 auto;\n  justify-content: space-evenly;\n}\n.box[data-v-853a5c3e] {\n  width: 25%;\n  height: 400px;\n  background: #f7f8fa;\n  border-radius: 8px;\n  position: relative;\n  overflow: hidden;\n}\n.mc1[data-v-853a5c3e]{\n  cursor:pointer;\n  text-decoration: underline;\n}\n.box img[data-v-853a5c3e] {\n  width: 100%;\n  height: 100%;\n}\np[data-v-853a5c3e]{\n  margin: 0;\n  font-size: 15px;\n}\nh4[data-v-853a5c3e]{\n  font-size:1.25rem\n}\n.top_header[data-v-853a5c3e] {\n  text-align: center;\n  position: absolute;\n  bottom: 0;\n  padding: 15px 10px;\n  background: rgba(255, 255, 255, 0.95);\n  color: #333;\n  width: 100%;\n  margin: 0;\n}\n.img img[data-v-853a5c3e] {\n  width: 100%;\n  height: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.main_header[data-v-853a5c3e]::after{\n  border-bottom:2px solid #e6f1f3;\n}\n.main_header[data-v-853a5c3e]{\n  color:#e6f1f3;\n}\n.square_1[data-v-853a5c3e] {\n  border: 15px solid yellow;\n  padding: 10px;\n  position: absolute;\n  bottom: 50%;\n  margin-bottom: -80px;\n  height: 160px;\n  width: 160px;\n  left: -80px;\n  transform: rotate(45deg);\n}\n.square_2[data-v-853a5c3e] {\n  border: 15px solid white;\n  padding: 15px;\n  width: 100%;\n  height: 100%;\n}\n.square_3[data-v-853a5c3e] {\n  background: yellow;\n  padding: 10px;\n  width: 100%;\n  height: 100%;\n}\n.square_4[data-v-853a5c3e] {\n  border: 15px solid yellow;\n  padding: 10px;\n  position: absolute;\n  bottom: 50%;\n  margin-bottom: -80px;\n  height: 160px;\n  width: 160px;\n  right: -80px;\n  transform: rotate(45deg);\n}\n.square_5[data-v-853a5c3e] {\n  border: 15px solid white;\n  padding: 15px;\n  width: 100%;\n  height: 100%;\n}\n.square_6[data-v-853a5c3e] {\n  background: yellow;\n  padding: 10px;\n  width: 100%;\n  height: 100%;\n}\n@media (max-width: 1024px) {\n.square_1[data-v-853a5c3e] {\n    border: 7px solid yellow;\n    padding: 5px;\n    position: absolute;\n    bottom: 50%;\n    margin-bottom: -30px;\n    height: 60px;\n    width: 60px;\n    left: -30px;\n    transform: rotate(45deg);\n}\n.square_2[data-v-853a5c3e] {\n    border: 7px solid white;\n    padding: 7px;\n    width: 100%;\n    height: 100%;\n}\n.square_3[data-v-853a5c3e] {\n    background: yellow;\n    padding: 5px;\n    width: 100%;\n    height: 100%;\n}\n.square_4[data-v-853a5c3e] {\n    border: 7px solid yellow;\n    padding: 5px;\n    position: absolute;\n    bottom: 50%;\n    margin-bottom: -30px;\n    height: 60px;\n    width: 60px;\n    right: -30px;\n    transform: rotate(45deg);\n}\n.square_5[data-v-853a5c3e] {\n    border: 7px solid white;\n    padding: 7px;\n    width: 100%;\n    height: 100%;\n}\n.square_6[data-v-853a5c3e] {\n    background: yellow;\n    padding: 5px;\n    width: 100%;\n    height: 100%;\n}\n}\n@media (max-width: 768px) {\n#commissioner[data-v-853a5c3e] {\n    padding: 30px 15px 30px;\n}\n.commiss[data-v-853a5c3e] {\n    flex-direction: column;\n    height: auto;\n    padding: 15px 25px;\n    width: 80%;\n}\n.square_1[data-v-853a5c3e] {\n    border: 5px solid yellow;\n    padding: 3px;\n    position: absolute;\n    bottom: 50%;\n    margin-bottom: -20px;\n    height: 40px;\n    width: 40px;\n    left: -20px;\n    transform: rotate(45deg);\n}\n.square_2[data-v-853a5c3e] {\n    border: 5px solid white;\n    padding: 5px;\n    width: 100%;\n    height: 100%;\n}\n.square_3[data-v-853a5c3e] {\n    background: yellow;\n    padding: 2.5px;\n    width: 100%;\n    height: 100%;\n}\n.square_4[data-v-853a5c3e] {\n    border: 5px solid yellow;\n    padding: 4px;\n    position: absolute;\n    bottom: 50%;\n    margin-bottom: -20px;\n    height: 40px;\n    width: 40px;\n    right: -20px;\n    transform: rotate(45deg);\n}\n.square_5[data-v-853a5c3e] {\n    border: 5px solid white;\n    padding: 5px;\n    width: 100%;\n    height: 100%;\n}\n.square_6[data-v-853a5c3e] {\n    background: yellow;\n    padding: 2.3px;\n    width: 100%;\n    height: 100%;\n}\n.left_box[data-v-853a5c3e],\n  .right_box[data-v-853a5c3e] {\n    width: 100%;\n}\n.top_head[data-v-853a5c3e] {\n    margin: 0 !important;\n}\n.comm_image[data-v-853a5c3e] {\n    height: auto;\n}\n.box[data-v-853a5c3e] {\n    width: 70%;\n    margin: 30px auto;\n    height:300px\n}\n}\n@media (max-width: 425px) {\n.img_text p[data-v-853a5c3e] {\n    font-size: 12.5px;\n}\n.box[data-v-853a5c3e] {\n    width: 100%;\n}\nh4[data-v-853a5c3e]{\n    font-size: 16px !important;\n}\nh5[data-v-853a5c3e]{\n    font-size: 15px !important;\n}\n.commiss[data-v-853a5c3e]{\n    padding: 15px 0;\n}\n.top_header[data-v-853a5c3e]{\n    padding: 5px 10px;\n}\n.comm_body[data-v-853a5c3e]{\n    margin-bottom: 30px;\n}\n}\n", ""]);
+exports.push([module.i, "\n#commissioner[data-v-853a5c3e] {\n  position: relative;\n  height: 100vh;\n  width: 100%;\n  background: repeating-linear-gradient(\n    to right,\n    rgb(15, 122, 138, 0.65) 0%,\n    rgb(15, 122, 138, 0.65) 100%\n  );\n  overflow: hidden;\n  display: flex;\n  align-items: center;\n}\n.main_header[data-v-853a5c3e]{\n  position:absolute;\n  top: 20px;\n  left: 15px;\n}\n.commiss[data-v-853a5c3e] {\n  display: flex;\n  width: 80%;\n  margin: 0 auto;\n  justify-content: space-between;\n}\n.governor[data-v-853a5c3e]{\n  margin-top: -10%;\n}\n.box[data-v-853a5c3e] {\n  width: 25%;\n  height: 350px;\n  background: #f7f8fa;\n  border-radius: 8px;\n  position: relative;\n  overflow: hidden;\n}\n.mc1[data-v-853a5c3e]{\n  cursor:pointer;\n  text-decoration: underline;\n}\n.box img[data-v-853a5c3e] {\n  width: 100%;\n  height: 100%;\n}\np[data-v-853a5c3e]{\n  margin: 0;\n  font-size: 15px;\n}\nh4[data-v-853a5c3e]{\n  font-size:1.25rem\n}\n.top_header[data-v-853a5c3e] {\n  text-align: center;\n  position: absolute;\n  bottom: 0;\n  padding: 15px 10px;\n  background: rgba(255, 255, 255, 0.95);\n  color: #333;\n  width: 100%;\n  margin: 0;\n}\n.img img[data-v-853a5c3e] {\n  width: 100%;\n  height: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.main_header[data-v-853a5c3e]::after{\n  border-bottom:2px solid #e6f1f3;\n}\n.main_header[data-v-853a5c3e]{\n  color:#e6f1f3;\n}\n.square_1[data-v-853a5c3e] {\n  border: 15px solid yellow;\n  padding: 10px;\n  position: absolute;\n  bottom: 50%;\n  margin-bottom: -80px;\n  height: 160px;\n  width: 160px;\n  left: -80px;\n  transform: rotate(45deg);\n}\n.square_2[data-v-853a5c3e] {\n  border: 15px solid white;\n  padding: 15px;\n  width: 100%;\n  height: 100%;\n}\n.square_3[data-v-853a5c3e] {\n  background: yellow;\n  padding: 10px;\n  width: 100%;\n  height: 100%;\n}\n.square_4[data-v-853a5c3e] {\n  border: 15px solid yellow;\n  padding: 10px;\n  position: absolute;\n  bottom: 50%;\n  margin-bottom: -80px;\n  height: 160px;\n  width: 160px;\n  right: -80px;\n  transform: rotate(45deg);\n}\n.square_5[data-v-853a5c3e] {\n  border: 15px solid white;\n  padding: 15px;\n  width: 100%;\n  height: 100%;\n}\n.square_6[data-v-853a5c3e] {\n  background: yellow;\n  padding: 10px;\n  width: 100%;\n  height: 100%;\n}\n@media (max-width: 1024px) {\n.square_1[data-v-853a5c3e] {\n    border: 7px solid yellow;\n    padding: 5px;\n    position: absolute;\n    bottom: 50%;\n    margin-bottom: -30px;\n    height: 60px;\n    width: 60px;\n    left: -30px;\n    transform: rotate(45deg);\n}\n.square_2[data-v-853a5c3e] {\n    border: 7px solid white;\n    padding: 7px;\n    width: 100%;\n    height: 100%;\n}\n.square_3[data-v-853a5c3e] {\n    background: yellow;\n    padding: 5px;\n    width: 100%;\n    height: 100%;\n}\n.square_4[data-v-853a5c3e] {\n    border: 7px solid yellow;\n    padding: 5px;\n    position: absolute;\n    bottom: 50%;\n    margin-bottom: -30px;\n    height: 60px;\n    width: 60px;\n    right: -30px;\n    transform: rotate(45deg);\n}\n.square_5[data-v-853a5c3e] {\n    border: 7px solid white;\n    padding: 7px;\n    width: 100%;\n    height: 100%;\n}\n.square_6[data-v-853a5c3e] {\n    background: yellow;\n    padding: 5px;\n    width: 100%;\n    height: 100%;\n}\n}\n@media (max-width: 768px) {\n.governor[data-v-853a5c3e]{\n  margin-top: 0;\n}\n#commissioner[data-v-853a5c3e] {\n    padding: 30px 15px 30px;\n}\n.commiss[data-v-853a5c3e] {\n    flex-direction: column;\n    height: auto;\n    padding: 15px 25px;\n    width: 80%;\n}\n.square_1[data-v-853a5c3e] {\n    border: 5px solid yellow;\n    padding: 3px;\n    position: absolute;\n    bottom: 50%;\n    margin-bottom: -20px;\n    height: 40px;\n    width: 40px;\n    left: -20px;\n    transform: rotate(45deg);\n}\n.square_2[data-v-853a5c3e] {\n    border: 5px solid white;\n    padding: 5px;\n    width: 100%;\n    height: 100%;\n}\n.square_3[data-v-853a5c3e] {\n    background: yellow;\n    padding: 2.5px;\n    width: 100%;\n    height: 100%;\n}\n.square_4[data-v-853a5c3e] {\n    border: 5px solid yellow;\n    padding: 4px;\n    position: absolute;\n    bottom: 50%;\n    margin-bottom: -20px;\n    height: 40px;\n    width: 40px;\n    right: -20px;\n    transform: rotate(45deg);\n}\n.square_5[data-v-853a5c3e] {\n    border: 5px solid white;\n    padding: 5px;\n    width: 100%;\n    height: 100%;\n}\n.square_6[data-v-853a5c3e] {\n    background: yellow;\n    padding: 2.3px;\n    width: 100%;\n    height: 100%;\n}\n.left_box[data-v-853a5c3e],\n  .right_box[data-v-853a5c3e] {\n    width: 100%;\n}\n.top_head[data-v-853a5c3e] {\n    margin: 0 !important;\n}\n.comm_image[data-v-853a5c3e] {\n    height: auto;\n}\n.box[data-v-853a5c3e] {\n    width: 70%;\n    margin: 30px auto;\n    height:300px\n}\n}\n@media (max-width: 425px) {\n.img_text p[data-v-853a5c3e] {\n    font-size: 12.5px;\n}\n.box[data-v-853a5c3e] {\n    width: 100%;\n}\nh4[data-v-853a5c3e]{\n    font-size: 16px !important;\n}\nh5[data-v-853a5c3e]{\n    font-size: 15px !important;\n}\n.commiss[data-v-853a5c3e]{\n    padding: 15px 0;\n}\n.top_header[data-v-853a5c3e]{\n    padding: 5px 10px;\n}\n.comm_body[data-v-853a5c3e]{\n    margin-bottom: 30px;\n}\n}\n", ""]);
 
 // exports
 
@@ -894,7 +896,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n.initiatives[data-v-441a8b78]{\n      background: rgb(255, 255, 255,.98);\n      padding: 40px 0;\n}\n.ini_head[data-v-441a8b78]{\n    margin-left: 15px;\n}\n", ""]);
+exports.push([module.i, "\n.initiatives[data-v-441a8b78]{\n      background: rgb(255, 255, 255,.95);\n      padding: 40px 0;\n}\n.ini_head[data-v-441a8b78]{\n    margin-left: 15px;\n}\n", ""]);
 
 // exports
 
@@ -932,7 +934,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n#polls[data-v-4f7985db] {\n  padding: 30px 15px 65px;\n  height: auto;\n   background:rgba(255, 255, 255, .98);\n  position: relative;\n}\n.z[data-v-4f7985db]{\n  position:relative;\n  z-index: 2;\n}\n.my-poll[data-v-4f7985db] {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n}\n.tab[data-v-4f7985db] {\n  background: repeating-linear-gradient(\n    to right,\n    rgb(15, 122, 138, 0.7) 0%,\n    rgb(15, 122, 138, 0.85) 100%\n  );\n  height: auto;\n  width: 32%;\n  padding: 15px;\n  border-radius: 10px;\n  display: flex;\n  justify-content: space-evenly;\n  align-items: center;\n  flex-direction: column;\n  cursor: pointer;\n}\n.tab:hover .icon[data-v-4f7985db] {\n  transform: scale(1.04);\n  transition: all 0.4s;\n}\n.mc1[data-v-4f7985db]{\n  color:transparent;\n}\n.icon[data-v-4f7985db] {\n  font-size: 65px;\n  margin-bottom: 20px;\n}\n@media (max-width: 1024px) {\n}\n@media (max-width: 768px) {\n.my-poll[data-v-4f7985db] {\n    flex-direction: column-reverse;\n    padding: 25px;\n}\n.tab[data-v-4f7985db] {\n    height: auto;\n    width: 100%;\n    margin-bottom: 30px;\n}\n}\n@media (max-width: 425px) {\n.icon[data-v-4f7985db]{\n    font-size: 55px;\n}\n}\n", ""]);
+exports.push([module.i, "\n#polls[data-v-4f7985db] {\n  padding: 30px 0px 65px;\n  height: auto;\n   background:rgba(255, 255, 255, .95);\n  position: relative;\n}\n.z[data-v-4f7985db]{\n  position:relative;\n  z-index: 2;\n}\n.my-poll[data-v-4f7985db] {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  width: 80%;\n  margin:0 auto;\n}\n.main_header[data-v-4f7985db]{\n  padding:0 15px;\n}\n.tab[data-v-4f7985db] {\n  background: repeating-linear-gradient(\n    to right,\n    rgb(15, 122, 138, 0.7) 0%,\n    rgb(15, 122, 138, 0.85) 100%\n  );\n  height: auto;\n  width: 32%;\n  padding: 15px;\n  border-radius: 10px;\n  display: flex;\n  justify-content: space-evenly;\n  align-items: center;\n  flex-direction: column;\n  cursor: pointer;\n}\n.tab:hover .icon[data-v-4f7985db] {\n  transform: scale(1.04);\n  transition: all 0.4s;\n}\n.mc1[data-v-4f7985db]{\n  color:transparent;\n}\n.icon[data-v-4f7985db] {\n  font-size: 65px;\n  margin-bottom: 20px;\n}\n@media (max-width: 1024px) {\n}\n@media (max-width: 768px) {\n.my-poll[data-v-4f7985db] {\n    flex-direction: column-reverse;\n    padding: 25px;\n}\n.tab[data-v-4f7985db] {\n    height: auto;\n    width: 100%;\n    margin-bottom: 30px;\n}\n}\n@media (max-width: 425px) {\n.icon[data-v-4f7985db]{\n    font-size: 55px;\n}\n}\n", ""]);
 
 // exports
 
@@ -951,7 +953,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n#projects[data-v-437e2f03] {\n  padding: 40px 0px;\n  height: auto;\n  width: 75%;\n  margin: 0 auto;\n}\n.my-projects[data-v-437e2f03] {\n  height: 250px;\n}\n.slide[data-v-437e2f03] {\n  background: #fff;\n  border-radius: 5px;\n  overflow: hidden;\n}\na[data-v-437e2f03]{\n  color:#0F7A8A;\n}\n.img_contain[data-v-437e2f03] {\n  width: 100%;\n  height: 75%;\n}\n.img_contain img[data-v-437e2f03] {\n  width: 100%;\n  height: 100%;\n}\n.img_text[data-v-437e2f03] {\n  width: 100%;\n  padding: 10px;\n  text-align: left;\n  font-size: 15px;\n  height: 25%;\n  text-align: center;\n  background: repeating-linear-gradient(\n    to right,\n    rgb(15, 122, 138, 0.7) 0%,\n    rgb(15, 122, 138, 0.85) 100%\n  );\n  color: white;\n}\n.swiper-pagination-fraction[data-v-437e2f03],\n.swiper-pagination-custom[data-v-437e2f03],\n.swiper-container-horizontal > .swiper-pagination-bullets[data-v-437e2f03] {\n  bottom: -5px;\n  left: 0;\n  width: 100%;\n}\np[data-v-437e2f03] {\n  margin: 0;\n}\n@media (max-width: 1024px) {\n}\n@media (max-width: 768px) {\n#projects[data-v-437e2f03] {\n    width: 100%;\n    padding: 10px 25px;\n}\np[data-v-437e2f03] {\n    font-size: 13.5px;\n}\n.img_text[data-v-437e2f03] {\n    height: auto;\n}\n  /* .my-projects {\n    height: 280px;\n  } */\n.img_contain[data-v-437e2f03] {\n    height: 180px;\n}\n}\n@media (max-width: 425px) {\n#projects[data-v-437e2f03] {\n    padding: 40px 15px 0;\n}\np[data-v-437e2f03] {\n    font-size: 11px;\n}\n.my-projects[data-v-437e2f03] {\n    height: auto;\n}\n.img_contain[data-v-437e2f03] {\n    height: 120px;\n}\n.img_text[data-v-437e2f03] {\n    padding: 10px 2px;\n}\n}\n", ""]);
+exports.push([module.i, "\n#projects[data-v-437e2f03] {\n  padding: 40px 0px;\n  height: auto;\n  width: 80%;\n  margin: 0 auto;\n}\n.my-projects[data-v-437e2f03] {\n  height: 250px;\n}\n.slide[data-v-437e2f03] {\n  background: #fff;\n  border-radius: 5px;\n  overflow: hidden;\n}\na[data-v-437e2f03]{\n  color:#0F7A8A;\n}\n.img_contain[data-v-437e2f03] {\n  width: 100%;\n  height: 75%;\n}\n.img_contain img[data-v-437e2f03] {\n  width: 100%;\n  height: 100%;\n}\n.img_text[data-v-437e2f03] {\n  width: 100%;\n  padding: 10px;\n  text-align: left;\n  font-size: 15px;\n  height: 25%;\n  text-align: center;\n  background: repeating-linear-gradient(\n    to right,\n    rgb(15, 122, 138, 0.7) 0%,\n    rgb(15, 122, 138, 0.85) 100%\n  );\n  color: white;\n}\n.swiper-pagination-fraction[data-v-437e2f03],\n.swiper-pagination-custom[data-v-437e2f03],\n.swiper-container-horizontal > .swiper-pagination-bullets[data-v-437e2f03] {\n  bottom: -5px;\n  left: 0;\n  width: 100%;\n}\np[data-v-437e2f03] {\n  margin: 0;\n}\n@media (max-width: 1024px) {\n}\n@media (max-width: 768px) {\n#projects[data-v-437e2f03] {\n    width: 100%;\n    padding: 10px 25px;\n}\np[data-v-437e2f03] {\n    font-size: 13.5px;\n}\n.img_text[data-v-437e2f03] {\n    height: auto;\n}\n  /* .my-projects {\n    height: 280px;\n  } */\n.img_contain[data-v-437e2f03] {\n    height: 180px;\n}\n}\n@media (max-width: 425px) {\n#projects[data-v-437e2f03] {\n    padding: 40px 15px 0;\n}\np[data-v-437e2f03] {\n    font-size: 11px;\n}\n.my-projects[data-v-437e2f03] {\n    height: auto;\n}\n.img_contain[data-v-437e2f03] {\n    height: 120px;\n}\n.img_text[data-v-437e2f03] {\n    padding: 10px 2px;\n}\n}\n", ""]);
 
 // exports
 
@@ -970,7 +972,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n#programs[data-v-20f394e7] {\n  padding: 40px 0px;\n  height: auto;\n  width: 75%;\n  margin: 0 auto;\n}\n.my-programs[data-v-20f394e7] {\n  height: 250px;\n}\na[data-v-20f394e7]{\n  color: #0F7A8A;\n}\n.slide[data-v-20f394e7] {\n  background: #fff;\n  border-radius: 5px;\n  overflow: hidden;\n}\n.img_contain[data-v-20f394e7] {\n  width: 100%;\n  height: 75%;\n}\n.img_contain img[data-v-20f394e7]{\n  width: 100%;\n  height: 100%;\n}\n.img_text[data-v-20f394e7] {\n  width: 100%;\n  padding: 10px;\n  text-align: left;\n  font-size: 15px;\n  height: 25%;\n  text-align: center;\n  background:   repeating-linear-gradient(\n    to right,\n    rgb(15, 122, 138, 0.7) 0%,\n    rgb(15, 122, 138, 0.85) 100%\n  );\n  color: white;\n}\n.swiper-pagination-fraction[data-v-20f394e7], .swiper-pagination-custom[data-v-20f394e7], .swiper-container-horizontal > .swiper-pagination-bullets[data-v-20f394e7] {\n    bottom: -5px;\n    left: 0;\n    width: 100%;\n}\np[data-v-20f394e7]{\n  margin: 0;\n}\n@media (max-width: 1024px) {\n}\n@media (max-width: 768px) {\n#programs[data-v-20f394e7]{\n    width: 100%;\n    padding: 10px 25px;\n}\np[data-v-20f394e7] {\n    font-size: 13.5px;\n}\n.img_text[data-v-20f394e7] {\n    height: auto;\n}\n  /* .my-programs {\n    height: 280px;\n  } */\n.img_contain[data-v-20f394e7] {\n    height: 180px;\n}\n}\n@media (max-width: 425px) {\n#programs[data-v-20f394e7]{\n    padding:40px 15px;\n}\np[data-v-20f394e7] {\n    font-size: 11px;\n}\n.my-programs[data-v-20f394e7] {\n    height: auto;\n}\n.img_contain[data-v-20f394e7]{\n    height: 120px;\n}\n.img_text[data-v-20f394e7]{\n    padding:10px 2px;\n}\n}\n", ""]);
+exports.push([module.i, "\n#programs[data-v-20f394e7] {\n  padding: 40px 0px;\n  height: auto;\n  width: 80%;\n  margin: 0 auto;\n}\n.my-programs[data-v-20f394e7] {\n  height: 250px;\n}\na[data-v-20f394e7]{\n  color: #0F7A8A;\n}\n.slide[data-v-20f394e7] {\n  background: #fff;\n  border-radius: 5px;\n  overflow: hidden;\n}\n.img_contain[data-v-20f394e7] {\n  width: 100%;\n  height: 75%;\n}\n.img_contain img[data-v-20f394e7]{\n  width: 100%;\n  height: 100%;\n}\n.img_text[data-v-20f394e7] {\n  width: 100%;\n  padding: 10px;\n  text-align: left;\n  font-size: 15px;\n  height: 25%;\n  text-align: center;\n  background:   repeating-linear-gradient(\n    to right,\n    rgb(15, 122, 138, 0.7) 0%,\n    rgb(15, 122, 138, 0.85) 100%\n  );\n  color: white;\n}\n.swiper-pagination-fraction[data-v-20f394e7], .swiper-pagination-custom[data-v-20f394e7], .swiper-container-horizontal > .swiper-pagination-bullets[data-v-20f394e7] {\n    bottom: -5px;\n    left: 0;\n    width: 100%;\n}\np[data-v-20f394e7]{\n  margin: 0;\n}\n@media (max-width: 1024px) {\n}\n@media (max-width: 768px) {\n#programs[data-v-20f394e7]{\n    width: 100%;\n    padding: 10px 25px;\n}\np[data-v-20f394e7] {\n    font-size: 13.5px;\n}\n.img_text[data-v-20f394e7] {\n    height: auto;\n}\n  /* .my-programs {\n    height: 280px;\n  } */\n.img_contain[data-v-20f394e7] {\n    height: 180px;\n}\n}\n@media (max-width: 425px) {\n#programs[data-v-20f394e7]{\n    padding:40px 15px;\n}\np[data-v-20f394e7] {\n    font-size: 11px;\n}\n.my-programs[data-v-20f394e7] {\n    height: auto;\n}\n.img_contain[data-v-20f394e7]{\n    height: 120px;\n}\n.img_text[data-v-20f394e7]{\n    padding:10px 2px;\n}\n}\n", ""]);
 
 // exports
 
@@ -1608,7 +1610,7 @@ var render = function() {
               { staticClass: "banner_2_text text-center animated fadeIn slow" },
               [
                 _c("div", { staticClass: "banner_2_imo josefin" }, [
-                  _vm._v("IMO STATE Ministry of Education")
+                  _vm._v("Imo State Ministry of Education")
                 ]),
                 _vm._v(" "),
                 _c("div", { staticClass: "banner_2_lor" }, [
@@ -1741,66 +1743,68 @@ var staticRenderFns = [
         ])
       ]),
       _vm._v(" "),
-      _c("h3", { staticClass: "josefin mb-4 main_header" }, [
-        _vm._v("Stakeholders")
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "commiss" }, [
-        _c("div", { staticClass: "commissioner box shadow-sm" }, [
-          _c("div", { staticClass: "top_header" }, [
-            _c("h4", { staticClass: "josefin " }, [
-              _vm._v("PROF.B.T.O . IKEGWUOHA")
-            ]),
-            _vm._v(" "),
-            _c("h5", { staticClass: "josefin " }, [
-              _vm._v("Honorable Commissioner For Education, Imo state")
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "img" }, [
-            _c("img", {
-              attrs: {
-                src: "/images/comm.jpeg",
-                alt: "Commissioner of Education, Imo state"
-              }
-            })
-          ])
+      _c("div", [
+        _c("h3", { staticClass: "josefin mb-4 main_header" }, [
+          _vm._v("Stakeholders")
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "governor box shadow-sm" }, [
-          _c("div", { staticClass: "top_header" }, [
-            _c("small", [_vm._v("His Excellency")]),
-            _vm._v(" "),
-            _c("h4", { staticClass: "josefin" }, [
-              _vm._v("SEN. HOPE UZODIMMA")
+        _c("div", { staticClass: "commiss" }, [
+          _c("div", { staticClass: "commissioner box shadow-sm" }, [
+            _c("div", { staticClass: "top_header" }, [
+              _c("h4", { staticClass: "josefin " }, [
+                _vm._v("PROF.B.T.O . IKEGWUOHA")
+              ]),
+              _vm._v(" "),
+              _c("h5", { staticClass: "josefin " }, [
+                _vm._v("Honorable Commissioner For Education, Imo state")
+              ])
             ]),
             _vm._v(" "),
-            _c("h5", { staticClass: "josefin " }, [
-              _vm._v("Governor, Imo state")
+            _c("div", { staticClass: "img" }, [
+              _c("img", {
+                attrs: {
+                  src: "/images/comm.jpeg",
+                  alt: "Commissioner of Education, Imo state"
+                }
+              })
             ])
           ]),
           _vm._v(" "),
-          _c("div", { staticClass: "img" }, [
-            _c("img", {
-              attrs: { src: "/images/govt.jpeg", alt: "Governor, imo state" }
-            })
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "perm_sec box shadow-sm" }, [
-          _c("div", { staticClass: "top_header" }, [
-            _c("h4", { staticClass: "josefin " }, [
-              _vm._v("Permanent Secretary, Imo state Ministry of Education")
+          _c("div", { staticClass: "governor box shadow-sm" }, [
+            _c("div", { staticClass: "top_header" }, [
+              _c("small", [_vm._v("His Excellency")]),
+              _vm._v(" "),
+              _c("h4", { staticClass: "josefin" }, [
+                _vm._v("SEN. HOPE UZODIMMA")
+              ]),
+              _vm._v(" "),
+              _c("h5", { staticClass: "josefin " }, [
+                _vm._v("Governor, Imo state")
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "img" }, [
+              _c("img", {
+                attrs: { src: "/images/govt.jpeg", alt: "Governor, imo state" }
+              })
             ])
           ]),
           _vm._v(" "),
-          _c("div", { staticClass: "img" }, [
-            _c("img", {
-              attrs: {
-                src: "/images/profile.png",
-                alt: "Permanent Secretary, Imo state"
-              }
-            })
+          _c("div", { staticClass: "perm_sec box shadow-sm" }, [
+            _c("div", { staticClass: "top_header" }, [
+              _c("h4", { staticClass: "josefin " }, [
+                _vm._v("Permanent Secretary, Imo state Ministry of Education")
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "img" }, [
+              _c("img", {
+                attrs: {
+                  src: "/images/profile.png",
+                  alt: "Permanent Secretary, Imo state"
+                }
+              })
+            ])
           ])
         ])
       ])

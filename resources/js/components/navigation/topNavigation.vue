@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="main-top">
     <div class="info">
       <marquee-text>
         <span class="px-4 text-white marq">Total no of pupils : 23,400</span>
@@ -147,7 +147,7 @@ a {
 }
 .info {
   background-color: #0f7a8a;
-  border-bottom: 3px solid #ffff75;
+  /* border-bottom: 3px solid #ffff75; */
   font-size: 14px;
   padding: 5px 10px;
 }
@@ -173,6 +173,10 @@ a {
   }
 }
 @media (max-width: 768px) {
+  .main-top{
+     box-shadow: rgba(0, 0, 0, 0.5) 0px 1px 4px 0px;
+     border-bottom:1px solid rgba(0, 0, 0, 0.1);
+  }
   .rel_pos {
     width: auto;
   }
@@ -185,6 +189,7 @@ a {
   }
   #top_nav {
     padding: 10px;
+ 
   }
   .img_container {
     width: 100px;

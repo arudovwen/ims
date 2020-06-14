@@ -15,7 +15,7 @@
         </div>
 
         <div class="banner_2_text text-center animated fadeIn slow">
-          <div class="banner_2_imo josefin">IMO STATE Ministry of Education</div>
+          <div class="banner_2_imo josefin">Imo State Ministry of Education</div>
           <div
             class="banner_2_lor"
           >Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, rem.</div>

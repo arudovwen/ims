@@ -10,7 +10,8 @@
             <div class="square_6"></div>
           </div>
         </div>
-    <h3 class="josefin mb-4 main_header">Stakeholders</h3>
+  <div>
+      <h3 class="josefin mb-4 main_header">Stakeholders</h3>
     <div class="commiss">
          <div class="commissioner box shadow-sm">
          <div class="top_header">
@@ -50,6 +51,7 @@
       </div>
     </div>
   </div>
+  </div>
 </template>
 <script>
 export default {
@@ -62,8 +64,7 @@ export default {
 <style scoped>
 #commissioner {
   position: relative;
-  padding: 65px 15px 65px;
-  height: auto;
+  height: 100vh;
   width: 100%;
   background: repeating-linear-gradient(
     to right,
@@ -71,17 +72,26 @@ export default {
     rgb(15, 122, 138, 0.65) 100%
   );
   overflow: hidden;
+  display: flex;
+  align-items: center;
 }
-
+.main_header{
+  position:absolute;
+  top: 20px;
+  left: 15px;
+}
 .commiss {
   display: flex;
   width: 80%;
   margin: 0 auto;
-  justify-content: space-evenly;
+  justify-content: space-between;
+}
+.governor{
+  margin-top: -10%;
 }
 .box {
   width: 25%;
-  height: 400px;
+  height: 350px;
   background: #f7f8fa;
   border-radius: 8px;
   position: relative;
@@ -218,6 +228,9 @@ h4{
   }
 }
 @media (max-width: 768px) {
+  .governor{
+  margin-top: 0;
+}
   #commissioner {
     padding: 30px 15px 30px;
   }

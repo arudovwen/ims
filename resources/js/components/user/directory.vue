@@ -372,7 +372,7 @@ h6{
 }
 .navigation {
   display: flex;
-  width: 20%;
+  width: 40%;
   margin: 0 auto;
   justify-content: space-between;
   margin-top: 30px;

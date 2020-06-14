@@ -9,44 +9,46 @@ class DirectoryController extends Controller
 {
     public function create(Request $request)
     {
-        $arr=[
-           'Commercial Secondary SchoolAmaokpara',
-           'Comprehensive Secondary School Eziama Obaire',
-           "Girls' Model Secondary School Eziama Obaire",
-           'Owerre-Nkwoji Secondary School',
-           'Model Secondary School Ishiala Umudi',
-      ];
+//         $arr=[
+           
+// "Holy Rosary School of Nursing/Midwifery, Emekuku",
+// "Holy Rosary School of Health Technology, Emekuku"
+            
+            
+            
+           
+//       ];
 
       
-           foreach($arr as $ar){
-            Directory::create([
-                        'name' => $ar,
-                        'address'  => 'null',
-                        'phone_no'  => 'null',
-                        'email'  => 'null',
-                        'level'  => $request->level,
-                        'lga'  => $request->lga,
-                        'accreditation'  => $request->accreditation,
-                        'ownership'  => $request->ownership,
-                        'type'  => $request->type,
-                        'sector'  => $request->sector
-                        ]);
+//            foreach($arr as $ar){
+//             Directory::create([
+//                         'name' => $ar,
+//                         'address'  => 'null',
+//                         'phone_no'  => 'null',
+//                         'email'  => 'null',
+//                         'level'  => $request->level,
+//                         'lga'  => $request->lga,
+//                         'accreditation'  => $request->accreditation,
+//                         'ownership'  => $request->ownership,
+//                         'type'  => $request->type,
+//                         'sector'  => $request->sector
+//                         ]);
             
-           }
+//            }
            
 
-        // return Directory::create([
-        //         'name' => $request->name,
-        //         'address'  => $request->address,
-        //         'phone_no'  => $request->phone_no,
-        //         'email'  => $request->email,
-        //         'level'  => $request->level,
-        //         'lga'  => $request->lga,
-        //         'accreditation'  => $request->accreditation,
-        //         'ownership'  => $request->ownership,
-        //         'type'  => $request->type,
-        //         'sector'  => $request->sector
-        //         ]);
+        return Directory::create([
+                'name' => $request->name,
+                'address'  => $request->address,
+                'phone_no'  => $request->phone_no,
+                'email'  => $request->email,
+                'level'  => $request->level,
+                'lga'  => $request->lga,
+                'accreditation'  => $request->accreditation,
+                'ownership'  => $request->ownership,
+                'type'  => $request->type,
+                'sector'  => $request->sector
+                ]);
     }
     public function update(Request $request, $id)
     {

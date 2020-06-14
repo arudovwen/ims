@@ -91,7 +91,7 @@ export default {
 #projects {
   padding: 40px 0px;
   height: auto;
-  width: 75%;
+  width: 80%;
   margin: 0 auto;
 }
 .my-projects {

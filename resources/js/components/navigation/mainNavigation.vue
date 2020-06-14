@@ -140,9 +140,10 @@ export default {
   width: 100%;
   position: relative;
   background-color: #0F7A8A;
-  border-top: 3px solid #ffff75;
+  /* border-top: 3px solid #ffff75; */
   z-index: 99;
   transition: all 0.4s;
+  box-shadow: rgba(0, 0, 0, 0.5) 0px 1px 4px 0px;
 }
 .mobile {
   display: none !important;

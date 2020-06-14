@@ -57,7 +57,7 @@ export default {
 
 <style scoped>
 #polls {
-  padding: 30px 15px 65px;
+  padding: 30px 0px 65px;
   height: auto;
    background:rgba(255, 255, 255, .95);
   position: relative;
@@ -65,11 +65,17 @@ export default {
 .z{
   position:relative;
   z-index: 2;
+ 
 }
 .my-poll {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 80%;
+  margin:0 auto;
+}
+.main_header{
+  padding:0 15px;
 }
 .tab {
   background: repeating-linear-gradient(
