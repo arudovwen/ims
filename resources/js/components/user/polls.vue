@@ -76,11 +76,7 @@ export default {
 }
 
 .tab {
-  background: repeating-linear-gradient(
-    to right,
-    rgb(15, 122, 138, 0.7) 0%,
-    rgb(15, 122, 138, 0.85) 100%
-  );
+background-image: linear-gradient(to right, #0f7a8a, #0e6d7b, #0c616d, #0b555f, #094952);
   height: auto;
   width: 32%;
   padding: 15px;

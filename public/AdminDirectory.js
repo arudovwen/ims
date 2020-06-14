@@ -412,7 +412,7 @@ __webpack_require__.r(__webpack_exports__);
     sortedSchools: function sortedSchools() {
       var _this11 = this;
 
-      if (this.filter_item == "nursery" || this.filter_item == "primary" || this.filter_item == "secondary" || this.filter_item == "tertiary") {
+      if (this.filter_item == "nursery" || this.filter_item == "primary/nursery" || this.filter_item == "secondary" || this.filter_item == "tertiary") {
         return this.schools.filter(function (item) {
           return item.level.toLowerCase() == _this11.filter_item.toLowerCase();
         });
@@ -580,23 +580,11 @@ var render = function() {
                     {
                       on: {
                         click: function($event) {
-                          return _vm.handleClick("nursery")
+                          return _vm.handleClick("primary/nursery")
                         }
                       }
                     },
-                    [_vm._v("Nursery")]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "p",
-                    {
-                      on: {
-                        click: function($event) {
-                          return _vm.handleClick("primary")
-                        }
-                      }
-                    },
-                    [_vm._v("Primary")]
+                    [_vm._v("Nursery/Primary")]
                   ),
                   _vm._v(" "),
                   _c(

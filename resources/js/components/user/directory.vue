@@ -14,8 +14,8 @@
             <h6>Category</h6>
             <li>
               <p @click="handleClick('all')">All</p>
-              <p @click="handleClick('nursery')">Nursery</p>
-              <p @click="handleClick('primary')">Primary</p>
+              <!-- <p @click="handleClick('nursery')">Nursery</p> -->
+              <p @click="handleClick('primary/nursery')">Nursery / Primary</p>
               <p @click="handleClick('secondary')">Secondary</p>
               <p @click="handleClick('tertiary')">Tertiary</p>
             </li>
@@ -299,7 +299,7 @@ export default {
   },
   computed: {
       sortedSchools(){
-          if (this.filter_item == 'nursery'||this.filter_item == 'primary' || this.filter_item == 'secondary'|| this.filter_item == 'tertiary') {
+          if (this.filter_item == 'primary/nursery'||this.filter_item == 'primary' || this.filter_item == 'secondary'|| this.filter_item == 'tertiary') {
               return this.schools.filter(item=>{
                   return item.level.toLowerCase() == this.filter_item.toLowerCase()
               })

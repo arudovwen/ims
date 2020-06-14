@@ -64,13 +64,9 @@ export default {
 <style scoped>
 #commissioner {
   position: relative;
-  height: 100vh;
+  height: 90vh;
   width: 100%;
-  background: repeating-linear-gradient(
-    to right,
-    rgb(15, 122, 138, 0.65) 0%,
-    rgb(15, 122, 138, 0.65) 100%
-  );
+  background-image: linear-gradient(to right, #0f7a8a, #0e6d7b, #0c616d, #0b555f, #094952);
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -134,19 +130,19 @@ h4{
   color:#e6f1f3;
 }
 .square_1 {
-  border: 15px solid yellow;
+  border: 10px solid yellow;
   padding: 10px;
   position: absolute;
   bottom: 50%;
-  margin-bottom: -80px;
-  height: 160px;
-  width: 160px;
-  left: -80px;
+  margin-bottom: -60px;
+  height: 120px;
+  width: 120px;
+  left: -60px;
   transform: rotate(45deg);
 }
 .square_2 {
-  border: 15px solid white;
-  padding: 15px;
+  border: 10px solid white;
+  padding: 10px;
   width: 100%;
   height: 100%;
 }
@@ -157,19 +153,19 @@ h4{
   height: 100%;
 }
 .square_4 {
-  border: 15px solid yellow;
+  border: 10px solid yellow;
   padding: 10px;
   position: absolute;
   bottom: 50%;
-  margin-bottom: -80px;
-  height: 160px;
-  width: 160px;
-  right: -80px;
+  margin-bottom: -60px;
+  height: 120px;
+  width: 120px;
+  right: -60px;
   transform: rotate(45deg);
 }
 .square_5 {
-  border: 15px solid white;
-  padding: 15px;
+  border: 10px solid white;
+  padding: 10px;
   width: 100%;
   height: 100%;
 }

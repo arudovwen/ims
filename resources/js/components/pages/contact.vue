@@ -52,7 +52,7 @@ export default {
    components:{
         Navigation,
         scrollTop
-    }
+    }      
 };
 </script>
 <style scoped>
@@ -61,7 +61,7 @@ export default {
   position: relative;
 }
 #contact .left_box {
-  background: #669f66;
+  background: #f7f8fa;
   width: 40%;
 
   height: 100%;

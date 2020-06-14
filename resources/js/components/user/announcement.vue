@@ -162,11 +162,7 @@ export default {
 .right_box {
   width: 30%;
   height: 500px;
-  background:repeating-linear-gradient(
-    to right,
-    rgb(15, 122, 138, 0.7) 0%,
-    rgb(15, 122, 138, 0.75) 100%
-  );
+  background-image: linear-gradient(to right, #0f7a8a, #0e6d7b, #0c616d, #0b555f, #094952);
   padding: 10px;
   border-radius:10px;
 }

@@ -123,7 +123,7 @@ export default {
   position: relative;
 }
 #contact .left_box {
-  background: #669f66;
+  background-image: linear-gradient(to right, #0f7a8a, #0e6d7b, #0c616d, #0b555f, #094952);
   width: 50%;
 
   height: 100%;
@@ -159,7 +159,7 @@ export default {
   padding: 8px 32px;
   box-shadow: 0px 0px 12px -2px rgba(0, 0, 0, 0.5);
   line-height: 1.25;
-  background: #669f66;
+  background-image: linear-gradient(to right, #0f7a8a, #0e6d7b, #0c616d, #0b555f, #094952);
   text-decoration: none;
   color: white;
   font-size: 14px;
