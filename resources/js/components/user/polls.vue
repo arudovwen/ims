@@ -1,7 +1,7 @@
 <template>
   <div id="polls">
 
-    <div class="z">
+    <div class="z " style="padding-left:15px">
       <h3 class="josefin mb-4 main_header">Administrative</h3>
     </div>
     <div class="my-poll z">
@@ -74,9 +74,7 @@ export default {
   width: 80%;
   margin:0 auto;
 }
-.main_header{
-  padding:0 15px;
-}
+
 .tab {
   background: repeating-linear-gradient(
     to right,

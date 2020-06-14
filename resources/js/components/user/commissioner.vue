@@ -233,6 +233,7 @@ h4{
 }
   #commissioner {
     padding: 30px 15px 30px;
+    height: auto;
   }
   .commiss {
     flex-direction: column;
