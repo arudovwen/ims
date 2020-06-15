@@ -228,6 +228,46 @@ var NewsDashboard = function NewsDashboard() {
   return Promise.all(/*! import() | admin_home */[__webpack_require__.e("/js/vendor"), __webpack_require__.e("admin_home")]).then(__webpack_require__.bind(null, /*! ./components/admin/News/newsDashboard.vue */ "./resources/js/components/admin/News/newsDashboard.vue"));
 };
 
+var AddNews = function AddNews() {
+  return Promise.all(/*! import() | add news */[__webpack_require__.e("/js/vendor"), __webpack_require__.e("add news")]).then(__webpack_require__.bind(null, /*! ./components/admin/News/addNews.vue */ "./resources/js/components/admin/News/addNews.vue"));
+};
+
+var EditNews = function EditNews() {
+  return Promise.all(/*! import() | edit news */[__webpack_require__.e("/js/vendor"), __webpack_require__.e("edit news")]).then(__webpack_require__.bind(null, /*! ./components/admin/News/editNews.vue */ "./resources/js/components/admin/News/editNews.vue"));
+};
+
+var ViewNews = function ViewNews() {
+  return Promise.all(/*! import() | view news */[__webpack_require__.e("/js/vendor"), __webpack_require__.e("view news")]).then(__webpack_require__.bind(null, /*! ./components/admin/News/viewNews.vue */ "./resources/js/components/admin/News/viewNews.vue"));
+};
+
+var AddProject = function AddProject() {
+  return Promise.all(/*! import() | add news */[__webpack_require__.e("/js/vendor"), __webpack_require__.e("add news")]).then(__webpack_require__.bind(null, /*! ./components/admin/Projects/addProject.vue */ "./resources/js/components/admin/Projects/addProject.vue"));
+};
+
+var EditProject = function EditProject() {
+  return Promise.all(/*! import() | edit news */[__webpack_require__.e("/js/vendor"), __webpack_require__.e("edit news")]).then(__webpack_require__.bind(null, /*! ./components/admin/Projects/editProject.vue */ "./resources/js/components/admin/Projects/editProject.vue"));
+};
+
+var ViewProject = function ViewProject() {
+  return Promise.all(/*! import() | view news */[__webpack_require__.e("/js/vendor"), __webpack_require__.e("view news")]).then(__webpack_require__.bind(null, /*! ./components/admin/Projects/viewProject.vue */ "./resources/js/components/admin/Projects/viewProject.vue"));
+};
+
+var AddProgram = function AddProgram() {
+  return Promise.all(/*! import() | add news */[__webpack_require__.e("/js/vendor"), __webpack_require__.e("add news")]).then(__webpack_require__.bind(null, /*! ./components/admin/Programs/addProgram.vue */ "./resources/js/components/admin/Programs/addProgram.vue"));
+};
+
+var EditProgram = function EditProgram() {
+  return Promise.all(/*! import() | edit news */[__webpack_require__.e("/js/vendor"), __webpack_require__.e("edit news")]).then(__webpack_require__.bind(null, /*! ./components/admin/Programs/editProgram.vue */ "./resources/js/components/admin/Programs/editProgram.vue"));
+};
+
+var ViewProgram = function ViewProgram() {
+  return Promise.all(/*! import() | view news */[__webpack_require__.e("/js/vendor"), __webpack_require__.e("view news")]).then(__webpack_require__.bind(null, /*! ./components/admin/Programs/viewProgram.vue */ "./resources/js/components/admin/Programs/viewProgram.vue"));
+};
+
+var DraftNews = function DraftNews() {
+  return Promise.all(/*! import() | view news */[__webpack_require__.e("/js/vendor"), __webpack_require__.e("view news")]).then(__webpack_require__.bind(null, /*! ./components/admin/News/draftNews.vue */ "./resources/js/components/admin/News/draftNews.vue"));
+};
+
 var ProgramsDashboard = function ProgramsDashboard() {
   return Promise.all(/*! import() | admin_home */[__webpack_require__.e("/js/vendor"), __webpack_require__.e("admin_home")]).then(__webpack_require__.bind(null, /*! ./components/admin/Programs/dashboard.vue */ "./resources/js/components/admin/Programs/dashboard.vue"));
 };
@@ -355,6 +395,46 @@ var routes = [{
     meta: {
       requiresAuth: true
     }
+  }, {
+    path: '/admin/create/:type',
+    component: AddNews,
+    name: 'AddNews'
+  }, {
+    path: '/admin/edit/:type/:id',
+    component: EditNews,
+    name: 'EditNews'
+  }, {
+    path: '/admin/view/:type/:id',
+    component: ViewNews,
+    name: 'ViewNews'
+  }, {
+    path: '/admin/news/draft',
+    component: DraftNews,
+    name: 'DraftNews'
+  }, {
+    path: '/admin/project/add',
+    component: AddProject,
+    name: 'AddProject'
+  }, {
+    path: '/admin/project/edit/:id',
+    component: EditProject,
+    name: 'EditProject'
+  }, {
+    path: '/admin/project/view/:id',
+    component: ViewProject,
+    name: 'ViewProject'
+  }, {
+    path: '/admin/program/add',
+    component: AddProgram,
+    name: 'AddProgram'
+  }, {
+    path: '/admin/program/edit/:id',
+    component: EditProgram,
+    name: 'EditProgram'
+  }, {
+    path: '/admin/program/view/:id',
+    component: ViewProgram,
+    name: 'ViewProgram'
   }]
 }, {
   path: "/admin/auth/:auth",

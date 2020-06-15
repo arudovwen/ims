@@ -267,7 +267,7 @@ var render = function() {
             _c(
               "li",
               [
-                _c("router-link", { attrs: { to: "" } }, [
+                _c("router-link", { attrs: { to: "/admin/news" } }, [
                   _vm._v("Announcement")
                 ])
               ],
@@ -277,7 +277,7 @@ var render = function() {
             _c(
               "li",
               [
-                _c("router-link", { attrs: { to: "" } }, [
+                _c("router-link", { attrs: { to: "/admin/news" } }, [
                   _vm._v("News Update")
                 ])
               ],

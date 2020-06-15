@@ -33,6 +33,7 @@
     },
     "dependencies": {
         "@growthbunker/vuesocial": "^0.1.2",
+        "@tinymce/tinymce-vue": "^3.2.2",
         "bootstrap-vue": "^2.13.0",
         "laravel-echo": "^1.7.0",
         "pusher-js": "^6.0.2",

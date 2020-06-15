@@ -69,6 +69,49 @@ let AdminSchool = () =>
     import(
         /* webpackChunkName: "admin_home" */ "./components/admin/News/newsDashboard.vue"
     );
+    let AddNews  = ()=>  
+     import(
+    /* webpackChunkName: "add news" */ "./components/admin/News/addNews.vue"
+);
+let EditNews  = ()=>  
+     import(
+    /* webpackChunkName: "edit news" */ "./components/admin/News/editNews.vue"
+);
+let ViewNews  = ()=>  
+     import(
+    /* webpackChunkName: "view news" */ "./components/admin/News/viewNews.vue"
+);
+
+let AddProject  = ()=>  
+import(
+/* webpackChunkName: "add news" */ "./components/admin/Projects/addProject.vue"
+);
+let EditProject  = ()=>  
+import(
+/* webpackChunkName: "edit news" */ "./components/admin/Projects/editProject.vue"
+);
+let ViewProject  = ()=>  
+import(
+/* webpackChunkName: "view news" */ "./components/admin/Projects/viewProject.vue"
+);
+
+let AddProgram  = ()=>  
+import(
+/* webpackChunkName: "add news" */ "./components/admin/Programs/addProgram.vue"
+);
+let EditProgram  = ()=>  
+import(
+/* webpackChunkName: "edit news" */ "./components/admin/Programs/editProgram.vue"
+);
+let ViewProgram  = ()=>  
+import(
+/* webpackChunkName: "view news" */ "./components/admin/Programs/viewProgram.vue"
+);
+
+let DraftNews  = ()=>  
+     import(
+    /* webpackChunkName: "view news" */ "./components/admin/News/draftNews.vue"
+);
     let ProgramsDashboard = () =>
     import(
         /* webpackChunkName: "admin_home" */ "./components/admin/Programs/dashboard.vue"
@@ -192,7 +235,58 @@ export const routes = [
                 meta:{
                     requiresAuth:true
                 }
-            }
+            },
+
+            {
+                path:'/admin/create/:type',
+                component:AddNews,
+                name:'AddNews'
+            },
+            {
+                path:'/admin/edit/:type/:id',
+                component:EditNews,
+                name:'EditNews'
+            },
+            {
+                path:'/admin/view/:type/:id',
+                component:ViewNews,
+                name:'ViewNews'
+            },
+            {
+                path:'/admin/news/draft',
+                component:DraftNews,
+                name:'DraftNews'
+            },
+            {
+                path:'/admin/project/add',
+                component:AddProject,
+                name:'AddProject'
+            },
+            {
+                path:'/admin/project/edit/:id',
+                component:EditProject,
+                name:'EditProject'
+            },
+            {
+                path:'/admin/project/view/:id',
+                component:ViewProject,
+                name:'ViewProject'
+            },
+            {
+                path:'/admin/program/add',
+                component:AddProgram,
+                name:'AddProgram'
+            },
+            {
+                path:'/admin/program/edit/:id',
+                component:EditProgram,
+                name:'EditProgram'
+            },
+            {
+                path:'/admin/program/view/:id',
+                component:ViewProgram,
+                name:'ViewProgram'
+            },
 
         ]
     },

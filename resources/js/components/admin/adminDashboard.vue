@@ -78,10 +78,10 @@
           <div class="text_header">News</div>
           <ul class="actions text-left">
             <li>
-              <router-link to="">Announcement</router-link>
+              <router-link to="/admin/news">Announcement</router-link>
             </li>
             <li>
-              <router-link to="">News Update</router-link>
+              <router-link to="/admin/news">News Update</router-link>
             </li>
           </ul>
         </div>

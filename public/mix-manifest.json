@@ -7,14 +7,17 @@
     "/AdminDirectory.js": "/AdminDirectory.js",
     "/SchoolDirectory.js": "/SchoolDirectory.js",
     "/about_routes.js": "/about_routes.js",
+    "/add news.js": "/add news.js",
     "/admin_home.js": "/admin_home.js",
     "/administrative.js": "/administrative.js",
     "/blog_routes.js": "/blog_routes.js",
     "/checkout_routes.js": "/checkout_routes.js",
     "/contact_routes.js": "/contact_routes.js",
     "/directory.js": "/directory.js",
+    "/edit news.js": "/edit news.js",
     "/home_routes.js": "/home_routes.js",
     "/initiatives.js": "/initiatives.js",
     "/organizations.js": "/organizations.js",
-    "/stakeholders.js": "/stakeholders.js"
+    "/stakeholders.js": "/stakeholders.js",
+    "/view news.js": "/view news.js"
 }

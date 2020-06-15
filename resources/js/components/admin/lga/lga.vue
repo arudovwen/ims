@@ -1,7 +1,7 @@
 <template>
   <div id="main-body">
     <div class="box box_2">
-      <div class="mini_box2 mini_first">
+      <!-- <div class="mini_box2 mini_first">
         <div class="mini_b d-flex justify-content-center align-items-center shadow-sm bg-white">
           <div class="form-group px-2 text-center">
             <input
@@ -32,8 +32,9 @@
           </div>
           <div class="mini_c shadow-sm"></div>
         </div>
-      </div>
-      <div class="mini_box2 shadow-sm bg-white p-2">
+      </div> -->
+      <div class="mini_box2 shadow-sm bg-white ">
+        <button class="button-green mb-3 ml-auto" v-if="item"> Delete</button>
         <table class="table">
           <thead>
             <tr>
@@ -183,14 +184,16 @@ export default {
 }
 .box_2 {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   grid-column-gap: 15px;
+ 
 }
 .mini_box2 {
   height: 95vh;
   max-height: 100vh;
   width: 100%;
   overflow: auto;
+   padding: 20px;
 }
 .mini_first {
   display: grid;

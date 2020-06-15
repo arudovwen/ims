@@ -104,7 +104,113 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-/* harmony default export */ __webpack_exports__["default"] = ({});
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      news: [],
+      announcements: [],
+      current: {}
+    };
+  },
+  mounted: function mounted() {
+    this.getNews();
+  },
+  methods: {
+    getNews: function getNews() {
+      var _this = this;
+
+      axios.get("/api/get-news").then(function (res) {
+        if (res.status == 200) {
+          _this.news = res.data;
+        }
+      });
+      axios.get("/api/get-announcements").then(function (res) {
+        if (res.status == 200) {
+          _this.announcements = res.data;
+        }
+      });
+      axios.get("/api/current-a").then(function (res) {
+        if (res.status == 200) {
+          _this.current = res.data;
+        }
+      });
+    }
+  }
+});
 
 /***/ }),
 
@@ -174,7 +280,55 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-/* harmony default export */ __webpack_exports__["default"] = ({});
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      programs: []
+    };
+  },
+  mounted: function mounted() {
+    this.getprograms();
+  },
+  methods: {
+    getprograms: function getprograms() {
+      var _this = this;
+
+      axios.get("/api/get-programs").then(function (res) {
+        if (res.status == 200) {
+          _this.programs = res.data;
+        }
+      });
+    }
+  }
+});
 
 /***/ }),
 
@@ -208,7 +362,62 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-/* harmony default export */ __webpack_exports__["default"] = ({});
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      projects: []
+    };
+  },
+  mounted: function mounted() {
+    this.getProjects();
+  },
+  methods: {
+    getProjects: function getProjects() {
+      var _this = this;
+
+      axios.get("/api/get-projects").then(function (res) {
+        if (res.status == 200) {
+          _this.projects = res.data;
+        }
+      });
+    }
+  }
+});
 
 /***/ }),
 
@@ -356,6 +565,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
 //
 //
 //
@@ -651,7 +861,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/c
 
 
 // module
-exports.push([module.i, "\n#main-body[data-v-6fe79b20] {\n  padding:15px;\n  height: 100vh;\n  overflow: auto;\n  display: grid;\n  grid-template-rows: 1fr 3fr;\n  grid-row-gap: 15px;\n}\n.box[data-v-6fe79b20] {\n  width: 100%;\n}\n.box_1[data-v-6fe79b20] {\n  display: grid;\n  grid-template-columns: 1fr 1fr 1fr 1fr;\n  grid-column-gap: 15px;\n}\n.mini_box[data-v-6fe79b20] {\n  height: 100%;\n  background: white;\n}\n.box_2[data-v-6fe79b20] {\n  display: grid;\n  grid-template-columns: 1fr 1fr;\n  grid-column-gap: 15px;\n}\n.mini_box2[data-v-6fe79b20] {\n  height: 100%;\n  width: 100%;\n}\n.mini_first[data-v-6fe79b20] {\n  display: grid;\n  grid-template-rows: 1fr 2fr;\n  grid-row-gap: 15px;\n}\n.mini_bb[data-v-6fe79b20] {\n  display: grid;\n  grid-template-columns: 1fr 1fr;\n  grid-column-gap: 15px;\n}\n.mini_c[data-v-6fe79b20] {\n  background: white;\n}\n", ""]);
+exports.push([module.i, "\n#main-body[data-v-6fe79b20] {\n  padding: 15px;\n  height: 100vh;\n  overflow: auto;\n  display: grid;\n  grid-template-rows: 1fr 3fr;\n  grid-row-gap: 15px;\n}\n.box[data-v-6fe79b20] {\n  width: 100%;\n}\n.box_1[data-v-6fe79b20] {\n  display: grid;\n  grid-template-columns: 1fr 1fr 1fr;\n  grid-column-gap: 15px;\n}\n.mini_box[data-v-6fe79b20] {\n  height: 100%;\n  background: white;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.box_2[data-v-6fe79b20] {\n  display: grid;\n  grid-template-columns: 1fr 2fr;\n  grid-column-gap: 15px;\n}\n.mini_box2[data-v-6fe79b20] {\n  height: 100%;\n  width: 100%;\n}\n.mini_first[data-v-6fe79b20] {\n  display: grid;\n  grid-template-rows: 1fr 2fr;\n  grid-row-gap: 15px;\n}\n.mini_bb[data-v-6fe79b20] {\n  display: grid;\n  grid-template-columns: 1fr;\n  grid-column-gap: 15px;\n}\n.mini_c[data-v-6fe79b20] {\n  background: white;\n}\ntable[data-v-6fe79b20] {\n  font-size: 14px;\n}\n", ""]);
 
 // exports
 
@@ -689,7 +899,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/c
 
 
 // module
-exports.push([module.i, "\n#main-body[data-v-67f7471f] {\n  padding:15px;\n  height: 100vh;\n  overflow: auto;\n  display: grid;\n  grid-template-rows: 1fr 3fr;\n  grid-row-gap: 15px;\n}\n.box[data-v-67f7471f] {\n  width: 100%;\n}\n.box_1[data-v-67f7471f] {\n  display: grid;\n  grid-template-columns: 1fr 1fr 1fr 1fr;\n  grid-column-gap: 15px;\n}\n.mini_box[data-v-67f7471f] {\n  height: 100%;\n  background: white;\n}\n.box_2[data-v-67f7471f] {\n  display: grid;\n  grid-template-columns: 1fr 1fr;\n  grid-column-gap: 15px;\n}\n.mini_box2[data-v-67f7471f] {\n  height: 100%;\n  width: 100%;\n}\n.mini_first[data-v-67f7471f] {\n  display: grid;\n  grid-template-rows: 1fr 2fr;\n  grid-row-gap: 15px;\n}\n.mini_bb[data-v-67f7471f] {\n  display: grid;\n  grid-template-columns: 1fr 1fr;\n  grid-column-gap: 15px;\n}\n.mini_c[data-v-67f7471f] {\n  background: white;\n}\n", ""]);
+exports.push([module.i, "\n#main-body[data-v-67f7471f] {\n  padding: 15px;\n  height: 100vh;\n  overflow: auto;\n  display: grid;\n  grid-template-rows: 1fr 3fr;\n  grid-row-gap: 15px;\n}\n.box[data-v-67f7471f] {\n  width: 100%;\n}\n.box_1[data-v-67f7471f] {\n  display: grid;\n  grid-template-columns: 1fr 1fr;\n  grid-column-gap: 15px;\n}\n.mini_box[data-v-67f7471f] {\n  height: 100%;\n  background: white;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.box_2[data-v-67f7471f] {\n  display: grid;\n  grid-template-columns: 1fr 1fr;\n  grid-column-gap: 15px;\n}\n.mini_box2[data-v-67f7471f] {\n  height: 100%;\n  width: 100%;\n}\n.mini_first[data-v-67f7471f] {\n  display: grid;\n  grid-template-rows: 1fr 2fr;\n  grid-row-gap: 15px;\n}\n.mini_bb[data-v-67f7471f] {\n  display: grid;\n  grid-template-columns: 1fr;\n  grid-column-gap: 15px;\n}\n.mini_c[data-v-67f7471f] {\n  background: white;\n}\n", ""]);
 
 // exports
 
@@ -708,7 +918,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/c
 
 
 // module
-exports.push([module.i, "\n#main-body[data-v-bc42842c] {\n  padding:15px;\n  height: 100vh;\n  overflow: auto;\n  display: grid;\n  grid-template-rows: 1fr 3fr;\n  grid-row-gap: 15px;\n}\n.box[data-v-bc42842c] {\n  width: 100%;\n}\n.box_1[data-v-bc42842c] {\n  display: grid;\n  grid-template-columns: 1fr 1fr 1fr 1fr;\n  grid-column-gap: 15px;\n}\n.mini_box[data-v-bc42842c] {\n  height: 100%;\n  background: white;\n}\n.box_2[data-v-bc42842c] {\n  display: grid;\n  grid-template-columns: 1fr 1fr;\n  grid-column-gap: 15px;\n}\n.mini_box2[data-v-bc42842c] {\n  height: 100%;\n  width: 100%;\n}\n.mini_first[data-v-bc42842c] {\n  display: grid;\n  grid-template-rows: 1fr 2fr;\n  grid-row-gap: 15px;\n}\n.mini_bb[data-v-bc42842c] {\n  display: grid;\n  grid-template-columns: 1fr 1fr;\n  grid-column-gap: 15px;\n}\n.mini_c[data-v-bc42842c] {\n  background: white;\n}\n", ""]);
+exports.push([module.i, "\n#main-body[data-v-bc42842c] {\n  padding:15px;\n  height: 100vh;\n  overflow: auto;\n  display: grid;\n  grid-template-rows: 1fr 3fr;\n  grid-row-gap: 15px;\n}\n.box[data-v-bc42842c] {\n  width: 100%;\n}\n.box_1[data-v-bc42842c] {\n  display: grid;\n  grid-template-columns: 1fr 1fr ;\n  grid-column-gap: 15px;\n}\n.mini_box[data-v-bc42842c] {\n  height: 100%;\n  background: white;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.box_2[data-v-bc42842c] {\n  display: grid;\n  grid-template-columns: 1fr 1fr;\n  grid-column-gap: 15px;\n}\n.mini_box2[data-v-bc42842c] {\n  height: 100%;\n  width: 100%;\n}\n.mini_first[data-v-bc42842c] {\n  display: grid;\n  grid-template-rows: 1fr 2fr;\n  grid-row-gap: 15px;\n}\n.mini_bb[data-v-bc42842c] {\n  display: grid;\n  grid-template-columns: 1fr;\n  grid-column-gap: 15px;\n}\n.mini_c[data-v-bc42842c] {\n  background: white;\n}\n", ""]);
 
 // exports
 
@@ -727,7 +937,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/c
 
 
 // module
-exports.push([module.i, "\n#main-body[data-v-3f87f4fc] {\n  padding: 15px;\n  height: 100vh;\n  overflow: auto;\n  display: grid;\n}\n.box[data-v-3f87f4fc] {\n  width: 100%;\n}\n.box_1[data-v-3f87f4fc] {\n  display: grid;\n  grid-template-columns: 1fr 1fr 1fr 1fr;\n  grid-column-gap: 15px;\n}\n.mini_box[data-v-3f87f4fc] {\n  height: 100%;\n  background: white;\n}\n.box_2[data-v-3f87f4fc] {\n  display: grid;\n  grid-template-columns: 1fr 1fr;\n  grid-column-gap: 15px;\n}\n.mini_box2[data-v-3f87f4fc] {\n  height: 95vh;\n  max-height: 100vh;\n  width: 100%;\n  overflow: auto;\n}\n.mini_first[data-v-3f87f4fc] {\n  display: grid;\n  grid-template-rows: 1fr 2fr;\n  grid-row-gap: 15px;\n}\n.mini_b[data-v-3f87f4fc] {\n}\n.mini_bb[data-v-3f87f4fc] {\n  display: grid;\n  grid-template-columns: 1fr 1fr;\n  grid-column-gap: 15px;\n}\n.mini_c[data-v-3f87f4fc] {\n  background: white;\n}\n", ""]);
+exports.push([module.i, "\n#main-body[data-v-3f87f4fc] {\n  padding: 15px;\n  height: 100vh;\n  overflow: auto;\n  display: grid;\n}\n.box[data-v-3f87f4fc] {\n  width: 100%;\n}\n.box_1[data-v-3f87f4fc] {\n  display: grid;\n  grid-template-columns: 1fr 1fr 1fr 1fr;\n  grid-column-gap: 15px;\n}\n.mini_box[data-v-3f87f4fc] {\n  height: 100%;\n  background: white;\n}\n.box_2[data-v-3f87f4fc] {\n  display: grid;\n  grid-template-columns: 1fr;\n  grid-column-gap: 15px;\n}\n.mini_box2[data-v-3f87f4fc] {\n  height: 95vh;\n  max-height: 100vh;\n  width: 100%;\n  overflow: auto;\n   padding: 20px;\n}\n.mini_first[data-v-3f87f4fc] {\n  display: grid;\n  grid-template-rows: 1fr 2fr;\n  grid-row-gap: 15px;\n}\n.mini_b[data-v-3f87f4fc] {\n}\n.mini_bb[data-v-3f87f4fc] {\n  display: grid;\n  grid-template-columns: 1fr 1fr;\n  grid-column-gap: 15px;\n}\n.mini_c[data-v-3f87f4fc] {\n  background: white;\n}\n", ""]);
 
 // exports
 
@@ -1125,36 +1335,190 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", { attrs: { id: "main-body" } }, [
+    _c("div", { staticClass: "box box_1" }, [
+      _c(
+        "div",
+        { staticClass: "mini_box shadow-sm" },
+        [
+          _c("router-link", { attrs: { to: "/admin/create/news" } }, [
+            _vm._v("Create News")
+          ])
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "mini_box shadow-sm" },
+        [
+          _c("router-link", { attrs: { to: "/admin/create/announcement" } }, [
+            _vm._v("Create Announcement")
+          ])
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "mini_box shadow-sm" },
+        [
+          _c("router-link", { attrs: { to: "/admin/news/draft" } }, [
+            _vm._v("Draft")
+          ])
+        ],
+        1
+      )
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "box box_2" }, [
+      _c("div", { staticClass: "mini_box2 mini_first" }, [
+        _c(
+          "div",
+          {
+            staticClass:
+              "d-flex flex-column justify-content-center align-items-center mini_b shadow-sm bg-white"
+          },
+          [
+            _c("h5", [_vm._v("Current Announcement")]),
+            _vm._v(" "),
+            _c("h4", [_vm._v(_vm._s(_vm.current[0].subject))])
+          ]
+        ),
+        _vm._v(" "),
+        _c("div", { staticClass: "mini_b mini_bb" }, [
+          _c("div", { staticClass: "mini_c shadow-sm p-2" }, [
+            _c("h5", [_vm._v("All Announcement")]),
+            _vm._v(" "),
+            _c("table", { staticClass: "table" }, [
+              _vm._m(0),
+              _vm._v(" "),
+              _c(
+                "tbody",
+                _vm._l(_vm.announcements, function(item, idx) {
+                  return _c("tr", { key: idx }, [
+                    _c("td", { attrs: { scope: "row" } }, [
+                      _vm._v(_vm._s(idx + 1))
+                    ]),
+                    _vm._v(" "),
+                    _c("td", [_vm._v(_vm._s(item.subject))]),
+                    _vm._v(" "),
+                    _c("td", [_vm._v(_vm._s(item.status))]),
+                    _vm._v(" "),
+                    _c(
+                      "td",
+                      [
+                        _c(
+                          "router-link",
+                          {
+                            staticClass: "text-dark",
+                            attrs: {
+                              to: {
+                                name: "ViewNews",
+                                params: {
+                                  type: "announcement",
+                                  id: item.id
+                                }
+                              }
+                            }
+                          },
+                          [_vm._v("View")]
+                        )
+                      ],
+                      1
+                    )
+                  ])
+                }),
+                0
+              )
+            ])
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "mini_box2 shadow-sm bg-white p-2" }, [
+        _c("h5", [_vm._v("All News")]),
+        _vm._v(" "),
+        _c("table", { staticClass: "table" }, [
+          _vm._m(1),
+          _vm._v(" "),
+          _c(
+            "tbody",
+            _vm._l(_vm.news, function(item, idx) {
+              return _c("tr", { key: idx }, [
+                _c("td", { attrs: { scope: "row" } }, [
+                  _vm._v(_vm._s(idx + 1))
+                ]),
+                _vm._v(" "),
+                _c("td", [_vm._v(_vm._s(item.category))]),
+                _vm._v(" "),
+                _c("td", [_vm._v(_vm._s(item.subject))]),
+                _vm._v(" "),
+                _c("td", [_vm._v(_vm._s(item.status))]),
+                _vm._v(" "),
+                _c(
+                  "td",
+                  [
+                    _c(
+                      "router-link",
+                      {
+                        staticClass: "text-dark",
+                        attrs: {
+                          to: {
+                            name: "ViewNews",
+                            params: {
+                              type: "news",
+                              id: item.id
+                            }
+                          }
+                        }
+                      },
+                      [_vm._v("View")]
+                    )
+                  ],
+                  1
+                )
+              ])
+            }),
+            0
+          )
+        ])
+      ])
+    ])
+  ])
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { attrs: { id: "main-body" } }, [
-      _c("div", { staticClass: "box box_1" }, [
-        _c("div", { staticClass: "mini_box shadow-sm" }),
+    return _c("thead", [
+      _c("tr", [
+        _c("th", [_vm._v("#")]),
         _vm._v(" "),
-        _c("div", { staticClass: "mini_box shadow-sm" }),
+        _c("th", [_vm._v("Subject")]),
         _vm._v(" "),
-        _c("div", { staticClass: "mini_box shadow-sm" }),
+        _c("th", [_vm._v("Status")]),
         _vm._v(" "),
-        _c("div", { staticClass: "mini_box shadow-sm" })
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "box box_2" }, [
-        _c("div", { staticClass: "mini_box2 mini_first" }, [
-          _c("div", { staticClass: "mini_b shadow-sm bg-white" }),
-          _vm._v(" "),
-          _c("div", { staticClass: "mini_b mini_bb" }, [
-            _c("div", { staticClass: "mini_c shadow-sm" }),
-            _vm._v(" "),
-            _c("div", { staticClass: "mini_c shadow-sm" })
-          ])
-        ]),
+        _c("th", [_vm._v("View")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("thead", [
+      _c("tr", [
+        _c("th", [_vm._v("#")]),
         _vm._v(" "),
-        _c("div", { staticClass: "mini_box2 shadow-sm bg-white" })
+        _c("th", [_vm._v("Category")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Subject")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Status")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("View")])
       ])
     ])
   }
@@ -1235,36 +1599,97 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", { attrs: { id: "main-body" } }, [
+    _c("div", { staticClass: "box box_1" }, [
+      _c(
+        "div",
+        { staticClass: "mini_box shadow-sm" },
+        [
+          _c("router-link", { attrs: { to: "/admin/program/add" } }, [
+            _vm._v("Add program")
+          ])
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c("div", { staticClass: "mini_box shadow-sm" }, [
+        _vm._v("Latest program")
+      ])
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "box box_2" }, [
+      _vm._m(0),
+      _vm._v(" "),
+      _c("div", { staticClass: "mini_box2 shadow-sm bg-white p-2" }, [
+        _c("h5", [_vm._v("All programs")]),
+        _vm._v(" "),
+        _c("table", { staticClass: "table" }, [
+          _vm._m(1),
+          _vm._v(" "),
+          _c(
+            "tbody",
+            _vm._l(_vm.programs, function(item, idx) {
+              return _c("tr", { key: idx }, [
+                _c("td", { attrs: { scope: "row" } }, [
+                  _vm._v(_vm._s(idx + 1))
+                ]),
+                _vm._v(" "),
+                _c("td", [_vm._v(_vm._s(item.name))]),
+                _vm._v(" "),
+                _c(
+                  "td",
+                  [
+                    _c(
+                      "router-link",
+                      {
+                        staticClass: "text-dark",
+                        attrs: {
+                          to: {
+                            name: "ViewProgram",
+                            params: {
+                              id: item.id
+                            }
+                          }
+                        }
+                      },
+                      [_vm._v("View")]
+                    )
+                  ],
+                  1
+                )
+              ])
+            }),
+            0
+          )
+        ])
+      ])
+    ])
+  ])
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { attrs: { id: "main-body" } }, [
-      _c("div", { staticClass: "box box_1" }, [
-        _c("div", { staticClass: "mini_box shadow-sm" }),
-        _vm._v(" "),
-        _c("div", { staticClass: "mini_box shadow-sm" }),
-        _vm._v(" "),
-        _c("div", { staticClass: "mini_box shadow-sm" }),
-        _vm._v(" "),
-        _c("div", { staticClass: "mini_box shadow-sm" })
-      ]),
+    return _c("div", { staticClass: "mini_box2 mini_first" }, [
+      _c("div", { staticClass: "mini_b shadow-sm bg-white" }),
       _vm._v(" "),
-      _c("div", { staticClass: "box box_2" }, [
-        _c("div", { staticClass: "mini_box2 mini_first" }, [
-          _c("div", { staticClass: "mini_b shadow-sm bg-white" }),
-          _vm._v(" "),
-          _c("div", { staticClass: "mini_b mini_bb" }, [
-            _c("div", { staticClass: "mini_c shadow-sm" }),
-            _vm._v(" "),
-            _c("div", { staticClass: "mini_c shadow-sm" })
-          ])
-        ]),
+      _c("div", { staticClass: "mini_b mini_bb" }, [
+        _c("div", { staticClass: "mini_c shadow-sm" })
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("thead", [
+      _c("tr", [
+        _c("th", [_vm._v("#")]),
         _vm._v(" "),
-        _c("div", { staticClass: "mini_box2 shadow-sm bg-white" })
+        _c("th", [_vm._v("Name")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("View")])
       ])
     ])
   }
@@ -1290,36 +1715,97 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", { attrs: { id: "main-body" } }, [
+    _c("div", { staticClass: "box box_1" }, [
+      _c(
+        "div",
+        { staticClass: "mini_box shadow-sm" },
+        [
+          _c("router-link", { attrs: { to: "/admin/project/add" } }, [
+            _vm._v("Add project")
+          ])
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c("div", { staticClass: "mini_box shadow-sm" }, [
+        _vm._v("\n      Latest Project\n    ")
+      ])
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "box box_2" }, [
+      _vm._m(0),
+      _vm._v(" "),
+      _c("div", { staticClass: "mini_box2 shadow-sm bg-white p-2" }, [
+        _c("h5", [_vm._v("All Projects")]),
+        _vm._v(" "),
+        _c("table", { staticClass: "table" }, [
+          _vm._m(1),
+          _vm._v(" "),
+          _c(
+            "tbody",
+            _vm._l(_vm.projects, function(item, idx) {
+              return _c("tr", { key: idx }, [
+                _c("td", { attrs: { scope: "row" } }, [
+                  _vm._v(_vm._s(idx + 1))
+                ]),
+                _vm._v(" "),
+                _c("td", [_vm._v(_vm._s(item.name))]),
+                _vm._v(" "),
+                _c(
+                  "td",
+                  [
+                    _c(
+                      "router-link",
+                      {
+                        staticClass: "text-dark",
+                        attrs: {
+                          to: {
+                            name: "ViewProject",
+                            params: {
+                              id: item.id
+                            }
+                          }
+                        }
+                      },
+                      [_vm._v("View")]
+                    )
+                  ],
+                  1
+                )
+              ])
+            }),
+            0
+          )
+        ])
+      ])
+    ])
+  ])
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { attrs: { id: "main-body" } }, [
-      _c("div", { staticClass: "box box_1" }, [
-        _c("div", { staticClass: "mini_box shadow-sm" }),
-        _vm._v(" "),
-        _c("div", { staticClass: "mini_box shadow-sm" }),
-        _vm._v(" "),
-        _c("div", { staticClass: "mini_box shadow-sm" }),
-        _vm._v(" "),
-        _c("div", { staticClass: "mini_box shadow-sm" })
-      ]),
+    return _c("div", { staticClass: "mini_box2 mini_first" }, [
+      _c("div", { staticClass: "mini_b shadow-sm bg-white" }),
       _vm._v(" "),
-      _c("div", { staticClass: "box box_2" }, [
-        _c("div", { staticClass: "mini_box2 mini_first" }, [
-          _c("div", { staticClass: "mini_b shadow-sm bg-white" }),
-          _vm._v(" "),
-          _c("div", { staticClass: "mini_b mini_bb" }, [
-            _c("div", { staticClass: "mini_c shadow-sm" }),
-            _vm._v(" "),
-            _c("div", { staticClass: "mini_c shadow-sm" })
-          ])
-        ]),
+      _c("div", { staticClass: "mini_b mini_bb" }, [
+        _c("div", { staticClass: "mini_c shadow-sm" })
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("thead", [
+      _c("tr", [
+        _c("th", [_vm._v("#")]),
         _vm._v(" "),
-        _c("div", { staticClass: "mini_box2 shadow-sm bg-white" })
+        _c("th", [_vm._v("Name")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("View")])
       ])
     ])
   }
@@ -1523,105 +2009,13 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", { attrs: { id: "main-body" } }, [
     _c("div", { staticClass: "box box_2" }, [
-      _c("div", { staticClass: "mini_box2 mini_first" }, [
-        _c(
-          "div",
-          {
-            staticClass:
-              "mini_b d-flex justify-content-center align-items-center shadow-sm bg-white"
-          },
-          [
-            _c("div", { staticClass: "form-group px-2 text-center" }, [
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.name,
-                    expression: "name"
-                  }
-                ],
-                staticClass: "form-control mb-2",
-                attrs: {
-                  type: "text",
-                  "aria-describedby": "helpId",
-                  placeholder: "Enter lga name"
-                },
-                domProps: { value: _vm.name },
-                on: {
-                  input: function($event) {
-                    if ($event.target.composing) {
-                      return
-                    }
-                    _vm.name = $event.target.value
-                  }
-                }
-              }),
-              _vm._v(" "),
-              _c(
-                "button",
-                { staticClass: "button-blue", on: { click: _vm.addLga } },
-                [_vm._v("Add")]
-              )
+      _c("div", { staticClass: "mini_box2 shadow-sm bg-white " }, [
+        _vm.item
+          ? _c("button", { staticClass: "button-green mb-3 ml-auto" }, [
+              _vm._v(" Delete")
             ])
-          ]
-        ),
+          : _vm._e(),
         _vm._v(" "),
-        _vm.id !== null
-          ? _c("div", { staticClass: "mini_b mini_bb" }, [
-              _c(
-                "div",
-                {
-                  staticClass:
-                    "mini_c shadow-sm d-flex flex-column justify-content-center align-items-center"
-                },
-                [
-                  _c("h5", { staticClass: "mb-3" }, [
-                    _vm._v(_vm._s(_vm.old_name))
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "form-group px-2 text-center" }, [
-                    _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.edit_name,
-                          expression: "edit_name"
-                        }
-                      ],
-                      staticClass: "form-control mb-2",
-                      attrs: {
-                        type: "text",
-                        "aria-describedby": "helpId",
-                        placeholder: "Enter lga name"
-                      },
-                      domProps: { value: _vm.edit_name },
-                      on: {
-                        input: function($event) {
-                          if ($event.target.composing) {
-                            return
-                          }
-                          _vm.edit_name = $event.target.value
-                        }
-                      }
-                    }),
-                    _vm._v(" "),
-                    _c(
-                      "button",
-                      { staticClass: "button-blue", on: { click: _vm.update } },
-                      [_vm._v("Update")]
-                    )
-                  ])
-                ]
-              ),
-              _vm._v(" "),
-              _c("div", { staticClass: "mini_c shadow-sm" })
-            ])
-          : _vm._e()
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "mini_box2 shadow-sm bg-white p-2" }, [
         _c("table", { staticClass: "table" }, [
           _c("thead", [
             _c("tr", [
