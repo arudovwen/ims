@@ -99,7 +99,7 @@ export default {
 <style scoped lang="scss">
 .main{
  background-image: url("/images/texture.png");
- padding: 45px 15px 75px;
+ padding: 45px 0 75px;
 }
 #announcement {
   display: flex;
