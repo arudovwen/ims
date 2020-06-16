@@ -1,4 +1,3 @@
-
 let Index = () =>
     import(/* webpackChunkName: "home_routes" */ "./components/index.vue");
 let Home = () =>
@@ -9,8 +8,15 @@ let Checkout = () =>
     import(
         /* webpackChunkName: "checkout_routes" */ "./components/checkout.vue"
     );
+let OrderSummary = () =>
+    import(/* webpackChunkName: "paystack" */ "./components/orderSummary.vue");
 let Blog = () =>
     import(/* webpackChunkName: "blog_routes" */ "./components/pages/blog.vue");
+
+let NewsBlog = () =>
+    import(
+        /* webpackChunkName: "blog_routes" */ "./components/pages/readBlog.vue"
+    );
 let Contact = () =>
     import(
         /* webpackChunkName: "contact_routes" */ "./components/pages/contact.vue"
@@ -65,72 +71,80 @@ let AdminSchool = () =>
     import(
         /* webpackChunkName: "admin_home" */ "./components/admin/schools/adminSchool.vue"
     );
-    let NewsDashboard = () =>
+let NewsDashboard = () =>
     import(
         /* webpackChunkName: "admin_home" */ "./components/admin/News/newsDashboard.vue"
     );
-    let AddNews  = ()=>  
-     import(
-    /* webpackChunkName: "add news" */ "./components/admin/News/addNews.vue"
-);
-let EditNews  = ()=>  
-     import(
-    /* webpackChunkName: "edit news" */ "./components/admin/News/editNews.vue"
-);
-let ViewNews  = ()=>  
-     import(
-    /* webpackChunkName: "view news" */ "./components/admin/News/viewNews.vue"
-);
+let AddNews = () =>
+    import(
+        /* webpackChunkName: "add news" */ "./components/admin/News/addNews.vue"
+    );
+let EditNews = () =>
+    import(
+        /* webpackChunkName: "edit news" */ "./components/admin/News/editNews.vue"
+    );
+let ViewNews = () =>
+    import(
+        /* webpackChunkName: "view news" */ "./components/admin/News/viewNews.vue"
+    );
 
-let AddProject  = ()=>  
-import(
-/* webpackChunkName: "add news" */ "./components/admin/Projects/addProject.vue"
-);
-let EditProject  = ()=>  
-import(
-/* webpackChunkName: "edit news" */ "./components/admin/Projects/editProject.vue"
-);
-let ViewProject  = ()=>  
-import(
-/* webpackChunkName: "view news" */ "./components/admin/Projects/viewProject.vue"
-);
+let AddProject = () =>
+    import(
+        /* webpackChunkName: "add news" */ "./components/admin/Projects/addProject.vue"
+    );
+let EditProject = () =>
+    import(
+        /* webpackChunkName: "edit news" */ "./components/admin/Projects/editProject.vue"
+    );
+let ViewProject = () =>
+    import(
+        /* webpackChunkName: "view news" */ "./components/admin/Projects/viewProject.vue"
+    );
 
-let AddProgram  = ()=>  
-import(
-/* webpackChunkName: "add news" */ "./components/admin/Programs/addProgram.vue"
-);
-let EditProgram  = ()=>  
-import(
-/* webpackChunkName: "edit news" */ "./components/admin/Programs/editProgram.vue"
-);
-let ViewProgram  = ()=>  
-import(
-/* webpackChunkName: "view news" */ "./components/admin/Programs/viewProgram.vue"
-);
+let AddProgram = () =>
+    import(
+        /* webpackChunkName: "add news" */ "./components/admin/Programs/addProgram.vue"
+    );
+let EditProgram = () =>
+    import(
+        /* webpackChunkName: "edit news" */ "./components/admin/Programs/editProgram.vue"
+    );
+let ViewProgram = () =>
+    import(
+        /* webpackChunkName: "view news" */ "./components/admin/Programs/viewProgram.vue"
+    );
 
-let DraftNews  = ()=>  
-     import(
-    /* webpackChunkName: "view news" */ "./components/admin/News/draftNews.vue"
-);
-    let ProgramsDashboard = () =>
+let DraftNews = () =>
+    import(
+        /* webpackChunkName: "view news" */ "./components/admin/News/draftNews.vue"
+    );
+let ProgramsDashboard = () =>
     import(
         /* webpackChunkName: "admin_home" */ "./components/admin/Programs/dashboard.vue"
     );
-    let ProjectsDashboard = () =>
+let ProjectsDashboard = () =>
     import(
         /* webpackChunkName: "admin_home" */ "./components/admin/Projects/dashboard.vue"
     );
-    let PaymentDashboard = () =>
+let PaymentDashboard = () =>
     import(
         /* webpackChunkName: "admin_home" */ "./components/admin/Payments/dashboard.vue"
     );
-    let ApplicationDashboard = () =>
+let ApplicationDashboard = () =>
     import(
         /* webpackChunkName: "admin_home" */ "./components/admin/Applications/dashboard.vue"
     );
-    let Lga = () =>
+let Lga = () =>
     import(
         /* webpackChunkName: "admin_home" */ "./components/admin/lga/lga.vue"
+    );
+let InitiativeProjects = () =>
+    import(
+        /* webpackChunkName: "admin_home" */ "./components/user/initiatives/projects.vue"
+    );
+let InitiativePrograms = () =>
+    import(
+        /* webpackChunkName: "admin_home" */ "./components/user/initiatives/programs.vue"
     );
 
 export const routes = [
@@ -141,12 +155,29 @@ export const routes = [
         children: []
     },
     { path: "/checkout", component: Checkout },
+    { path: "/summary", component: OrderSummary, name: "OrderSummary" },
     { path: "/blog", component: Blog },
+    { path: "/news/read/:id", component: NewsBlog, name: "NewsBlog" },
     { path: "/about", component: About },
     { path: "/contact", component: Contact },
     { path: "/organizations", component: Organizations },
     { path: "/stakeholders", component: Stakeholders },
-    { path: "/initiatives", component: Initiatives },
+    {
+        path: "/initiatives",
+        component: Initiatives,
+        children: [
+            {
+                path: "/initiatives/programs",
+                component: InitiativePrograms,
+                name: "InitiativePrograms"
+            },
+            {
+                path: "/initiatives/projects",
+                component: InitiativeProjects,
+                name: "InitiativeProjects"
+            }
+        ]
+    },
     {
         path: "/administrative",
         component: Administrative,
@@ -168,126 +199,125 @@ export const routes = [
                 path: "/admin/directory",
                 component: AdminDirectory,
                 name: "AdminDirectory",
-                meta:{
-                    requiresAuth:true
+                meta: {
+                    requiresAuth: true
                 }
             },
             {
                 path: "/admin/school/:action",
                 component: AdminSchool,
                 name: "AdminSchool",
-                meta:{
-                    requiresAuth:true
+                meta: {
+                    requiresAuth: true
                 }
             },
             {
                 path: "/admin/dashboard",
                 component: AdminDashboard,
                 name: "AdminDashboard",
-                meta:{
-                    requiresAuth:true
+                meta: {
+                    requiresAuth: true
                 }
             },
             {
                 path: "/admin/news",
                 component: NewsDashboard,
                 name: "NewsDashboard",
-                meta:{
-                    requiresAuth:true
+                meta: {
+                    requiresAuth: true
                 }
             },
             {
                 path: "/admin/payments",
                 component: PaymentDashboard,
                 name: "PaymentDashboard",
-                meta:{
-                    requiresAuth:true
+                meta: {
+                    requiresAuth: true
                 }
             },
             {
                 path: "/admin/programs",
                 component: ProgramsDashboard,
                 name: "ProgramsDashboard",
-                meta:{
-                    requiresAuth:true
+                meta: {
+                    requiresAuth: true
                 }
             },
             {
                 path: "/admin/projects",
                 component: ProjectsDashboard,
                 name: "ProjectsDashboard",
-                meta:{
-                    requiresAuth:true
+                meta: {
+                    requiresAuth: true
                 }
             },
             {
                 path: "/admin/applications",
                 component: ApplicationDashboard,
                 name: "ApplicationDashboard",
-                meta:{
-                    requiresAuth:true
+                meta: {
+                    requiresAuth: true
                 }
             },
             {
                 path: "/admin/lga",
                 component: Lga,
                 name: "Lga",
-                meta:{
-                    requiresAuth:true
+                meta: {
+                    requiresAuth: true
                 }
             },
 
             {
-                path:'/admin/create/:type',
-                component:AddNews,
-                name:'AddNews'
+                path: "/admin/create/:type",
+                component: AddNews,
+                name: "AddNews"
             },
             {
-                path:'/admin/edit/:type/:id',
-                component:EditNews,
-                name:'EditNews'
+                path: "/admin/edit/:type/:id",
+                component: EditNews,
+                name: "EditNews"
             },
             {
-                path:'/admin/view/:type/:id',
-                component:ViewNews,
-                name:'ViewNews'
+                path: "/admin/view/:type/:id",
+                component: ViewNews,
+                name: "ViewNews"
             },
             {
-                path:'/admin/news/draft',
-                component:DraftNews,
-                name:'DraftNews'
+                path: "/admin/news/draft",
+                component: DraftNews,
+                name: "DraftNews"
             },
             {
-                path:'/admin/project/add',
-                component:AddProject,
-                name:'AddProject'
+                path: "/admin/project/add",
+                component: AddProject,
+                name: "AddProject"
             },
             {
-                path:'/admin/project/edit/:id',
-                component:EditProject,
-                name:'EditProject'
+                path: "/admin/project/edit/:id",
+                component: EditProject,
+                name: "EditProject"
             },
             {
-                path:'/admin/project/view/:id',
-                component:ViewProject,
-                name:'ViewProject'
+                path: "/admin/project/view/:id",
+                component: ViewProject,
+                name: "ViewProject"
             },
             {
-                path:'/admin/program/add',
-                component:AddProgram,
-                name:'AddProgram'
+                path: "/admin/program/add",
+                component: AddProgram,
+                name: "AddProgram"
             },
             {
-                path:'/admin/program/edit/:id',
-                component:EditProgram,
-                name:'EditProgram'
+                path: "/admin/program/edit/:id",
+                component: EditProgram,
+                name: "EditProgram"
             },
             {
-                path:'/admin/program/view/:id',
-                component:ViewProgram,
-                name:'ViewProgram'
-            },
-
+                path: "/admin/program/view/:id",
+                component: ViewProgram,
+                name: "ViewProgram"
+            }
         ]
     },
     {
@@ -296,12 +326,11 @@ export const routes = [
         name: "AdminAuth",
         beforeEnter: (to, from, next) => {
             var admin = localStorage.getItem("adminUser");
-            if(admin == null){
-                next()
-            }else{
-                next({name:'AdminDashboard'})
+            if (admin == null) {
+                next();
+            } else {
+                next({ name: "AdminDashboard" });
             }
         }
-       
     }
 ];

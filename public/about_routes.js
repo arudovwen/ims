@@ -251,7 +251,7 @@ var staticRenderFns = [
                 }),
                 _vm._v(" "),
                 _c("i", {
-                  staticClass: "fa fa-bullhorn fa-stack-1x text-yellow",
+                  staticClass: "fa fa-bullhorn fa-stack-1x text-#ECEE53",
                   attrs: { "aria-hidden": "true" }
                 })
               ])
@@ -279,7 +279,7 @@ var staticRenderFns = [
                 }),
                 _vm._v(" "),
                 _c("i", {
-                  staticClass: "fa fa-eye fa-stack-1x text-yellow",
+                  staticClass: "fa fa-eye fa-stack-1x text-#ECEE53",
                   attrs: { "aria-hidden": "true" }
                 })
               ])
@@ -309,7 +309,7 @@ var staticRenderFns = [
                 }),
                 _vm._v(" "),
                 _c("i", {
-                  staticClass: "fa fa-thumbs-o-up fa-stack-1x text-yellow",
+                  staticClass: "fa fa-thumbs-o-up fa-stack-1x text-#ECEE53",
                   attrs: { "aria-hidden": "true" }
                 })
               ]),
@@ -324,7 +324,9 @@ var staticRenderFns = [
                   attrs: { "aria-hidden": "true" }
                 }),
                 _vm._v(" "),
-                _c("i", { staticClass: "fas fa-tools fa-stack-1x text-yellow" })
+                _c("i", {
+                  staticClass: "fas fa-tools fa-stack-1x text-#ECEE53"
+                })
               ]),
               _vm._v(" "),
               _c("h4", [_vm._v("Capabilities")])
@@ -341,7 +343,7 @@ var staticRenderFns = [
                 _vm._v(" "),
                 _c("i", {
                   staticClass:
-                    "fa fas fa-satellite-dish fa-stack-1x text-yellow",
+                    "fa fas fa-satellite-dish fa-stack-1x text-#ECEE53",
                   attrs: { "aria-hidden": "true" }
                 })
               ]),
@@ -357,7 +359,7 @@ var staticRenderFns = [
                 }),
                 _vm._v(" "),
                 _c("i", {
-                  staticClass: "fa fa-handshake-o fa-stack-1x text-yellow",
+                  staticClass: "fa fa-handshake-o fa-stack-1x text-#ECEE53",
                   attrs: { "aria-hidden": "true" }
                 })
               ]),
@@ -373,7 +375,7 @@ var staticRenderFns = [
                 }),
                 _vm._v(" "),
                 _c("i", {
-                  staticClass: "fa fa-lightbulb-o text-yellow fa-stack-1x",
+                  staticClass: "fa fa-lightbulb-o text-#ECEE53 fa-stack-1x",
                   attrs: { "aria-hidden": "true" }
                 })
               ]),

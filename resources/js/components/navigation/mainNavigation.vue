@@ -39,17 +39,17 @@
 
       <li>
         <div>
-          <router-link to="initiatives">
+        
             <div class="fa-stack icon">
               <i class="fa fa-circl fa-stack-2x" aria-hidden="true"></i>
               <i class="fas fa-lightbulb nav fa-stack-1x"></i>
             </div>
             <div class="nav_text">Our Initiatives</div>
-          </router-link>
+        
         </div>
         <ul class="sub_nav">
-          <li class="mini_nav_text">Programs</li>
-          <li class="mini_nav_text">Projects</li>
+          <router-link to="/initiatives/programs"><li class="mini_nav_text">Programs</li></router-link>
+        <router-link to="/initiatives/projects">  <li class="mini_nav_text">Projects</li></router-link>
         </ul>
       </li>
       <li>
@@ -187,7 +187,7 @@ strong {
   text-transform: uppercase;
 }
 .nav_bar li:hover a {
-  color: yellow;
+  color: #ECEE53;
 }
 .nav_bar li a .nav_text {
   transition: all 0.6s;
@@ -236,17 +236,17 @@ strong {
 
 .sub_nav {
   display: none;
-  background: #f7f8fa;
+  background: #ffffff;
   padding: 10px;
   border-radius: 4px;
   position: absolute;
-  box-shadow: 0 0 4px 1px #f7f8fa;
-  top: 85px;
-  width: 140px;
+  box-shadow: 0 0 0 1px rgba(14,19,24,.07), 0 2px 12px rgba(14,19,24,.2);
+  top: 75px;
+  width: 150px;
 }
 .sub_nav::before {
   content: "";
-  background: #f7f8fa;
+  background: #fff;
   border-top: 1px solid #f7f8fa;
   border-right: 1px solid #f7f8fa;
   transform: rotate(-45deg);
@@ -259,6 +259,7 @@ strong {
   border-bottom: 1px solid #f7f8fa;
   padding: 10px 5px;
   color: #777777;
+  cursor: pointer;
 }
 .nav_bar li:hover .sub_nav {
   transition: display ease-in-out;

@@ -117,11 +117,7 @@ export default {
   position: absolute;
   width: 100%;
   height: 100%;
-  background: repeating-linear-gradient(
-    to right,
-    rgb(15, 122, 138, 0.8) 0%,
-    rgb(15, 122, 138, 0.8) 100%
-  );
+  background:rgb(15, 79, 89,.9);
 }
 .circle_1 {
   width: 600px;
@@ -192,7 +188,7 @@ export default {
 }
 
 .square_1 {
-  border: 10px solid yellow;
+  border: 10px solid #ECEE53;
   padding: 10px;
   position: absolute;
   bottom: 50%;
@@ -209,13 +205,13 @@ export default {
   height: 100%;
 }
 .square_3 {
-  background: yellow;
+  background: #ECEE53;
   padding: 10px;
   width: 100%;
   height: 100%;
 }
 .square_4 {
-  border: 10px solid yellow;
+  border: 10px solid #ECEE53;
   padding: 10px;
   position: absolute;
   bottom: 50%;
@@ -232,7 +228,7 @@ export default {
   height: 100%;
 }
 .square_6 {
-  background: yellow;
+  background: #ECEE53;
   padding: 10px;
   width: 100%;
   height: 100%;
@@ -250,13 +246,13 @@ export default {
 .banner_2_imo {
   font-size: 52px;
   font-weight: bold;
-  border-bottom: 5px solid yellow;
+  border-bottom: 5px solid #ECEE53;
   margin-bottom: 16px;
-  color: yellow;
+  color: #ECEE53;
 }
 .banner_2_lor {
   font-size: 22px;
-  color: white;
+  color: hsl(188, 71%, 85%);
 }
 @media (max-width: 1024px) {
   .circle_1 {
@@ -305,7 +301,7 @@ export default {
   margin-left: auto;
 }
   .square_1 {
-    border: 7px solid yellow;
+    border: 7px solid #ECEE53;
     padding: 5px;
     position: absolute;
     bottom: 50%;
@@ -322,13 +318,13 @@ export default {
     height: 100%;
   }
   .square_3 {
-    background: yellow;
+    background: #ECEE53;
     padding: 5px;
     width: 100%;
     height: 100%;
   }
   .square_4 {
-    border: 7px solid yellow;
+    border: 7px solid #ECEE53;
     padding: 5px;
     position: absolute;
     bottom: 50%;
@@ -345,7 +341,7 @@ export default {
     height: 100%;
   }
   .square_6 {
-    background: yellow;
+    background: #ECEE53;
     padding: 5px;
     width: 100%;
     height: 100%;
@@ -425,7 +421,7 @@ export default {
   margin-left: auto;
 }
   .square_1 {
-    border: 5px solid yellow;
+    border: 5px solid #ECEE53;
     padding: 3px;
     position: absolute;
     bottom: 50%;
@@ -442,13 +438,13 @@ export default {
     height: 100%;
   }
   .square_3 {
-    background: yellow;
+    background: #ECEE53;
     padding: 2.5px;
     width: 100%;
     height: 100%;
   }
   .square_4 {
-    border: 5px solid yellow;
+    border: 5px solid #ECEE53;
     padding: 4px;
     position: absolute;
     bottom: 50%;
@@ -465,7 +461,7 @@ export default {
     height: 100%;
   }
   .square_6 {
-    background: yellow;
+    background: #ECEE53;
     padding: 2.3px;
     width: 100%;
     height: 100%;

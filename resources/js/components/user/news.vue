@@ -130,7 +130,7 @@ export default {
 <style scoped>
 #news {
   padding: 25px 15px;
-  background-color: rgb(206, 228, 231,.9);
+  background-color: #e6f1f3;
   border-bottom: 3px solid rgb(15, 122, 138, 0.85);
 }
 .news {

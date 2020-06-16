@@ -130,7 +130,7 @@ h4{
   color:#e6f1f3;
 }
 .square_1 {
-  border: 10px solid yellow;
+  border: 10px solid #ECEE53;
   padding: 10px;
   position: absolute;
   bottom: 50%;
@@ -147,13 +147,13 @@ h4{
   height: 100%;
 }
 .square_3 {
-  background: yellow;
+  background: #ECEE53;
   padding: 10px;
   width: 100%;
   height: 100%;
 }
 .square_4 {
-  border: 10px solid yellow;
+  border: 10px solid #ECEE53;
   padding: 10px;
   position: absolute;
   bottom: 50%;
@@ -170,14 +170,14 @@ h4{
   height: 100%;
 }
 .square_6 {
-  background: yellow;
+  background: #ECEE53;
   padding: 10px;
   width: 100%;
   height: 100%;
 }
 @media (max-width: 1024px) {
   .square_1 {
-    border: 7px solid yellow;
+    border: 7px solid #ECEE53;
     padding: 5px;
     position: absolute;
     bottom: 50%;
@@ -194,13 +194,13 @@ h4{
     height: 100%;
   }
   .square_3 {
-    background: yellow;
+    background: #ECEE53;
     padding: 5px;
     width: 100%;
     height: 100%;
   }
   .square_4 {
-    border: 7px solid yellow;
+    border: 7px solid #ECEE53;
     padding: 5px;
     position: absolute;
     bottom: 50%;
@@ -217,7 +217,7 @@ h4{
     height: 100%;
   }
   .square_6 {
-    background: yellow;
+    background: #ECEE53;
     padding: 5px;
     width: 100%;
     height: 100%;
@@ -238,7 +238,7 @@ h4{
     width: 80%;
   }
  .square_1 {
-    border: 5px solid yellow;
+    border: 5px solid #ECEE53;
     padding: 3px;
     position: absolute;
     bottom: 50%;
@@ -255,13 +255,13 @@ h4{
     height: 100%;
   }
   .square_3 {
-    background: yellow;
+    background: #ECEE53;
     padding: 2.5px;
     width: 100%;
     height: 100%;
   }
   .square_4 {
-    border: 5px solid yellow;
+    border: 5px solid #ECEE53;
     padding: 4px;
     position: absolute;
     bottom: 50%;
@@ -278,7 +278,7 @@ h4{
     height: 100%;
   }
   .square_6 {
-    background: yellow;
+    background: #ECEE53;
     padding: 2.3px;
     width: 100%;
     height: 100%;

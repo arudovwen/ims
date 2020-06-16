@@ -168,8 +168,16 @@ var Checkout = function Checkout() {
   return Promise.all(/*! import() | checkout_routes */[__webpack_require__.e("/js/vendor"), __webpack_require__.e("checkout_routes")]).then(__webpack_require__.bind(null, /*! ./components/checkout.vue */ "./resources/js/components/checkout.vue"));
 };
 
+var OrderSummary = function OrderSummary() {
+  return Promise.all(/*! import() | paystack */[__webpack_require__.e("/js/vendor"), __webpack_require__.e("paystack")]).then(__webpack_require__.bind(null, /*! ./components/orderSummary.vue */ "./resources/js/components/orderSummary.vue"));
+};
+
 var Blog = function Blog() {
   return Promise.all(/*! import() | blog_routes */[__webpack_require__.e("/js/vendor"), __webpack_require__.e("blog_routes")]).then(__webpack_require__.bind(null, /*! ./components/pages/blog.vue */ "./resources/js/components/pages/blog.vue"));
+};
+
+var NewsBlog = function NewsBlog() {
+  return Promise.all(/*! import() | blog_routes */[__webpack_require__.e("/js/vendor"), __webpack_require__.e("blog_routes")]).then(__webpack_require__.bind(null, /*! ./components/pages/readBlog.vue */ "./resources/js/components/pages/readBlog.vue"));
 };
 
 var Contact = function Contact() {
@@ -288,6 +296,14 @@ var Lga = function Lga() {
   return Promise.all(/*! import() | admin_home */[__webpack_require__.e("/js/vendor"), __webpack_require__.e("admin_home")]).then(__webpack_require__.bind(null, /*! ./components/admin/lga/lga.vue */ "./resources/js/components/admin/lga/lga.vue"));
 };
 
+var InitiativeProjects = function InitiativeProjects() {
+  return Promise.all(/*! import() | admin_home */[__webpack_require__.e("/js/vendor"), __webpack_require__.e("admin_home")]).then(__webpack_require__.bind(null, /*! ./components/user/initiatives/projects.vue */ "./resources/js/components/user/initiatives/projects.vue"));
+};
+
+var InitiativePrograms = function InitiativePrograms() {
+  return Promise.all(/*! import() | admin_home */[__webpack_require__.e("/js/vendor"), __webpack_require__.e("admin_home")]).then(__webpack_require__.bind(null, /*! ./components/user/initiatives/programs.vue */ "./resources/js/components/user/initiatives/programs.vue"));
+};
+
 var routes = [{
   path: "*",
   redirect: "/"
@@ -299,8 +315,16 @@ var routes = [{
   path: "/checkout",
   component: Checkout
 }, {
+  path: "/summary",
+  component: OrderSummary,
+  name: "OrderSummary"
+}, {
   path: "/blog",
   component: Blog
+}, {
+  path: "/news/read/:id",
+  component: NewsBlog,
+  name: "NewsBlog"
 }, {
   path: "/about",
   component: About
@@ -315,7 +339,16 @@ var routes = [{
   component: Stakeholders
 }, {
   path: "/initiatives",
-  component: Initiatives
+  component: Initiatives,
+  children: [{
+    path: "/initiatives/programs",
+    component: InitiativePrograms,
+    name: "InitiativePrograms"
+  }, {
+    path: "/initiatives/projects",
+    component: InitiativeProjects,
+    name: "InitiativeProjects"
+  }]
 }, {
   path: "/administrative",
   component: Administrative,
@@ -396,45 +429,45 @@ var routes = [{
       requiresAuth: true
     }
   }, {
-    path: '/admin/create/:type',
+    path: "/admin/create/:type",
     component: AddNews,
-    name: 'AddNews'
+    name: "AddNews"
   }, {
-    path: '/admin/edit/:type/:id',
+    path: "/admin/edit/:type/:id",
     component: EditNews,
-    name: 'EditNews'
+    name: "EditNews"
   }, {
-    path: '/admin/view/:type/:id',
+    path: "/admin/view/:type/:id",
     component: ViewNews,
-    name: 'ViewNews'
+    name: "ViewNews"
   }, {
-    path: '/admin/news/draft',
+    path: "/admin/news/draft",
     component: DraftNews,
-    name: 'DraftNews'
+    name: "DraftNews"
   }, {
-    path: '/admin/project/add',
+    path: "/admin/project/add",
     component: AddProject,
-    name: 'AddProject'
+    name: "AddProject"
   }, {
-    path: '/admin/project/edit/:id',
+    path: "/admin/project/edit/:id",
     component: EditProject,
-    name: 'EditProject'
+    name: "EditProject"
   }, {
-    path: '/admin/project/view/:id',
+    path: "/admin/project/view/:id",
     component: ViewProject,
-    name: 'ViewProject'
+    name: "ViewProject"
   }, {
-    path: '/admin/program/add',
+    path: "/admin/program/add",
     component: AddProgram,
-    name: 'AddProgram'
+    name: "AddProgram"
   }, {
-    path: '/admin/program/edit/:id',
+    path: "/admin/program/edit/:id",
     component: EditProgram,
-    name: 'EditProgram'
+    name: "EditProgram"
   }, {
-    path: '/admin/program/view/:id',
+    path: "/admin/program/view/:id",
     component: ViewProgram,
-    name: 'ViewProgram'
+    name: "ViewProgram"
   }]
 }, {
   path: "/admin/auth/:auth",
@@ -447,7 +480,7 @@ var routes = [{
       next();
     } else {
       next({
-        name: 'AdminDashboard'
+        name: "AdminDashboard"
       });
     }
   }

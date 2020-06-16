@@ -2,6 +2,7 @@
     <div>
          <scrollTop/>
          <Navigation />
+         <router-view></router-view>
         
     </div>
 </template>

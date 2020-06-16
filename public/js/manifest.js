@@ -64,7 +64,7 @@
 /******/
 /******/ 	// script path function
 /******/ 	function jsonpScriptSrc(chunkId) {
-/******/ 		return __webpack_require__.p + "" + ({"AdminDashboard":"AdminDashboard","AdminDirectory":"AdminDirectory","SchoolDirectory":"SchoolDirectory","about_routes":"about_routes","add news":"add news","admin_home":"admin_home","administrative":"administrative","blog_routes":"blog_routes","checkout_routes":"checkout_routes","contact_routes":"contact_routes","directory":"directory","edit news":"edit news","home_routes":"home_routes","initiatives":"initiatives","organizations":"organizations","stakeholders":"stakeholders","view news":"view news"}[chunkId]||chunkId) + ".js"
+/******/ 		return __webpack_require__.p + "" + ({"AdminDashboard":"AdminDashboard","AdminDirectory":"AdminDirectory","SchoolDirectory":"SchoolDirectory","about_routes":"about_routes","add news":"add news","admin_home":"admin_home","administrative":"administrative","blog_routes":"blog_routes","checkout_routes":"checkout_routes","contact_routes":"contact_routes","directory":"directory","edit news":"edit news","home_routes":"home_routes","initiatives":"initiatives","organizations":"organizations","paystack":"paystack","stakeholders":"stakeholders","view news":"view news"}[chunkId]||chunkId) + ".js"
 /******/ 	}
 /******/
 /******/ 	// The require function

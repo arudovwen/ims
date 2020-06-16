@@ -16,7 +16,7 @@
             <div>
               <span class="fa-stack fa-2x mr-4">
                 <i class="fa fa-circle fa-stack-2x mc1" aria-hidden="true"></i>
-                <i class="fa fa-bullhorn fa-stack-1x text-yellow" aria-hidden="true"></i>
+                <i class="fa fa-bullhorn fa-stack-1x text-#ECEE53" aria-hidden="true"></i>
               </span>
             </div>
             <div>
@@ -29,7 +29,7 @@
             <div>
               <span class="fa-stack fa-2x mr-4">
                 <i class="fa fa-circle fa-stack-2x mc1" aria-hidden="true"></i>
-                <i class="fa fa-eye fa-stack-1x text-yellow" aria-hidden="true"></i>
+                <i class="fa fa-eye fa-stack-1x text-#ECEE53" aria-hidden="true"></i>
               </span>
             </div>
             <div>
@@ -43,7 +43,7 @@
             <div class="text-center">
               <span class="fa-stack fa-2x">
                 <i class="fa fa-circle fa-stack-2x mc1" aria-hidden="true"></i>
-                <i class="fa fa-thumbs-o-up fa-stack-1x text-yellow" aria-hidden="true"></i>
+                <i class="fa fa-thumbs-o-up fa-stack-1x text-#ECEE53" aria-hidden="true"></i>
               </span>
               <h4>Experience</h4>
             </div>
@@ -51,7 +51,7 @@
             <div class="text-center">
               <span class="fa-stack fa-2x">
                 <i class="fa fa-circle fa-stack-2x mc1" aria-hidden="true"></i>
-                <i class="fas fa-tools fa-stack-1x text-yellow"></i>
+                <i class="fas fa-tools fa-stack-1x text-#ECEE53"></i>
               </span>
               <h4>Capabilities</h4>
             </div>
@@ -60,7 +60,7 @@
             <div class="text-center">
               <span class="fa-stack fa-2x">
                 <i class="fa fa-circle fa-stack-2x mc1" aria-hidden="true"></i>
-                <i class="fa fas fa-satellite-dish fa-stack-1x text-yellow" aria-hidden="true"></i>
+                <i class="fa fas fa-satellite-dish fa-stack-1x text-#ECEE53" aria-hidden="true"></i>
               </span>
               <h4>Technology</h4>
             </div>
@@ -68,14 +68,14 @@
             <div class="text-center">
               <span class="fa-stack fa-2x">
                 <i class="fa fa-circle fa-stack-2x mc1" aria-hidden="true"></i>
-                <i class="fa fa-handshake-o fa-stack-1x text-yellow" aria-hidden="true"></i>
+                <i class="fa fa-handshake-o fa-stack-1x text-#ECEE53" aria-hidden="true"></i>
               </span>
               <h4>Partnerships</h4>
             </div>
             <div>
               <span class="fa-stack fa-2x">
                 <i class="fa fa-circle fa-stack-2x mc1 " aria-hidden="true"></i>
-                <i class="fa fa-lightbulb-o text-yellow fa-stack-1x" aria-hidden="true"></i>
+                <i class="fa fa-lightbulb-o text-#ECEE53 fa-stack-1x" aria-hidden="true"></i>
               </span>
               <h4>Innovation</h4>
             </div>

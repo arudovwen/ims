@@ -66,7 +66,7 @@ class NewsController extends Controller
         return NewsCategory::all();
     }
     public function getNews(){
-        return NewModel::all();
+        return NewModel::paginate(15);
     }
     public function getAnnouncements(){
         return Announcement::all();

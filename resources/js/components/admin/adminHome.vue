@@ -232,7 +232,7 @@ export default {
   padding: 8px 32px;
   box-shadow: 0px 0px 12px -2px rgba(0, 0, 0, 0.5);
   line-height: 1.25;
-  background: yellow;
+  background: #ECEE53;
   text-decoration: none;
   color: white;
   border-radius: 3px;
@@ -257,7 +257,7 @@ export default {
   }
   &:focus,
   &:hover {
-    background: darken(yellow, 7%);
+    background: darken(#ECEE53, 7%);
   }
   &:active {
     &:after {

@@ -61,14 +61,14 @@ export default {
   position: relative;
 }
 #contact .left_box {
-  background: #f7f8fa;
+  background: #ECEE53;
   width: 40%;
 
   height: 100%;
   float: left;
 }
 #contact .right_box {
-  background: #f7f8fa;
+  background: #ECEE53;
   width: 60%;
 
   height: 100%;
@@ -337,7 +337,7 @@ textarea.input1 + .shadow-input1 {
   min-width: 193px;
   height: 50px;
   border-radius: 25px;
-  background: #57b846;
+  background: rgb(15, 79, 89);
   font-family: Montserrat-Bold;
   font-size: 15px;
   line-height: 1.5;

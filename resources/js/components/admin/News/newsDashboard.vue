@@ -109,7 +109,7 @@ export default {
     getNews() {
       axios.get("/api/get-news").then(res => {
         if (res.status == 200) {
-          this.news = res.data;
+          this.news = res.data.data;
         }
       });
 

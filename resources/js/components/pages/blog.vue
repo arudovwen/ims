@@ -1,333 +1,391 @@
 <template>
-<div>
-   <scrollTop/>
-  <Navigation />
-  <div id="main-content">
-    <div class="container">
-      <!-- <header class="blog-header py-3">
-        <div class="row flex-nowrap justify-content-between align-items-center">
-          <div class="col-4 pt-1">
-            <a class="text-muted" href="#">Subscribe</a>
-          </div>
-          <div class="col-4 text-center">
-            <a class="blog-header-logo text-dark" href="#">Large</a>
-          </div>
-          <div class="col-4 d-flex justify-content-end align-items-center">
-            <a class="text-muted" href="#" aria-label="Search">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
-                fill="none"
-                stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                class="mx-3"
-                role="img"
-                viewBox="0 0 24 24"
-                focusable="false"
-              >
-                <title>Search</title>
-                <circle cx="10.5" cy="10.5" r="7.5" />
-                <path d="M21 21l-5.2-5.2" />
-              </svg>
-            </a>
-            <a class="btn btn-sm btn-outline-secondary" href="#">Sign up</a>
-          </div>
-        </div>
-      </header>-->
+  <div>
+    <scrollTop />
+    <Navigation />
+    <div id="main-content">
+      <div class="container">
+        <div class="nav-scroller py-1 mb-2">
+          <nav class="nav d-flex justify-content-between">
+            <label class="custom-control custom-radio">
+              <input type="radio" value="" v-model="category" class="custom-control-input" />
+              <span class="custom-control-indicator text-muted">All</span>
+            </label>
+            <label class="custom-control custom-radio">
+              <input type="radio" value="World" v-model="category" class="custom-control-input" />
+              <span class="custom-control-indicator text-muted">World</span>
+            </label>
+            <label class="custom-control custom-radio">
+              <input type="radio" value="Nigeria" v-model="category" class="custom-control-input" />
+              <span class="custom-control-indicator text-muted">Nigeria</span>
+            </label>
+            <label class="custom-control custom-radio">
+              <input type="radio" value="Imo" v-model="category" class="custom-control-input" />
+              <span class="custom-control-indicator text-muted">Imo</span>
+            </label>
+            <label class="custom-control custom-radio">
+              <input
+                type="radio"
+                value="Technology"
+                v-model="category"
+                class="custom-control-input"
+              />
+              <span class="custom-control-indicator text-muted">Technology</span>
+            </label>
+            <label class="custom-control custom-radio">
+              <input type="radio" value="Design" v-model="category" class="custom-control-input" />
+              <span class="custom-control-indicator text-muted">Design</span>
+            </label>
+            <label class="custom-control custom-radio">
+              <input type="radio" value="Culture" v-model="category" class="custom-control-input" />
+              <span class="custom-control-indicator text-muted">Culture</span>
+            </label>
+            <label class="custom-control custom-radio">
+              <input type="radio" value="Business" v-model="category" class="custom-control-input" />
+              <span class="custom-control-indicator text-muted">Business</span>
+            </label>
+            <label class="custom-control custom-radio">
+              <input type="radio" value="Politics" v-model="category" class="custom-control-input" />
+              <span class="custom-control-indicator text-muted">Politics</span>
+            </label>
+            <label class="custom-control custom-radio">
+              <input type="radio" value="Opinion" v-model="category" class="custom-control-input" />
+              <span class="custom-control-indicator text-muted">Opinion</span>
+            </label>
+            <label class="custom-control custom-radio">
+              <input type="radio" value="Science" v-model="category" class="custom-control-input" />
+              <span class="custom-control-indicator text-muted">Science</span>
+            </label>
+            <label class="custom-control custom-radio">
+              <input type="radio" value="Health" v-model="category" class="custom-control-input" />
+              <span class="custom-control-indicator text-muted">Health</span>
+            </label>
 
-      <div class="nav-scroller py-1 mb-2">
-        <nav class="nav d-flex justify-content-between">
-          <a class="p-2 text-muted" href="#">World</a>
-          <a class="p-2 text-muted" href="#">Nigeria</a>
-          <a class="p-2 text-muted" href="#">Imo</a>
-          <a class="p-2 text-muted" href="#">Technology</a>
-          <a class="p-2 text-muted" href="#">Design</a>
-          <a class="p-2 text-muted" href="#">Culture</a>
-          <a class="p-2 text-muted" href="#">Business</a>
-          <a class="p-2 text-muted" href="#">Politics</a>
-          <a class="p-2 text-muted" href="#">Opinion</a>
-          <a class="p-2 text-muted" href="#">Science</a>
-          <a class="p-2 text-muted" href="#">Health</a>
-          <a class="p-2 text-muted" href="#">Style</a>
-          <a class="p-2 text-muted" href="#">Travel</a>
-        </nav>
-      </div>
-
-      <div class="jumbotron p-4 p-md-5 text-white rounded bg-dark">
-        <div class="col-md-6 px-0">
-          <h1 class="display-4 font-italic">Title of a longer featured blog post</h1>
-          <p
-            class="lead my-3"
-          >Multiple lines of text that form the lede, informing new readers quickly and efficiently about what’s most interesting in this post’s contents.</p>
-          <p class="lead mb-0">
-            <a href="#" class="text-white font-weight-bold">Continue reading...</a>
-          </p>
-        </div>
-      </div>
-
-      <div class="row mb-2">
-        <div class="col-md-6">
-          <div
-            class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative"
-          >
-            <div class="col p-4 d-flex flex-column position-static">
-              <strong class="d-inline-block mb-2 text-primary">World</strong>
-              <h3 class="mb-0">Featured post</h3>
-              <div class="mb-1 text-muted">Nov 12</div>
-              <p
-                class="card-text mb-auto"
-              >This is a wider card with supporting text below as a natural lead-in to additional content.</p>
-              <a href="#" class="stretched-link">Continue reading</a>
-            </div>
-            <div class="col-auto d-none d-lg-block">
-              <svg
-                class="bd-placeholder-img"
-                width="200"
-                height="250"
-                xmlns="http://www.w3.org/2000/svg"
-                preserveAspectRatio="xMidYMid slice"
-                focusable="false"
-                role="img"
-                aria-label="Placeholder: Thumbnail"
-              >
-                <title>Placeholder</title>
-                <rect width="100%" height="100%" fill="#55595c" />
-                <text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text>
-              </svg>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div
-            class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative"
-          >
-            <div class="col p-4 d-flex flex-column position-static">
-              <strong class="d-inline-block mb-2 text-success">Design</strong>
-              <h3 class="mb-0">Post title</h3>
-              <div class="mb-1 text-muted">Nov 11</div>
-              <p
-                class="mb-auto"
-              >This is a wider card with supporting text below as a natural lead-in to additional content.</p>
-              <a href="#" class="stretched-link">Continue reading</a>
-            </div>
-            <div class="col-auto d-none d-lg-block">
-              <svg
-                class="bd-placeholder-img"
-                width="200"
-                height="250"
-                xmlns="http://www.w3.org/2000/svg"
-                preserveAspectRatio="xMidYMid slice"
-                focusable="false"
-                role="img"
-                aria-label="Placeholder: Thumbnail"
-              >
-                <title>Placeholder</title>
-                <rect width="100%" height="100%" fill="#55595c" />
-                <text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text>
-              </svg>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <main role="main" class="container">
-      <div class="row">
-        <div class="col-md-8 blog-main">
-          <h3 class="pb-4 mb-4 font-italic border-bottom">From the Firehose</h3>
-
-          <div class="blog-post">
-            <h2 class="blog-post-title">Sample blog post</h2>
-            <p class="blog-post-meta">
-              January 1, 2020 by
-              <a href="#">Mark</a>
-            </p>
-
-            <p>This blog post shows a few different types of content that’s supported and styled with Bootstrap. Basic typography, images, and code are all supported.</p>
-            <hr />
-            <p>
-              Cum sociis natoque penatibus et magnis
-              <a href="#">dis parturient montes</a>, nascetur ridiculus mus. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Sed posuere consectetur est at lobortis. Cras mattis consectetur purus sit amet fermentum.
-            </p>
-            <blockquote>
-              <p>
-                Curabitur blandit tempus porttitor.
-                <strong>Nullam quis risus eget urna mollis</strong> ornare vel eu leo. Nullam id dolor id nibh ultricies vehicula ut id elit.
-              </p>
-            </blockquote>
-            <p>
-              Etiam porta
-              <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.
-            </p>
-            <h2>Heading</h2>
-            <p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
-            <h3>Sub-heading</h3>
-            <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-            <pre><code>Example code block</code></pre>
-            <p>Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa.</p>
-            <h3>Sub-heading</h3>
-            <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-            <ul>
-              <li>Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</li>
-              <li>Donec id elit non mi porta gravida at eget metus.</li>
-              <li>Nulla vitae elit libero, a pharetra augue.</li>
-            </ul>
-            <p>Donec ullamcorper nulla non metus auctor fringilla. Nulla vitae elit libero, a pharetra augue.</p>
-            <ol>
-              <li>Vestibulum id ligula porta felis euismod semper.</li>
-              <li>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</li>
-              <li>Maecenas sed diam eget risus varius blandit sit amet non magna.</li>
-            </ol>
-            <p>Cras mattis consectetur purus sit amet fermentum. Sed posuere consectetur est at lobortis.</p>
-          </div>
-          <!-- /.blog-post -->
-
-          <div class="blog-post">
-            <h2 class="blog-post-title">Another blog post</h2>
-            <p class="blog-post-meta">
-              December 23, 2020 by
-              <a href="#">Jacob</a>
-            </p>
-
-            <p>
-              Cum sociis natoque penatibus et magnis
-              <a href="#">dis parturient montes</a>, nascetur ridiculus mus. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Sed posuere consectetur est at lobortis. Cras mattis consectetur purus sit amet fermentum.
-            </p>
-            <blockquote>
-              <p>
-                Curabitur blandit tempus porttitor.
-                <strong>Nullam quis risus eget urna mollis</strong> ornare vel eu leo. Nullam id dolor id nibh ultricies vehicula ut id elit.
-              </p>
-            </blockquote>
-            <p>
-              Etiam porta
-              <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.
-            </p>
-            <p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
-          </div>
-          <!-- /.blog-post -->
-
-          <div class="blog-post">
-            <h2 class="blog-post-title">New feature</h2>
-            <p class="blog-post-meta">
-              December 14, 2020 by
-              <a href="#">Chris</a>
-            </p>
-
-            <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-            <ul>
-              <li>Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</li>
-              <li>Donec id elit non mi porta gravida at eget metus.</li>
-              <li>Nulla vitae elit libero, a pharetra augue.</li>
-            </ul>
-            <p>
-              Etiam porta
-              <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.
-            </p>
-            <p>Donec ullamcorper nulla non metus auctor fringilla. Nulla vitae elit libero, a pharetra augue.</p>
-          </div>
-          <!-- /.blog-post -->
-
-          <nav class="blog-pagination">
-            <a class="btn btn-outline-primary" href="#">Older</a>
-            <a
-              class="btn btn-outline-secondary disabled"
-              href="#"
-              tabindex="-1"
-              aria-disabled="true"
-            >Newer</a>
+            <label class="custom-control custom-radio">
+              <input type="radio" value="Travel" v-model="category" class="custom-control-input" />
+              <span class="custom-control-indicator text-muted">Travel</span>
+            </label>
           </nav>
         </div>
-        <!-- /.blog-main -->
 
-        <aside class="col-md-4 blog-sidebar">
-          <div class="p-4 mb-3 bg-light rounded">
-            <h4 class="font-italic">About</h4>
-            <p class="mb-0">
-              Etiam porta
-              <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.
+        <div v-if="featured.length" class="jumbotron p-4 p-md-5 text-white rounded bg-dark" :style="{'background-image':'url('+featured[0].cover_image+')'}">
+          <div class="col-md-7 p-2 bg-dark-50">
+            <h2 class="display-4 font-italic">{{featured[0].subject}}</h2>
+            <p
+              class="lead my-3"
+              v-html="featured[0].content"
+            ></p>
+            <p class="lead mb-0">
+              <router-link :to="{
+                name:'NewsBlog',
+                params:{
+                  id:featured[0].id
+                }
+                }"  class="text-white font-weight-bold">Continue reading...</router-link>
             </p>
           </div>
+        </div>
 
-          <div class="p-4">
-            <h4 class="font-italic">Archives</h4>
-            <ol class="list-unstyled mb-0">
-              <li>
-                <a href="#">March 2020</a>
-              </li>
-              <li>
-                <a href="#">February 2020</a>
-              </li>
-              <li>
-                <a href="#">January 2020</a>
-              </li>
-              <li>
-                <a href="#">December 2020</a>
-              </li>
-              <li>
-                <a href="#">November 2020</a>
-              </li>
-              <li>
-                <a href="#">October 2020</a>
-              </li>
-              <li>
-                <a href="#">September 2020</a>
-              </li>
-              <li>
-                <a href="#">August 2020</a>
-              </li>
-              <li>
-                <a href="#">July 2020</a>
-              </li>
-              <li>
-                <a href="#">June 2020</a>
-              </li>
-              <li>
-                <a href="#">May 2020</a>
-              </li>
-              <li>
-                <a href="#">April 2020</a>
-              </li>
-            </ol>
+        <div class="row mb-2" v-if="featured.length">
+          <div class="col-md-6">
+            <div
+              class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative"
+            >
+              <div class="col p-4 d-flex flex-column position-static">
+                <strong class="d-inline-block mb-2 text-primary">{{featured[0].category}}</strong>
+                <h4 class="mb-0">{{featured[0].subject}}</h4>
+                <div class="mb-1 text-muted">{{featured[0].created_at | moment('DD MMMM')}}</div>
+                <p
+                  class="card-text mb-auto"
+                     v-html="featured[0].content"
+                ></p>
+                <router-link :to="{
+                name:'NewsBlog',
+                params:{
+                  id:featured[0].id
+                }
+                }"  class="stretched-link">Continue reading</router-link>
+              </div>
+              <div class="col-auto d-none d-lg-block">
+                <img
+                  class="bd-placeholder-img"
+                  width="200"
+                  height="250"
+                  :src="featured[0].cover_image"
+                />
+              </div>
+            </div>
           </div>
-
-          <div class="p-4">
-            <h4 class="font-italic">Elsewhere</h4>
-            <ol class="list-unstyled">
-              <li>
-                <a href="#">GitHub</a>
-              </li>
-              <li>
-                <a href="#">Twitter</a>
-              </li>
-              <li>
-                <a href="#">Facebook</a>
-              </li>
-            </ol>
+          <div class="col-md-6">
+            <div
+              class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative"
+            >
+              <div class="col p-4 d-flex flex-column position-static">
+                <strong class="d-inline-block mb-2 text-primary">{{featured[0].category}}</strong>
+                <h4 class="mb-0">{{featured[0].subject}}</h4>
+                <div class="mb-1 text-muted">{{featured[0].created_at | moment('DD MMMM')}}</div>
+               <p
+                  class="card-text mb-auto"
+                     v-html="featured[0].content"
+                ></p>
+                <router-link :to="{
+                name:'NewsBlog',
+                params:{
+                  id:featured[0].id
+                }
+                }"  class="stretched-link">Continue reading</router-link>
+              </div>
+              <div class="col-auto d-none d-lg-block">
+              <img
+                  class="bd-placeholder-img"
+                  width="200"
+                  height="250"
+                  :src="featured[0].cover_image"
+                />
+              </div>
+            </div>
           </div>
-        </aside>
-        <!-- /.blog-sidebar -->
+        </div>
       </div>
-      <!-- /.row -->
-    </main>
+      <main role="main" class="container">
+        <div class="row">
+          <div class="col-md-8 blog-main">
+            <h3 class="pb-4 mb-4 font-italic border-bottom">From the Media</h3>
+
+            <div v-for="(item,idx) in basic" :key="idx" class="blog-post">
+              <h2 class="blog-post-title">{{item.subject}}</h2>
+              <p class="blog-post-meta">
+               {{item.created_at | moment('DD MMMM')}}, by
+                <a href="#">{{item.author}}</a>
+              </p>
+
+              <div class="news_content" v-html="item.content">
+              </div>
+                <router-link :to="{
+                name:'NewsBlog',
+                params:{
+                  id:item.id
+                }
+                }"  class="stretched-link">Continue reading</router-link>
+            </div>
+            <!-- /.blog-post -->
+
+
+
+            <nav class="blog-pagination mb-3">
+              <div class="btn btn-outline-primary" @click="prev">Older</div>
+              <div
+                class="btn btn-outline-secondary disabled"
+              @click="next"
+              >Newer</div>
+            </nav>
+          </div>
+          <!-- /.blog-main -->
+
+          <aside class="col-md-4 blog-sidebar">
+            <div class="p-4 mb-3 bg-light rounded">
+              <h4 class="font-italic">About</h4>
+              <p class="mb-0">
+               Get the latest news, information, gist from all around the world, Nigeria , Imo state, get information about culture, technology, design, business and so much more today.
+                
+              </p>
+            </div>
+
+            <div class="p-4">
+              <h4 class="font-italic">Archives</h4>
+              <ol class="list-unstyled mb-0">
+                <li>
+                  <a href="#">March 2020</a>
+                </li>
+                <li>
+                  <a href="#">February 2020</a>
+                </li>
+                <li>
+                  <a href="#">January 2020</a>
+                </li>
+                <li>
+                  <a href="#">December 2020</a>
+                </li>
+                <li>
+                  <a href="#">November 2020</a>
+                </li>
+                <li>
+                  <a href="#">October 2020</a>
+                </li>
+                <li>
+                  <a href="#">September 2020</a>
+                </li>
+                <li>
+                  <a href="#">August 2020</a>
+                </li>
+                <li>
+                  <a href="#">July 2020</a>
+                </li>
+                <li>
+                  <a href="#">June 2020</a>
+                </li>
+                <li>
+                  <a href="#">May 2020</a>
+                </li>
+                <li>
+                  <a href="#">April 2020</a>
+                </li>
+              </ol>
+            </div>
+
+            <div class="p-4">
+              <h4 class="font-italic">Elsewhere</h4>
+              <ol class="list-unstyled">
+                <li>
+                  <a href="#">GitHub</a>
+                </li>
+                <li>
+                  <a href="#">Twitter</a>
+                </li>
+                <li>
+                  <a href="#">Facebook</a>
+                </li>
+              </ol>
+            </div>
+          </aside>
+          <!-- /.blog-sidebar -->
+        </div>
+        <!-- /.row -->
+      </main>
+    </div>
   </div>
-</div>
 </template>
 
 <script>
 import Navigation from "../navigation/navigation.vue";
-import scrollTop from '../scrollTopComponent'
+import scrollTop from "../scrollTopComponent";
 export default {
+  data() {
+    return {
+      category: "",
+      news: [],
+       last_page: "",
+      first_page: "",
+      next_page: "",
+      prev_page: "",
+      current_page: 1,
+      total_news: 0,
+    };
+  },
   components: {
     Navigation,
     scrollTop
+  },
+  mounted() {
+    this.getNews();
+  },
+  methods: {
+    getNews() {
+      axios.get("/api/get-news").then(res => {
+        if (res.status == 200) {
+          this.news = res.data.data.filter(item=>{
+            return item.status == 'active';
+          });
+        }
+      });
+    },
+     next() {
+      if (this.next_page) {
+        axios.get(this.next_page).then(res => {
+          this.next_page = res.data.next_page_url;
+          this.prev_page = res.data.prev_page_url;
+          this.current_page = res.data.current_page;
+          this.news = res.data.data.filter(item=>{
+            return item.status == 'active';
+          });
+        
+        });
+      }
+    },
+    prev() {
+      if (this.prev_page) {
+        axios.get(this.prev_page).then(res => {
+          this.next_page = res.data.next_page_url;
+          this.prev_page = res.data.prev_page_url;
+          this.current_page = res.data.current_page;
+          this.news = res.data.data.filter(item=>{
+            return item.status == 'active';
+          });
+        
+        });
+      }
+    },
+  },
+  computed: {
+    NewsByCatgory() {
+      return this.news.filter(item => {
+        if (this.category.toLowerCase() == item.category.toLowerCase() ) {
+           return item;
+        }
+         if (this.category.toLowerCase() == "" ) {
+           return item;
+        } 
+       
+      });
+    },
+    featured() {
+      return this.NewsByCatgory.filter(item => {
+        return item.featured;
+      });
+    },
+    basic() {
+      return this.NewsByCatgory.filter(item => {
+        return !item.featured;
+      });
+    },
   }
 };
 </script>
 <style scoped>
 #main-content {
   font-size: 15px;
+  margin-top:30px;
+}
+.bg-dark-50{
+background: rgba(0, 0, 0, .6);
+}
+.lead{
+  height: 40px;
+  overflow: hidden;
+  display: -webkit-box !important;
+ -webkit-box-orient: vertical;
+  -moz-box-orient: vertical;
+  -ms-box-orient: vertical;
+  -o-box-orient: vertical;
+  box-orient: vertical;
+  line-clamp: 3;
+  -webkit-line-clamp:3;
+  -o-line-clamp:3;
+  -ms-line-clamp:3;
+  -moz-line-clamp:3;
+  text-overflow:ellipsis;
+  white-space:normal;
+
+}
+
+.news_content{
+  max-height: 200px;
+  overflow: hidden;
+  display: -webkit-box !important;
+ -webkit-box-orient: vertical;
+  -moz-box-orient: vertical;
+  -ms-box-orient: vertical;
+  -o-box-orient: vertical;
+  box-orient: vertical;
+  line-clamp: 15;
+  -webkit-line-clamp:15;
+  -o-line-clamp:15;
+  -ms-line-clamp:15;
+  -moz-line-clamp:15;
+  text-overflow:ellipsis;
+  white-space:normal;
+
+}
+.blog-post{
+  margin-bottom: 20px;
 }
 </style>

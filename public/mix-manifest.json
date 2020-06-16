@@ -18,6 +18,7 @@
     "/home_routes.js": "/home_routes.js",
     "/initiatives.js": "/initiatives.js",
     "/organizations.js": "/organizations.js",
+    "/paystack.js": "/paystack.js",
     "/stakeholders.js": "/stakeholders.js",
     "/view news.js": "/view news.js"
 }

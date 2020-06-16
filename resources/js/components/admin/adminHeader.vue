@@ -87,7 +87,7 @@ hr {
   border-top: 2px solid hsl(60, 100%, 30%);
 }
 h4 {
-  color: yellow;
+  color: #ECEE53;
 }
 .single_nav_item {
   text-decoration: none;
