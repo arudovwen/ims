@@ -189,6 +189,7 @@ export default {
           .then(res => {
             if (res.status == 200) {
               this.$toasted.info("Updated");
+              this.$router.go(-1)
             }
           });
       } else {
@@ -197,6 +198,7 @@ export default {
           .then(res => {
             if (res.status == 200) {
               this.$toasted.info("Updated");
+               this.$router.go(-1)
             }
           });
       }

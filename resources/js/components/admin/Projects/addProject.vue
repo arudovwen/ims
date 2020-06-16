@@ -108,7 +108,13 @@ export default {
   methods: {
     submit() {
       axios.post("/api/create-project", this.project).then(res => {
-        if (res.status == 200) {
+        if (res.status == 201) {
+           this.$toasted.info("Created successfully");
+          this.project = {
+            name: "",
+            cover_mage: "",
+            about: ""
+          };
         }
       });
     },

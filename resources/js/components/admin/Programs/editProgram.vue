@@ -111,6 +111,8 @@ export default {
     update() {
       axios.put(`/api/update-program/${this.$route.params.id}`, this.program).then(res => {
         if (res.status == 200) {
+           this.$toasted.info("Updated successfully");
+         this.$router.go(-1)
         }
       });
     },

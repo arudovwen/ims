@@ -1580,7 +1580,9 @@ var render = function() {
           [
             _c("h5", [_vm._v("Current Announcement")]),
             _vm._v(" "),
-            _c("h4", [_vm._v(_vm._s(_vm.current[0].subject))])
+            _vm.current.length
+              ? _c("h4", [_vm._v(_vm._s(_vm.current[0].subject))])
+              : _vm._e()
           ]
         ),
         _vm._v(" "),
@@ -1588,16 +1590,70 @@ var render = function() {
           _c("div", { staticClass: "mini_c shadow-sm p-2" }, [
             _c("h5", [_vm._v("All Announcement")]),
             _vm._v(" "),
-            _c("table", { staticClass: "table" }, [
-              _vm._m(0),
+            _vm.announcements.length
+              ? _c("table", { staticClass: "table" }, [
+                  _vm._m(0),
+                  _vm._v(" "),
+                  _c(
+                    "tbody",
+                    _vm._l(_vm.announcements, function(item, idx) {
+                      return _c("tr", { key: idx }, [
+                        _c("td", { attrs: { scope: "row" } }, [
+                          _vm._v(_vm._s(idx + 1))
+                        ]),
+                        _vm._v(" "),
+                        _c("td", [_vm._v(_vm._s(item.subject))]),
+                        _vm._v(" "),
+                        _c("td", [_vm._v(_vm._s(item.status))]),
+                        _vm._v(" "),
+                        _c(
+                          "td",
+                          [
+                            _c(
+                              "router-link",
+                              {
+                                staticClass: "text-dark",
+                                attrs: {
+                                  to: {
+                                    name: "ViewNews",
+                                    params: {
+                                      type: "announcement",
+                                      id: item.id
+                                    }
+                                  }
+                                }
+                              },
+                              [_vm._v("View")]
+                            )
+                          ],
+                          1
+                        )
+                      ])
+                    }),
+                    0
+                  )
+                ])
+              : _vm._e()
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "mini_box2 shadow-sm bg-white p-2" }, [
+        _c("h5", [_vm._v("All News")]),
+        _vm._v(" "),
+        _vm.news.length
+          ? _c("table", { staticClass: "table" }, [
+              _vm._m(1),
               _vm._v(" "),
               _c(
                 "tbody",
-                _vm._l(_vm.announcements, function(item, idx) {
+                _vm._l(_vm.news, function(item, idx) {
                   return _c("tr", { key: idx }, [
                     _c("td", { attrs: { scope: "row" } }, [
                       _vm._v(_vm._s(idx + 1))
                     ]),
+                    _vm._v(" "),
+                    _c("td", [_vm._v(_vm._s(item.category))]),
                     _vm._v(" "),
                     _c("td", [_vm._v(_vm._s(item.subject))]),
                     _vm._v(" "),
@@ -1614,7 +1670,7 @@ var render = function() {
                               to: {
                                 name: "ViewNews",
                                 params: {
-                                  type: "announcement",
+                                  type: "news",
                                   id: item.id
                                 }
                               }
@@ -1630,57 +1686,7 @@ var render = function() {
                 0
               )
             ])
-          ])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "mini_box2 shadow-sm bg-white p-2" }, [
-        _c("h5", [_vm._v("All News")]),
-        _vm._v(" "),
-        _c("table", { staticClass: "table" }, [
-          _vm._m(1),
-          _vm._v(" "),
-          _c(
-            "tbody",
-            _vm._l(_vm.news, function(item, idx) {
-              return _c("tr", { key: idx }, [
-                _c("td", { attrs: { scope: "row" } }, [
-                  _vm._v(_vm._s(idx + 1))
-                ]),
-                _vm._v(" "),
-                _c("td", [_vm._v(_vm._s(item.category))]),
-                _vm._v(" "),
-                _c("td", [_vm._v(_vm._s(item.subject))]),
-                _vm._v(" "),
-                _c("td", [_vm._v(_vm._s(item.status))]),
-                _vm._v(" "),
-                _c(
-                  "td",
-                  [
-                    _c(
-                      "router-link",
-                      {
-                        staticClass: "text-dark",
-                        attrs: {
-                          to: {
-                            name: "ViewNews",
-                            params: {
-                              type: "news",
-                              id: item.id
-                            }
-                          }
-                        }
-                      },
-                      [_vm._v("View")]
-                    )
-                  ],
-                  1
-                )
-              ])
-            }),
-            0
-          )
-        ])
+          : _vm._e()
       ])
     ])
   ])
@@ -1821,45 +1827,47 @@ var render = function() {
       _c("div", { staticClass: "mini_box2 shadow-sm bg-white p-2" }, [
         _c("h5", [_vm._v("All programs")]),
         _vm._v(" "),
-        _c("table", { staticClass: "table" }, [
-          _vm._m(1),
-          _vm._v(" "),
-          _c(
-            "tbody",
-            _vm._l(_vm.programs, function(item, idx) {
-              return _c("tr", { key: idx }, [
-                _c("td", { attrs: { scope: "row" } }, [
-                  _vm._v(_vm._s(idx + 1))
-                ]),
-                _vm._v(" "),
-                _c("td", [_vm._v(_vm._s(item.name))]),
-                _vm._v(" "),
-                _c(
-                  "td",
-                  [
+        _vm.programs.length
+          ? _c("table", { staticClass: "table" }, [
+              _vm._m(1),
+              _vm._v(" "),
+              _c(
+                "tbody",
+                _vm._l(_vm.programs, function(item, idx) {
+                  return _c("tr", { key: idx }, [
+                    _c("td", { attrs: { scope: "row" } }, [
+                      _vm._v(_vm._s(idx + 1))
+                    ]),
+                    _vm._v(" "),
+                    _c("td", [_vm._v(_vm._s(item.name))]),
+                    _vm._v(" "),
                     _c(
-                      "router-link",
-                      {
-                        staticClass: "text-dark",
-                        attrs: {
-                          to: {
-                            name: "ViewProgram",
-                            params: {
-                              id: item.id
+                      "td",
+                      [
+                        _c(
+                          "router-link",
+                          {
+                            staticClass: "text-dark",
+                            attrs: {
+                              to: {
+                                name: "ViewProgram",
+                                params: {
+                                  id: item.id
+                                }
+                              }
                             }
-                          }
-                        }
-                      },
-                      [_vm._v("View")]
+                          },
+                          [_vm._v("View")]
+                        )
+                      ],
+                      1
                     )
-                  ],
-                  1
-                )
-              ])
-            }),
-            0
-          )
-        ])
+                  ])
+                }),
+                0
+              )
+            ])
+          : _vm._e()
       ])
     ])
   ])
@@ -1937,45 +1945,47 @@ var render = function() {
       _c("div", { staticClass: "mini_box2 shadow-sm bg-white p-2" }, [
         _c("h5", [_vm._v("All Projects")]),
         _vm._v(" "),
-        _c("table", { staticClass: "table" }, [
-          _vm._m(1),
-          _vm._v(" "),
-          _c(
-            "tbody",
-            _vm._l(_vm.projects, function(item, idx) {
-              return _c("tr", { key: idx }, [
-                _c("td", { attrs: { scope: "row" } }, [
-                  _vm._v(_vm._s(idx + 1))
-                ]),
-                _vm._v(" "),
-                _c("td", [_vm._v(_vm._s(item.name))]),
-                _vm._v(" "),
-                _c(
-                  "td",
-                  [
+        _vm.projects.length
+          ? _c("table", { staticClass: "table" }, [
+              _vm._m(1),
+              _vm._v(" "),
+              _c(
+                "tbody",
+                _vm._l(_vm.projects, function(item, idx) {
+                  return _c("tr", { key: idx }, [
+                    _c("td", { attrs: { scope: "row" } }, [
+                      _vm._v(_vm._s(idx + 1))
+                    ]),
+                    _vm._v(" "),
+                    _c("td", [_vm._v(_vm._s(item.name))]),
+                    _vm._v(" "),
                     _c(
-                      "router-link",
-                      {
-                        staticClass: "text-dark",
-                        attrs: {
-                          to: {
-                            name: "ViewProject",
-                            params: {
-                              id: item.id
+                      "td",
+                      [
+                        _c(
+                          "router-link",
+                          {
+                            staticClass: "text-dark",
+                            attrs: {
+                              to: {
+                                name: "ViewProject",
+                                params: {
+                                  id: item.id
+                                }
+                              }
                             }
-                          }
-                        }
-                      },
-                      [_vm._v("View")]
+                          },
+                          [_vm._v("View")]
+                        )
+                      ],
+                      1
                     )
-                  ],
-                  1
-                )
-              ])
-            }),
-            0
-          )
-        ])
+                  ])
+                }),
+                0
+              )
+            ])
+          : _vm._e()
       ])
     ])
   ])

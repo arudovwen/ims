@@ -108,111 +108,115 @@ export default {
   methods: {
     submit() {
       axios.post("/api/create-program", this.program).then(res => {
-        if (res.status == 200) {
+        if (res.status == 201) {
+          this.$toasted.info("Created successfully");
+          this.program = {
+            name: "",
+            cover_mage: "",
+            about: ""
+          };
         }
       });
     },
     handleFileChange(event) {
-    let file = event.target.files[0];
-    this.loadCoverFile(file);
-  },
-  loadCoverFile(file) {
-    let reader = new FileReader();
-    reader.onload = event => {
-      this.placeholder = event.target.result;
-    };
-    reader.readAsDataURL(file);
-    this.processUpload(file);
-  },
-  processUpload(file) {
-    let that = this;
-    this.start = true;
-    var formData = new FormData();
-    var xhr = new XMLHttpRequest();
-    var cloudName = this.cloudinary.cloudName;
-    var upload_preset = this.cloudinary.uploadPreset;
-    formData.append("file", file);
-    formData.append("resource_type", "auto");
-    formData.append("upload_preset", upload_preset); // REQUIRED
-    xhr.open(
-      "POST",
-      "https://api.cloudinary.com/v1_1/" + cloudName + "/upload"
-    );
-    xhr.upload.onprogress = function(e) {
-      if (e.lengthComputable) {
-        that.progress = Math.round((e.loaded / e.total) * 100) + "%";
-      }
-    };
-    xhr.upload.onloadstart = function(e) {
-      this.progress = "Starting...";
-    };
-    xhr.upload.onloadend = function(e) {
-      this.progress = "Completing..";
-    };
-    xhr.onload = progressEvent => {
-      if (xhr.status === 200) {
-        // Success! You probably want to save the URL somewhere
-        this.progress = "Completed";
-        setTimeout(() => {
-          this.start = false;
-        }, 1000);
-        var response = JSON.parse(xhr.response);
-        this.uploadedFileUrl = response.secure_url; // https address of uploaded file
-        this.program.cover_image = response.secure_url;
-      } else {
-        this.start = false;
-        alert("Upload failed. Please try again.");
-      }
-    };
-    xhr.send(formData);
-  },
-  upload_handler(blobInfo, success, failure) {
-    var xhr, formData;
-    xhr = new XMLHttpRequest();
-    xhr.withCredentials = false;
-    xhr.open("POST", "/api/image-upload");
-    xhr.onload = function() {
-      var json;
-
-      if (xhr.status != 200) {
-        failure("HTTP Error: " + xhr.status);
-        return;
-      }
-      json = JSON.parse(xhr.responseText);
-
-      if (!json || typeof json.location != "string") {
-        failure("Invalid JSON: " + xhr.responseText);
-        return;
-      }
-      success(json.location);
-    };
-    formData = new FormData();
-    formData.append("file", blobInfo.blob());
-    xhr.send(formData);
-  },
-  loadFile(cb, value, mt) {
-    var input = document.createElement("input");
-    input.setAttribute("type", "file");
-    input.setAttribute("accept", "image/*");
-    input.onchange = function() {
-      var file = this.files[0];
-
-      var reader = new FileReader();
-      reader.readAsDataURL(file);
-      reader.onload = function() {
-        var id = "blobid" + new Date().getTime();
-        var blobCache = tinymce.activeEditor.editorUpload.blobCache;
-        var base64 = reader.result.split(",")[1];
-        var blobInfo = blobCache.create(id, file, base64);
-        blobCache.add(blobInfo);
-        cb(blobInfo.blobUri(), { title: file.name });
+      let file = event.target.files[0];
+      this.loadCoverFile(file);
+    },
+    loadCoverFile(file) {
+      let reader = new FileReader();
+      reader.onload = event => {
+        this.placeholder = event.target.result;
       };
-    };
-    input.click();
-  }
-  },
+      reader.readAsDataURL(file);
+      this.processUpload(file);
+    },
+    processUpload(file) {
+      let that = this;
+      this.start = true;
+      var formData = new FormData();
+      var xhr = new XMLHttpRequest();
+      var cloudName = this.cloudinary.cloudName;
+      var upload_preset = this.cloudinary.uploadPreset;
+      formData.append("file", file);
+      formData.append("resource_type", "auto");
+      formData.append("upload_preset", upload_preset); // REQUIRED
+      xhr.open(
+        "POST",
+        "https://api.cloudinary.com/v1_1/" + cloudName + "/upload"
+      );
+      xhr.upload.onprogress = function(e) {
+        if (e.lengthComputable) {
+          that.progress = Math.round((e.loaded / e.total) * 100) + "%";
+        }
+      };
+      xhr.upload.onloadstart = function(e) {
+        this.progress = "Starting...";
+      };
+      xhr.upload.onloadend = function(e) {
+        this.progress = "Completing..";
+      };
+      xhr.onload = progressEvent => {
+        if (xhr.status === 200) {
+          // Success! You probably want to save the URL somewhere
+          this.progress = "Completed";
+          setTimeout(() => {
+            this.start = false;
+          }, 1000);
+          var response = JSON.parse(xhr.response);
+          this.uploadedFileUrl = response.secure_url; // https address of uploaded file
+          this.program.cover_image = response.secure_url;
+        } else {
+          this.start = false;
+          alert("Upload failed. Please try again.");
+        }
+      };
+      xhr.send(formData);
+    },
+    upload_handler(blobInfo, success, failure) {
+      var xhr, formData;
+      xhr = new XMLHttpRequest();
+      xhr.withCredentials = false;
+      xhr.open("POST", "/api/image-upload");
+      xhr.onload = function() {
+        var json;
 
-  
+        if (xhr.status != 200) {
+          failure("HTTP Error: " + xhr.status);
+          return;
+        }
+        json = JSON.parse(xhr.responseText);
+
+        if (!json || typeof json.location != "string") {
+          failure("Invalid JSON: " + xhr.responseText);
+          return;
+        }
+        success(json.location);
+      };
+      formData = new FormData();
+      formData.append("file", blobInfo.blob());
+      xhr.send(formData);
+    },
+    loadFile(cb, value, mt) {
+      var input = document.createElement("input");
+      input.setAttribute("type", "file");
+      input.setAttribute("accept", "image/*");
+      input.onchange = function() {
+        var file = this.files[0];
+
+        var reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onload = function() {
+          var id = "blobid" + new Date().getTime();
+          var blobCache = tinymce.activeEditor.editorUpload.blobCache;
+          var base64 = reader.result.split(",")[1];
+          var blobInfo = blobCache.create(id, file, base64);
+          blobCache.add(blobInfo);
+          cb(blobInfo.blobUri(), { title: file.name });
+        };
+      };
+      input.click();
+    }
+  }
 };
 </script>
 

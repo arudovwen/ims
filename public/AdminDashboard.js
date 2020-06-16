@@ -113,7 +113,52 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-/* harmony default export */ __webpack_exports__["default"] = ({});
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      projects: [],
+      programs: [],
+      current: []
+    };
+  },
+  mounted: function mounted() {
+    this.getProjects();
+    this.getPrograms();
+  },
+  methods: {
+    getProjects: function getProjects() {
+      var _this = this;
+
+      axios.get("/api/get-projects").then(function (res) {
+        if (res.status == 200) {
+          _this.projects = res.data;
+        }
+      });
+      axios.get("/api/current-a").then(function (res) {
+        if (res.status == 200) {
+          _this.current = res.data;
+        }
+      });
+    },
+    getPrograms: function getPrograms() {
+      var _this2 = this;
+
+      axios.get("/api/get-programs").then(function (res) {
+        if (res.status == 200) {
+          _this2.programs = res.data;
+        }
+      });
+    }
+  }
+});
 
 /***/ }),
 
@@ -129,7 +174,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n#main-body[data-v-234d4910] {\n  padding: 15px;\n  height: 100vh;\n  overflow: auto;\n  display: grid;\n  grid-template-rows: 1fr 3fr;\n  grid-row-gap: 15px;\n}\n.box[data-v-234d4910] {\n  width: 100%;\n}\n.box_1[data-v-234d4910] {\n  display: grid;\n  grid-template-columns: 1fr 1fr 1fr 1fr;\n  grid-column-gap: 15px;\n}\n.circle-box[data-v-234d4910] {\n  height: 100%;\n  width: 100%;\n  position: absolute;\n  background: #0F7A8A;\n  border-radius: 50%;\n  right: -60%;\n}\n.content[data-v-234d4910]{\n  padding-left: 15px;\n}\n.text_header[data-v-234d4910] {\n  font-size: 18px;\n  font-weight: 500;\n  text-align: left;\n  color: #0F7A8A;\n}\n.actions li a[data-v-234d4910] {\n  font-weight: 400;\n  font-size: 14px;\n  color: rgba(0, 0, 0, 0.54);\n  cursor: pointer;\n}\n.actions li:hover a[data-v-234d4910] {\n  color: rgba(0, 0, 0, 0.84);\n}\na[data-v-234d4910] {\n  text-decoration: none;\n}\n.mini_box[data-v-234d4910] {\n  height: 100%;\n  background: white;\n  display: grid;\n  align-items: center;\n  position: relative;\n  overflow: hidden;\n}\n.box_content_1[data-v-234d4910] {\n  display: grid;\n  grid-template-columns: 1fr 1fr;\n  grid-column-gap: 15px;\n  justify-content: space-between;\n  align-items: center;\n}\n.mini_box:hover .icon[data-v-234d4910] {\n  transform: scale(1.06);\n}\n.fa-stack[data-v-234d4910]{\n  color: transparent;\n}\n.icon[data-v-234d4910] {\n    position: absolute;\n    bottom: 50%;\n    margin-bottom: -24px;\n    left: 15%;\n    color: hsl(120, 100%, 98%);\n}\n.box_2[data-v-234d4910] {\n  display: grid;\n  grid-template-columns: 1fr 1fr;\n  grid-column-gap: 15px;\n}\n.mini_box2[data-v-234d4910] {\n  height: 100%;\n  width: 100%;\n}\n.mini_first[data-v-234d4910] {\n  display: grid;\n  grid-template-rows: 1fr 2fr;\n  grid-row-gap: 15px;\n}\n.mini_bb[data-v-234d4910] {\n  display: grid;\n  grid-template-columns: 1fr 1fr;\n  grid-column-gap: 15px;\n}\n.mini_c[data-v-234d4910] {\n  background: white;\n}\n", ""]);
+exports.push([module.i, "\n#main-body[data-v-234d4910] {\n  padding: 15px;\n  height: 100vh;\n  overflow: auto;\n  display: grid;\n  grid-template-rows: 1fr 3fr;\n  grid-row-gap: 15px;\n}\n.box[data-v-234d4910] {\n  width: 100%;\n}\n.box_1[data-v-234d4910] {\n  display: grid;\n  grid-template-columns: 1fr 1fr 1fr 1fr;\n  grid-column-gap: 15px;\n}\nh5[data-v-234d4910]{\n  color:#0f7a8a;\n}\n.circle-box[data-v-234d4910] {\n  height: 100%;\n  width: 100%;\n  position: absolute;\n  background: #0f7a8a;\n  border-radius: 50%;\n  right: -60%;\n}\n.content[data-v-234d4910] {\n  padding-left: 15px;\n}\n.text_header[data-v-234d4910] {\n  font-size: 18px;\n  font-weight: 500;\n  text-align: left;\n  color: #0f7a8a;\n}\n.actions li a[data-v-234d4910] {\n  font-weight: 400;\n  font-size: 14px;\n  color: rgba(0, 0, 0, 0.54);\n  cursor: pointer;\n}\n.actions li:hover a[data-v-234d4910] {\n  color: rgba(0, 0, 0, 0.84);\n}\na[data-v-234d4910] {\n  text-decoration: none;\n}\n.mini_box[data-v-234d4910] {\n  height: 100%;\n  background: white;\n  display: grid;\n  align-items: center;\n  position: relative;\n  overflow: hidden;\n}\n.box_content_1[data-v-234d4910] {\n  display: grid;\n  grid-template-columns: 1fr 1fr;\n  grid-column-gap: 15px;\n  justify-content: space-between;\n  align-items: center;\n}\n.mini_box:hover .icon[data-v-234d4910] {\n  transform: scale(1.06);\n}\n.fa-stack[data-v-234d4910] {\n  color: transparent;\n}\n.icon[data-v-234d4910] {\n  position: absolute;\n  bottom: 50%;\n  margin-bottom: -24px;\n  left: 15%;\n  color: hsl(120, 100%, 98%);\n}\n.box_2[data-v-234d4910] {\n  display: grid;\n  grid-template-columns: 1fr 1fr;\n  grid-column-gap: 15px;\n}\n.mini_box2[data-v-234d4910] {\n  height: 100%;\n  width: 100%;\n}\n.mini_first[data-v-234d4910] {\n  display: grid;\n  grid-template-rows: 1fr 2fr;\n  grid-row-gap: 15px;\n}\n.mini_bb[data-v-234d4910] {\n  display: grid;\n  grid-template-columns: 1fr 1fr;\n  grid-column-gap: 15px;\n}\n.mini_c[data-v-234d4910] {\n  background: white;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n}\n", ""]);
 
 // exports
 
@@ -288,7 +333,92 @@ var render = function() {
       ])
     ]),
     _vm._v(" "),
-    _vm._m(4)
+    _c("div", { staticClass: "box box_2" }, [
+      _c("div", { staticClass: "mini_box2 mini_first" }, [
+        _c(
+          "div",
+          {
+            staticClass:
+              "mini_b shadow-sm bg-white d-flex flex-column justify-content-center align-items-center"
+          },
+          [
+            _c("h5", [_vm._v("Current Announcement")]),
+            _vm._v(" "),
+            _vm.current.length
+              ? _c("h4", [_vm._v(_vm._s(_vm.current[0].subject))])
+              : _vm._e()
+          ]
+        ),
+        _vm._v(" "),
+        _c("div", { staticClass: "mini_b mini_bb" }, [
+          _c("div", { staticClass: "mini_c shadow-sm p-2" }, [
+            _c("h5", [_vm._v("Programs")]),
+            _vm._v(" "),
+            _vm.programs.length
+              ? _c(
+                  "table",
+                  {
+                    staticClass:
+                      "table table-hover table-inverse  table-bordered"
+                  },
+                  [
+                    _c(
+                      "tbody",
+                      _vm._l(_vm.programs, function(item, idx) {
+                        return _c("tr", { key: idx }, [
+                          _c(
+                            "td",
+                            {
+                              staticClass: "text-center",
+                              attrs: { scope: "row" }
+                            },
+                            [_vm._v(_vm._s(item.name))]
+                          )
+                        ])
+                      }),
+                      0
+                    )
+                  ]
+                )
+              : _vm._e()
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "mini_c shadow-sm p-2" }, [
+            _c("h5", [_vm._v("Projects")]),
+            _vm._v(" "),
+            _vm.projects.length
+              ? _c(
+                  "table",
+                  {
+                    staticClass:
+                      "table table-hover table-inverse  table-bordered"
+                  },
+                  [
+                    _c(
+                      "tbody",
+                      _vm._l(_vm.projects, function(item, idx) {
+                        return _c("tr", { key: idx }, [
+                          _c(
+                            "td",
+                            {
+                              staticClass: "text-center",
+                              attrs: { scope: "row" }
+                            },
+                            [_vm._v(_vm._s(item.name))]
+                          )
+                        ])
+                      }),
+                      0
+                    )
+                  ]
+                )
+              : _vm._e()
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "mini_box2 shadow-sm bg-white" })
+    ])
   ])
 }
 var staticRenderFns = [
@@ -298,7 +428,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "circle-box" }, [
       _c("i", {
-        staticClass: "fas fa-folder-open  fa-3x icon",
+        staticClass: "fas fa-folder-open fa-3x icon",
         attrs: { "aria-hidden": "true" }
       })
     ])
@@ -309,7 +439,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "circle-box" }, [
       _c("i", {
-        staticClass: "fas fa-credit-card  fa-3x icon",
+        staticClass: "fas fa-credit-card fa-3x icon",
         attrs: { "aria-hidden": "true" }
       })
     ])
@@ -320,7 +450,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "circle-box" }, [
       _c("i", {
-        staticClass: "fa fa-list-alt   fa-3x icon ",
+        staticClass: "fa fa-list-alt fa-3x icon",
         attrs: { "aria-hidden": "true" }
       })
     ])
@@ -330,25 +460,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "circle-box" }, [
-      _c("i", { staticClass: "fas fa-newspaper  fa-3x icon " })
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "box box_2" }, [
-      _c("div", { staticClass: "mini_box2 mini_first" }, [
-        _c("div", { staticClass: "mini_b shadow-sm bg-white" }),
-        _vm._v(" "),
-        _c("div", { staticClass: "mini_b mini_bb" }, [
-          _c("div", { staticClass: "mini_c shadow-sm" }),
-          _vm._v(" "),
-          _c("div", { staticClass: "mini_c shadow-sm" })
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "mini_box2 shadow-sm bg-white" })
+      _c("i", { staticClass: "fas fa-newspaper fa-3x icon" })
     ])
   }
 ]

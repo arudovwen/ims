@@ -17,12 +17,12 @@
           class="d-flex flex-column justify-content-center align-items-center mini_b shadow-sm bg-white"
         >
           <h5>Current Announcement</h5>
-          <h4>{{current[0].subject}}</h4>
+          <h4 v-if="current.length">{{current[0].subject}}</h4>
         </div>
         <div class="mini_b mini_bb">
           <div class="mini_c shadow-sm p-2">
             <h5>All Announcement</h5>
-            <table class="table">
+            <table class="table" v-if="announcements.length">
               <thead>
                 <tr>
                   <th>#</th>
@@ -57,7 +57,7 @@
       </div>
       <div class="mini_box2 shadow-sm bg-white p-2">
         <h5>All News</h5>
-        <table class="table">
+        <table class="table" v-if="news.length">
           <thead>
             <tr>
               <th>#</th>

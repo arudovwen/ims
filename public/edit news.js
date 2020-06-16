@@ -204,12 +204,16 @@ __webpack_require__.r(__webpack_exports__);
         axios.put("/api/update-news/".concat(this.$route.params.id), this.post).then(function (res) {
           if (res.status == 200) {
             _this3.$toasted.info("Updated");
+
+            _this3.$router.go(-1);
           }
         });
       } else {
         axios.put("/api/update-announcement/".concat(this.$route.params.id), this.post).then(function (res) {
           if (res.status == 200) {
             _this3.$toasted.info("Updated");
+
+            _this3.$router.go(-1);
           }
         });
       }
@@ -454,17 +458,23 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     update: function update() {
+      var _this = this;
+
       axios.put("/api/update-program/".concat(this.$route.params.id), this.program).then(function (res) {
-        if (res.status == 200) {}
+        if (res.status == 200) {
+          _this.$toasted.info("Updated successfully");
+
+          _this.$router.go(-1);
+        }
       });
     },
     getprogram: function getprogram() {
-      var _this = this;
+      var _this2 = this;
 
       axios.get("/api/get-program/".concat(this.$route.params.id)).then(function (res) {
         if (res.status == 200) {
-          _this.program = res.data;
-          _this.placeholder = res.data.cover_image;
+          _this2.program = res.data;
+          _this2.placeholder = res.data.cover_image;
         }
       });
     },
@@ -473,19 +483,19 @@ __webpack_require__.r(__webpack_exports__);
       this.loadCoverFile(file);
     },
     loadCoverFile: function loadCoverFile(file) {
-      var _this2 = this;
+      var _this3 = this;
 
       var reader = new FileReader();
 
       reader.onload = function (event) {
-        _this2.placeholder = event.target.result;
+        _this3.placeholder = event.target.result;
       };
 
       reader.readAsDataURL(file);
       this.processUpload(file);
     },
     processUpload: function processUpload(file) {
-      var _this3 = this;
+      var _this4 = this;
 
       var that = this;
       this.start = true;
@@ -516,16 +526,16 @@ __webpack_require__.r(__webpack_exports__);
       xhr.onload = function (progressEvent) {
         if (xhr.status === 200) {
           // Success! You probably want to save the URL somewhere
-          _this3.progress = "Completed";
+          _this4.progress = "Completed";
           setTimeout(function () {
-            _this3.start = false;
+            _this4.start = false;
           }, 1000);
           var response = JSON.parse(xhr.response);
-          _this3.uploadedFileUrl = response.secure_url; // https address of uploaded file
+          _this4.uploadedFileUrl = response.secure_url; // https address of uploaded file
 
-          _this3.post.coverImage = response.secure_url;
+          _this4.post.coverImage = response.secure_url;
         } else {
-          _this3.start = false;
+          _this4.start = false;
           alert("Upload failed. Please try again.");
         }
       };
@@ -708,17 +718,23 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     update: function update() {
+      var _this = this;
+
       axios.put("/api/update-project/".concat(this.$route.params.id), this.project).then(function (res) {
-        if (res.status == 200) {}
+        if (res.status == 200) {
+          _this.$toasted.info("Updated successfully");
+
+          _this.$router.go(-1);
+        }
       });
     },
     getProject: function getProject() {
-      var _this = this;
+      var _this2 = this;
 
       axios.get("/api/get-project/".concat(this.$route.params.id)).then(function (res) {
         if (res.status == 200) {
-          _this.project = res.data;
-          _this.placeholder = res.data.cover_image;
+          _this2.project = res.data;
+          _this2.placeholder = res.data.cover_image;
         }
       });
     },
@@ -727,19 +743,19 @@ __webpack_require__.r(__webpack_exports__);
       this.loadCoverFile(file);
     },
     loadCoverFile: function loadCoverFile(file) {
-      var _this2 = this;
+      var _this3 = this;
 
       var reader = new FileReader();
 
       reader.onload = function (event) {
-        _this2.placeholder = event.target.result;
+        _this3.placeholder = event.target.result;
       };
 
       reader.readAsDataURL(file);
       this.processUpload(file);
     },
     processUpload: function processUpload(file) {
-      var _this3 = this;
+      var _this4 = this;
 
       var that = this;
       this.start = true;
@@ -770,16 +786,16 @@ __webpack_require__.r(__webpack_exports__);
       xhr.onload = function (progressEvent) {
         if (xhr.status === 200) {
           // Success! You probably want to save the URL somewhere
-          _this3.progress = "Completed";
+          _this4.progress = "Completed";
           setTimeout(function () {
-            _this3.start = false;
+            _this4.start = false;
           }, 1000);
           var response = JSON.parse(xhr.response);
-          _this3.uploadedFileUrl = response.secure_url; // https address of uploaded file
+          _this4.uploadedFileUrl = response.secure_url; // https address of uploaded file
 
-          _this3.post.coverImage = response.secure_url;
+          _this4.post.coverImage = response.secure_url;
         } else {
-          _this3.start = false;
+          _this4.start = false;
           alert("Upload failed. Please try again.");
         }
       };

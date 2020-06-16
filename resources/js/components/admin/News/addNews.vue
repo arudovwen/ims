@@ -163,11 +163,29 @@ export default {
       if (this.type == "news") {
         axios.post("/api/create-news", this.post).then(res => {
           if (res.status == 200) {
+            this.$toasted.success("Created successfully");
+            this.post = {
+              subject: "",
+              author: "",
+              category: "selected",
+              featured: false,
+              coverImage: "",
+              content: ""
+            };
           }
         });
       } else {
         axios.post("/api/create-announcement", this.post).then(res => {
           if (res.status == 200) {
+            this.$toasted.success("Created successfully");
+            this.post = {
+              subject: "",
+              author: "",
+              category: "selected",
+              featured: false,
+              coverImage: "",
+              content: ""
+            };
           }
         });
       }

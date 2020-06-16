@@ -146,6 +146,7 @@ export default {
         .post("/api/create", this.school)
         .then(res => {
           if (res.status == 201) {
+            this.$toasted.info('Created successfully');
             this.school.push({
               name: "",
               email: "",

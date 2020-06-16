@@ -155,6 +155,8 @@ __webpack_require__.r(__webpack_exports__);
 
       axios.post("/api/create", this.school).then(function (res) {
         if (res.status == 201) {
+          _this2.$toasted.info('Created successfully');
+
           _this2.school.push({
             name: "",
             email: "",

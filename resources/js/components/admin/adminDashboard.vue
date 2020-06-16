@@ -3,10 +3,7 @@
     <div class="box box_1">
       <div class="mini_box shadow-sm p-2 py-4">
         <div class="circle-box">
-        
-           
-            <i class="fas fa-folder-open  fa-3x icon" aria-hidden="true"></i>
-          
+          <i class="fas fa-folder-open fa-3x icon" aria-hidden="true"></i>
         </div>
         <div class="content">
           <div class="text_header">Directory</div>
@@ -22,21 +19,18 @@
 
         <!-- <hr> -->
       </div>
-       <div class="mini_box shadow-sm p-2 py-4">
+      <div class="mini_box shadow-sm p-2 py-4">
         <div class="circle-box">
-        
-          
-           <i class="fas fa-credit-card  fa-3x icon" aria-hidden="true"></i>
-        
+          <i class="fas fa-credit-card fa-3x icon" aria-hidden="true"></i>
         </div>
         <div class="content">
           <div class="text_header">Payments</div>
           <ul class="actions text-left">
             <li>
-              <router-link to="">View</router-link>
+              <router-link to>View</router-link>
             </li>
             <li>
-              <router-link to="">Verify</router-link>
+              <router-link to>Verify</router-link>
             </li>
           </ul>
         </div>
@@ -44,22 +38,18 @@
         <!-- <hr> -->
       </div>
 
-       <div class="mini_box shadow-sm p-2 py-4">
+      <div class="mini_box shadow-sm p-2 py-4">
         <div class="circle-box">
-        
-          
-            <i class="fa fa-list-alt   fa-3x icon " aria-hidden="true"></i>
-          
-        
+          <i class="fa fa-list-alt fa-3x icon" aria-hidden="true"></i>
         </div>
         <div class="content">
           <div class="text_header">Applications</div>
           <ul class="actions text-left">
             <li>
-              <router-link to="">Check</router-link>
+              <router-link to>Check</router-link>
             </li>
             <li>
-              <router-link to="">Update</router-link>
+              <router-link to>Update</router-link>
             </li>
           </ul>
         </div>
@@ -67,12 +57,9 @@
         <!-- <hr> -->
       </div>
 
-       <div class="mini_box shadow-sm p-2 py-4">
+      <div class="mini_box shadow-sm p-2 py-4">
         <div class="circle-box">
-        
-          
-            <i class="fas fa-newspaper  fa-3x icon "></i>
-         
+          <i class="fas fa-newspaper fa-3x icon"></i>
         </div>
         <div class="content">
           <div class="text_header">News</div>
@@ -91,10 +78,31 @@
     </div>
     <div class="box box_2">
       <div class="mini_box2 mini_first">
-        <div class="mini_b shadow-sm bg-white"></div>
+        <div class="mini_b shadow-sm bg-white d-flex flex-column justify-content-center align-items-center">
+            <h5>Current Announcement</h5>
+          <h4 v-if="current.length">{{current[0].subject}}</h4>
+        </div>
         <div class="mini_b mini_bb">
-          <div class="mini_c shadow-sm"></div>
-          <div class="mini_c shadow-sm"></div>
+          <div class="mini_c shadow-sm p-2">
+            <h5>Programs</h5>
+            <table class="table table-hover table-inverse  table-bordered" v-if="programs.length">
+              <tbody>
+                <tr v-for="(item,idx) in programs" :key="idx">
+                  <td scope="row" class="text-center">{{item.name}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="mini_c shadow-sm p-2">
+            <h5>Projects</h5>
+            <table class="table table-hover table-inverse  table-bordered" v-if="projects.length">
+              <tbody>
+                <tr v-for="(item,idx) in projects" :key="idx">
+                  <td scope="row" class="text-center">{{item.name}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
       <div class="mini_box2 shadow-sm bg-white"></div>
@@ -103,7 +111,40 @@
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      projects: [],
+      programs: [],
+      current:[]
+    };
+  },
+  mounted() {
+    this.getProjects();
+    this.getPrograms();
+  },
+  methods: {
+    getProjects() {
+      axios.get("/api/get-projects").then(res => {
+        if (res.status == 200) {
+          this.projects = res.data;
+        }
+      });
+        axios.get("/api/current-a").then(res => {
+        if (res.status == 200) {
+          this.current = res.data;
+        }
+      });
+    },
+    getPrograms() {
+      axios.get("/api/get-programs").then(res => {
+        if (res.status == 200) {
+          this.programs = res.data;
+        }
+      });
+    }
+  }
+};
 </script>
 
 <style scoped>
@@ -123,22 +164,25 @@ export default {};
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-column-gap: 15px;
 }
+h5{
+  color:#0f7a8a;
+}
 .circle-box {
   height: 100%;
   width: 100%;
   position: absolute;
-  background: #0F7A8A;
+  background: #0f7a8a;
   border-radius: 50%;
   right: -60%;
 }
-.content{
+.content {
   padding-left: 15px;
 }
 .text_header {
   font-size: 18px;
   font-weight: 500;
   text-align: left;
-  color: #0F7A8A;
+  color: #0f7a8a;
 }
 .actions li a {
   font-weight: 400;
@@ -170,15 +214,15 @@ a {
 .mini_box:hover .icon {
   transform: scale(1.06);
 }
-.fa-stack{
+.fa-stack {
   color: transparent;
 }
 .icon {
-    position: absolute;
-    bottom: 50%;
-    margin-bottom: -24px;
-    left: 15%;
-    color: hsl(120, 100%, 98%);
+  position: absolute;
+  bottom: 50%;
+  margin-bottom: -24px;
+  left: 15%;
+  color: hsl(120, 100%, 98%);
 }
 .box_2 {
   display: grid;
@@ -202,5 +246,8 @@ a {
 }
 .mini_c {
   background: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 </style>

@@ -20,7 +20,7 @@
       </div>
       <div class="mini_box2 shadow-sm bg-white p-2">
         <h5>All Projects</h5>
-          <table class="table">
+          <table class="table" v-if="projects.length">
               <thead>
                 <tr>
                   <th>#</th>

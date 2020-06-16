@@ -13,7 +13,7 @@
       </div>
       <div class="mini_box2 shadow-sm bg-white p-2">
         <h5>All programs</h5>
-        <table class="table">
+        <table class="table" v-if="programs.length">
           <thead>
             <tr>
               <th>#</th>
