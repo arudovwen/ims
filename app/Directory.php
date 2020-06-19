@@ -9,5 +9,5 @@ class Directory extends Model
     //
 
     protected $table = 'directories';
-    protected $fillable = ['name','address','phone_no','email','level','lga','accreditation','ownership','type','sector'];
+    protected $fillable = ['name','address','phone_no','email','level','lga','accreditation','ownership','type','sector','diocese'];
 }

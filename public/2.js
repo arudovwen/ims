@@ -118,6 +118,18 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -130,6 +142,7 @@ __webpack_require__.r(__webpack_exports__);
         sector: "selected",
         ownership: "selected",
         type: "selected",
+        diocese: 'selected',
         accreditation: "selected",
         lga: "selected"
       },
@@ -165,6 +178,7 @@ __webpack_require__.r(__webpack_exports__);
             level: "selected",
             sector: "selected",
             ownership: "selected",
+            diocese: 'selected',
             type: "selected",
             accreditation: "selected",
             lga: "selected"
@@ -516,6 +530,58 @@ var render = function() {
               _c("option", [_vm._v("Accredited")]),
               _vm._v(" "),
               _c("option", [_vm._v("Non-accredited")])
+            ]
+          )
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "form-group" }, [
+          _c("label", { attrs: { for: "" } }, [_vm._v("Diocese")]),
+          _vm._v(" "),
+          _c(
+            "select",
+            {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.school.diocese,
+                  expression: "school.diocese"
+                }
+              ],
+              staticClass: "custom-select",
+              attrs: { required: "" },
+              on: {
+                change: function($event) {
+                  var $$selectedVal = Array.prototype.filter
+                    .call($event.target.options, function(o) {
+                      return o.selected
+                    })
+                    .map(function(o) {
+                      var val = "_value" in o ? o._value : o.value
+                      return val
+                    })
+                  _vm.$set(
+                    _vm.school,
+                    "diocese",
+                    $event.target.multiple ? $$selectedVal : $$selectedVal[0]
+                  )
+                }
+              }
+            },
+            [
+              _c("option", { attrs: { value: "selected", disabled: "" } }, [
+                _vm._v("Select one")
+              ]),
+              _vm._v(" "),
+              _c("option", [_vm._v("Catholic Diocese of Okigwe")]),
+              _vm._v(" "),
+              _c("option", [_vm._v("Catholic Diocese of Ahiara")]),
+              _vm._v(" "),
+              _c("option", [_vm._v("Catholic Diocese of Owerri")]),
+              _vm._v(" "),
+              _c("option", [_vm._v("Catholic Diocese of Orlu")]),
+              _vm._v(" "),
+              _c("option", [_vm._v(" Religious in Owerri Archdiocese")])
             ]
           )
         ]),

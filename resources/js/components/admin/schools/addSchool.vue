@@ -75,6 +75,18 @@
         </select>
       </div>
 
+     <div class="form-group">
+        <label for>Diocese</label>
+        <select required class="custom-select" v-model="school.diocese">
+          <option value="selected" disabled>Select one</option>
+          <option>Catholic Diocese of Okigwe</option>
+           <option>Catholic Diocese of Ahiara</option>
+            <option>Catholic Diocese of Owerri</option>
+             <option>Catholic Diocese of Orlu</option>
+             <option > Religious in Owerri Archdiocese</option>
+        </select>
+      </div>
+
       <div class="form-group">
         <label for>LGA</label>
         <select required class="custom-select" v-model="school.lga">
@@ -120,6 +132,7 @@ export default {
         sector: "selected",
         ownership: "selected",
         type: "selected",
+        diocese:'selected',
         accreditation: "selected",
         lga: "selected"
       },
@@ -155,6 +168,7 @@ export default {
               level: "selected",
               sector: "selected",
               ownership: "selected",
+              diocese:'selected',
               type: "selected",
               accreditation: "selected",
               lga: "selected"

@@ -9,32 +9,26 @@ class DirectoryController extends Controller
 {
     public function create(Request $request)
     {
-//         $arr=[
+    //     $arr=[
            
-// "Holy Rosary School of Nursing/Midwifery, Emekuku",
-// "Holy Rosary School of Health Technology, Emekuku"
-            
-            
-            
-           
-//       ];
+    //   ];
 
       
-//            foreach($arr as $ar){
-//             Directory::create([
-//                         'name' => $ar,
-//                         'address'  => 'null',
-//                         'phone_no'  => 'null',
-//                         'email'  => 'null',
-//                         'level'  => $request->level,
-//                         'lga'  => $request->lga,
-//                         'accreditation'  => $request->accreditation,
-//                         'ownership'  => $request->ownership,
-//                         'type'  => $request->type,
-//                         'sector'  => $request->sector
-//                         ]);
-            
-//            }
+    //     foreach ($arr as $ar) {
+    //         Directory::create([
+    //                     'name' => trim($ar),
+    //                     'address'  => 'null',
+    //                     'phone_no'  => 'null',
+    //                     'email'  => 'null',
+    //                     'level'  => $request->level,
+    //                     'lga'  => 'null',
+    //                     'accreditation'  => $request->accreditation,
+    //                     'ownership'  => $request->ownership,
+    //                     'diocese' => $request->diocese,
+    //                     'type'  => $request->type,
+    //                     'sector'  => $request->sector
+    //                     ]);
+    //     }
            
 
         return Directory::create([
@@ -47,6 +41,7 @@ class DirectoryController extends Controller
                 'accreditation'  => $request->accreditation,
                 'ownership'  => $request->ownership,
                 'type'  => $request->type,
+                  'diocese' => $request->diocese,
                 'sector'  => $request->sector
                 ]);
     }

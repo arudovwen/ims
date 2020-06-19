@@ -217,7 +217,7 @@ var AdminHome = function AdminHome() {
 };
 
 var AdminDirectory = function AdminDirectory() {
-  return Promise.all(/*! import() | AdminDirectory */[__webpack_require__.e("/js/vendor"), __webpack_require__.e("AdminDirectory")]).then(__webpack_require__.bind(null, /*! ./components/admin/adminDirectory.vue */ "./resources/js/components/admin/adminDirectory.vue"));
+  return Promise.all(/*! import() | AdminDirectory */[__webpack_require__.e("/js/vendor"), __webpack_require__.e("AdminDirectory")]).then(__webpack_require__.bind(null, /*! ./components/admin/directory/dashboard.vue */ "./resources/js/components/admin/directory/dashboard.vue"));
 };
 
 var AdminDashboard = function AdminDashboard() {
@@ -294,6 +294,10 @@ var ApplicationDashboard = function ApplicationDashboard() {
 
 var Lga = function Lga() {
   return Promise.all(/*! import() | admin_home */[__webpack_require__.e("/js/vendor"), __webpack_require__.e("admin_home")]).then(__webpack_require__.bind(null, /*! ./components/admin/lga/lga.vue */ "./resources/js/components/admin/lga/lga.vue"));
+};
+
+var SchoolsDirectory = function SchoolsDirectory() {
+  return Promise.all(/*! import() | admin_home */[__webpack_require__.e("/js/vendor"), __webpack_require__.e("admin_home")]).then(__webpack_require__.bind(null, /*! ./components/admin/directory/schoolDirectory.vue */ "./resources/js/components/admin/directory/schoolDirectory.vue"));
 };
 
 var InitiativeProjects = function InitiativeProjects() {
@@ -425,6 +429,13 @@ var routes = [{
     path: "/admin/lga",
     component: Lga,
     name: "Lga",
+    meta: {
+      requiresAuth: true
+    }
+  }, {
+    path: "/admin/directory/school",
+    component: SchoolsDirectory,
+    name: "SchoolsDirectory",
     meta: {
       requiresAuth: true
     }

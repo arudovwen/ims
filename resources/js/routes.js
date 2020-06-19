@@ -57,7 +57,7 @@ let AdminHome = () =>
 
 let AdminDirectory = () =>
     import(
-        /* webpackChunkName: "AdminDirectory" */ "./components/admin/adminDirectory.vue"
+        /* webpackChunkName: "AdminDirectory" */ "./components/admin/directory/dashboard.vue"
     );
 let AdminDashboard = () =>
     import(
@@ -137,6 +137,10 @@ let ApplicationDashboard = () =>
 let Lga = () =>
     import(
         /* webpackChunkName: "admin_home" */ "./components/admin/lga/lga.vue"
+    );
+    let SchoolsDirectory = () =>
+    import(
+        /* webpackChunkName: "admin_home" */ "./components/admin/directory/schoolDirectory.vue"
     );
 let InitiativeProjects = () =>
     import(
@@ -263,6 +267,14 @@ export const routes = [
                 path: "/admin/lga",
                 component: Lga,
                 name: "Lga",
+                meta: {
+                    requiresAuth: true
+                }
+            },
+            {
+                path: "/admin/directory/school",
+                component: SchoolsDirectory,
+                name: "SchoolsDirectory",
                 meta: {
                     requiresAuth: true
                 }
