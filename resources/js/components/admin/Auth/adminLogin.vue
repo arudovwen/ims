@@ -87,8 +87,8 @@ export default {
                 this.active = false;
                 adminUser.name = res.data.name;
                 adminUser.email = res.data.email;
+                 adminUser.role = res.data.role;
                 localStorage.setItem("adminUser", JSON.stringify(adminUser));
-
                
                 if (this.$route.query.redirect) {
                     this.$router.push(this.$route.query.redirect)

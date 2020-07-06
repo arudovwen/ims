@@ -12,6 +12,9 @@
         <router-link to="/admin/dashboard">
           <li class="single_nav_item">Home</li>
         </router-link>
+         <router-link to="/admin/users" v-if="admin.role == 'administrator'">
+          <li class="single_nav_item">Users</li>
+        </router-link>
         <router-link to="/admin/directory">
           <li class="single_nav_item">Directory</li>
         </router-link>
@@ -40,12 +43,14 @@ export default {
   props: ["showHeader"],
   data() {
     return {
-      name: ""
+      name: "",
+      admin:{}
     };
   },
   components: {},
   mounted() {
     let admin = JSON.parse(localStorage.getItem("adminUser"));
+      this.admin = JSON.parse(localStorage.getItem("adminUser"));
     this.name = admin.name;
   },
   methods: {
@@ -104,11 +109,7 @@ a {
   text-decoration: none;
 }
 .overlay {
-  background: repeating-linear-gradient(
-    to right,
-    rgb(15, 122, 138, 0.85) 0%,
-    rgba(32, 46, 48, 0.85) 100%
-  );
+    background:  rgb(15, 122, 138, 0.9);
   position: absolute;
   width: 100%;
   z-index: 1;

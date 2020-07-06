@@ -7,7 +7,7 @@
     <div class="box box_2">
       <div class="mini_box2 mini_first">
         <div class="mini_b shadow-sm bg-white d-flex justify-content-center align-items-center">
-           <router-link to=""> Staff Directory</router-link>
+           <router-link to="/admin/staffs"> Staff Directory</router-link>
         </div>
         <div class="mini_b mini_bb">
           <div class="mini_c shadow-sm"></div>

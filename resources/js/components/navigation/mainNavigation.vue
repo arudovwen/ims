@@ -2,7 +2,7 @@
   <div id="bottom_nav" :class="{'overlay-bg':show_nav_bar}">
     <div class="overlay" v-if="show_nav_bar"></div>
    
-    <ul class="nav_bar animated slideInUp" v-if="show_nav_bar">
+    <ul class="nav_bar animated fadeIn" v-if="show_nav_bar">
       <li>
         <div>
           <router-link to="/">
@@ -184,7 +184,7 @@ strong {
   color: white;
   height: 5.2em;
   text-decoration: none;
-  text-transform: uppercase;
+  text-transform: capitalize;
 }
 .nav_bar li:hover a {
   color: #ECEE53;

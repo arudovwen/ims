@@ -81,3 +81,12 @@ Route::get('get-programs', 'ProgramsController@getPrograms');
 Route::put('update-program/{id}', 'ProgramsController@updateProgram');
 Route::get('get-program/{id}', 'ProgramsController@getProgram');
 Route::delete('delete-program/{id}', 'ProgramsController@deleteProgram');
+
+
+Route::middleware('auth:admin')->group(function () {
+    Route::resource('admin', 'AdminController');
+    Route::post('multi-delete', 'AdminController@multiDelete');
+    Route::resource('staff', 'StaffController');
+    Route::post('multi-staff-delete', 'StaffController@multiDelete');
+});
+

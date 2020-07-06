@@ -182,7 +182,7 @@ var render = function() {
               "mini_b shadow-sm bg-white d-flex justify-content-center align-items-center"
           },
           [
-            _c("router-link", { attrs: { to: "" } }, [
+            _c("router-link", { attrs: { to: "/admin/staffs" } }, [
               _vm._v(" Staff Directory")
             ])
           ],

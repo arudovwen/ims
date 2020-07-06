@@ -116,10 +116,12 @@ export default {
     return {
       projects: [],
       programs: [],
-      current:[]
+      current:[],
+      admin:{}
     };
   },
   mounted() {
+     this.admin = JSON.parse(localStorage.getItem("adminUser"));
     this.getProjects();
     this.getPrograms();
   },

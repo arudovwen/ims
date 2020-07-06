@@ -55,13 +55,14 @@ export default {
       swiperOptions: {
         spaceBetween: 30,
         slidesPerView: 1,
+        effect:'cube',
         loop: true,
         pagination: {
           el: ".swiper-pagination"
         },
-        // autoplay: {
-        //   delay: 6000
-        // }
+        autoplay: {
+          delay: 5000
+        }
       }
     };
   }

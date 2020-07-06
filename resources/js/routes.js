@@ -59,10 +59,21 @@ let AdminDirectory = () =>
     import(
         /* webpackChunkName: "AdminDirectory" */ "./components/admin/directory/dashboard.vue"
     );
+
+    
 let AdminDashboard = () =>
     import(
         /* webpackChunkName: "AdminDashboard" */ "./components/admin/adminDashboard.vue"
     );
+    let AdminStaffs = () =>
+    import(
+        /* webpackChunkName: "AdminDashboard" */ "./components/admin/staffs/staffs.vue"
+    );
+    let AdminUsers = () =>
+    import(
+        /* webpackChunkName: "AdminDashboard" */ "./components/admin/users/users.vue"
+    );
+
 let AdminAuth = () =>
     import(
         /* webpackChunkName: "admin_home" */ "./components/admin/Auth/adminAuth.vue"
@@ -248,9 +259,34 @@ export const routes = [
                 }
             },
             {
+                path: "/admin/users",
+                component: AdminUsers,
+                name: "AdminUsers",
+                meta: {
+                    requiresAuth: true
+                },
+                beforeEnter: (to, from, next) => {
+                    var admin = JSON.parse(localStorage.getItem("adminUser"));
+                    if (admin.role == 'administrator') {
+                        next();
+                    } else {
+                        next({ name: "AdminDashboard" });
+                    }
+                }
+            },
+            
+            {
                 path: "/admin/projects",
                 component: ProjectsDashboard,
                 name: "ProjectsDashboard",
+                meta: {
+                    requiresAuth: true
+                }
+            },
+            {
+                path: "/admin/staffs",
+                component: AdminStaffs,
+                name: "AdminStaffs",
                 meta: {
                     requiresAuth: true
                 }
@@ -337,7 +373,7 @@ export const routes = [
         component: AdminAuth,
         name: "AdminAuth",
         beforeEnter: (to, from, next) => {
-            var admin = localStorage.getItem("adminUser");
+            var admin = JSON.parse(localStorage.getItem("adminUser"));
             if (admin == null) {
                 next();
             } else {

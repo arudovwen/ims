@@ -467,16 +467,21 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ["showHeader"],
   data: function data() {
     return {
-      name: ""
+      name: "",
+      admin: {}
     };
   },
   components: {},
   mounted: function mounted() {
     var admin = JSON.parse(localStorage.getItem("adminUser"));
+    this.admin = JSON.parse(localStorage.getItem("adminUser"));
     this.name = admin.name;
   },
   methods: {
@@ -1365,7 +1370,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".main_side_bar[data-v-414e497e] {\n  position: relative;\n  height: 100vh;\n  background: url(\"/images/imobanner.jpg\");\n  background-repeat: no-repeat;\n  background-size: cover;\n}\n.sides[data-v-414e497e] {\n  z-index: 2;\n  position: absolute;\n  width: 100%;\n}\n.side_nav_items[data-v-414e497e],\n.side_header[data-v-414e497e] {\n  padding: 20px 0;\n  color: #e6ffe6;\n}\n.side_header p[data-v-414e497e] {\n  text-transform: capitalize;\n}\n.side_header[data-v-414e497e] {\n  padding: 20px 15px;\n}\nhr[data-v-414e497e] {\n  border-top: 2px solid #999900;\n}\nh4[data-v-414e497e] {\n  color: #ECEE53;\n}\n.single_nav_item[data-v-414e497e] {\n  text-decoration: none;\n  list-style: none;\n  color: #ebffeb;\n  font-size: 16px;\n  padding: 10px 15px;\n}\nli[data-v-414e497e] {\n  border-left: 3px solid transparent;\n  border-right: 3px solid transparent;\n}\na[data-v-414e497e] {\n  text-decoration: none;\n}\n.overlay[data-v-414e497e] {\n  background: repeating-linear-gradient(to right, rgba(15, 122, 138, 0.85) 0%, rgba(32, 46, 48, 0.85) 100%);\n  position: absolute;\n  width: 100%;\n  z-index: 1;\n  height: 100%;\n}\nli[data-v-414e497e]:hover {\n  background: #006600;\n  border-left-color: #cccc00;\n  border-right-color: #cccc00;\n}\n.router-link-exact-active li[data-v-414e497e] {\n  background: #006600;\n  border-top: 1px solid #999900;\n  border-bottom: 1px solid #999900;\n  border-left-color: #cccc00;\n  border-right-color: #cccc00;\n}", ""]);
+exports.push([module.i, ".main_side_bar[data-v-414e497e] {\n  position: relative;\n  height: 100vh;\n  background: url(\"/images/imobanner.jpg\");\n  background-repeat: no-repeat;\n  background-size: cover;\n}\n.sides[data-v-414e497e] {\n  z-index: 2;\n  position: absolute;\n  width: 100%;\n}\n.side_nav_items[data-v-414e497e],\n.side_header[data-v-414e497e] {\n  padding: 20px 0;\n  color: #e6ffe6;\n}\n.side_header p[data-v-414e497e] {\n  text-transform: capitalize;\n}\n.side_header[data-v-414e497e] {\n  padding: 20px 15px;\n}\nhr[data-v-414e497e] {\n  border-top: 2px solid #999900;\n}\nh4[data-v-414e497e] {\n  color: #ECEE53;\n}\n.single_nav_item[data-v-414e497e] {\n  text-decoration: none;\n  list-style: none;\n  color: #ebffeb;\n  font-size: 16px;\n  padding: 10px 15px;\n}\nli[data-v-414e497e] {\n  border-left: 3px solid transparent;\n  border-right: 3px solid transparent;\n}\na[data-v-414e497e] {\n  text-decoration: none;\n}\n.overlay[data-v-414e497e] {\n  background: rgba(15, 122, 138, 0.9);\n  position: absolute;\n  width: 100%;\n  z-index: 1;\n  height: 100%;\n}\nli[data-v-414e497e]:hover {\n  background: #006600;\n  border-left-color: #cccc00;\n  border-right-color: #cccc00;\n}\n.router-link-exact-active li[data-v-414e497e] {\n  background: #006600;\n  border-top: 1px solid #999900;\n  border-bottom: 1px solid #999900;\n  border-left-color: #cccc00;\n  border-right-color: #cccc00;\n}", ""]);
 
 // exports
 
@@ -2568,6 +2573,12 @@ var render = function() {
           _c("router-link", { attrs: { to: "/admin/dashboard" } }, [
             _c("li", { staticClass: "single_nav_item" }, [_vm._v("Home")])
           ]),
+          _vm._v(" "),
+          _vm.admin.role == "administrator"
+            ? _c("router-link", { attrs: { to: "/admin/users" } }, [
+                _c("li", { staticClass: "single_nav_item" }, [_vm._v("Users")])
+              ])
+            : _vm._e(),
           _vm._v(" "),
           _c("router-link", { attrs: { to: "/admin/directory" } }, [
             _c("li", { staticClass: "single_nav_item" }, [_vm._v("Directory")])

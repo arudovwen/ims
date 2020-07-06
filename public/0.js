@@ -96,6 +96,7 @@ __webpack_require__.r(__webpack_exports__);
             _this.active = false;
             adminUser.name = res.data.name;
             adminUser.email = res.data.email;
+            adminUser.role = res.data.role;
             localStorage.setItem("adminUser", JSON.stringify(adminUser));
 
             if (_this.$route.query.redirect) {

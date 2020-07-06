@@ -224,6 +224,14 @@ var AdminDashboard = function AdminDashboard() {
   return Promise.all(/*! import() | AdminDashboard */[__webpack_require__.e("/js/vendor"), __webpack_require__.e("AdminDashboard")]).then(__webpack_require__.bind(null, /*! ./components/admin/adminDashboard.vue */ "./resources/js/components/admin/adminDashboard.vue"));
 };
 
+var AdminStaffs = function AdminStaffs() {
+  return Promise.all(/*! import() | AdminDashboard */[__webpack_require__.e("/js/vendor"), __webpack_require__.e("AdminDashboard")]).then(__webpack_require__.bind(null, /*! ./components/admin/staffs/staffs.vue */ "./resources/js/components/admin/staffs/staffs.vue"));
+};
+
+var AdminUsers = function AdminUsers() {
+  return Promise.all(/*! import() | AdminDashboard */[__webpack_require__.e("/js/vendor"), __webpack_require__.e("AdminDashboard")]).then(__webpack_require__.bind(null, /*! ./components/admin/users/users.vue */ "./resources/js/components/admin/users/users.vue"));
+};
+
 var AdminAuth = function AdminAuth() {
   return Promise.all(/*! import() | admin_home */[__webpack_require__.e("/js/vendor"), __webpack_require__.e("admin_home")]).then(__webpack_require__.bind(null, /*! ./components/admin/Auth/adminAuth.vue */ "./resources/js/components/admin/Auth/adminAuth.vue"));
 };
@@ -412,9 +420,34 @@ var routes = [{
       requiresAuth: true
     }
   }, {
+    path: "/admin/users",
+    component: AdminUsers,
+    name: "AdminUsers",
+    meta: {
+      requiresAuth: true
+    },
+    beforeEnter: function beforeEnter(to, from, next) {
+      var admin = JSON.parse(localStorage.getItem("adminUser"));
+
+      if (admin.role == 'administrator') {
+        next();
+      } else {
+        next({
+          name: "AdminDashboard"
+        });
+      }
+    }
+  }, {
     path: "/admin/projects",
     component: ProjectsDashboard,
     name: "ProjectsDashboard",
+    meta: {
+      requiresAuth: true
+    }
+  }, {
+    path: "/admin/staffs",
+    component: AdminStaffs,
+    name: "AdminStaffs",
     meta: {
       requiresAuth: true
     }
@@ -485,7 +518,7 @@ var routes = [{
   component: AdminAuth,
   name: "AdminAuth",
   beforeEnter: function beforeEnter(to, from, next) {
-    var admin = localStorage.getItem("adminUser");
+    var admin = JSON.parse(localStorage.getItem("adminUser"));
 
     if (admin == null) {
       next();
