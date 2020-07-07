@@ -469,9 +469,6 @@ export default {
 .action_icon {
   font-size: 13px;
 }
-th {
-  color: #0F7A8A;
-}
 
 .navigation {
   display: flex;

@@ -251,7 +251,12 @@ td {
     font-weight: normal;
     font-size: 13px;
 }
-
+th{
+    color:white
+}
+thead{
+    background-color: #0F7A8A;
+}
 .abs_pos {
     position: absolute !important;
 }

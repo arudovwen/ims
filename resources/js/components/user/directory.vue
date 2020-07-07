@@ -364,7 +364,7 @@ export default {
   font-size: 13px;
 }
 th {
-  color: #0F7A8A;
+
   font-size: 13px;
 }
 h6{

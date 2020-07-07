@@ -1,7 +1,7 @@
 <template>
   <div id="bottom_nav" :class="{'overlay-bg':show_nav_bar}">
     <div class="overlay" v-if="show_nav_bar"></div>
-   
+
     <ul class="nav_bar animated fadeIn" v-if="show_nav_bar">
       <li>
         <div>
@@ -39,17 +39,21 @@
 
       <li>
         <div>
-        
+          <router-link to>
             <div class="fa-stack icon">
               <i class="fa fa-circl fa-stack-2x" aria-hidden="true"></i>
               <i class="fas fa-lightbulb nav fa-stack-1x"></i>
             </div>
             <div class="nav_text">Our Initiatives</div>
-        
+          </router-link>
         </div>
         <ul class="sub_nav">
-          <router-link to="/initiatives/programs"><li class="mini_nav_text">Programs</li></router-link>
-        <router-link to="/initiatives/projects">  <li class="mini_nav_text">Projects</li></router-link>
+          <router-link to="/initiatives/programs">
+            <li class="mini_nav_text">Programs</li>
+          </router-link>
+          <router-link to="/initiatives/projects">
+            <li class="mini_nav_text">Projects</li>
+          </router-link>
         </ul>
       </li>
       <li>
@@ -108,12 +112,10 @@
 </template>
 <script>
 export default {
-  props:['show_nav_bar'],
+  props: ["show_nav_bar"],
   name: "main-nav-component",
   data() {
-    return {
-    
-    };
+    return {};
   },
   created() {
     if (window.innerWidth < 768) {
@@ -139,7 +141,7 @@ export default {
 #bottom_nav {
   width: 100%;
   position: relative;
-  background-color: #0F7A8A;
+  background-color: #0f7a8a;
   /* border-top: 3px solid #ffff75; */
   z-index: 99;
   transition: all 0.4s;
@@ -187,7 +189,7 @@ strong {
   text-transform: capitalize;
 }
 .nav_bar li:hover a {
-  color: #ECEE53;
+  color: #ecee53;
 }
 .nav_bar li a .nav_text {
   transition: all 0.6s;
@@ -240,7 +242,7 @@ strong {
   padding: 10px;
   border-radius: 4px;
   position: absolute;
-  box-shadow: 0 0 0 1px rgba(14,19,24,.07), 0 2px 12px rgba(14,19,24,.2);
+  box-shadow: 0 0 0 1px rgba(14, 19, 24, 0.07), 0 2px 12px rgba(14, 19, 24, 0.2);
   top: 75px;
   width: 150px;
 }
@@ -289,12 +291,10 @@ strong {
   .sub_nav {
     display: none;
   }
-  
+
   .nav_bar li {
- 
     font-size: 16px;
- 
-}
+  }
 }
 @media (max-width: 425px) {
   .sub_nav {
@@ -308,29 +308,29 @@ strong {
     display: none;
   }
 
-  .overlay-bg{
-  background: url("/images/imobanner.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
+  .overlay-bg {
+    background: url("/images/imobanner.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
   }
   .overlay {
-  background: repeating-linear-gradient(
-    to right,
-    rgb(15, 122, 138, 0.85) 0%,
-    rgb(15, 122, 138, 0.85) 100%
-  );
-  position: absolute;
-  width: 100%;
-  z-index: 1;
-  height: 100%;
-}
-.mobile{
-  position:relative;
-  z-index: 3;
-}
-.nav_bar{
-  position: relative;
-  z-index: 3;
-}
+    background: repeating-linear-gradient(
+      to right,
+      rgb(15, 122, 138, 0.85) 0%,
+      rgb(15, 122, 138, 0.85) 100%
+    );
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+    height: 100%;
+  }
+  .mobile {
+    position: relative;
+    z-index: 3;
+  }
+  .nav_bar {
+    position: relative;
+    z-index: 3;
+  }
 }
 </style>
