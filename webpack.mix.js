@@ -24,7 +24,7 @@ mix.js("resources/js/app.js", "public/js")
                 "@": path.resolve("resources/") // just to use relative path properly
             }
         }
-    })
+    }) 
    .options({ processCssUrls: false })
    ;
    mix.copyDirectory('resources/images', 'public/images');
