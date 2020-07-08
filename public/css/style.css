@@ -42,7 +42,9 @@ version history: [location of file]
 .left {
     float: left;
 }
-
+.cpointer{
+    cursor: pointer;
+}
 /* Set up the document
 -----------------------------------------------------------------------------*/
 html {

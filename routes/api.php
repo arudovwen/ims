@@ -87,6 +87,7 @@ Route::middleware('auth:admin')->group(function () {
     Route::resource('admin', 'AdminController');
     Route::post('multi-delete', 'AdminController@multiDelete');
     Route::resource('staff', 'StaffController');
+    Route::get('all-staff', 'StaffController@allStaffs');
     Route::post('multi-staff-delete', 'StaffController@multiDelete');
 });
 

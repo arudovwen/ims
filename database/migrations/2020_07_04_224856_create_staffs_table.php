@@ -14,7 +14,20 @@ class CreateStaffsTable extends Migration
     public function up()
     {
         Schema::create('staffs', function (Blueprint $table) {
-            $table->id();
+            // $table->id();
+            $table->string('s/n')->nullable();
+            $table->string('imssbn')->nullable();
+            $table->string('surname')->nullable();
+            $table->string('first_name')->nullable();
+            $table->string('middle_name')->nullable();
+            $table->string('dob')->nullable();
+            $table->string('doe')->nullable();
+            $table->string('current_rank')->nullable();
+            $table->string('cgl')->nullable();
+            $table->string('department')->nullable();
+            $table->string('bank_acc')->nullable();
+            $table->string('bank_name')->nullable();
+            $table->string('bvn')->nullable();
             $table->timestamps();
         });
     }

@@ -69,6 +69,18 @@ let AdminDashboard = () =>
     import(
         /* webpackChunkName: "AdminDashboard" */ "./components/admin/staffs/staffs.vue"
     );
+    let AddStaffs = () =>
+    import(
+        /* webpackChunkName: "AdminDashboard" */ "./components/admin/staffs/add.vue"
+    );
+    let EditStaffs = () =>
+    import(
+        /* webpackChunkName: "AdminDashboard" */ "./components/admin/staffs/edit.vue"
+    );
+    let ViewStaffs = () =>
+    import(
+        /* webpackChunkName: "AdminDashboard" */ "./components/admin/staffs/view.vue"
+    );
     let AdminUsers = () =>
     import(
         /* webpackChunkName: "AdminDashboard" */ "./components/admin/users/users.vue"
@@ -287,6 +299,30 @@ export const routes = [
                 path: "/admin/staffs",
                 component: AdminStaffs,
                 name: "AdminStaffs",
+                meta: {
+                    requiresAuth: true
+                }
+            },
+            {
+                path: "/admin/staffs/add",
+                component: AddStaffs,
+                name: "AddStaffs",
+                meta: {
+                    requiresAuth: true
+                }
+            },
+            {
+                path: "/admin/staffs/view/:id",
+                component: ViewStaffs,
+                name: "ViewStaffs",
+                meta: {
+                    requiresAuth: true
+                }
+            },
+            {
+                path: "/admin/staffs/edit/:id",
+                component: EditStaffs,
+                name: "EditStaffs",
                 meta: {
                     requiresAuth: true
                 }

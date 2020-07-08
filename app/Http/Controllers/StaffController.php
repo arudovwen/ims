@@ -15,7 +15,7 @@ class StaffController extends Controller
      */
     public function index()
     {
-        return Staff::all();
+        return Staff::paginate(15);
     }
 
     /**
@@ -23,6 +23,10 @@ class StaffController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+     public function allStaffs(){
+         return Staff::all();
+     }
     public function create(Request $request)
     {
     }
@@ -35,6 +39,7 @@ class StaffController extends Controller
      */
     public function store(Request $request)
     {
+    
         return Staff::create([
                                             
             'imssbn'=>$request->imssbn,
@@ -45,7 +50,10 @@ class StaffController extends Controller
             'doe'=>$request->doe,
             'current_rank'=>$request->current_rank,
             'cgl'=>$request->cgl,
-            'department'=>$request->department
+            'department'=>$request->department,
+            'bank_name'=>$request->bank_name,
+            'bank_acc'=>$request->bank_acc,
+            'bvn'=>$request->bvn
         ]);
     }
 
@@ -80,7 +88,9 @@ class StaffController extends Controller
      */
     public function update(Request $request, $id)
     {
+      
         $staff = Staff::find($id);
+    
         $staff->imssbn =$request->imssbn;
         $staff->surname=$request->surname;
         $staff->first_name=$request->first_name;
@@ -90,6 +100,11 @@ class StaffController extends Controller
         $staff->current_rank=$request->current_rank;
         $staff->cgl=$request->cgl;
         $staff->department=$request->department;
+        $staff->bank_name=$request->bank_name;
+        $staff->bank_acc=$request->bank_acc;
+        $staff->bvn=$request->bvn;
+        $staff->save();
+
         return response()->json([
             'status'=>'updated'
         ]);
