@@ -233,6 +233,10 @@ font-weight: bold;
 
 }
 @media(max-width: 768px){
+  .main{
+ background-image: url("/images/texture.png");
+ padding: 45px 15px 75px;
+}
   .left_box{
     height: auto;
     margin-bottom: 30px;

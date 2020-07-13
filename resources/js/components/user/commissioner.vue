@@ -1,31 +1,19 @@
 <template>
   <div id="commissioner">
-     <div class="square_1">
-          <div class="square_2">
-            <div class="square_3"></div>
-          </div>
-        </div>
-        <div class="square_4">
-          <div class="square_5">
-            <div class="square_6"></div>
-          </div>
-        </div>
-  <div>
-      <h3 class="josefin mb-4 main_header">Stakeholders</h3>
-    <div class="commiss">
-         <div class="commissioner box shadow-sm">
-         <div class="top_header">
-            <h4 class="josefin ">PROF.B.T.O . IKEGWUOHA</h4>
-             <h5 class="josefin ">Honorable Commissioner For Education, Imo state</h5>
-         <!-- <p>Lorem ipsum dolor, sit amet  itaque... <span class="mc1">read more</span></p> -->
-        </div>
-       
-        <div class="img">
-          <img src="/images/comm.jpeg" alt="Commissioner of Education, Imo state" />
-        </div>
-       
+    <div class="square_1">
+      <div class="square_2">
+        <div class="square_3"></div>
       </div>
-      <div class="governor box shadow-sm">
+    </div>
+    <div class="square_4">
+      <div class="square_5">
+        <div class="square_6"></div>
+      </div>
+    </div>
+    <div>
+      <h3 class="josefin mb-4 main_header">Stakeholders</h3>
+      <div class="commiss">
+          <div class="governor box shadow-sm">
         <div class="top_header">
           <small>His Excellency</small>
           <h4 class="josefin">SEN. HOPE UZODIMMA</h4>
@@ -37,20 +25,30 @@
           <img src="/images/govt.jpeg" alt="Governor, imo state" />
         </div>
       </div>
-   
+        <div class="commissioner box shadow-sm">
+          <div class="top_header">
+            <h4 class="josefin">PROF.B.T.O . IKEGWUOHA</h4>
+            <h5 class="josefin">Honorable Commissioner For Education, Imo state</h5>
+            <!-- <p>Lorem ipsum dolor, sit amet  itaque... <span class="mc1">read more</span></p> -->
+          </div>
 
-      <div class="perm_sec box shadow-sm">
-         <div class="top_header">
-             <h4 class="josefin ">Permanent Secretary, Imo state Ministry of Education</h4>
-         <!-- <p>Lorem ipsum dolor, sit amet  itaque... <span class="mc1">read more</span></p> -->
+          <div class="img">
+            <img src="/images/comm.jpeg" alt="Commissioner of Education, Imo state" />
+          </div>
         </div>
-      
-        <div class="img">
-          <img src="/images/profile.png" alt="Permanent Secretary, Imo state" />
+
+        <div class="perm_sec box shadow-sm">
+          <div class="top_header">
+            <h4 class="josefin">Permanent Secretary, Imo state Ministry of Education</h4>
+            <!-- <p>Lorem ipsum dolor, sit amet  itaque... <span class="mc1">read more</span></p> -->
+          </div>
+
+          <div class="img">
+            <img src="/images/profile.png" alt="Permanent Secretary, Imo state" />
+          </div>
         </div>
       </div>
     </div>
-  </div>
   </div>
 </template>
 <script>
@@ -64,15 +62,22 @@ export default {
 <style scoped>
 #commissioner {
   position: relative;
-  height: 90vh;
+ padding: 100px 0 65px;
   width: 100%;
-  background-image: linear-gradient(to right, #0f7a8a, #0e6d7b, #0c616d, #0b555f, #094952);
+  background-image: linear-gradient(
+    to right,
+    #0f7a8a,
+    #0e6d7b,
+    #0c616d,
+    #0b555f,
+    #094952
+  );
   overflow: hidden;
   display: flex;
   align-items: center;
 }
-.main_header{
-  position:absolute;
+.main_header {
+  position: absolute;
   top: 20px;
   left: 15px;
 }
@@ -82,9 +87,7 @@ export default {
   margin: 0 auto;
   justify-content: space-between;
 }
-.governor{
-  margin-top: -10%;
-}
+
 .box {
   width: 25%;
   height: 350px;
@@ -93,20 +96,20 @@ export default {
   position: relative;
   overflow: hidden;
 }
-.mc1{
-  cursor:pointer;
+.mc1 {
+  cursor: pointer;
   text-decoration: underline;
 }
 .box img {
   width: 100%;
   height: 100%;
 }
-p{
+p {
   margin: 0;
   font-size: 15px;
 }
-h4{
-  font-size:1.25rem
+h4 {
+  font-size: 1.25rem;
 }
 .top_header {
   text-align: center;
@@ -123,14 +126,14 @@ h4{
   height: 100%;
   object-fit: cover;
 }
-.main_header::after{
-  border-bottom:2px solid #e6f1f3;
+.main_header::after {
+  border-bottom: 2px solid #e6f1f3;
 }
-.main_header{
-  color:#e6f1f3;
+.main_header {
+  color: #e6f1f3;
 }
 .square_1 {
-  border: 10px solid #ECEE53;
+  border: 10px solid #ecee53;
   padding: 10px;
   position: absolute;
   bottom: 50%;
@@ -147,13 +150,13 @@ h4{
   height: 100%;
 }
 .square_3 {
-  background: #ECEE53;
+  background: #ecee53;
   padding: 10px;
   width: 100%;
   height: 100%;
 }
 .square_4 {
-  border: 10px solid #ECEE53;
+  border: 10px solid #ecee53;
   padding: 10px;
   position: absolute;
   bottom: 50%;
@@ -170,14 +173,14 @@ h4{
   height: 100%;
 }
 .square_6 {
-  background: #ECEE53;
+  background: #ecee53;
   padding: 10px;
   width: 100%;
   height: 100%;
 }
 @media (max-width: 1024px) {
   .square_1 {
-    border: 7px solid #ECEE53;
+    border: 7px solid #ecee53;
     padding: 5px;
     position: absolute;
     bottom: 50%;
@@ -194,13 +197,13 @@ h4{
     height: 100%;
   }
   .square_3 {
-    background: #ECEE53;
+    background: #ecee53;
     padding: 5px;
     width: 100%;
     height: 100%;
   }
   .square_4 {
-    border: 7px solid #ECEE53;
+    border: 7px solid #ecee53;
     padding: 5px;
     position: absolute;
     bottom: 50%;
@@ -217,16 +220,16 @@ h4{
     height: 100%;
   }
   .square_6 {
-    background: #ECEE53;
+    background: #ecee53;
     padding: 5px;
     width: 100%;
     height: 100%;
   }
 }
 @media (max-width: 768px) {
-  .governor{
-  margin-top: 0;
-}
+  .governor {
+    margin-top: 0;
+  }
   #commissioner {
     padding: 30px 15px 30px;
     height: auto;
@@ -237,8 +240,8 @@ h4{
     padding: 15px 25px;
     width: 80%;
   }
- .square_1 {
-    border: 5px solid #ECEE53;
+  .square_1 {
+    border: 5px solid #ecee53;
     padding: 3px;
     position: absolute;
     bottom: 50%;
@@ -255,13 +258,13 @@ h4{
     height: 100%;
   }
   .square_3 {
-    background: #ECEE53;
+    background: #ecee53;
     padding: 2.5px;
     width: 100%;
     height: 100%;
   }
   .square_4 {
-    border: 5px solid #ECEE53;
+    border: 5px solid #ecee53;
     padding: 4px;
     position: absolute;
     bottom: 50%;
@@ -278,7 +281,7 @@ h4{
     height: 100%;
   }
   .square_6 {
-    background: #ECEE53;
+    background: #ecee53;
     padding: 2.3px;
     width: 100%;
     height: 100%;
@@ -296,7 +299,10 @@ h4{
   .box {
     width: 70%;
     margin: 30px auto;
-    height:300px
+    height: 300px;
+  }
+  .main_header{
+    position: relative;
   }
 }
 @media (max-width: 425px) {
@@ -306,19 +312,19 @@ h4{
   .box {
     width: 100%;
   }
-  h4{
+  h4 {
     font-size: 16px !important;
   }
-  h5{
+  h5 {
     font-size: 15px !important;
   }
-  .commiss{
+  .commiss {
     padding: 15px 0;
   }
-  .top_header{
+  .top_header {
     padding: 5px 10px;
   }
-  .comm_body{
+  .comm_body {
     margin-bottom: 30px;
   }
 }

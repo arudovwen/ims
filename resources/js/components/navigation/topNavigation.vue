@@ -180,6 +180,9 @@ a {
   .rel_pos {
     width: auto;
   }
+   .desktop{
+    display: none !important;
+  }
   .logo {
     font-size: 18px;
     margin: 0 !important;
@@ -207,8 +210,6 @@ a {
   .mobile{
     display:block !important;
   }
-}
-@media (max-width: 425px) {
   .logo {
     font-size: 16px;
   }

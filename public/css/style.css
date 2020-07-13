@@ -333,7 +333,14 @@ thead{
     .mobile{
         display: none !important;
     }
+    
 @media(max-width:425px) {
+    .flex-xs-column{
+        flex-direction: column;
+      }
+      .flex-xs-column-reverse{
+        flex-direction: column-reverse;
+      }
    .mobile{
        display: block !important;
    }

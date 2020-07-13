@@ -118,7 +118,7 @@ export default {
     return {};
   },
   created() {
-    if (window.innerWidth < 768) {
+    if (window.innerWidth < 780) {
       this.show_nav_bar = false;
     }
   },
@@ -130,7 +130,7 @@ export default {
       this.show_nav_bar = !this.show_nav_bar;
     },
     closeNav() {
-      if (window.innerWidth < 768) {
+      if (window.innerWidth < 780) {
         this.show_nav_bar = false;
       }
     }
@@ -276,6 +276,7 @@ strong {
   .mobile {
     display: block !important;
   }
+ 
   .nav_bar li {
     width: 100%;
   }
