@@ -7,8 +7,7 @@
           <swiper class="news_update" ref="mySwiper" :options="swiperOptions">
             <swiper-slide class="slide" v-if="news.length >0">
               <div class="img_container cpointer" @click="gotoNews(news[0].id)">
-                <img :src="news[0].cover_image" alt />
-              
+                <img :src="news[0].cover_image" alt />             
                 <h4 class="img_text2" >{{news[0].subject}}</h4>
               </div>
             </swiper-slide>
