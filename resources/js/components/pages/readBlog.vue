@@ -1,5 +1,6 @@
 <template>
-  <div class="container-fluid">
+  <b-overlay :show="show" rounded="sm">
+       <div class="container-fluid">
     <h2 class="header__ text-center">{{content.subject}}</h2>
     <div class="main">
       <div class="cover" :style="{'background-image':'url('+content.cover_image+')'}"></div>
@@ -15,13 +16,29 @@
       </div>
     </div>
   </div>
+      <template v-slot:overlay>
+        <div class="text-center">
+          <b-icon icon="stopwatch" font-scale="3" animation="cylon"></b-icon>
+          <p id="cancel-label">Please wait...</p>
+          <b-button
+            ref="cancel"
+            variant="outline-danger"
+            size="sm"
+            aria-describedby="cancel-label"
+            @click="show = false"
+          >Loading</b-button>
+        </div>
+      </template>
+    </b-overlay>
+
 </template>
 
 <script>
 export default {
   data() {
     return {
-      content: {}
+      content: {},
+      show:true,
     };
   },
   mounted() {
@@ -32,6 +49,7 @@ export default {
       axios.get(`/api/get-new/${this.$route.params.id}`).then(res => {
         if (res.status == 200) {
           this.content = res.data;
+          this.show = false
         }
       });
     }

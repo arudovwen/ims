@@ -136,6 +136,9 @@ export default {
   grid-template-columns: 30% 70%;
  
 }
+h5{
+  color:#0f7a8a;
+}
 .box {
   width: 100%;
 }
