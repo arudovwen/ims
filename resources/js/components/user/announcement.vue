@@ -12,11 +12,11 @@
             <img :src="announcement.cover_image" alt="announcement" />
           </div>
           <p v-html="announcement.content" class="ann"></p>
-          <router-link to="/checkout">
+          <!-- <router-link to="/checkout">
             <button type="button" class="button-green">
               <i class="fa fa-long-arrow-right text-white pr-2" aria-hidden="true"></i> Pay now
             </button>
-          </router-link>
+          </router-link> -->
         </div>
       </div>
       <div class="right_box">
