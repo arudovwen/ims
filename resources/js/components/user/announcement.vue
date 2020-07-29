@@ -7,11 +7,11 @@
           <div class="w-100 text-center mb-3">
             <img src="/images/pin.png" class="pin" alt="pin" />
           </div>
-          <h3 class="josefin_bold mb-3 top_head text-center mc1">{{announcement.subject}}</h3>
+          <h3 class="josefin_bold mb-4 top_head text-center mc1 ">{{announcement.subject}}</h3>
           <div class="comm_image">
             <img :src="announcement.cover_image" alt="announcement" />
           </div>
-          <p v-html="announcement.content" class="ann"></p>
+          <p v-html="announcement.content" class="ann text-center"></p>
           <!-- <router-link to="/checkout">
             <button type="button" class="button-green">
               <i class="fa fa-long-arrow-right text-white pr-2" aria-hidden="true"></i> Pay now
@@ -249,7 +249,7 @@ export default {
   text-overflow: ellipsis;
 }
 .ann{
-  font-size:20px;
+  font-size:22px;
 }
 @media (max-width: 1024px) {
 }
@@ -285,12 +285,9 @@ export default {
   .right_box {
     width: 100%;
   }
-  .top_head {
-    margin: 0 !important;
-  }
+ 
   .comm_image {
     height: auto;
-    display: none;
   }
 }
 @media (max-width: 425px) {
