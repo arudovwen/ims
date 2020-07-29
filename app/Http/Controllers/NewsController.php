@@ -82,6 +82,9 @@ class NewsController extends Controller
     public function getFeaturedNews(){
         return NewModel::where('featured',1)->latest()->get();
     }
+    public function getNormalNews(){
+        return NewModel::where('featured',0)->latest()->paginate(15);
+    }
     public function getAnnouncement( $id){
         return Announcement::where('id',$id)->first();
     }

@@ -154,7 +154,7 @@
                 <h2 class="blog-post-title">{{item.subject}}</h2>
                 <p class="blog-post-meta">
                   {{item.created_at | moment('DD MMMM')}}, by
-                  <a href="#">{{item.author}}</a>
+                  <small >{{item.author}}</small>
                 </p>
 
                 <div class="news_content" v-html="item.content"></div>
@@ -170,7 +170,7 @@
               </div>
               <!-- /.blog-post -->
 
-              <nav class="blog-pagination mb-3">
+              <nav class="blog-pagination mb-3" v-if="basic.length >15">
                 <div class="btn btn-outline-primary" @click="prev">Older</div>
                 <div class="btn btn-outline-secondary disabled" @click="next">Newer</div>
               </nav>
@@ -272,6 +272,7 @@ export default {
     return {
       show: true,
       category: "",
+      featured:[],
       news: [],
       last_page: "",
       first_page: "",
@@ -286,15 +287,25 @@ export default {
     scrollTop,
   },
   mounted() {
-    this.getNews();
+    this.getFeaturedNews();
+    this.getNews()
   },
   methods: {
     getNews() {
-      axios.get("/api/get-news").then((res) => {
+      axios.get("/api/get-normal-news").then((res) => {
         if (res.status == 200) {
           this.news = res.data.data.filter((item) => {
             return item.status == "active";
           });
+          this.show = false;
+        }
+      });
+    },
+
+      getFeaturedNews() {
+      axios.get("/api/get-featured-news").then((res) => {
+        if (res.status == 200) {
+          this.featured = res.data
           this.show = false;
         }
       });
@@ -325,7 +336,7 @@ export default {
     },
   },
   computed: {
-    NewsByCatgory() {
+    basic() {
       return this.news.filter((item) => {
         if (this.category.toLowerCase() == item.category.toLowerCase()) {
           return item;
@@ -335,16 +346,8 @@ export default {
         }
       });
     },
-    featured() {
-      return this.NewsByCatgory.filter((item) => {
-        return item.featured;
-      });
-    },
-    basic() {
-      return this.NewsByCatgory.filter((item) => {
-        return !item.featured;
-      });
-    },
+  
+
   },
 };
 </script>
