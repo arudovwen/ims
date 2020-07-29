@@ -70,12 +70,10 @@ export default {
 .main {
   width: 80%;
   margin: 0 auto;
-  display: grid;
-  grid-row-gap: 15px;
-  min-height: 100vh;
+  height: 100%;
   background: #ffffff;
-  justify-content: center;
   padding: 20px;
+  overflow: hidden;
 }
 .cover,
 .content,
@@ -95,6 +93,19 @@ export default {
   }
   .header__ {
     width: 100%;
+  }
+}
+@media (max-width: 425px) {
+  .container-fluid{
+    padding: 0;
+  }
+  .cover{
+    height: 200px;
+    background-size: contain;
+    margin-bottom: 20px;
+  }
+  h2{
+  font-size: 22px;
   }
 }
 </style>
