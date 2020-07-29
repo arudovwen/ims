@@ -25,7 +25,7 @@
           <input
        
             type="text"
-            class="form-control rounded-pill desktop"
+            class="form-control search-border rounded-pill desktop"
            
             aria-describedby="helpId"
             placeholder="Search"
@@ -95,7 +95,9 @@ export default {
   align-items: center;
   background: #fff;
 }
-
+.search-border{
+  border-color:yellow;
+}
 .text {
   padding: 0 0 0 10px;
 }

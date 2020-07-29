@@ -105,7 +105,32 @@
           </div>
         </div>
       </div>
-      <div class="mini_box2 shadow-sm bg-white"></div>
+      <div class="mini_box2 shadow-sm bg-white p-2 py-3">
+         <h5> News</h5>
+
+       <div class="mytable">
+          <b-table :items="news" :fields="fields">
+          <template v-slot:cell(Sn)= "data">
+
+          {{data.index+1}}
+              
+            
+          </template>
+           <template v-slot:cell(action)="data">
+          <span > <router-link
+                  :to="{
+                 name:'ViewNews',
+                params:{
+                  type:'news',
+                  id:data.item.id
+                }
+              }"
+                  class="text-dark"
+                >View</router-link></span>
+          </template>
+        </b-table>
+       </div>
+      </div>
     </div>
   </div>
 </template>
@@ -117,15 +142,42 @@ export default {
       projects: [],
       programs: [],
       current:[],
-      admin:{}
+      admin:{},
+      news:[],
+        fields:['Sn',
+      {     
+        key:'category',sortable:true
+      },
+      {     
+        key:'subject',sortable:true
+      },'status','action']
     };
   },
   mounted() {
      this.admin = JSON.parse(localStorage.getItem("adminUser"));
     this.getProjects();
     this.getPrograms();
+    this.getNews()
   },
   methods: {
+      getNews() {
+      axios.get("/api/get-news").then(res => {
+        if (res.status == 200) {
+          this.news = res.data.data;
+        }
+      });
+
+      axios.get("/api/get-announcements").then(res => {
+        if (res.status == 200) {
+          this.announcements = res.data;
+        }
+      });
+      axios.get("/api/current-a").then(res => {
+        if (res.status == 200) {
+          this.current = res.data;
+        }
+      });
+    },
     getProjects() {
       axios.get("/api/get-projects").then(res => {
         if (res.status == 200) {
@@ -157,6 +209,10 @@ export default {
   display: grid;
   grid-template-rows: 1fr 3fr;
   grid-row-gap: 15px;
+}
+.mytable{
+  max-height: 60vh;
+  overflow: auto;
 }
 .box {
   width: 100%;

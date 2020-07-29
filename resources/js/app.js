@@ -9,7 +9,7 @@ require("./bootstrap");
 window.Vue = require("vue");
 import VueRouter from "vue-router";
 import { routes } from "./routes";
-import { BootstrapVue } from "bootstrap-vue";
+import { BootstrapVue, IconsPlugin } from "bootstrap-vue";
 import VueAwesomeSwiper from "vue-awesome-swiper";
 
 
@@ -27,6 +27,7 @@ Vue.use(VueSocial, { iconPath: "/images/icons" });
 
 Vue.use(VueRouter);
 Vue.use(BootstrapVue);
+Vue.use(IconsPlugin);
 Vue.use(VueAwesomeSwiper /* { default options with global component } */);
 Vue.use(require("vue-moment"));
 

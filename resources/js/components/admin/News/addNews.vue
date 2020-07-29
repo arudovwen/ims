@@ -48,7 +48,7 @@
           :init="{
                          selector: 'textarea',
                             toolbar_mode: 'floating',
-                            plugins: 'advlist autolink lists link image imagetools charmap print preview anchor insertdatetime media table paste code help wordcount a11ychecker advcode  formatpainter linkchecker autolink lists media mediaembed   table  tinymcespellchecker',
+                            plugins: 'advlist autolink lists link image imagetools charmap print preview anchor insertdatetime media table paste code help wordcount  autolink lists media    table  ',
                             toolbar: 'undo redo | formatselect | bold italic backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat |image help | a11ycheck addcomment showcomments casechange checklist code formatpainter  table',
                             image_title: true,
                             height: 300,
@@ -98,7 +98,7 @@
           />
 
           <div
-            class="progress-bar progress-bar-striped active"
+            class="progress-bar progress-bar-striped active w-25"
             role="progressbar"
             aria-valuenow="0"
             aria-valuemin="0"
@@ -114,7 +114,7 @@
           @click="draft"
           v-if="type=='news'"
         >Save to Draft</button>
-        <button type="submit" class="button-green">Create</button>
+        <button type="submit" class="button-green">Create <b-spinner small v-if="spin"></b-spinner> </button>
       </div>
     </form>
   </div>
@@ -135,6 +135,7 @@ export default {
         coverImage: "",
         content: ""
       },
+      spin:false,
       categories: [],
       placeholder: "/images/placeholder.png",
       filesSelectedLength: null,
@@ -160,33 +161,26 @@ export default {
       });
     },
     submit() {
+      this.spin = true
       if (this.type == "news") {
         axios.post("/api/create-news", this.post).then(res => {
-          if (res.status == 200) {
+          if (res.status == 201) {
             this.$toasted.success("Created successfully");
-            this.post = {
-              subject: "",
-              author: "",
-              category: "selected",
-              featured: false,
-              coverImage: "",
-              content: ""
-            };
+            this.$router.push('/admin/news')
+            this.spin = false
           }
+        }).catch(err=>{
+            this.spin = false
         });
       } else {
         axios.post("/api/create-announcement", this.post).then(res => {
-          if (res.status == 200) {
+          if (res.status == 201) {
             this.$toasted.success("Created successfully");
-            this.post = {
-              subject: "",
-              author: "",
-              category: "selected",
-              featured: false,
-              coverImage: "",
-              content: ""
-            };
+             this.$router.push('/admin/news')
+               this.spin = false
           }
+        }).catch(err=>{
+            this.spin = false
         });
       }
     },

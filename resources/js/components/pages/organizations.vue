@@ -11,10 +11,10 @@
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex harum quos eius aliquam minus? Cupiditate ad exercitationem commodi laborum vero recusandae numquam itaque </p>
            </div>
           
-          <div class="box_1 bg-white">
-            <img src="/images/govt.jpeg" alt />
+          <div class="box_1">
+            <img src="/images/exam.svg" alt />
           </div>
-          <div class="box_2 bg-white p-2">
+          <div class="box_2 p-2">
             Exam Development Centre  (EDC)
           </div>
         </div>
@@ -23,10 +23,10 @@
               <h5>About</h5>
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex harum quos eius aliquam minus? Cupiditate ad exercitationem commodi laborum vero recusandae numquam itaque </p>
            </div>
-          <div class="box_1 bg-white">
-            <img src="/images/govt.jpeg" alt />
+          <div class="box_1">
+            <img src="/images/checkup.svg" alt />
           </div>
-          <div class="box_2 bg-white p-2">
+          <div class="box_2 p-2">
              Adult/Non Formal Education <br>(ANFE)
 
           </div>
@@ -36,10 +36,10 @@
               <h5>About</h5>
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex harum quos eius aliquam minus? Cupiditate ad exercitationem commodi laborum vero recusandae numquam itaque </p>
            </div>
-          <div class="box_1 bg-white">
-            <img src="/images/govt.jpeg" alt />
+          <div class="box_1">
+            <img src="/images/technical-support.svg" alt />
           </div>
-          <div class="box_2 bg-white p-2">
+          <div class="box_2 p-2">
             Education Support Services Department <br> (ESSD)
 
           </div>
@@ -49,10 +49,10 @@
               <h5>About</h5>
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex harum quos eius aliquam minus? Cupiditate ad exercitationem commodi laborum vero recusandae numquam itaque </p>
            </div>
-          <div class="box_1 bg-white">
-            <img src="/images/govt.jpeg" alt />
+          <div class="box_1">
+            <img src="/images/qa.svg" alt />
           </div>
-          <div class="box_2 bg-white p-2">
+          <div class="box_2 p-2">
             Quality Assurance  <br>(QA)
 
           </div>
@@ -62,10 +62,10 @@
               <h5>About</h5>
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex harum quos eius aliquam minus? Cupiditate ad exercitationem commodi laborum vero recusandae numquam itaque </p>
            </div>
-          <div class="box_1 bg-white">
-            <img src="/images/govt.jpeg" alt />
+          <div class="box_1">
+            <img src="/images/clock.svg" alt />
           </div>
-          <div class="box_2 bg-white p-2">
+          <div class="box_2 p-2">
             Science Technical Tertiary Education <br> (STTE)
 
 
@@ -76,10 +76,10 @@
               <h5>About</h5>
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex harum quos eius aliquam minus? Cupiditate ad exercitationem commodi laborum vero recusandae numquam itaque </p>
            </div>
-          <div class="box_1 bg-white">
-            <img src="/images/govt.jpeg" alt />
+          <div class="box_1">
+            <img src="/images/university.svg" alt />
           </div>
-          <div class="box_2 bg-white p-2">
+          <div class="box_2 p-2">
           Universal Basic/Secondary Education <br> (UBSE)
 
 
@@ -90,10 +90,10 @@
               <h5>About</h5>
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex harum quos eius aliquam minus? Cupiditate ad exercitationem commodi laborum vero recusandae numquam itaque </p>
            </div>
-          <div class="box_1 bg-white">
-            <img src="/images/govt.jpeg" alt />
+          <div class="box_1">
+            <img src="/images/scholarship.svg" alt />
           </div>
-          <div class="box_2 bg-white p-2">
+          <div class="box_2 p-2">
           Tertiary Unit/Scholarship Board 
 
 
@@ -104,10 +104,10 @@
               <h5>About</h5>
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex harum quos eius aliquam minus? Cupiditate ad exercitationem commodi laborum vero recusandae numquam itaque </p>
            </div>
-          <div class="box_1 bg-white">
-            <img src="/images/govt.jpeg" alt />
+          <div class="box_1">
+            <img src="/images/education.svg" alt />
           </div>
-          <div class="box_2 bg-white p-2">
+          <div class="box_2 p-2">
            Secondary Education Management Board <br>(SEMB)
 
 
@@ -118,10 +118,10 @@
               <h5>About</h5>
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex harum quos eius aliquam minus? Cupiditate ad exercitationem commodi laborum vero recusandae numquam itaque </p>
            </div>
-          <div class="box_1 bg-white">
-            <img src="/images/govt.jpeg" alt />
+          <div class="box_1">
+            <img src="/images/presentation.svg" alt />
           </div>
-          <div class="box_2 bg-whiten p-2">
+          <div class="box_2 p-2">
            Imo State Basic Education Board <br> (IMSUBEB)
 
           </div>
@@ -187,16 +187,20 @@ export default {
   top: 0;
   right: 0;
 }
+img{
+  object-fit: contain !important;
+}
 .box_1 {
   height: 50%;
+  padding: 30px;
 }
 .box_2 {
-  background:#f7f8fa;
+  color: #ecee53;
   height: 50%;
   font-size: 20px;
   font-family: 'Josefin Sans';
   text-align: center;
-  color:rgb(15, 79, 89);
+  background:rgb(15, 79, 89);
    display: flex;
   flex-direction: column;
   justify-content: center;

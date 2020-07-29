@@ -1,6 +1,6 @@
 <template>
   <div class="container-fluid">
-    <h2 class="header__">{{content.subject}}</h2>
+    <h2 class="header__ text-center">{{content.subject}}</h2>
     <div class="main">
       <div class="cover" :style="{'background-image':'url('+content.cover_image+')'}"></div>
 
@@ -53,8 +53,6 @@ export default {
   width: 80%;
   margin: 0 auto;
   display: grid;
-  grid-template-rows: 2fr 4fr 1fr;
-  grid-template-columns: 1fr;
   grid-row-gap: 15px;
   min-height: 100vh;
   background: #ffffff;
@@ -69,6 +67,9 @@ export default {
 }
 .cover {
   background-size: cover;
+  height: 400px;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 @media (max-width: 768px) {
   .main {

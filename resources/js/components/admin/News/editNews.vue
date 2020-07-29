@@ -1,7 +1,7 @@
 <template>
   <div id="form">
     <form @submit.prevent="update">
-      <legend>Create new {{type}}</legend>
+      <legend>Update  {{type}}</legend>
       <div class="form-group">
         <label for="title">Subject</label>
         <input
@@ -15,7 +15,7 @@
         />
       </div>
 
-      <div class="form-group" v-if="type == 'news' || type == 'draft'">
+      <div class="form-group" v-if="type == 'news'">
         <label for="title">Author</label>
         <input
           type="text"
@@ -28,7 +28,7 @@
         />
       </div>
 
-      <div class="form-group" v-if="type == 'news' || type == 'draft'">
+      <div class="form-group" v-if="type == 'news'">
         <label for></label>
         <select class="custom-select" name="category" id="category" v-model="post.category">
           <option value="selected" disabled>Select category</option>
@@ -70,7 +70,7 @@
           class="form-control"
         ></app-editor>
       </div>
-      <div class="form-group" v-if="type == 'news' || type == 'draft'">
+      <div class="form-group" v-if="type == 'news'">
         <label class="custom-control custom-checkbox">
           <input
             type="checkbox"
@@ -83,7 +83,7 @@
         </label>
       </div>
 
-      <div class="form-group" v-if="type == 'news' || type == 'draft'">
+      <div class="form-group">
         <label for="cover">Cover Image</label>
         <label class="custom-file">
           <img :src="placeholder" height="100" alt />
@@ -98,7 +98,7 @@
           />
 
           <div
-            class="progress-bar progress-bar-striped active"
+            class="progress-bar progress-bar-striped active w-25"
             role="progressbar"
             aria-valuenow="0"
             aria-valuemin="0"
@@ -108,11 +108,18 @@
         </label>
       </div>
       <div class="form-group">
+        <button
+          type="button"
+          class="button-dark mr-4"
+          @click="draft"
+          v-if="type=='news'"
+        >Save to Draft</button>
         <button type="submit" class="button-green">Update</button>
       </div>
     </form>
   </div>
 </template>
+
 
 
 <script>
@@ -127,7 +134,7 @@ export default {
         category: "selected",
         featured: false,
         coverImage: "",
-        content: ""
+        content: "",
       },
       categories: [],
       placeholder: "/images/placeholder.png",
@@ -137,12 +144,12 @@ export default {
       cloudinary: {
         uploadPreset: "knkccgjv",
         apiKey: "634813511968181",
-        cloudName: "bizguruh-com"
-      }
+        cloudName: "bizguruh-com",
+      },
     };
   },
   components: {
-    "app-editor": Editor
+    "app-editor": Editor,
   },
   mounted() {
     this.getCategories();
@@ -151,25 +158,28 @@ export default {
   methods: {
     getNews() {
       if (this.type == "news") {
-        axios.get(`/api/get-new/${this.$route.params.id}`).then(res => {
+        axios.get(`/api/get-new/${this.$route.params.id}`).then((res) => {
           if (res.status == 200) {
             this.post = res.data;
             this.placeholder = res.data.cover_image;
           }
         });
-      } if (this.type == "draft") {
-        axios.get(`/api/get-draft/${this.$route.params.id}`, this.post).then(res => {
-          if (res.status == 200) {
+      }
+      if (this.type == "draft") {
+        axios
+          .get(`/api/get-draft/${this.$route.params.id}`, this.post)
+          .then((res) => {
+            if (res.status == 200) {
               if (res.status == 200) {
-            this.post = res.data;
-            this.placeholder = res.data.cover_image;
-          }
-          }
-        });
+                this.post = res.data;
+                this.placeholder = res.data.cover_image;
+              }
+            }
+          });
       } else {
         axios
           .get(`/api/get-announcement/${this.$route.params.id}`)
-          .then(res => {
+          .then((res) => {
             if (res.status == 200) {
               this.post = res.data;
               this.placeholder = res.data.cover_image;
@@ -178,7 +188,7 @@ export default {
       }
     },
     getCategories() {
-      axios.get("/api/news-categories").then(res => {
+      axios.get("/api/news-categories").then((res) => {
         this.categories = res.data;
       });
     },
@@ -186,19 +196,19 @@ export default {
       if (this.type == "news") {
         axios
           .put(`/api/update-news/${this.$route.params.id}`, this.post)
-          .then(res => {
+          .then((res) => {
             if (res.status == 200) {
               this.$toasted.info("Updated");
-              this.$router.go(-1)
+              this.$router.go(-1);
             }
           });
       } else {
         axios
           .put(`/api/update-announcement/${this.$route.params.id}`, this.post)
-          .then(res => {
+          .then((res) => {
             if (res.status == 200) {
               this.$toasted.info("Updated");
-               this.$router.go(-1)
+              this.$router.go(-1);
             }
           });
       }
@@ -209,7 +219,7 @@ export default {
     },
     loadCoverFile(file) {
       let reader = new FileReader();
-      reader.onload = event => {
+      reader.onload = (event) => {
         this.placeholder = event.target.result;
       };
       reader.readAsDataURL(file);
@@ -229,18 +239,18 @@ export default {
         "POST",
         "https://api.cloudinary.com/v1_1/" + cloudName + "/upload"
       );
-      xhr.upload.onprogress = function(e) {
+      xhr.upload.onprogress = function (e) {
         if (e.lengthComputable) {
           that.progress = Math.round((e.loaded / e.total) * 100) + "%";
         }
       };
-      xhr.upload.onloadstart = function(e) {
+      xhr.upload.onloadstart = function (e) {
         this.progress = "Starting...";
       };
-      xhr.upload.onloadend = function(e) {
+      xhr.upload.onloadend = function (e) {
         this.progress = "Completing..";
       };
-      xhr.onload = progressEvent => {
+      xhr.onload = (progressEvent) => {
         if (xhr.status === 200) {
           // Success! You probably want to save the URL somewhere
           this.progress = "Completed";
@@ -262,7 +272,7 @@ export default {
       xhr = new XMLHttpRequest();
       xhr.withCredentials = false;
       xhr.open("POST", "/api/image-upload");
-      xhr.onload = function() {
+      xhr.onload = function () {
         var json;
 
         if (xhr.status != 200) {
@@ -285,12 +295,12 @@ export default {
       var input = document.createElement("input");
       input.setAttribute("type", "file");
       input.setAttribute("accept", "image/*");
-      input.onchange = function() {
+      input.onchange = function () {
         var file = this.files[0];
 
         var reader = new FileReader();
         reader.readAsDataURL(file);
-        reader.onload = function() {
+        reader.onload = function () {
           var id = "blobid" + new Date().getTime();
           var blobCache = tinymce.activeEditor.editorUpload.blobCache;
           var base64 = reader.result.split(",")[1];
@@ -300,8 +310,8 @@ export default {
         };
       };
       input.click();
-    }
-  }
+    },
+  },
 };
 </script>
 

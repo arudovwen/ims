@@ -2,7 +2,8 @@
   <div>
     <scrollTop />
     <Navigation />
-    <div id="main-content">
+     <b-overlay :show="show" rounded="sm">
+       <div id="main-content">
       <div class="container">
         <div class="nav-scroller py-1 mb-2">
           <nav class="nav d-flex justify-content-between">
@@ -68,8 +69,8 @@
         </div>
 
         <div v-if="featured.length" class="jumbotron p-4 p-md-5 text-white rounded bg-dark" :style="{'background-image':'url('+featured[0].cover_image+')'}">
-          <div class="col-md-7 p-2 bg-dark-50">
-            <h2 class="display-4 font-italic">{{featured[0].subject}}</h2>
+          <div class="col-md-8 p-2 bg-dark-50">
+            <h2 class=" josefin_bold">{{featured[0].subject}}</h2>
             <p
               class="lead my-3"
               v-html="featured[0].content"
@@ -85,47 +86,40 @@
           </div>
         </div>
 
-        <div class="row mb-2" v-if="featured.length">
-          <div class="col-md-6">
+        <div class="row mb-2 " v-if="featured.length">
+          <div class="col-md-6"  v-if="featured.length>1">
             <div
               class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative"
             >
               <div class="col p-4 d-flex flex-column position-static">
-                <strong class="d-inline-block mb-2 text-primary">{{featured[0].category}}</strong>
-                <h4 class="mb-0">{{featured[0].subject}}</h4>
-                <div class="mb-1 text-muted">{{featured[0].created_at | moment('DD MMMM')}}</div>
+                <strong class="d-inline-block mb-2 text-primary">{{featured[1].category}}</strong>
+                <h4 class="mb-0">{{featured[1].subject}}</h4>
+                <div class="mb-1 text-muted">{{featured[1].created_at | moment('DD MMMM')}}</div>
                 <p
-                  class="card-text mb-auto"
-                     v-html="featured[0].content"
+                  class="card-text mb-auto feat"
+                     v-html="featured[1].content"
                 ></p>
                 <router-link :to="{
                 name:'NewsBlog',
                 params:{
-                  id:featured[0].id
+                  id:featured[1].id
                 }
                 }"  class="stretched-link">Continue reading</router-link>
               </div>
-              <div class="col-auto d-none d-lg-block">
-                <img
-                  class="bd-placeholder-img"
-                  width="200"
-                  height="250"
-                  :src="featured[0].cover_image"
-                />
-              </div>
+           
             </div>
           </div>
-          <div class="col-md-6">
+          <div class="col-md-6"  v-if="featured.length>2">
             <div
               class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative"
             >
               <div class="col p-4 d-flex flex-column position-static">
-                <strong class="d-inline-block mb-2 text-primary">{{featured[0].category}}</strong>
-                <h4 class="mb-0">{{featured[0].subject}}</h4>
-                <div class="mb-1 text-muted">{{featured[0].created_at | moment('DD MMMM')}}</div>
+                <strong class="d-inline-block mb-2 text-primary">{{featured[2].category}}</strong>
+                <h4 class="mb-0">{{featured[2].subject}}</h4>
+                <div class="mb-1 text-muted">{{featured[2].created_at | moment('DD MMMM')}}</div>
                <p
-                  class="card-text mb-auto"
-                     v-html="featured[0].content"
+                  class="card-text mb-auto feat"
+                     v-html="featured[2].content"
                 ></p>
                 <router-link :to="{
                 name:'NewsBlog',
@@ -134,14 +128,7 @@
                 }
                 }"  class="stretched-link">Continue reading</router-link>
               </div>
-              <div class="col-auto d-none d-lg-block">
-              <img
-                  class="bd-placeholder-img"
-                  width="200"
-                  height="250"
-                  :src="featured[0].cover_image"
-                />
-              </div>
+             
             </div>
           </div>
         </div>
@@ -252,6 +239,23 @@
         <!-- /.row -->
       </main>
     </div>
+      <template v-slot:overlay>
+        <div class="text-center">
+          <b-icon icon="stopwatch" font-scale="3" animation="cylon"></b-icon>
+          <p id="cancel-label">Please wait...</p>
+          <b-button
+            ref="cancel"
+            variant="outline-danger"
+            size="sm"
+            aria-describedby="cancel-label"
+            @click="show = false"
+          >
+            Loading
+          </b-button>
+        </div>
+      </template>
+    </b-overlay>
+ 
   </div>
 </template>
 
@@ -261,6 +265,7 @@ import scrollTop from "../scrollTopComponent";
 export default {
   data() {
     return {
+      show:true,
       category: "",
       news: [],
        last_page: "",
@@ -284,7 +289,9 @@ export default {
         if (res.status == 200) {
           this.news = res.data.data.filter(item=>{
             return item.status == 'active';
+
           });
+          this.show = false
         }
       });
     },
@@ -342,14 +349,24 @@ export default {
 </script>
 <style scoped>
 #main-content {
-  font-size: 15px;
+  font-size: 16px;
   margin-top:30px;
 }
 .bg-dark-50{
 background: rgba(0, 0, 0, .6);
 }
+.jumbotron{
+  background-size: cover;
+}
+.bd-placeholder-img{
+  width: 100%;
+}
+.feat{
+  height: 500px;
+  overflow: hidden;
+}
 .lead{
-  height: 40px;
+  height: 35px;
   overflow: hidden;
   display: -webkit-box !important;
  -webkit-box-orient: vertical;

@@ -5,74 +5,74 @@
       <div class="left_box">
         <div>
           <swiper class="news_update" ref="mySwiper" :options="swiperOptions">
-            <swiper-slide class="slide">
-              <div class="img_container">
-                <img src="/images/imo6.jpg" alt />
-                <h4 class="img_text1">Lorem, ipsum.</h4>
-                <div
-                  class="img_text2"
-                >Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae dolor fugiat sint dignissimos est impedit?</div>
+            <swiper-slide class="slide" v-if="news.length >0">
+              <div class="img_container cpointer" @click="gotoNews(news[0].id)">
+                <img :src="news[0].cover_image" alt />
+              
+                <h4 class="img_text2" >{{news[0].subject}}</h4>
               </div>
             </swiper-slide>
-            <swiper-slide class="slide">
-              <div class="img_container">
-                <img src="/images/imo2.jpg" alt />
-                <h4 class="img_text1">Lorem, ipsum.</h4>
-                <div
-                  class="img_text2"
-                >Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae dolor fugiat sint dignissimos est impedit?</div>
+            <swiper-slide class="slide" v-if="news.length >1">
+              <div class="img_container cpointer" @click="gotoNews(news[1].id)">
+                <img :src="news[1].cover_image" alt />
+                <h4 class="img_text2">{{news[1].subject}}</h4>
+              
+              </div>
+            </swiper-slide>
+            <swiper-slide class="slide" v-if="news.length >2">
+              <div class="img_container cpointer" @click="gotoNews(news[2].id)">
+                <img :src="news[2].cover_image" alt />
+                <h4 class="img_text2">{{news[2].subject}}</h4>
+              
+              </div>
+            </swiper-slide>
+             <swiper-slide class="slide" v-if="news.length >10">
+              <div class="img_container cpointer" @click="gotoNews(news[10].id)">
+                <img :src="news[10].cover_image" alt />
+                <h4 class="img_text2">{{news[10].subject}}</h4>
+              
+              </div>
+            </swiper-slide>
+             <swiper-slide class="slide" v-if="news.length >11">
+              <div class="img_container cpointer" @click="gotoNews(news[11].id)">
+                <img :src="news[11].cover_image" alt />
+                <h4 class="img_text2">{{news[11].subject}}</h4>
+              
               </div>
             </swiper-slide>
 
-            <swiper-slide class="slide">
-              <div class="img_container">
-                <img src="/images/imo3.png" alt />
-                <h4 class="img_text1">Lorem, ipsum.</h4>
-                <div
-                  class="img_text2"
-                >Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae dolor fugiat sint dignissimos est impedit?</div>
-              </div>
-            </swiper-slide>
-            <swiper-slide class="slide">
-              <div class="img_container">
-                <img src="/images/imo4.jpg" alt />
-                <h4 class="img_text1">Lorem, ipsum.</h4>
-                <div
-                  class="img_text2"
-                >Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae dolor fugiat sint dignissimos est impedit?</div>
-              </div>
-            </swiper-slide>
             <div class="swiper-pagination" slot="pagination"></div>
           </swiper>
         </div>
       </div>
       <div class="right_box">
-        <!-- <div class="left_header">
-        <div class="fa-stack">
-          <i class="fa fa-circle fa-stack-2x" aria-hidden="true"></i>
-          <i class="fab fa-intercom fa-stack-1x text-white"></i>
-        </div>
-        <h3 class="josefin">Latest News</h3>
-        </div>-->
+        <p v-if="news.length >3" @click="gotoNews(news[3].id)">
+          <router-link to>
+            <span class="text-dark cpointer">{{new Date() | moment("dddd, MMMM D YYYY")}} :</span>
+            <span>{{news[3].subject}}</span>
+          </router-link>
+        </p>
+        <p v-if="news.length >4" @click="gotoNews(news[4].id)">
+          <router-link to>
+            <span class="text-dark cpointer">{{new Date() | moment("dddd, MMMM D YYYY")}} :</span>
+            <span>{{news[4].subject}}</span>
+          </router-link>
+        </p>
+        <p v-if="news.length >5" @click="gotoNews(news[5].id)">
+          <router-link to>
+            <span class="text-dark cpointer">{{new Date() | moment("dddd, MMMM D YYYY")}} :</span>
+            <span>{{news[5].subject}}</span>
+          </router-link>
+        </p>
+        <p v-if="news.length >6" @click="gotoNews(news[6].id)">
+          <router-link to>
+            <span class="text-dark cpointer">{{new Date() | moment("dddd, MMMM D YYYY")}} :</span>
+            <span>{{news[6].subject}}</span>
+          </router-link>
+        </p>
 
-        <p>
-          <router-link to>
-            <span class="text-dark">{{new Date() | moment("dddd, MMMM D YYYY")}} :</span> Lorem ipsum dolor sit amet consectetur adipisicing elit. Error aperiam ab nesciunt consequuntur quidem facilis quis, quisquam aut!
-          </router-link>
-        </p>
-        <p>
-          <router-link to>
-            <span class="text-dark">{{new Date() | moment("dddd, MMMM D YYYY")}} :</span> Lorem ipsum dolor sit amet consectetur adipisicing elit. Error aperiam ab nesciunt consequuntur quidem facilis quis, quisquam aut!
-          </router-link>
-        </p>
-        <p>
-          <router-link to>
-            <span class="text-dark">{{new Date() | moment("dddd, MMMM D YYYY")}} :</span> Lorem ipsum dolor sit amet consectetur adipisicing elit. Error aperiam ab nesciunt consequuntur quidem facilis quis, quisquam aut!
-          </router-link>
-        </p>
-
-        <small>
-          <router-link to class="d-flex align-items-center">
+        <small v-if="news.length >7">
+          <router-link to="/blog" class="d-flex align-items-center">
             <span>
               View all news
               <i class="fa fa-angle-double-right" aria-hidden="true"></i>
@@ -81,30 +81,26 @@
         </small>
 
         <div class="sub_news">
-          <div class="news_container">
+          <div class="news_container cpointer" v-if="news.length >7" @click="gotoNews(news[7].id)">
             <div class="news_img">
-              <img src="/images/imo2.jpg" alt class="rounded" />
+              <img :src="news[7].cover_image" alt class="rounded" />
             </div>
-            <div
-              class="news_title"
-            >Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eaque, enim?</div>
+            <div class="news_title">{{news[7].subject}}</div>
           </div>
-          <div class="news_container">
+          <div class="news_container cpointer" v-if="news.length >8" @click="gotoNews(news[8].id)">
             <div class="news_img">
-              <img src="/images/imo4.jpeg" alt class="rounded" />
+              <img :src="news[8].cover_image" alt class="rounded" />
             </div>
-            <div
-              class="news_title"
-            >Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eaque, enim?</div>
+            <div class="news_title">{{news[8].subject}}</div>
           </div>
-          <div class="news_container">
+
+          <div class="news_container cpointer" v-if="news.length >9" @click="gotoNews(news[9].id)">
             <div class="news_img">
-              <img src="/images/imo4.jpeg" alt class="rounded" />
+              <img :src="news[9].cover_image" alt class="rounded" />
             </div>
-            <div
-              class="news_title"
-            >Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eaque, enim?</div>
+            <div class="news_title">{{news[9].subject}}</div>
           </div>
+          
         </div>
       </div>
     </div>
@@ -117,14 +113,36 @@ export default {
     return {
       swiperOptions: {
         pagination: {
-          el: ".swiper-pagination"
+          el: ".swiper-pagination",
         },
         autoplay: {
-          delay: 6000
-        }
-      }
+          delay: 6000,
+        },
+      },
+      news: [],
     };
-  }
+  },
+  mounted() {
+    this.getNews();
+  },
+  methods: {
+    gotoNews(id) {
+      console.log("gotoNews -> id", id);
+      this.$router.push({
+        name: "NewsBlog",
+        params: {
+          id: id,
+        },
+      });
+    },
+    getNews() {
+      axios.get(`/api/all-news`).then((res) => {
+        if (res.status == 200) {
+          this.news = res.data;
+        }
+      });
+    },
+  },
 };
 </script>
 <style scoped>
@@ -147,7 +165,7 @@ export default {
 .right_box {
   width: 50%;
   height: 100%;
-  padding: 10px;
+  padding: 10px 30px;
   padding-right: 50px;
 }
 .right_box p a {
@@ -195,6 +213,11 @@ a {
   width: 100%;
   height: 100%;
 }
+.img_container img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 .img_text1 {
   position: absolute;
   bottom: 125px;
@@ -204,17 +227,19 @@ a {
   width: auto;
   padding: 10px;
   text-align: center;
+   cursor: pointer;
 }
 .img_text2 {
   position: absolute;
-  bottom: 50px;
-  background: rgba(0, 0, 0, 0.5);
+  bottom: 0px;
+  background: linear-gradient(to right, #0f7a8a, #0e6d7b, #0c616d, #0b555f, #094952);
   color: white;
   z-index: 2;
   width: 100%;
   padding: 10px;
   text-align: center;
   text-align: left;
+  cursor: pointer;
 }
 @media (max-width: 1024px) {
 }

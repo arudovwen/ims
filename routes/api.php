@@ -56,9 +56,12 @@ Route::get('news-categories', 'NewsController@getCategories');
 Route::post('image-upload', 'NewsController@imageUpload');
 
 Route::get('get-news', 'NewsController@getNews');
+Route::get('all-news', 'NewsController@index');
+Route::get('get-featured-news', 'NewsController@getFeaturedNews');
 Route::get('get-new/{id}', 'NewsController@getNew');
 
 Route::get('get-announcements', 'NewsController@getAnnouncements');
+Route::get('get-latest-announcement', 'NewsController@getLatestAnnouncements');
 Route::get('get-announcement/{id}', 'NewsController@getAnnouncement');
 
 Route::get('current-a', 'NewsController@current');

@@ -2,17 +2,11 @@
   <div id="main-body">
     <div class="box box_1">
       <div class="mini_box shadow-sm">
-        <router-link to="/admin/create/news">Create News</router-link>
+        <router-link to="/admin/create/news" ><b-button class="mb-3" block>Create News</b-button></router-link>
+         <router-link to="/admin/create/announcement"><b-button class="mb-3" block>Create Announcement</b-button></router-link>
+         <router-link to="/admin/news/draft"><b-button block=""> Draft</b-button></router-link>
       </div>
-      <div class="mini_box shadow-sm">
-        <router-link to="/admin/create/announcement">Create Announcement</router-link>
-      </div>
-      <div class="mini_box shadow-sm">
-        <router-link to="/admin/news/draft">Draft</router-link>
-      </div>
-    </div>
-    <div class="box box_2">
-      <div class="mini_box2 mini_first">
+       <div class="mini_box2 mini_first">
         <div
           class="d-flex flex-column justify-content-center align-items-center mini_b shadow-sm bg-white"
         >
@@ -55,39 +49,36 @@
           </div>
         </div>
       </div>
+    
+    </div>
+    <div class="box box_2">
+     
       <div class="mini_box2 shadow-sm bg-white p-2">
         <h5>All News</h5>
-        <table class="table" v-if="news.length">
-          <thead>
-            <tr>
-              <th>#</th>
-              <th>Category</th>
-              <th>Subject</th>
-              <th>Status</th>
-              <th>View</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr v-for="(item,idx) in news" :key="idx">
-              <td scope="row">{{idx+1}}</td>
-              <td>{{item.category}}</td>
-              <td>{{item.subject}}</td>
-              <td>{{item.status}}</td>
-              <td>
-                <router-link
+
+       <div class="mytable">
+          <b-table :items="news" :fields="fields">
+          <template v-slot:cell(Sn)= "data">
+
+          {{data.index+1}}
+              
+            
+          </template>
+           <template v-slot:cell(action)="data">
+          <span > <router-link
                   :to="{
                  name:'ViewNews',
                 params:{
                   type:'news',
-                  id:item.id
+                  id:data.item.id
                 }
               }"
                   class="text-dark"
-                >View</router-link>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+                >View</router-link></span>
+          </template>
+        </b-table>
+       </div>
+      
       </div>
     </div>
   </div>
@@ -99,7 +90,14 @@ export default {
     return {
       news: [],
       announcements: [],
-      current: {}
+      current: {},
+      fields:['Sn',
+      {     
+        key:'category',sortable:true
+      },
+      {     
+        key:'subject',sortable:true
+      },'status','action']
     };
   },
   mounted() {
@@ -134,28 +132,34 @@ export default {
   height: 100vh;
   overflow: auto;
   display: grid;
-  grid-template-rows: 1fr 3fr;
-  grid-row-gap: 15px;
+  grid-column-gap: 15px;
+  grid-template-columns: 30% 70%;
+ 
 }
 .box {
   width: 100%;
 }
 .box_1 {
+
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr ;
   grid-column-gap: 15px;
+  grid-row-gap: 15px;
 }
 .mini_box {
   height: 100%;
   background: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+ text-align: center;
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ padding: 40px;
+}
+a{
+  text-decoration: none;
 }
 .box_2 {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  grid-column-gap: 15px;
+ 
 }
 .mini_box2 {
   height: 100%;
@@ -177,5 +181,9 @@ export default {
 }
 table {
   font-size: 14px;
+}
+.mytable{
+  max-height: 80vh;
+  overflow: auto;
 }
 </style>
