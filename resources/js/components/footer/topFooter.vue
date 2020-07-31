@@ -2,7 +2,7 @@
   <div id="top_footer">
     <div class="quick_links">
       <div class="links">
-        <h5 class="links_header josefin">Gallery</h5>
+        <h5 class="links_header josefin_bold">Gallery</h5>
 
         <ul>
           <li>
@@ -17,7 +17,7 @@
         </ul>
       </div>
       <div class="links">
-        <h5 class="links_header josefin">Quick links</h5>
+        <h5 class="links_header josefin_bold">Quick links</h5>
         <ul>
           <li>
             <router-link to>Programs</router-link>
@@ -43,7 +43,7 @@
         </ul>
       </div>
       <div class="contact links">
-        <h5 class="links_header josefin">Contact</h5>
+        <h5 class="links_header josefin_bold">Contact</h5>
         <address>
           <div class="mb-2 mini">
             <h5 class="text-muted">Ministry of Education</h5>
@@ -72,7 +72,7 @@
         </div>
       </div>
       <div class="links">
-        <h5 class="links_header josefin">Social connects</h5>
+        <h5 class="links_header josefin_bold">Social connects</h5>
         <p
           class="text-muted"
         >Connect with us on any of our social media outlets for latest information and happenings around</p>
@@ -115,7 +115,7 @@ export default {};
 .links ul li a {
   color: #777777;
   font-weight: 300;
-  font-size: 13px;
+  font-size: 15px;
   text-transform: uppercase;
 
   padding-bottom: 5px;
@@ -124,19 +124,20 @@ export default {};
   border-bottom: 1px solid #ccc;
 }
 .con {
-  font-size: 14px;
+  font-size: 15px;
 }
 .mini {
   line-height: 1;
 }
 p {
-  font-size: 14px;
+  font-size: 15px;
 }
 h5 {
-  font-size: 13px;
+  font-size: 16px;
+  font-weight: bold;
 }
 span {
-  font-size: 13px;
+  font-size: 15px;
   color: rgb(0, 0, 0, 0.54);
 }
 .btn-default {

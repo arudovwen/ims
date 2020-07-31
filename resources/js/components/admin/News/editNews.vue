@@ -48,7 +48,7 @@
           :init="{
                          selector: 'textarea',
                             toolbar_mode: 'floating',
-                            plugins: 'advlist autolink lists link image imagetools charmap print preview anchor insertdatetime media table paste code help wordcount a11ychecker advcode  formatpainter linkchecker autolink lists media mediaembed   table  tinymcespellchecker',
+                            plugins: 'advlist autolink lists link image imagetools charmap print preview anchor insertdatetime media table paste code help wordcount lists  table  ',
                             toolbar: 'undo redo | formatselect | bold italic backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat |image help | a11ycheck addcomment showcomments casechange checklist code formatpainter  table',
                             image_title: true,
                             height: 300,

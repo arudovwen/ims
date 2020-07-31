@@ -42,7 +42,7 @@ Route::post('create-announcement', 'NewsController@createAnnouncement');
 
 
 Route::put('update-news/{id}', 'NewsController@updateNews');
-Route::put('upate-announcement/{id}', 'NewsController@updateAnnouncement');
+Route::put('update-announcement/{id}', 'NewsController@updateAnnouncement');
 
 Route::put('verify/{id}', 'NewsController@verify');
 Route::put('unverify/{id}', 'NewsController@unverify');
@@ -94,4 +94,12 @@ Route::middleware('auth:admin')->group(function () {
     Route::get('all-staff', 'StaffController@allStaffs');
     Route::post('multi-staff-delete', 'StaffController@multiDelete');
 });
+
+Route::resource('approved-private-school', 'ApprovedPrivateSchoolController');
+Route::resource('principal-phone', 'PrincipalPhoneController');
+Route::resource('principal-transfer', 'PrincipalTransferController');
+Route::resource('waec-candidate', 'WaecCandidateController');
+Route::resource('wassce-private-school', 'WasscePrivateSchoolController');
+
+Route::get('all-totals', 'DirectoryController@totals');
 

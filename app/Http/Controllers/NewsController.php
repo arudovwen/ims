@@ -69,7 +69,7 @@ class NewsController extends Controller
         return NewsCategory::all();
     }
     public function getNews(){
-        return NewModel::where('status','active')->latest()->paginate(15);
+        return NewModel::all();
     }
     public function getAnnouncements(){
         return Announcement::all();
@@ -106,7 +106,7 @@ class NewsController extends Controller
         $data->status =  'inactive';
         $data->save();
     }
-    public function updateAnnouncement($id){
+    public function updateAnnouncement(Request $request, $id){
         $data = Announcement::where('id',$id)->first();
         $data->subject = $request->subject;
         $data->content =json_encode($request->content);

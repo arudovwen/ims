@@ -32,7 +32,7 @@
               <i class="fa fa-circl fa-stack-2x" aria-hidden="true"></i>
               <i class="fa fa-users nav fa-stack-1x" aria-hidden="true"></i>
             </div>
-            <div class="nav_text">Stakeholders</div>
+            <div class="nav_text">Administration</div>
           </router-link>
         </div>
       </li>
@@ -44,17 +44,17 @@
               <i class="fa fa-circl fa-stack-2x" aria-hidden="true"></i>
               <i class="fas fa-lightbulb nav fa-stack-1x"></i>
             </div>
-            <div class="nav_text">Our Initiatives</div>
+            <div class="nav_text">Directories</div>
           </router-link>
         </div>
-        <ul class="sub_nav">
+        <!-- <ul class="sub_nav">
           <router-link to="/initiatives/programs">
             <li class="mini_nav_text">Programs</li>
           </router-link>
           <router-link to="/initiatives/projects">
             <li class="mini_nav_text">Projects</li>
           </router-link>
-        </ul>
+        </ul> -->
       </li>
       <li>
         <div>
@@ -63,11 +63,11 @@
               <i class="fa fa-circl fa-stack-2x" aria-hidden="true"></i>
               <i class="fa fa-building-o nav fa-stack-1x icon" aria-hidden="true"></i>
             </div>
-            <div class="nav_text">Our Organizations</div>
+            <div class="nav_text">Departments</div>
           </router-link>
         </div>
       </li>
-      <li>
+      <!-- <li>
         <div>
           <router-link to>
             <div class="fa-stack icon">
@@ -83,7 +83,7 @@
             <li class="mini_nav_text">Directory</li>
           </router-link>
         </ul>
-      </li>
+      </li> -->
 
       <li>
         <div>

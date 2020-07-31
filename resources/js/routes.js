@@ -17,6 +17,11 @@ let NewsBlog = () =>
     import(
         /* webpackChunkName: "blog_routes" */ "./components/pages/readBlog.vue"
     );
+
+    let ReadAnnouncement = () =>
+    import(
+        /* webpackChunkName: "blog_routes" */ "./components/user/readAnnouncement.vue"
+    );
 let Contact = () =>
     import(
         /* webpackChunkName: "contact_routes" */ "./components/pages/contact.vue"
@@ -173,7 +178,14 @@ let InitiativePrograms = () =>
     import(
         /* webpackChunkName: "admin_home" */ "./components/user/initiatives/programs.vue"
     );
-
+    let Listings = () =>
+    import(
+        /* webpackChunkName: "admin_home" */ "./components/user/directory/listings.vue"
+    );
+    let Department = () =>
+    import(
+        /* webpackChunkName: "admin_home" */ "./components/user/department/view.vue"
+    );
 export const routes = [
     { path: "*", redirect: "/" },
     {
@@ -185,40 +197,39 @@ export const routes = [
     { path: "/summary", component: OrderSummary, name: "OrderSummary" },
     { path: "/blog", component: Blog },
     { path: "/news/read/:id", component: NewsBlog, name: "NewsBlog" },
+    { path: "/announcement/read", component: ReadAnnouncement, name: "ReadAnnouncement" },
     { path: "/about", component: About },
     { path: "/contact", component: Contact },
     { path: "/organizations", component: Organizations },
     { path: "/stakeholders", component: Stakeholders },
+    { path: "/department/:type", component: Department },
     {
-        path: "/initiatives",
+        path: "/directory",
         component: Initiatives,
         children: [
             {
-                path: "/initiatives/programs",
-                component: InitiativePrograms,
-                name: "InitiativePrograms"
+                path: "listings/:type",
+                component: Listings,
+                name: "Listings"
             },
+            { path: "schools", component: Directory, name: "Directory" },
             {
-                path: "/initiatives/projects",
-                component: InitiativeProjects,
-                name: "InitiativeProjects"
+                path: "schools/:id",
+                component: SchoolDirectory,
+                name: "SchoolDirectory"
             }
+           
         ]
     },
     {
         path: "/administrative",
         component: Administrative,
         children: [
-            { path: "/directory", component: Directory, name: "Directory" },
-            {
-                path: "/directory/school/:id",
-                component: SchoolDirectory,
-                name: "SchoolDirectory"
-            }
+     
         ]
     },
     {
-        path: "/admin",
+        path: "",
         component: AdminHome,
         name: "AdminHome",
         children: [
@@ -239,7 +250,7 @@ export const routes = [
                 }
             },
             {
-                path: "/admin/dashboard",
+                path: "/admin",
                 component: AdminDashboard,
                 name: "AdminDashboard",
                 meta: {

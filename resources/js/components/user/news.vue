@@ -47,26 +47,26 @@
       <div class="right_box">
         <p v-if="news.length >3" @click="gotoNews(news[3].id)">
           <router-link to>
-            <span class="text-dark cpointer">{{new Date() | moment("dddd, MMMM D YYYY")}} :</span>
-            <span>{{news[3].subject}}</span>
+            <span>{{news[3].subject}}</span> <small class="text-muted cpointer"> -{{new Date() | moment("ddd, MMM D YYYY")}} </small>
+           
           </router-link>
         </p>
         <p v-if="news.length >4" @click="gotoNews(news[4].id)">
           <router-link to>
-            <span class="text-dark cpointer">{{new Date() | moment("dddd, MMMM D YYYY")}} :</span>
-            <span>{{news[4].subject}}</span>
+           <span>{{news[4].subject}}</span>  <small class="text-muted cpointer"> - {{new Date() | moment("ddd, MMM D YYYY")}} </small>
+           
           </router-link>
         </p>
         <p v-if="news.length >5" @click="gotoNews(news[5].id)">
           <router-link to>
-            <span class="text-dark cpointer">{{new Date() | moment("dddd, MMMM D YYYY")}} :</span>
-            <span>{{news[5].subject}}</span>
+              <span>{{news[5].subject}}</span> <small class="text-muted cpointer"> -{{new Date() | moment("ddd, MMM D YYYY")}} </small>
+         
           </router-link>
         </p>
         <p v-if="news.length >6" @click="gotoNews(news[6].id)">
           <router-link to>
-            <span class="text-dark cpointer">{{new Date() | moment("dddd, MMMM D YYYY")}} :</span>
-            <span>{{news[6].subject}}</span>
+              <span>{{news[6].subject}}</span> <small class="text-muted cpointer">- {{new Date() | moment("ddd, MMM D YYYY")}} </small>
+          
           </router-link>
         </p>
 
@@ -168,7 +168,7 @@ export default {
   padding-right: 50px;
 }
 .right_box p a {
-  font-size: 14px;
+  font-size: 16px;
   color: #001e00;
 }
 .news_container {
@@ -185,7 +185,7 @@ export default {
   height: 100%;
 }
 .news_title {
-  font-size: 12px;
+  font-size: 15px;
   text-align: left;
 }
 .news_update {

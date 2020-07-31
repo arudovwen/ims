@@ -58,7 +58,6 @@ body {
     text-align: center;
     transition: all .5s;
     overflow: scroll;
-
     height: 100%;
     min-height: 100%;
 }
@@ -183,7 +182,9 @@ a {
 .w-0 {
     width: 0;
 }
-
+.b-avatar img{
+    object-fit: cover !important;
+  }
 .fade-enter-active, .fade-leave-active {
     transition-property: opacity;
     transition-duration: .25s;

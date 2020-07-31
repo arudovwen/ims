@@ -10,17 +10,17 @@
             <img src="/images/govt.jpeg" alt />
           </div>
           <div class="box_2 bg-green p-5">
-            <small>His Excellency</small>
-            <h4>SEN. HOPE UZODIMMA</h4>
-            <h5>Governor, Imo state</h5>
-            <P>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quibusdam temporibus distinctio officiis eaque deserunt repellendus accusantium error, laboriosam, autem optio eum, molestias necessitatibus.</P>
+            <p>His Excellency</p>
+            <h3>SEN. HOPE UZODIMMA</h3>
+            <h4>Governor, Imo state</h4>
+           
           </div>
         </div>
         <div class="holder_1 flex-xs-column-reverse">
           <div class="box_2 bg-green p-5">
-            <h4>PROF.B.T.O . IKEGWUOHA</h4>
-            <h5 class="text-center">Honorable Commissioner For Education, Imo state</h5>
-            <P>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quibusdam temporibus distinctio officiis eaque deserunt repellendus accusantium error, laboriosam, autem optio eum, molestias necessitatibus.</P>
+            <h3>PROF.B.T.O . IKEGWUOHA</h3>
+            <h4 class="text-center">Honorable Commissioner For Education, Imo state</h4>
+           
           </div>
           <div class="box_1 bg-white">
             <img src="/images/comm.jpeg" alt />
@@ -28,23 +28,25 @@
         </div>
         <div class="holder_1 flex-xs-column">
           <div class="box_1 bg-white">
-            <img src="/images/profile.png" alt />
+            <img src="/images/perm.png" alt />
           </div>
           <div class="box_2 bg-green p-5">
-            <h5>Permanent Secretary</h5>
-            <h6> Imo state Ministry of Education</h6>
-            <P>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quibusdam temporibus distinctio officiis eaque deserunt repellendus accusantium error, laboriosam, autem optio eum, molestias necessitatibus.</P>
+              <h3 class="">Mrs B.I. Uwandu-Uzoma, Ph.D</h3>
+            <p>BA(Hons), MSc, MA, Ph.D</p>
+            <h4>Permanent Secretary</h4>
+            <h5> Imo state Ministry of Education</h5>
+           
           </div>
         </div>
-        <div class="holder_1 flex-xs-column-reverse">
+        <!-- <div class="holder_1 flex-xs-column-reverse">
           <div class="box_2 bg-green p-5">
-            <h4>Lorem, ipsum.</h4>
-            <P>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quibusdam temporibus distinctio officiis eaque deserunt repellendus accusantium error, laboriosam, autem optio eum, molestias necessitatibus.</P>
+            <h3>Lorem, ipsum.</h3>
+           
           </div>
           <div class="box_1 bg-white">
             <img src="/images/profile.png" alt />
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
   </div>
@@ -89,7 +91,7 @@ export default {
   height: 100%;
   object-fit: cover;
 }
-h5 {
+h4 {
   color: #ecee53;
 }
 .bg-green {
@@ -131,10 +133,10 @@ padding: 15px !important;
 .box_1.p-5{
   padding: 15px !important;
 }
-h5{
+h4{
 font-size: 16px !important;
 }
-h4{
+h3{
   font-size: 18px !important;
 }
 }

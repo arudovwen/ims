@@ -84,35 +84,25 @@
           </div>
         </div>
         <div class="">
-          <table class="table table-hover table-responsive-sm" v-if="sortedSchools.length">
-            <thead class="thead-inverse">
-              <tr>
-                <th>#</th>
-                <th>Name</th>
-                <th>Address</th>
-                <th>Phone</th>
-                <th>Email</th>
-                <th>Action</th>
-              
-              </tr>
-            </thead>
-            <tbody>
-              <tr v-for="(school,idx) in sortedSchools" :key="idx">
-                <td scope="row">{{school.id}}</td>
-                <td v-if="school.name !='null'">{{school.name!='null'?school.name: '-'}}</td>
-                <td>{{ school.address!='null'?school.address: '-'}}</td>
-                <td>{{school.phone_no!='null'?school.phone_no: '-'}}</td>
-                <td>{{school.email!='null'?school.email: '-'}}</td>
 
-                 <td class="">
-                   <span @click="viewSchool(school.id)" class="action">   <i class="fa fa-eye" ></i> <span class="mobile-none">View</span></span>
-                    
-                    </td>
-              
-              </tr>
-            </tbody>
-          </table>
-          
+          <b-table  :items="sortedSchools" :fields="fields"  v-if="sortedSchools.length">
+          <template v-slot:cell(#)="data">
+           {{data.index+1}}
+          </template>
+           <template v-slot:cell(email)="data">
+           <span>{{data.item.email== 'null'? '-':data.item.email}}</span>
+          </template>
+           <template v-slot:cell(address)="data">
+           <span>{{data.item.address== 'null'? '-':data.item.address}}</span>
+          </template>
+           <template v-slot:cell(phone_no)="data">
+         <span>{{data.item.phone_no== 'null'? '-':data.item.phone_no}}</span>
+          </template>
+           <template v-slot:cell(action)="data">
+         <span @click="viewSchool(data.item.id)" class="action">   <span class="mobile-none">View</span></span>
+          </template>
+          </b-table>
+
           <div v-else class="text-center form-control">
             No record avaialble !
           </div>
@@ -139,6 +129,9 @@ export default {
       search: "",
       filter_item: "",
       lga: "selected",
+      fields:[
+        '#',{key:'name',sortable:true},{key:'lga',sortable:true},'email','address','phone_no','sector','type','action'
+      ],
       items: [],
       item: false,
       row_number: 1,
@@ -347,7 +340,7 @@ export default {
   background: #f7f8fa;
 }
 .main-content {
-  width: 90%;
+  width: 100%;
   margin: 0 auto;
   min-height: 100vh;
   display: flex;

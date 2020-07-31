@@ -11,7 +11,7 @@
       </div>
     </div>
     <div>
-      <h3 class="josefin mb-4 main_header">Stakeholders</h3>
+      <h3 class="josefin mb-4 main_header">Administration</h3>
       <div class="commiss">
           <div class="governor box shadow-sm">
         <div class="top_header">
@@ -39,12 +39,14 @@
 
         <div class="perm_sec box shadow-sm">
           <div class="top_header">
+            <h4 class="josefin">Mrs B.I. Uwandu-Uzoma, Ph.D</h4>
+            <!-- <small>BA(Hons), MSc, MA, Ph.D</small> -->
             <h4 class="josefin">Permanent Secretary, Imo state Ministry of Education</h4>
             <!-- <p>Lorem ipsum dolor, sit amet  itaque... <span class="mc1">read more</span></p> -->
           </div>
 
           <div class="img">
-            <img src="/images/profile.png" alt="Permanent Secretary, Imo state" />
+            <img src="/images/perm.png" alt="Permanent Secretary, Imo state" />
           </div>
         </div>
       </div>

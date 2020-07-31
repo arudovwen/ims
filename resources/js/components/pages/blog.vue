@@ -9,19 +9,19 @@
             <nav class="nav d-flex justify-content-between">
               <label class="custom-control custom-radio">
                 <input type="radio" value v-model="category" class="custom-control-input" />
-                <span class="custom-control-indicator text-muted">All</span>
+                <span class="custom-control-indicator text-muted cpointer">All</span>
               </label>
               <label class="custom-control custom-radio">
                 <input type="radio" value="World" v-model="category" class="custom-control-input" />
-                <span class="custom-control-indicator text-muted">World</span>
+                <span class="custom-control-indicator text-muted cpointer">World</span>
               </label>
               <label class="custom-control custom-radio">
                 <input type="radio" value="Nigeria" v-model="category" class="custom-control-input" />
-                <span class="custom-control-indicator text-muted">Nigeria</span>
+                <span class="custom-control-indicator text-muted cpointer">Nigeria</span>
               </label>
               <label class="custom-control custom-radio">
                 <input type="radio" value="Imo" v-model="category" class="custom-control-input" />
-                <span class="custom-control-indicator text-muted">Imo</span>
+                <span class="custom-control-indicator text-muted cpointer">Imo</span>
               </label>
               <label class="custom-control custom-radio">
                 <input
@@ -30,15 +30,15 @@
                   v-model="category"
                   class="custom-control-input"
                 />
-                <span class="custom-control-indicator text-muted">Technology</span>
+                <span class="custom-control-indicator text-muted cpointer">Technology</span>
               </label>
               <label class="custom-control custom-radio">
                 <input type="radio" value="Design" v-model="category" class="custom-control-input" />
-                <span class="custom-control-indicator text-muted">Design</span>
+                <span class="custom-control-indicator text-muted cpointer">Design</span>
               </label>
               <label class="custom-control custom-radio">
                 <input type="radio" value="Culture" v-model="category" class="custom-control-input" />
-                <span class="custom-control-indicator text-muted">Culture</span>
+                <span class="custom-control-indicator text-muted cpointer">Culture</span>
               </label>
               <label class="custom-control custom-radio">
                 <input
@@ -47,7 +47,7 @@
                   v-model="category"
                   class="custom-control-input"
                 />
-                <span class="custom-control-indicator text-muted">Business</span>
+                <span class="custom-control-indicator text-muted cpointer">Business</span>
               </label>
               <label class="custom-control custom-radio">
                 <input
@@ -56,24 +56,24 @@
                   v-model="category"
                   class="custom-control-input"
                 />
-                <span class="custom-control-indicator text-muted">Politics</span>
+                <span class="custom-control-indicator text-muted cpointer">Politics</span>
               </label>
               <label class="custom-control custom-radio">
                 <input type="radio" value="Opinion" v-model="category" class="custom-control-input" />
-                <span class="custom-control-indicator text-muted">Opinion</span>
+                <span class="custom-control-indicator text-muted cpointer">Opinion</span>
               </label>
               <label class="custom-control custom-radio">
                 <input type="radio" value="Science" v-model="category" class="custom-control-input" />
-                <span class="custom-control-indicator text-muted">Science</span>
+                <span class="custom-control-indicator text-muted cpointer">Science</span>
               </label>
               <label class="custom-control custom-radio">
                 <input type="radio" value="Health" v-model="category" class="custom-control-input" />
-                <span class="custom-control-indicator text-muted">Health</span>
+                <span class="custom-control-indicator text-muted cpointer">Health</span>
               </label>
 
               <label class="custom-control custom-radio">
                 <input type="radio" value="Travel" v-model="category" class="custom-control-input" />
-                <span class="custom-control-indicator text-muted">Travel</span>
+                <span class="custom-control-indicator text-muted cpointer">Travel</span>
               </label>
             </nav>
           </div>
@@ -272,7 +272,7 @@ export default {
     return {
       show: true,
       category: "",
-      featured:[],
+      feature:[],
       news: [],
       last_page: "",
       first_page: "",
@@ -305,7 +305,7 @@ export default {
       getFeaturedNews() {
       axios.get("/api/get-featured-news").then((res) => {
         if (res.status == 200) {
-          this.featured = res.data
+          this.feature = res.data
           this.show = false;
         }
       });
@@ -337,6 +337,16 @@ export default {
   },
   computed: {
     basic() {
+      return this.news.filter((item) => {
+        if (this.category.toLowerCase() == item.category.toLowerCase()) {
+          return item;
+        }
+        if (this.category.toLowerCase() == "") {
+          return item;
+        }
+      });
+    },
+      featured() {
       return this.news.filter((item) => {
         if (this.category.toLowerCase() == item.category.toLowerCase()) {
           return item;

@@ -2,9 +2,11 @@
   <div class="main-top">
     <div class="info">
       <marquee-text>
-        <span class="px-4 text-white marq">Total no of pupils : 23,400</span>
-        <span class="px-4 text-white marq">Total no of Secondary schools : 1,450</span>
-        <span class="px-4 text-white marq">Total no of Primary schools : 2,450</span>
+         <span class="px-4 text-white marq">Total no of  lgas : {{total_lgas}}</span>
+         <span class="px-4 text-white marq">Total no of  staffs : {{total_staffs}}</span>
+        <span class="px-4 text-white marq">Total no of  schools : {{total_schools}}</span>
+        <span class="px-4 text-white marq">Total no of Secondary schools : {{total_sec_schools}}</span>
+        <span class="px-4 text-white marq">Total no of Primary/Nursery schools : {{total_pry_schools}}</span>
       </marquee-text>
     </div>
     <div id="top_nav">
@@ -21,20 +23,18 @@
         </router-link>
       </div>
       <div class="side_info ml-auto">
-        <div class="form-group rel_pos ml-auto search_bar mb-0 ">
+        <div class="form-group rel_pos ml-auto search_bar mb-0">
           <input
-       
             type="text"
             class="form-control search-border rounded-pill desktop"
-           
             aria-describedby="helpId"
             placeholder="Search"
           />
-          <button class="search_icon abs_pos top-0 rounded-pill desktop"  >
+          <button class="search_icon abs_pos top-0 rounded-pill desktop">
             <i class="fa fa-search fa-1x text-white" aria-hidden="true"></i>
           </button>
 
-          <span class="d-flex justify-content-start align-items-center mobile " @click="showNav">
+          <span class="d-flex justify-content-start align-items-center mobile" @click="showNav">
             <button
               class="hamburger hamburger--collapse"
               tabindex="0"
@@ -57,33 +57,53 @@
 </template>
 <script>
 export default {
-  props:['show_nav_bar'],
+  props: ["show_nav_bar"],
   name: "top-nav-component",
   data() {
     return {
+      total_schools: null,
+      total_sec_schools: null,
+      total_pry_schools: null,
+      total_tert_schools: null,
+      total_staffs: null,
+      total_lgas: null,
       swiperOptions: {
         slidesPerView: 1,
         spaceBetween: 30,
         effect: "fade",
         fadeEffect: {
-          crossFade: true
+          crossFade: true,
         },
         autoplay: {
-          delay: 8000
+          delay: 8000,
         },
-        
       },
-     
     };
   },
+  mounted() {
+    this.getTotals()
+  },
   methods: {
+    getTotals(){
+    axios.get('/api/all-totals').then(res=>{
+      if (res.status ==200) {
+        this.total_schools =res.data.schools;
+       this.total_sec_schools= res.data.secondary;
+       this.total_pry_schools= res.data.primary;
+       this.total_tert_schools= res.data.tertiary;
+       this.total_staffs= res.data.staffs;
+       this.total_lgas= res.data.lgas;
+      }
+
+    }).catch()
+    },
     showNav() {
       this.$emit("showNav");
     },
     closeNav() {
       this.$emit("closeNav");
-    }
-  }
+    },
+  },
 };
 </script>
 <style scoped>
@@ -95,8 +115,8 @@ export default {
   align-items: center;
   background: #fff;
 }
-.search-border{
-  border-color:yellow;
+.search-border {
+  border-color: #0f7a8a;
 }
 .text {
   padding: 0 0 0 10px;
@@ -159,8 +179,8 @@ a {
 .rel_pos {
   width: 350px;
 }
-.mobile{
-  display:none !important;
+.mobile {
+  display: none !important;
 }
 @media (max-width: 1024px) {
   .logo {
@@ -175,14 +195,14 @@ a {
   }
 }
 @media (max-width: 768px) {
-  .main-top{
-     box-shadow: rgba(0, 0, 0, 0.5) 0px 1px 4px 0px;
-     border-bottom:1px solid rgba(0, 0, 0, 0.1);
+  .main-top {
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 1px 4px 0px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   }
   .rel_pos {
     width: auto;
   }
-   .desktop{
+  .desktop {
     display: none !important;
   }
   .logo {
@@ -194,7 +214,6 @@ a {
   }
   #top_nav {
     padding: 10px;
- 
   }
   .img_container {
     width: 100px;
@@ -209,8 +228,8 @@ a {
   .text {
     padding: 0 0 0 10px;
   }
-  .mobile{
-    display:block !important;
+  .mobile {
+    display: block !important;
   }
   .logo {
     font-size: 16px;

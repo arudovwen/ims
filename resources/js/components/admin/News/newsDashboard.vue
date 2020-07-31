@@ -8,10 +8,10 @@
       </div>
        <div class="mini_box2 mini_first">
         <div
-          class="d-flex flex-column justify-content-center align-items-center mini_b shadow-sm bg-white"
+          class="d-flex flex-column justify-content-center align-items-center mini_b shadow-sm bg-white p-2"
         >
           <h5>Current Announcement</h5>
-          <h4 v-if="current.length">{{current[0].subject}}</h4>
+          <strong v-if="current.length" >{{current[0].subject}}</strong>
         </div>
         <div class="mini_b mini_bb">
           <div class="mini_c shadow-sm p-2">
@@ -97,7 +97,9 @@ export default {
       },
       {     
         key:'subject',sortable:true
-      },'status','action']
+      },{     
+        key:'status',sortable:true
+      },'action']
     };
   },
   mounted() {
@@ -107,7 +109,7 @@ export default {
     getNews() {
       axios.get("/api/get-news").then(res => {
         if (res.status == 200) {
-          this.news = res.data.data;
+          this.news = res.data;
         }
       });
 
@@ -147,6 +149,7 @@ h5{
   display: grid;
   grid-template-columns: 1fr ;
   grid-column-gap: 15px;
+  grid-template-rows: 20% 80%;
   grid-row-gap: 15px;
 }
 .mini_box {

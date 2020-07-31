@@ -1,15 +1,15 @@
 <template>
-  <div class="container my_body">
-    <scrollTop  class="scroll"/>
+  <div class=" ">
+    <scrollTop class="scroll" />
     <Navigation />
     <Banner />
     <Announcement />
-    <section class="">
+    <section class>
       <Commissioner />
       <ourInitiatives />
-        <Polls />
-       <ourOrganizations />
-    
+      <Department />
+      <Polls />
+      <ourOrganizations />
       <News />
     </section>
     <Footer />
@@ -27,7 +27,7 @@ import Commissioner from "../user/commissioner";
 import ourInitiatives from "../user/ourInitiatives";
 import ourOrganizations from "../user/ourOrganizations";
 import scrollTop from "../scrollTopComponent";
-
+import Department from "../user/departments";
 export default {
   components: {
     Polls,
@@ -39,9 +39,10 @@ export default {
     Navigation,
     Footer,
     scrollTop,
-    Banner
+    Banner,
+    Department,
   },
-  mounted() {}
+  mounted() {},
 };
 </script>
 <style scoped>
@@ -52,8 +53,7 @@ export default {
   min-height: 100vh;
 }
 .my_body {
- background-image: url('/images/curve.jpg');
- background-size:cover;
+  background-image: url("/images/curve.jpg");
+  background-size: contain;
 }
-
 </style>

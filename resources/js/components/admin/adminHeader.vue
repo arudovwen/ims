@@ -9,7 +9,7 @@
       </div>
       <hr />
       <ul class="side_nav_items">
-        <router-link to="/admin/dashboard">
+        <router-link to="/admin">
           <li class="single_nav_item">Home</li>
         </router-link>
          <router-link to="/admin/users" v-if="admin.role == 'administrator'">

@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Lga;
+use App\Staff;
 use App\Directory;
 use Illuminate\Http\Request;
 
@@ -9,26 +11,26 @@ class DirectoryController extends Controller
 {
     public function create(Request $request)
     {
-    //     $arr=[
+        //     $arr=[
            
-    //   ];
+        //   ];
 
       
-    //     foreach ($arr as $ar) {
-    //         Directory::create([
-    //                     'name' => trim($ar),
-    //                     'address'  => 'null',
-    //                     'phone_no'  => 'null',
-    //                     'email'  => 'null',
-    //                     'level'  => $request->level,
-    //                     'lga'  => 'null',
-    //                     'accreditation'  => $request->accreditation,
-    //                     'ownership'  => $request->ownership,
-    //                     'diocese' => $request->diocese,
-    //                     'type'  => $request->type,
-    //                     'sector'  => $request->sector
-    //                     ]);
-    //     }
+        //     foreach ($arr as $ar) {
+        //         Directory::create([
+        //                     'name' => trim($ar),
+        //                     'address'  => 'null',
+        //                     'phone_no'  => 'null',
+        //                     'email'  => 'null',
+        //                     'level'  => $request->level,
+        //                     'lga'  => 'null',
+        //                     'accreditation'  => $request->accreditation,
+        //                     'ownership'  => $request->ownership,
+        //                     'diocese' => $request->diocese,
+        //                     'type'  => $request->type,
+        //                     'sector'  => $request->sector
+        //                     ]);
+        //     }
            
 
         return Directory::create([
@@ -44,6 +46,37 @@ class DirectoryController extends Controller
                   'diocese' => $request->diocese,
                 'sector'  => $request->sector
                 ]);
+    }
+
+    public function totals()
+    {
+        $staffs = Staff::get();
+        $schools = Directory::get();
+        $lgas = Lga::get();
+        $secondary=[];
+        $primary = [];
+        $tertiary = [];
+
+        foreach ($schools as  $value) {
+            if (\strtolower($value->level) == 'secondary') {
+                array_push($secondary, $value);
+            }
+            if (\strtolower($value->level) == 'primary/nursery') {
+                array_push($primary, $value);
+            }
+            if (\strtolower($value->level) == 'tertiary') {
+                array_push($tertiary, $value);
+            }
+        }
+
+        return   $result = ([
+            'lgas'=> count($lgas),
+            'schools'=> count($schools),
+            'staffs'=> count($staffs),
+            'secondary'=> count($secondary),
+            'primary'=> count($primary),
+            'tertiary'=> count($tertiary)
+        ]);
     }
     public function update(Request $request, $id)
     {

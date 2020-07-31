@@ -7,11 +7,15 @@
           <div class="w-100 text-center mb-3">
             <img src="/images/pin.png" class="pin" alt="pin" />
           </div>
-          <h3 class="josefin_bold mb-4 top_head text-center mc1 ">{{announcement.subject}}</h3>
-          <div class="comm_image">
+        <h5 class="josefin_bold mb-3 top_head text-center mc1 ">{{announcement.subject}}</h5>
+          <div class="comm_image" v-if="announcement.cover_image">
             <img :src="announcement.cover_image" alt="announcement" />
           </div>
-          <p v-html="announcement.content" class="ann text-center"></p>
+             <div class="text-center">
+               
+          <p v-html="announcement.content" class="ann text-center mb-2"></p>
+          <router-link to="/announcement/read"><small>Read more</small></router-link>
+             </div>
           <!-- <router-link to="/checkout">
             <button type="button" class="button-green">
               <i class="fa fa-long-arrow-right text-white pr-2" aria-hidden="true"></i> Pay now
@@ -67,9 +71,9 @@ export default {
   },
   methods: {
     getAnnouncement() {
-      axios.get(`/api/get-latest-announcement`).then((res) => {
+      axios.get(`/api/current-a`).then((res) => {
         if (res.status == 200) {
-          this.announcement = res.data;
+          this.announcement = res.data[0];
         }
       });
     },
@@ -249,7 +253,23 @@ export default {
   text-overflow: ellipsis;
 }
 .ann{
-  font-size:22px;
+ cursor: pointer;
+  height: 85px;
+  font-size: 18px;
+  overflow: hidden;
+  display: -webkit-box !important;
+  -webkit-line-clamp: 3;
+  -moz-line-clamp: 3;
+  -ms-line-clamp: 3;
+  -o-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  -moz-box-orient: vertical;
+  -ms-box-orient: vertical;
+  -o-box-orient: vertical;
+  box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 @media (max-width: 1024px) {
 }
