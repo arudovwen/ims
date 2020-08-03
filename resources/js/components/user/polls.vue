@@ -114,6 +114,10 @@ export default {
   font-size: 65px;
   margin-bottom: 20px;
 }
+a{
+  text-align: center;
+  text-decoration: none;
+}
 @media (max-width: 1024px) {
 }
 @media (max-width: 768px) {
