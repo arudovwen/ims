@@ -5,6 +5,8 @@
     <PrincipalTransfer v-if="type=='transfers'" />
     <WaecCandidates v-if="type=='waec-candidates'" />
     <WassceSchools v-if="type=='wassce-schools'" />
+      <Appointment v-if="type=='appointment'" />
+
   </b-container>
 </template>
 
@@ -14,6 +16,8 @@ const PrincipalPhone = () => import("./principalPhone");
 const PrincipalTransfer = () => import("./principalTransfer");
 const WaecCandidates = () => import("./waecCandidates");
 const WassceSchools = () => import("./wassceSchools");
+const Appointment = ()  => import('./prinipalAppointment')
+
 export default {
   data() {
     return {
@@ -26,6 +30,8 @@ export default {
     PrincipalTransfer,
     WaecCandidates,
     WassceSchools,
+    Appointment
+   
   },
 };
 </script>

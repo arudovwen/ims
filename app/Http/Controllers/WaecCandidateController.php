@@ -14,7 +14,13 @@ class WaecCandidateController extends Controller
      */
     public function index()
     {
+       
         return WaecCandidate::paginate(15);
+    }
+    public function all()
+    {
+       
+        return WaecCandidate::all();
     }
 
     /**

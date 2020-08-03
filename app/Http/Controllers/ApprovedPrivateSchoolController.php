@@ -17,6 +17,11 @@ class ApprovedPrivateSchoolController extends Controller
         return ApprovedPrivateSchool::paginate(15);
     }
 
+    public function all()
+    {
+        return ApprovedPrivateSchool::all();
+    }
+
     /**
      * Show the form for creating a new resource.
      *

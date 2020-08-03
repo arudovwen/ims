@@ -112,7 +112,7 @@ cite {
 ul,
 ol,
 dl {
-    list-style: none;
+   
     font-size: 1em;
     /* Equivalent to 12pt */
 }
@@ -397,4 +397,12 @@ thead{
     .mobile-none{
         display:none;
       }
+      .custom-control-label::after,.custom-control-label::before{
+        width:.6rem !important;
+        height: .6rem !important;
+        left:-.85rem !important;
+      }
+      /* .custom-control{
+          padding-right: .8rem !important;
+      } */
 }

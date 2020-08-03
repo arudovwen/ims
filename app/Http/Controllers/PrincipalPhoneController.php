@@ -13,9 +13,17 @@ class PrincipalPhoneController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
+    
     {
         return PrincipalPhone::paginate(15);
     }
+    public function all()
+    
+    {
+        return PrincipalPhone::all();
+    }
+
+    
 
     /**
      * Show the form for creating a new resource.

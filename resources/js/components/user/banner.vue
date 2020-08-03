@@ -16,9 +16,9 @@
 
         <div class="banner_2_text text-center animated fadeIn slow">
           <div class="banner_2_imo josefin">Imo State Ministry of Education</div>
-          <div
+          <!-- <div
             class="banner_2_lor"
-          >Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, rem.</div>
+          >Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, rem.</div> -->
         </div>
       </swiper-slide>
       <swiper-slide class="banner_1">
@@ -33,10 +33,10 @@
             <span class="new josefin">has a New</span>
             <br />
             <span class="face josefin">Face</span>
-            <div class="enroll">
+            <!-- <div class="enroll">
                <p class="site rounded-pill">www.imolearncentre.org</p>
                <router-link to="/checkout" class="mt-4 "> <button type="button" class="btn bg-white text-blue border-0"><i class="fa fa-long-arrow-right text-blue pr-2" aria-hidden="true"></i> Enroll Now  </button></router-link>
-            </div>
+            </div> -->
           </span>
         </div>
         <div class="circle_3 animated slideInRight slow">
@@ -139,8 +139,8 @@ export default {
 }
 .text {
   position: absolute;
-  bottom: 18%;
-  right: 18%;
+  bottom: 25%;
+  right: 9%;
 }
 .new {
   color: #fff;

@@ -14,7 +14,13 @@ class WasscePrivateSchoolController extends Controller
      */
     public function index()
     {
-        WasscePrivateSchool::paginate(15);
+  
+      return  WasscePrivateSchool::paginate(15);
+    }
+    public function all()
+    {
+  
+      return  WasscePrivateSchool::all();
     }
 
     /**

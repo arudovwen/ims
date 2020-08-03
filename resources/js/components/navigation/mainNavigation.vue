@@ -16,7 +16,7 @@
       </li>
       <li>
         <div>
-          <router-link to="/about">
+          <router-link to="/">
             <div class="fa-stack icon">
               <i class="fa fa-circl fa-stack-2x" aria-hidden="true"></i>
               <i class="fa fa-info-circle nav fa-stack-1x" aria-hidden="true"></i>
@@ -39,7 +39,7 @@
 
       <li>
         <div>
-          <router-link to>
+          <router-link to="/directory">
             <div class="fa-stack icon">
               <i class="fa fa-circl fa-stack-2x" aria-hidden="true"></i>
               <i class="fas fa-lightbulb nav fa-stack-1x"></i>
@@ -67,25 +67,28 @@
           </router-link>
         </div>
       </li>
-      <!-- <li>
+      <li>
         <div>
           <router-link to>
             <div class="fa-stack icon">
               <i class="fa fa-circl fa-stack-2x" aria-hidden="true"></i>
               <i class="fas fa-user-tie nav fa-stack-1x"></i>
             </div>
-            <div class="nav_text">Administrative</div>
+            <div class="nav_text">Applications</div>
           </router-link>
         </div>
         <ul class="sub_nav">
-          <li class="mini_nav_text">Applications</li>
+          <li class="mini_nav_text">Forms</li>
           <router-link to="/directory">
-            <li class="mini_nav_text">Directory</li>
+            <li class="mini_nav_text">E-Pay</li>
+          </router-link>
+          <router-link to="/schedule-appointment">
+            <li class="mini_nav_text">Schedule appointment</li>
           </router-link>
         </ul>
-      </li> -->
+      </li>
 
-      <li>
+      <!-- <li>
         <div>
           <router-link to="/blog">
             <div class="fa-stack icon">
@@ -95,7 +98,7 @@
             <div class="nav_text">News</div>
           </router-link>
         </div>
-      </li>
+      </li> -->
       <li>
         <div>
           <router-link to="/contact">
@@ -106,6 +109,26 @@
             <div class="nav_text">Contact</div>
           </router-link>
         </div>
+      </li>
+        <li>
+        <div>
+          <router-link to="/admin">
+            <div class="fa-stack icon">
+              <i class="fa fa-circl fa-stack-2x" aria-hidden="true"></i>
+            
+              <i class="fa fa-lock nav fa-stack-1x" aria-hidden="true"></i>
+            </div>
+            <div class="nav_text">Login</div>
+          </router-link>
+        </div>
+        <!-- <ul class="sub_nav">
+          <router-link to="/initiatives/programs">
+            <li class="mini_nav_text">Programs</li>
+          </router-link>
+          <router-link to="/initiatives/projects">
+            <li class="mini_nav_text">Projects</li>
+          </router-link>
+        </ul> -->
       </li>
     </ul>
   </div>
@@ -168,6 +191,9 @@ strong {
 
   padding: 0 20px;
   margin: 0;
+}
+ul{
+  list-style: none;
 }
 .nav_bar li {
   text-align: center;
@@ -239,12 +265,12 @@ strong {
 .sub_nav {
   display: none;
   background: #ffffff;
-  padding: 10px;
+  padding: 5px;
   border-radius: 4px;
   position: absolute;
   box-shadow: 0 0 0 1px rgba(14, 19, 24, 0.07), 0 2px 12px rgba(14, 19, 24, 0.2);
   top: 75px;
-  width: 150px;
+  width: 200px;
 }
 .sub_nav::before {
   content: "";

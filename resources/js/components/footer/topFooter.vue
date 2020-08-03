@@ -51,7 +51,7 @@
             <br />
             <span class="text-muted">P. M. B 1309, Owerri</span>
             <br />
-            <span class="text-muted">E-mail: info@imostatemoe.gov.ng</span>
+            <span class="text-muted">E-mail: info@ministryofeducation.im.gov.ng</span>
           </div>
           <div class="mb-2 mini">
             <h5
@@ -61,7 +61,7 @@
             <br />
             <span class="text-muted">P. M. B 1309, Owerri</span>
             <br />
-            <span class="text-muted">E-mail: hcmoe@imostatemoe@gov.ng</span>
+            <span class="text-muted">E-mail: hcmoe@ministryofeducation.im.gov.ng</span>
           </div>
         </address>
 
@@ -122,6 +122,9 @@ export default {};
 }
 .links ul li {
   border-bottom: 1px solid #ccc;
+}
+ul{
+  list-style: none;
 }
 .con {
   font-size: 15px;

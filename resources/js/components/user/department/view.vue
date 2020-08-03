@@ -1,6 +1,6 @@
 <template>
   <div>
-      <Navigation />
+    <Navigation />
     <b-container fluid>
       <b-row class="banner">
         <div class="overlay-m">
@@ -12,14 +12,23 @@
       <!-- statistics starts here -->
       <b-container fluid class="py-5" v-if="$route.params.type=='statistics'">
         <b-row>
-          <b-col cols="5">
+          <b-col cols="12" sm="5" class="mb-4">
             <b-card title="Name: Okwara Catherine Ngozi (Mrs.)" tag="article" class="mb-2">
-              <b-card-text>Designation: Ag. Director, Planning Research and Statistics</b-card-text>
-              <b-card-text>Phone No: 08037891607</b-card-text>
-              <b-card-text>Correspondence Address: Department of Planning Research and Statistics, Ministry of Education, Imo State Secretariat, Port Harcourt Road, Owerri</b-card-text>
+              <b-card-text>
+                <span class="ma">Designation:</span> Ag. Director, Planning Research and Statistics
+              </b-card-text>
+              <b-card-text>
+                <span class="ma">Phone No:</span> 08037891607
+              </b-card-text>
+              <b-card-text>
+                <span class="ma">Email :</span> n.okwara@ministryofeducation.im.gov.ng
+              </b-card-text>
+              <b-card-text>
+                <span class="ma">Correspondence Address:</span> Department of Planning Research and Statistics, Ministry of Education, Imo State Secretariat, Port Harcourt Road, Owerri
+              </b-card-text>
             </b-card>
           </b-col>
-          <b-col cols="7">
+          <b-col cols="12" sm="7">
             <div>
               <h3>BRIEF HISTORY AND ROLES OF DEPARTMENT OF PLANNING RESEARCH AND STATISTICS</h3>
 
@@ -52,17 +61,23 @@
       <!-- finance starts here  -->
       <b-container fluid class="py-5" v-if="$route.params.type=='finance'">
         <b-row>
-          <b-col cols="5">
+          <b-col cols="12" sm="5" class="mb-4">
             <b-card title="Name: Angela Ogechi John-Njoku (Mrs.)" tag="article" class="mb-2">
-              <b-card-text>Designation: Director of Administration and Finance (GL 16)</b-card-text>
-              <b-card-text>Phone No: +234 803 763 2048</b-card-text>
               <b-card-text>
-                Email:
-                Correspondence Address: Dept. of Administration, Ministry of Education, Imo State Secretariat, Port Harcourt Road, Owerri.
+                <span class="ma">Designation:</span> Director of Administration and Finance (GL 16)
+              </b-card-text>
+              <b-card-text>
+                <span class="ma">Phone No:</span> +234 803 763 2048
+              </b-card-text>
+              <b-card-text>
+                <span class="ma">Email:</span> a.johnnjoku@ministryofeducation.im.gov.ng
+              </b-card-text>
+              <b-card-text>
+                <span class="ma">Correspondence Address:</span> Dept. of Administration, Ministry of Education, Imo State Secretariat, Port Harcourt Road, Owerri.
               </b-card-text>
             </b-card>
           </b-col>
-          <b-col cols="7">
+          <b-col cols="12" sm="7">
             <div>
               <h3>FUNCTIONS AND ACTIVITIES OF THE DEPARTMENT</h3>
               <p>The Admin/Finance Department is the gateway to the ministry. The Department assists in policies formulation and execution, as it affects the Ministry. This Department carries out the following responsibilities:</p>
@@ -86,14 +101,23 @@
       <!-- edc starts here  -->
       <b-container fluid class="py-5" v-if="$route.params.type=='edc'">
         <b-row>
-          <b-col cols="5">
+          <b-col cols="12" sm="5" class="mb-4">
             <b-card title="Name: OKEREKE, LIVINUS I.C." tag="article" class="mb-2">
-              <b-card-text>Designation: Acting Director (Exams)</b-card-text>
-              <b-card-text>Phone No: +234 803 763 2048</b-card-text>
-              <b-card-text>Correspondence Address: Examinations Development Centre (EDC), Ministry of Education, Imo State Secretariat, Port Harcourt Road, Owerri.</b-card-text>
+              <b-card-text>
+                <span class="ma">Designation:</span> Acting Director (Exams)
+              </b-card-text>
+              <!-- <b-card-text>
+                <span class="ma">Phone No:</span> +234 803 763 2048
+              </b-card-text> -->
+              <b-card-text>
+                <span class="ma">Email:</span> l.okereke@ministryofeducation.im.gov.ng
+              </b-card-text>
+              <b-card-text>
+                <span class="ma">Correspondence Address:</span> Examinations Development Centre (EDC), Ministry of Education, Imo State Secretariat, Port Harcourt Road, Owerri.
+              </b-card-text>
             </b-card>
           </b-col>
-          <b-col cols="7">
+          <b-col cols="12" sm="7">
             <div>
               <h3>FUNCTIONS AND ACTIVITIES OF THE DEPARTMENT</h3>
               <p>
@@ -142,17 +166,21 @@
       <!-- qa starts here  -->
       <b-container fluid class="py-5" v-if="$route.params.type=='qa'">
         <b-row>
-          <b-col cols="5">
+          <b-col cols="12" sm="5" class="mb-4">
             <b-card title="Name: Dr. (Mrs) Nlebedum, P.N." tag="article" class="mb-2">
-              <b-card-text>Designation: Director, Quality Assurance Department</b-card-text>
-
               <b-card-text>
-                Correspondence Address: Quality Assurance Department, Ministry of Education, Imo State Secretariat, Port Harcourt Road, Owerri
+                <span class="ma">Designation:</span> Director, Quality Assurance Department
+              </b-card-text>
+              <b-card-text>
+                <span class="ma">Email:</span> p.nlebedum@ministryofeducation.im.gov.ng
+              </b-card-text>
+              <b-card-text>
+                <span class="ma">Correspondence Address:</span> Quality Assurance Department, Ministry of Education, Imo State Secretariat, Port Harcourt Road, Owerri
                 .
               </b-card-text>
             </b-card>
           </b-col>
-          <b-col cols="7">
+          <b-col cols="12" sm="7">
             <div>
               <h3>BRIEF HISTORY OF THE QUALITY ASSURANCE DEPARTMENT</h3>
               <p>The Quality Assurance Department of the Ministry of Education is by the National and State Policies on Education responsible for monitoring and maintaining standards at all levels of education below the tertiary level. It carries out this statutory function through the inspection of all approved Schools, Public and Private (Nursery, Primary and Secondary) in the state.</p>
@@ -206,14 +234,20 @@
 
       <b-container fluid class="py-5" v-if="$route.params.type=='science'">
         <b-row>
-          <b-col cols="5">
+          <b-col cols="12" sm="5" class="mb-4">
             <b-card title="Name: Eleberi Patricia A. (Mrs)" tag="article" class="mb-2">
-              <b-card-text>Designation: Director, Science, Technical and Tertiary Education</b-card-text>
-
-              <b-card-text>Correspondence Address: Science, Technical and Tertiary Education,Ministry of Education, Imo State Secretariat, Port Harcourt Road, Owerri.</b-card-text>
+              <b-card-text>
+                <span class="ma">Designation:</span> Director, Science, Technical and Tertiary Education
+              </b-card-text>
+              <b-card-text>
+                <span class="ma">Email:</span> p.eleberi@ministryofeducation.im.gov.ng
+              </b-card-text>
+              <b-card-text>
+                <span class="ma">Correspondence Address:</span> Science, Technical and Tertiary Education,Ministry of Education, Imo State Secretariat, Port Harcourt Road, Owerri.
+              </b-card-text>
             </b-card>
           </b-col>
-          <b-col cols="7">
+          <b-col cols="12" sm="7">
             <div>
               <h3>FUNCTIONS AND ACTIVITIES OF THE DEPARTMENT</h3>
               <p>The Department of Science, Technical and Tertiary Education had witnessed various changes in its existence.</p>
@@ -249,14 +283,20 @@
 
       <b-container fluid class="py-5" v-if="$route.params.type=='scholarship'">
         <b-row>
-          <b-col cols="5">
+          <b-col cols="12" sm="5" class="mb-4">
             <b-card title="Name: UCHEGBU, EMMANUEL CHIGBO" tag="article" class="mb-2">
-              <b-card-text>Designation: Deputy Director, Tertiary/Scholarship Department</b-card-text>
-
-              <b-card-text>Correspondence Address: Tertiary/Scholarship Department, Ministry of Education, Imo State Secretariat, Port Harcourt Road, Owerri</b-card-text>
+              <b-card-text>
+                <span class="ma">Designation:</span> Deputy Director, Tertiary/Scholarship Department
+              </b-card-text>
+              <b-card-text>
+                <span class="ma">Email:</span> e.uchegbu@ministryofeducation.im.gov.ng
+              </b-card-text>
+              <b-card-text>
+                <span class="ma">Correspondence Address:</span> Tertiary/Scholarship Department, Ministry of Education, Imo State Secretariat, Port Harcourt Road, Owerri
+              </b-card-text>
             </b-card>
           </b-col>
-          <b-col cols="7">
+          <b-col cols="12" sm="7">
             <div>
               <h3>FUNCTIONS AND ACTIVITIES OF THE DEPARTMENT</h3>
               <p>The Department is in charge of all schools above Secondary School in Imo State. It is also in charge of all scholarship and bursary awards in the state especially bursary for student Doctors and Lawyers of Imo State origin.</p>
@@ -276,7 +316,7 @@
             </div>
 
             <div>
-              <h4>LIST OF TERTIARY INSTITUTIONS SUPERVISED BY THE MINISTRY</h4>
+              <strong>LIST OF TERTIARY INSTITUTIONS SUPERVISED BY THE MINISTRY</strong>
               <ol>
                 <li>Imo State University, Owerri</li>
                 <li>Imo State Polytechnic, Umuagwo</li>
@@ -298,14 +338,23 @@
       <!-- support starts here  -->
       <b-container fluid class="py-5" v-if="$route.params.type=='support'">
         <b-row>
-          <b-col cols="5">
+          <b-col cols="12" sm="5" class="mb-4">
             <b-card title="Name: Nwagwu, Stella Nnenna" tag="article" class="mb-2">
-              <b-card-text>Designation: Director, Education Support Services Department (ESSD)</b-card-text>
-              <b-card-text>Phone No: 08033417775</b-card-text>
-              <b-card-text>Correspondence Address: Education Support Services Department (ESSD), Ministry of Education, Imo State Secretariat, Port Harcourt Road, Owerri</b-card-text>
+              <b-card-text>
+                <span class="ma">Designation:</span> Director, Education Support Services Department (ESSD)
+              </b-card-text>
+              <b-card-text>
+                <span class="ma">Phone No:</span> 08033417775
+              </b-card-text>
+              <b-card-text>
+                <span class="ma">Email:</span> s.nwagwu@ministryofeducation.im.gov.ng
+              </b-card-text>
+              <b-card-text>
+                <span class="ma">Correspondence Address:</span> Education Support Services Department (ESSD), Ministry of Education, Imo State Secretariat, Port Harcourt Road, Owerri
+              </b-card-text>
             </b-card>
           </b-col>
-          <b-col cols="7">
+          <b-col cols="12" sm="7">
             <div>
               <h3>FUNCTIONS AND ACTIVITIES OF THE DEPARTMENT</h3>
               <p>The Education Support Services Department is one of the departments in the Ministry of Education, Imo State. The department carries out its activities through the nine (9) branches/units that make it up. As the name implies, the Department provides various Educational Services to the Stakeholders through the nine (9) branches/Units listed here under:</p>
@@ -334,22 +383,119 @@
       </b-container>
 
       <!-- ends here  -->
+
+      <b-container fluid class="py-5" v-if="$route.params.type=='secondary'">
+        <b-row>
+          <b-col cols="12" sm="5" class="mb-4">
+            <b-card title="Name: Oby Anyikude (Mrs.)" tag="article" class="mb-2">
+              <b-card-text>
+                <span class="ma">Designation:</span>
+                Executive Secretary (ES)
+              </b-card-text>
+             
+              <b-card-text>
+                <span class="ma">Email:</span>
+                o.anyikude@ministryofeducation.im.gov.ng
+              </b-card-text>
+              <b-card-text>
+                <span class="ma">Correspondence Address:</span>
+                SEMB, Ministry of Education, Imo State Secretariat, Port Harcourt Road, Owerri
+              </b-card-text>
+            </b-card>
+          </b-col>
+          <b-col cols="12" sm="7">
+            <div>
+              <h3>FUNCTIONS AND ACTIVITIES OF THE DEPARTMENT</h3>
+              <p>The Secondary Education Management Board (SEMB) is organized in Six (6) Education Zones, each headed by a Zonal Director.</p>
+              <strong class="mb-5"> <p>The 6 Education Zones are listed below:</p> </strong>
+              <b-row>
+                <b-col>
+                  <div class="pl-3 mb-3">
+                    <strong>OKIGWE ZONE 1</strong>
+                    <p>Isiala Mbano LGA</p>
+                    <p>Okigwe LGA</p>
+                    <p>Onuimo LGA</p>
+                  </div>
+                </b-col>
+                <b-col>
+                  <div class="pl-3 mb-3">
+                    <strong>OKIGWE ZONE 2</strong>
+                    <p>Ehime Mbano LGA</p>
+                    <p>Ihittte Uboma LGA</p>
+                    <p>Obowo LGA</p>
+                  </div>
+                </b-col>
+                  <b-col>
+                  <div class="pl-3 mb-3">
+                    <strong>OWERRI ZONE 2</strong>
+                    <p>Aboh Mbaise LGA</p>
+                    <p>Ahiazu Mbaise LGA</p>
+                    <p>Ezinihitte LGA</p>
+                    <p>Ngor-Okpala LGA</p>
+                  </div>
+                </b-col>
+              </b-row>
+
+              <b-row>
+                <b-col>
+                  <div class="pl-3 mb-3">
+                    <strong>ORLU ZONE 1</strong>
+                    <p>Ideato North LGA</p>
+                    <p>Ideato South LGA</p>
+                    <p>Isu LGA</p>
+                    <p>Njaba LGA</p>
+                    <p>Nkwerre LGA</p>
+                    <p>Nwangele LGA</p>
+                    <p>Orlu LGA</p>
+                    <p>Orsu LGA</p>
+                  </div>
+                </b-col>
+                <b-col>
+                  <div class="pl-3 mb-3">
+                    <strong>ORLU ZONE 2</strong>
+
+                    <p>Oguta LGA</p>
+                    <p>Ohaji/Egbema LGA</p>
+                    <p>Oru East LGA</p>
+                    <p>Oru West LGA</p>
+                  </div>
+                </b-col>
+                 <b-col>
+                  <div class="pl-3 mb-3">
+                    <strong>OWERRI ZONE 1</strong>
+                    <p>Ikeduru LGA</p>
+                    <p>Mbaitoli LGA</p>
+                    <p>Owerri Municipal</p>
+                    <p>Owerri North LGA</p>
+                    <p>Owerri West LGA</p>
+                  </div>
+                </b-col>
+              </b-row>
+            
+            </div>
+
+            <div>
+              <strong>Oby Anyikude (Mrs.)</strong>
+            </div>
+          </b-col>
+        </b-row>
+      </b-container>
     </b-container>
-    <Footer/>
+    <Footer />
   </div>
 </template>
 <script>
-import Navigation from '../../navigation/navigation';
-import Footer from '../../footer/footer'
+import Navigation from "../../navigation/navigation";
+import Footer from "../../footer/footer";
 export default {
   data() {
     return {
       title: "",
     };
   },
-  components:{
-  Navigation,
-  Footer
+  components: {
+    Navigation,
+    Footer,
   },
   mounted() {
     this.dataType(this.$route.params.type);
@@ -385,6 +531,10 @@ export default {
           this.title = "EDUCATION SUPPORT SERVICES DEPARTMENT (ESSD)";
 
           break;
+        case "secondary":
+          this.title = "SECONDARY EDUCATION MANAGEMENT BOARD (SEMB)";
+
+          break;
 
         default:
           break;
@@ -398,10 +548,10 @@ export default {
 .banner {
   height: 300px;
   position: relative;
-  background-image: url('/images/imos.jpg');
+  background-image: url("/images/imos.jpg");
 }
-.card-title{
-    color:#ecee53;
+.card-title {
+  color: #ecee53;
 }
 .overlay-m {
   position: absolute;
@@ -423,27 +573,38 @@ export default {
   width: 90%;
   margin: 0 auto;
   height: 100%;
- 
+}
+.ma {
+  font-weight: bold;
+  color: antiquewhite;
 }
 ul {
   list-style: disc;
 }
 li {
-  padding: 10px;
+  padding: 5px;
 }
 ol {
   list-style: lower-roman;
 }
-.title{
- font-size: 40px;
+.title {
+  font-size: 40px;
   font-family: "Josefin sans";
   font-weight: bolder;
 }
-.card{
-    background-color:#0f7a8a;
-    color:white;
+.card {
+  background-color: #0f7a8a;
+  color: white;
 }
-h3{
-    color:#0f7a8a
+h3 {
+  color: #0f7a8a;
+}
+@media (max-width: 768px) {
+  .title {
+    font-size: 24px;
+  }
+  h3 {
+    font-size: 18px !important;
+  }
 }
 </style>

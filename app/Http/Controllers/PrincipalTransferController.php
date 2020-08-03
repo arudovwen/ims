@@ -13,8 +13,14 @@ class PrincipalTransferController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
+
     {
         return PrincipalTransfer::paginate(15);
+    }
+
+    public function all()
+    {
+        return PrincipalTransfer::all();
     }
 
     /**

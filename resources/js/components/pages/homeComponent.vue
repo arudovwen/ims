@@ -9,8 +9,8 @@
       <ourInitiatives />
       <Department />
       <Polls />
-      <ourOrganizations />
-      <News />
+      <!-- <ourOrganizations /> -->
+      <!-- <News /> -->
     </section>
     <Footer />
   </div>

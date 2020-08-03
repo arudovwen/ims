@@ -17,8 +17,8 @@ class CreateWasscePrivateSchoolsTable extends Migration
             $table->id();
             $table->string('centre_no');
             $table->string('name_of_school');
-            $table->string('name_of_principal');
-            $table->string('phone_no');
+            $table->string('entry_figures');
+            $table->string('type');
             $table->timestamps();
         });
     }

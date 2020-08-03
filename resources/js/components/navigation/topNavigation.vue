@@ -2,11 +2,11 @@
   <div class="main-top">
     <div class="info">
       <marquee-text>
-         <span class="px-4 text-white marq">Total no of  lgas : {{total_lgas}}</span>
-         <span class="px-4 text-white marq">Total no of  staffs : {{total_staffs}}</span>
-        <span class="px-4 text-white marq">Total no of  schools : {{total_schools}}</span>
-        <span class="px-4 text-white marq">Total no of Secondary schools : {{total_sec_schools}}</span>
-        <span class="px-4 text-white marq">Total no of Primary/Nursery schools : {{total_pry_schools}}</span>
+         <span class="px-4 text-white marq">Total No of  LGAs : {{total_lgas}}</span>
+         <span class="px-4 text-white marq">Total No of SEMB Staff : {{total_staffs}}</span>
+        <span class="px-4 text-white marq">Total No of  Schools : {{total_schools}}</span>
+        <span class="px-4 text-white marq">Total No of Secondary Schools : {{total_sec_schools}}</span>
+        <span class="px-4 text-white marq">Total No of Primary/Nursery Schools : {{total_pry_schools}}</span>
       </marquee-text>
     </div>
     <div id="top_nav">
@@ -22,7 +22,15 @@
           </div>
         </router-link>
       </div>
-      <div class="side_info ml-auto">
+      
+      
+      <div class="ml-auto d-flex align-items-center">
+        <div>
+        <a href="https://www.ministryofeducation.im.gov.ng:2096/"  target="_blank" class="mr-4">  <b-button  variant="home">Staff mail <i class="fa fa-envelope pl-1" aria-hidden="true"></i></b-button></a>
+        </div>
+        <div class="side_info ml-auto">
+        
+
         <div class="form-group rel_pos ml-auto search_bar mb-0">
           <input
             type="text"
@@ -34,6 +42,7 @@
             <i class="fa fa-search fa-1x text-white" aria-hidden="true"></i>
           </button>
 
+         
           <span class="d-flex justify-content-start align-items-center mobile" @click="showNav">
             <button
               class="hamburger hamburger--collapse"
@@ -51,6 +60,7 @@
             <!-- <strong>Menu</strong> -->
           </span>
         </div>
+      </div>
       </div>
     </div>
   </div>
@@ -110,7 +120,7 @@ export default {
 #top_nav {
   width: 100%;
   display: flex;
-  padding: 10px 70px;
+  padding: 10px 15px;
   justify-content: space-between;
   align-items: center;
   background: #fff;
@@ -120,6 +130,12 @@ export default {
 }
 .text {
   padding: 0 0 0 10px;
+}
+.btn-home {
+   
+    color: #0f7a8a;
+    border-color: #0f7a8a;
+    font-size: 15px;
 }
 .logo a {
   display: flex;

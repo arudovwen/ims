@@ -274,39 +274,44 @@ var render = function() {
         "b-row",
         [
           _c("b-col", [
-            _c("div", { staticClass: "navigation" }, [
-              _vm.prev_page
-                ? _c(
-                    "button",
-                    {
-                      staticClass: "prev_button",
-                      attrs: { type: "button" },
-                      on: { click: _vm.prev }
-                    },
-                    [
-                      _c("i", {
-                        staticClass: "fa fa-arrow-circle-left mc1 prev",
-                        attrs: { "aria-hidden": "true" }
-                      }),
-                      _vm._v(" Prev\n          ")
-                    ]
-                  )
-                : _vm._e(),
-              _vm._v(" "),
-              _vm.next_page
-                ? _c(
-                    "button",
-                    { staticClass: "next_button", on: { click: _vm.next } },
-                    [
-                      _vm._v("\n            Next\n            "),
-                      _c("i", {
-                        staticClass: "fa fa-arrow-circle-right mc1 next",
-                        attrs: { "aria-hidden": "true" }
-                      })
-                    ]
-                  )
-                : _vm._e()
-            ])
+            _c(
+              "div",
+              { staticClass: "navigation" },
+              [
+                _vm.prev_page
+                  ? _c(
+                      "b-button",
+                      {
+                        staticClass: "prev_button",
+                        attrs: { type: "button" },
+                        on: { click: _vm.prev }
+                      },
+                      [
+                        _c("i", {
+                          staticClass: "fa fa-arrow-circle-left mc1 prev",
+                          attrs: { "aria-hidden": "true" }
+                        }),
+                        _vm._v(" Prev\n          ")
+                      ]
+                    )
+                  : _vm._e(),
+                _vm._v(" "),
+                _vm.next_page
+                  ? _c(
+                      "b-button",
+                      { staticClass: "next_button", on: { click: _vm.next } },
+                      [
+                        _vm._v("\n            Next\n            "),
+                        _c("i", {
+                          staticClass: "fa fa-arrow-circle-right mc1 next",
+                          attrs: { "aria-hidden": "true" }
+                        })
+                      ]
+                    )
+                  : _vm._e()
+              ],
+              1
+            )
           ])
         ],
         1

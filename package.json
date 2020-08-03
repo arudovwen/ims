@@ -39,6 +39,7 @@
         "pusher-js": "^6.0.2",
         "swiper": "^5.3.8",
         "vue-awesome-swiper": "^4.1.1",
+        "vue-json-csv": "^1.2.11",
         "vue-marquee-text-component": "^1.1.1",
         "vue-moment": "^4.1.0",
         "vue-paystack": "^2.0.2",

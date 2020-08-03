@@ -2,105 +2,142 @@
   <div class="view">
     <Navigation/>
     <div class="container-fluid">
-      <h2 class="center_header text-center josefin_bold">List of Departments</h2>
+      <h2 class="center_header text-center josefin_bold">Departments</h2>
       <div class="main-content mb-5">
         <div class="holder_1 shadow flex-xs-column">
           <div class="overlay-blue">
-            <router-link to="/department/edc"> <b-button variant="success" >Visit Department</b-button> </router-link></div>
+            <router-link to="/department/edc">
+              <b-button variant="success">Visit Department</b-button>
+            </router-link>
+          </div>
 
           <div class="box_1">
             <img src="/images/exam.svg" alt />
           </div>
           <div class="box_2 p-2">Exam Development Centre (EDC)</div>
         </div>
-        <!-- <div class="holder_1 shadow flex-xs-column">
+        <div class="holder_1 shadow flex-xs-column">
           <div class="overlay-blue">
-             <router-link to="/department/anfe"> <b-button variant="success" >Visit Department</b-button> </router-link>
-          
+            <router-link to>
+              <b-button variant="success">Visit Department</b-button>
+            </router-link>
           </div>
           <div class="box_1">
             <img src="/images/checkup.svg" alt />
           </div>
           <div class="box_2 p-2">
             Adult/Non Formal Education
-           (ANFE)
+            (ANFE)
           </div>
-        </div> -->
-           <div class="holder_1 shadow flex-xs-column">
+        </div>
+        <div class="holder_1 shadow flex-xs-column">
           <div class="overlay-blue">
-             <router-link to="/department/Scholarship"> <b-button variant="success" >Visit Department</b-button> </router-link>          </div>
+            <router-link to="/department/scholarship">
+              <b-button variant="success">Visit Department</b-button>
+            </router-link>
+          </div>
           <div class="box_1">
             <img src="/images/scholarship.svg" alt />
           </div>
           <div class="box_2 p-2">Tertiary Unit/Scholarship Board</div>
         </div>
-        
+
         <div class="holder_1 shadow flex-xs-column">
           <div class="overlay-blue">
-             <router-link to="/department/qa"> <b-button variant="success" >Visit Department</b-button> </router-link>          </div>
+            <router-link to="/department/qa">
+              <b-button variant="success">Visit Department</b-button>
+            </router-link>
+          </div>
           <div class="box_1">
             <img src="/images/qa.svg" alt />
           </div>
           <div class="box_2 p-2">
-            Quality Assurance <br>
-           (QA)
+            Quality Assurance
+            <br />(QA)
           </div>
         </div>
         <div class="holder_1 shadow flex-xs-column">
           <div class="overlay-blue">
-             <router-link to="/department/science"> <b-button variant="success" >Visit Department</b-button> </router-link>          </div>
+            <router-link to="/department/science">
+              <b-button variant="success">Visit Department</b-button>
+            </router-link>
+          </div>
           <div class="box_1">
             <img src="/images/clock.svg" alt />
           </div>
           <div class="box_2 p-2">
             Science Technical Tertiary Education
-           (STTE)
+            (STTE)
           </div>
         </div>
-         <div class="holder_1 shadow flex-xs-column">
+        <div class="holder_1 shadow flex-xs-column">
           <div class="overlay-blue">
-             <router-link to="/department/support"> <b-button variant="success" >Visit Department</b-button> </router-link>          </div>
+            <router-link to="/department/support">
+              <b-button variant="success">Visit Department</b-button>
+            </router-link>
+          </div>
           <div class="box_1">
             <img src="/images/technical-support.svg" alt />
           </div>
           <div class="box_2 p-2">
             Education Support Services Department
-           (ESSD)
+            (ESSD)
           </div>
         </div>
-       <div class="holder_1 shadow flex-xs-column">
+        <div class="holder_1 shadow flex-xs-column">
           <div class="overlay-blue">
-             <router-link to="/department/statistics"> <b-button variant="success" >Visit Department</b-button> </router-link>          </div>
+            <router-link to="/department/statistics">
+              <b-button variant="success">Visit Department</b-button>
+            </router-link>
+          </div>
           <div class="box_1">
             <img src="/images/university.svg" alt />
           </div>
-          <div class="box_2 p-2">
-           Deprtment of Planning Research and Statistics
-          
-          </div>
+          <div class="box_2 p-2">Department of Planning Research and Statistics</div>
         </div>
-     
+
         <div class="holder_1 shadow flex-xs-column">
           <div class="overlay-blue">
-             <router-link to="/department/finance"> <b-button variant="success" >Visit Department</b-button> </router-link>          </div>
+            <router-link to="/department/finance">
+              <b-button variant="success">Visit Department</b-button>
+            </router-link>
+          </div>
           <div class="box_1">
-             <img src="/images/presentation.svg" alt />
-          
+            <img src="/images/presentation.svg" alt />
           </div>
           <div class="box_2 p-2">
-            Administration and <br> Finances
-           
+            Administration and
+            <br />
+Finances
           </div>
         </div>
         <div class="holder_1 shadow flex-xs-column">
           <div class="overlay-blue">
-             <router-link to="/department/edc"> <b-button variant="success" >Visit Department</b-button> </router-link>          </div>
+            <router-link to="/department/secondary">
+              <b-button variant="success">Visit Department</b-button>
+            </router-link>
+          </div>
           <div class="box_1">
-             <img src="/images/education.svg" alt />
+            <img src="/images/book.svg" alt />
+          </div>
+          <div class="box_2 p-2">
+            Secondary Education Management Board
+            (SEMB)
+          </div>
+        </div>
+
+        <div class="holder_1 shadow flex-xs-column">
+          <div class="overlay-blue">
+            <router-link to="">
+              <b-button variant="success">Visit Department</b-button>
+            </router-link>
+          </div>
+          <div class="box_1">
+            <img src="/images/education.svg" alt />
           </div>
           <div class="box_2 p-2">
             Imo State Basic Education Board
-           (IMSUBEB)
+            (IMSUBEB)
           </div>
         </div>
       </div>

@@ -16,6 +16,7 @@ class CreateWaecCandidatesTables extends Migration
         Schema::create('waec_candidates_tables', function (Blueprint $table) {
            
             $table->id();
+            $table->string('name');
             $table->string('present_posting');
             $table->string('sect');
             $table->string('lga');

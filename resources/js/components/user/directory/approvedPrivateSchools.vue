@@ -23,13 +23,13 @@
     <b-row>
       <b-col>
           <div class="navigation" >
-            <button type="button" class="prev_button" @click="prev" v-if="prev_page">
+            <b-button type="button" class="prev_button" @click="prev" v-if="prev_page">
               <i class="fa fa-arrow-circle-left mc1 prev" aria-hidden="true"></i> Prev
-            </button>
-            <button class="next_button" @click="next" v-if="next_page">
+            </b-button>
+            <b-button class="next_button" @click="next" v-if="next_page">
               Next
               <i class="fa fa-arrow-circle-right mc1 next" aria-hidden="true"></i>
-            </button>
+            </b-button>
           </div>
       </b-col>
     </b-row>

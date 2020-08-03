@@ -1,5 +1,6 @@
 <template>
-  <b-overlay :show="show" rounded="sm">
+ <div>
+    <b-overlay :show="show" rounded="sm">
        <div class="container-fluid">
     <h2 class="header__ text-center">{{content.subject}}</h2>
     <div class="main">
@@ -30,16 +31,23 @@
         </div>
       </template>
     </b-overlay>
+ </div>
 
 </template>
 
 <script>
+import Nav from '../navigation/navigation'
+import Footer from '../footer/footer'
 export default {
   data() {
     return {
       content: {},
       show:true,
     };
+  },
+  components:{
+    Nav,
+    Footer
   },
   mounted() {
     this.getNews();

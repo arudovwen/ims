@@ -2,10 +2,10 @@
   <div>
     <scrollTop />
     <Navigation />
-    <b-overlay :show="show" rounded="sm">
-      <div id="main-content">
+    <b-overlay :show="show" rounded="sm" >
+      <div id="main-content " class="mb-5">
         <div class="container">
-          <div class="nav-scroller py-1 mb-2">
+          <div class="nav-scroller py-2 my-2">
             <nav class="nav d-flex justify-content-between">
               <label class="custom-control custom-radio">
                 <input type="radio" value v-model="category" class="custom-control-input" />
@@ -84,7 +84,7 @@
             :style="{'background-image':'url('+featured[0].cover_image+')'}"
           >
             <div class="col-md-8 p-2 bg-dark-50">
-              <h2 class="josefin_bold">{{featured[0].subject}}</h2>
+              <h2 class="josefin_bold text-white">{{featured[0].subject}}</h2>
               <p class="lead my-3" v-html="featured[0].content"></p>
               <p class="lead mb-0">
                 <router-link
@@ -106,7 +106,7 @@
                 class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative"
               >
                 <div class="col p-4 d-flex flex-column position-static">
-                  <strong class="d-inline-block mb-2 text-primary">{{featured[1].category}}</strong>
+                  <strong class="d-inline-block mb-2 text-dark ">{{featured[1].category}}</strong>
                   <h4 class="mb-0">{{featured[1].subject}}</h4>
                   <div class="mb-1 text-muted">{{featured[1].created_at | moment('DD MMMM')}}</div>
                   <p class="card-text mb-auto feat" v-html="featured[1].content"></p>
@@ -118,16 +118,16 @@
                 }
                 }"
                     class="stretched-link"
-                  >Continue reading</router-link>
+                  >Continue reading..</router-link>
                 </div>
               </div>
             </div>
-            <div class="col-md-6" v-if="featured.length>2">
+            <div class="col-md-6 " v-if="featured.length>2">
               <div
                 class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative"
               >
                 <div class="col p-4 d-flex flex-column position-static">
-                  <strong class="d-inline-block mb-2 text-primary">{{featured[2].category}}</strong>
+                  <strong class="d-inline-block mb-2 text-dark">{{featured[2].category}}</strong>
                   <h4 class="mb-0">{{featured[2].subject}}</h4>
                   <div class="mb-1 text-muted">{{featured[2].created_at | moment('DD MMMM')}}</div>
                   <p class="card-text mb-auto feat" v-html="featured[2].content"></p>
@@ -139,7 +139,7 @@
                 }
                 }"
                     class="stretched-link"
-                  >Continue reading</router-link>
+                  >Continue reading..</router-link>
                 </div>
               </div>
             </div>
@@ -166,7 +166,8 @@
                 }
                 }"
                   class="stretched-link"
-                >Continue reading</router-link>
+                >Continue reading..</router-link>
+                <hr>
               </div>
               <!-- /.blog-post -->
 
@@ -261,12 +262,14 @@
         </div>
       </template>
     </b-overlay>
+    <Footer />
   </div>
 </template>
 
 <script>
 import Navigation from "../navigation/navigation.vue";
 import scrollTop from "../scrollTopComponent";
+import Footer from '../footer/footer'
 export default {
   data() {
     return {
@@ -285,6 +288,7 @@ export default {
   components: {
     Navigation,
     scrollTop,
+    Footer
   },
   mounted() {
     this.getFeaturedNews();
@@ -347,7 +351,7 @@ export default {
       });
     },
       featured() {
-      return this.news.filter((item) => {
+      return this.feature.filter((item) => {
         if (this.category.toLowerCase() == item.category.toLowerCase()) {
           return item;
         }
@@ -368,6 +372,9 @@ export default {
 }
 .bg-dark-50 {
   background: rgba(0, 0, 0, 0.6);
+}
+h4,h2,li,.stretched-link,a{
+  color:#0F7A8A;
 }
 .jumbotron {
   background-size: cover;

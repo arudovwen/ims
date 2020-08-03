@@ -16,7 +16,7 @@
           <div class="governor box shadow-sm">
         <div class="top_header">
           <small>His Excellency</small>
-          <h4 class="josefin">SEN. HOPE UZODIMMA</h4>
+          <h4 class="josefin">SEN. HOPE UZODINMA</h4>
             <h5 class="josefin ">Governor, Imo state</h5>
           <!-- <p>Lorem ipsum dolor, sit amet  itaque... <span class="mc1">read more</span></p> -->
         </div>

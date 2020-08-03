@@ -11,7 +11,7 @@ use Illuminate\Http\Request;
 class NewsController extends Controller
 {
     public function index(){
-        return NewModel::where('featured',0)->latest()->get();
+        return NewModel::where('featured',0)->where('status','active')->latest()->get();
     }
     public function createNews(Request $request){
 
@@ -80,7 +80,7 @@ class NewsController extends Controller
     }
 
     public function getFeaturedNews(){
-        return NewModel::where('featured',1)->latest()->get();
+        return NewModel::where('featured',1)->where('status','active')->latest()->get();
     }
     public function getNormalNews(){
         return NewModel::where('featured',0)->latest()->paginate(15);
@@ -92,7 +92,7 @@ class NewsController extends Controller
         return Announcement::latest()->first();
     }
     public function current(){
-        return Announcement::where('status','active')->latest()->get();
+        return Announcement::get();
     }
 
     public function updateNews(Request $request, $id){

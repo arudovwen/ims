@@ -27,6 +27,16 @@
             <input class="input1" type="text" name="subject" placeholder="Subject" />
             <span class="shadow-input1"></span>
           </div>
+
+         <div class="container-contact1-form-btn mb-3">
+         
+            <b-form-select class="form-control pl-5 input1 rounded-pill">
+               <b-form-select-option  disabled selected>Select Category</b-form-select-option>
+              <b-form-select-option value="support">IT Support</b-form-select-option>
+                <b-form-select-option value="enquiry">Enquiry</b-form-select-option>
+            </b-form-select>
+             <span class="shadow-input1"></span>
+          </div>
           <div class="wrap-input1 validate-input" data-validate="Message is required">
             <textarea class="input1" name="message" placeholder="Message"></textarea>
             <span class="shadow-input1"></span>
@@ -61,14 +71,14 @@ export default {
   position: relative;
 }
 #contact .left_box {
-  background: #ECEE53;
+    background: hsl(188deg 80% 95%);
   width: 40%;
 
   height: 100%;
   float: left;
 }
 #contact .right_box {
-  background: #ECEE53;
+  background: hsl(188deg 80% 95%);
   width: 60%;
 
   height: 100%;

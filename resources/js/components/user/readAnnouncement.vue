@@ -1,5 +1,7 @@
 <template>
-  <b-overlay :show="show" rounded="sm">
+ <div>
+   <Nav/>
+    <b-overlay :show="show" rounded="sm">
        <div class="container-fluid">
     <h2 class="header__ text-center">{{content.subject}}</h2>
     <div class="main">
@@ -30,10 +32,14 @@
         </div>
       </template>
     </b-overlay>
+    <Footer/>
+ </div>
 
 </template>
 
 <script>
+import Nav from '../navigation/navigation'
+import Footer from '../footer/footer'
 export default {
     data() {
         return {
@@ -41,14 +47,18 @@ export default {
            show:true
         }
     },
+    components:{
+Nav,
+Footer
+    },
     mounted() {
         this.getAnnouncement()
     },
     methods: {
          getAnnouncement() {
-      axios.get(`/api/current-a`).then((res) => {
+      axios.get(`/api/get-announcement/${this.$route.params.id}`).then((res) => {
         if (res.status == 200) {
-          this.content = res.data[0];
+          this.content = res.data;
           this.show = false
         }
       });

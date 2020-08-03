@@ -8,13 +8,13 @@
         <i @click="del" class="fa fa-trash text-red" aria-hidden="true">Delete</i>
       </div>
       <div class="left_side">
-        <i
+      <b-button v-if="item.status == 'inactive'" @click="verify"> <span > Verify <i
           class="fa fa-check text-green"
           aria-hidden="true"
-          v-if="item.status == 'inactive'"
-          @click="verify"
-        >Verify</i>
-        <i class="fa fa-times text-blue" aria-hidden="true" v-else @click="unverify">Unverify</i>
+          
+          
+        ></i></span></b-button>
+     <b-button  v-else @click="unverify"> <span>  Unverify</span></b-button>
       </div>
     </div>
     <div class="main_body">

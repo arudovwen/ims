@@ -1,12 +1,15 @@
 <template>
   <div>
     <div id="contact">
+      <div class="back">
+       <router-link to="/"> <i class="fa fa-home" aria-hidden="true"></i> Home</router-link>
+      </div>
       <div class="right_box"></div>
       <div class="left_box"></div>
       <div class="middle_box shadow rounded">
         <form @submit.prevent="login" id="form">
           <legend class="text-center mb-5">
-            Admin Login
+             Login
             <i class="fas fa-user-lock"></i>
           </legend>
 
@@ -94,7 +97,7 @@ export default {
                     this.$router.push(this.$route.query.redirect)
                 }else{
                      this.$toasted.info("Redirecting to dashboard..");
-                     this.$router.push("/admin/dashboard");
+                     this.$router.push("/admin");
                 }
                
               }
@@ -116,6 +119,15 @@ export default {
 #contact {
   height: 100vh;
   position: relative;
+}
+.back{
+  position: absolute;
+  top:20px;
+  left: 20px;
+  color:white;
+}
+a{
+    color:white;
 }
 #contact .left_box {
 background-image: linear-gradient(to right, #0f7a8a, #0e6d7b, #0c616d, #0b555f, #094952);

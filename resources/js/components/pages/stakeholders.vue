@@ -2,7 +2,7 @@
   <div>
     <scrollTop />
     <Navigation />
-    <div class="container-fluid">
+    <div class="container-fluid pb-5">
         <h2 class="center_header text-center">Stakeholders</h2>
       <div class="main-content">
         <div class="holder_1 flex-xs-column">
@@ -11,7 +11,7 @@
           </div>
           <div class="box_2 bg-green p-5">
             <p>His Excellency</p>
-            <h3>SEN. HOPE UZODIMMA</h3>
+            <h3>SEN. HOPE UZODINMA</h3>
             <h4>Governor, Imo state</h4>
            
           </div>
@@ -49,15 +49,18 @@
         </div> -->
       </div>
     </div>
+    <Footer/>
   </div>
 </template>
 <script>
 import Navigation from "../navigation/navigation.vue";
 import scrollTop from "../scrollTopComponent";
+import Footer from "../footer/footer";
 export default {
   components: {
     Navigation,
-    scrollTop
+    scrollTop,
+    Footer
   }
 };
 </script>

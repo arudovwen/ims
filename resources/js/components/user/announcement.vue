@@ -3,37 +3,55 @@
     <h3 class="josefin center_header mb-4 w-100 text-center bold">Announcement Board</h3>
     <div id="announcement">
       <div class="left_box">
-        <div class="comm_body">
-          <div class="w-100 text-center mb-3">
-            <img src="/images/pin.png" class="pin" alt="pin" />
-          </div>
-        <h5 class="josefin_bold mb-3 top_head text-center mc1 ">{{announcement.subject}}</h5>
-          <div class="comm_image" v-if="announcement.cover_image">
-            <img :src="announcement.cover_image" alt="announcement" />
-          </div>
-             <div class="text-center">
-               
-          <p v-html="announcement.content" class="ann text-center mb-2"></p>
-          <router-link to="/announcement/read"><small>Read more</small></router-link>
-             </div>
-          <!-- <router-link to="/checkout">
+        <div class="comm_body d-flex">
+          <div class="" v-if="activeA.length">
+            <div class="w-100 text-center mb-3">
+              <img src="/images/pin.png" class="pin" alt="pin" />
+            </div>
+            <h4 class=" mb-3 top_head text-center mc1">{{activeA[0].subject}}</h4>
+            <div class="comm_image" v-if="activeA[0].cover_image">
+              <img :src="activeA[0].cover_image" alt="announcement" />
+            </div>
+            <div class="text-center">
+              <p v-html="activeA[0].content" class="ann text-center mb-2"></p>
+              <router-link :to="{name:'ReadAnnouncement',
+               params:{
+                 id:activeA[0].id
+               }}" v-if="activeA.length">
+                <small>Continue reading..</small>
+              </router-link>
+            </div>
+            <!-- <router-link to="/checkout">
             <button type="button" class="button-green">
               <i class="fa fa-long-arrow-right text-white pr-2" aria-hidden="true"></i> Pay now
             </button>
-          </router-link> -->
+            </router-link>-->
+          </div>
+          <!-- <div class="left_2" v-if="sideA.length > 0">
+             <div class="lefty" v-for="(item,idx) in sideA"  :key="idx">
+               <router-link :to="{name:'ReadAnnouncement',
+               params:{
+                 id:item.id
+               }}">
+                 {{item.subject}}
+               </router-link>
+             </div>
+            
+      
+          </div> -->
         </div>
       </div>
       <div class="right_box">
         <div class="latest_post text-center">
-          <h4 class="josefin top_header py-3">Latest updates</h4>
+        
           <div>
             <swiper class="latest_update" ref="mySwiper" :options="swiperOptions">
-              <swiper-slide class="slide"  v-for="(ne,idx) in news" :key="idx">
+              <swiper-slide class="slide" v-for="(ne,idx) in news" :key="idx">
                 <div class="img_contain cpointer" @click="gotoNews(ne.id)">
                   <img :src="ne.cover_image" alt />
                 </div>
-                <div class="img_text cpointer" @click="gotoNews(ne.id)">
-                  <p class="news-inof">{{ne.subject}}</p>
+                <div class="img_text cpointer " @click="gotoNews(ne.id)">
+                  <p class="news-info text-center">{{ne.subject}}</p>
                 </div>
               </swiper-slide>
 
@@ -54,8 +72,8 @@ export default {
         pagination: {
           el: ".swiper-pagination",
         },
-        spaceBetween: 30,
-        slidesPerView: 3,
+        spaceBetween: 15,
+        slidesPerView: 4,
         direction: "vertical",
         autoplay: {
           delay: 5000,
@@ -63,6 +81,8 @@ export default {
       },
       announcement: {},
       news: [],
+      activeA:[],
+      sideA:[],
     };
   },
   mounted() {
@@ -74,11 +94,21 @@ export default {
       axios.get(`/api/current-a`).then((res) => {
         if (res.status == 200) {
           this.announcement = res.data[0];
+          res.data.forEach(item=>{
+            if (item.status == 'active') {
+              this.activeA.push(item)
+            }
+             if (item.status == 'inactive') {
+              this.sideA.push(item)
+            }
+          })
+
+          
         }
       });
     },
     gotoNews(id) {
-      console.log("gotoNews -> id", id)
+      console.log("gotoNews -> id", id);
       this.$router.push({
         name: "NewsBlog",
         params: {
@@ -99,15 +129,34 @@ export default {
 <style scoped lang="scss">
 .main {
   background-image: url("/images/texture.png");
-  padding: 45px 0 75px;
+  padding: 45px 30px 75px;
+}
+small {
+  color: #0f7a8a;
+  font-size: 15px;
 }
 #announcement {
   display: flex;
   justify-content: space-between;
   height: 90%;
-  width: 80%;
+  width: 100%;
   margin: 0 auto;
 }
+.left_1{
+  width:100%;
+  padding-right:20px ;
+  
+}
+.left_2{
+width:35%;
+padding:15px;
+height:450px;
+overflow:auto;
+}
+a{
+   color: #0f7a8a;
+}
+
 .button-green {
   padding: 8px 32px;
   box-shadow: 0px 0px 12px -2px rgba(0, 0, 0, 0.5);
@@ -154,11 +203,13 @@ export default {
   width: 50%;
   height: 500px;
   overflow: hidden;
-  border-radius: 10px;
+  padding:10px;
+  background:#0f7a8a;
+  
 }
 
 .right_box {
-  width: 30%;
+  width: 50%;
   height: 500px;
   background-image: linear-gradient(
     to right,
@@ -168,8 +219,8 @@ export default {
     #0b555f,
     #094952
   );
-  padding: 10px;
-  border-radius: 10px;
+  padding: 10px ;
+
 }
 .comm_body {
   height: 100%;
@@ -188,7 +239,7 @@ export default {
 }
 .comm_image {
   width: 100%;
-  height: 200px;
+  height: 180px;
   margin-bottom: 20px;
 }
 .comm_image img {
@@ -205,13 +256,13 @@ export default {
 }
 .latest_update {
   width: 100%;
-  height: 400px;
+  height: 480px;
 }
 .slide {
   background: #f7f8fa;
   display: flex;
   align-items: center;
-  padding: 10px;
+  // padding: 10px;
   border-radius: 4px;
 }
 .img_contain {
@@ -227,14 +278,17 @@ export default {
   width: 70%;
   padding: 10px;
   text-align: left;
-  font-size: 13px;
+  font-size: 16px;
 }
 .top_header {
   color: #e6f1f3;
   font-weight: bold !important;
 }
-.news-info {
-  cursor: pointer;
+.top_head{
+  font-weight: 700;
+}
+.lefty {
+
   height: 70px;
   font-size: 15px;
   overflow: hidden;
@@ -251,11 +305,33 @@ export default {
   box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
+  margin-bottom: 24px;
 }
-.ann{
- cursor: pointer;
-  height: 85px;
+.news-info {
+  cursor: pointer;
+  height: 75px;
   font-size: 18px;
+  font-weight:bold;
+  overflow: hidden;
+  display: -webkit-box !important;
+  -webkit-line-clamp: 3;
+  -moz-line-clamp: 3;
+  -ms-line-clamp: 3;
+  -o-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  -moz-box-orient: vertical;
+  -ms-box-orient: vertical;
+  -o-box-orient: vertical;
+  box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin:auto;
+}
+.ann {
+  cursor: pointer;
+  height: 80px;
+  font-size: 17px;
   overflow: hidden;
   display: -webkit-box !important;
   -webkit-line-clamp: 3;
@@ -284,7 +360,19 @@ export default {
   }
   .comm_body {
     flex-direction: column;
+    width:100%;
   }
+  .left_1,.left_2{
+    width:100%;
+  }
+  .left_1{
+ 
+    padding-bottom:20px;
+  }
+.ann{
+  font-size: 15px;
+  height:65px;
+}
   .comm_about {
     width: 100%;
     padding: 0 10px 15px;
@@ -305,7 +393,7 @@ export default {
   .right_box {
     width: 100%;
   }
- 
+
   .comm_image {
     height: auto;
   }

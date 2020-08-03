@@ -46,6 +46,10 @@ let Administrative = () =>
     import(
         /* webpackChunkName: "administrative" */ "./components/pages/administratives.vue"
     );
+    let UserDirectory = () =>
+    import(
+        /* webpackChunkName: "administrative" */ "./components/pages/userdir.vue"
+    );
 
 let Directory = () =>
     import(
@@ -141,6 +145,10 @@ let ViewProgram = () =>
     import(
         /* webpackChunkName: "view news" */ "./components/admin/Programs/viewProgram.vue"
     );
+    let AdminAppointment = () =>
+    import(
+        /* webpackChunkName: "view news" */ "./components/admin/appointment/appointment.vue"
+    );
 
 let DraftNews = () =>
     import(
@@ -186,6 +194,10 @@ let InitiativePrograms = () =>
     import(
         /* webpackChunkName: "admin_home" */ "./components/user/department/view.vue"
     );
+    let Appointment =()=>
+    import(
+        /* webpackChunkName: "appointment" */ "./components/user/appointment.vue"
+    );
 export const routes = [
     { path: "*", redirect: "/" },
     {
@@ -197,16 +209,22 @@ export const routes = [
     { path: "/summary", component: OrderSummary, name: "OrderSummary" },
     { path: "/blog", component: Blog },
     { path: "/news/read/:id", component: NewsBlog, name: "NewsBlog" },
-    { path: "/announcement/read", component: ReadAnnouncement, name: "ReadAnnouncement" },
+    { path: "/announcement/read/:id", component: ReadAnnouncement, name: "ReadAnnouncement" },
     { path: "/about", component: About },
     { path: "/contact", component: Contact },
     { path: "/organizations", component: Organizations },
     { path: "/stakeholders", component: Stakeholders },
     { path: "/department/:type", component: Department },
+    { path: "/schedule-appointment", component: Appointment },
     {
         path: "/directory",
         component: Initiatives,
         children: [
+            {
+                path: "",
+                component: UserDirectory,
+                name: "UserDirectory"
+            },,
             {
                 path: "listings/:type",
                 component: Listings,
@@ -314,6 +332,7 @@ export const routes = [
                     requiresAuth: true
                 }
             },
+            
             {
                 path: "/admin/staffs/add",
                 component: AddStaffs,
@@ -329,6 +348,11 @@ export const routes = [
                 meta: {
                     requiresAuth: true
                 }
+            },
+            {
+                path: "/admin/appointment",
+                component: AdminAppointment,
+                name: "AdminAppointment"
             },
             {
                 path: "/admin/staffs/edit/:id",

@@ -21,6 +21,9 @@
         <router-link to="/admin/applications">
           <li class="single_nav_item">Applications</li>
         </router-link>
+            <router-link to="/admin/appointment">
+          <li class="single_nav_item">Appointments</li>
+        </router-link>
         <router-link to="/admin/payments">
           <li class="single_nav_item">Payments</li>
         </router-link>

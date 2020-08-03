@@ -96,10 +96,25 @@ Route::middleware('auth:admin')->group(function () {
 });
 
 Route::resource('approved-private-school', 'ApprovedPrivateSchoolController');
+Route::get('all-approved-private-school', 'ApprovedPrivateSchoolController@all');
 Route::resource('principal-phone', 'PrincipalPhoneController');
+Route::get('all-principal-phone', 'PrincipalPhoneController@all');
 Route::resource('principal-transfer', 'PrincipalTransferController');
+Route::get('all-principal-transfer', 'PrincipalTransferController@all');
+
+Route::resource('principal-appointment', 'PrincipalAppointmentController');
+Route::get('all-principal-appointment', 'PrincipalAppointmentController@all');
+
 Route::resource('waec-candidate', 'WaecCandidateController');
+
+Route::get('all-waec-candidate', 'WaecCandidateController@all');
 Route::resource('wassce-private-school', 'WasscePrivateSchoolController');
+Route::get('all-wassce-private-school', 'WasscePrivateSchoolController@all');
 
 Route::get('all-totals', 'DirectoryController@totals');
+
+
+Route::resource('appointment', 'AppointmentController');
+Route::post('check-time', 'AppointmentController@checkTime');
+Route::get('check-date', 'AppointmentController@checkDate');
 

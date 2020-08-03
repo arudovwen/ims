@@ -30,7 +30,7 @@
                   <td scope="row">{{idx+1}}</td>
 
                   <td>{{item.subject}}</td>
-                  <td>{{item.status}}</td>
+                  <td>{{item.status=='active'?'Main':'Sub'}}</td>
                   <td>
                     <router-link
                       :to="{

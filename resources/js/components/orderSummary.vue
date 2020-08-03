@@ -10,7 +10,7 @@
             <span class="text-muted">Summary</span>
             <span class="badge badge-secondary badge-pill">3</span>
           </h4>
-          <ul class="list-group mb-3">
+          <!-- <ul class="list-group mb-3">
             <li class="list-group-item d-flex justify-content-between lh-condensed">
               <div>
                 <h6 class="my-0">Product name</h6>
@@ -34,10 +34,10 @@
               <span class="text-success">-$5</span>
             </li>
             <li class="list-group-item d-flex justify-content-between">
-              <span>Total (USD)</span>
-              <strong>$20</strong>
+              <span>Total (Naira)</span>
+              <strong>&#8358;20</strong>
             </li>
-          </ul>
+          </ul> -->
 
           <div class="card p-2">
             <paystack
