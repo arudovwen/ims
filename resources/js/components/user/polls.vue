@@ -80,8 +80,9 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 80%;
+  width: 90%;
   margin: 0 auto;
+  padding:0 15px;
 }
 
 .tab {

@@ -19,6 +19,14 @@ class User extends Authenticatable
     protected $fillable = [
         'name', 'email', 'password',
     ];
+    public function routeNotificationForMail($notification)
+    {
+        // Return email address only...
+        return $this->email;
+
+        // Return name and email address...
+        return [$this->email => $this->name];
+    }
 
     /**
      * The attributes that should be hidden for arrays.

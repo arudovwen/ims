@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Appointment;
 use Illuminate\Http\Request;
+use App\Mail\ScheduleAppointment;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
 
 class AppointmentController extends Controller
 {
@@ -35,20 +38,35 @@ class AppointmentController extends Controller
      */
     public function store(Request $request)
     {
+        $result = DB::transaction(function () use ($request) {
+            $sch =  Appointment::create([
+                'name'=>$request->name,
+                'email'=>$request->email,
+                'phone_no'=>$request->phone_no,
+                'type'=>$request->type,
+                'organization'=>$request->organization,
+                'reason_for_visit'=>$request->reason_for_visit,
+                'whom_to_see'=>$request->whom_to_see,
+                'department'=>$request->department,
+                'time'=>$request->time,
+                 'date'=>$request->date,
+                 'detail'=>$request->detail,
+                 'status'=>'Active',
+            ]);
+            $external = array('date'=>$request->date,'time'=>$request->time, 'receiver'=>'external');
+                
+          
+           
+            $sch->receiver='internal';
+            
+               Mail::to($request->email)->send(new ScheduleAppointment($external));
+               Mail::to('reception@ministryofeducation.im.gov.ng')->send(new ScheduleAppointment($sch));
+            return $sch;
+        });
        
-        return Appointment::create([
-            'name'=>$request->name,
-            'email'=>$request->email,
-            'phone_no'=>$request->phone_no,
-            'type'=>$request->type,
-            'organization'=>$request->organization,
-            'reason_for_visit'=>$request->reason_for_visit,
-            'whom_to_see'=>$request->whom_to_see,
-            'department'=>$request->department,
-            'time'=>$request->time,
-             'date'=>$request->date,
-             'status'=>'Active',
-        ]);
+      
+       
+        return $result;
     }
 
     /**
@@ -63,13 +81,14 @@ class AppointmentController extends Controller
     }
     public function checkTime(Request $request)
     {
+        $schedules = Appointment::where('date', $request->date)->where('time', $request->time)->where('department', $request->detail)->first();
+      
        
-        $schedules = Appointment::where('time',$request->time)->first();
         if (is_null($schedules)) {
             return response()->json([
                 'status'=>'valid'
             ]);
-        }else{
+        } else {
             return response()->json([
                 'status'=>'invalid'
             ]);

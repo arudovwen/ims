@@ -1,5 +1,6 @@
 <template>
  <div>
+   <Nav />
     <b-overlay :show="show" rounded="sm">
        <div class="container-fluid">
     <h2 class="header__ text-center">{{content.subject}}</h2>
@@ -31,6 +32,7 @@
         </div>
       </template>
     </b-overlay>
+    <Footer/>
  </div>
 
 </template>

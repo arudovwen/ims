@@ -7,22 +7,20 @@
           <b-form @submit.prevent="submit">
             <legend class="text-center mb-4">Schedule an Appointment</legend>
             <b-form-row class="mb-5">
-              <div class="intro">
+              <div class="intro text-center">
                 <p>Please note that Office Appointments can only be scheduled on Tuesdays and Thursdays.</p>
                 <p>Office appointments are strictly for official visits, kindly make alternative arrangements for unofficial visits.</p>
-                <p>Only visit if absolutely necessary, if you have any enquiry, please use our contact form here and a representative will respond within 48hrs.</p>
+                <p>Only visit if absolutely necessary, if you have any enquiry, please use our <router-link to="/contact">Contact form</router-link> and a representative will respond within 48hrs.</p>
 
-                <strong>Appointment days: Tuesdays & Thursdays</strong>
-                <br />
-
-                <strong>General Appointment: 12noon - 3:00pm</strong>
-                <br />
-
-                <strong>Hon. Commissioner: 1:00pm - 3:00pm</strong>
+               <p>Appointment days: <strong> <span class="highlight">Tuesdays</span> & <span class="highlight">Thursdays</span> </strong></p>
+             
+               <p> General Appointment: <strong> 12noon - 3:00pm</strong></p>
+               
+               <p> Hon. Commissioner:<strong> 1:00pm - 3:00pm</strong></p>
               </div>
             </b-form-row>
             <b-form-row>
-              <b-col>
+              <b-col cols="12" >
                 <b-form-group>
                   <label for>Full Name</label>
                   <b-form-input
@@ -35,7 +33,7 @@
               </b-col>
             </b-form-row>
             <b-form-row>
-              <b-col>
+              <b-col cols="12" sm="6">
                 <b-form-group>
                   <label for="email">Email</label>
                   <b-form-input
@@ -46,7 +44,7 @@
                   ></b-form-input>
                 </b-form-group>
               </b-col>
-              <b-col>
+              <b-col cols="12" sm="6">
                 <b-form-group>
                   <label for>Phone No</label>
                   <b-form-input
@@ -59,7 +57,7 @@
               </b-col>
             </b-form-row>
             <b-form-row>
-              <b-col>
+              <b-col cols="12" sm="6">
                 <b-form-group>
                   <label for>Organization (optional)</label>
                   <b-form-input
@@ -69,7 +67,7 @@
                   ></b-form-input>
                 </b-form-group>
               </b-col>
-              <b-col>
+              <b-col cols="12" sm="6">
                 <b-form-group>
                   <label for>Type of visit</label>
                   <b-form-select v-model="schedule.type" required class="w-sm-25">
@@ -81,11 +79,11 @@
               </b-col>
             </b-form-row>
             <b-form-row class="border py-2 my-3">
-              <b-col>
-                <b-form-radio v-model="detail" required value="general">General Appointment</b-form-radio>
+              <b-col cols="12" sm="6">
+                <b-form-radio v-model="schedule.detail" required value="general">General Appointment</b-form-radio>
               </b-col>
-              <b-col>
-                <b-form-radio v-model="detail" required value="commissioner">Honorable Commissioner</b-form-radio>
+              <b-col cols="12" sm="6">
+                <b-form-radio v-model="schedule.detail" required value="commissioner">Honorable Commissioner</b-form-radio>
               </b-col>
             </b-form-row>
             <b-form-row>
@@ -101,17 +99,17 @@
               </b-col>
             </b-form-row>
             <b-form-row>
-              <b-col>
+              <b-col cols="12" sm="6">
                 <b-form-group>
                   <label for>Whom to see</label>
-                  <b-form-input :disabled="detail=='commissioner'" type="text" required v-model="schedule.whom_to_see"></b-form-input>
+                  <b-form-input :disabled="schedule.detail=='commissioner'" type="text" required v-model="schedule.whom_to_see"></b-form-input>
                 </b-form-group>
               </b-col>
-              <b-col>
+              <b-col cols="12" sm="6">
                 <b-form-group>
                   <label for>Department</label>
 
-                  <b-form-select required v-model="schedule.department" :options="departments" :disabled="detail=='commissioner'">
+                  <b-form-select required v-model="schedule.department" :options="departments" :disabled="schedule.detail=='commissioner'">
                     <b-form-select-option value disabled>Select Department</b-form-select-option>
                   
                   </b-form-select>
@@ -120,7 +118,7 @@
             </b-form-row>
 
             <b-form-row>
-              <b-col>
+              <b-col cols="12" sm="6">
                 <b-form-group>
                   <label for>Choose Date</label>
                   <br />
@@ -132,7 +130,7 @@
                   ></b-calendar>
                 </b-form-group>
               </b-col>
-              <b-col>
+              <b-col cols="12" sm="6">
                 <b-form-group>
                   <label for>Choose Time</label>
 
@@ -152,7 +150,7 @@
             </b-form-row>
             <b-form-row class="mt-5 justify-content-center">
               <b-col cols="6" class="text-center">
-                <b-button type="submit">Schedule</b-button>
+                <b-button type="submit">Schedule <b-spinner small label="Small Spinner" v-if="show"></b-spinner></b-button>
               </b-col>
             </b-form-row>
           </b-form>
@@ -196,7 +194,10 @@ export default {
         whom_to_see: "",
         reason_for_visit: "",
         type: "",
+        detail: "general",
+        
       },
+      show:false,
       departments:[
           {value:'DEPARTMENT OF PLANNING RESEARCH AND STATISTICS',text:'DEPARTMENT OF PLANNING RESEARCH AND STATISTICS'},
           {value:"ADMINISTRATION AND FINANCES" ,text:"ADMINISTRATION AND FINANCES"},
@@ -209,7 +210,7 @@ export default {
           {value:" Imo State Basic Education Board (IMSUBEB)",text:" Imo State Basic Education Board (IMSUBEB)"},
           {value:" Adult/Non Formal Education (ANFE)",text:" Adult/Non Formal Education (ANFE)"}
       ],
-      detail: "general",
+     
       error: false,
       timeField: [],
       message: false,
@@ -222,7 +223,7 @@ export default {
   watch: {
     "schedule.time": "checkTime",
     "schedule.date": "checkTime",
-    detail: "handleTime",
+    'schedule.detail': "handleTime",
   },
   methods: {
       closeOverlay(){
@@ -243,7 +244,7 @@ export default {
       },
     handleTime() {
       this.timeField = [];
-      if(this.detail=='commissioner'){
+      if(this.schedule.detail=='commissioner'){
        this.schedule.whom_to_see = 'commissioner'
        this.schedule.department='commissioner'
       }else{
@@ -260,22 +261,22 @@ export default {
         {
           value: "12:00pm",
           text: "12:00pm",
-          disabled: this.detail == "commissioner" ? true : false,
+          disabled: this.schedule.detail == "commissioner" ? true : false,
         },
         {
           value: "12:15pm",
           text: "12:15pm",
-          disabled: this.detail == "commissioner" ? true : false,
+          disabled: this.schedule.detail == "commissioner" ? true : false,
         },
         {
           value: "12:30pm",
           text: "12:30pm",
-          disabled: this.detail == "commissioner" ? true : false,
+          disabled: this.schedule.detail == "commissioner" ? true : false,
         },
         {
           value: "12:45pm",
           text: "12:45pm",
-          disabled: this.detail == "commissioner" ? true : false,
+          disabled: this.schedule.detail == "commissioner" ? true : false,
         },
         { value: "1:00pm", text: "1:00pm" },
         { value: "1:15pm", text: "1:15pm" },
@@ -306,6 +307,7 @@ export default {
       let data = {
         time: this.schedule.time,
         date: this.schedule.date,
+        detail: this.schedule.department,
       };
       axios
         .post("/api/check-time", data)
@@ -326,6 +328,7 @@ export default {
     },
 
     submit() {
+      this.show = true
       axios
         .post("/api/check-time", this.schedule)
         .then((res) => {
@@ -340,6 +343,7 @@ export default {
                 if (res.status == 201) {
                   this.message = true;
                   this.$toasted.info("created");
+                  this.show = false
                 }
               });
             }
@@ -373,6 +377,9 @@ export default {
 .border-red {
   border-color: red;
 }
+/* .highlight{
+  border-bottom:4px solid #0f7a8a
+} */
 form {
   width: 80%;
   margin: 0 auto;
@@ -385,17 +392,24 @@ form {
     overflow: hidden;
 
 }
-.fa-check{
+.fa-check-circle{
   color:green;
 }
 .message{
     background:#fff;
     border:2px solid #0f7a8a;
     position: relative;
+    min-width:300px;
 }
 .close{
     position: absolute;
     top:15px;
     right:15px;
+}
+@media(max-width:425px){
+  form{
+    width:100%;
+    padding:15px;
+  }
 }
 </style>

@@ -402,19 +402,19 @@ export default {
   }
   #banner {
 
-  background: url("/images/curve3.jpg");
+  background: url("/images/imobanner.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }
 .banner_2{
-    background: url("/images/curve3.jpg");
+    background: url("/images/imobanner.jpg");
 }
-.banner_overlay {
+/* .banner_overlay {
   position: absolute;
   width: 100%;
   height: 100%;
   background:  rgb(15, 122, 138, 0.65);
-}
+} */
 }
 @media (max-width: 425px) {
   .form-control{

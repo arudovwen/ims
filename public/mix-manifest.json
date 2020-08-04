@@ -1,5 +1,5 @@
 {
-    "/js/vendor.js": "/js/vendor.js?id=55d9b5cdbd7ef735e2b9",
+    "/js/vendor.js": "/js/vendor.js?id=d0bca8539dd77b8186cc",
     "/js/app.js": "/js/app.js?id=a3ed89916c844cb6308c",
     "/css/app.css": "/css/app.css?id=c63de97f10da5fdf2929",
     "/js/manifest.js": "/js/manifest.js?id=f93f924bbd457ec2f7b9",
@@ -10,16 +10,16 @@
     "/add news.js": "/add news.js?id=12288c2c8bed0ab5a7b6",
     "/admin_home.js": "/admin_home.js?id=977e6604d2580a5cbf68",
     "/administrative.js": "/administrative.js?id=333fe9a0ccf25188050f",
-    "/appointment.js": "/appointment.js?id=0bb742224cb8df4bcd5f",
-    "/blog_routes.js": "/blog_routes.js?id=db2d88417775602b687b",
+    "/appointment.js": "/appointment.js?id=52665fdc29d54cb6e311",
+    "/blog_routes.js": "/blog_routes.js?id=1caef8c434b96d81b7c1",
     "/checkout_routes.js": "/checkout_routes.js?id=d8f31349164a5890a211",
     "/contact_routes.js": "/contact_routes.js?id=ebd10aed8d5025680039",
     "/directory.js": "/directory.js?id=bb38958ec9803d02575a",
-    "/edit news.js": "/edit news.js?id=d43899e2edf147d967f0",
-    "/home_routes.js": "/home_routes.js?id=fb12f09e075071edebf8",
+    "/edit news.js": "/edit news.js?id=0d91808e89052dceefd0",
+    "/home_routes.js": "/home_routes.js?id=f83c18f01da727cd3c06",
     "/initiatives.js": "/initiatives.js?id=016a9f1c846f242bd5f7",
     "/organizations.js": "/organizations.js?id=7d0d1f59459656c58369",
     "/paystack.js": "/paystack.js?id=49a62fce3d396dc2e90e",
     "/stakeholders.js": "/stakeholders.js?id=cb6a5baa165f1714363b",
-    "/view news.js": "/view news.js?id=3611c61aa09338e6b7fb"
+    "/view news.js": "/view news.js?id=febcb808b2adbd49970f"
 }

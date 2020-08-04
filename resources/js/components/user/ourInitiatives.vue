@@ -53,7 +53,7 @@
         </b-col>
       </b-row>
 
-      <div class="text-center"><router-link to="/directory"> <p class="mc1 view-more">View more</p></router-link></div>
+      <!-- <div class="text-center"><router-link to="/directory"> <p class="mc1 view-more">View more</p></router-link></div> -->
 
       <b-row class="mobile-view">
         <b-col cols="12" sm="4" class="mb-4">

@@ -270,9 +270,10 @@ ul{
   position: absolute;
   box-shadow: 0 0 0 1px rgba(14, 19, 24, 0.07), 0 2px 12px rgba(14, 19, 24, 0.2);
   top: 75px;
+  left:-50%;
   width: 200px;
 }
-.sub_nav::before {
+/* .sub_nav::before {
   content: "";
   background: #fff;
   border-top: 1px solid #f7f8fa;
@@ -282,7 +283,7 @@ ul{
   top: -6px;
   width: 20px;
   height: 20px;
-}
+} */
 .sub_nav li {
   border-bottom: 1px solid #f7f8fa;
   padding: 10px 5px;
@@ -330,6 +331,7 @@ ul{
     top: 11px;
     box-shadow: none;
     position: relative;
+    left: 0;
   }
   .sub_nav::before {
     display: none;

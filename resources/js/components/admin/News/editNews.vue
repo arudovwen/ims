@@ -161,13 +161,14 @@ export default {
         axios.get(`/api/get-new/${this.$route.params.id}`).then((res) => {
           if (res.status == 200) {
             this.post = res.data;
+            console.log("getNews -> res.data", res.data)
             this.placeholder = res.data.cover_image;
           }
         });
       }
-      if (this.type == "draft") {
+     else if (this.type == "draft") {
         axios
-          .get(`/api/get-draft/${this.$route.params.id}`, this.post)
+          .get(`/api/get-draft/${this.$route.params.id}`)
           .then((res) => {
             if (res.status == 200) {
               if (res.status == 200) {
@@ -224,6 +225,15 @@ export default {
       };
       reader.readAsDataURL(file);
       this.processUpload(file);
+    },
+     draft() {
+      if (this.type == "news") {
+        axios.post("/api/save-draft", this.post).then(res => {
+          if (res.status == 200) {
+            this.$toasted.info("Saved to draft");
+          }
+        });
+      }
     },
     processUpload(file) {
       let that = this;
