@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Appointment;
+use App\Mail\Contact;
 use Illuminate\Http\Request;
 use App\Mail\ScheduleAppointment;
 use Illuminate\Support\Facades\DB;
@@ -49,9 +50,9 @@ class AppointmentController extends Controller
                 'whom_to_see'=>$request->whom_to_see,
                 'department'=>$request->department,
                 'time'=>$request->time,
-                 'date'=>$request->date,
-                 'detail'=>$request->detail,
-                 'status'=>'Active',
+                'date'=>$request->date,
+                'detail'=>$request->detail,
+                'status'=>'Active',
             ]);
             $external = array('date'=>$request->date,'time'=>$request->time, 'receiver'=>'external');
                 
@@ -59,8 +60,10 @@ class AppointmentController extends Controller
            
             $sch->receiver='internal';
             
-               Mail::to($request->email)->send(new ScheduleAppointment($external));
-               Mail::to('reception@ministryofeducation.im.gov.ng')->send(new ScheduleAppointment($sch));
+            Mail::to($request->email)->send(new ScheduleAppointment($external));
+            Mail::to('reception@ministryofeducation.im.gov.ng')->send(new ScheduleAppointment($sch));         
+            Mail::to('b.ikegwuoha@ministryofeducation.im.gov.ng')->send(new ScheduleAppointment($sch));
+         
             return $sch;
         });
        
@@ -75,6 +78,13 @@ class AppointmentController extends Controller
      * @param  \App\Appointment  $appointment
      * @return \Illuminate\Http\Response
      */
+    public function contact(Request $request)
+    {
+        $details = array('name'=>$request->name,'email'=>$request->email,'subject'=>$request->subject, 'message'=>$request->message,'dept'=>$request->dept);
+             
+         Mail::to('support@ministryofeducation.im.gov.ng')->send(new Contact($details));
+        return $details;
+    }
     public function show(Appointment $appointment)
     {
         //

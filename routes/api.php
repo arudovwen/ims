@@ -116,5 +116,8 @@ Route::get('all-totals', 'DirectoryController@totals');
 
 Route::resource('appointment', 'AppointmentController');
 Route::post('check-time', 'AppointmentController@checkTime');
+Route::post('contact', 'AppointmentController@contact');
 Route::get('check-date', 'AppointmentController@checkDate');
+Route::resource('department', 'DepartmentController');
 
+Route::resource('revalidation', 'RevalidatedSchoolController');

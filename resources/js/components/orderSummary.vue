@@ -1,8 +1,8 @@
 <template>
-  <div class="container">
-       <div class="back">
-      <router-link to="/">Back Home </router-link>
-    </div>
+ <div>
+   <Navigation />
+ <div class="container">
+       
     <div class="row h-100 justify-content-center align-items-center">
       <div class="main_box">
         <div class="col-md-12 order-md-2 mb-4">
@@ -10,35 +10,7 @@
             <span class="text-muted">Summary</span>
             <span class="badge badge-secondary badge-pill">3</span>
           </h4>
-          <!-- <ul class="list-group mb-3">
-            <li class="list-group-item d-flex justify-content-between lh-condensed">
-              <div>
-                <h6 class="my-0">Product name</h6>
-                <small class="text-muted">Brief description</small>
-              </div>
-              <span class="text-muted">$12</span>
-            </li>
-            <li class="list-group-item d-flex justify-content-between lh-condensed">
-              <div>
-                <h6 class="my-0">Second product</h6>
-                <small class="text-muted">Brief description</small>
-              </div>
-              <span class="text-muted">$8</span>
-            </li>
-
-            <li class="list-group-item d-flex justify-content-between bg-light">
-              <div class="text-success">
-                <h6 class="my-0">Promo code</h6>
-                <small>EXAMPLECODE</small>
-              </div>
-              <span class="text-success">-$5</span>
-            </li>
-            <li class="list-group-item d-flex justify-content-between">
-              <span>Total (Naira)</span>
-              <strong>&#8358;20</strong>
-            </li>
-          </ul> -->
-
+       
           <div class="card p-2">
             <paystack
               :amount="amount"
@@ -59,17 +31,23 @@
       </div>
     </div>
   </div>
+   <Footer/>
+ </div>
 </template>
 
 <script type="text/javascript">
 import paystack from "vue-paystack";
+import Navigation from './navigation/navigation'
+import Footer from './footer/footer'
 export default {
   components: {
-    paystack
+    paystack,
+     Navigation,
+    Footer
   },
   data() {
     return {
-      paystackkey: "pk_test_xxxxxxxxxxxxxxxxxxxxxxx", //paystack public key
+      paystackkey: "pk_test_8047f2961e0e83a7b455b8c6644b21cccb01d900", //paystack public key
       email: "foobar@example.com", // Customer email
       amount: 1000000 // in kobo
     };
@@ -84,7 +62,8 @@ export default {
         text += possible.charAt(Math.floor(Math.random() * possible.length));
 
       return text;
-    }
+    },
+   
   },
   methods: {
     callback: function(response) {
@@ -142,7 +121,7 @@ export default {
 }
 
 .container {
-  height: 100vh;
+  height: 70vh;
   position: relative;
 }
 .main_box {

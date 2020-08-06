@@ -18,7 +18,7 @@ let NewsBlog = () =>
         /* webpackChunkName: "blog_routes" */ "./components/pages/readBlog.vue"
     );
 
-    let ReadAnnouncement = () =>
+let ReadAnnouncement = () =>
     import(
         /* webpackChunkName: "blog_routes" */ "./components/user/readAnnouncement.vue"
     );
@@ -46,7 +46,7 @@ let Administrative = () =>
     import(
         /* webpackChunkName: "administrative" */ "./components/pages/administratives.vue"
     );
-    let UserDirectory = () =>
+let UserDirectory = () =>
     import(
         /* webpackChunkName: "administrative" */ "./components/pages/userdir.vue"
     );
@@ -69,28 +69,27 @@ let AdminDirectory = () =>
         /* webpackChunkName: "AdminDirectory" */ "./components/admin/directory/dashboard.vue"
     );
 
-    
 let AdminDashboard = () =>
     import(
         /* webpackChunkName: "AdminDashboard" */ "./components/admin/adminDashboard.vue"
     );
-    let AdminStaffs = () =>
+let AdminStaffs = () =>
     import(
         /* webpackChunkName: "AdminDashboard" */ "./components/admin/staffs/staffs.vue"
     );
-    let AddStaffs = () =>
+let AddStaffs = () =>
     import(
         /* webpackChunkName: "AdminDashboard" */ "./components/admin/staffs/add.vue"
     );
-    let EditStaffs = () =>
+let EditStaffs = () =>
     import(
         /* webpackChunkName: "AdminDashboard" */ "./components/admin/staffs/edit.vue"
     );
-    let ViewStaffs = () =>
+let ViewStaffs = () =>
     import(
         /* webpackChunkName: "AdminDashboard" */ "./components/admin/staffs/view.vue"
     );
-    let AdminUsers = () =>
+let AdminUsers = () =>
     import(
         /* webpackChunkName: "AdminDashboard" */ "./components/admin/users/users.vue"
     );
@@ -145,7 +144,7 @@ let ViewProgram = () =>
     import(
         /* webpackChunkName: "view news" */ "./components/admin/Programs/viewProgram.vue"
     );
-    let AdminAppointment = () =>
+let AdminAppointment = () =>
     import(
         /* webpackChunkName: "view news" */ "./components/admin/appointment/appointment.vue"
     );
@@ -174,7 +173,7 @@ let Lga = () =>
     import(
         /* webpackChunkName: "admin_home" */ "./components/admin/lga/lga.vue"
     );
-    let SchoolsDirectory = () =>
+let SchoolsDirectory = () =>
     import(
         /* webpackChunkName: "admin_home" */ "./components/admin/directory/schoolDirectory.vue"
     );
@@ -186,17 +185,29 @@ let InitiativePrograms = () =>
     import(
         /* webpackChunkName: "admin_home" */ "./components/user/initiatives/programs.vue"
     );
-    let Listings = () =>
+let Listings = () =>
     import(
         /* webpackChunkName: "admin_home" */ "./components/user/directory/listings.vue"
     );
-    let Department = () =>
+let Department = () =>
     import(
         /* webpackChunkName: "admin_home" */ "./components/user/department/view.vue"
     );
-    let Appointment =()=>
+let Appointment = () =>
     import(
         /* webpackChunkName: "appointment" */ "./components/user/appointment.vue"
+    );
+let StaffDir = () =>
+    import(
+        /* webpackChunkName: "appointment" */ "./components/user/staff/home.vue"
+    );
+let FormList = () =>
+    import(
+        /* webpackChunkName: "appointment" */ "./components/user/appForms/formList.vue"
+    );
+    let SingleForm = () =>
+    import(
+        /* webpackChunkName: "appointment" */ "./components/user/appForms/single.vue"
     );
 export const routes = [
     { path: "*", redirect: "/" },
@@ -208,14 +219,27 @@ export const routes = [
     { path: "/checkout", component: Checkout },
     { path: "/summary", component: OrderSummary, name: "OrderSummary" },
     { path: "/blog", component: Blog },
-    { path: "/news/read/:id", component: NewsBlog, name: "NewsBlog" },
-    { path: "/announcement/read/:id", component: ReadAnnouncement, name: "ReadAnnouncement" },
+    { path: "/news/read/:id/:title", component: NewsBlog, name: "NewsBlog" },
+    {
+        path: "/announcement/read/:id/:title",
+        component: ReadAnnouncement,
+        name: "ReadAnnouncement"
+    },
     { path: "/about", component: About },
     { path: "/contact", component: Contact },
     { path: "/organizations", component: Organizations },
     { path: "/stakeholders", component: Stakeholders },
     { path: "/department/:type", component: Department },
+    { path: "/staffs", component: StaffDir },
+    {
+        path: "/forms",
+        component: FormList,
+     
+    },
+    { path: "/forms/:name", component: SingleForm },
+    
     { path: "/schedule-appointment", component: Appointment },
+    
     {
         path: "/directory",
         component: Initiatives,
@@ -224,7 +248,8 @@ export const routes = [
                 path: "",
                 component: UserDirectory,
                 name: "UserDirectory"
-            },,
+            },
+            ,
             {
                 path: "listings/:type",
                 component: Listings,
@@ -236,16 +261,14 @@ export const routes = [
                 component: SchoolDirectory,
                 name: "SchoolDirectory"
             }
-           
         ]
     },
     {
         path: "/administrative",
         component: Administrative,
-        children: [
-     
-        ]
+        children: []
     },
+
     {
         path: "",
         component: AdminHome,
@@ -308,14 +331,14 @@ export const routes = [
                 },
                 beforeEnter: (to, from, next) => {
                     var admin = JSON.parse(localStorage.getItem("adminUser"));
-                    if (admin.role == 'administrator') {
+                    if (admin.role == "administrator") {
                         next();
                     } else {
                         next({ name: "AdminDashboard" });
                     }
                 }
             },
-            
+
             {
                 path: "/admin/projects",
                 component: ProjectsDashboard,
@@ -332,7 +355,7 @@ export const routes = [
                     requiresAuth: true
                 }
             },
-            
+
             {
                 path: "/admin/staffs/add",
                 component: AddStaffs,

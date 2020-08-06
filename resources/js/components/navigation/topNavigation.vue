@@ -28,19 +28,27 @@
         <div>
         <a href="https://www.ministryofeducation.im.gov.ng:2096/"  target="_blank" class="mr-4">  <b-button  variant="home">Staff mail <i class="fa fa-envelope pl-1" aria-hidden="true"></i></b-button></a>
         </div>
-        <div class="side_info ml-auto">
+        <div class="side_info ml-auto" >
         
 
         <div class="form-group rel_pos ml-auto search_bar mb-0">
-          <input
+         <div class="search-bar">
+            <input
             type="text"
             class="form-control search-border rounded-pill desktop"
             aria-describedby="helpId"
             placeholder="Search"
+            v-model="search"
           />
           <button class="search_icon abs_pos top-0 rounded-pill desktop">
             <i class="fa fa-search fa-1x text-white" aria-hidden="true"></i>
           </button>
+          <div class="search-box shadow"  v-if="search !==''">
+            <div @click="close" class="text-right"><i class="fa fa-times-circle" aria-hidden="true"></i></div>
+            <hr>
+            <searchData :search="search"/>
+          </div>
+         </div>
 
          
           <span class="d-flex justify-content-start align-items-center mobile" @click="showNav">
@@ -66,11 +74,14 @@
   </div>
 </template>
 <script>
+import searchData from '../searchComponent';
 export default {
+  
   props: ["show_nav_bar"],
   name: "top-nav-component",
   data() {
     return {
+      search:'',
       total_schools: null,
       total_sec_schools: null,
       total_pry_schools: null,
@@ -93,7 +104,13 @@ export default {
   mounted() {
     this.getTotals()
   },
+  components:{
+   searchData
+  },
   methods: {
+    close(){
+      this.search=''
+    },
     getTotals(){
     axios.get('/api/all-totals').then(res=>{
       if (res.status ==200) {
@@ -127,6 +144,26 @@ export default {
 }
 .search-border {
   border-color: #0f7a8a;
+}
+.search-bar{
+  position: relative;
+}
+.search-box{
+  position: absolute;
+  width: 100%;
+  min-height: 100px;
+  max-height: 400px;
+  overflow: auto;
+  top: 38px;
+  left: 0;
+  z-index: 999;
+  background: #f7f8fa;
+  padding: 10px;
+
+  
+}
+.close{
+ text-align: right;
 }
 .text {
   padding: 0 0 0 10px;

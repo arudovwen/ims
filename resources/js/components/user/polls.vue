@@ -5,22 +5,23 @@
     </div>
     <div class="my-poll z">
       <div class="newsletter shadow-sm tab">
+       <router-link to="/forms">
         <div class="fa-stack icon">
           <i class="fa fa-circle fa-stack-2x mc1" aria-hidden="true"></i>
           <i class="fas fa-list-alt fa-stack-1x text-white" aria-hidden="true"></i>
         </div>
-        <h4 class="josefin text-white">Forms</h4>
+        <h4 class="josefin text-white">Forms</h4></router-link>
       </div>
       <div class="affiliates shadow-sm tab">
-        <a target="_blank" href="https://www.ministryofeducation.im.gov.ng:2096/">
+        <router-link to="/staffs">
           <div class="fa-stack icon">
             <i class="fa fa-circle fa-stack-2x mc1" aria-hidden="true"></i>
             <i class="fa fa-envelope fa-stack-1x text-white" aria-hidden="true"></i>
           </div>
-        </a>
-        <a target="_blank" href="https://www.ministryofeducation.im.gov.ng:2096/">
-          <h4 class="josefin text-white">Staff Mail</h4>
-        </a>
+        </router-link>
+       <router-link to="/staffs">
+          <h4 class="josefin text-white">Staffs</h4>
+      </router-link>
       </div>
       
       <div class="opinions shadow-sm tab">

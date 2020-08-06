@@ -78,7 +78,9 @@
           </router-link>
         </div>
         <ul class="sub_nav">
+        <router-link to="/forms">
           <li class="mini_nav_text">Forms</li>
+          </router-link>
           <router-link to="/directory">
             <li class="mini_nav_text">E-Pay</li>
           </router-link>

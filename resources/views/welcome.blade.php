@@ -6,6 +6,13 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <meta name="theme-color" content="#006600" />
+        <meta name="description" content="Welcome to Imo State Ministry of Education,'Education in Imo State as a new face'" />
+        <meta name="keywords" content="Imo state, Education, Ministry,IMSU,SEMB,EPayment, Appointment" />
+        <meta name="og:title" content="Imo State Ministry of Education" />
+        <meta name="og:description" content="Imo ministry of education" />
+        <meta name="og:url" content="http://ministryofeducation.im.gov.ng" />
+        <meta name="og:image" content="/images/logo.jpg" />
+
 
         <title>IMO STATE MINISTRY OF EDUCATION</title>
 
@@ -15,7 +22,8 @@
         <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200;300;400&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
         <link  href="{{asset('css/app.css')}}" type="text/css" rel="stylesheet">
-        <link rel="shortcut icon" href="/images/logo.jpg" type="image/x-icon">
+        <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
         
 
         <!-- Styles -->

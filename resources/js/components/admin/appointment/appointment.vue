@@ -2,15 +2,20 @@
   <div>
     <b-container fluid>
       <h4>All Schedules</h4>
-      <div class="text-right mb-3">
-        <JsonCSV :data="appointments" name="Schedules.csv" :fields="fields">
+      <div class="d-flex justify-content-between mb-3">
+        <b-form-select v-model="filter" class="w-25">
+          <b-form-select-option value="">Filter</b-form-select-option>
+           <b-form-select-option value="commissioner">Commissioner</b-form-select-option>
+        <b-form-select-option v-for="(item,idx) in depts" :key="idx"  :value="item.name">{{item.name}}</b-form-select-option>
+        </b-form-select>
+        <JsonCSV :data="sorted" name="Schedules.csv" :fields="fields">
           <b-button>
-            Download Csv
+            Export Csv
             <i class="fas fa-file-csv"></i>
           </b-button>
         </JsonCSV>
       </div>
-      <b-table responsive :items="appointments" :fields="fields" bordered hover>
+      <b-table responsive :items="sorted" :fields="fields" bordered hover>
         <template v-slot:cell(sn)="data">{{data.index+1}}</template>
         <template v-slot:cell(date)="data">{{data.item.date | moment('ddd, MMM D YYYY')}}</template>
         
@@ -44,6 +49,8 @@ export default {
         "status",
       ],
       downloadData: [],
+      filter:"",
+      depts:[]
     };
   },
   components: {
@@ -51,13 +58,31 @@ export default {
   },
   mounted() {
     this.getSchedules();
+    this.getDepts()
+  },
+  computed: {
+    sorted(){
+      return this.appointments.filter(item=>{
+        if (this.filter == "") {
+          return item
+        }
+       return item.department.toLowerCase() == this.filter.toLowerCase()
+      })
+    }
   },
   methods: {
+    getDepts(){
+   axios.get('/api/department').then(res=>{
+     if (res.status == 200) {
+       this.depts = res.data
+     }
+   })
+    },
     getSchedules() {
       axios.get("/api/appointment").then((res) => {
         if (res.status == 200) {
           this.appointments = res.data;
-          //   this.downloadData = JSON.stringify(this.appointments);
+          
         }
       });
     },

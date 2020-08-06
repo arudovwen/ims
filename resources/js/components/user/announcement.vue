@@ -16,7 +16,8 @@
               <p v-html="activeA[0].content" class="ann text-center mb-2"></p>
               <router-link :to="{name:'ReadAnnouncement',
                params:{
-                 id:activeA[0].id
+                 id:activeA[0].id,
+                  title:activeA[0].subject.replace(/ /g,'-')
                }}" v-if="activeA.length">
                 <small>Continue reading..</small>
               </router-link>
@@ -50,7 +51,7 @@
                 <div class="img_contain cpointer" @click="gotoNews(ne.id)">
                   <img :src="ne.cover_image" alt />
                 </div>
-                <div class="img_text cpointer " @click="gotoNews(ne.id)">
+                <div class="img_text cpointer " @click="gotoNews(ne.id,ne.subject.toLowerCase())">
                   <p class="news-info text-center">{{ne.subject}}</p>
                 </div>
               </swiper-slide>
@@ -107,13 +108,14 @@ export default {
         }
       });
     },
-    gotoNews(id) {
-      console.log("gotoNews -> id", id);
+    gotoNews(id,title) {
+      
       this.$router.push({
         name: "NewsBlog",
         params: {
           id: id,
-        },
+           title:title.replace(/ /g,'-')
+        }
       });
     },
     getNews() {

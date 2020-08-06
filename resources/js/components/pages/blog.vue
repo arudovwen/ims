@@ -91,7 +91,8 @@
                   :to="{
                 name:'NewsBlog',
                 params:{
-                  id:featured[0].id
+                  id:featured[0].id,
+                  title:featured[0].subject.replace(/ /g,'-')
                 }
                 }"
                   class="text-white font-weight-bold"
@@ -114,7 +115,8 @@
                     :to="{
                 name:'NewsBlog',
                 params:{
-                  id:featured[1].id
+                  id:featured[1].id,
+                  title:featured[1].subject.replace(/ /g,'-')
                 }
                 }"
                     class="stretched-link"
@@ -135,7 +137,8 @@
                     :to="{
                 name:'NewsBlog',
                 params:{
-                  id:featured[2].id
+                  id:featured[2].id,
+                   title:featured[2].subject.replace(/ /g,'-')
                 }
                 }"
                     class="stretched-link"
@@ -162,7 +165,8 @@
                   :to="{
                 name:'NewsBlog',
                 params:{
-                  id:item.id
+                  id:item.id,
+                   title:item.subject.replace(/ /g,'-')
                 }
                 }"
                   class="stretched-link"

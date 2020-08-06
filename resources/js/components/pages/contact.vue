@@ -1,68 +1,122 @@
 <template>
- <div>
-    <scrollTop/>
+  <div>
+    <scrollTop />
     <Navigation />
     <div id="contact">
-    <div class="right_box"></div>
-    <div class="left_box"></div>
-    <div class="middle_box shadow rounded">
-      <div class="container-contact1">
-        <div class="contact1-pic js-tilt" data-tilt>
-          <img src="/images/contact.png" alt="IMG" />
-        </div>
-        <form class="contact1-form validate-form">
-          <span class="contact1-form-title">Get in touch</span>
-          <div class="wrap-input1 validate-input" data-validate="Name is required">
-            <input class="input1" type="text" name="name" placeholder="Name" />
-            <span class="shadow-input1"></span>
+      <div class="right_box"></div>
+      <div class="left_box"></div>
+      <div class="middle_box shadow rounded">
+        <div class="container-contact1">
+          <div class="contact1-pic js-tilt" data-tilt>
+            <img src="/images/contact.png" alt="IMG" />
           </div>
-          <div
-            class="wrap-input1 validate-input"
-            data-validate="Valid email is required: ex@abc.xyz"
-          >
-            <input class="input1" type="text" name="email" placeholder="Email" />
-            <span class="shadow-input1"></span>
-          </div>
-          <div class="wrap-input1 validate-input" data-validate="Subject is required">
-            <input class="input1" type="text" name="subject" placeholder="Subject" />
-            <span class="shadow-input1"></span>
-          </div>
+          <form @submit.prevent="submit" class="contact1-form validate-form">
+            <span class="contact1-form-title">Get in touch</span>
+            <div class="wrap-input1 validate-input" data-validate="Name is required">
+              <input
+                class="input1"
+                type="text"
+                v-model="contact.name"
+                name="name"
+                placeholder="Name"
+              />
+              <span class="shadow-input1"></span>
+            </div>
+            <div
+              class="wrap-input1 validate-input"
+              data-validate="Valid email is required: ex@abc.xyz"
+            >
+              <input
+                class="input1"
+                type="text"
+                v-model="contact.email"
+                name="email"
+                placeholder="Email"
+              />
+              <span class="shadow-input1"></span>
+            </div>
+            <div class="wrap-input1 validate-input" data-validate="Subject is required">
+              <input
+                class="input1"
+                type="text"
+                name="subject"
+                v-model="contact.subject"
+                placeholder="Subject"
+              />
+              <span class="shadow-input1"></span>
+            </div>
 
-         <div class="container-contact1-form-btn mb-3">
-         
-            <b-form-select class="form-control pl-5 input1 rounded-pill">
-               <b-form-select-option  disabled selected>Select Category</b-form-select-option>
-              <b-form-select-option value="support">IT Support</b-form-select-option>
+            <div class="container-contact1-form-btn mb-3">
+              <b-form-select class="form-control pl-5 input1 rounded-pill" v-model="contact.dept">
+                <b-form-select-option disabled selected>Select Category</b-form-select-option>
+                <b-form-select-option value="support">IT Support</b-form-select-option>
                 <b-form-select-option value="enquiry">Enquiry</b-form-select-option>
-            </b-form-select>
-             <span class="shadow-input1"></span>
-          </div>
-          <div class="wrap-input1 validate-input" data-validate="Message is required">
-            <textarea class="input1" name="message" placeholder="Message"></textarea>
-            <span class="shadow-input1"></span>
-          </div>
-          <div class="container-contact1-form-btn">
-            <button class="contact1-form-btn">
-              <span>
-                Send Email
-                <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
-              </span>
-            </button>
-          </div>
-        </form>
+              </b-form-select>
+              <span class="shadow-input1"></span>
+            </div>
+            <div class="wrap-input1 validate-input" data-validate="Message is required">
+              <textarea
+                class="input1"
+                name="message"
+                v-model="contact.message"
+                placeholder="Message"
+              ></textarea>
+              <span class="shadow-input1"></span>
+            </div>
+            <div class="container-contact1-form-btn">
+              <button class="contact1-form-btn" type="submit">
+                <span>
+                  Send Email
+                  <i class="fa fa-long-arrow-right" v-if="!show" aria-hidden="true"></i>
+                  <b-spinner small label="Small Spinner" v-if="show"></b-spinner>
+                </span>
+              </button>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
   </div>
- </div>
 </template>
 <script>
 import Navigation from "../navigation/navigation.vue";
-import scrollTop from '../scrollTopComponent'
+import scrollTop from "../scrollTopComponent";
 export default {
-   components:{
-        Navigation,
-        scrollTop
-    }      
+  components: {
+    Navigation,
+    scrollTop,
+  },
+  data() {
+    return {
+      contact: {
+        name: "",
+        email: "",
+        dept: "",
+        message: "",
+        subject: "",
+      },
+      show: false,
+    };
+  },
+  methods: {
+    submit() {
+      this.show = true;
+      axios.post("/api/contact", this.contact).then((res) => {
+        if (res.status == 200) {
+          this.$toasted.info("Message sent");
+          this.show = false;
+
+          this.contact = {
+            name: "",
+            email: "",
+            dept: "",
+            message: "",
+            subject: "",
+          };
+        }
+      });
+    },
+  },
 };
 </script>
 <style scoped>
@@ -71,7 +125,7 @@ export default {
   position: relative;
 }
 #contact .left_box {
-    background: hsl(188deg 80% 95%);
+  background: hsl(188deg 80% 95%);
   width: 40%;
 
   height: 100%;

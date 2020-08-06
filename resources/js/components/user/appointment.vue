@@ -78,14 +78,14 @@
                 </b-form-group>
               </b-col>
             </b-form-row>
-            <b-form-row class="border py-2 my-3">
+            <!-- <b-form-row class="border py-2 my-3">
               <b-col cols="12" sm="6">
                 <b-form-radio v-model="schedule.detail" required value="general">General Appointment</b-form-radio>
               </b-col>
               <b-col cols="12" sm="6">
                 <b-form-radio v-model="schedule.detail" required value="commissioner">Honorable Commissioner</b-form-radio>
               </b-col>
-            </b-form-row>
+            </b-form-row> -->
             <b-form-row>
               <b-col>
                 <b-form-group>
@@ -108,7 +108,6 @@
               <b-col cols="12" sm="6">
                 <b-form-group>
                   <label for>Department</label>
-
                   <b-form-select required v-model="schedule.department" :options="departments" :disabled="schedule.detail=='commissioner'">
                     <b-form-select-option value disabled>Select Department</b-form-select-option>
                   
@@ -194,7 +193,7 @@ export default {
         whom_to_see: "",
         reason_for_visit: "",
         type: "",
-        detail: "general",
+        detail: "commissioner",
         
       },
       show:false,
@@ -386,6 +385,7 @@ form {
   border: 1px solid #ccc;
   padding: 20px;
   border-radius: 5px;
+  background: #f7f8fa;
 }
 .fixedHeight{
     height:90vh;

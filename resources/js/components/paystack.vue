@@ -16,12 +16,13 @@
 <script type="text/javascript">
 import paystack from 'vue-paystack';
 export default {
+  props:['amount1','email1'],
     components: {
         paystack
     },
     data(){
         return{
-          paystackkey: "pk_test_xxxxxxxxxxxxxxxxxxxxxxx", //paystack public key
+          paystackkey: "pk_test_8047f2961e0e83a7b455b8c6644b21cccb01d900", //paystack public key
           email: "foobar@example.com", // Customer email
           amount: 1000000 // in kobo
         }
@@ -37,9 +38,14 @@ export default {
         return text;
       }
     },
+    mounted() {
+      this.email = this.$props.email1
+      this.amount= this.$props.amount1
+    },
     methods: {
       callback: function(response){
         console.log(response)
+        this.$emit('getResponse',response)
       },
       close: function(){
           console.log("Payment closed")

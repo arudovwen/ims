@@ -40,6 +40,16 @@
         </select>
       </div>
 
+      <b-form-row>
+        <b-col>
+          <b-form-group>
+            <strong>Generate download link</strong>
+            <Upload  @getUploadDetails="getUploadDetails"/>
+            <p>Download link: {{url}}</p>
+          </b-form-group>
+        </b-col>
+      </b-form-row>
+
       <div class="form-group">
         <label for>Content</label>
         <app-editor
@@ -123,9 +133,11 @@
 
 <script>
 import Editor from "@tinymce/tinymce-vue";
+import Upload from '../../upload'
 export default {
   data() {
     return {
+      url:'',
       type: this.$route.params.type,
       post: {
         subject: "",
@@ -149,12 +161,17 @@ export default {
     };
   },
   components: {
-    "app-editor": Editor
+    "app-editor": Editor,
+    Upload
   },
   mounted() {
     this.getCategories();
   },
   methods: {
+    getUploadDetails(id,res){
+    console.log("getUploadDetails -> res", res)
+    this.url = res.secure_url
+    },
     getCategories() {
       axios.get("/api/news-categories").then(res => {
         this.categories = res.data;
