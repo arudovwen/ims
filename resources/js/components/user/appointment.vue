@@ -14,7 +14,7 @@
 
                <p>Appointment days: <strong> <span class="highlight">Tuesdays</span> & <span class="highlight">Thursdays</span> </strong></p>
              
-               <p> General Appointment: <strong> 12noon - 3:00pm</strong></p>
+               <!-- <p> General Appointment: <strong> 12noon - 3:00pm</strong></p> -->
                
                <p> Hon. Commissioner:<strong> 1:00pm - 3:00pm</strong></p>
               </div>
@@ -98,7 +98,7 @@
                 </b-form-group>
               </b-col>
             </b-form-row>
-            <b-form-row>
+            <!-- <b-form-row>
               <b-col cols="12" sm="6">
                 <b-form-group>
                   <label for>Whom to see</label>
@@ -114,7 +114,7 @@
                   </b-form-select>
                 </b-form-group>
               </b-col>
-            </b-form-row>
+            </b-form-row> -->
 
             <b-form-row>
               <b-col cols="12" sm="6">

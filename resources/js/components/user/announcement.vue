@@ -17,7 +17,7 @@
               <router-link :to="{name:'ReadAnnouncement',
                params:{
                  id:activeA[0].id,
-                  title:activeA[0].subject.replace(/ /g,'-')
+                  title:activeA[0].subject.replace(/[^a-z0-9]/gi, '-').replace(/\$/g, '-')
                }}" v-if="activeA.length">
                 <small>Continue reading..</small>
               </router-link>
@@ -114,7 +114,7 @@ export default {
         name: "NewsBlog",
         params: {
           id: id,
-           title:title.replace(/ /g,'-')
+           title:title.replace(/\s+/g, '-')
         }
       });
     },

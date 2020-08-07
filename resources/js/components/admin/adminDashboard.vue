@@ -68,7 +68,7 @@
               <router-link to="/admin/news">Announcement</router-link>
             </li>
             <li>
-              <router-link to="/admin/news">News Update</router-link>
+              <router-link to="/admin/news">News </router-link>
             </li>
           </ul>
         </div>
@@ -212,6 +212,9 @@ export default {
   display: grid;
   grid-template-rows: 1fr 3fr;
   grid-row-gap: 15px;
+}
+ul{
+  list-style: none;
 }
 .mytable{
   max-height: 60vh;

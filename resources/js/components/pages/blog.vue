@@ -92,7 +92,7 @@
                 name:'NewsBlog',
                 params:{
                   id:featured[0].id,
-                  title:featured[0].subject.replace(/ /g,'-')
+                  title:featured[0].subject.replace(/[^a-z0-9]/gi, '-').replace(/\$/g, '-')
                 }
                 }"
                   class="text-white font-weight-bold"
@@ -116,7 +116,7 @@
                 name:'NewsBlog',
                 params:{
                   id:featured[1].id,
-                  title:featured[1].subject.replace(/ /g,'-')
+                  title:featured[1].subject.replace(/[^a-z0-9]/gi, '-').replace(/\$/g, '-')
                 }
                 }"
                     class="stretched-link"
@@ -138,7 +138,7 @@
                 name:'NewsBlog',
                 params:{
                   id:featured[2].id,
-                   title:featured[2].subject.replace(/ /g,'-')
+                   title:featured[2].subject.replace(/[^a-z0-9]/gi, '-').replace(/\$/g, '-')
                 }
                 }"
                     class="stretched-link"
@@ -166,7 +166,7 @@
                 name:'NewsBlog',
                 params:{
                   id:item.id,
-                   title:item.subject.replace(/ /g,'-')
+                   title:item.subject.replace(/[^a-z0-9]/gi, '-').replace(/\$/g, '-')
                 }
                 }"
                   class="stretched-link"

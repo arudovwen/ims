@@ -52,7 +52,7 @@ class AppointmentController extends Controller
                 'time'=>$request->time,
                 'date'=>$request->date,
                 'detail'=>$request->detail,
-                'status'=>'Active',
+                'status'=>'pending',
             ]);
             $external = array('date'=>$request->date,'time'=>$request->time, 'receiver'=>'external');
                 
@@ -123,9 +123,12 @@ class AppointmentController extends Controller
      * @param  \App\Appointment  $appointment
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Appointment $appointment)
+    public function update(Request $request,  $id)
     {
-        //
+        $app = Appointment::find($id);
+        $app->status = $request->status;
+        $app->save();
+        return $app;
     }
 
     /**
