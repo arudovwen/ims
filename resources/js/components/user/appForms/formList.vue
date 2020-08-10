@@ -10,6 +10,21 @@
                 to="/forms/revalidation"
               >Enumeration, Revalidation/Recertification of Schools in Imo State</router-link>
             </b-list-group-item>
+
+              <b-list-group-item>
+              <router-link
+                to="/forms/school-registration"
+              >Registration of New Schools in Imo State</router-link>
+            </b-list-group-item>
+            <b-list-group-item v-for="(item,idx) in items"  :key="idx">
+        <router-link :to="{
+          name:'FormTemplate',
+          params:{
+            id:item.id,
+          
+          }
+        }"> {{item.title}}</router-link>
+            </b-list-group-item>
           </b-list-group>
         </b-col>
       </b-row>
@@ -22,9 +37,26 @@
 import Navigation from "../../navigation/navigation";
 import Footer from "../../footer/footer";
 export default {
+  data() {
+    return {
+      items:[]
+    }
+  },
   components: {
     Navigation,
     Footer,
+  },
+  mounted() {
+    this.getItems()
+  },
+  methods: {
+      getItems(){
+             axios.get("/api/form-template").then((res) => {
+        if (res.status == 200) {
+          this.items = res.data;
+        }
+      });
+        },
   },
 };
 </script>
@@ -50,6 +82,7 @@ a {
   text-decoration: none;
   color:#0f7a8a;
   cursor: pointer;
+  text-transform:uppercase;
 }
 a:hover{
   font-weight: bold;
@@ -79,5 +112,13 @@ a:hover{
 }
 .mc1 {
   color: transparent;
+}
+@media(max-width:425px){
+  .container{
+    width:100%;
+  }
+  a{
+    text-transform: capitalize;
+  }
 }
 </style>

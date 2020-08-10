@@ -169,7 +169,7 @@ export default {
   },
   methods: {
     getUploadDetails(id,res){
-    console.log("getUploadDetails -> res", res)
+ 
     this.url = res.secure_url
     },
     getCategories() {

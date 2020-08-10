@@ -121,3 +121,10 @@ Route::get('check-date', 'AppointmentController@checkDate');
 Route::resource('department', 'DepartmentController');
 
 Route::resource('revalidation', 'RevalidatedSchoolController');
+
+
+Route::resource('form-template', 'FormTemplateController');
+Route::resource('application', 'ApplicationsSchoolController');
+Route::resource('app-group', 'ApplicationGroupController');
+
+

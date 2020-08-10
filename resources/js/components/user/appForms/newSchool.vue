@@ -11,23 +11,8 @@
                 <p>Thank you for working with us to make education in Imo State better, this is the first part of a multi-phase application process.</p>
                 <p>Before you begin your application, please take the time to review the table below, which captures all applicable fees.</p>
 
-                <p>
-                  <strong>Kindly note the applicable fees, below:</strong>
-                </p>
-                <br />
-                <p>
-                  Nursery Schools—
-                  <strong>N10,000</strong>
-                </p>
-                <p>
-                  Primary School —
-                  <strong>N10,000</strong>
-                </p>
-                <p>
-                  Secondary Schools —
-                  <strong>N20,000</strong>
-                </p>
-                <br />
+                <b-table :fields="appFields" :items="appItems" responsive hover></b-table>
+
                 <b-button @click="handleSwitch('two')">Begin Application</b-button>
               </b-form-group>
             </b-form-row>
@@ -67,8 +52,8 @@
                   <b-form-checkbox value="nursery" v-model="data.category">Nursery</b-form-checkbox>
                   <b-form-checkbox value="primary" v-model="data.category">Primary</b-form-checkbox>
                   <b-form-checkbox value="secondary" v-model="data.category">Secondary</b-form-checkbox>
-                  <b-form-checkbox value="tertiary" v-model="data.category">Tertiary</b-form-checkbox>
-                  <b-form-checkbox value="all of the above" v-model="data.category">All of the above</b-form-checkbox>
+                  <!-- <b-form-checkbox value="tertiary" v-model="data.category">Tertiary</b-form-checkbox>
+                  <b-form-checkbox value="all of the above" v-model="data.category">All of the above</b-form-checkbox> -->
                 </b-form-group>
 
                 <b-form-group>
@@ -188,7 +173,7 @@
               </b-col>
 
               <b-form-row class="justify-content-between w-100 my-3">
-                <b-button @click="handleSwitch('four')">Previous</b-button>
+                <b-button @click="handleSwitch('three')">Previous</b-button>
                 <b-button @click="handleSwitch('five')">Next</b-button>
               </b-form-row>
             </b-form-row>
@@ -204,7 +189,7 @@
                 </p>
 
                 <p>I further understand that any false statements may result in denial or revocation of the approval.</p>
-
+                
                 <p>Full Name :</p>
                 <p>Date :</p>
               </b-col>
@@ -214,15 +199,15 @@
                 <p>Before you proceed, kindly note the applicable fees:</p>
                 <p>
                   Nursery Schools—
-                  <strong>N10,000</strong>
+                  <strong>N{{nursery}}</strong>
                 </p>
                 <p>
                   Primary School —
-                  <strong>N10,000</strong>
+                  <strong>N{{primary}}</strong>
                 </p>
                 <p>
                   Secondary Schools —
-                  <strong>N20,000</strong>
+                  <strong>N{{secondary}}</strong>
                 </p>
                 <br />
               </b-col>
@@ -231,7 +216,7 @@
                 <b-button @click="handleSwitch('six')">Next</b-button>
               </b-form-row>
             </b-form-row>
-            <!-- section 88 -->
+            <!-- section 6 -->
             <b-form-row v-if="six">
               <b-col cols="12">
                 <h5>REVIEW APPLICATION</h5>
@@ -243,6 +228,25 @@
               </b-col>
             </b-form-row>
             <!-- section 9 -->
+              <b-form-row v-if="seven">
+              <b-col class="text-center">
+                <div v-if="!unpaid">
+                  <h5>FEEDBACK</h5>
+                  <p>Thank you for working with us to make education in Imo State better. Your application has been received. Kindly check your email for confirmation and allow up to Fifteen (15) working days for us to verify the information provided by you. Our representatives will be in touch shortly.</p>
+                </div>
+                <div class="mb-3">
+                  <Payment
+                    v-if="unpaid"
+                    :amount1="sortAmount()"
+                    :email1="data.contact_person.email"
+                    @getResponse="getResponse"
+                  />
+                </div>
+                <div>
+                  <b-button variant="outline-secondary" @click="handleSwitch('six')">Cancel</b-button>
+                </div>
+              </b-col>
+            </b-form-row>
           </b-form>
         </b-col>
       </b-row>
@@ -256,8 +260,69 @@ import Payment from "../../paystack";
 export default {
   data() {
     return {
+      nursery:40000,
+      primary:70000,
+      secondary:100000,
       unpaid: true,
       years: [],
+      appFields: ["description", "nursery", "primary", "secondary"],
+      appItems: [
+        {
+          description: "Establishment/Site Inspection",
+          nursery: "N40,000",
+          primary: "N70,000",
+          secondary: "N100,000",
+        },
+        {
+          description: "Approval Inspection",
+          nursery: "N45,000",
+          primary: "N70,000",
+          secondary: "N80,000",
+        },
+        {
+          description: "Addition of primary six class",
+          nursery: "-",
+          primary: "N50,000",
+          secondary: "-",
+        },
+        {
+          description: "Upgrading to senior secondary school status",
+          nursery: "-",
+          primary: "-",
+          secondary: "N50,000",
+        },
+
+        {
+          description: "Registration",
+          nursery: "N80,000",
+          primary: "N100,000",
+          secondary: "N120,000",
+        },
+        {
+          description: "Annual Renewal",
+          nursery: "N30,000",
+          primary: "N40,000",
+          secondary: "N50,000",
+        },
+        {
+          description: "Re-Inspection",
+          nursery: "N10,000",
+          primary: "N20,000",
+          secondary: "N30,000",
+        },
+        {
+          description: "Departmental handling Fees",
+          nursery: "N30,000",
+          primary: "N30,000",
+          secondary: "N30,000",
+        },
+        {
+          description: "Enumeration, Revalidation, Recertification",
+          nursery: "N10,000",
+          primary: "N10,000",
+          secondary: "N20,000",
+        },
+      ],
       fields: [
         "sn",
         "name",
@@ -296,6 +361,7 @@ export default {
       four: false,
       five: false,
       six: false,
+      seven: false,
 
       lgas: [],
       id: null,
@@ -364,37 +430,42 @@ export default {
       switch (key) {
         case "one":
           this.one = "true";
-          this.two = this.three = this.four = this.five = this.six = false;
+          this.two = this.three = this.four = this.five = this.six = this.seven = false;
           window.scrollTo(0, 0);
           break;
 
         case "two":
           this.two = "true";
-          this.one = this.three = this.four = this.five = this.six = false;
+          this.one = this.three = this.four = this.five = this.six =  this.seven = false;
           window.scrollTo(0, 0);
           break;
 
         case "three":
           this.three = "true";
-          this.two = this.one = this.four = this.five = this.six = false;
+          this.two = this.one = this.four = this.five = this.six = this.seven = false;
           window.scrollTo(0, 0);
           break;
 
         case "four":
           this.four = "true";
-          this.two = this.three = this.one = this.five = this.six = false;
+          this.two = this.three = this.one = this.five = this.six =  this.seven = false;
           window.scrollTo(0, 0);
           break;
 
         case "five":
           this.five = "true";
-          this.two = this.three = this.four = this.one = this.six = false;
+          this.two = this.three = this.four = this.one = this.six = this.seven = false;
           window.scrollTo(0, 0);
           break;
 
         case "six":
           this.six = "true";
-          this.two = this.three = this.four = this.five = this.one = false;
+          this.two = this.three = this.four = this.five = this.one = this.seven = false;
+          window.scrollTo(0, 0);
+          break;
+           case "seven":
+          this.seven = "true";
+          this.two = this.three = this.four = this.five = this.one = this.six = false;
           window.scrollTo(0, 0);
           break;
 
@@ -410,35 +481,41 @@ export default {
       });
     },
     getUploadDetails(id, res) {
-     
       this.data.documents[id].file = res.secure_url;
     },
     sortAmount() {
       let amount = 0;
 
-      this.data.category.forEach((item) => {
-        if (item == "nursery") {
-          amount = amount + 10000;
+     
+        if ( this.data.category.includes('nursery')) {
+          amount = this.nursery;
         }
-        if (item == "secondary") {
-          amount = amount + 20000;
+        if ( this.data.category.includes('nursery') && this.data.category.includes('primary')) {
+          amount = this.primary;
         }
-        if (item == "primary") {
-          amount = amount + 10000;
+        if ( this.data.category.includes('nursery') && this.data.category.includes('primary') && this.data.category.includes('secondary')) {
+          amount = this.secondary;
         }
-      });
+          if ( this.data.category.includes('nursery') && this.data.category.includes('secondary')) {
+          amount = this.secondary;
+        }
+          if ( this.data.category.includes('primary') && this.data.category.includes('secondary')) {
+          amount = this.secondary;
+        }
+        
+     
       return amount;
     },
     submit() {
       let data = {
         school: this.data.school,
-        category: 'School Registration',
+        category: "School Registration",
         detail: this.data,
       };
       axios.post("/api/revalidation", data).then((res) => {
         if (res.status == 201) {
           this.id = res.data.id;
-          this.handleSwitch("nine");
+          this.handleSwitch("seven");
         }
       });
     },
@@ -458,6 +535,7 @@ export default {
   min-height: 70vh;
   padding: 50px 15px;
 }
+
 form {
   border: 1px solid #ccc;
   padding: 40px;
@@ -508,5 +586,10 @@ li {
 }
 ol {
   list-style: lower-alpha;
+}
+@media (max-width: 425px) {
+  form {
+    padding: 40px 15px;
+  }
 }
 </style>

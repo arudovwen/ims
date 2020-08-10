@@ -18,7 +18,7 @@
         <router-link to="/admin/directory">
           <li class="single_nav_item">Directory</li>
         </router-link>
-        <router-link to="/admin/applications">
+        <router-link to="/admin/forms">
           <li class="single_nav_item">Applications</li>
         </router-link>
             <router-link to="/admin/appointment">

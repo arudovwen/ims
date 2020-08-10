@@ -407,9 +407,18 @@ form {
     right:15px;
 }
 @media(max-width:425px){
+  .container{
+    padding:50px 15px;
+  }
   form{
     width:100%;
     padding:15px;
+  }
+  legend{
+    font-size: 18px;
+  }
+  p{
+    font-size: 15px;
   }
 }
 </style>

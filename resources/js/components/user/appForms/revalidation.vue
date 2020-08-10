@@ -68,7 +68,7 @@
                   <b-form-checkbox value="nursery" v-model="data.category">Nursery</b-form-checkbox>
                   <b-form-checkbox value="primary" v-model="data.category">Primary</b-form-checkbox>
                   <b-form-checkbox value="secondary" v-model="data.category">Secondary</b-form-checkbox>
-                  <b-form-checkbox value="all of the above" v-model="data.category">All of the above</b-form-checkbox>
+                  <!-- <b-form-checkbox value="all of the above" v-model="data.category">All of the above</b-form-checkbox> -->
                 </b-form-group>
 
                 <b-form-group>
@@ -776,5 +776,10 @@ li {
 }
 ol {
   list-style: lower-alpha;
+}
+@media(max-width:425px){
+  form{
+    padding:40px 15px;
+  }
 }
 </style>

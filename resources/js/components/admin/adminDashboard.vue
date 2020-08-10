@@ -210,7 +210,7 @@ export default {
   height: 100vh;
   overflow: auto;
   display: grid;
-  grid-template-rows: 1fr 3fr;
+  grid-template-rows: 15% 85%;
   grid-row-gap: 15px;
 }
 ul{

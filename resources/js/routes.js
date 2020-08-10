@@ -199,16 +199,43 @@ let Appointment = () =>
     );
 let StaffDir = () =>
     import(
-        /* webpackChunkName: "appointment" */ "./components/user/staff/home.vue"
+        /* webpackChunkName: "Staff" */ "./components/user/staff/home.vue"
     );
 let FormList = () =>
     import(
-        /* webpackChunkName: "appointment" */ "./components/user/appForms/formList.vue"
+        /* webpackChunkName: "Form list" */ "./components/user/appForms/formList.vue"
     );
     let SingleForm = () =>
     import(
-        /* webpackChunkName: "appointment" */ "./components/user/appForms/single.vue"
+        /* webpackChunkName: "Single forms" */ "./components/user/appForms/single.vue"
     );
+
+    let Forms = () =>
+    import(
+        /* webpackChunkName: "forms" */ "./components/forms/index.vue"
+    );
+    let FormOptions = () =>
+    import(
+        /* webpackChunkName: "forms" */ "./components/forms/options.vue"
+    );
+    let FormTemplate = () =>
+    import(
+        /* webpackChunkName: "forms" */ "./components/forms/template.vue"
+    );
+
+    let AppForms = () =>
+    import(
+        /* webpackChunkName: "forms" */ "./components/admin/Applications/index.vue"
+    );
+    let AppFormOptions = () =>
+    import(
+        /* webpackChunkName: "forms" */ "./components//admin/Applications/options.vue"
+    );
+    let AppFormTemplate = () =>
+    import(
+        /* webpackChunkName: "forms" */ "./components//admin/Applications/template.vue"
+    );
+
 export const routes = [
     { path: "*", redirect: "/" },
     {
@@ -219,9 +246,12 @@ export const routes = [
     { path: "/checkout", component: Checkout },
     { path: "/summary", component: OrderSummary, name: "OrderSummary" },
     { path: "/blog", component: Blog },
+    { path: "/all-forms", component: Forms },
+    { path: "/form-create", component: FormOptions },
+    { path: "/form/:id", component: FormTemplate ,name:'FormTemplate'},
     { path: "/news/read/:id/:title", component: NewsBlog, name: "NewsBlog" },
     {
-        path: "/announcement/read/:id/:title",
+        path: "/announcement/read/:id",
         component: ReadAnnouncement,
         name: "ReadAnnouncement"
     },
@@ -302,6 +332,30 @@ export const routes = [
                 path: "/admin/news",
                 component: NewsDashboard,
                 name: "NewsDashboard",
+                meta: {
+                    requiresAuth: true
+                }
+            },
+            {
+                path: "/admin/forms",
+                component: AppForms,
+                name: "AppForms",
+                meta: {
+                    requiresAuth: true
+                }
+            },
+            {
+                path: "/admin/form",
+                component: AppFormOptions,
+                name: "AppFormOptions",
+                meta: {
+                    requiresAuth: true
+                }
+            },
+            {
+                path: "/admin/form-template",
+                component: AppFormTemplate,
+                name: "AppFormTemplate",
                 meta: {
                     requiresAuth: true
                 }

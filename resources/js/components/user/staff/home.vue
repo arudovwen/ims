@@ -3,7 +3,7 @@
       <Navigation/>
     <b-container>
       <b-row class="h-100 justify-content-around align-items-center">
-        <b-col class="coll shadow-sm tab" cols="3" >
+        <b-col class="coll shadow-sm tab" cols="5" >
          <a target="_blank" href="https://www.ministryofeducation.im.gov.ng:2096/">
           <div class="fa-stack icon">
             <i class="fa fa-circle fa-stack-2x mc1" aria-hidden="true"></i>
@@ -14,7 +14,7 @@
           <h4 class="josefin text-white">Staff Mail</h4>
         </a>
         </b-col>
-        <b-col class="coll shadow-sm tab" cols="3" >
+        <b-col class="coll shadow-sm tab" cols="5" >
          <a target="_blank" href="https://www.ministryofeducation.im.gov.ng:2096/">
           <div class="fa-stack icon">
             <i class="fa fa-circle fa-stack-2x mc1" aria-hidden="true"></i>
@@ -84,5 +84,13 @@ a{
 }
 .mc1 {
   color: transparent;
+}
+@media (max-width:425px) {
+.icon{
+  font-size: 28px;
+}
+h4.josefin{
+font-size: 16px;
+}
 }
 </style>

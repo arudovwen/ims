@@ -40,7 +40,7 @@ export default {
     },
     mounted() {
       this.email = this.$props.email1
-      this.amount= this.$props.amount1
+      this.amount= this.$props.amount1 *100
     },
     methods: {
       callback: function(response){

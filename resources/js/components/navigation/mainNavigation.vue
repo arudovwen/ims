@@ -132,25 +132,53 @@
           </router-link>
         </ul> -->
       </li>
+      <li class="mobile">
+          <div class="search-bar ">
+            <input
+            type="text"
+            class="form-control search-border rounded-pill "
+            aria-describedby="helpId"
+            placeholder="Search"
+            v-model="search"
+          />
+          <button class="search_icon abs_pos top-0 rounded-pill ">
+            <i class="fa fa-search fa-1x text-white" aria-hidden="true"></i>
+          </button>
+          <div class="search-box shadow"  v-if="search !==''">
+            <div @click="close" class="text-right"><i class="fa fa-times-circle" aria-hidden="true"></i></div>
+            <hr>
+            <searchData :search="search"/>
+          </div>
+         </div>
+      </li>
     </ul>
   </div>
 </template>
 <script>
+import searchData from '../searchComponent';
 export default {
   props: ["show_nav_bar"],
   name: "main-nav-component",
   data() {
-    return {};
+    return {
+        search:'',
+    };
   },
   created() {
     if (window.innerWidth < 780) {
       this.show_nav_bar = false;
     }
   },
+  components:{
+  searchData
+  },
   watch: {
     $route: "closeNav"
   },
   methods: {
+     close(){
+      this.search=''
+    },
     showNav() {
       this.show_nav_bar = !this.show_nav_bar;
     },
@@ -163,6 +191,39 @@ export default {
 };
 </script>
 <style scoped>
+.search-border {
+  border-color: #0f7a8a;
+}
+.search-bar{
+  position: relative;
+}
+.search-box{
+  position: absolute;
+  width: 100%;
+  min-height: 100px;
+  max-height: 400px;
+  overflow: auto;
+  top: 38px;
+  left: 0;
+  z-index: 999;
+  background: #f7f8fa;
+  padding: 10px;
+
+  
+}
+.close{
+ text-align: right;
+}
+.text {
+  padding: 0 0 0 10px;
+}
+.search_icon {
+  font-size: 19px;
+  right: -4px;
+  height: 38px;
+  width: 70px;
+  background: #0f7a8a;
+}
 #bottom_nav {
   width: 100%;
   position: relative;
@@ -324,6 +385,9 @@ ul{
 
   .nav_bar li {
     font-size: 16px;
+  }
+  #bottom_nav{
+    position: absolute;
   }
 }
 @media (max-width: 425px) {

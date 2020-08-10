@@ -19,13 +19,13 @@
             <span class="imo josefin_bold">IMO STATE</span>
             <br />
             <span class="ministry">Ministry of Education</span>
-          </div>
+        </div>
         </router-link>
       </div>
       
       
       <div class="ml-auto d-flex align-items-center">
-        <div>
+        <div class="desktop">
         <a href="https://www.ministryofeducation.im.gov.ng:2096/"  target="_blank" class="mr-4">  <b-button  variant="home">Staff mail <i class="fa fa-envelope pl-1" aria-hidden="true"></i></b-button></a>
         </div>
         <div class="side_info ml-auto" >
