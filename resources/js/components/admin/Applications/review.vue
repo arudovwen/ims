@@ -156,7 +156,7 @@ export default {
   props:['form','options'],
   data() {
     return {
-     
+      lgas:[],
       num: 0,
       show: false,
     };

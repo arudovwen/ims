@@ -1,8 +1,11 @@
 <template>
   <div>
     <Navigation/>
+    <b-row>
+   <router-link to="/forms"> <b-button variant="outline-darkgreen" class="m-2 mx-5">Back</b-button></router-link>
+    </b-row>
     <b-container v-if="form && options">
-      <b-form  class="border  p-3" >
+      <b-form  @submit.prevent="submit" class="border  p-3" >
         <legend class="text-center mb-5">{{form.title}}</legend>
         <section class="text-center" v-if="!show">
           <b-form-row>
@@ -177,18 +180,15 @@
           </b-row>
         </section>
        </div>
-      
-      </b-form>
-
-      <b-row class="justify-content-between w-100 my-3" v-if="show">
+        <b-row class="justify-content-between px-3 my-3" v-if="show">
         <b-button @click="prev">Previous</b-button>
         <b-button v-if="num < template.length" @click="next">Next</b-button>
       
         <div v-if="options.payment && num >= template.length">
            <Payment
                  
-                    :amount1="Number(options.price)"
-                    :email1="email"
+                    :amount="Number(options.price)"
+                    :email="email"
                     @getResponse="getResponse"
                   />
         </div>
@@ -196,6 +196,9 @@
             <b-button  type="submit">Submit</b-button>
         </div>
       </b-row>
+      </b-form>
+
+    
     </b-container>
      <b-modal id="modal-1"  size="lg" hide-footer v-if="options.feedback">
      <div class="text-center" v-if="options.feedback">
@@ -248,7 +251,7 @@ export default {
           payment_status:res.status,
           phase:this.options.phase,
           name: this.options.title,
-          group: this.options.group,
+          group: this.options.app_group,
         };
        
         axios.post(`/api/application`, data).then((res) => {
@@ -269,7 +272,7 @@ export default {
           payment_status:'None',
           phase:this.options.phase,
           name: this.options.title,
-          group: this.options.group,
+          group: this.options.app_group,
         };
        
         axios.post(`/api/application`, data).then((res) => {
@@ -334,5 +337,8 @@ export default {
 }
 .upload{
   background: #f7f8fa;
+}
+.border{
+  border-radius: 15px;
 }
 </style>

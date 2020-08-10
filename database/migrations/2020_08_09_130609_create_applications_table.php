@@ -24,6 +24,7 @@ class CreateApplicationsTable extends Migration
             $table->string('price');
             $table->longText('response');
             $table->string('status');
+            $table->string('name');
             $table->timestamps();
         });
     }

@@ -211,6 +211,13 @@ a {
   button:focus {
     outline: none !important;
   }
+  .icon-text{
+    font-size: 24px;
+    cursor: pointer;
+    text-decoration: none;
+    color: #0F7A8A !important;
+   
+  }
   
 /* Header
 -----------------------------------------------------------------------------*/

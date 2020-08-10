@@ -2,51 +2,72 @@
   <div id="main-body">
     <div class="box box_1">
       <div class="mini_box shadow-sm">
-
+        <router-link to="" class="icon-text">Payment Directory</router-link>
       </div>
-      <div class="mini_box shadow-sm"></div>
-      <div class="mini_box shadow-sm"></div>
-      <div class="mini_box shadow-sm"></div>
+      <div class="mini_box shadow-sm">
+        <router-link to="" class="icon-text">Payment History</router-link>
+      </div>
     </div>
     <div class="box box_2">
       <div class="mini_box2 mini_first">
-        <div class="mini_b shadow-sm bg-white"></div>
-        <div class="mini_b mini_bb">
-          <div class="mini_c shadow-sm"></div>
-          <div class="mini_c shadow-sm"></div>
+        <div class="mini_b shadow-sm bg-white d-flex justify-content-center align-items-center">
+          <router-link to="" class="icon-text"></router-link>
         </div>
       </div>
-      <div class="mini_box2 shadow-sm bg-white"></div>
+
+       <div class="mini_box2 mini_first">
+        <div class="mini_b shadow-sm bg-white d-flex justify-content-center align-items-center">
+          <router-link to="" class="icon-text"></router-link>
+        </div>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      programs: [],
+    };
+  },
+  mounted() {
+    this.getprograms();
+  },
+  methods: {
+    getprograms() {
+      axios.get("/api/get-programs").then((res) => {
+        if (res.status == 200) {
+          this.programs = res.data;
+        }
+      });
+    },
+  },
+};
 </script>
 
 <style scoped>
 #main-body {
-  padding:15px;
+  padding: 15px;
   height: 100vh;
   overflow: auto;
   display: grid;
-  grid-template-rows: 1fr 3fr;
   grid-row-gap: 15px;
 }
-
 .box {
   width: 100%;
 }
 .box_1 {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   grid-column-gap: 15px;
 }
 .mini_box {
   height: 100%;
   background: white;
-  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .box_2 {
   display: grid;
@@ -59,13 +80,13 @@ export default {};
 }
 .mini_first {
   display: grid;
-  grid-template-rows: 1fr 2fr;
+  grid-template-rows: 1fr ;
   grid-row-gap: 15px;
 }
 
 .mini_bb {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   grid-column-gap: 15px;
 }
 .mini_c {

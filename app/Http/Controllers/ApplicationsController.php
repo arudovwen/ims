@@ -43,6 +43,7 @@ class ApplicationsController extends Controller
             'price'=>$request->price,
             'group'=>$request->group,
             'phase'=>$request->phase,
+            'name'=>$request->name,
             'status'=>'pending',
             'response' => json_encode($request->response),
            
@@ -55,9 +56,9 @@ class ApplicationsController extends Controller
      * @param  \App\Applications  $applications
      * @return \Illuminate\Http\Response
      */
-    public function show(Applications $applications)
+    public function show( $id)
     {
-        //
+      return  Applications::find($id);
     }
 
     /**
@@ -78,9 +79,17 @@ class ApplicationsController extends Controller
      * @param  \App\Applications  $applications
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Applications $applications)
+    public function update(Request $request, $id)
     {
-        //
+      
+        $app = Applications::find($id);
+        $app->status = $request->status;    
+        $app->save();
+     
+        // if ($app->status == 'accepted') {
+        //     Mail::to($app->email)->send(new ScheduleAppointment($app));
+        // }
+        return $app;
     }
 
     /**

@@ -2,9 +2,9 @@
   <div id="main-body">
     <div class="box box_1">
       <div class="mini_box shadow-sm">
-        <router-link to="/admin/create/news" ><b-button class="mb-3" block>Create News</b-button></router-link>
-         <router-link to="/admin/create/announcement"><b-button class="mb-3" block>Create Announcement</b-button></router-link>
-         <router-link to="/admin/news/draft"><b-button block=""> Draft</b-button></router-link>
+        <router-link to="/admin/create/news" ><b-button class="mb-3" block variant="darkgreen" >Create News</b-button></router-link>
+         <router-link to="/admin/create/announcement"><b-button block class="mb-3" variant="darkgreen" >Create Announcement</b-button></router-link>
+         <router-link to="/admin/news/draft"><b-button block  variant="darkgreen"> View Draft</b-button></router-link>
       </div>
        <div class="mini_box2 mini_first">
         <div

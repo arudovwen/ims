@@ -1,6 +1,6 @@
 <template>
     <paystack
-        :amount="amount"
+        :amount="amount * 100"
         :email="email"
         :paystackkey="paystackkey"
         :reference="reference"
@@ -16,15 +16,14 @@
 <script type="text/javascript">
 import paystack from 'vue-paystack';
 export default {
-  props:['amount1','email1'],
+  props:['amount','email'],
     components: {
         paystack
     },
     data(){
         return{
           paystackkey: "pk_test_8047f2961e0e83a7b455b8c6644b21cccb01d900", //paystack public key
-          email: "foobar@example.com", // Customer email
-          amount: 1000000 // in kobo
+        
         }
     },
     computed: {
@@ -39,8 +38,7 @@ export default {
       }
     },
     mounted() {
-      this.email = this.$props.email1
-      this.amount= this.$props.amount1 *100
+    
     },
     methods: {
       callback: function(response){

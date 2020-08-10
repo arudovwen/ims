@@ -60,9 +60,9 @@ class AppointmentController extends Controller
            
             $sch->receiver='internal';
             
-            Mail::to($request->email)->send(new ScheduleAppointment($external));
-            // Mail::to('reception@ministryofeducation.im.gov.ng')->send(new ScheduleAppointment($sch));         
-            // Mail::to('b.ikegwuoha@ministryofeducation.im.gov.ng')->send(new ScheduleAppointment($sch));
+           
+            Mail::to('reception@ministryofeducation.im.gov.ng')->send(new ScheduleAppointment($sch));         
+            Mail::to('b.ikegwuoha@ministryofeducation.im.gov.ng')->send(new ScheduleAppointment($sch));
          
             return $sch;
         });
@@ -125,9 +125,15 @@ class AppointmentController extends Controller
      */
     public function update(Request $request,  $id)
     {
+
+      
         $app = Appointment::find($id);
-        $app->status = $request->status;
+        $app->status = $request->status;    
         $app->save();
+        $app->receiver='external';
+        if ($app->status == 'accepted') {
+            Mail::to($app->email)->send(new ScheduleAppointment($app));
+        }
         return $app;
     }
 

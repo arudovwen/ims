@@ -456,8 +456,8 @@
                 <div class="mb-3">
                   <Payment
                     v-if="unpaid"
-                    :amount1="sortAmount()"
-                    :email1="data.contact_person.email"
+                    :amount="sortAmount()"
+                    :email="data.contact_person.email"
                     @getResponse="getResponse"
                   />
                 </div>

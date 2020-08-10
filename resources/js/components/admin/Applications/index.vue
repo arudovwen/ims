@@ -2,16 +2,16 @@
   <div>
     <b-container>
       <b-row class="h-100 justify-content-center align-items-center" v-if="type==''">
-        <b-col @click="handleType('group')" class="box shadow">Application Group</b-col>
+        <b-col @click="handleType('group')" class="box shadow icon-text mc1" >Application Group</b-col>
         <b-col class="box shadow">
-          <router-link to="/admin/form" >Forms</router-link>
+          <router-link to="/admin/form" class="icon-text mc1">Forms</router-link>
         </b-col>
-        <b-col  class="box shadow"><router-link to="/admin/app/list">Applications</router-link></b-col>
+        <b-col  class="box shadow"><router-link to="/admin/app/list" class="icon-text mc1">Applications</router-link></b-col>
       </b-row>
       <b-row v-if="type=='group'">
         <b-col>
           <b-row>
-            <h4 class="mb-4">Application Groups</h4>
+            <h4 class="mb-4 icon-text">Application Groups</h4>
           </b-row>
 
           <b-row class="mb-3">
@@ -25,7 +25,7 @@
                 </template>
               </b-table>
             </b-col>
-            <b-col cols="3" class="bg-lightwhite p-2">
+            <b-col cols="3" class="bg-lightwhite shadow-sm">
               <b-form >
                <div class="text-center"> <strong>New Group</strong></div>
                 <b-form-row>
@@ -140,6 +140,9 @@ export default {
   align-items: center;
 }
 .bg-lightwhite{
-  background:#f7f8fa;
+  background:#fff;
+  padding:15px;
+  border-radius: 15px;;
 }
+
 </style>

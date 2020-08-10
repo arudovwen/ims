@@ -27,12 +27,12 @@
         <router-link to="/admin/payments">
           <li class="single_nav_item">Payments</li>
         </router-link>
-        <router-link to="/admin/projects">
+        <!-- <router-link to="/admin/projects">
           <li class="single_nav_item">Projects</li>
         </router-link>
         <router-link to="/admin/programs">
           <li class="single_nav_item">Programs</li>
-        </router-link>
+        </router-link> -->
         <router-link to="/admin/news">
           <li class="single_nav_item">News</li>
         </router-link>

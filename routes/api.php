@@ -124,7 +124,7 @@ Route::resource('revalidation', 'RevalidatedSchoolController');
 
 
 Route::resource('form-template', 'FormTemplateController');
-Route::resource('application', 'ApplicationsSchoolController');
+Route::resource('application', 'ApplicationsController');
 Route::resource('app-group', 'ApplicationGroupController');
 
 
