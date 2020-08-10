@@ -35,11 +35,15 @@ class ApplicationsController extends Controller
      */
     public function store(Request $request)
     {
-      
+       
         return Applications::create([
+            'ref'=>$request->ref,
+            'payment'=>$request->payment,
+            'payment_status'=>$request->payment_status,
+            'price'=>$request->price,
             'group'=>$request->group,
             'phase'=>$request->phase,
-            'status'=>$request->status,
+            'status'=>'pending',
             'response' => json_encode($request->response),
            
         ]);

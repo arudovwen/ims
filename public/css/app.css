@@ -1,7 +1,640 @@
-*{margin:0;padding:0;border:0}.clear{clear:both}.right{float:right}.left{float:left}.cpointer{cursor:pointer}html{scroll-behavior:smooth;transition:all .6s}body{font:62.5%/1.5 "Lucida Grande","Lucida Sans",Tahoma,Verdana,sans-serif;color:#000;text-align:center;transition:all .5s;overflow:scroll;height:100%;min-height:100%}#wrapper{width:980px;text-align:left;margin-left:auto;margin-right:auto;background-color:#fff}h1{font-size:2.2em}h2{font-size:2em}h3{font-size:1.8em}h4{font-size:1.6em}h5{font-size:1.4em}cite,p,q{font-size:1em}dl,ol,ul{font-size:1em}dd,dt,li{font-size:1em}.josefin{font-family:'Josefin Sans';font-weight:300}.josefin_bold{font-family:'Josefin Sans';font-weight:400}a{text-decoration:none;cursor:pointer}.mc1{color:#0f7a8a}.mc2{color:#338433}.mc3{color:#9c9}.mc-dark{color:#333}.sc1{color:#335b84}.sc2{color:#476b90}.sc3{color:#99adc1}.text-yellow{color:#ecee53}.bg1-dark{background-color:#0f7a8a!important}.bg1-dark:hover{background-color:#669f66!important}.bg1-light{background-color:#669f66}.btn-darkgreen{background-color:#0f7a8a!important;color:#fff!important}.btn-outline-darkgreen{color:#0f7a8a!important;border:1px solid #0f7a8a!important;background-color:transparent!important}.w-0{width:0}.b-avatar img{object-fit:cover!important}.fade-enter-active,.fade-leave-active{transition-property:opacity;transition-duration:.25s}.fade-enter-active{transition-delay:.25s}.fade-enter,.fade-leave-active{opacity:0}button:focus{outline:0!important}input.text{padding:3px;border:1px solid #999}table{border-spacing:0;border-collapse:collapse;font-size:13px}td{text-align:left;font-weight:400;font-size:13px}th{color:#fff}thead{background-color:#0f7a8a;text-align:left}.abs_pos{position:absolute!important}.rel_pos{position:relative!important}.top-0{top:0}.bottom-0{bottom:0}.right-0{right:0}.left-0{left:0}.header{position:relative;font-weight:700}.header::after{content:"";border-top:1px solid rgba(0,0,0,.1);width:80%;height:20px;position:absolute;bottom:-6px;left:20%}.main_header{color:rgba(0,0,0,.64);font-size:2em;font-weight:400;position:relative}.main_header::after{content:'';border-bottom:2px solid #0f7a8a;width:50px;height:5px;position:absolute;bottom:-5px;left:0}.center_header{color:rgba(0,0,0,.64);font-size:2em;font-weight:400;position:relative}.center_header::after{content:'';border-bottom:3px solid #0f7a8a;width:50px;height:5px;position:absolute;bottom:-5px;left:50%;margin-left:-25px}.absolute{position:absolute!important}.mobile{display:none!important}@media(max-width:425px){.flex-xs-column{flex-direction:column}.flex-xs-column-reverse{flex-direction:column-reverse}.mobile{display:block!important}.desktop{display:none!important}h1{font-size:2em!important}h2{font-size:1.7em!important}h3{font-size:1.5em!important}h4{font-size:1.2em!important}h5{font-size:1em!important}.header{position:relative}.header::after{content:"";border-top:1px solid rgba(0,0,0,.1);width:65%;height:20px;position:absolute;bottom:-6px;left:35%}.main_header{text-align:center;margin-bottom:24px}.main_header::after{left:50%;margin-left:-25px}.mobile-none{display:none}.custom-control-label::after,.custom-control-label::before{width:.6rem!important;height:.6rem!important;left:-.85rem!important}}/*!
+/*-----------------------------------------------------------------------------
+[ISM] Screen Stylesheet
+
+version:   1.0
+date:      01/03/07
+author:    [Success Ahon]
+email:     [successahon@gmail.com]
+
+website:   [your domain]
+
+version history: [location of file]
+-----------------------------------------------------------------------------*/
+
+
+/* Import other stylesheets
+-----------------------------------------------------------------------------*/
+
+/* Remove margin, padding and border from everything
+-----------------------------------------------------------------------------*/
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+/* Styles for layout
+-----------------------------------------------------------------------------*/
+
+.clear {
+    clear: both;
+}
+
+
+
+.right {
+    float: right;
+}
+
+
+
+.left {
+    float: left;
+}
+.cpointer{
+    cursor: pointer;
+}
+/* Set up the document
+-----------------------------------------------------------------------------*/
+html {
+    scroll-behavior: smooth;
+    transition: all .6s;
+}
+
+body {
+    font: 62.5%/1.5 "Lucida Grande", "Lucida Sans", Tahoma, Verdana, sans-serif;
+    color: #000000;
+    text-align: center;
+    transition: all .5s;
+    overflow: scroll;
+    height: 100%;
+    min-height: 100%;
+}
+
+
+
+#wrapper {
+    width: 980px;
+    /* Set page width here - you can also use percentage */
+    text-align: left;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #FFFFFF;
+}
+
+
+/* Typography
+-----------------------------------------------------------------------------*/
+
+h1 {
+    font-size: 2.2em;
+    /* Equivalent to 22pt */
+}
+
+h2 {
+    font-size: 2.0em;
+    /* Equivalent to 20pt */
+}
+
+h3 {
+    font-size: 1.8em;
+    /* Equivalent to 18pt */
+}
+
+h4 {
+    font-size: 1.6em;
+    /* Equivalent to 18pt */
+}
+
+h5 {
+    font-size: 1.4em;
+    /* Equivalent to 14pt */
+}
+
+p,
+q,
+cite {
+    font-size: 1em;
+    /* Equivalent to 12pt */
+}
+
+ul,
+ol,
+dl {
+   
+    font-size: 1em;
+    /* Equivalent to 12pt */
+}
+
+li,
+dd,
+dt {
+    font-size: 1em;
+    /* Equivalent to 12pt */
+}
+
+.josefin {
+    font-family: 'Josefin Sans';
+    font-weight:300;
+}
+.josefin_bold {
+    font-family: 'Josefin Sans';
+    font-weight:400;
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* define colors here */
+
+.mc1 {
+    color: #0F7A8A;
+}
+
+.mc2 {
+    color: #338433;
+}
+
+.mc3 {
+    color: #99cc99;
+}
+.mc-dark{
+    color: #333333;
+}
+.sc1 {
+    color: #335b84;
+}
+
+.sc2 {
+    color: #476b90;
+}
+
+.sc3 {
+    color: #99adc1;
+}
+.text-yellow{
+    color: #ECEE53;
+}
+.bg1-dark {
+    background-color: #0F7A8A !important;
+}
+.bg1-dark:hover {
+    background-color: #669f66 !important;
+}
+
+.bg1-light {
+    background-color: #669f66;
+}
+.btn-darkgreen {
+    background-color: #0F7A8A !important;
+    color:white !important;
+}
+
+.btn-outline-darkgreen {
+    color: #0F7A8A !important;
+    border: 1px solid #0F7A8A !important;
+    background-color:transparent !important;
+}
+.w-0 {
+    width: 0;
+}
+.b-avatar img{
+    object-fit: cover !important;
+  }
+.fade-enter-active, .fade-leave-active {
+    transition-property: opacity;
+    transition-duration: .25s;
+  }
+  
+  .fade-enter-active {
+    transition-delay: .25s;
+  }
+  
+  .fade-enter, .fade-leave-active {
+    opacity: 0
+  }
+
+  /* buttons */
+  button:focus {
+    outline: none !important;
+  }
+  
+/* Header
+-----------------------------------------------------------------------------*/
+
+
+
+/* Navigation
+-----------------------------------------------------------------------------*/
+
+
+
+/* Footer
+-----------------------------------------------------------------------------*/
+
+
+
+/* Homepage
+-----------------------------------------------------------------------------*/
+
+
+
+/* Your template
+-----------------------------------------------------------------------------*/
+
+
+/* Forms
+-----------------------------------------------------------------------------*/
+
+
+
+input.text {
+    padding: 3px;
+    border: 1px solid #999999;
+}
+
+
+/* Tables 
+-----------------------------------------------------------------------------*/
+
+
+
+table {
+    border-spacing: 0;
+    border-collapse: collapse;
+    font-size: 13px;
+}
+
+td {
+    text-align: left;
+    font-weight: normal;
+    font-size: 13px;
+}
+th{
+    color:white
+}
+thead{
+    background-color: #0F7A8A;
+    text-align: left;
+}
+.abs_pos {
+    position: absolute !important;
+}
+
+.rel_pos {
+    position: relative !important;
+}
+
+.top-0 {
+    top: 0
+}
+
+.bottom-0 {
+    bottom: 0;
+}
+
+.right-0 {
+    right: 0;
+}
+
+.left-0 {
+    left: 0;
+}
+.header {
+    position: relative;
+    font-weight: bold;
+    
+  }
+  .header::after {
+    content: "";
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    width: 80%;
+    height: 20px;
+    position: absolute;
+    bottom: -6px;
+    left: 20%;
+  }
+  .main_header{
+  color: rgba(0, 0, 0, 0.64);
+  font-size: 2em;
+  font-weight: 400;
+  position: relative;
+  }
+  .main_header::after{
+    content: '';
+    border-bottom: 2px solid #0F7A8A;
+    width: 50px;
+    height: 5px;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+  }
+  .center_header{
+    color: rgba(0, 0, 0, 0.64);
+    font-size: 2em;
+    font-weight: 400;
+    position: relative;
+    }
+    .center_header::after{
+      content: '';
+      border-bottom: 3px solid #0F7A8A;
+      width: 50px;
+      height: 5px;
+      position: absolute;
+      bottom: -5px;
+      left: 50%;
+      margin-left: -25px;
+    }
+    .absolute{
+        position: absolute !important;
+    }
+    .mobile{
+        display: none !important;
+    }
+    
+@media(max-width:425px) {
+    .flex-xs-column{
+        flex-direction: column;
+      }
+      .flex-xs-column-reverse{
+        flex-direction: column-reverse;
+      }
+   .mobile{
+       display: block !important;
+   }
+   .desktop{
+       display: none !important;
+   }
+    h1 {
+        font-size: 2em !important;
+        /* Equivalent to 22pt */
+    }
+
+    h2 {
+        font-size: 1.7em !important;
+        /* Equivalent to 20pt */
+    }
+
+    h3 {
+        font-size: 1.5em !important;
+        /* Equivalent to 18pt */
+    }
+
+    h4 {
+        font-size: 1.2em !important;
+        /* Equivalent to 18pt */
+    }
+
+    h5 {
+        font-size: 1em !important;
+        /* Equivalent to 14pt */
+    }
+
+    .header {
+        position: relative;
+    }
+
+    .header::after {
+        content: "";
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+        width: 65%;
+        height: 20px;
+        position: absolute;
+        bottom: -6px;
+        left: 35%;
+    }
+    .main_header{
+        text-align: center;
+        margin-bottom: 24px;
+    }
+    .main_header::after{
+        left: 50%;
+        margin-left: -25px;
+    }
+    .mobile-none{
+        display:none;
+      }
+      .custom-control-label::after,.custom-control-label::before{
+        width:.6rem !important;
+        height: .6rem !important;
+        left:-.85rem !important;
+      }
+      /* .custom-control{
+          padding-right: .8rem !important;
+      } */
+}
+
+/*!
  * Hamburgers
  * @description Tasty CSS-animated hamburgers
  * @author Jonathan Suh @jonsuh
  * @site https://jonsuh.com/hamburgers
  * @link https://github.com/jonsuh/hamburgers
- */.hamburger{padding:15px 15px;display:inline-block;cursor:pointer;transition-property:opacity,filter;transition-duration:.15s;transition-timing-function:linear;font:inherit;color:inherit;text-transform:none;background-color:transparent;border:0;margin:0;overflow:visible}.hamburger:hover{opacity:.7}.hamburger.is-active:hover{opacity:.7}.hamburger.is-active .hamburger-inner,.hamburger.is-active .hamburger-inner::after,.hamburger.is-active .hamburger-inner::before{background-color:#0f7a8a}.hamburger-box{width:25px;height:20px;display:inline-block;position:relative}.hamburger-inner{display:block;top:50%;margin-top:-2px}.hamburger-inner,.hamburger-inner::after,.hamburger-inner::before{width:25px;height:2px;background-color:#0f7a8a;border-radius:4px;position:absolute;transition-property:transform;transition-duration:.15s;transition-timing-function:ease}.hamburger-inner::after,.hamburger-inner::before{content:"";display:block}.hamburger-inner::before{top:-10px}.hamburger-inner::after{bottom:-10px}.hamburger--collapse .hamburger-inner{top:auto;bottom:0;transition-duration:.13s;transition-delay:.13s;transition-timing-function:cubic-bezier(.55,.055,.675,.19)}.hamburger--collapse .hamburger-inner::after{top:-20px;transition:top .2s .2s cubic-bezier(.33333,.66667,.66667,1),opacity .1s linear}.hamburger--collapse .hamburger-inner::before{transition:top .12s .2s cubic-bezier(.33333,.66667,.66667,1),transform .13s cubic-bezier(.55,.055,.675,.19)}.hamburger--collapse.is-active .hamburger-inner{transform:translate3d(0,-10px,0) rotate(-45deg);transition-delay:.22s;transition-timing-function:cubic-bezier(.215,.61,.355,1)}.hamburger--collapse.is-active .hamburger-inner::after{top:0;opacity:0;transition:top .2s cubic-bezier(.33333,0,.66667,.33333),opacity .1s .22s linear}.hamburger--collapse.is-active .hamburger-inner::before{top:0;transform:rotate(-90deg);transition:top .1s .16s cubic-bezier(.33333,0,.66667,.33333),transform .13s .25s cubic-bezier(.215,.61,.355,1)}.hamburger--collapse-r .hamburger-inner{top:auto;bottom:0;transition-duration:.13s;transition-delay:.13s;transition-timing-function:cubic-bezier(.55,.055,.675,.19)}.hamburger--collapse-r .hamburger-inner::after{top:-20px;transition:top .2s .2s cubic-bezier(.33333,.66667,.66667,1),opacity .1s linear}.hamburger--collapse-r .hamburger-inner::before{transition:top .12s .2s cubic-bezier(.33333,.66667,.66667,1),transform .13s cubic-bezier(.55,.055,.675,.19)}.hamburger--collapse-r.is-active .hamburger-inner{transform:translate3d(0,-10px,0) rotate(45deg);transition-delay:.22s;transition-timing-function:cubic-bezier(.215,.61,.355,1)}.hamburger--collapse-r.is-active .hamburger-inner::after{top:0;opacity:0;transition:top .2s cubic-bezier(.33333,0,.66667,.33333),opacity .1s .22s linear}.hamburger--collapse-r.is-active .hamburger-inner::before{top:0;transform:rotate(90deg);transition:top .1s .16s cubic-bezier(.33333,0,.66667,.33333),transform .13s .25s cubic-bezier(.215,.61,.355,1)}.hamburger--elastic .hamburger-inner{top:2px;transition-duration:275ms;transition-timing-function:cubic-bezier(.68,-.55,.265,1.55)}.hamburger--elastic .hamburger-inner::before{top:10px;transition:opacity 125ms 275ms ease}.hamburger--elastic .hamburger-inner::after{top:20px;transition:transform 275ms cubic-bezier(.68,-.55,.265,1.55)}.hamburger--elastic.is-active .hamburger-inner{transform:translate3d(0,10px,0) rotate(135deg);transition-delay:75ms}.hamburger--elastic.is-active .hamburger-inner::before{transition-delay:0s;opacity:0}.hamburger--elastic.is-active .hamburger-inner::after{transform:translate3d(0,-20px,0) rotate(-270deg);transition-delay:75ms}.hamburger--elastic-r .hamburger-inner{top:2px;transition-duration:275ms;transition-timing-function:cubic-bezier(.68,-.55,.265,1.55)}.hamburger--elastic-r .hamburger-inner::before{top:10px;transition:opacity 125ms 275ms ease}.hamburger--elastic-r .hamburger-inner::after{top:20px;transition:transform 275ms cubic-bezier(.68,-.55,.265,1.55)}.hamburger--elastic-r.is-active .hamburger-inner{transform:translate3d(0,10px,0) rotate(-135deg);transition-delay:75ms}.hamburger--elastic-r.is-active .hamburger-inner::before{transition-delay:0s;opacity:0}.hamburger--elastic-r.is-active .hamburger-inner::after{transform:translate3d(0,-20px,0) rotate(270deg);transition-delay:75ms}
+ */
+.hamburger {
+    padding: 15px 15px;
+    display: inline-block;
+    cursor: pointer;
+    transition-property: opacity, filter;
+    transition-duration: 0.15s;
+    transition-timing-function: linear;
+    font: inherit;
+    color: inherit;
+    text-transform: none;
+    background-color: transparent;
+    border: 0;
+    margin: 0;
+    overflow: visible;
+}
+
+.hamburger:hover {
+    opacity: 0.7;
+}
+
+.hamburger.is-active:hover {
+    opacity: 0.7;
+}
+
+.hamburger.is-active .hamburger-inner,
+.hamburger.is-active .hamburger-inner::before,
+.hamburger.is-active .hamburger-inner::after {
+    background-color: #0f7a8a;
+}
+
+.hamburger-box {
+    width: 25px;
+    height: 20px;
+    display: inline-block;
+    position: relative;
+}
+
+.hamburger-inner {
+    display: block;
+    top: 50%;
+    margin-top: -2px;
+}
+
+.hamburger-inner,
+.hamburger-inner::before,
+.hamburger-inner::after {
+    width: 25px;
+    height: 2px;
+    background-color: #0f7a8a;
+    border-radius: 4px;
+    position: absolute;
+    transition-property: transform;
+    transition-duration: 0.15s;
+    transition-timing-function: ease;
+}
+
+.hamburger-inner::before,
+.hamburger-inner::after {
+    content: "";
+    display: block;
+}
+
+.hamburger-inner::before {
+    top: -10px;
+}
+
+.hamburger-inner::after {
+    bottom: -10px;
+}
+
+
+/*
+     * Collapse
+     */
+.hamburger--collapse .hamburger-inner {
+    top: auto;
+    bottom: 0;
+    transition-duration: 0.13s;
+    transition-delay: 0.13s;
+    transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+
+.hamburger--collapse .hamburger-inner::after {
+    top: -20px;
+    transition: top 0.2s 0.2s cubic-bezier(0.33333, 0.66667, 0.66667, 1), opacity 0.1s linear;
+}
+
+.hamburger--collapse .hamburger-inner::before {
+    transition: top 0.12s 0.2s cubic-bezier(0.33333, 0.66667, 0.66667, 1), transform 0.13s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+
+.hamburger--collapse.is-active .hamburger-inner {
+    transform: translate3d(0, -10px, 0) rotate(-45deg);
+    transition-delay: 0.22s;
+    transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.hamburger--collapse.is-active .hamburger-inner::after {
+    top: 0;
+    opacity: 0;
+    transition: top 0.2s cubic-bezier(0.33333, 0, 0.66667, 0.33333), opacity 0.1s 0.22s linear;
+}
+
+.hamburger--collapse.is-active .hamburger-inner::before {
+    top: 0;
+    transform: rotate(-90deg);
+    transition: top 0.1s 0.16s cubic-bezier(0.33333, 0, 0.66667, 0.33333), transform 0.13s 0.25s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+/*
+     * Collapse Reverse
+     */
+.hamburger--collapse-r .hamburger-inner {
+    top: auto;
+    bottom: 0;
+    transition-duration: 0.13s;
+    transition-delay: 0.13s;
+    transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+
+.hamburger--collapse-r .hamburger-inner::after {
+    top: -20px;
+    transition: top 0.2s 0.2s cubic-bezier(0.33333, 0.66667, 0.66667, 1), opacity 0.1s linear;
+}
+
+.hamburger--collapse-r .hamburger-inner::before {
+    transition: top 0.12s 0.2s cubic-bezier(0.33333, 0.66667, 0.66667, 1), transform 0.13s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+
+.hamburger--collapse-r.is-active .hamburger-inner {
+    transform: translate3d(0, -10px, 0) rotate(45deg);
+    transition-delay: 0.22s;
+    transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.hamburger--collapse-r.is-active .hamburger-inner::after {
+    top: 0;
+    opacity: 0;
+    transition: top 0.2s cubic-bezier(0.33333, 0, 0.66667, 0.33333), opacity 0.1s 0.22s linear;
+}
+
+.hamburger--collapse-r.is-active .hamburger-inner::before {
+    top: 0;
+    transform: rotate(90deg);
+    transition: top 0.1s 0.16s cubic-bezier(0.33333, 0, 0.66667, 0.33333), transform 0.13s 0.25s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+/*
+     * Elastic
+     */
+.hamburger--elastic .hamburger-inner {
+    top: 2px;
+    transition-duration: 0.275s;
+    transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.hamburger--elastic .hamburger-inner::before {
+    top: 10px;
+    transition: opacity 0.125s 0.275s ease;
+}
+
+.hamburger--elastic .hamburger-inner::after {
+    top: 20px;
+    transition: transform 0.275s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.hamburger--elastic.is-active .hamburger-inner {
+    transform: translate3d(0, 10px, 0) rotate(135deg);
+    transition-delay: 0.075s;
+}
+
+.hamburger--elastic.is-active .hamburger-inner::before {
+    transition-delay: 0s;
+    opacity: 0;
+}
+
+.hamburger--elastic.is-active .hamburger-inner::after {
+    transform: translate3d(0, -20px, 0) rotate(-270deg);
+    transition-delay: 0.075s;
+}
+
+/*
+     * Elastic Reverse
+     */
+.hamburger--elastic-r .hamburger-inner {
+    top: 2px;
+    transition-duration: 0.275s;
+    transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.hamburger--elastic-r .hamburger-inner::before {
+    top: 10px;
+    transition: opacity 0.125s 0.275s ease;
+}
+
+.hamburger--elastic-r .hamburger-inner::after {
+    top: 20px;
+    transition: transform 0.275s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.hamburger--elastic-r.is-active .hamburger-inner {
+    transform: translate3d(0, 10px, 0) rotate(-135deg);
+    transition-delay: 0.075s;
+}
+
+.hamburger--elastic-r.is-active .hamburger-inner::before {
+    transition-delay: 0s;
+    opacity: 0;
+}
+
+.hamburger--elastic-r.is-active .hamburger-inner::after {
+    transform: translate3d(0, -20px, 0) rotate(270deg);
+    transition-delay: 0.075s;
+}

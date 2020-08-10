@@ -187,6 +187,9 @@ export default {
   methods: {
     handleType(value) {
       this.type = value;
+      if (value=='create') {
+        this.$toasted.success('Settings saved')
+      }
     },
     getGroups() {
       axios.get("/api/app-group").then((res) => {

@@ -235,6 +235,10 @@ let FormList = () =>
     import(
         /* webpackChunkName: "forms" */ "./components//admin/Applications/template.vue"
     );
+    let AppList = () =>
+    import(
+        /* webpackChunkName: "forms" */ "./components//admin/Applications/applist.vue"
+    );
 
 export const routes = [
     { path: "*", redirect: "/" },
@@ -348,6 +352,14 @@ export const routes = [
                 path: "/admin/form",
                 component: AppFormOptions,
                 name: "AppFormOptions",
+                meta: {
+                    requiresAuth: true
+                }
+            },
+            {
+                path: "/admin/app/list",
+                component: AppList,
+                name: "AppList",
                 meta: {
                     requiresAuth: true
                 }

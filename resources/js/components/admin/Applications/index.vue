@@ -6,7 +6,7 @@
         <b-col class="box shadow">
           <router-link to="/admin/form" >Forms</router-link>
         </b-col>
-        <b-col @click="handleType('applications')" class="box shadow">Applications</b-col>
+        <b-col  class="box shadow"><router-link to="/admin/app/list">Applications</router-link></b-col>
       </b-row>
       <b-row v-if="type=='group'">
         <b-col>
@@ -16,7 +16,7 @@
 
           <b-row class="mb-3">
             <b-col cols="9">
-              <b-table :items="appGroups" :fields="appFields">
+              <b-table :items="appGroups" :fields="appFields"  bordered hover>
                 <template v-slot:cell(sn)="data">
                   <div>{{data.index+1}}</div>
                 </template>
