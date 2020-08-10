@@ -71,8 +71,8 @@
                   <!-- <b-form-checkbox v-model="section.tools" value="long text">Add long text</b-form-checkbox> -->
                   <b-form-checkbox v-model="section.tools" value="table">Table</b-form-checkbox>
                   <!-- <b-form-checkbox v-model="section.tools" value="calender">Calendar</b-form-checkbox> -->
-                  <b-form-checkbox v-model="section.tools" value="docs">Attach Docs</b-form-checkbox>
-                  <b-form-checkbox v-model="section.tools" value=" media">Attach Media</b-form-checkbox>
+                  <b-form-checkbox v-model="section.tools" value="docs"> Document</b-form-checkbox>
+                  <b-form-checkbox v-model="section.tools" value=" media"> Media</b-form-checkbox>
                 </b-form-group>
                 <div v-if="section.tools.includes('table')">
                   <div v-for="(field,idxxx) in section.fields" :key="idxxx">

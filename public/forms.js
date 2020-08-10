@@ -3857,7 +3857,7 @@ var render = function() {
                                               expression: "section.tools"
                                             }
                                           },
-                                          [_vm._v("Attach Docs")]
+                                          [_vm._v(" Document")]
                                         ),
                                         _vm._v(" "),
                                         _c(
@@ -3872,7 +3872,7 @@ var render = function() {
                                               expression: "section.tools"
                                             }
                                           },
-                                          [_vm._v("Attach Media")]
+                                          [_vm._v(" Media")]
                                         )
                                       ],
                                       1
