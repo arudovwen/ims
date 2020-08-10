@@ -61,8 +61,8 @@ class AppointmentController extends Controller
             $sch->receiver='internal';
             
             Mail::to($request->email)->send(new ScheduleAppointment($external));
-            Mail::to('reception@ministryofeducation.im.gov.ng')->send(new ScheduleAppointment($sch));         
-            Mail::to('b.ikegwuoha@ministryofeducation.im.gov.ng')->send(new ScheduleAppointment($sch));
+            // Mail::to('reception@ministryofeducation.im.gov.ng')->send(new ScheduleAppointment($sch));         
+            // Mail::to('b.ikegwuoha@ministryofeducation.im.gov.ng')->send(new ScheduleAppointment($sch));
          
             return $sch;
         });
