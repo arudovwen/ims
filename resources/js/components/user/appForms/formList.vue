@@ -4,6 +4,7 @@
     <b-container>
       <b-row class>
         <b-col cols="12">
+          <h5 class="text-center mb-4">Application List</h5>
           <b-list-group>
             <b-list-group-item>
               <router-link

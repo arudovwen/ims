@@ -46,6 +46,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -156,6 +157,10 @@ var render = function() {
                 "b-col",
                 { attrs: { cols: "12" } },
                 [
+                  _c("h5", { staticClass: "text-center mb-4" }, [
+                    _vm._v("Application List")
+                  ]),
+                  _vm._v(" "),
                   _c(
                     "b-list-group",
                     [
