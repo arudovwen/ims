@@ -44,7 +44,7 @@
         <label for>Content</label>
         <app-editor
           v-model="post.content"
-          apiKey="b2xt6tkzh0bcxra613xpq9319rtgc3nfwqbzh8tn6tckbgv3"
+          apiKey="a0iyq87xxk4jqc1rf2kj55kr8pu9pol61qt32jccfldibgd7"
           :init="{
                          selector: 'textarea',
                             toolbar_mode: 'floating',
