@@ -27,7 +27,7 @@
 
           <div v-if="opened.includes(index)" class="m-4">
             <b-row class="mb-5 border-bottom py-3">
-              <b-col cols="6">
+              <b-col cols="9">
                 <b-form-group>
                   <label for="section">Section Title</label>
                   <b-form-input label="section" v-model="section.title" placeholder="Enter title"></b-form-input>
@@ -63,58 +63,6 @@
                   ></app-editor>
                 </b-form-group>
               </b-col>
-              <b-col cols="6">
-                <b-form-group>
-                  <h5>Select Tool</h5>
-                
-
-                  <!-- <b-form-checkbox v-model="section.tools" value="long text">Add long text</b-form-checkbox> -->
-                  <b-form-checkbox v-model="section.tools" value="table">Table</b-form-checkbox>
-                  <!-- <b-form-checkbox v-model="section.tools" value="calender">Calendar</b-form-checkbox> -->
-                  <b-form-checkbox v-model="section.tools" value="docs"> Document</b-form-checkbox>
-                  <b-form-checkbox v-model="section.tools" value=" media"> Media</b-form-checkbox>
-                </b-form-group>
-                <div v-if="section.tools.includes('table')">
-                  <div v-for="(field,idxxx) in section.fields" :key="idxxx">
-                    <b-form-input placeholder="Table fields" v-model="field.key"></b-form-input>
-                  </div>
-                  <b-row class="p-3">
-                    <b-button @click="addField(index)" class="mr-3"> <i class="fa fa-plus-circle" aria-hidden="true"></i></b-button>
-                    <b-button @click="removeField(index)" v-if="section.fields.length > 1"><i class="fa fa-times-circle" aria-hidden="true"></i></b-button>
-                  </b-row>
-                </div>
-
-                <b-form-group>
-                    <label for>Tool Description</label>
-                  <app-editor
-                    v-model="section.tools_description"
-                    apiKey="b2xt6tkzh0bcxra613xpq9319rtgc3nfwqbzh8tn6tckbgv3"
-                    :init="{
-                         selector: 'textarea',
-                            toolbar_mode: 'floating',
-                            plugins: 'advlist autolink lists link image imagetools charmap print preview anchor insertdatetime media table paste code help wordcount  autolink lists media    table  ',
-                            toolbar: 'undo redo | formatselect | bold italic backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat |image help | a11ycheck addcomment showcomments casechange checklist code formatpainter  table',
-                            image_title: true,
-                            height: 170,
-                            file_picker_types: 'image',
-                            automatic_uploads:false,
-                            relative_urls:false,
-                           convert_urls:false,
-                           images_upload_handler: function (blobInfo, success, failure) {
-                                 upload_handler( blobInfo, success, failure)
-                           },
-                            file_picker_callback:function(callback, value, meta) {
-                                  loadFile(callback, value,meta)
-
-                        },
-                        images_dataimg_filter: function(img) {
-                            return img.hasAttribute('internal-blob');
-                            }
-                      }"
-                    class="form-control"
-                  ></app-editor>
-                </b-form-group>
-              </b-col>
             </b-row>
             <b-row>
               <b-col cols="12" class="p-0">
@@ -131,18 +79,18 @@
             </b-row>
             <b-row v-for="(question,idx) in section.question" :key="idx" class="border p-2">
               <b-col cols="12" class="d-flex justify-content-between">
-                <div v-if="!openedQuestion.includes(idx)">{{question.title}}</div>
+                <div v-if="!openedQuestion.includes(idx)">{{idx+1}} {{question.title}}</div>
                 <div @click="toggleQuestion(idx)" class="ml-auto">
                   <i class="fa fa-minus-circle" aria-hidden="true"></i>
                 </div>
               </b-col>
               <div v-if="openedQuestion.includes(idx)" class="d-flex w-100">
-                <b-col>
+                <b-col cols="3">
                   <b-form-row>
                     <b-col cols="12">
                       <b-form-group>
                         <label for>Type Question</label>
-                        <b-form-input placeholder="Question" v-model="question.title"></b-form-input>
+                        <b-textarea placeholder="Question" v-model="question.title"></b-textarea>
                       </b-form-group>
                     </b-col>
                     <b-col>
@@ -153,7 +101,7 @@
                     </b-col>
                   </b-form-row>
                 </b-col>
-                <b-col>
+                <b-col cols="3">
                   <b-form-group>
                     <label for>Answer Format</label>
                     <b-form-select v-model="question.answer_format">
@@ -167,7 +115,7 @@
                       <b-form-select-option value="date">Date</b-form-select-option>
                       <b-form-select-option value="time">Time</b-form-select-option>
                       <b-form-select-option value="email">Email</b-form-select-option>
-                      <b-form-select-option value="lga">LGAs</b-form-select-option>
+                      <b-form-select-option value="lga">Lga</b-form-select-option>
                     </b-form-select>
                   </b-form-group>
                   <!-- multi choice options  -->
@@ -198,6 +146,96 @@
                     </b-row>
                   </div>
                 </b-col>
+                <b-col cols="6">
+                  <label>Select Tool</label>
+                  <div role="tablist">
+                    <b-card no-body class="mb-1">
+                      <b-card-header header-tag="header" class="p-1" role="tab">
+                        <b-button block v-b-toggle="idx.toString()" variant="info">Tools</b-button>
+                      </b-card-header>
+                      <b-collapse :id="idx.toString()" accordion="my-accordion" role="tabpanel">
+                        <b-card-body>
+                          <b-row>
+                            <b-col cols="12">
+                              <b-form-group>
+                                <b-form-checkbox v-model="question.tools" value="table">Table</b-form-checkbox>
+
+                                <b-form-checkbox v-model="question.tools" value="docs">Document</b-form-checkbox>
+                                <b-form-checkbox v-model="question.tools" value=" media">Media</b-form-checkbox>
+                              </b-form-group>
+                              <div v-if="question.tools.includes('table')">
+                                <b-input-group>
+                                  <b-form-input placeholder="Table field" v-model="field"></b-form-input>
+
+                                  <b-input-group-append>
+                                    <b-button @click="addField(field,index,idx)" class="mr-3">
+                                      <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                                    </b-button>
+                                  </b-input-group-append>
+                                </b-input-group>
+
+                                <b-form-group class="p-2 py-3">
+                                  <b-row>
+                                    <b-col
+                                      cols="3"
+                                      class="border p-2 text-center"
+                                      v-for="(field,idxxx) in question.fields"
+                                      :key="idxxx"
+                                    >
+                                      {{field}}
+                                      <i
+                                        class="fa fa-times-circle"
+                                        @click="removeField(index,idx,idxxx)"
+                                        aria-hidden="true"
+                                      ></i>
+                                    </b-col>
+                                  </b-row>
+                                </b-form-group>
+
+                                <b-row class="p-3">
+                                  <b-button class @click="handleTable(index,idx)">Submit fields</b-button>
+                                </b-row>
+                              </div>
+                            </b-col>
+
+                            <b-col cols="12">
+                              <b-form-group>
+                                <label for>Tool Description</label>
+                                <app-editor
+                                  v-model="question.tools_description"
+                                  apiKey="b2xt6tkzh0bcxra613xpq9319rtgc3nfwqbzh8tn6tckbgv3"
+                                  :init="{
+                             selector: 'textarea',
+                            toolbar_mode: 'floating',
+                            plugins: 'advlist autolink lists link image imagetools charmap print preview anchor insertdatetime media table paste code help wordcount  autolink lists media    table  ',
+                            toolbar: 'undo redo | formatselect | bold italic backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat |image help | a11ycheck addcomment showcomments casechange checklist code formatpainter  table',
+                            image_title: true,
+                            height: 200,
+                            file_picker_types: 'image',
+                            automatic_uploads:false,
+                            relative_urls:false,
+                           convert_urls:false,
+                           images_upload_handler: function (blobInfo, success, failure) {
+                                 upload_handler( blobInfo, success, failure)
+                           },
+                            file_picker_callback:function(callback, value, meta) {
+                                  loadFile(callback, value,meta)
+
+                        },
+                        images_dataimg_filter: function(img) {
+                            return img.hasAttribute('internal-blob');
+                            }
+                      }"
+                                  class="form-control"
+                                ></app-editor>
+                              </b-form-group>
+                            </b-col>
+                          </b-row>
+                        </b-card-body>
+                      </b-collapse>
+                    </b-card>
+                  </div>
+                </b-col>
               </div>
             </b-row>
           </div>
@@ -220,6 +258,8 @@ export default {
   props: ["options"],
   data() {
     return {
+      obj: {},
+      field: "",
       busy: true,
       opened: [],
       openedQuestion: [],
@@ -227,24 +267,7 @@ export default {
         {
           title: "",
           description: "",
-          tools: [],
-          fields: [
-            "sn",
-            {
-              key: "",
-            },
-          ],
-          items: [
-            {
-              key: "",
-            },
-          ],
-          documents: [
-            {
-              name: "",
-              file: "",
-            },
-          ],
+
           question: [
             {
               title: "",
@@ -258,6 +281,16 @@ export default {
               options: [
                 {
                   name: "",
+                },
+              ],
+              tools: [],
+              tools_description: "",
+              fields: [],
+              items: [],
+              documents: [
+                {
+                  name: "",
+                  file: "",
                 },
               ],
             },
@@ -372,34 +405,39 @@ export default {
       this.form.push({
         title: "",
         description: "",
-        tools: [],
-        fields: [
-          {
-            key: "",
-          },
-        ],
-        items: [
-          "sn",
-          {
-            key: "",
-          },
-        ],
-        documents: [
-          {
-            name: "",
-            file: "",
-          },
-        ],
+
         question: [
           {
             title: "",
             guide: "",
             answer_format: "",
             answer: "",
-            answers: [],
+            answers: [{ answer: "" }],
+            limit: "",
+            placeholder: "",
+
             options: [
               {
                 name: "",
+              },
+            ],
+            tools: [],
+            tools_description: "",
+            fields: [
+              "sn",
+              {
+                key: "",
+              },
+            ],
+            items: [
+              {
+                key: "",
+              },
+            ],
+            documents: [
+              {
+                name: "",
+                file: "",
               },
             ],
           },
@@ -430,22 +468,38 @@ export default {
       }
     },
     addQuestion(index) {
-      this.openedQuestion.push(index);
+      // this.openedQuestion.push(index);
       this.form[index].question.push({
         title: "",
         guide: "",
         answer_format: "",
         answer: "",
-        answers: [],
+        answers: [{ answer: "" }],
+        limit: "",
+        placeholder: "",
+
         options: [
           {
             name: "",
           },
         ],
         tools: [],
+        tools_description: "",
         fields: [
+          "sn",
           {
             key: "",
+          },
+        ],
+        items: [
+          {
+            key: "",
+          },
+        ],
+        documents: [
+          {
+            name: "",
+            file: "",
           },
         ],
       });
@@ -461,16 +515,27 @@ export default {
     removeOption(index) {
       this.form[index].question[id].options.pop();
     },
-    addField(index) {
-      this.form[index].fields.push({
-        key: "",
-      });
-      this.form[index].items.push({
-        key: "",
-      });
+    addField(e, index, id) {
+      if (this.field !== "") {
+        this.form[index].question[id].fields.push(e);
+        this.field = "";
+      } else {
+        this.$toasted.error("Field empty");
+      }
     },
-    removeField(index) {
-      this.form[index].fields.pop();
+
+    handleTable(index, id) {
+      this.obj = {};
+        this.form[index].question[id].items = []
+      this.form[index].question[id].fields.forEach((item) => {
+        this.obj[item] = "";
+      });
+      this.form[index].question[id].items.push(this.obj);
+       this.$toasted.info("Table fields created");
+      
+    },
+    removeField(index, id, i) {
+      this.form[index].question[id].fields.splice(i, 1);
     },
   },
   components: {

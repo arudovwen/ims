@@ -9,6 +9,9 @@
         <b-col  class="box shadow"><router-link to="/admin/app/list" class="icon-text mc1">Applications</router-link></b-col>
       </b-row>
       <b-row v-if="type=='group'">
+        <b-col cols="12">
+    <div class="text-right " ><b-button variant="outline-darkgreen" @click="handleType('')">Back</b-button></div>
+        </b-col >
         <b-col>
           <b-row>
             <h4 class="mb-4 icon-text">Application Groups</h4>
@@ -21,7 +24,7 @@
                   <div>{{data.index+1}}</div>
                 </template>
                 <template v-slot:cell(action)="data">
-                  <div>Edit</div>
+                  <div @click="drop(data.item)">Drop</div>
                 </template>
               </b-table>
             </b-col>
@@ -101,6 +104,14 @@ export default {
     this.getGroups();
   },
   methods: {
+     drop(data) {
+      axios.delete(`/api/app-group/${data.id}`).then((res) => {
+        if (res.status == 200) {
+         this.getGroups()
+         this.$toasted.info('Deleted')
+        }
+      });
+    },
     handleType(value) {
       this.type = value;
     },

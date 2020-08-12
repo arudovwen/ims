@@ -18,7 +18,7 @@ class AppointmentController extends Controller
      */
     public function index()
     {
-        return Appointment::all();
+        return Appointment::latest()->get();
     }
 
     /**

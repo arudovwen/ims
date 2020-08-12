@@ -2,6 +2,7 @@
   <div>
     
     <b-container v-if="type=='option'">
+      
       <h4 class="text-center mb-5">Form Settings</h4>
       <b-form>
         <b-form-group>

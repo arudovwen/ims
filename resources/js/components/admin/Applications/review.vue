@@ -3,12 +3,12 @@
     <b-container v-if="form">
       <b-form>
         <legend class="text-center mb-5">{{options.title}}</legend>
-       
+
         <section v-if=" num < form.length">
           <b-form-row>
             <b-col cols="12">
               <h5>{{form[num].title}}</h5>
-              <p>{{form[num].description}}</p>
+              <p v-html="form[num].description"></p>
             </b-col>
           </b-form-row>
           <b-form-row v-for="(question,idx) in form[num].question" :key="idx">
@@ -26,17 +26,17 @@
                             <label for=""></label>
                             <b-form-input type="tel" placeholder=""></b-form-input>
               </b-form-group>-->
-          <b-form-group v-if="question.answer_format=='lga'">
-                  <label for>LGA</label>
-                  <b-form-select   v-model="question.answer">
-                    <b-form-select-option value>Select Lga</b-form-select-option>
-                    <b-form-select-option
-                      v-for="(item,idx) in lgas"
-                      :key="idx"
-                      :value="item.name"
-                    >{{item.name}}</b-form-select-option>
-                  </b-form-select>
-                </b-form-group>
+              <b-form-group v-if="question.answer_format=='lga'">
+                <label for>LGA</label>
+                <b-form-select v-model="question.answer">
+                  <b-form-select-option value>Select Lga</b-form-select-option>
+                  <b-form-select-option
+                    v-for="(item,idx) in lgas"
+                    :key="idx"
+                    :value="item.name"
+                  >{{item.name}}</b-form-select-option>
+                </b-form-select>
+              </b-form-group>
               <b-form-group v-if="question.answer_format=='email'">
                 <label for>{{question.title}}</label>
                 <b-form-input
@@ -97,20 +97,18 @@
                 <div v-for="(item,i) in question.answers" :key="i">
                   <b-form-input v-model="item.answer"></b-form-input>
                 </div>
-
-               
               </b-form-group>
             </b-col>
-          </b-form-row>
-          <div v-if="form[num].tools.length">
-            <b-form-row v-if="form[num].tools.includes('table')">
+            <b-col>
+               <div v-if="question.tools.length">
+            <b-form-row v-if="question.tools.includes('table')">
               <b-col cols="12">
-                <b-table :fields="form[num].fields" :items="form[num].items"></b-table>
+                <b-table :fields="question.fields" :items="question.items"></b-table>
               </b-col>
             </b-form-row>
 
             <b-form-row
-              v-if="form[num].tools.includes('docs') || form[num].tools.includes('media')"
+              v-if="question.tools.includes('docs') || question.tools.includes('media')"
             >
               <b-col cols="12">
                
@@ -118,33 +116,30 @@
                   <b-col
                     cols="3"
                     class="border p-2"
-                    v-for="(doc,idx) in form[num].documents"
+                    v-for="(doc,idx) in question.documents"
                     :key="idx"
                   >
                     <div>
                       <b-form-input v-model="doc.name" type="text" placeholder="File name"></b-form-input>
-                      <Upload :index="num" :id="doc.name" @getUploadDetails="getUploadDetails" />
+                      <Upload />
 
-                      <div
-                        class="form-control"
-                        v-if="doc.name !== '' ||doc.name !== null"
-                      >File Name: {{doc.name}}</div>
+                     
                     </div>
                   </b-col>
                 </b-form-row>
               </b-col>
             </b-form-row>
           </div>
+            </b-col>
+          </b-form-row>
         </section>
-      
-      <b-row class="justify-content-between w-100 my-3" >
-        <b-button @click="prev">Previous</b-button>
-        <b-button v-if="num <form.length +1" @click="next">Next</b-button>
-        <b-button v-if="num > form.length" type="submit">Continue to payment</b-button>
-      </b-row>
-    
-      </b-form>
 
+        <b-row class="justify-content-between w-100 my-3">
+          <b-button @click="prev">Previous</b-button>
+          <b-button v-if="num <form.length +1" @click="next">Next</b-button>
+         
+        </b-row>
+      </b-form>
     </b-container>
   </div>
 </template>
@@ -153,10 +148,10 @@
 import Upload from "../../upload";
 
 export default {
-  props:['form','options'],
+  props: ["form", "options"],
   data() {
     return {
-      lgas:[],
+      lgas: [],
       num: 0,
       show: false,
     };
@@ -164,18 +159,18 @@ export default {
   components: {
     Upload,
   },
- mounted() {
-   this.getLga()
- },
+  mounted() {
+    this.getLga();
+  },
   methods: {
-     getLga() {
+    getLga() {
       axios.get("/api/show-lgas").then((res) => {
         if (res.status == 200) {
           this.lgas = res.data;
         }
       });
     },
-     handleShow() {
+    handleShow() {
       this.show = !this.show;
     },
     next() {
@@ -186,7 +181,6 @@ export default {
         this.num--;
       }
     },
-  
   },
 };
 </script>

@@ -2,6 +2,9 @@
   <div >
      
     <b-container>
+       <b-col cols="12">
+    <div class="text-right" ><router-link to="/admin/forms"><b-button variant="outline-darkgreen">Back</b-button></router-link></div>
+        </b-col >
          <h5 class="mb-4">Applications</h5>
       <b-table :items="items" :fields="fields" bordered>
         <template v-slot:cell(sn)="data">
@@ -38,7 +41,7 @@ import Review from './template'
 export default {
   data() {
     return {
-      fields: ["sn","title", "group", "phase", "name", "price", "status", "action"],
+      fields: ["sn","full_name",'phone', "group", "phase", "name", "price", "status", "action"],
       items: [],
       id:null
     };

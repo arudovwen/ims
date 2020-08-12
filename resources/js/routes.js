@@ -229,15 +229,15 @@ let FormList = () =>
     );
     let AppFormOptions = () =>
     import(
-        /* webpackChunkName: "forms" */ "./components//admin/Applications/options.vue"
+        /* webpackChunkName: "forms" */ "./components/admin/Applications/options.vue"
     );
     let AppFormTemplate = () =>
     import(
-        /* webpackChunkName: "forms" */ "./components//admin/Applications/template.vue"
+        /* webpackChunkName: "forms" */ "./components/admin/Applications/template.vue"
     );
     let AppList = () =>
     import(
-        /* webpackChunkName: "forms" */ "./components//admin/Applications/applist.vue"
+        /* webpackChunkName: "forms" */ "./components/admin/Applications/applist.vue"
     );
 
 export const routes = [
@@ -365,7 +365,7 @@ export const routes = [
                 }
             },
             {
-                path: "/admin/form-template",
+                path: "/admin/form/template/:id",
                 component: AppFormTemplate,
                 name: "AppFormTemplate",
                 meta: {

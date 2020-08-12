@@ -35,21 +35,39 @@ class ApplicationsController extends Controller
      */
     public function store(Request $request)
     {
-       
-        return Applications::create([
-            'ref'=>$request->ref,
-            'payment'=>$request->payment,
-            'payment_status'=>$request->payment_status,
-            'price'=>$request->price,
-            'group'=>$request->group,
-            'phase'=>$request->phase,
-            'name'=>$request->name,
-            'status'=>'pending',
-            'response' => json_encode($request->response),
-           
-        ]);
+       $check = Applications::where('full_name',$request->full_name)->where('email',$request->email)->where('name',$request->name)->first();
+        if (is_null($check)) {
+            return Applications::create([
+                'ref'=>$request->ref,
+                'payment'=>$request->payment,
+                'payment_status'=>$request->payment_status,
+                'price'=>$request->price,
+                'group'=>$request->group,
+                'phase'=>$request->phase,
+                'name'=>$request->name,
+                'email'=>$request->email,
+                'full_name'=>$request->full_name,
+                'phone'=>$request->phone,
+                'status'=>'pending',
+                'response' => json_encode($request->response),
+               
+            ]);
+        }
     }
+    public function checkPhase(Request $request){
+      $check = Applications::where('full_name',$request->full_name)->where('email',$request->email)->where('group',$request->group)->where('phase','<', $request->phase)->where('status','pending')->first();
 
+        if (is_null($check)) {
+           return response()->json([
+               'status'=> 'approved'
+           ]);;
+        }else{
+            return response()->json([
+                'status'=> 'pending'
+            ]);;
+         }
+
+    }
     /**
      * Display the specified resource.
      *
@@ -100,6 +118,6 @@ class ApplicationsController extends Controller
      */
     public function destroy(Applications $applications)
     {
-        //
+        
     }
 }

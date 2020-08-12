@@ -8,5 +8,5 @@ class Applications extends Model
 {
  
  
-    protected $fillable = ['group','response','status','phase','ref','payment','payment_status','price','name'];
+    protected $fillable = ['group','response','status','phase','ref','payment','payment_status','price','name','full_name','email','phone'];
 }

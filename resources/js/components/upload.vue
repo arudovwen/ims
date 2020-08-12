@@ -1,23 +1,18 @@
 <template>
-  <div>
+  <div class="my-2">
     <form @submit.prevent="processUpload" class="">
      
         <div >
-          <!-- <input
-            type="file"
-            class="form-control"
-            id="file-input"
-            aria-describedby="helpId"
-            placeholder
-            @change="handleFileChange($event)"
-          /> -->
-            <b-form-file :id="label" class="mt-3" plain   @change="handleFileChange($event)"></b-form-file>
- 
-          <b-button
-            type="submit"
-            class="  my-3"
-            :disabled="filesSelectedLength < 1"
-          >Upload</b-button>
+          <div class="upload-btn-wrapper">
+          <div class="centered">
+            <button class="btn">
+              <i class="fa fa-upload"></i>
+              <span>Upload a File</span>
+            </button>
+            <b-form-file class="mt-3" plain @change="handleFileChange($event)"></b-form-file>
+          </div>
+        </div>
+       
           <div class="progress mt-2" v-if="start">
             <div
               class="progress-bar progress-bar-striped "
@@ -63,7 +58,7 @@
 <script>
 export default {
   name: "CloudinaryUpload",
-  props: ["index",'label'],
+  props: ["index",'label','id'],
   data() {
     return {
       filesSelectedLength: 0,
@@ -97,6 +92,7 @@ export default {
         this.uploadedFile = event.target.result;
       };
       reader.readAsDataURL(this.file);
+      this.processUpload()
     },
     processUpload() {
       let that = this;
@@ -132,7 +128,7 @@ export default {
           }, 1000);
           var response = JSON.parse(xhr.response);
           this.uploadedFileUrl = response.secure_url; // https address of uploaded file
-          this.$emit("getUploadDetails",this.$props.index, response);
+          this.$emit("getUploadDetails",this.$props.index,this.$props.id, response);
         } else {
           this.start = false;
           this.progress = 0
@@ -144,3 +140,45 @@ export default {
   }
 };
 </script>
+<style scoped>
+.upload-btn-wrapper {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+.upload-btn-wrapper .btn {
+  border: 1px solid gray;
+  color: gray;
+  background-color: white;
+  padding: 8px 20px;
+  border-radius: 8px;
+  font-size: 17px;
+  font-weight: bold;
+  border-style: dashed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.upload-btn-wrapper input[type="file"] {
+  font-size: 18px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+.centered{
+  display: flex;
+ justify-content: center;
+}
+.upload-btn{
+  display: flex;
+  justify-content: flex-end;
+}
+.btn-upload{
+  background-color: #0A4065;
+}
+</style>

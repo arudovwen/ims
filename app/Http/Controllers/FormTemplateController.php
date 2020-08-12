@@ -84,8 +84,11 @@ class FormTemplateController extends Controller
      * @param  \App\FormTemplate  $formTemplate
      * @return \Illuminate\Http\Response
      */
-    public function destroy(FormTemplate $formTemplate)
+    public function destroy( $id)
     {
-        //
+        FormTemplate::find($id)->delete();
+        return response()->json([
+            'status'=>'deleted'
+        ]);
     }
 }

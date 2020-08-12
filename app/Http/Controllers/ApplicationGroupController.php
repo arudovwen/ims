@@ -84,8 +84,11 @@ class ApplicationGroupController extends Controller
      * @param  \App\ApplicationGroup  $applicationGroup
      * @return \Illuminate\Http\Response
      */
-    public function destroy(ApplicationGroup $applicationGroup)
+    public function destroy($id)
     {
-        //
+        ApplicationGroup::find($id)->delete();
+        return response()->json([
+            'status'=>'deleted'
+        ]);
     }
 }

@@ -125,6 +125,7 @@ Route::resource('revalidation', 'RevalidatedSchoolController');
 
 Route::resource('form-template', 'FormTemplateController');
 Route::resource('application', 'ApplicationsController');
+Route::post('check-phase', 'ApplicationsController@checkPhase');
 Route::resource('app-group', 'ApplicationGroupController');
 
 
