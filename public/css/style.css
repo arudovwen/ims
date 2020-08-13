@@ -114,6 +114,7 @@ ol,
 dl {
    
     font-size: 1em;
+    margin-left: 1rem;
     /* Equivalent to 12pt */
 }
 

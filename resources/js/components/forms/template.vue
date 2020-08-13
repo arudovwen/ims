@@ -52,6 +52,8 @@
                 <b-col cols="12">
                   <b-form-group v-if="question.answer_format=='text box'">
                     <label for>{{question.title}}</label>
+                     <small class="form-text" v-if="question.guide">{{question.guide}}</small>
+                  
                     <b-form-input
                       type="text"
                       v-model="question.answer"
@@ -73,14 +75,16 @@
 
                   <b-form-group v-if="question.answer_format=='email'">
                     <label for>{{question.title}}</label>
+                     <small class="form-text" v-if="question.guide">{{question.guide}}</small>
                     <b-form-input
                       type="email"
                       v-model="question.answer"
-                      :placeholder="question.placeholder"
+                      placeholder="example@email.com"
                     ></b-form-input>
                   </b-form-group>
                   <b-form-group v-if="question.answer_format=='number'">
                     <label for>{{question.title}}</label>
+                     <small class="form-text" v-if="question.guide">{{question.guide}}</small>
                     <b-form-input
                       type="number"
                       v-model="question.answer"
@@ -91,11 +95,13 @@
 
                   <b-form-group v-if="question.answer_format=='long text'">
                     <label for>{{question.title}}</label>
+                     <small class="form-text" v-if="question.guide">{{question.guide}}</small>
                     <b-form-textarea :placeholder="question.placeholder" v-model="question.answer"></b-form-textarea>
                   </b-form-group>
 
                   <b-form-group v-if="question.answer_format=='multi choice'">
                     <label for>{{question.title}}</label>
+                     <small class="form-text" v-if="question.guide">{{question.guide}}</small>
 
                     <b-form-checkbox
                       v-model="question.answers"
@@ -107,6 +113,7 @@
 
                   <b-form-group v-if="question.answer_format=='single choice'">
                     <label for>{{question.title}}</label>
+                     <small class="form-text" v-if="question.guide">{{question.guide}}</small>
                     <b-form-radio
                       v-model="question.answer"
                       v-for="(opt,id) in question.options"
@@ -117,18 +124,21 @@
 
                   <b-form-group v-if="question.answer_format=='date'">
                     <label for>{{question.title}}</label>
+                     <small class="form-text" v-if="question.guide">{{question.guide}}</small>
                     <br />
-                    <b-calendar v-model="question.answer"></b-calendar>
+                    <b-form-datepicker v-model="question.answer"></b-form-datepicker>
                   </b-form-group>
 
                   <b-form-group v-if="question.answer_format=='time'">
                     <label for>{{question.title}}</label>
+                     <small class="form-text" v-if="question.guide">{{question.guide}}</small>
                     <br />
-                    <b-time v-model="question.answer"></b-time>
+                    <b-form-timepicker v-model="question.answer"></b-form-timepicker>
                   </b-form-group>
 
                   <b-form-group v-if="question.answer_format=='multi text'">
-                    <label class="mb-3" for>{{question.title}}</label>
+                    <label for>{{question.title}}</label>
+                      <small class="form-text mb-2" v-if="question.guide">{{question.guide}}</small>
                     <div v-for="(item,i) in question.answers" :key="i">
                       <b-form-input v-model="item.answer"></b-form-input>
                     </div>
@@ -164,7 +174,7 @@
                       v-if="question.tools.includes('docs') || question.tools.includes('media')"
                     >
                       <b-col cols="12">
-                        <label class="mb-3" for>{{question.title}}</label>
+                        <!-- <label class="mb-3" for>{{question.title}}</label> -->
                         <small v-html="question.tools_description"></small>
                         <div class="my-2">
                           <b-button @click="addDoc(idx)" class="mr-3">
@@ -450,5 +460,10 @@ label {
 }
 li {
   margin-left: 30px;
+}
+.form-text{
+  margin-bottom: 0.25rem;
+  margin-top: 0;
+  color:blue;
 }
 </style>
