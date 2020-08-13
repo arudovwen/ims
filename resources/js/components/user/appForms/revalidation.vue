@@ -6,7 +6,28 @@
         <b-col>
           <b-form @submit.prevent="submit">
             <h3 class="text-center mb-5">Revalidation Form</h3>
+
             <b-form-row class="justify-content-center" v-if="one">
+         <b-row class="py-4 w-100" >
+          <b-col cols="4">
+            <b-form-group>
+              <label for>Full name</label>
+              <b-form-input v-model="data.full_name" type="text" placeholder="Enter name"></b-form-input>
+            </b-form-group>
+          </b-col>
+          <b-col cols="5">
+            <b-form-group>
+              <label for>Email</label>
+              <b-form-input v-model="data.email" type="email" placeholder="Enter email address"></b-form-input>
+            </b-form-group>
+          </b-col>
+          <b-col cols="3">
+            <b-form-group>
+              <label for>Phone number</label>
+              <b-form-input v-model="data.phone" type="number" max="11" placeholder="Enter phone number"></b-form-input>
+            </b-form-group>
+          </b-col>
+        </b-row>
               <!-- section one  -->
               <b-form-group class="text-center">
                 <p>The Enumeration, Revalidation/Recertification of Schools exercise is part of the ministry’s effort to digitize the education sector in the state.</p>
@@ -18,15 +39,15 @@
                 <br />
                 <p>
                   Nursery Schools—
-                  <strong>N10,000</strong>
+                  <strong> {{10000 | currency}}</strong>
                 </p>
                 <p>
                   Primary School —
-                  <strong>N10,000</strong>
+                  <strong>{{10000 | currency}}</strong>
                 </p>
                 <p>
                   Secondary Schools —
-                  <strong>N20,000</strong>
+                  <strong>{{20000 | currency}}</strong>
                 </p>
                 <br />
                 <b-button @click="handleSwitch('two')">Begin Application</b-button>
@@ -51,7 +72,7 @@
                 </b-form-group>
 
                 <b-form-group>
-                  <label for>LGA</label>
+                  <label for>Lga</label>
                   <b-form-select v-model="data.lga">
                     <b-form-select-option value>Select Lga</b-form-select-option>
                     <b-form-select-option
@@ -166,7 +187,7 @@
                     <b-form-group>
                       <label for>Date/Year of establishment</label>
                       <br />
-                      <b-calendar v-model="data.status.establishment"></b-calendar>
+                      <b-form-datepicker v-model="data.status.establishment"></b-form-datepicker>
                     </b-form-group>
                   </li>
                   <li>
@@ -300,8 +321,8 @@
                     <b-form-group>
                       <label for>Annual Renewal Fees Payment, (State the years paid)</label>
                       <div class="mb-2">
-                        <b-button @click="addRenew" class="mr-3">Add</b-button>
-                        <b-button @click="removeRenew" v-if="data.status.renewal.length > 0">Remove</b-button>
+                        <b-button @click="addRenew" class="mr-3"><i class="fa fa-plus-circle" aria-hidden="true"></i></b-button>
+                        <b-button @click="removeRenew" v-if="data.status.renewal.length > 1"><i class="fa fa-times-circle" aria-hidden="true"></i></b-button>
                       </div>
                       <b-form-row v-for="(da,index) in data.status.renewal" :key="index">
                         <b-col cols="2">
@@ -319,6 +340,7 @@
                             class="w-25"
                             v-model="da.annual_renewal_ammount"
                             type="number"
+                            placeholder="Enter amount"
                           ></b-form-input>
                         </b-col>
                       </b-form-row>
@@ -339,8 +361,8 @@
                 <p>Please attach scanned copies of payment receipt and the supporting documents (jpg, pdf, png)</p>
 
                 <div class="mb-2">
-                  <b-button @click="addDoc" class="mr-3">Add</b-button>
-                  <b-button @click="removeDoc" v-if="data.documents.length > 0">Remove</b-button>
+                  <b-button @click="addDoc" class="mr-3"><i class="fa fa-plus-circle" aria-hidden="true"></i></b-button>
+                  <b-button @click="removeDoc" v-if="data.documents.length > 1"><i class="fa fa-times-circle" aria-hidden="true"></i></b-button>
                 </div>
                 <b-form-row>
                   <b-col cols="3" class="border p-2" v-for="(doc,idx) in data.documents" :key="idx">
@@ -370,8 +392,8 @@
                 <h5>STAFF INFORMATION</h5>
 
                 <b-form-row class="mb-3">
-                  <b-button @click="removeTab" v-if="data.staff_info.length > 1" class="mr-3">Remove</b-button>
-                  <b-button @click="addTab" class="mr-5">Add</b-button>
+                  <b-button @click="removeTab" v-if="data.staff_info.length > 1" class="mr-3"><i class="fa fa-times-circle" aria-hidden="true"></i></b-button>
+                  <b-button @click="addTab" class="mr-5"><i class="fa fa-plus-circle" aria-hidden="true"></i></b-button>
                 </b-form-row>
                 <b-table :fields="fields" :items="data.staff_info">
                   <template v-slot:cell(sn)="data">{{data.index+1}}</template>
@@ -388,7 +410,7 @@
                     <b-form-input type="text" v-model="data.item.subjects_teaching" placeholder="Subjects.."></b-form-input>
                   </template>
                   <template v-slot:cell(phone_number)="data">
-                    <b-form-input type="tel" v-model="data.item.phone_number"></b-form-input>
+                    <b-form-input type="tel" v-model="data.item.phone_number" placeholder="Phone number"></b-form-input>
                   </template>
                 </b-table>
               </b-col>
@@ -404,41 +426,44 @@
               <b-col cols="12">
                 <h5>SIGNATURE</h5>
                 <p>
-                  <strong>I certify that the information submitted in this application is true and correct to the best of my knowledge.</strong>
+               
+                     <b-form-checkbox  v-model="data.signature_1" required>I certify that the information submitted in this application is true and correct to the best of my knowledge.</b-form-checkbox>
                 </p>
 
-                <p>I further understand that any false statements may result in denial or revocation of the approval.</p>
+                <p> <b-form-checkbox  v-model="data.signature_2" required>I further understand that any false statements may result in denial or revocation of the approval.</b-form-checkbox></p>
+              
 
-                <p>Full Name :</p>
-                <p>Date :</p>
+                <p>Full Name : {{data.full_name}}</p>
+                <p>Date : {{new Date() | moment("ddd, MMM D YYYY")}}</p>
               </b-col>
 
-              <b-col cols="12">
-                <h5>REVIEW</h5>
-                <p>Before you proceed, kindly note the applicable fees:</p>
-                <p>
-                  Nursery Schools—
-                  <strong>N10,000</strong>
-                </p>
-                <p>
-                  Primary School —
-                  <strong>N10,000</strong>
-                </p>
-                <p>
-                  Secondary Schools —
-                  <strong>N20,000</strong>
-                </p>
-                <br />
-              </b-col>
+             
               <b-form-row class="justify-content-between w-100">
                 <b-button @click="handleSwitch('six')">Previous</b-button>
-                <b-button @click="handleSwitch('eight')">Next</b-button>
+                <b-button @click="handleSwitch('eight')" :disabled="!data.signature_2" >Next</b-button>
               </b-form-row>
             </b-form-row>
             <!-- section 88 -->
             <b-form-row v-if="eight">
               <b-col cols="12">
                 <h5>REVIEW APPLICATION</h5>
+                <b-col cols="12">
+              
+                <p>Before you proceed, kindly note the applicable fees:</p>
+                <p>
+                  Nursery Schools—
+                  <strong>{{10000 | currency}}</strong>
+                </p>
+                <p>
+                  Primary School —
+                  <strong>{{10000 | currency}}</strong>
+                </p>
+                <p>
+                  Secondary Schools —
+                  <strong>{{20000 | currency}}</strong>
+                </p>
+             
+              </b-col>
                 <p>Note that total to be paid will be calculated based on categories selected</p>
                 <b-form-row class="justify-content-between w-100">
                   <b-button @click="handleSwitch('seven')">Previous</b-button>
@@ -457,12 +482,12 @@
                   <Payment
                     v-if="unpaid"
                     :amount="sortAmount()"
-                    :email="data.contact_person.email"
+                    :email="data.email"
                     @getResponse="getResponse"
                   />
                 </div>
                 <div>
-                  <b-button variant="outline-secondary" @click="handleSwitch('eight')">Cancel</b-button>
+                 <router-link to="/forms">  <b-button variant="outline-darkgreen" >Cancel</b-button></router-link>
                 </div>
               </b-col>
             </b-form-row>
@@ -491,7 +516,11 @@ export default {
         "phone_number",
         "email",
       ],
+     
       data: {
+        full_name:'',
+        email:'',
+        phone:'',
         school: "",
         full_address: "",
         lga: "",
@@ -524,6 +553,8 @@ export default {
             file: "",
           },
         ],
+         signature_1:false,
+         signature_2:false,
         staff_info: [
           {
             name: "",
@@ -557,6 +588,7 @@ export default {
   mounted() {
     this.getLga();
     this.getYears();
+    
   },
   methods: {
     addRenew() {
@@ -579,15 +611,15 @@ export default {
     },
     getResponse(res) {
       if (res.status == "success") {
+       
         let data = {
           ref: res.trxref,
-          price: this.sortAmount(),
           status: res.status,
-          name: this.data.school,
-          type: "revalidation",
+          
+
         };
         this.unpaid = false;
-        axios.put(`/api/revalidation/${this.id}`, data).then((res) => {});
+        axios.put(`/api/application/${this.id}`, data).then((res) => {});
       }
     },
     addTab() {
@@ -618,9 +650,13 @@ export default {
           break;
 
         case "two":
-          this.two = "true";
+         if (this.data.full_name !=='' && this.data.email !=='' && this.phone !== '') {
+            this.two = "true";
           this.one = this.three = this.four = this.five = this.six = this.seven = this.eight = this.nine = false;
           window.scrollTo(0, 0);
+         }else{
+           this.$toasted.info('Fill all fields')
+         }
           break;
 
         case "three":
@@ -698,16 +734,31 @@ export default {
       return amount;
     },
     submit() {
-      let data = {
-        school: this.data.school,
-        category: 'Revalidation',
-        detail: this.data,
-      };
-      axios.post("/api/revalidation", data).then((res) => {
+     
+       let data = {
+          ref: "pending",
+          payment: 0,
+          price: this.sortAmount(),
+          response: this.data,
+          payment_status: "pending",
+          phase:'1',
+          name: this.data.school,
+          group: 'Revalidation',
+          full_name: this.data.full_name,
+          email: this.data.email,
+          phone: this.data.phone,
+        };
+      axios.post("/api/application", data).then((res) => {
         if (res.status == 201) {
           this.id = res.data.id;
           this.handleSwitch("nine");
         }
+        if (res.status == 200) {
+          this.id = res.data.id;
+          this.handleSwitch("nine");
+        }
+      }).catch(err=>{
+        this.$toasted.error('Something went wrong, verify all fields')
       });
     },
     getYears() {

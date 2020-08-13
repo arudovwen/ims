@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 
 class ApplicationGroupController extends Controller
 {
+    
     /**
      * Display a listing of the resource.
      *
@@ -35,7 +36,6 @@ class ApplicationGroupController extends Controller
      */
     public function store(Request $request)
     {
-      
         return ApplicationGroup::create([
             'title'=>$request->title,
             'purpose'=>$request->purpose,

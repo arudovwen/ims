@@ -223,20 +223,21 @@
               <b-col cols="12">
                 <h5>SIGNATURE</h5>
                 <p>
-                  <strong>I certify that the information submitted in this application is true and correct to the best of my knowledge.</strong>
+               
+                     <b-form-checkbox  v-model="signature_1" required>I certify that the information submitted in this application is true and correct to the best of my knowledge.</b-form-checkbox>
                 </p>
 
-                <p>I further understand that any false statements may result in denial or revocation of the approval.</p>
-
-                <p>Full Name :</p>
-                <p>Date :</p>
+                <p> <b-form-checkbox  v-model="signature_2" required>I further understand that any false statements may result in denial or revocation of the approval.</b-form-checkbox></p>
+              
+                <p>Full Name : {{full_name}}</p>
+                  <p>Date : {{new Date() | moment("ddd, MMM D YYYY")}}</p>
               </b-col>
             </b-row>
             <hr />
             <b-row v-if="options.payment">
               <b-col cols="12">
                 <p>
-                  <strong>Price: &#8358;{{options.price}}.00</strong>
+                 <strong>Price: {{Number(options.price) | currency}}</strong>
                 </p>
               </b-col>
             </b-row>
@@ -247,10 +248,10 @@
           <b-button v-if="num < template.length" @click="next">Next</b-button>
 
           <div v-if="options.payment && num >= template.length">
-            <Payment :amount="Number(options.price)" :email="email" @getResponse="getResponse" />
+            <Payment :amount="Number(options.price)" :email="email" @getResponse="getResponse" :disabled="!signature_2" />
           </div>
           <div v-if="!options.payment && num >= template.length">
-            <b-button type="submit">Submit</b-button>
+            <b-button type="submit" :disabled="!signature_2">Submit</b-button>
           </div>
         </b-row>
       </b-form>
@@ -282,6 +283,8 @@ import Payment from "../paystack";
 export default {
   data() {
     return {
+      signature_1:false,
+      signature_2:false,
       email: "",
       phone: null,
       full_name: "",
@@ -327,7 +330,9 @@ export default {
           if (res.status == 201) {
             this.$bvModal.show("modal-1");
           }
-        });
+        }).catch(err=>{
+        this.$toasted.error('Something went wrong, verify all fields')
+      });;
       }
     },
 

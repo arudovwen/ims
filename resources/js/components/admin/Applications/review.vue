@@ -131,7 +131,7 @@
           </b-form-row>
         </section>
 
-        <b-row class="justify-content-between w-100 my-3">
+        <b-row class="justify-content-between my-3">
           <b-button @click="prev">Previous</b-button>
           <b-button v-if="num <form.length +1" @click="next">Next</b-button>
         </b-row>

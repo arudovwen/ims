@@ -226,7 +226,7 @@
             <b-row v-if="options.payment">
               <b-col cols="12">
                 <p>
-                  <strong>Price: &#8358; {{options.price}}.00</strong>
+                  <strong>Price: {{options.price | currency}}</strong>
                 </p>
               </b-col>
             </b-row>

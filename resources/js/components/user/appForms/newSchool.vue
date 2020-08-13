@@ -6,6 +6,26 @@
           <b-form @submit.prevent="submit">
             <h3 class="text-center mb-5">REGISTRATION OF NEW SCHOOLS IN IMO STATE</h3>
             <b-form-row class="justify-content-center" v-if="one">
+              <b-row class="py-4 w-100" >
+          <b-col cols="4">
+            <b-form-group>
+              <label for>Full name</label>
+              <b-form-input v-model="data.full_name" type="text" placeholder="Enter name"></b-form-input>
+            </b-form-group>
+          </b-col>
+          <b-col cols="5">
+            <b-form-group>
+              <label for>Email</label>
+              <b-form-input v-model="data.email" type="email" placeholder="Enter email address"></b-form-input>
+            </b-form-group>
+          </b-col>
+          <b-col cols="3">
+            <b-form-group>
+              <label for>Phone number</label>
+              <b-form-input v-model="data.phone" type="number" max="11" placeholder="Enter phone number"></b-form-input>
+            </b-form-group>
+          </b-col>
+        </b-row>
               <!-- section one  -->
               <b-form-group class="text-center">
                 <p>Thank you for working with us to make education in Imo State better, this is the first part of a multi-phase application process.</p>
@@ -35,7 +55,7 @@
                 </b-form-group>
 
                 <b-form-group>
-                  <label for>LGA</label>
+                  <label for>Lga</label>
                   <b-form-select v-model="data.lga">
                     <b-form-select-option value>Select Lga</b-form-select-option>
                     <b-form-select-option
@@ -157,8 +177,8 @@
                 </ul>
 
                 <div class="my-2">
-                  <b-button @click="addDoc" class="mr-3">Add</b-button>
-                  <b-button @click="removeDoc" v-if="data.documents.length > 0">Remove</b-button>
+                  <b-button @click="addDoc" class="mr-3"><i class="fa fa-plus-circle" aria-hidden="true"></i></b-button>
+                  <b-button @click="removeDoc" v-if="data.documents.length > 1"><i class="fa fa-times-circle" aria-hidden="true"></i></b-button>
                 </div>
                 <b-form-row>
                   <b-col cols="3" class="border p-2" v-for="(doc,idx) in data.documents" :key="idx">
@@ -182,45 +202,51 @@
             <!-- section 7 -->
 
             <b-form-row v-if="five">
-              <b-col cols="12">
+               <b-col cols="12">
                 <h5>SIGNATURE</h5>
                 <p>
-                  <strong>I certify that the information submitted in this application is true and correct to the best of my knowledge.</strong>
+               
+                     <b-form-checkbox  v-model="data.signature_1" required>I certify that the information submitted in this application is true and correct to the best of my knowledge.</b-form-checkbox>
                 </p>
 
-                <p>I further understand that any false statements may result in denial or revocation of the approval.</p>
-                
-                <p>Full Name :</p>
-                <p>Date :</p>
+                <p> <b-form-checkbox  v-model="data.signature_2" required>I further understand that any false statements may result in denial or revocation of the approval.</b-form-checkbox></p>
+              
+
+                <p>Full Name : {{data.full_name}}</p>
+                <p>Date : {{new Date() | moment("ddd, MMM D YYYY")}}</p>
               </b-col>
 
-              <b-col cols="12">
-                <h5>REVIEW</h5>
-                <p>Before you proceed, kindly note the applicable fees:</p>
-                <p>
-                  Nursery Schools—
-                  <strong>N{{nursery}}</strong>
-                </p>
-                <p>
-                  Primary School —
-                  <strong>N{{primary}}</strong>
-                </p>
-                <p>
-                  Secondary Schools —
-                  <strong>N{{secondary}}</strong>
-                </p>
-                <br />
-              </b-col>
+             
               <b-form-row class="justify-content-between w-100 my-3">
                 <b-button @click="handleSwitch('four')">Previous</b-button>
-                <b-button @click="handleSwitch('six')">Next</b-button>
+                <b-button @click="handleSwitch('six')" :disabled="!data.signature_2" >Next</b-button>
               </b-form-row>
             </b-form-row>
             <!-- section 6 -->
             <b-form-row v-if="six">
               <b-col cols="12">
+                <b-col cols="12">
                 <h5>REVIEW APPLICATION</h5>
+                <b-col cols="12">
+              
+                <p>Before you proceed, kindly note the applicable fees:</p>
+                <p>
+                  Nursery Schools—
+                  <strong>{{nursery | currency}}</strong>
+                </p>
+                <p>
+                  Primary School —
+                  <strong>{{primary | currency}}</strong>
+                </p>
+                <p>
+                  Secondary Schools —
+                  <strong>{{secondary | currency}}</strong>
+                </p>
+             
+              </b-col>
                 <p>Note that total to be paid will be calculated based on categories selected</p>
+               
+              </b-col>
                 <b-form-row class="justify-content-between w-100 my-3">
                   <b-button @click="handleSwitch('five')">Previous</b-button>
                   <b-button type="submit">Continue to payment</b-button>
@@ -238,7 +264,7 @@
                   <Payment
                     v-if="unpaid"
                     :amount="sortAmount()"
-                    :email="data.contact_person.email"
+                    :email="data.email"
                     @getResponse="getResponse"
                   />
                 </div>
@@ -332,7 +358,12 @@ export default {
         "email",
       ],
       data: {
+        full_name:'',
+        email:'',
+        phone:'',
         school: "",
+        signature_1:false,
+        signature_2:false,
         full_address: "",
         lga: "",
         category: [],
@@ -396,15 +427,15 @@ export default {
     },
     getResponse(res) {
       if (res.status == "success") {
+       
         let data = {
           ref: res.trxref,
-          price: this.sortAmount(),
           status: res.status,
-          name: this.data.school,
-          type: "School registration",
+          
+
         };
         this.unpaid = false;
-        axios.put(`/api/revalidation/${this.id}`, data).then((res) => {});
+        axios.put(`/api/application/${this.id}`, data).then((res) => {});
       }
     },
     addTab() {
@@ -435,9 +466,13 @@ export default {
           break;
 
         case "two":
-          this.two = "true";
-          this.one = this.three = this.four = this.five = this.six =  this.seven = false;
+          if (this.data.full_name !=='' && this.data.email !=='' && this.phone !== '') {
+            this.two = "true";
+          this.one = this.three = this.four = this.five = this.six = this.seven = false;
           window.scrollTo(0, 0);
+         }else{
+           this.$toasted.info('Fill all fields')
+         }
           break;
 
         case "three":
@@ -507,17 +542,31 @@ export default {
       return amount;
     },
     submit() {
-      let data = {
-        school: this.data.school,
-        category: "School Registration",
-        detail: this.data,
-      };
-      axios.post("/api/revalidation", data).then((res) => {
+       let data = {
+          ref: "pending",
+          payment: 0,
+          price: this.sortAmount(),
+          response: this.data,
+          payment_status: "pending",
+          phase:'1',
+          name: this.data.school,
+          group: 'Registration of new school',
+          full_name: this.data.full_name,
+          email: this.data.email,
+          phone: this.data.phone,
+        };
+      axios.post("/api/application", data).then((res) => {
         if (res.status == 201) {
           this.id = res.data.id;
           this.handleSwitch("seven");
         }
-      });
+         if (res.status == 200) {
+          this.id = res.data.id;
+          this.handleSwitch("seven");
+        }
+      }).catch(err=>{
+        this.$toasted.error('Something went wrong, verify all fields')
+      });;
     },
     getYears() {
       var today = new Date().getFullYear();

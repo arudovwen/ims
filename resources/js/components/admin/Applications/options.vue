@@ -57,7 +57,7 @@
         </b-form-group>
 
         <b-form-group>
-          <h5>Form Phase</h5>
+          <h5>Form Stages</h5>
           <b-form-row>
             <b-form-input
               type="number"
@@ -123,7 +123,7 @@
             </b-form-group>
           </b-form-row>
           <b-form-row v-if="options.payment">
-            <b-form-input placeholder="Price" v-model="options.price"></b-form-input>
+            <b-form-input placeholder="Price" type="number" v-model="options.price"></b-form-input>
           </b-form-row>
         </b-form-group>
 

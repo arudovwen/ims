@@ -556,7 +556,7 @@ export default {
   position: relative;
 }
 section {
-  background: #f7f8fa;
+  background: #fff;
 }
 .top-box {
   margin: 0 auto;

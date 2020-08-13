@@ -35,7 +35,7 @@ class ApplicationsController extends Controller
      */
     public function store(Request $request)
     {
-       $check = Applications::where('full_name',$request->full_name)->where('email',$request->email)->where('name',$request->name)->first();
+        $check = Applications::where('full_name', $request->full_name)->where('email', $request->email)->where('name', $request->name)->first();
         if (is_null($check)) {
             return Applications::create([
                 'ref'=>$request->ref,
@@ -52,21 +52,25 @@ class ApplicationsController extends Controller
                 'response' => json_encode($request->response),
                
             ]);
+        }else{
+            return $check;
         }
     }
-    public function checkPhase(Request $request){
-      $check = Applications::where('full_name',$request->full_name)->where('email',$request->email)->where('group',$request->group)->where('phase','<', $request->phase)->where('status','pending')->first();
+    public function checkPhase(Request $request)
+    {
+        $check = Applications::where('full_name', $request->full_name)->where('email', $request->email)->where('group', $request->group)->where('phase', '<', $request->phase)->where('status', 'pending')->first();
 
         if (is_null($check)) {
-           return response()->json([
+            return response()->json([
                'status'=> 'approved'
-           ]);;
-        }else{
+           ]);
+            ;
+        } else {
             return response()->json([
                 'status'=> 'pending'
-            ]);;
-         }
-
+            ]);
+            ;
+        }
     }
     /**
      * Display the specified resource.
@@ -74,9 +78,9 @@ class ApplicationsController extends Controller
      * @param  \App\Applications  $applications
      * @return \Illuminate\Http\Response
      */
-    public function show( $id)
+    public function show($id)
     {
-      return  Applications::find($id);
+        return  Applications::find($id);
     }
 
     /**
@@ -99,9 +103,10 @@ class ApplicationsController extends Controller
      */
     public function update(Request $request, $id)
     {
-      
         $app = Applications::find($id);
-        $app->status = $request->status;    
+        $app->ref = $request->ref;
+        $app->payment_status = $request->status;
+        $app->status = $request->status;
         $app->save();
      
         // if ($app->status == 'accepted') {
@@ -118,6 +123,5 @@ class ApplicationsController extends Controller
      */
     public function destroy(Applications $applications)
     {
-        
     }
 }

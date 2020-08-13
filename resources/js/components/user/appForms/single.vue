@@ -1,6 +1,11 @@
 <template>
   <div>
     <Navigation />
+     <b-row>
+      <router-link to="/forms">
+        <b-button variant="outline-darkgreen" class="m-2 mx-5">Back</b-button>
+      </router-link>
+    </b-row>
      <Revalidation  v-if="$route.params.name == 'revalidation'"/>
      <NewSchool  v-if="$route.params.name == 'school-registration'"/>
     <Footer />

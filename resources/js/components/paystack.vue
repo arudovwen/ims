@@ -9,7 +9,7 @@
         :embed="false"
     >
        <button class="button-green"><i class="fas fa-money-bill-alt"></i>
-       Make Payment</button>
+       Make Payment  {{amount | currency}}</button>
     </paystack>
 </template>
  

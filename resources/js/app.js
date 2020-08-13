@@ -12,13 +12,12 @@ import { routes } from "./routes";
 import { BootstrapVue, IconsPlugin } from "bootstrap-vue";
 import VueAwesomeSwiper from "vue-awesome-swiper";
 
-
 import "swiper/css/swiper.css";
 
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap-vue/dist/bootstrap-vue.css";
 
-import Toasted from 'vue-toasted';
+import Toasted from "vue-toasted";
 import VueSocial from "@growthbunker/vuesocial";
 import MarqueeText from "vue-marquee-text-component";
 Vue.component("marquee-text", MarqueeText);
@@ -30,6 +29,25 @@ Vue.use(BootstrapVue);
 Vue.use(IconsPlugin);
 Vue.use(VueAwesomeSwiper /* { default options with global component } */);
 Vue.use(require("vue-moment"));
+
+Vue.prototype.$currencyFormat = num => {
+    if (num !== null) {
+        return (
+            "NGN " + num.toFixed(2).replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,")
+        );
+    } else {
+        return "NGN 0.00";
+    }
+};
+Vue.filter('currency', function (num) {
+  if (num !== null) {
+    return (
+      "\u20A6" + num.toFixed(2).replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,")
+    );
+} else {
+    return "NGN 0.00";
+}
+})
 
 Vue.use(Toasted, {
     duration: 2500,
@@ -52,22 +70,21 @@ const router = new VueRouter({
 });
 router.beforeEach((to, from, next) => {
     if (to.matched.some(record => record.meta.requiresAuth)) {
-      // this route requires auth, check if logged in
-      // if not, redirect to login page.
-      var admin = localStorage.getItem("adminUser");
-      if (admin == null) {
-        next({
-          path: '/admin/auth/login',
-          query: { redirect: to.fullPath }
-         
-        })
-      } else {
-        next()
-      }
+        // this route requires auth, check if logged in
+        // if not, redirect to login page.
+        var admin = localStorage.getItem("adminUser");
+        if (admin == null) {
+            next({
+                path: "/admin/auth/login",
+                query: { redirect: to.fullPath }
+            });
+        } else {
+            next();
+        }
     } else {
-      next() // make sure to always call next()!
+        next(); // make sure to always call next()!
     }
-  })
+});
 
 const app = new Vue({
     el: "#app",
