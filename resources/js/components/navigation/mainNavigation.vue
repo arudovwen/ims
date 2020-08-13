@@ -114,7 +114,7 @@
       </li>
         <li>
         <div>
-          <router-link to="/admin">
+          <router-link to="/admin" target="_blank">
             <div class="fa-stack icon">
               <i class="fa fa-circl fa-stack-2x" aria-hidden="true"></i>
             

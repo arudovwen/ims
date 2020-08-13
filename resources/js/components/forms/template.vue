@@ -10,19 +10,19 @@
       <b-form @submit.prevent="submit" class="border p-3">
         <legend class="text-center mb-5">{{form.title}}</legend>
         <b-row class="p-4" v-if="!show">
-          <b-col cols="4">
+          <b-col cols="12" sm="4">
             <b-form-group>
               <label for>Full name</label>
               <b-form-input v-model="full_name" type="text" placeholder="Enter name"></b-form-input>
             </b-form-group>
           </b-col>
-          <b-col cols="5">
+          <b-col cols="12" sm="5">
             <b-form-group>
               <label for>Email</label>
               <b-form-input v-model="email" type="email" placeholder="Enter email address"></b-form-input>
             </b-form-group>
           </b-col>
-          <b-col cols="3">
+          <b-col cols="12" sm="3">
             <b-form-group>
               <label for>Phone number</label>
               <b-form-input v-model="phone" type="number" max="11" placeholder="Enter phone number"></b-form-input>
@@ -186,7 +186,7 @@
                         </div>
                         <b-form-row class="w-100">
                           <b-col
-                            cols="3"
+                           cols="6" sm="3"
                             class="p-2"
                             v-for="(doc,ind) in question.documents"
                             :key="ind"
@@ -356,7 +356,9 @@ export default {
           if (res.status == 201) {
             this.$bvModal.show("modal-1");
           }
-        });
+        }).catch(err=>{
+        this.$toasted.error('Something went wrong, verify all fields')
+      });;
       }
     },
     getLga() {
@@ -470,5 +472,13 @@ li {
   margin-bottom: 0.25rem;
   margin-top: 0;
   color:blue;
+}
+@media(max-width:425px){
+  .container{
+    padding:30px 10px;
+  }
+  form{
+    padding:30px 10px;
+  }
 }
 </style>

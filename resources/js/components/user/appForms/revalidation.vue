@@ -9,19 +9,19 @@
 
             <b-form-row class="justify-content-center" v-if="one">
          <b-row class="py-4 w-100" >
-          <b-col cols="4">
+          <b-col cols="12" sm="4">
             <b-form-group>
               <label for>Full name</label>
               <b-form-input v-model="data.full_name" type="text" placeholder="Enter name"></b-form-input>
             </b-form-group>
           </b-col>
-          <b-col cols="5">
+          <b-col cols="12" sm="5">
             <b-form-group>
               <label for>Email</label>
               <b-form-input v-model="data.email" type="email" placeholder="Enter email address"></b-form-input>
             </b-form-group>
           </b-col>
-          <b-col cols="3">
+          <b-col cols="12" sm="3">
             <b-form-group>
               <label for>Phone number</label>
               <b-form-input v-model="data.phone" type="number" max="11" placeholder="Enter phone number"></b-form-input>
@@ -277,24 +277,24 @@
                             for
                           >Kindly provide the number of candidates that registered for the following subjects:</label>
                           <b-form-row>
-                            <b-col cols="2">
+                            <b-col cols="12" sm="2">
                               <label for>Physics</label>
                             </b-col>
                             <b-col>
                               <b-form-input
-                                class="w-25"
+                                class="w-50 "
                                 type="number"
                                 v-model="data.status.physics"
                               ></b-form-input>
                             </b-col>
                           </b-form-row>
                           <b-form-row>
-                            <b-col cols="2">
+                            <b-col  cols="12" sm="2">
                               <label for>Chemistry</label>
                             </b-col>
                             <b-col>
                               <b-form-input
-                                class="w-25"
+                                class="w-50"
                                 type="number"
                                 v-model="data.status.chemistry"
                               ></b-form-input>
@@ -302,12 +302,12 @@
                           </b-form-row>
 
                           <b-form-row>
-                            <b-col cols="2">
+                            <b-col cols="12" sm="2">
                               <label for>Biology</label>
                             </b-col>
                             <b-col>
                               <b-form-input
-                                class="w-25"
+                                class="w-50"
                                 type="number"
                                 v-model="data.status.biology"
                               ></b-form-input>
@@ -325,7 +325,7 @@
                         <b-button @click="removeRenew" v-if="data.status.renewal.length > 1"><i class="fa fa-times-circle" aria-hidden="true"></i></b-button>
                       </div>
                       <b-form-row v-for="(da,index) in data.status.renewal" :key="index">
-                        <b-col cols="2">
+                        <b-col cols="6" sm="2">
                           <b-form-select v-model="da.annual_renewal_year">
                             <b-form-select-option value>Select year</b-form-select-option>
                             <b-form-select-option
@@ -337,7 +337,7 @@
                         </b-col>
                         <b-col>
                           <b-form-input
-                            class="w-25"
+                            class="w-50"
                             v-model="da.annual_renewal_ammount"
                             type="number"
                             placeholder="Enter amount"
@@ -365,7 +365,7 @@
                   <b-button @click="removeDoc" v-if="data.documents.length > 1"><i class="fa fa-times-circle" aria-hidden="true"></i></b-button>
                 </div>
                 <b-form-row>
-                  <b-col cols="3" class="border p-2" v-for="(doc,idx) in data.documents" :key="idx">
+                  <b-col  cols="6" sm="3" class="border p-2" v-for="(doc,idx) in data.documents" :key="idx">
                     <div >
                       <b-form-input
                       

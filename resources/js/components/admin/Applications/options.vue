@@ -62,7 +62,7 @@
             <b-form-input
               type="number"
               v-model="options.phase"
-              placeholder="Phase number"
+              placeholder="Total stages"
               class="w-25"
             ></b-form-input>
             <!-- <b-col  class="mb-3" cols="12">
