@@ -3,11 +3,11 @@
     <b-form @submit.prevent="submit">
       <b-container>
         <b-row class="py-3 justify-content-end">
-          <b-button class="mr-3" variant="outline-darkgreen" pill v-b-modal.modal-1>Review</b-button>
-          <b-button type="submit" variant="darkgreen" pill>Publish</b-button>
+          <b-button size="sm" class="mr-3" variant="outline-darkgreen" pill v-b-modal.modal-1>Review</b-button>
+          <b-button size="sm" type="submit" variant="darkgreen" pill>Publish</b-button>
         </b-row>
         <b-row class="py-3">
-          <b-button @click="addSection" class="mr-3">Add section</b-button>
+          <b-button size="sm" @click="addSection" class="mr-3">Add section</b-button>
         </b-row>
         <section v-for="(section,index) in form" :key="index" class="border p-2 mb-2">
           <div class="py-2 d-flex justify-content-between">
@@ -70,10 +70,10 @@
               </b-col>
             </b-row>
             <b-row class="py-3">
-              <b-button @click="addQuestion(index)" class="mr-3">
+              <b-button size="sm" @click="addQuestion(index)" class="mr-3">
                 <i class="fas fa-plus-circle" aria-hidden="true"></i>
               </b-button>
-              <b-button @click="removeQuestion(index)">
+              <b-button size="sm" @click="removeQuestion(index)">
                 <i class="fas fa-times-circle" aria-hidden="true"></i>
               </b-button>
             </b-row>
@@ -141,8 +141,8 @@
                       <b-form-input placeholder="Options" v-model="option.name"></b-form-input>
                     </div>
                     <b-row class="p-3">
-                      <b-button @click="addOption(index,idx)" class="mr-3">Add</b-button>
-                      <b-button @click="removeOption(index,idx)">Remove</b-button>
+                      <b-button size="sm" @click="addOption(index,idx)" class="mr-3">Add</b-button>
+                      <b-button size="sm" @click="removeOption(index,idx)">Remove</b-button>
                     </b-row>
                   </div>
                 </b-col>
@@ -151,7 +151,7 @@
                   <div role="tablist">
                     <b-card no-body class="mb-1">
                       <b-card-header header-tag="header" class="p-1" role="tab">
-                        <b-button block v-b-toggle="idx.toString()" variant="info">Tools</b-button>
+                        <b-button size="sm" block v-b-toggle="idx.toString()" variant="info">Tools</b-button>
                       </b-card-header>
                       <b-collapse :id="idx.toString()" accordion="my-accordion" role="tabpanel">
                         <b-card-body>
@@ -168,7 +168,7 @@
                                   <b-form-input placeholder="Table field" v-model="field"></b-form-input>
 
                                   <b-input-group-append>
-                                    <b-button @click="addField(field,index,idx)" class="mr-3">
+                                    <b-button size="sm" @click="addField(field,index,idx)" class="mr-3">
                                       <i class="fa fa-plus-circle" aria-hidden="true"></i>
                                     </b-button>
                                   </b-input-group-append>
@@ -193,7 +193,7 @@
                                 </b-form-group>
 
                                 <b-row class="p-3">
-                                  <b-button class @click="handleTable(index,idx)">Submit fields</b-button>
+                                  <b-button size="sm" class @click="handleTable(index,idx)">Submit fields</b-button>
                                 </b-row>
                               </div>
                             </b-col>
