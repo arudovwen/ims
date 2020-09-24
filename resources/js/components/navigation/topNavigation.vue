@@ -26,7 +26,7 @@
       
       <div class="ml-auto d-flex align-items-center">
         <div class="desktop">
-        <a href="https://www.ministryofeducation.im.gov.ng:2096/"  target="_blank" class="mr-4">  <b-button  variant="home">Staff mail <i class="fa fa-envelope pl-1" aria-hidden="true"></i></b-button></a>
+        <a href="https://www.ministryofeducation.im.gov.ng:2096/"  target="_blank" class="mr-4">  <b-button  variant="home"><i class="fa fa-envelope pl-1" aria-hidden="true"></i> Staff mail </b-button></a>
         </div>
         <div class="side_info ml-auto" >
         

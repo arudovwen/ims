@@ -512,7 +512,7 @@ export default {
         name: "",
       });
     },
-    removeOption(index) {
+    removeOption(index,id) {
       this.form[index].question[id].options.pop();
     },
     addField(e, index, id) {

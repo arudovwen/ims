@@ -133,6 +133,9 @@
         </ul> -->
       </li>
       <li class="mobile">
+          <div class="mb-2">
+        <a href="https://www.ministryofeducation.im.gov.ng:2096/"  target="_blank" class="mr-4">  <b-button  variant="success" size="sm"><i class="fa fa-envelope pl-1" aria-hidden="true"></i> Staff mail </b-button></a>
+        </div>
           <div class="search-bar ">
             <input
             type="text"
